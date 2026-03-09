@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omkar Sir — RAS | IAS | SSC | Hindi Notes & Quiz</title>
-  <meta name="description" content="Omkar Sir के साथ करो RAS, IAS, SSC, Railway की तैयारी। Free Hindi Notes, Quiz, PYQs और Video Lectures।">
+  <title>Omkar Sir â RAS | IAS | SSC | Hindi Notes & Quiz</title>
+  <meta name="description" content="Omkar Sir à¤à¥ à¤¸à¤¾à¤¥ à¤à¤°à¥ RAS, IAS, SSC, Railway à¤à¥ à¤¤à¥à¤¯à¤¾à¤°à¥à¥¤ Free Hindi Notes, Quiz, PYQs à¤à¤° Video Lecturesà¥¤">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --saffron: #FF6B00;
       --saffron-light: #FF8C38;
-      --navy: #0A1628;
-      --navy-mid: #132040;
-      --gold: #F5C400;
+      --navy: #1E3A6E;
+      --navy-mid: #2A4F96;
+      --navy-dark: #0A1628;
+      --gold: #F5A800;
       --green: #00A651;
       --white: #FFFFFF;
-      --off-white: #FFF8F0;
-      --text-dark: #1A1A2E;
-      --text-mid: #4A4A6A;
+      --off-white: #F4F8FF;
+      --light-blue: #EBF3FF;
+      --light-blue-2: #DDEEFF;
+      --text-dark: #1A2B4E;
+      --text-mid: #4A5A7A;
       --card-bg: #FFFFFF;
-      --shadow: 0 8px 32px rgba(255,107,0,0.12);
-      --shadow-lg: 0 20px 60px rgba(10,22,40,0.15);
+      --shadow: 0 8px 32px rgba(30,58,110,0.10);
+      --shadow-lg: 0 20px 60px rgba(30,58,110,0.14);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +40,7 @@
 
     /* ========= NAVBAR ========= */
     nav {
-      background: var(--navy);
+      background: #FFFFFF;
       padding: 0 5%;
       display: flex;
       align-items: center;
@@ -46,7 +49,8 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 16px rgba(30,58,110,0.10);
+      border-bottom: 1px solid #DCE8FF;
     }
 
     .logo {
@@ -65,17 +69,17 @@
       align-items: center;
       justify-content: center;
       font-size: 22px;
-      box-shadow: 0 4px 15px rgba(255,107,0,0.4);
+      box-shadow: 0 4px 15px rgba(255,107,0,0.3);
     }
 
     .logo-text {
-      color: white;
+      color: var(--navy-dark);
       font-size: 20px;
       font-weight: 800;
       line-height: 1.1;
     }
 
-    .logo-text span { color: var(--gold); }
+    .logo-text span { color: var(--saffron); }
 
     .nav-links {
       display: flex;
@@ -84,7 +88,7 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.8);
+      color: var(--text-mid);
       text-decoration: none;
       padding: 8px 14px;
       border-radius: 8px;
@@ -94,20 +98,20 @@
     }
 
     .nav-links a:hover {
-      background: rgba(255,255,255,0.1);
-      color: white;
+      background: var(--light-blue);
+      color: var(--navy);
     }
 
     .nav-cta {
       background: linear-gradient(135deg, var(--saffron), var(--saffron-light)) !important;
       color: white !important;
       font-weight: 700 !important;
-      box-shadow: 0 4px 15px rgba(255,107,0,0.4);
+      box-shadow: 0 4px 15px rgba(255,107,0,0.3);
     }
 
     /* ========= HERO ========= */
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #1a3a6b 100%);
+      background: linear-gradient(135deg, #D6E8FF 0%, #EBF3FF 50%, #F4F8FF 100%);
       padding: 80px 5% 60px;
       position: relative;
       overflow: hidden;
@@ -120,7 +124,7 @@
       right: -100px;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -147,9 +151,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,107,0,0.15);
-      border: 1px solid rgba(255,107,0,0.3);
-      color: var(--gold);
+      background: rgba(255,107,0,0.10);
+      border: 1px solid rgba(255,107,0,0.25);
+      color: var(--saffron);
       padding: 8px 16px;
       border-radius: 50px;
       font-size: 13px;
@@ -159,7 +163,7 @@
     }
 
     .hero h1 {
-      color: white;
+      color: var(--text-dark);
       font-size: clamp(32px, 4vw, 52px);
       font-weight: 800;
       line-height: 1.2;
@@ -168,12 +172,12 @@
     }
 
     .hero h1 .highlight {
-      color: var(--gold);
+      color: var(--saffron);
       position: relative;
     }
 
     .hero p {
-      color: rgba(255,255,255,0.75);
+      color: var(--text-mid);
       font-size: 17px;
       line-height: 1.8;
       margin-bottom: 36px;
@@ -195,7 +199,7 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 16px;
-      box-shadow: 0 6px 25px rgba(255,107,0,0.4);
+      box-shadow: 0 6px 25px rgba(255,107,0,0.35);
       transition: all 0.3s;
       display: inline-flex;
       align-items: center;
@@ -204,35 +208,37 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 35px rgba(255,107,0,0.5);
+      box-shadow: 0 10px 35px rgba(255,107,0,0.45);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.1);
-      color: white;
+      background: white;
+      color: var(--navy);
       padding: 14px 28px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 2px solid var(--light-blue-2);
       transition: all 0.3s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      box-shadow: 0 4px 12px rgba(30,58,110,0.08);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.2);
+      background: var(--light-blue);
+      border-color: var(--navy-mid);
       transform: translateY(-2px);
     }
 
     .hero-image-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: white;
+      border: 1px solid #C8DCFF;
       border-radius: 24px;
       padding: 32px;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 40px rgba(30,58,110,0.12);
       animation: fadeInRight 0.8s 0.2s ease both;
     }
 
@@ -250,18 +256,18 @@
       align-items: center;
       justify-content: center;
       font-size: 52px;
-      box-shadow: 0 8px 30px rgba(255,107,0,0.4);
+      box-shadow: 0 8px 30px rgba(255,107,0,0.3);
     }
 
     .teacher-name {
-      color: white;
+      color: var(--text-dark);
       font-size: 22px;
       font-weight: 800;
       margin-bottom: 4px;
     }
 
     .teacher-sub {
-      color: var(--gold);
+      color: var(--saffron);
       font-size: 14px;
       font-weight: 500;
       margin-bottom: 20px;
@@ -276,22 +282,23 @@
     }
 
     .tag {
-      background: rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.85);
+      background: var(--light-blue);
+      color: var(--navy);
       padding: 5px 12px;
       border-radius: 50px;
       font-size: 12px;
       font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid #C8DCFF;
     }
 
-    .tag.green { background: rgba(0,166,81,0.2); color: #4ADE80; border-color: rgba(0,166,81,0.3); }
-    .tag.gold { background: rgba(245,196,0,0.2); color: var(--gold); border-color: rgba(245,196,0,0.3); }
+    .tag.green { background: #E8F5EE; color: #007A3D; border-color: #B0DCC0; }
+    .tag.gold  { background: #FFF8E0; color: #A07000; border-color: #F0D890; }
 
     /* ========= STATS ========= */
     .stats {
       background: white;
       padding: 0;
+      border-bottom: 1px solid #DCE8FF;
     }
 
     .stats-inner {
@@ -304,7 +311,7 @@
     .stat-item {
       padding: 30px 20px;
       text-align: center;
-      border-right: 1px solid #F0F0F0;
+      border-right: 1px solid #E8F0FF;
       position: relative;
       overflow: hidden;
     }
@@ -359,20 +366,20 @@
 
     .section-tag {
       display: inline-block;
-      background: linear-gradient(135deg, rgba(255,107,0,0.1), rgba(245,196,0,0.1));
+      background: rgba(255,107,0,0.08);
       color: var(--saffron);
       padding: 6px 16px;
       border-radius: 50px;
       font-size: 13px;
       font-weight: 700;
       margin-bottom: 14px;
-      border: 1px solid rgba(255,107,0,0.2);
+      border: 1px solid rgba(255,107,0,0.18);
     }
 
     .section-title {
       font-size: clamp(26px, 3vw, 38px);
       font-weight: 800;
-      color: var(--navy);
+      color: var(--text-dark);
       line-height: 1.3;
       margin-bottom: 14px;
     }
@@ -403,7 +410,7 @@
       text-align: center;
       text-decoration: none;
       color: inherit;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 20px rgba(30,58,110,0.07);
       border: 2px solid transparent;
       transition: all 0.3s;
       position: relative;
@@ -436,14 +443,14 @@
       font-family: 'Baloo 2', cursive;
       font-size: 17px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--text-dark);
       margin-bottom: 6px;
     }
 
     .subject-count {
       font-size: 12px;
       color: var(--text-mid);
-      background: #F5F5F5;
+      background: var(--light-blue);
       padding: 4px 10px;
       border-radius: 50px;
       display: inline-block;
@@ -461,8 +468,8 @@
     .exam-card {
       border-radius: 20px;
       padding: 28px;
-      background: var(--exam-bg, #FFF5EE);
-      border: 1px solid var(--exam-border, #FFD4B0);
+      background: var(--exam-bg, #F4F8FF);
+      border: 1px solid var(--exam-border, #C8DCFF);
       text-decoration: none;
       color: inherit;
       display: block;
@@ -490,7 +497,7 @@
       font-family: 'Baloo 2', cursive;
       font-size: 20px;
       font-weight: 800;
-      color: var(--navy);
+      color: var(--text-dark);
       margin-bottom: 6px;
     }
 
@@ -514,12 +521,12 @@
       border-radius: 50px;
       font-size: 11px;
       font-weight: 600;
-      border: 1px solid var(--exam-border, #FFD4B0);
+      border: 1px solid var(--exam-border, #C8DCFF);
     }
 
     /* ========= FEATURES ========= */
     .features {
-      background: var(--navy);
+      background: linear-gradient(135deg, #D6E8FF 0%, #EBF3FF 100%);
       position: relative;
       overflow: hidden;
     }
@@ -531,12 +538,12 @@
       left: -200px;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(255,107,0,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 70%);
     }
 
-    .features .section-title { color: white; }
-    .features .section-sub { color: rgba(255,255,255,0.6); }
-    .features .section-tag { background: rgba(255,107,0,0.15); border-color: rgba(255,107,0,0.3); }
+    .features .section-title { color: var(--text-dark); }
+    .features .section-sub { color: var(--text-mid); }
+    .features .section-tag { background: rgba(255,107,0,0.08); border-color: rgba(255,107,0,0.18); }
 
     .features-grid {
       display: grid;
@@ -545,17 +552,19 @@
     }
 
     .feature-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: white;
+      border: 1px solid #C8DCFF;
       border-radius: 20px;
       padding: 28px;
       transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(30,58,110,0.06);
     }
 
     .feature-card:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,107,0,0.3);
+      background: #F0F7FF;
+      border-color: var(--navy-mid);
       transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(30,58,110,0.12);
     }
 
     .feature-icon {
@@ -565,7 +574,7 @@
     }
 
     .feature-title {
-      color: white;
+      color: var(--text-dark);
       font-family: 'Baloo 2', cursive;
       font-size: 18px;
       font-weight: 700;
@@ -573,7 +582,7 @@
     }
 
     .feature-desc {
-      color: rgba(255,255,255,0.6);
+      color: var(--text-mid);
       font-size: 14px;
       line-height: 1.7;
     }
@@ -594,17 +603,17 @@
       display: flex;
       align-items: flex-start;
       gap: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 16px rgba(30,58,110,0.07);
       text-decoration: none;
       color: inherit;
       transition: all 0.3s;
-      border: 1px solid #F0F0F0;
+      border: 1px solid #DCE8FF;
     }
 
     .resource-card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: rgba(255,107,0,0.2);
+      box-shadow: 0 12px 30px rgba(30,58,110,0.12);
+      border-color: var(--navy-mid);
     }
 
     .resource-icon-box {
@@ -622,7 +631,7 @@
       font-family: 'Baloo 2', cursive;
       font-size: 16px;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--text-dark);
       margin-bottom: 4px;
     }
 
@@ -659,7 +668,7 @@
       right: -100px;
       width: 400px;
       height: 400px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
       border-radius: 50%;
     }
 
@@ -671,7 +680,7 @@
     }
 
     .cta-section p {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.90);
       font-size: 18px;
       margin-bottom: 36px;
       max-width: 500px;
@@ -711,7 +720,7 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 16px;
-      border: 2px solid rgba(255,255,255,0.6);
+      border: 2px solid rgba(255,255,255,0.7);
       transition: all 0.3s;
     }
 
@@ -722,8 +731,8 @@
 
     /* ========= FOOTER ========= */
     footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.7);
+      background: #1E3A6E;
+      color: rgba(255,255,255,0.80);
       padding: 60px 5% 30px;
     }
 
@@ -737,7 +746,7 @@
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 40px;
       padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
     .footer-brand p {
@@ -762,7 +771,7 @@
     }
 
     .footer-col ul li a {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.65);
       text-decoration: none;
       font-size: 14px;
       transition: color 0.2s;
@@ -780,7 +789,7 @@
       width: 40px;
       height: 40px;
       border-radius: 10px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.10);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -803,7 +812,7 @@
     }
 
     .footer-bottom .made {
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.45);
     }
 
     .tri-color-bar {
@@ -863,8 +872,9 @@
 
     /* ========= MARQUEE ========= */
     .marquee-wrap {
-      background: var(--navy-mid);
-      padding: 12px 0;
+      background: #D6E8FF;
+      border-bottom: 1px solid #C0D6F5;
+      padding: 10px 0;
       overflow: hidden;
     }
 
@@ -875,14 +885,15 @@
     }
 
     .marquee-item {
-      color: rgba(255,255,255,0.8);
+      color: var(--navy);
       font-size: 13px;
+      font-weight: 500;
       padding: 0 30px;
       white-space: nowrap;
     }
 
     .marquee-item::before {
-      content: '🔥 ';
+      content: 'ð¥ ';
     }
 
     @keyframes marquee {
@@ -898,41 +909,41 @@
 
   <!-- Announcement -->
   <div class="announce-bar">
-    🎉 RAS Pre 2026 Test Series शुरू हो गई! अभी Join करें
-    <a href="#">Free Mock Test दो →</a>
+    ð RAS Pre 2026 Test Series à¤¶à¥à¤°à¥ à¤¹à¥ à¤à¤! à¤à¤­à¥ Join à¤à¤°à¥à¤
+    <a href="#">Free Mock Test à¤¦à¥ â</a>
   </div>
 
   <!-- Navbar -->
   <nav>
     <a href="/" class="logo">
-      <div class="logo-icon">🎓</div>
-      <div class="logo-text">Omkar Sir<br><span style="font-size:12px;font-weight:500;color:rgba(255,255,255,0.6)">New India Education</span></div>
+      <div class="logo-icon">ð</div>
+      <div class="logo-text">Omkar Sir<br><span style="font-size:12px;font-weight:500;color:var(--text-mid)">New India Education</span></div>
     </a>
     <ul class="nav-links">
-      <li><a href="#">📚 Subjects</a></li>
-      <li><a href="#">📝 Exams</a></li>
-      <li><a href="#">🧪 Quiz</a></li>
-      <li><a href="#">📄 Notes PDF</a></li>
-      <li><a href="#">🎥 Videos</a></li>
-      <li><a href="#" class="nav-cta">📱 App Download</a></li>
+      <li><a href="#">ð Subjects</a></li>
+      <li><a href="#">ð Exams</a></li>
+      <li><a href="#">ð§ª Quiz</a></li>
+      <li><a href="#">ð Notes PDF</a></li>
+      <li><a href="#">ð¥ Videos</a></li>
+      <li><a href="#" class="nav-cta">ð± App Download</a></li>
     </ul>
   </nav>
 
   <!-- Marquee -->
   <div class="marquee-wrap">
     <div class="marquee">
-      <span class="marquee-item">RAS Pre 2026 Notification जल्द</span>
+      <span class="marquee-item">RAS Pre 2026 Notification à¤à¤²à¥à¤¦</span>
       <span class="marquee-item">Rajasthan Geography Notes Free Download</span>
       <span class="marquee-item">IAS 2026 Strategy Notes Available</span>
       <span class="marquee-item">SSC CGL 2026 GK Notes Hindi</span>
-      <span class="marquee-item">Daily Quiz — हर रोज़ 10 सवाल</span>
-      <span class="marquee-item">RAS Mains Cleared — Omkar Sir</span>
-      <span class="marquee-item">RAS Pre 2026 Notification जल्द</span>
+      <span class="marquee-item">Daily Quiz â à¤¹à¤° à¤°à¥à¤à¤¼ 10 à¤¸à¤µà¤¾à¤²</span>
+      <span class="marquee-item">RAS Mains Cleared â Omkar Sir</span>
+      <span class="marquee-item">RAS Pre 2026 Notification à¤à¤²à¥à¤¦</span>
       <span class="marquee-item">Rajasthan Geography Notes Free Download</span>
       <span class="marquee-item">IAS 2026 Strategy Notes Available</span>
       <span class="marquee-item">SSC CGL 2026 GK Notes Hindi</span>
-      <span class="marquee-item">Daily Quiz — हर रोज़ 10 सवाल</span>
-      <span class="marquee-item">RAS Mains Cleared — Omkar Sir</span>
+      <span class="marquee-item">Daily Quiz â à¤¹à¤° à¤°à¥à¤à¤¼ 10 à¤¸à¤µà¤¾à¤²</span>
+      <span class="marquee-item">RAS Mains Cleared â Omkar Sir</span>
     </div>
   </div>
 
@@ -940,28 +951,28 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-badge">⭐ Rajasthan का #1 Hindi Medium Platform</div>
-        <h1>RAS · IAS · SSC की तैयारी<br><span class="highlight">एक जगह, बिल्कुल सही</span></h1>
-        <p>6 लाख+ students का भरोसा। Free Notes, PYQs, Daily Quiz और Video Lectures — सब हिंदी में। <strong style="color:var(--gold)">Omkar Sir के साथ जुड़ो!</strong></p>
+        <div class="hero-badge">â­ Rajasthan à¤à¤¾ #1 Hindi Medium Platform</div>
+        <h1>RAS Â· IAS Â· SSC à¤à¥ à¤¤à¥à¤¯à¤¾à¤°à¥<br><span class="highlight">à¤à¤ à¤à¤à¤¹, à¤¬à¤¿à¤²à¥à¤à¥à¤² à¤¸à¤¹à¥</span></h1>
+        <p>6 à¤²à¤¾à¤+ students à¤à¤¾ à¤­à¤°à¥à¤¸à¤¾à¥¤ Free Notes, PYQs, Daily Quiz à¤à¤° Video Lectures â à¤¸à¤¬ à¤¹à¤¿à¤à¤¦à¥ à¤®à¥à¤à¥¤ <strong style="color:var(--saffron)">Omkar Sir à¤à¥ à¤¸à¤¾à¤¥ à¤à¥à¤¡à¤¼à¥!</strong></p>
         <div class="hero-btns">
-          <a href="#" class="btn-primary">📄 Free Notes Download करो</a>
-          <a href="#" class="btn-secondary">🧪 Daily Quiz दो</a>
+          <a href="#" class="btn-primary">ð Free Notes Download à¤à¤°à¥</a>
+          <a href="#" class="btn-secondary">ð§ª Daily Quiz à¤¦à¥</a>
         </div>
       </div>
       <div class="hero-image-box">
         <div class="teacher-card">
-          <div class="teacher-avatar">👨‍🏫</div>
+          <div class="teacher-avatar">ð¨âð«</div>
           <div class="teacher-name">Omkar Singh Gurjar</div>
-          <div class="teacher-sub">Founder — New India Education | RAS Mains Cleared ✅</div>
+          <div class="teacher-sub">Founder â New India Education | RAS Mains Cleared â</div>
           <div class="teacher-tags">
-            <span class="tag gold">🏆 RAS Mains 2024</span>
-            <span class="tag green">📺 6 लाख+ YouTube</span>
-            <span class="tag">📱 2 लाख+ App Users</span>
-            <span class="tag">📚 10 साल+ Experience</span>
+            <span class="tag gold">ð RAS Mains 2024</span>
+            <span class="tag green">ðº 6 à¤²à¤¾à¤+ YouTube</span>
+            <span class="tag">ð± 2 à¤²à¤¾à¤+ App Users</span>
+            <span class="tag">ð 10 à¤¸à¤¾à¤²+ Experience</span>
           </div>
-          <div style="background:rgba(0,166,81,0.15);border:1px solid rgba(0,166,81,0.3);border-radius:12px;padding:12px 16px;text-align:left;">
-            <div style="color:#4ADE80;font-size:12px;font-weight:700;margin-bottom:4px;">💬 Omkar Sir कहते हैं:</div>
-            <div style="color:rgba(255,255,255,0.85);font-size:13px;line-height:1.6">"पैसे नहीं, मेहनत करो — सफलता जरूर मिलेगी!"</div>
+          <div style="background:#EBF3FF;border:1px solid #C0D6F5;border-radius:12px;padding:12px 16px;text-align:left;">
+            <div style="color:var(--navy);font-size:12px;font-weight:700;margin-bottom:4px;">ð¬ Omkar Sir à¤à¤¹à¤¤à¥ à¤¹à¥à¤:</div>
+            <div style="color:var(--text-mid);font-size:13px;line-height:1.6">"à¤ªà¥à¤¸à¥ à¤¨à¤¹à¥à¤, à¤®à¥à¤¹à¤¨à¤¤ à¤à¤°à¥ â à¤¸à¤«à¤²à¤¤à¤¾ à¤à¤°à¥à¤° à¤®à¤¿à¤²à¥à¤à¥!"</div>
           </div>
         </div>
       </div>
@@ -972,22 +983,22 @@
   <div class="stats">
     <div class="stats-inner">
       <div class="stat-item">
-        <span class="stat-icon">🎥</span>
-        <span class="stat-num">6 लाख+</span>
+        <span class="stat-icon">ð¥</span>
+        <span class="stat-num">6 à¤²à¤¾à¤+</span>
         <div class="stat-label">YouTube Subscribers</div>
       </div>
       <div class="stat-item">
-        <span class="stat-icon">📱</span>
-        <span class="stat-num">2 लाख+</span>
+        <span class="stat-icon">ð±</span>
+        <span class="stat-num">2 à¤²à¤¾à¤+</span>
         <div class="stat-label">App Users</div>
       </div>
       <div class="stat-item">
-        <span class="stat-icon">📄</span>
+        <span class="stat-icon">ð</span>
         <span class="stat-num">500+</span>
         <div class="stat-label">Free Notes & PDFs</div>
       </div>
       <div class="stat-item">
-        <span class="stat-icon">🏆</span>
+        <span class="stat-icon">ð</span>
         <span class="stat-num">10,000+</span>
         <div class="stat-label">Students Selected</div>
       </div>
@@ -998,48 +1009,48 @@
   <section class="subjects">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-tag">📚 Subjects</div>
-        <h2 class="section-title">सभी <span class="accent">Subjects</span> एक जगह</h2>
-        <p class="section-sub">हर subject के लिए detailed notes, PYQs और video lectures — सब Hindi में!</p>
+        <div class="section-tag">ð Subjects</div>
+        <h2 class="section-title">à¤¸à¤­à¥ <span class="accent">Subjects</span> à¤à¤ à¤à¤à¤¹</h2>
+        <p class="section-sub">à¤¹à¤° subject à¤à¥ à¤²à¤¿à¤ detailed notes, PYQs à¤à¤° video lectures â à¤¸à¤¬ Hindi à¤®à¥à¤!</p>
       </div>
       <div class="subjects-grid">
         <a href="#" class="subject-card" style="--card-accent:#FF6B00">
-          <span class="subject-icon">🗺️</span>
-          <div class="subject-name">राजस्थान भूगोल</div>
+          <span class="subject-icon">ðºï¸</span>
+          <div class="subject-name">à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ à¤­à¥à¤à¥à¤²</div>
           <span class="subject-count">45+ Chapters</span>
         </a>
         <a href="#" class="subject-card" style="--card-accent:#E63946">
-          <span class="subject-icon">🏛️</span>
-          <div class="subject-name">भारतीय इतिहास</div>
+          <span class="subject-icon">ðï¸</span>
+          <div class="subject-name">à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤à¤¤à¤¿à¤¹à¤¾à¤¸</div>
           <span class="subject-count">60+ Chapters</span>
         </a>
         <a href="#" class="subject-card" style="--card-accent:#2196F3">
-          <span class="subject-icon">⚖️</span>
-          <div class="subject-name">भारतीय राजव्यवस्था</div>
+          <span class="subject-icon">âï¸</span>
+          <div class="subject-name">à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤°à¤¾à¤à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</div>
           <span class="subject-count">40+ Chapters</span>
         </a>
         <a href="#" class="subject-card" style="--card-accent:#00A651">
-          <span class="subject-icon">💹</span>
-          <div class="subject-name">भारतीय अर्थव्यवस्था</div>
+          <span class="subject-icon">ð¹</span>
+          <div class="subject-name">à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤à¤°à¥à¤¥à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</div>
           <span class="subject-count">35+ Chapters</span>
         </a>
         <a href="#" class="subject-card" style="--card-accent:#9C27B0">
-          <span class="subject-icon">🌍</span>
-          <div class="subject-name">विश्व भूगोल</div>
+          <span class="subject-icon">ð</span>
+          <div class="subject-name">à¤µà¤¿à¤¶à¥à¤µ à¤­à¥à¤à¥à¤²</div>
           <span class="subject-count">30+ Chapters</span>
         </a>
-        <a href="#" class="subject-card" style="--card-accent:#F5C400">
-          <span class="subject-icon">🔬</span>
-          <div class="subject-name">सामान्य विज्ञान</div>
+        <a href="#" class="subject-card" style="--card-accent:#F5A800">
+          <span class="subject-icon">ð¬</span>
+          <div class="subject-name">à¤¸à¤¾à¤®à¤¾à¤¨à¥à¤¯ à¤µà¤¿à¤à¥à¤à¤¾à¤¨</div>
           <span class="subject-count">25+ Chapters</span>
         </a>
         <a href="#" class="subject-card" style="--card-accent:#FF5722">
-          <span class="subject-icon">🏰</span>
-          <div class="subject-name">राजस्थान GK</div>
+          <span class="subject-icon">ð°</span>
+          <div class="subject-name">à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ GK</div>
           <span class="subject-count">50+ Chapters</span>
         </a>
         <a href="#" class="subject-card" style="--card-accent:#00BCD4">
-          <span class="subject-icon">📰</span>
+          <span class="subject-icon">ð°</span>
           <div class="subject-name">Current Affairs</div>
           <span class="subject-count">Daily Updates</span>
         </a>
@@ -1051,15 +1062,15 @@
   <section class="exams">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-tag">🎯 Exams</div>
-        <h2 class="section-title">कौन सी <span class="accent">Exam</span> की तैयारी है?</h2>
-        <p class="section-sub">अपनी exam चुनो और dedicated study material पाओ!</p>
+        <div class="section-tag">ð¯ Exams</div>
+        <h2 class="section-title">à¤à¥à¤¨ à¤¸à¥ <span class="accent">Exam</span> à¤à¥ à¤¤à¥à¤¯à¤¾à¤°à¥ à¤¹à¥?</h2>
+        <p class="section-sub">à¤à¤ªà¤¨à¥ exam à¤à¥à¤¨à¥ à¤à¤° dedicated study material à¤ªà¤¾à¤!</p>
       </div>
       <div class="exams-grid">
         <a href="#" class="exam-card" style="--exam-bg:#FFF5EE;--exam-border:#FFD4B0;--exam-accent:#FF6B00">
-          <div class="exam-icon-wrap">🏛️</div>
+          <div class="exam-icon-wrap">ðï¸</div>
           <div class="exam-name">RAS / RTS</div>
-          <div class="exam-full">Rajasthan Administrative Services — RPSC द्वारा</div>
+          <div class="exam-full">Rajasthan Administrative Services â RPSC à¤¦à¥à¤µà¤¾à¤°à¤¾</div>
           <div class="exam-chips">
             <span class="chip">Pre Notes</span>
             <span class="chip">Mains Notes</span>
@@ -1068,9 +1079,9 @@
           </div>
         </a>
         <a href="#" class="exam-card" style="--exam-bg:#E8F0FE;--exam-border:#B0C8FF;--exam-accent:#2196F3">
-          <div class="exam-icon-wrap">🇮🇳</div>
+          <div class="exam-icon-wrap">ð®ð³</div>
           <div class="exam-name">IAS / UPSC</div>
-          <div class="exam-full">Indian Administrative Service — UPSC द्वारा</div>
+          <div class="exam-full">Indian Administrative Service â UPSC à¤¦à¥à¤µà¤¾à¤°à¤¾</div>
           <div class="exam-chips">
             <span class="chip">Strategy</span>
             <span class="chip">GS Notes</span>
@@ -1078,17 +1089,17 @@
           </div>
         </a>
         <a href="#" class="exam-card" style="--exam-bg:#E8F5E9;--exam-border:#A5D6A7;--exam-accent:#00A651">
-          <div class="exam-icon-wrap">📋</div>
+          <div class="exam-icon-wrap">ð</div>
           <div class="exam-name">SSC CGL</div>
-          <div class="exam-full">Staff Selection Commission — CGL/CHSL</div>
+          <div class="exam-full">Staff Selection Commission â CGL/CHSL</div>
           <div class="exam-chips">
             <span class="chip">GK Notes</span>
             <span class="chip">Reasoning</span>
             <span class="chip">Mock Tests</span>
           </div>
         </a>
-        <a href="#" class="exam-card" style="--exam-bg:#FFF8E1;--exam-border:#FFE082;--exam-accent:#F5C400">
-          <div class="exam-icon-wrap">🚂</div>
+        <a href="#" class="exam-card" style="--exam-bg:#FFF8E1;--exam-border:#FFE082;--exam-accent:#F5A800">
+          <div class="exam-icon-wrap">ð</div>
           <div class="exam-name">Railway</div>
           <div class="exam-full">RRB NTPC / Group D / ALP</div>
           <div class="exam-chips">
@@ -1098,7 +1109,7 @@
           </div>
         </a>
         <a href="#" class="exam-card" style="--exam-bg:#F3E5F5;--exam-border:#CE93D8;--exam-accent:#9C27B0">
-          <div class="exam-icon-wrap">👮</div>
+          <div class="exam-icon-wrap">ð®</div>
           <div class="exam-name">Police / Patwari</div>
           <div class="exam-full">Rajasthan Police SI / Constable / Patwar</div>
           <div class="exam-chips">
@@ -1108,7 +1119,7 @@
           </div>
         </a>
         <a href="#" class="exam-card" style="--exam-bg:#FCE4EC;--exam-border:#F48FB1;--exam-accent:#E63946">
-          <div class="exam-icon-wrap">🎖️</div>
+          <div class="exam-icon-wrap">ðï¸</div>
           <div class="exam-name">Defence</div>
           <div class="exam-full">NDA / CDS / AFCAT</div>
           <div class="exam-chips">
@@ -1125,40 +1136,40 @@
   <section class="features">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-tag">✨ Why Omkar Sir?</div>
-        <h2 class="section-title">दूसरों से <span style="color:var(--gold)">अलग क्यों?</span></h2>
-        <p class="section-sub">यहाँ content की quality पर focus है — पैसों पर नहीं</p>
+        <div class="section-tag">â¨ Why Omkar Sir?</div>
+        <h2 class="section-title">à¤¦à¥à¤¸à¤°à¥à¤ à¤¸à¥ <span class="accent">à¤à¤²à¤ à¤à¥à¤¯à¥à¤?</span></h2>
+        <p class="section-sub">à¤¯à¤¹à¤¾à¤ content à¤à¥ quality à¤ªà¤° focus à¤¹à¥ â à¤ªà¥à¤¸à¥à¤ à¤ªà¤° à¤¨à¤¹à¥à¤</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <span class="feature-icon">🇮🇳</span>
+          <span class="feature-icon">ð®ð³</span>
           <div class="feature-title">100% Hindi Medium</div>
-          <p class="feature-desc">सभी notes, video और quiz पूरी तरह हिंदी में। कोई English confusion नहीं!</p>
+          <p class="feature-desc">à¤¸à¤­à¥ notes, video à¤à¤° quiz à¤ªà¥à¤°à¥ à¤¤à¤°à¤¹ à¤¹à¤¿à¤à¤¦à¥ à¤®à¥à¤à¥¤ à¤à¥à¤ English confusion à¤¨à¤¹à¥à¤!</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">📄</span>
+          <span class="feature-icon">ð</span>
           <div class="feature-title">Free PDF Notes</div>
-          <p class="feature-desc">500+ chapters के colorful notes बिल्कुल मुफ्त। Download करो, print करो!</p>
+          <p class="feature-desc">500+ chapters à¤à¥ colorful notes à¤¬à¤¿à¤²à¥à¤à¥à¤² à¤®à¥à¤«à¥à¤¤à¥¤ Download à¤à¤°à¥, print à¤à¤°à¥!</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">📅</span>
-          <div class="feature-title">30 साल PYQs</div>
-          <p class="feature-desc">IAS और RAS के 30 साल के previous year questions — analysis के साथ।</p>
+          <span class="feature-icon">ð</span>
+          <div class="feature-title">30 à¤¸à¤¾à¤² PYQs</div>
+          <p class="feature-desc">IAS à¤à¤° RAS à¤à¥ 30 à¤¸à¤¾à¤² à¤à¥ previous year questions â analysis à¤à¥ à¤¸à¤¾à¤¥à¥¤</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">🧪</span>
+          <span class="feature-icon">ð§ª</span>
           <div class="feature-title">Daily Quiz</div>
-          <p class="feature-desc">हर रोज़ 10 नए MCQs — subject wise, exam wise। Score track करो!</p>
+          <p class="feature-desc">à¤¹à¤° à¤°à¥à¤à¤¼ 10 à¤¨à¤ MCQs â subject wise, exam wiseà¥¤ Score track à¤à¤°à¥!</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">🏆</span>
+          <span class="feature-icon">ð</span>
           <div class="feature-title">Proven Results</div>
-          <p class="feature-desc">RAS Mains cleared खुद Omkar Sir ने। 10,000+ students selected!</p>
+          <p class="feature-desc">RAS Mains cleared à¤à¥à¤¦ Omkar Sir à¤¨à¥à¥¤ 10,000+ students selected!</p>
         </div>
         <div class="feature-card">
-          <span class="feature-icon">📱</span>
+          <span class="feature-icon">ð±</span>
           <div class="feature-title">Mobile Friendly</div>
-          <p class="feature-desc">कहीं भी, कभी भी पढ़ो — mobile, tablet, laptop — सब पर perfect!</p>
+          <p class="feature-desc">à¤à¤¹à¥à¤ à¤­à¥, à¤à¤­à¥ à¤­à¥ à¤ªà¤¢à¤¼à¥ â mobile, tablet, laptop â à¤¸à¤¬ à¤ªà¤° perfect!</p>
         </div>
       </div>
     </div>
@@ -1168,56 +1179,56 @@
   <section class="resources">
     <div class="section-inner">
       <div class="section-header">
-        <div class="section-tag">🎁 Free Resources</div>
-        <h2 class="section-title">आज ही <span class="accent">Free</span> में शुरू करो</h2>
-        <p class="section-sub">इन resources को कोई payment नहीं — बस पढ़ो और आगे बढ़ो!</p>
+        <div class="section-tag">ð Free Resources</div>
+        <h2 class="section-title">à¤à¤ à¤¹à¥ <span class="accent">Free</span> à¤®à¥à¤ à¤¶à¥à¤°à¥ à¤à¤°à¥</h2>
+        <p class="section-sub">à¤à¤¨ resources à¤à¥ à¤à¥à¤ payment à¤¨à¤¹à¥à¤ â à¤¬à¤¸ à¤ªà¤¢à¤¼à¥ à¤à¤° à¤à¤à¥ à¤¬à¤¢à¤¼à¥!</p>
       </div>
       <div class="resources-grid">
         <a href="#" class="resource-card">
-          <div class="resource-icon-box" style="background:#FFF3E0;">📄</div>
+          <div class="resource-icon-box" style="background:#FFF3E0;">ð</div>
           <div>
             <div class="resource-title">Rajasthan Geography Notes</div>
-            <div class="resource-desc">Complete chapter-wise notes Hindi में। Rivers, Forests, Minerals सब!</div>
+            <div class="resource-desc">Complete chapter-wise notes Hindi à¤®à¥à¤à¥¤ Rivers, Forests, Minerals à¤¸à¤¬!</div>
             <span class="resource-badge">FREE PDF</span>
           </div>
         </a>
         <a href="#" class="resource-card">
-          <div class="resource-icon-box" style="background:#E8F5E9;">🧪</div>
+          <div class="resource-icon-box" style="background:#E8F5E9;">ð§ª</div>
           <div>
             <div class="resource-title">Daily Practice Quiz</div>
-            <div class="resource-desc">हर रोज़ 10 MCQs — RAS/IAS/SSC pattern पर</div>
+            <div class="resource-desc">à¤¹à¤° à¤°à¥à¤à¤¼ 10 MCQs â RAS/IAS/SSC pattern à¤ªà¤°</div>
             <span class="resource-badge">FREE QUIZ</span>
           </div>
         </a>
         <a href="#" class="resource-card">
-          <div class="resource-icon-box" style="background:#E8F0FE;">📅</div>
+          <div class="resource-icon-box" style="background:#E8F0FE;">ð</div>
           <div>
             <div class="resource-title">30 Year PYQ Analysis</div>
-            <div class="resource-desc">IAS और RAS exam के previous year questions का deep analysis</div>
+            <div class="resource-desc">IAS à¤à¤° RAS exam à¤à¥ previous year questions à¤à¤¾ deep analysis</div>
             <span class="resource-badge">FREE PDF</span>
           </div>
         </a>
         <a href="#" class="resource-card">
-          <div class="resource-icon-box" style="background:#F3E5F5;">📰</div>
+          <div class="resource-icon-box" style="background:#F3E5F5;">ð°</div>
           <div>
             <div class="resource-title">Monthly Current Affairs</div>
-            <div class="resource-desc">Exam relevant current affairs — Hindi में, point format में</div>
+            <div class="resource-desc">Exam relevant current affairs â Hindi à¤®à¥à¤, point format à¤®à¥à¤</div>
             <span class="resource-badge">FREE PDF</span>
           </div>
         </a>
         <a href="#" class="resource-card">
-          <div class="resource-icon-box" style="background:#FCE4EC;">📋</div>
+          <div class="resource-icon-box" style="background:#FCE4EC;">ð</div>
           <div>
             <div class="resource-title">RAS Pre Strategy Notes</div>
-            <div class="resource-desc">RAS Pre clear करने की complete strategy — Omkar Sir द्वारा</div>
+            <div class="resource-desc">RAS Pre clear à¤à¤°à¤¨à¥ à¤à¥ complete strategy â Omkar Sir à¤¦à¥à¤µà¤¾à¤°à¤¾</div>
             <span class="resource-badge">FREE PDF</span>
           </div>
         </a>
         <a href="#" class="resource-card">
-          <div class="resource-icon-box" style="background:#E0F7FA;">🎥</div>
+          <div class="resource-icon-box" style="background:#E0F7FA;">ð¥</div>
           <div>
             <div class="resource-title">YouTube Video Lectures</div>
-            <div class="resource-desc">6 लाख+ subscribers का channel — free lectures daily</div>
+            <div class="resource-desc">6 à¤²à¤¾à¤+ subscribers à¤à¤¾ channel â free lectures daily</div>
             <span class="resource-badge">FREE VIDEO</span>
           </div>
         </a>
@@ -1228,11 +1239,11 @@
   <!-- CTA -->
   <section class="cta-section">
     <div style="position:relative;z-index:1">
-      <h2>🚀 तैयारी शुरू करो — आज ही!</h2>
-      <p>App download करो और Premium courses join करो — OMASTRA & SAMPOORNA</p>
+      <h2>ð à¤¤à¥à¤¯à¤¾à¤°à¥ à¤¶à¥à¤°à¥ à¤à¤°à¥ â à¤à¤ à¤¹à¥!</h2>
+      <p>App download à¤à¤°à¥ à¤à¤° Premium courses join à¤à¤°à¥ â OMASTRA & SAMPOORNA</p>
       <div class="cta-btns">
-        <a href="#" class="btn-white">📱 App Download करो</a>
-        <a href="#" class="btn-outline-white">🎥 YouTube Channel</a>
+        <a href="#" class="btn-white">ð± App Download à¤à¤°à¥</a>
+        <a href="#" class="btn-outline-white">ð¥ YouTube Channel</a>
       </div>
     </div>
   </section>
@@ -1243,29 +1254,29 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="/" class="logo">
-            <div class="logo-icon">🎓</div>
-            <div class="logo-text" style="font-size:18px">Omkar Sir<br><span style="font-size:11px;color:rgba(255,255,255,0.5);font-weight:400">New India Education</span></div>
+            <div class="logo-icon">ð</div>
+            <div class="logo-text" style="color:white;font-size:18px">Omkar Sir<br><span style="font-size:11px;color:rgba(255,255,255,0.5);font-weight:400">New India Education</span></div>
           </a>
-          <p>Rajasthan का #1 Hindi Medium competitive exam preparation platform। RAS, IAS, SSC, Railway — सभी exams की तैयारी एक जगह।</p>
+          <p>Rajasthan à¤à¤¾ #1 Hindi Medium competitive exam preparation platformà¥¤ RAS, IAS, SSC, Railway â à¤¸à¤­à¥ exams à¤à¥ à¤¤à¥à¤¯à¤¾à¤°à¥ à¤à¤ à¤à¤à¤¹à¥¤</p>
           <div class="social-links">
-            <a href="#" class="social-btn">📺</a>
-            <a href="#" class="social-btn">📱</a>
-            <a href="#" class="social-btn">✈️</a>
-            <a href="#" class="social-btn">📘</a>
+            <a href="#" class="social-btn">ðº</a>
+            <a href="#" class="social-btn">ð±</a>
+            <a href="#" class="social-btn">âï¸</a>
+            <a href="#" class="social-btn">ð</a>
           </div>
         </div>
         <div class="footer-col">
-          <h4>📚 Subjects</h4>
+          <h4>ð Subjects</h4>
           <ul>
-            <li><a href="#">राजस्थान भूगोल</a></li>
-            <li><a href="#">भारतीय इतिहास</a></li>
-            <li><a href="#">भारतीय राजव्यवस्था</a></li>
-            <li><a href="#">अर्थव्यवस्था</a></li>
-            <li><a href="#">सामान्य विज्ञान</a></li>
+            <li><a href="#">à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ à¤­à¥à¤à¥à¤²</a></li>
+            <li><a href="#">à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤à¤¤à¤¿à¤¹à¤¾à¤¸</a></li>
+            <li><a href="#">à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤°à¤¾à¤à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</a></li>
+            <li><a href="#">à¤à¤°à¥à¤¥à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</a></li>
+            <li><a href="#">à¤¸à¤¾à¤®à¤¾à¤¨à¥à¤¯ à¤µà¤¿à¤à¥à¤à¤¾à¤¨</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>🎯 Exams</h4>
+          <h4>ð¯ Exams</h4>
           <ul>
             <li><a href="#">RAS Pre & Mains</a></li>
             <li><a href="#">IAS / UPSC</a></li>
@@ -1275,7 +1286,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>🔗 Quick Links</h4>
+          <h4>ð Quick Links</h4>
           <ul>
             <li><a href="#">Free Notes Download</a></li>
             <li><a href="#">Daily Quiz</a></li>
@@ -1286,8 +1297,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div>© 2025 Omkar Sir | New India Education, Jaipur, Rajasthan</div>
-        <div class="made">Made with ❤️ for Hindi Medium Students</div>
+        <div>Â© 2025 Omkar Sir | New India Education, Jaipur, Rajasthan</div>
+        <div class="made">Made with â¤ï¸ for Hindi Medium Students</div>
       </div>
     </div>
   </footer>
