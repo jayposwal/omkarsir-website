@@ -1,163 +1,165 @@
 <!DOCTYPE html>
 <html lang="hi">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Omkar Sir — RAS | IAS | SSC | हिंदी नोट्स</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-          body { font-family: 'Hind', sans-serif; background: #F8F9FA; color: #1A1A2E; }
-          h1, h2, h3 { font-family: 'Baloo 2', cursive; }
-          .tri { height: 4px; background: linear-gradient(90deg, #FF6B00 33%, #fff 33% 66%, #00A651 66%); }
-          nav {
-                  background: #fff;
-                  border-bottom: 1px solid #E8EAF0;
-                  padding: 0 6%;
-                  height: 65px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  position: sticky;
-                  top: 0;
-                  z-index: 99;
-                  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-          }
-          .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-          .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, #FF6B00, #FFB347); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-          .logo-name { font-family: 'Baloo 2', cursive; font-size: 18px; font-weight: 800; color: #1A1A2E; }
-          .logo-name span { color: #FF6B00; }
-          .logo-sub { font-size: 11px; color: #999; }
-          .nav-links { display: flex; gap: 4px; list-style: none; }
-          .nav-links a { color: #555; text-decoration: none; padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.2s; }
-          .nav-links a:hover { background: #FFF3E8; color: #FF6B00; }
-          .nav-app { background: #FF6B00 !important; color: white !important; font-weight: 700 !important; }
-          .nav-app:hover { background: #E05500 !important; }
-          .hero { background: linear-gradient(135deg, #FFF8F2, #FFFDF0); padding: 65px 6%; border-bottom: 1px solid #FFE0C0; text-align: center; }
-          .hero-badge { display: inline-block; background: #FFF3E8; border: 1px solid #FFD0A0; color: #FF6B00; padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 18px; }
-          .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.25; margin-bottom: 14px; }
-          .hero h1 span { color: #FF6B00; }
-          .hero p { font-size: 16px; color: #666; max-width: 500px; margin: 0 auto 28px; line-height: 1.7; }
-          .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-          .btn-main { background: #FF6B00; color: white; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 4px 16px rgba(255,107,0,0.3); transition: all 0.2s; }
-          .btn-main:hover { background: #E05500; transform: translateY(-2px); }
-          .btn-sec { background: white; color: #1A1A2E; padding: 13px 26px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; border: 2px solid #E8EAF0; transition: all 0.2s; }
-          .btn-sec:hover { border-color: #FF6B00; color: #FF6B00; }
-          .stats { background: white; border-bottom: 1px solid #E8EAF0; }
-          .stats-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
-          .stat { padding: 24px 16px; text-align: center; border-right: 1px solid #E8EAF0; }
-          .stat:last-child { border-right: none; }
-          .stat-num { font-family: 'Baloo 2', cursive; font-size: 28px; font-weight: 800; color: #FF6B00; display: block; }
-          .stat-label { font-size: 12px; color: #999; margin-top: 3px; }
-          .section { padding: 55px 6%; }
-          .sec-title { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 6px; }
-          .sec-title span { color: #FF6B00; }
-          .sec-sub { text-align: center; color: #999; font-size: 14px; margin-bottom: 34px; }
-          .subjects-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 14px; }
-          .sub-card { background: white; border-radius: 14px; padding: 22px 14px; text-align: center; text-decoration: none; color: inherit; border: 2px solid #E8EAF0; transition: all 0.25s; }
-          .sub-card:hover { border-color: #FF6B00; transform: translateY(-4px); box-shadow: 0 8px 24px rgba(255,107,0,0.1); }
-          .sub-icon { font-size: 36px; margin-bottom: 8px; display: block; }
-          .sub-name { font-family: 'Baloo 2', cursive; font-size: 14px; font-weight: 700; }
-          .exams-bg { background: white; }
-          .exams-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-          .exam-card { border-radius: 14px; padding: 22px; background: #FFF8F2; border: 1.5px solid #FFD5B0; text-decoration: none; color: inherit; transition: all 0.25s; }
-          .exam-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-          .exam-icon { font-size: 28px; margin-bottom: 8px; display: block; }
-          .exam-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 800; margin-bottom: 3px; }
-          .exam-desc { font-size: 12px; color: #999; }
-          .cta { background: #FFF3E8; border-top: 1px solid #FFD5B0; border-bottom: 1px solid #FFD5B0; padding: 55px 6%; text-align: center; }
-          .cta h2 { font-size: 30px; font-weight: 800; margin-bottom: 10px; }
-          .cta h2 span { color: #FF6B00; }
-          .cta p { color: #666; font-size: 15px; margin-bottom: 26px; }
-          footer { background: white; border-top: 1px solid #E8EAF0; padding: 28px 6%; text-align: center; color: #AAA; font-size: 13px; }
-          footer a { color: #FF6B00; text-decoration: none; margin: 0 8px; }
-          @media (max-width: 700px) {
-                  .nav-links { display: none; }
-                  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-          }
-        </style>
-  </head>
-  <body>
-    <div class="tri"></div>div>
-    <nav>
-        <a href="/" class="logo">
-              <div class="logo-icon">🎓</div>div>
-              <div>
-                      <div class="logo-name">Omkar Sir<span>.</span></div>
-                    <div class="logo-sub">New India Education</div>
-              </div>
-        </a>a>
-      <ul class="nav-links">
-          <li><a href="#">📚 विषय</a>a></li>
-          <li><a href="#">🎯 परीक्षाएं</a>a></li>
-          <li><a href="#">📄 नोट्स</a>a></li>
-          <li><a href="#">🧪 Quiz</a>a></li>
-          <li><a href="#" class="nav-app">📱 App Download</a>a></li>
-      </ul>ul>
-    </nav>
-  <section class="hero">
-    <div class="hero-badge">⭐ राजस्थान का #1 हिंदी माध्यम Platform</div>
-    <h1>RAS · IAS · SSC की तैयारी<br><span>एक जगह, बिल्कुल Free</span></h1>
-    <p>6 लाख+ Students का भरोसा। Free नोट्स, PYQs, Daily Quiz और Video Lectures — सब हिंदी में।</p>
-    <div class="hero-btns">
-        <a href="#" class="btn-main">📄 Free नोट्स Download करो</a>a>
-        <a href="#" class="btn-sec">🎥 YouTube Channel</a>a>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omkar Sir - RAS | IAS | SSC | Hindi Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
+h1,h2,h3{font-family:'Baloo 2',cursive}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+nav{background:#fff;border-bottom:1px solid #E8EAF0;padding:0 6%;height:65px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,0.06)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,#FF6B00,#FFB347);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-name{font-family:'Baloo 2',cursive;font-size:18px;font-weight:800;color:#1A1A2E}
+.logo-name span{color:#FF6B00}
+.logo-sub{font-size:11px;color:#999}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{color:#555;text-decoration:none;padding:7px 12px;border-radius:8px;font-size:14px;font-weight:500;transition:all 0.2s}
+.nav-links a:hover{background:#FFF3E8;color:#FF6B00}
+.nav-app{background:#FF6B00!important;color:white!important;font-weight:700!important;border-radius:8px}
+.nav-app:hover{background:#E05500!important}
+.hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:70px 6%;border-bottom:1px solid #FFE0C0;text-align:center}
+.hero-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:18px}
+.hero h1{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.25;margin-bottom:14px}
+.hero h1 span{color:#FF6B00}
+.hero p{font-size:16px;color:#666;max-width:500px;margin:0 auto 28px;line-height:1.7}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-main{background:#FF6B00;color:white;padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 4px 16px rgba(255,107,0,0.3);transition:all 0.2s;display:inline-block}
+.btn-main:hover{background:#E05500;transform:translateY(-2px)}
+.btn-sec{background:white;color:#1A1A2E;padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:2px solid #E8EAF0;transition:all 0.2s;display:inline-block}
+.btn-sec:hover{border-color:#FF6B00;color:#FF6B00}
+.stats{background:white;border-bottom:1px solid #E8EAF0}
+.stats-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:24px 16px;text-align:center;border-right:1px solid #E8EAF0}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Baloo 2',cursive;font-size:28px;font-weight:800;color:#FF6B00;display:block}
+.stat-label{font-size:12px;color:#999;margin-top:3px}
+.section{padding:55px 6%}
+.sec-title{text-align:center;font-size:28px;font-weight:800;margin-bottom:6px}
+.sec-title span{color:#FF6B00}
+.sec-sub{text-align:center;color:#999;font-size:14px;margin-bottom:34px}
+.subjects-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px}
+.sub-card{background:white;border-radius:14px;padding:22px 14px;text-align:center;text-decoration:none;color:inherit;border:2px solid #E8EAF0;transition:all 0.25s;display:block}
+.sub-card:hover{border-color:#FF6B00;transform:translateY(-4px);box-shadow:0 8px 24px rgba(255,107,0,0.1)}
+.sub-icon{font-size:36px;margin-bottom:8px;display:block}
+.sub-name{font-family:'Baloo 2',cursive;font-size:14px;font-weight:700}
+.exams-bg{background:white}
+.exams-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.exam-card{border-radius:14px;padding:22px;background:#FFF8F2;border:1.5px solid #FFD5B0;text-decoration:none;color:inherit;transition:all 0.25s;display:block}
+.exam-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+.exam-icon{font-size:28px;margin-bottom:8px;display:block}
+.exam-name{font-family:'Baloo 2',cursive;font-size:17px;font-weight:800;margin-bottom:3px}
+.exam-desc{font-size:12px;color:#999}
+.cta{background:#FFF3E8;border-top:1px solid #FFD5B0;border-bottom:1px solid #FFD5B0;padding:55px 6%;text-align:center}
+.cta h2{font-size:30px;font-weight:800;margin-bottom:10px}
+.cta h2 span{color:#FF6B00}
+.cta p{color:#666;font-size:15px;margin-bottom:26px}
+.features{background:#fff;padding:55px 6%}
+.features-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.feature-card{background:#F8F9FA;border-radius:16px;padding:28px 22px;text-align:center;border:1px solid #E8EAF0;transition:all 0.25s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.07);border-color:#FF6B00}
+.feature-icon{font-size:40px;margin-bottom:12px;display:block}
+.feature-title{font-family:'Baloo 2',cursive;font-size:16px;font-weight:800;margin-bottom:6px}
+.feature-desc{font-size:13px;color:#888;line-height:1.5}
+footer{background:#1A1A2E;padding:36px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Baloo 2',cursive;font-size:22px;font-weight:800;color:white;margin-bottom:8px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+.footer-links{margin:12px 0 8px}
+@media(max-width:700px){.nav-links{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="tri"></div>
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">🎓</div>
+    <div>
+      <div class="logo-name">Omkar Sir<span>.</span></div>
+      <div class="logo-sub">New India Education</div>
     </div>
-  </section>section>
-  <div class="stats">
-    <div class="stats-grid">
-        <div class="stat"><span class="stat-num">6 लाख+</span><div class="stat-label">📺 YouTube Subscribers</div></div>
-        <div class="stat"><span class="stat-num">2 लाख+</span><div class="stat-label">📱 App Users</div></div>
-        <div class="stat"><span class="stat-num">500+</span><div class="stat-label">📄 Free नोट्स</div></div>
-        <div class="stat"><span class="stat-num">10,000+</span><div class="stat-label">🏆 Students Selected</div></div>
-    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">📚 विषय</a></li>
+    <li><a href="#">🎯 परीक्षाएं</a></li>
+    <li><a href="#">📄 नोट्स</a></li>
+    <li><a href="#">🧪 Quiz</a></li>
+    <li><a href="#" class="nav-app">📱 App Download</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-badge">⭐ राजस्थान का #1 हिंदी माध्यम Platform</div>
+  <h1>RAS · IAS · SSC की तैयारी<br><span>एक जगह, बिल्कुल Free</span></h1>
+  <p>6 लाख+ Students का भरोसा। Free नोट्स, PYQs, Daily Quiz और Video Lectures — सब हिंदी में।</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-main">📄 Free नोट्स Download करो</a>
+    <a href="#" class="btn-sec">🎥 YouTube Channel</a>
   </div>
-  <section class="section">
-    <h2 class="sec-title">सभी <span>विषय</span></h2>
-    <p class="sec-sub">अपना विषय चुनो और पढ़ना शुरू करो</p>
-    <div class="subjects-grid">
-        <a href="#" class="sub-card"><span class="sub-icon">🗺️</span><div class="sub-name">राजस्थान भूगोल</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">🏛️</span><div class="sub-name">भारतीय इतिहास</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">⚖️</span><div class="sub-name">राजव्यवस्था</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">📈</span><div class="sub-name">अर्थव्यवस्था</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">🌍</span><div class="sub-name">विश्व भूगोल</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">🔬</span><div class="sub-name">सामान्य विज्ञान</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">🏰</span><div class="sub-name">राजस्थान GK</div></a>a>
-        <a href="#" class="sub-card"><span class="sub-icon">📰</span><div class="sub-name">Current Affairs</div></a>a>
-    </div>
-  </section>section>
-  <section class="section exams-bg">
-    <h2 class="sec-title">कौन सी <span>परीक्षा</span> की तैयारी?</h2>
-    <p class="sec-sub">अपनी परीक्षा चुनो</p>
-    <div class="exams-grid">
-        <a href="#" class="exam-card"><span class="exam-icon">🏛️</span><div class="exam-name">RAS / RTS</div><div class="exam-desc">RPSC — Pre & Mains</div></a>a>
-        <a href="#" class="exam-card"><span class="exam-icon">🇮🇳</span><div class="exam-name">IAS / UPSC</div><div class="exam-desc">UPSC — Civil Services</div></a>a>
-        <a href="#" class="exam-card"><span class="exam-icon">📋</span><div class="exam-name">SSC CGL</div><div class="exam-desc">Staff Selection Commission</div></a>a>
-        <a href="#" class="exam-card"><span class="exam-icon">🚂</span><div class="exam-name">Railway</div><div class="exam-desc">RRB NTPC / Group D</div></a>a>
-        <a href="#" class="exam-card"><span class="exam-icon">👮</span><div class="exam-name">Police / पटवारी</div><div class="exam-desc">Rajasthan Police / Patwar</div></a>a>
-    </div>
-  </section>section>
-  <section class="cta">
-    <h2>🚀 आज ही <span>शुरू करो!</span></h2>
-    <p>App download करो और OMASTRA व SAMPOORNA courses join करो</p>
-    <div class="hero-btns">
-        <a href="#" class="btn-main">📱 App Download करो</a>a>
-        <a href="#" class="btn-sec">🎥 YouTube Channel देखो</a>a>
-    </div>
-  </section>section>
-  <footer>
-      <div>© 2025 Omkar Sir | New India Education, Jaipur, Rajasthan</div>
-      <div style="margin-top:8px;">
-            <a href="#">YouTube</a>a>
-            <a href="#">Telegram</a>a>
-            <a href="#">App Download</a>a>
-      </div>
-  </footer>
-  </body>
-</html>html>
-  </footer></p></span></span></p></h1></li></li></span>
-              </div>
-    </nav>
-  </body>
-    </style></title>
-  </head>
+</section>
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><span class="stat-num">6 लाख+</span><div class="stat-label">📺 YouTube Subscribers</div></div>
+    <div class="stat"><span class="stat-num">2 लाख+</span><div class="stat-label">📱 App Users</div></div>
+    <div class="stat"><span class="stat-num">500+</span><div class="stat-label">📄 Free नोट्स</div></div>
+    <div class="stat"><span class="stat-num">10,000+</span><div class="stat-label">🏆 Students Selected</div></div>
+  </div>
+</div>
+<section class="features">
+  <h2 class="sec-title">हमारे <span>फीचर</span></h2>
+  <p class="sec-sub">सब कुछ जो आपको चाहिए यहाँ मिलेगा</p>
+  <div class="features-grid">
+    <div class="feature-card"><span class="feature-icon">📄</span><div class="feature-title">Free नोट्स</div><div class="feature-desc">500+ हिंदी नोट्स बिल्कुल मुफ्त में</div></div>
+    <div class="feature-card"><span class="feature-icon">🧪</span><div class="feature-title">Daily Quiz</div><div class="feature-desc">रोज नए Quiz से तैयारी जाँचो</div></div>
+    <div class="feature-card"><span class="feature-icon">🎥</span><div class="feature-title">Video Lectures</div><div class="feature-desc">हिंदी में Video Lectures बिल्कुल मुफ्त</div></div>
+    <div class="feature-card"><span class="feature-icon">📝</span><div class="feature-title">PYQ Papers</div><div class="feature-desc">पुराने प्रश्न पत्रों का हल करो</div></div>
+  </div>
+</section>
+<section class="section">
+  <h2 class="sec-title">सभी <span>विषय</span></h2>
+  <p class="sec-sub">अपना विषय चुनो और पढ़ना शुरू करो</p>
+  <div class="subjects-grid">
+    <a href="#" class="sub-card"><span class="sub-icon">🗺️</span><div class="sub-name">राजस्थान भूगोल</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">🏛️</span><div class="sub-name">भारतीय इतिहास</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">⚖️</span><div class="sub-name">राजव्यवस्था</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">📈</span><div class="sub-name">अर्थव्यवस्था</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">🌍</span><div class="sub-name">विश्व भूगोल</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">🔬</span><div class="sub-name">सामान्य विज्ञान</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">🏰</span><div class="sub-name">राजस्थान GK</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">📰</span><div class="sub-name">Current Affairs</div></a>
+  </div>
+</section>
+<section class="section exams-bg">
+  <h2 class="sec-title">कौन सी <span>परीक्षा</span> की तैयारी?</h2>
+  <p class="sec-sub">अपनी परीक्षा चुनो</p>
+  <div class="exams-grid">
+    <a href="#" class="exam-card"><span class="exam-icon">🏛️</span><div class="exam-name">RAS / RTS</div><div class="exam-desc">RPSC — Pre &amp; Mains</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">U0001F1EEU0001F1F3</span><div class="exam-name">IAS / UPSC</div><div class="exam-desc">UPSC — Civil Services</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">📋</span><div class="exam-name">SSC CGL</div><div class="exam-desc">Staff Selection Commission</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">🚂</span><div class="exam-name">Railway</div><div class="exam-desc">RRB NTPC / Group D</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">👮</span><div class="exam-name">Police / पटवारी</div><div class="exam-desc">Rajasthan Police / Patwar</div></a>
+  </div>
+</section>
+<section class="cta">
+  <h2>🚀 आज ही <span>शुरू करो!</span></h2>
+  <p>App download करो और OMASTRA व SAMPOORNA courses join करो</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-main">📱 App Download करो</a>
+    <a href="#" class="btn-sec">🎥 YouTube Channel देखो</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:13px;margin-bottom:10px">New India Education, Jaipur, Rajasthan</div>
+  <div class="footer-links">
+    <a href="#">YouTube</a>
+    <a href="#">Telegram</a>
+    <a href="#">App Download</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  <div style="margin-top:8px">© 2025 Omkar Sir | All Rights Reserved</div>
+</footer>
+</body>
+</html>
