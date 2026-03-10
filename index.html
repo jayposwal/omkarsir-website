@@ -70,6 +70,15 @@ footer{background:#1A1A2E;padding:36px 6%;text-align:center;color:#aaa;font-size
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 .footer-links{margin:12px 0 8px}
 @media(max-width:700px){.nav-links{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Dropdown */
+.nav-links li{position:relative}
+.dropdown-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;background:#fff;border:1px solid #E8EAF0;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.12);min-width:200px;z-index:999;padding:8px 0;list-style:none}
+.dropdown-menu li a{display:flex;align-items:center;gap:8px;padding:10px 16px;color:#333;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.15s}
+.dropdown-menu li a:hover{background:#FFF3E8;color:#FF6B00}
+.nav-links li:hover .dropdown-menu{display:block}
+.has-dropdown > a::after{content:' ▾';font-size:10px;color:#999}
+.dropdown-menu::before{content:'';position:absolute;top:-6px;left:18px;width:12px;height:12px;background:#fff;border-left:1px solid #E8EAF0;border-top:1px solid #E8EAF0;transform:rotate(45deg)}
 </style>
 </head>
 <body>
@@ -83,8 +92,8 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#">📚 विषय</a></li>
-    <li><a href="#">🎯 परीक्षाएं</a></li>
+    <li class="has-dropdown"><a href="#">📚 विषय</a><ul class="dropdown-menu"><li><a href="#">🗺️ राजस्थान भूगोल</a></li><li><a href="#">🏛️ भारतीय इतिहास</a></li><li><a href="#">⚖️ राजव्यवस्था</a></li><li><a href="#">📈 अर्थव्यवस्था</a></li><li><a href="#">🌍 विश्व भूगोल</a></li><li><a href="#">🔬 सामान्य विज्ञान</a></li><li><a href="#">🏰 राजस्थान GK</a></li><li><a href="#">📰 Current Affairs</a></li></ul></li>
+    <li class="has-dropdown"><a href="#">🎯 परीक्षाएं</a><ul class="dropdown-menu"><li><a href="#">🏛️ RAS / RTS — RPSC</a></li><li><a href="#">🇮🇳 IAS / UPSC</a></li><li><a href="#">📋 SSC CGL</a></li><li><a href="#">🚂 Railway — RRB NTPC</a></li><li><a href="#">👮 Rajasthan Police</a></li><li><a href="#">📝 पटवारी / Patwar</a></li></ul></li>
     <li><a href="#">📄 नोट्स</a></li>
     <li><a href="#">🧪 Quiz</a></li>
     <li><a href="#" class="nav-app">📱 App Download</a></li>
