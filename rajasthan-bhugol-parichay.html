@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>राजस्थान भूगोल – परिचय | Chapter 1 | Omkar Sir</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+nav{background:#fff;padding:0 5%;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,0.07);position:sticky;top:0;z-index:99}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#FF6B00,#FFB347);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-name{font-family:'Baloo 2';font-size:16px;font-weight:800;color:#1A1A2E}
+.logo-name span{color:#FF6B00}
+.nav-back{color:#FF6B00;text-decoration:none;font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px}
+.breadcrumb{background:#fff;padding:10px 5%;border-bottom:1px solid #E8EAF0;font-size:13px;color:#999}
+.breadcrumb a{color:#FF6B00;text-decoration:none}
+.article-header{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:40px 5%;border-bottom:1px solid #FFE0C0}
+.chapter-badge{display:inline-block;background:#FF6B00;color:white;padding:5px 14px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:14px;letter-spacing:0.5px}
+.subject-badge{display:inline-block;background:#E8F5E9;color:#2E7D32;padding:4px 12px;border-radius:50px;font-size:12px;font-weight:600;margin:0 6px 14px 0;}
+.article-header h1{font-family:'Baloo 2';font-size:clamp(22px,3.5vw,36px);font-weight:800;line-height:1.25;margin-bottom:10px}
+.article-header h1 span{color:#FF6B00}
+.article-meta{font-size:13px;color:#999;margin-top:10px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.article-meta span{display:flex;align-items:center;gap:4px}
+.exam-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.exam-tag{background:#FFF3E8;border:1px solid #FFD0A0;color:#E05500;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600}
+.content-area{max-width:860px;margin:0 auto;padding:30px 5% 60px}
+.toc-box{background:#FFF3E8;border:2px solid #FFD5B0;border-radius:14px;padding:20px 24px;margin-bottom:32px}
+.toc-box h3{font-family:'Baloo 2';font-size:16px;font-weight:800;color:#FF6B00;margin-bottom:12px}
+.toc-box ol{padding-left:20px}
+.toc-box li{margin:6px 0;font-size:14px}
+.toc-box a{color:#1A1A2E;text-decoration:none;transition:color 0.2s}
+.toc-box a:hover{color:#FF6B00}
+.section-block{background:white;border-radius:14px;padding:24px 26px;margin-bottom:22px;border:1px solid #E8EAF0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.section-block h2{font-family:'Baloo 2';font-size:19px;font-weight:800;color:#1A1A2E;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #FFE0C0;display:flex;align-items:center;gap:8px}
+.section-block h2 .sec-num{background:#FF6B00;color:white;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+.section-block h3{font-family:'Baloo 2';font-size:16px;font-weight:700;color:#FF6B00;margin:18px 0 10px}
+.section-block p{font-size:14.5px;margin-bottom:12px;color:#333}
+.section-block ul,.section-block ol{padding-left:20px;margin-bottom:12px}
+.section-block li{font-size:14px;margin:5px 0;color:#333}
+.highlight-box{background:#FFF8F2;border-left:4px solid #FF6B00;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0;font-size:14px}
+.highlight-box strong{color:#FF6B00}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.info-card{background:#F8F9FA;border:1px solid #E8EAF0;border-radius:10px;padding:14px 16px;text-align:center}
+.info-card .val{font-family:'Baloo 2';font-size:20px;font-weight:800;color:#FF6B00}
+.info-card .lbl{font-size:12px;color:#888;margin-top:3px}
+.table-wrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#FF6B00;color:white;padding:10px 12px;text-align:left;font-weight:600}
+td{padding:9px 12px;border-bottom:1px solid #E8EAF0;color:#333}
+tr:nth-child(even) td{background:#FFF8F2}
+.important-box{background:linear-gradient(135deg,#FFF3E8,#FFF8F2);border:2px solid #FF6B00;border-radius:12px;padding:18px 20px;margin:18px 0}
+.important-box .imp-title{font-family:'Baloo 2';font-size:14px;font-weight:800;color:#FF6B00;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.important-box ul{padding-left:18px}
+.important-box li{font-size:13.5px;margin:4px 0;color:#333}
+.trick-box{background:linear-gradient(135deg,#E8F5E9,#F1F8E9);border:2px solid #4CAF50;border-radius:12px;padding:16px 20px;margin:14px 0}
+.trick-box .trick-title{font-family:'Baloo 2';font-size:14px;font-weight:800;color:#2E7D32;margin-bottom:8px}
+.quick-recap{background:#1A1A2E;border-radius:14px;padding:22px;margin:20px 0;color:white}
+.quick-recap h3{font-family:'Baloo 2';font-size:17px;font-weight:800;color:#FF6B00;margin-bottom:14px}
+.recap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.recap-item{background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;font-size:13px}
+.recap-item strong{color:#FFB347}
+.number-facts{background:#FFF8F2;border:1px solid #FFD5B0;border-radius:12px;padding:18px 20px;margin:18px 0}
+.number-facts h3{font-family:'Baloo 2';font-size:16px;font-weight:800;color:#FF6B00;margin-bottom:12px}
+.num-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
+.num-item{display:flex;align-items:center;gap:8px;font-size:13px;background:white;padding:8px 10px;border-radius:8px;border:1px solid #E8EAF0}
+.num-val{font-family:'Baloo 2';font-size:16px;font-weight:800;color:#FF6B00;white-space:nowrap}
+.stage-table td:first-child{font-weight:700;color:#FF6B00}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:#FF6B00;color:white;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;margin-top:20px;box-shadow:0 4px 14px rgba(255,107,0,0.3)}
+footer{background:#1A1A2E;padding:28px 5%;text-align:center;color:#aaa;font-size:13px}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+.footer-logo{font-family:'Baloo 2';font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+@media(max-width:600px){.info-grid{grid-template-columns:repeat(2,1fr)}.recap-grid{grid-template-columns:1fr}.num-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="tri"></div>
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">🎓</div>
+    <div><div class="logo-name">Omkar Sir<span>.</span></div><div style="font-size:10px;color:#999">New India Education</div></div>
+  </a>
+  <a href="/" class="nav-back">← वापस जाएं</a>
+</nav>
+<div class="breadcrumb">
+  <a href="/">🏠 Home</a> &rsaquo; <a href="#">🗺️ राजस्थान भूगोल</a> &rsaquo; <span style="color:#1A1A2E">Chapter 1 – परिचय</span>
+</div>
+
+<header class="article-header">
+  <div style="max-width:860px;margin:0 auto">
+    <span class="chapter-badge">🗺️ Chapter 1</span>
+    <span class="subject-badge">🇮🇳 राजस्थान भूगोल</span>
+    <h1>राजस्थान – <span>परिचय</span> एवं सामान्य जानकारी</h1>
+    <div class="article-meta">
+      <span>👨‍🏫 Omkar Sir</span>
+      <span>⏱ 15-20 मिनट अध्ययन</span>
+      <span>📊 Most Repeated Questions</span>
+    </div>
+    <div class="exam-tags">
+      <span class="exam-tag">🏗️ RAS/RPSC</span>
+      <span class="exam-tag">🇮🇳 IAS/UPSC</span>
+      <span class="exam-tag">📝 Patwar</span>
+      <span class="exam-tag">👮 Rajasthan Police</span>
+      <span class="exam-tag">🎓 REET</span>
+    </div>
+  </div>
+</header>
+
+<main class="content-area">
+
+<!-- Table of Contents -->
+<div class="toc-box">
+  <h3>📑 इस अध्याय में क्या-क्या पढ़ेंगे?</h3>
+  <ol>
+    <li><a href="#sec1">नामकरण एवं इतिहास</a></li>
+    <li><a href="#sec2">भूगोलिक स्थिति</a></li>
+    <li><a href="#sec3">राजनीतिक एकीकरण</a></li>
+    <li><a href="#sec4">वर्तमान जिले एवं संभाग</a></li>
+    <li><a href="#sec5">विस्तार एवं अक्षांश</a></li>
+    <li><a href="#sec6">कर्क रेखा (Tropic of Cancer)</a></li>
+    <li><a href="#sec7">आकार एवं क्षेत्रफल</a></li>
+    <li><a href="#sec8">सीमाएं एवं पड़ोसी राज्य</a></li>
+    <li><a href="#sec9">जिलेवार विस्तार</a></li>
+    <li><a href="#sec10">संभागवार विवरण</a></li>
+    <li><a href="#sec11">अनुच्छेद 71 – राज्यपाल / उपराज्यपाल</a></li>
+    <li><a href="#sec12">परीक्षा उपयोगी संक्षिप्त पुनरावृत्ति</a></li>
+  </ol>
+</div>
+
+<!-- Section 1: Naming -->
+<div class="section-block" id="sec1">
+  <h2><span class="sec-num">1</span> नामकरण एवं इतिहास</h2>
+  <h3>1.1 नाम का इतिहास</h3>
+  <p>राजस्थान नाम लगभग <strong>1800 ई. से प्रचलित</strong> हुआ। आधुनिक रूप में इस नाम का प्रयोग <strong>1829 ई. से</strong> अधिक सआ हुआ।</p>
+  <div class="highlight-box">
+    📖 <strong>Colonel James Tod</strong> ने अपनी पुस्तक “<em>The Annals and Antiquities of Rajasthan</em>” (1829) में इस नाम का संगठित प्रयोग किया। पुस्तक का पूरा नाम: <strong>"Central and Western Rajput States of India"</strong>
+  </div>
+  <ul>
+    <li>राजस्थान के अन्य नाम: <strong>राइथन</strong>, <strong>राजवाड़ा</strong></li>
+    <li>1800 ई. से नाम प्रचलित, लेकिन संगठित प्रयोग 1829 से</li>
+  </ul>
+  <h3>1.2 भूगोलिक स्थिति</h3>
+  <p>राजस्थान भारत के <strong>उत्तर-पश्चिमी</strong> (पश्चिमोत्तर) कोने में स्थित है। पूर्वी गोलार्ध में North-West India के रूप में जाना जाता है।</p>
+</div>
+
+<!-- Section 2: Plate Tectonics -->
+<div class="section-block" id="sec2">
+  <h2><span class="sec-num">2</span> भूगोलिक स्थिति एवं भूवैज्ञानिक उत्पत्ति</h2>
+  <h3>2.1 Pangea सिद्धांत (Alfred Wegener)</h3>
+  <p>Wegener के अनुसार लगभग <strong>46 करोड़ वर्ष</strong> पहले समस्त भूमि एक महाद्वीप <strong>Pangea</strong> के रूप में थी जो एक महासागर <strong>Panthalassa</strong> से घिरी थी।</p>
+  <ul>
+    <li>Pangea के टूटने से <strong>Tethys Sea (Geosyncline)</strong> बना</li>
+    <li>इसी से हिमालय, अरावली, थार आदि का निर्माण</li>
+  </ul>
+  <h3>2.2 राजस्थान की भूवैज्ञानिक संरचना</h3>
+  <div class="info-grid">
+    <div class="info-card"><div class="val">🌊</div><div class="lbl">उत्तर – हिमालय (नदीयां)</div></div>
+    <div class="info-card"><div class="val">⛰️</div><div class="lbl">पश्चिम – अरावली</div></div>
+    <div class="info-card"><div class="val">🏜️</div><div class="lbl">उत्तर-पश्चिम – थार मरुस्थल</div></div>
+    <div class="info-card"><div class="val">🌾</div><div class="lbl">पूर्व – मैदानी क्षेत्र</div></div>
+  </div>
+</div>
+
+<!-- Section 3: Political Integration -->
+<div class="section-block" id="sec3">
+  <h2><span class="sec-num">3</span> राजनीतिक एकीकरण</h2>
+  <h3>3.1 एकीकरण से पहले</h3>
+  <p>1947 से पहले राजस्थान में <strong>19 देशी रियासतें</strong> (रजवाड़े) थीं। इनका एकीकरण <strong>Sardar Vallabhbhai Patel</strong> ओर <strong>V.P. Menon</strong> के नेतृत्व में हुआ।</p>
+  <div class="highlight-box">
+    📊 <strong>कुल जमाव में :</strong> 8 जिलों के 7 चरणों में 14 रियासतों का एकीकरण हुआ
+  </div>
+  <h3>3.2 एकीकरण के 7 चरण</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>चरण</th><th>तिथि</th><th>विवरण</th></tr>
+      <tr><td>I चरण</td><td>18 मार्च 1948</td><td>मत्स्य संघ</td></tr>
+      <tr><td>II चरण</td><td>25 मार्च 1948</td><td>9 रियासतें – राजस्थान संघ</td></tr>
+      <tr><td>III चरण</td><td>18 अप्रैल 1948</td><td>उदयपुर – PM Jawaharlal Nehru ने उदघाटन</td></tr>
+      <tr><td>IV चरण</td><td>30 मार्च 1949</td><td>जैसलमेर, जोधपुर, बीकानेर, जयपुर</td></tr>
+      <tr><td>V चरण</td><td>15 मई 1949</td><td>मत्स्य का विलय</td></tr>
+      <tr><td>VI चरण</td><td>26 जनवरी 1950</td><td>सिरोही (अजमेर) विलय</td></tr>
+      <tr><td>VII चरण</td><td>1 नवंबर 1956</td><td>आबू, अजमेर – <strong>राजस्थान</strong> नाम मिला</td></tr>
+    </table>
+  </div>
+  <div class="important-box">
+    <div class="imp-title">⭐ Most Repeated Question!</div>
+    <ul>
+      <li>राजस्थान एकीकरण कुल <strong>7 चरणों</strong> में</li>
+      <li>V.P. Menon ने <strong>18 मार्च 1948</strong> से शुरू</li>
+      <li><strong>1 नवंबर 1956</strong> को पूर्ण राजस्थान</li>
+      <li>विधिवत एकीकरण में <strong>5 वर्ष 26 दिन</strong> लगे</li>
+    </ul>
+  </div>
+  <h3>3.3 ऐतिहासिक तिथियां</h3>
+  <p>एकीकरण की महत्वपूर्ण तिथियां: <strong>30 मार्च 1949</strong> (वृहत राजस्थान) एवं <strong>1 नवंबर 1956</strong> (वर्तमान राजस्थान)</p>
+</div>
+
+<!-- Section 4: Districts -->
+<div class="section-block" id="sec4">
+  <h2><span class="sec-num">4</span> वर्तमान जिले एवं संभाग</h2>
+  <h3>4.1 जिलों का इतिहास (1991-2008)</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>जिला संख्या</th><th>तिथि</th><th>विवरण</th></tr>
+      <tr><td>27</td><td>15 अगस्त 1982</td><td>धौलपुर (Baran)</td></tr>
+      <tr><td>28</td><td>10 अप्रैल 1991</td><td>बारां</td></tr>
+      <tr><td>29</td><td>10 अप्रैल 1991</td><td>दौसा</td></tr>
+      <tr><td>30</td><td>10 अप्रैल 1991</td><td>राजसमंद</td></tr>
+      <tr><td>31</td><td>12 जुलाई 1994</td><td>हनुमानगढ़</td></tr>
+      <tr><td>32</td><td>19 जुलाई 1997</td><td>करौली</td></tr>
+      <tr><td>33</td><td>26 जनवरी 2008</td><td>प्रतापगढ़</td></tr>
+    </table>
+  </div>
+  <h3>4.2 नए जिले (2023 – कुल 41)</h3>
+  <p>7 अगस्त 2023 से <strong>8 नए जिले</strong> (34-41) शामिल किए गए और अब कुल जिले <strong>41</strong> हैं।</p>
+  <div class="trick-box">
+    <div class="trick-title">💡 Trick: Duck Rhombus</div>
+    <p>राजस्थान का आकार बाएं से देखने पर डक (Duck) जैसा और ठीक से <strong>Rhombus / विषमचतुर्भुज</strong> जैसा दिखता है।</p>
+  </div>
+</div>
+
+<!-- Section 5: Area & Coordinates -->
+<div class="section-block" id="sec5">
+  <h2><span class="sec-num">5</span> विस्तार एवं अक्षांश</h2>
+  <div class="info-grid">
+    <div class="info-card"><div class="val">23°03'</div><div class="lbl">दक्षिणतम अक्षांश</div></div>
+    <div class="info-card"><div class="val">30°12'</div><div class="lbl">उत्तरतम अक्षांश</div></div>
+    <div class="info-card"><div class="val">69°30'</div><div class="lbl">पश्चिमतम देशांतर</div></div>
+    <div class="info-card"><div class="val">78°17'</div><div class="lbl">पूर्वतम देशांतर</div></div>
+  </div>
+  <div class="highlight-box">
+    📌 <strong>विस्तार:</strong> उत्तर से दक्षिण: 826 km | पूर्व से पश्चिम: 869 km | অ° अंतर = <strong>35 मिनिट</strong> का समय अंतर
+  </div>
+  <p><strong>Mid Village – RPSC:</strong> नागौर (नागौर जिला)</p>
+</div>
+
+<!-- Section 6: Tropic of Cancer -->
+<div class="section-block" id="sec6">
+  <h2><span class="sec-num">6</span> कर्क रेखा (Tropic of Cancer)</h2>
+  <h3>6.1 कर्क रेखा क्या है?</h3>
+  <p>कर्क रेखा <strong>23°30' उत्तरी अक्षांश</strong> पर स्थित है। वर्तमान तापीय गति के कारण यह <strong>23°26'</strong> मानी जाती है।</p>
+  <h3>6.2 राजस्थान के जिले जिनसे गुजरती है (8 जिले)</h3>
+  <div class="info-grid">
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">डूंगरपुर</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">बांसवाड़ा</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">चित्तौड़गढ़</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">उदयपुर</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">राजसमंद</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">अजमेर</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">जयपुर</div></div>
+    <div class="info-card"><div class="val">🇸</div><div class="lbl">सवाईमाधोपुर</div></div>
+  </div>
+  <div class="important-box">
+    <div class="imp-title">⭐ महत्वपूर्ण तथ्य</div>
+    <ul>
+      <li>कर्क रेखा <strong>डूंगरपुर से सवाईमाधोपुर</strong> तक गुजरती है</li>
+      <li>21 जून को सूर्य <strong>सीधा सिर पर</strong> (Summer Solstice)</li>
+      <li>21 जून 2025 – <strong>Yoga for One Earth One Health</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Section 7: Shape & Area -->
+<div class="section-block" id="sec7">
+  <h2><span class="sec-num">7</span> आकार एवं क्षेत्रफल</h2>
+  <div class="info-grid">
+    <div class="info-card"><div class="val">3,42,239</div><div class="lbl">कुल क्षेत्रफल (km²)</div></div>
+    <div class="info-card"><div class="val">10.41%</div><div class="lbl">भारत का %</div></div>
+    <div class="info-card"><div class="val">826 km</div><div class="lbl">उत्तर-दक्षिण लंबाई</div></div>
+    <div class="info-card"><div class="val">869 km</div><div class="lbl">पूर्व-पश्चिम चौड़ाई</div></div>
+    <div class="info-card"><div class="val">43</div><div class="lbl">अवस्थित देशांतर (डिग्री)</div></div>
+    <div class="info-card"><div class="val">1st</div><div class="lbl">क्षेत्रफल में राज्य रैंक</div></div>
+  </div>
+  <h3>7.2 क्षेत्रफल रैंकिंग (Top 4 राज्य)</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>रैंक</th><th>राज्य</th><th>क्षेत्रफल (km²)</th></tr>
+      <tr><td>1st</td><td>राजस्थान</td><td>3,42,239</td></tr>
+      <tr><td>2nd</td><td>मध्य प्रदेश</td><td>3,08,245</td></tr>
+      <tr><td>3rd</td><td>महाराष्ट्र</td><td>3,07,713</td></tr>
+      <tr><td>4th</td><td>उत्तर प्रदेश</td><td>2,40,928</td></tr>
+    </table>
+  </div>
+  <div class="highlight-box">
+    💡 राजस्थान ≈ <strong>2 विधानसभा क्षेत्रों</strong> के बराबर | <strong>5 इंग्लैंड</strong> के समान। विश्व में आकार के दृष्टिसे <strong>17वां स्थान</strong>
+  </div>
+</div>
+
+<!-- Section 8: Boundaries -->
+<div class="section-block" id="sec8">
+  <h2><span class="sec-num">8</span> सीमाएं एवं पड़ोसी राज्य</h2>
+  <h3>8.1 सीमा विवरण</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>दिशा</th><th>सीमा</th><th>विवरण</th></tr>
+      <tr><td>उत्तर</td><td>पाकिस्तान</td><td>1070 km सीमा (International)</td></tr>
+      <tr><td>उत्तर-पश्चिम</td><td>पाकिस्तान</td><td>Radcliffe Line / Sir Cyril Radcliffe 1947</td></tr>
+      <tr><td>उत्तर</td><td>पंजाब / हरियाणा</td><td>18 राजस्थान जिले</td></tr>
+      <tr><td>पूर्व</td><td>उत्तर प्रदेश, मध्य प्रदेश</td><td>30 राजस्थान जिले</td></tr>
+      <tr><td>दक्षिण</td><td>गुजरात / मध्य प्रदेश</td><td>464 km</td></tr>
+    </table>
+  </div>
+  <h3>8.2 सीमावर्ती राज्यों के जिले</h3>
+  <div class="info-grid">
+    <div class="info-card"><div class="val">4850 km</div><div class="lbl">कुल राज्य सीमाइ</div></div>
+    <div class="info-card"><div class="val">5920 km</div><div class="lbl">कुल सीमाइ (Pak सहित)</div></div>
+    <div class="info-card"><div class="val">17</div><div class="lbl">सीमावर्ती जिले</div></div>
+    <div class="info-card"><div class="val">1947</div><div class="lbl">सीमा निर्धारण वर्ष</div></div>
+  </div>
+</div>
+
+<!-- Section 9: District-wise Area -->
+<div class="section-block" id="sec9">
+  <h2><span class="sec-num">9</span> जिलेवार विस्तार</h2>
+  <h3>9.1 क्षेत्रफल के आधार पर (शीर्ष 5)</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>क्षेत्रफल</th><th>जिला</th></tr>
+      <tr><td>सबसे बड़ा – 1600 km²</td><td>जैसलमेर</td></tr>
+      <tr><td>दूसरा – 1262 km²</td><td>बाड़मेर (इंदिरा गांधी)</td></tr>
+      <tr><td>तीसरा – 1022 km²</td><td>बीकानेर</td></tr>
+      <tr><td>चौथा – 877 km²</td><td>U.P. (नहीं – उत्तर प्रदेश)</td></tr>
+      <tr><td>पांचवां – 89 km²</td><td>धौलपुर</td></tr>
+    </table>
+  </div>
+  <div class="trick-box">
+    <div class="trick-title">💡 Trick: J B B UP D (1 से 5 तक)</div>
+    <p>जैसलमेर, बाड़मेर, बीकानेर, जोधपुर, धौलपुर — 1600, 1262, 1022, 877, 89</p>
+  </div>
+  <h3>9.2 पड़ोसी राज्य एवं जिले (Landlocked)</h3>
+  <p>राजस्थान <strong>Landlocked State</strong> है – कोई समुद्री सीमा नहीं। इसकी सीमा कुल <strong>5 राज्यों</strong> और <strong>1 देश</strong> (पाकिस्तान) से लगती है।</p>
+  <div class="highlight-box">
+    📍 <strong>13 जिले</strong> किसी राज्य से नहीं जुड़ते | <strong>520 km</strong> पर 1913 इंदीरा गांधी नहर | विश्व में <strong>17वां</strong>
+  </div>
+</div>
+
+<!-- Section 10: Divisions -->
+<div class="section-block" id="sec10">
+  <h2><span class="sec-num">10</span> संभागवार विवरण</h2>
+  <h3>10.1 संभागों का इतिहास</h3>
+  <p>30 मार्च 1949 को 5 संभाग – संभागों की संख्या बढ़ती रही। <strong>26 जनवरी 1987</strong> से 6, <strong>4 दिसंबर 2005</strong> से 7, और <strong>7 अगस्त 2023</strong> से <strong>3 नए संभाग</strong> – अब <strong>10 संभाग</strong> (41 जिले)।</p>
+  <h3>10.2 संभागवार जिले</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>#</th><th>संभाग</th><th>जिले</th></tr>
+      <tr><td>1</td><td>अजमेर</td><td>7 जिले</td></tr>
+      <tr><td>2</td><td>जयपुर</td><td>6 जिले</td></tr>
+      <tr><td>3</td><td>जोधपुर</td><td>8 जिले</td></tr>
+      <tr><td>4</td><td>उदयपुर</td><td>7 जिले</td></tr>
+      <tr><td>5</td><td>कोटा</td><td>4 जिले</td></tr>
+      <tr><td>6</td><td>ंभरतपुर</td><td>5 जिले</td></tr>
+      <tr><td>7</td><td>बीकानेर</td><td>4 जिले</td></tr>
+    </table>
+  </div>
+  <div class="trick-box">
+    <div class="trick-title">💡 Trick: संभाग याद रखने के लिए</div>
+    <p><strong>A J J U K B B</strong> – अजमेर, जयपुर, जोधपुर, उदयपुर, कोटा, भरतपुर, बीकानेर</p>
+  </div>
+  <h3>10.3 4-4 Landlocked</h3>
+  <p>सीमावर्ती राज्य: <strong>UP, MP, Punjab, Haryana, Gujarat</strong> + <strong>Pakistan</strong>. नवीनतम जिला: 2024 – 9 नए (19 जुलाई 2024)</p>
+</div>
+
+<!-- Section 11: Article 71 -->
+<div class="section-block" id="sec11">
+  <h2><span class="sec-num">11</span> अनुच्छेद 71 – राज्यपाल / उपराज्यपाल</h2>
+  <div class="highlight-box">
+    🏠 <strong>राजस्थान राज्यपाल का मुख्यालय:</strong> उदयपुर (1997 से जयपुर हो गया)
+  </div>
+  <ul>
+    <li>राज्यपाल का वेतन: <strong>राज्य में्</strong> से (Consolidated Fund of State)</li>
+    <li>PM ने नियुक्त किया: <strong>2 दिसंबर 1959</strong></li>
+    <li>जानवरी 12, 1994 – <strong>गुरु वजीफ</strong></li>
+    <li>जानवरी 13, 2011 – <strong>राज्यपाल</strong> संआधिन गवर्नरस</li>
+    <li>अनुच्छेद 18, 1974 – उपराज्यपाल</li>
+  </ul>
+</div>
+
+<!-- Section 12: Quick Recap -->
+<div class="section-block" id="sec12">
+  <h2><span class="sec-num">12</span> परीक्षा उपयोगी पुनरावृत्ति</h2>
+  <h3>12.1 Most Repeated Questions</h3>
+  <div class="important-box">
+    <div class="imp-title">🎯 परीक्षा में अक्सर पूछे जाते हैं:</div>
+    <ul>
+      <li>राजस्थान नाम किस पुस्तक में? → <strong>The Annals and Antiquities of Rajasthan (1829)</strong></li>
+      <li>नाम कब से प्रचलित? → <strong>1800 ई.</strong></li>
+      <li>Pangea सिद्धांत? → <strong>Alfred Wegener</strong></li>
+      <li>46 करोड़ वर्ष पहले? → <strong>महाद्वीप Pangea</strong></li>
+      <li>एकीकरण कहां से शुरू? → <strong>30 मार्च 1949 (VII चरण)</strong></li>
+      <li>V.P. Menon का पहला क्षण? → <strong>18 मार्च 1948</strong></li>
+      <li>1 नवंबर 1956 – क्या? → <strong>वर्तमान राजस्थान</strong></li>
+      <li>क्षेत्रफल कितना? → <strong>3,42,239 km² (10.41%)</strong></li>
+      <li>स्थिति: उत्तर-दक्षिण? → <strong>826 km</strong> | पूर्व-पश्चिम? → <strong>869 km</strong></li>
+      <li>पाक. सीमा? → <strong>1070 km</strong> (Radcliffe Line)</li>
+      <li>राज्य सीमा? → <strong>4850 km</strong> | कुल सीमा? → <strong>5920 km</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Quick Recap Box -->
+<div class="quick-recap">
+  <h3>⚡ Quick Recap – 7 सम्भाग / 4-4 / Landlocked</h3>
+  <div class="recap-grid">
+    <div class="recap-item"><strong>📍 क्षेत्रफल</strong><br>3,42,239 km² – देश में #1</div>
+    <div class="recap-item"><strong>🏗️ जिले</strong><br>41 जिले (7 अगस्त 2023 से)</div>
+    <div class="recap-item"><strong>🗺️ संभाग</strong><br>10 संभाग (2023 से)</div>
+    <div class="recap-item"><strong>✅ एकीकरण</strong><br>7 चरण, 1 Nov 1956</div>
+    <div class="recap-item"><strong>📍 स्थिति</strong><br>प. गोलार्ध, उत्तर-पश्चिम</div>
+    <div class="recap-item"><strong>🌏 सीमाएं</strong><br>5 राज्य + Pakistan</div>
+    <div class="recap-item"><strong>🌞 कर्क रेखा</strong><br>8 जिले, D→Sमा.P.</div>
+    <div class="recap-item"><strong>📊 ग्रंथकर्ता</strong><br>Col. James Tod (1829)</div>
+  </div>
+</div>
+
+<!-- Number Facts -->
+<div class="number-facts">
+  <h3>🔢 Number Facts – सेकंड में याद करो!</h3>
+  <div class="num-grid">
+    <div class="num-item"><span class="num-val">41</span>जिले (2023)</div>
+    <div class="num-item"><span class="num-val">10</span>संभाग</div>
+    <div class="num-item"><span class="num-val">19</span>रियासतें (1947 से पहले)</div>
+    <div class="num-item"><span class="num-val">7</span>एकीकरण चरण</div>
+    <div class="num-item"><span class="num-val">1 Nov</span>1956 – पूर्ण Raj.</div>
+    <div class="num-item"><span class="num-val">1070 km</span>पाक. सीमा</div>
+    <div class="num-item"><span class="num-val">4850 km</span>राज्य सीमा</div>
+    <div class="num-item"><span class="num-val">5920 km</span>कुल सीमा</div>
+    <div class="num-item"><span class="num-val">826 km</span>U-D विस्तार</div>
+    <div class="num-item"><span class="num-val">869 km</span>P-P विस्तार</div>
+    <div class="num-item"><span class="num-val">43°</span>देशांतर</div>
+    <div class="num-item"><span class="num-val">3,42,239</span>क्षेत्रफल</div>
+    <div class="num-item"><span class="num-val">10.41%</span>भारत का</div>
+    <div class="num-item"><span class="num-val">8</span>कर्क रेखा जिले</div>
+    <div class="num-item"><span class="num-val">17</span>सीमावर्ती जिले</div>
+    <div class="num-item"><span class="num-val">46 Cr</span>वर्ष (Pangea)</div>
+  </div>
+</div>
+
+<a href="/" class="back-btn">← वापस होम पेज</a>
+
+</main>
+
+<footer>
+  <div class="tri"></div>
+  <div style="padding:28px 5%;">
+    <div class="footer-logo">Omkar Sir<span>.</span></div>
+    <p style="margin-bottom:12px">🇳 New India Education | Jaipur, Rajasthan</p>
+    <div style="margin:10px 0">
+      <a href="https://youtube.com/@thenewindiaeducation">📺 YouTube</a>
+      <a href="https://t.me/omkarsirofficial">📢 Telegram</a>
+      <a href="https://play.google.com/store/apps/details?id=co.april2019.techa">📱 App</a>
+      <a href="https://instagram.com/omkar_sir_official">📸 Instagram</a>
+    </div>
+    <p style="margin-top:12px;font-size:12px">© 2025 Omkar Sir | RAS • IAS • RPSC</p>
+  </div>
+</footer>
+</body>
+</html>
