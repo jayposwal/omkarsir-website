@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>राजस्थान का भूगोल | Rajasthan Geography | Omkar Sir</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+nav{background:#fff;padding:0 5%;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,0.07);position:sticky;top:0;z-index:99}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#FF6B00,#FFB347);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-name{font-family:'Baloo 2';font-size:16px;font-weight:800;color:#1A1A2E}
+.logo-name span{color:#FF6B00}
+.nav-back{color:#FF6B00;text-decoration:none;font-size:13px;font-weight:600}
+.breadcrumb{background:#fff;padding:10px 5%;border-bottom:1px solid #E8EAF0;font-size:13px;color:#999}
+.breadcrumb a{color:#FF6B00;text-decoration:none}
+.page-header{background:linear-gradient(135deg,#1A1A2E 0%,#2D3561 60%,#1A1A2E 100%);padding:50px 5%;text-align:center;color:white;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,107,0,0.08) 0%,transparent 60%)}
+.subject-pill{display:inline-block;background:rgba(255,107,0,0.2);border:1px solid rgba(255,107,0,0.4);color:#FFB347;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+.page-header h1{font-family:'Baloo 2';font-size:clamp(24px,4vw,42px);font-weight:800;line-height:1.2;margin-bottom:12px}
+.page-header h1 span{color:#FF6B00}
+.page-header p{color:rgba(255,255,255,0.7);font-size:15px;max-width:520px;margin:0 auto 24px;line-height:1.7}
+.exam-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.exam-tag{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);padding:4px 14px;border-radius:6px;font-size:12px;font-weight:600}
+.stats-bar{background:white;border-bottom:1px solid #E8EAF0;padding:14px 5%}
+.stats-inner{max-width:700px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.stat-item{padding:6px;border-right:1px solid #E8EAF0}
+.stat-item:last-child{border-right:none}
+.stat-val{font-family:'Baloo 2';font-size:18px;font-weight:800;color:#FF6B00;display:block}
+.stat-lbl{font-size:11px;color:#999}
+.topics-area{max-width:1000px;margin:0 auto;padding:36px 5% 60px}
+.section-title{font-family:'Baloo 2';font-size:22px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.section-sub{color:#999;font-size:14px;margin-bottom:26px}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.topic-card{background:white;border-radius:14px;border:2px solid #E8EAF0;text-decoration:none;color:inherit;display:flex;align-items:center;gap:14px;padding:18px 20px;transition:all 0.25s;position:relative;overflow:hidden}
+.topic-card:hover{border-color:#FF6B00;transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,107,0,0.12)}
+.topic-card.active{border-color:#FF6B00;background:linear-gradient(135deg,#FFF8F2,#FFFCFA)}
+.topic-card.coming-soon{cursor:default;opacity:0.7}
+.topic-card.coming-soon:hover{transform:none;box-shadow:none;border-color:#E8EAF0}
+.topic-icon{width:46px;height:46px;border-radius:12px;background:#FFF3E8;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.topic-card.active .topic-icon{background:#FF6B00}
+.topic-info{flex:1}
+.topic-num{font-size:11px;color:#FF6B00;font-weight:700;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px}
+.topic-name{font-family:'Baloo 2';font-size:15px;font-weight:800;color:#1A1A2E;line-height:1.3}
+.topic-name-en{font-size:12px;color:#999;margin-top:2px}
+.topic-badge{position:absolute;top:10px;right:12px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.5px}
+.badge-live{background:#E8F5E9;color:#2E7D32}
+.badge-soon{background:#FFF3E8;color:#FF6B00}
+.topic-arrow{color:#FF6B00;font-size:18px;flex-shrink:0}
+.topic-card.coming-soon .topic-arrow{color:#ccc}
+.coming-soon-note{background:#FFF3E8;border:1px solid #FFD5B0;border-radius:12px;padding:18px 22px;margin-top:28px;display:flex;align-items:center;gap:12px}
+.coming-soon-note p{font-size:14px;color:#666;line-height:1.6}
+.coming-soon-note strong{color:#FF6B00}
+footer{background:#1A1A2E;padding:28px 5%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Baloo 2';font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+@media(max-width:600px){.topics-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}.stat-item:nth-child(2){border-right:none}.stat-item:nth-child(3){border-top:1px solid #E8EAF0}}
+</style>
+</head>
+<body>
+<div class="tri"></div>
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">🎓</div>
+    <div><div class="logo-name">Omkar Sir<span>.</span></div><div style="font-size:10px;color:#999">New India Education</div></div>
+  </a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+<div class="breadcrumb">
+  <a href="/">🏠 Home</a> &rsaquo; <span style="color:#1A1A2E">🇮🇳 राजस्थान भूगोल</span>
+</div>
+
+<header class="page-header">
+  <div style="position:relative;z-index:1">
+    <span class="subject-pill">🇮🇳 Rajasthan Geography</span>
+    <h1>राजस्थान का <span>भूगोल</span></h1>
+    <p>सम्पूर्ण सिलेबस | सरल भाषा | हिंदी में विस्तार से — RAS, RPSC, Patwar, Police के लिए</p>
+    <div class="exam-row">
+      <span class="exam-tag">🏗️ RAS/RPSC</span>
+      <span class="exam-tag">🇮🇳 UPSC</span>
+      <span class="exam-tag">📝 Patwar</span>
+      <span class="exam-tag">👮 Rajasthan Police</span>
+      <span class="exam-tag">🎓 REET</span>
+      <span class="exam-tag">📊 SSC</span>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-val">14</span><span class="stat-lbl">📚 Topics</span></div>
+    <div class="stat-item"><span class="stat-val">1</span><span class="stat-lbl">✅ Live Now</span></div>
+    <div class="stat-item"><span class="stat-val">13</span><span class="stat-lbl">⏳ Coming Soon</span></div>
+    <div class="stat-item"><span class="stat-val">Free</span><span class="stat-lbl">🎁 बिलकुल</span></div>
+  </div>
+</div>
+
+<main class="topics-area">
+  <h2 class="section-title">🗺️ सभी अध्याय देखें</h2>
+  <p class="section-sub">अपना टॉपिक चुनें और पढ़ना शुरू करें — सारत्त, स्मार्ट नोट्स, Tricks और PYQs सहित</p>
+
+  <div class="topics-grid">
+    
+    <!-- Topic 1: LIVE -->
+    <a href="/rajasthan-bhugol-parichay.html" class="topic-card active">
+      <span class="topic-badge badge-live">✅ LIVE</span>
+      <div class="topic-icon">🗺️</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 01</div>
+        <div class="topic-name">राजस्थान परिचय</div>
+        <div class="topic-name-en">Introduction to Rajasthan</div>
+      </div>
+      <span class="topic-arrow">→</span>
+    </a>
+
+    <!-- Topic 2 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">📍</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 02</div>
+        <div class="topic-name">स्थिति, विस्तार और भौतिक प्रदेश</div>
+        <div class="topic-name-en">Location, Extent & Physiography</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 3 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🌊</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 03</div>
+        <div class="topic-name">नदियाँ और झीलें</div>
+        <div class="topic-name-en">Rivers & Lakes</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 4 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">☁️</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 04</div>
+        <div class="topic-name">जलवायु विशेषताएं</div>
+        <div class="topic-name-en">Climatic Characteristics</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 5 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🌳</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 05</div>
+        <div class="topic-name">प्राकृतिक वनस्पति और जैव विविधता</div>
+        <div class="topic-name-en">Natural Vegetation & Biodiversity</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 6 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🌾</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 06</div>
+        <div class="topic-name">मृदा (Soil)</div>
+        <div class="topic-name-en">Soil Types of Rajasthan</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 7 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">👨‍🌾</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 07</div>
+        <div class="topic-name">कृषि (Agriculture)</div>
+        <div class="topic-name-en">Agriculture & Crops</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 8 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🐄</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 08</div>
+        <div class="topic-name">पशुधन (Livestock)</div>
+        <div class="topic-name-en">Livestock & Animal Husbandry</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 9 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">💧</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 09</div>
+        <div class="topic-name">सिंचाई (Irrigation)</div>
+        <div class="topic-name-en">Irrigation Projects & Canals</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 10 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">👥</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 10</div>
+        <div class="topic-name">जनसंख्या (Population)</div>
+        <div class="topic-name-en">Growth, Density, Literacy, Sex Ratio</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 11 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🏙️</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 11</div>
+        <div class="topic-name">शहरीकरण (Urbanization)</div>
+        <div class="topic-name-en">Urban Growth & Smart Cities</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 12 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🧑‍🌿</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 12</div>
+        <div class="topic-name">जनजातियाँ (Tribes)</div>
+        <div class="topic-name-en">Tribes of Rajasthan</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 13 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">⛏️</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 13</div>
+        <div class="topic-name">खनिज (Minerals)</div>
+        <div class="topic-name-en">Metallic & Non-Metallic Minerals</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+    <!-- Topic 14 -->
+    <div class="topic-card coming-soon">
+      <span class="topic-badge badge-soon">Coming Soon</span>
+      <div class="topic-icon">🏛️</div>
+      <div class="topic-info">
+        <div class="topic-num">Chapter 14</div>
+        <div class="topic-name">पर्यटन (Tourism)</div>
+        <div class="topic-name-en">Tourist Places & Heritage</div>
+      </div>
+      <span class="topic-arrow">⏳</span>
+    </div>
+
+  </div>
+
+  <div class="coming-soon-note">
+    <div style="font-size:28px">📲</div>
+    <p>⭐ <strong>Telegram और App से जुड़ें</strong> — नए टॉपिक के लाइव होने पर तुरंत नोटिफिकेशन मिलेगा! बाकी सभी topics द्वारा आने वाले हैं। <a href="https://t.me/omkarsirofficial" style="color:#FF6B00;text-decoration:none">📢 Telegram जॉइन करें</a> | <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" style="color:#FF6B00;text-decoration:none">📱 App Download</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="tri"></div>
+  <div style="padding:24px 5%">
+    <div class="footer-logo">Omkar Sir<span>.</span></div>
+    <p style="margin-bottom:10px">🇮🇳 New India Education | Jaipur, Rajasthan</p>
+    <div>
+      <a href="https://youtube.com/@thenewindiaeducation">📺 YouTube</a>
+      <a href="https://t.me/omkarsirofficial">📢 Telegram</a>
+      <a href="https://play.google.com/store/apps/details?id=co.april2019.techa">📱 App</a>
+      <a href="https://instagram.com/omkar_sir_official">📸 Instagram</a>
+    </div>
+    <p style="margin-top:10px;font-size:12px">© 2025 Omkar Sir | RAS • IAS • RPSC</p>
+  </div>
+</footer>
+</body>
+</html>
