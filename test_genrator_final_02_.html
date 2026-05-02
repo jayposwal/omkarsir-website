@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<title>NIEd Question Generator v6</title>
+<style>
+:root{--nv:#1B2A6B;--dk:#080E28;--nl:#253590;--sf:#FF6B00;--sf2:#FF8C2A;--wh:#fff;--gr:#00AA44;--tl:#0EA5E9;--gold:#FFB830;--red:#FF3B30}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI','Arial Unicode MS',sans-serif;background:var(--dk);color:var(--wh);min-height:100vh;font-size:13px}
+.hdr{background:linear-gradient(135deg,#1B2A6B,#080E28);border-bottom:3px solid var(--sf);padding:12px 18px;display:flex;align-items:center;gap:12px}
+.main{padding:12px;max-width:1100px;margin:0 auto}
+.card{background:var(--nv);border:1px solid var(--nl);border-radius:10px;padding:14px;margin-bottom:12px}
+.card.smart{border-color:var(--tl);background:linear-gradient(135deg,#0C1E40,#081828)}
+.card.bank-card{border-color:var(--gr);background:linear-gradient(135deg,#0A1E10,#081828)}
+.card.save-card{border-color:var(--gold);background:linear-gradient(135deg,#1A1400,#0A0E28)}
+.ct{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+textarea{width:100%;background:var(--dk);border:1px solid var(--nl);border-radius:7px;color:var(--wh);font-size:12px;line-height:1.7;padding:10px;resize:vertical;font-family:monospace}
+textarea:focus{outline:none;border-color:var(--sf)}
+textarea::placeholder{color:#3a4060}
+input[type=text]{background:var(--dk);border:1px solid var(--nl);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none}
+input[type=text]:focus{border-color:var(--sf)}
+input[type=text]::placeholder{color:#3a4060}
+.btn{padding:8px 16px;border-radius:6px;border:none;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn-tl{background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff}
+.btn-sf{background:var(--sf);color:#fff}.btn-sf:hover{background:var(--sf2)}
+.btn-gold{background:linear-gradient(135deg,#D97706,#B45309);color:#fff}
+.btn-gr{background:linear-gradient(135deg,#059669,#047857);color:#fff}
+.btn-red{background:rgba(255,59,48,.15);border:1px solid var(--red);color:#FF8B85}
+.btn-out{background:none;border:1px solid var(--nl);color:#8890b0;padding:5px 10px;border-radius:5px;font-size:11px;cursor:pointer}
+.btn-out:hover{border-color:var(--tl);color:#38BDF8}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:9px}
+.sr{display:none;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.sb{background:var(--nv);border:1px solid var(--nl);border-radius:8px;padding:10px 14px;flex:1;min-width:100px;text-align:center}
+.sn{font-size:22px;font-weight:700;color:var(--sf)}.sl{font-size:10px;color:#6870a0;margin-top:2px}
+.ac{background:var(--nv);border:1px solid var(--nl);border-radius:10px;padding:14px;margin-bottom:12px;display:none}
+.ag{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px}
+.ab{padding:12px;border-radius:8px;border:2px solid;cursor:pointer;font-size:12px;font-weight:600;display:flex;align-items:center;gap:9px;background:none;color:#fff;width:100%;text-align:left}
+.ab:disabled{opacity:.35;cursor:not-allowed}
+.bv1{border-color:#4466CC}.bv1:not(:disabled):hover{background:rgba(68,102,204,.2)}
+.bv2{border-color:var(--gr)}.bv2:not(:disabled):hover{background:rgba(0,170,68,.15)}
+.bpdf{border-color:var(--sf)}.bpdf:not(:disabled):hover{background:rgba(255,107,0,.15)}
+.pb{width:100%;height:4px;background:var(--nl);border-radius:2px;margin-top:9px;display:none}
+.pf{height:100%;background:var(--sf);border-radius:2px;transition:width .3s}
+.pc{background:var(--nv);border:1px solid var(--nl);border-radius:10px;padding:14px;margin-bottom:12px;display:none}
+.tbl{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px}
+.tbl th{background:var(--dk);color:var(--sf);padding:5px 9px;text-align:left;font-size:10px;text-transform:uppercase}
+.tbl td{padding:5px 9px;border-bottom:1px solid var(--nl);vertical-align:middle}
+.bdg{display:inline-block;background:var(--gr);color:#fff;padding:1px 6px;border-radius:3px;font-size:9px;font-weight:700}
+.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:600;margin-right:3px}
+.tag-s{background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.3)}
+.tag-t{background:rgba(255,184,48,.15);color:#FFD080;border:1px solid rgba(255,184,48,.25)}
+.stl{background:var(--dk);border:1px solid var(--nl);border-radius:6px;padding:9px 13px;font-size:11px;color:#6870a0;margin-bottom:12px}
+.ls{color:var(--gr)}.le{color:var(--red)}.li{color:var(--sf)}.lt{color:#38BDF8}.lg{color:var(--gold)}
+.sp{display:inline-block;width:12px;height:12px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* BANK */
+.bank-stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.bstat{background:rgba(0,0,0,.3);border:1px solid rgba(74,222,128,.2);border-radius:6px;padding:7px 12px;flex:1;min-width:80px;text-align:center}
+.bstat-n{font-size:18px;font-weight:700;color:#4ADE80}.bstat-l{font-size:9px;color:#6aa860;margin-top:1px}
+.bank-ctrl{display:flex;gap:7px;margin-bottom:9px;flex-wrap:wrap;align-items:center}
+.bank-search{flex:1;min-width:160px;padding:7px 10px;background:var(--dk);border:1px solid var(--nl);border-radius:6px;color:var(--wh);font-size:12px;outline:none}
+.bank-search:focus{border-color:#4ADE80}
+.bfilter{padding:6px 10px;background:var(--dk);border:1px solid var(--nl);border-radius:6px;color:var(--wh);font-size:11px;cursor:pointer;outline:none}
+.bank-list{max-height:300px;overflow-y:auto;border:1px solid rgba(74,222,128,.15);border-radius:7px}
+.bq{display:flex;align-items:flex-start;gap:7px;padding:7px 9px;border-bottom:1px solid rgba(74,222,128,.08)}
+.bq:hover{background:rgba(74,222,128,.04)}
+.bq-cb{margin-top:2px;accent-color:#4ADE80;cursor:pointer}
+.bq-info{flex:1;min-width:0}
+.bq-txt{font-size:11px;color:#d0d8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bq-meta{display:flex;gap:4px;margin-top:2px;flex-wrap:wrap;align-items:center}
+.bq-del{background:none;border:none;color:#555;cursor:pointer;padding:2px 5px;font-size:13px;border-radius:3px}
+.bq-del:hover{color:var(--red);background:rgba(255,59,48,.1)}
+.dupe-warn{background:rgba(255,59,48,.1);border:1px solid var(--red);border-radius:7px;padding:10px 12px;margin-top:9px;font-size:11px;display:none}
+.dupe-warn h4{color:var(--red);margin-bottom:5px;font-size:11px}
+.dupe-item{background:rgba(0,0,0,.3);border-radius:4px;padding:4px 8px;margin-bottom:3px;font-size:10px;color:#FF8B85}
+.empty-bank{text-align:center;padding:22px;color:#3a4060;font-size:12px}
+.res{background:var(--dk);border:1px solid var(--nl);border-radius:5px;padding:8px 11px;margin-top:7px;font-size:11px;display:none}
+.res.ok{border-color:var(--gr);color:#6EFFA8;background:rgba(0,170,68,.06)}
+.res.warn{border-color:var(--gold);color:#FFD080;background:rgba(255,184,48,.06)}
+.res.err{border-color:var(--red);color:#FF8B85;background:rgba(255,59,48,.06)}
+.divl{border:none;border-top:1px solid #1a2550;margin:11px 0}
+.sbadge{background:rgba(255,107,0,.15);border:1px solid var(--sf);color:var(--sf);font-size:9px;padding:2px 7px;border-radius:3px;font-weight:700}
+.toggle-hdr{cursor:pointer;user-select:none}
+.bank-actions{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap;align-items:center}
+.sel-info{font-size:10px;color:#6870a0;margin-left:auto}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <span style="font-size:24px">🕉️</span>
+  <div><div style="font-size:14px;color:var(--sf);font-weight:700">NIEd Question Generator v6 — Bank Edition</div>
+  <div style="font-size:10px;color:#8890b0">Smart Convert + Question Bank + Duplicate Detector + PPT + PDF | New India Education</div></div>
+</div>
+<div class="main">
+<div class="stl" id="stl">📚 System initialize हो रहा है...</div>
+
+<!-- STEP 1 -->
+<div class="card smart">
+  <div class="ct" style="color:#38BDF8">⚡ <span class="sbadge" style="background:rgba(14,165,233,.15);border-color:var(--tl);color:#38BDF8">STEP 1</span> Smart Convert — कोई भी format paste करें</div>
+  <textarea id="rawInput" rows="6" placeholder="कोई भी format paste करें:&#10;&#10;1. राजस्थान की राजधानी? (क) जोधपुर (ख) जयपुर ✓ (ग) उदयपुर (घ) बीकानेर  उत्तर: ख&#10;&#10;Q2. Largest planet? a) Earth b) Jupiter c) Mars d) Venus Answer: b Exp: Jupiter is largest.&#10;&#10;3. भारत का सबसे बड़ा राज्य? 1) MP 2) Rajasthan 3) UP 4) Gujarat Ans: 2"></textarea>
+  <div class="row">
+    <button class="btn btn-tl" onclick="smartConvert()">⚡ Smart Convert → NIEd Format</button>
+    <button class="btn-out" onclick="document.getElementById('pp').style.display=document.getElementById('pp').style.display==='none'?'block':'none'">📋 External AI Prompt</button>
+  </div>
+  <div id="pp" style="display:none;background:#080E20;border:1px solid #253590;border-radius:6px;padding:10px;font-size:10px;color:#9aa8d0;font-family:monospace;line-height:1.6;margin-top:8px;white-space:pre-wrap">You are an expert MCQ formatter for NIEd (New India Education). Convert ALL questions to EXACTLY this bilingual format:
+
+Q1. [Hindi question] ([English question])
+A) [Hindi option] ([English option])
+B) [Hindi option] ([English option])
+C) [Hindi option] ([English option])
+D) [Hindi option] ([English option])
+Ans: [A/B/C/D]
+Exp: [Hindi explanation] ([English explanation])
+
+EXAMPLE:
+Q1. नैनो-टेक्नोलॉजी का जनक कौन है? (Who is the father of Nanotechnology?)
+A) निकोला टेस्ला (Nikola Tesla)
+B) रिचर्ड फीनमैन (Richard Feynman)
+C) लिनस पॉलिंग (Linus Pauling)
+D) आर्थर वैनबर्ग (Arthur Weinberg)
+Ans: B
+Exp: रिचर्ड फीनमैन ने 1959 में नैनो-तकनीक की अवधारणा दी। (Richard Feynman introduced nanotechnology concept in 1959.)
+
+STRICT RULES:
+1. Q1, Q2, Q3... sequential numbering
+2. Options: A) B) C) D) always — convert क/ख/ग/घ → A/B/C/D, 1/2/3/4 → A/B/C/D
+3. Hindi + (English) on SAME LINE for Q, options, and Exp — NO line break between them
+4. Exp: Hindi explanation (English explanation) — ONE SINGLE LINE only
+5. Ans: only if answer clearly given | Exp: only if explanation available
+6. 4 options always — fill missing with "—"
+7. Remove OCR errors, fix numbering, remove duplicates
+8. ONE blank line between questions, no blank lines inside a question
+9. Start with Q1. directly — no intro or closing text</div>
+  <div class="res" id="res1"></div>
+</div>
+
+<div class="divl"></div>
+
+<!-- STEP 2 -->
+<div class="card">
+  <div class="ct" style="color:var(--sf)">✍️ <span class="sbadge">STEP 2</span> Questions Input</div>
+  <textarea id="qi" rows="8" placeholder="ऊपर Smart Convert करें या यहाँ directly NIEd format paste करें...&#10;&#10;Q1. प्रश्न?&#10;A) विकल्प 1&#10;B) विकल्प 2&#10;C) विकल्प 3&#10;D) विकल्प 4&#10;Ans: B&#10;Exp: व्याख्या।"></textarea>
+  <div class="row"><button class="btn btn-sf" onclick="doparse()">🔍 Parse करें → Load करें</button></div>
+</div>
+
+<!-- STATS -->
+<div class="sr" id="sr">
+  <div class="sb"><div class="sn" id="st">0</div><div class="sl">कुल प्रश्न</div></div>
+  <div class="sb"><div class="sn" id="sa">0</div><div class="sl">Ans सहित</div></div>
+  <div class="sb"><div class="sn" id="se">0</div><div class="sl">Exp सहित</div></div>
+  <div class="sb"><div class="sn" id="ss">0</div><div class="sl">v2 Slides</div></div>
+</div>
+
+<!-- STEP 3 -->
+<div class="ac" id="ac">
+  <div class="ct" style="color:var(--sf)">⚡ <span class="sbadge">STEP 3</span> Generate करें</div>
+  <div class="ag">
+    <button class="ab bv1" id="b1" onclick="mkppt(1)"><span style="font-size:18px">🎯</span><span><strong style="display:block;font-size:12px">PPT v1 Student</strong><span style="font-size:10px;color:#8890b0">1 slide/Q | Light</span></span></button>
+    <button class="ab bv2" id="b2" onclick="mkppt(2)"><span style="font-size:18px">✅</span><span><strong style="display:block;font-size:12px">PPT v2 Teacher</strong><span style="font-size:10px;color:#8890b0">2 slides/Q | Ans+Exp</span></span></button>
+    <button class="ab bpdf" id="b3" onclick="mkpdf()"><span style="font-size:18px">📄</span><span><strong style="display:block;font-size:12px">PDF Test Paper</strong><span style="font-size:10px;color:#8890b0">Student paper + Ans Key</span></span></button>
+    <button class="ab" style="border-color:#A855F7" id="b4" onclick="mkSolutionBooklet()"><span style="font-size:18px">📚</span><span><strong style="display:block;font-size:12px">Solution Booklet PDF</strong><span style="font-size:10px;color:#8890b0">Q + Options + ✓ + Explanation</span></span></button>
+    <button class="ab" style="border-color:#10B981" id="b5" onclick="mkComparativeSheet()"><span style="font-size:18px">📋</span><span><strong style="display:block;font-size:12px">Comparative Answer Sheet</strong><span style="font-size:10px;color:#8890b0">Teacher copy | Q+Ans+Exp side by side</span></span></button>
+    <button class="ab" style="border-color:#10B981;border-style:dashed" id="b6" onclick="showCpPanel()"><span style="font-size:18px">📤</span><span><strong style="display:block;font-size:12px">Classplus DOCX Export</strong><span style="font-size:10px;color:#8890b0">CMS upload ready | Table format</span></span></button>
+  </div>
+  <!-- English Translation Row -->
+  <div style="border-top:1px solid #1a2550;margin-top:10px;padding-top:10px">
+    <div style="font-size:10px;color:#38BDF8;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px">🌐 ENGLISH OUTPUT <span style="background:rgba(14,165,233,.15);border:1px solid rgba(14,165,233,.3);padding:1px 7px;border-radius:3px;font-size:9px">Google Translate • Free</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px">
+      <button class="ab" style="border-color:#0EA5E9" onclick="runWithTranslation('pdf')"><span style="font-size:18px">📄</span><span><strong style="display:block;font-size:12px">English PDF</strong><span style="font-size:10px;color:#8890b0">Test paper in English</span></span></button>
+      <button class="ab" style="border-color:#A78BFA" onclick="runWithTranslation('bilingual')"><span style="font-size:18px">📋</span><span><strong style="display:block;font-size:12px">Bilingual PDF</strong><span style="font-size:10px;color:#8890b0">Hindi + English side by side</span></span></button>
+      <button class="ab" style="border-color:#34D399" onclick="runWithTranslation('classplus')"><span style="font-size:18px">📤</span><span><strong style="display:block;font-size:12px">English Classplus DOCX</strong><span style="font-size:10px;color:#8890b0">English CMS upload format</span></span></button>
+    </div>
+  </div>
+  <div class="pb" id="pb"><div class="pf" id="pf" style="width:0%"></div></div>
+</div>
+
+<!-- TRANSLATION PROGRESS -->
+<div class="card" id="transPanel" style="display:none;border-color:#0EA5E9;background:linear-gradient(135deg,#031525,#080E28)">
+  <div class="ct" style="color:#38BDF8">🌐 Hindi → English Translation चल रही है...</div>
+  <div style="font-size:11px;color:#5a8aaa;margin-bottom:10px">Google Translate (Free) | Internet required | कुछ seconds...</div>
+  <div style="background:var(--dk);border:1px solid #0EA5E9;border-radius:5px;height:8px;margin-bottom:8px;overflow:hidden">
+    <div id="transBar" style="height:100%;background:linear-gradient(90deg,#0EA5E9,#38BDF8);width:0%;transition:width .3s;border-radius:5px"></div>
+  </div>
+  <div id="transMsg" style="font-size:12px;color:#38BDF8">Starting translation...</div>
+</div>
+
+<!-- PREVIEW -->
+<div class="pc" id="pc">
+  <div class="ct" style="color:var(--sf)">👁️ Preview — <span id="pt">0</span> Q loaded</div>
+  <table class="tbl"><thead><tr><th style="width:35px">Q</th><th>प्रश्न</th><th style="width:60px">Ans</th><th style="width:42px">Exp?</th></tr></thead><tbody id="pb2"></tbody></table>
+</div>
+
+<!-- SAVE TO BANK -->
+<div class="card save-card" id="savePanel" style="display:none">
+  <div class="ct" style="color:var(--gold)">💾 <span class="sbadge" style="background:rgba(255,184,48,.15);border-color:var(--gold);color:var(--gold)">STEP 4</span> Question Bank में Save करें</div>
+  <div class="row" style="margin-top:0;margin-bottom:9px">
+    <input type="text" id="bankSubject" placeholder="📚 Subject (जैसे: Rajasthan GK)" style="flex:1.5">
+    <input type="text" id="bankTopic" placeholder="🏷️ Topic (जैसे: Rivers)" style="flex:1">
+    <button class="btn btn-gold" onclick="doSave()">💾 Save <span id="saveCount">0</span> Questions</button>
+  </div>
+  <div class="dupe-warn" id="dupeWarn">
+    <h4>⚠️ Duplicates मिले! इन questions का data पहले से bank में है।</h4>
+    <div id="dupeList"></div>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" style="background:rgba(255,184,48,.2);border:1px solid var(--gold);color:var(--gold);font-size:11px" onclick="forceSave()">⚡ Duplicates Skip करके Save करें</button>
+      <button class="btn-out" onclick="document.getElementById('dupeWarn').style.display='none'">✕ Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- CLASSPLUS EXPORT PANEL -->
+<div class="card" id="cpPanel" style="display:none;border-color:#10B981;background:linear-gradient(135deg,#051A10,#080E28)">
+  <div class="ct" style="color:#4ADE80">📤 Classplus DOCX Export — CMS Upload Ready</div>
+  <div style="font-size:11px;color:#6aa860;margin-bottom:10px">
+    हर question एक separate 3-column table बनेगी — Classplus CMS में directly upload करें।
+    बिना <code style="background:rgba(74,222,128,.15);padding:1px 5px;border-radius:3px">Ans:</code> वाले questions automatically skip होंगे।
+  </div>
+  <div class="row" style="margin-top:0;margin-bottom:10px;flex-wrap:wrap;gap:12px;align-items:center">
+    <div style="display:flex;align-items:center;gap:7px">
+      <span style="font-size:12px;color:#8890b0">✅ Correct Marks:</span>
+      <input type="number" id="cpPos" value="4" min="0" max="100" style="width:60px;background:var(--dk);border:1px solid #10B981;border-radius:5px;color:var(--wh);padding:6px 8px;font-size:13px;outline:none">
+    </div>
+    <div style="display:flex;align-items:center;gap:7px">
+      <span style="font-size:12px;color:#8890b0">❌ Wrong Marks (negative):</span>
+      <input type="number" id="cpNeg" value="1" min="0" max="100" style="width:60px;background:var(--dk);border:1px solid var(--red);border-radius:5px;color:var(--wh);padding:6px 8px;font-size:13px;outline:none">
+    </div>
+    <button class="btn" style="background:linear-gradient(135deg,#059669,#047857);color:#fff" onclick="mkClassplusDocx()">
+      📤 Generate Classplus DOCX
+    </button>
+    <button class="btn-out" onclick="document.getElementById('cpPanel').style.display='none'">✕</button>
+  </div>
+  <div id="cpInfo" style="font-size:11px;color:#4ADE80;display:none"></div>
+</div>
+<div class="card bank-card" id="bankSection">
+  <div class="ct" style="color:#4ADE80">
+    <span class="toggle-hdr" onclick="toggleBank()">📚 Question Bank &nbsp;<span id="bankBadge" style="background:rgba(74,222,128,.2);border:1px solid rgba(74,222,128,.3);color:#4ADE80;padding:1px 8px;border-radius:3px;font-size:10px">0 Q</span></span>
+    <span onclick="toggleBank()" style="cursor:pointer;color:#4ADE80;margin-left:auto" id="bti">▼</span>
+  </div>
+  <div id="bankBody" style="display:none">
+    <div class="bank-stats">
+      <div class="bstat"><div class="bstat-n" id="bsT">0</div><div class="bstat-l">Total Questions</div></div>
+      <div class="bstat"><div class="bstat-n" id="bsSub">0</div><div class="bstat-l">Subjects</div></div>
+      <div class="bstat"><div class="bstat-n" id="bsA">0</div><div class="bstat-l">With Answer</div></div>
+      <div class="bstat"><div class="bstat-n" id="bsE">0</div><div class="bstat-l">With Exp</div></div>
+      <div class="bstat"><div class="bstat-n" id="bsD">0</div><div class="bstat-l">Dupes Blocked</div></div>
+    </div>
+    <div class="bank-ctrl">
+      <input class="bank-search" id="bSearch" placeholder="🔍 Search..." oninput="renderBank()">
+      <select class="bfilter" id="bFilter" onchange="renderBank()"><option value="">📚 All Subjects</option></select>
+      <button class="btn-out" style="font-size:10px" onclick="document.querySelectorAll('.bq-cb').forEach(c=>c.checked=true);updSel()">☑️ All</button>
+      <button class="btn-out" style="font-size:10px" onclick="document.querySelectorAll('.bq-cb').forEach(c=>c.checked=false);updSel()">☐</button>
+      <span class="sel-info" id="selInfo">0 selected</span>
+    </div>
+    <div class="bank-list" id="bankList"><div class="empty-bank">📭 Bank खाली है। Questions save करें।</div></div>
+    <div class="bank-actions">
+      <button class="btn btn-gr" onclick="loadBank()">📥 Load Selected → Editor</button>
+      <button class="btn btn-red" onclick="delSel()">🗑️ Delete Selected</button>
+      <button class="btn-out" style="font-size:10px" onclick="clearBank()">💣 Clear All</button>
+      <span style="font-size:10px;color:#3a5030;margin-left:auto">💾 Browser में permanently saved</span>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+const NA='http://schemas.openxmlformats.org/drawingml/2006/main';
+const NP='http://schemas.openxmlformats.org/presentationml/2006/main';
+const NR='http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+const NK='http://schemas.openxmlformats.org/package/2006/relationships';
+const NC='http://schemas.openxmlformats.org/package/2006/content-types';
+const BK='nied:qbank_v1';
+let QS=[],SC=0,BANK={questions:[],dupesBlocked:0};
+
+function log(m,t=''){document.getElementById('stl').innerHTML=`<span class="${t?'l'+t:''}">${m}</span>`}
+function prog(p){const b=document.getElementById('pb'),f=document.getElementById('pf');b.style.display=p?'block':'none';if(p)f.style.width=p+'%'}
+function fx(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function emu(v){return Math.round(v*914400)}
+function lw(p){return Math.round(p*12700)}
+function qfs(t){return t.length>150?12:t.length>100?14:t.length>70?17:19}
+function efs(t){return !t?15:t.length>350?11:t.length>200?13:15}
+function uid(){return 'q_'+Date.now()+'_'+Math.random().toString(36).substr(2,5)}
+function normQ(s){return String(s||'').toLowerCase().replace(/[^\w\s\u0900-\u097f]/g,'').replace(/\s+/g,' ').trim().substring(0,70)}
+function showRes(m,t,id='res1'){const e=document.getElementById(id);e.style.display='block';e.className='res '+t;e.innerHTML=m}
+function updSel(){document.getElementById('selInfo').textContent=[...document.querySelectorAll('.bq-cb:checked')].length+' selected'}
+function toggleBank(){const b=document.getElementById('bankBody');const o=b.style.display==='block';b.style.display=o?'none':'block';document.getElementById('bti').textContent=o?'▼':'▲'}
+
+function getStoredBank(){try{const v=localStorage.getItem(BK);return v?JSON.parse(v):{questions:[],dupesBlocked:0};}catch(e){return{questions:[],dupesBlocked:0};}}
+function saveStoredBank(){try{localStorage.setItem(BK,JSON.stringify(BANK));return true;}catch(e){return false;}}
+
+function init(){BANK=getStoredBank();refreshBankUI();log(`✅ Ready! Bank: ${BANK.questions.length} Q saved।`,'s');}
+
+// SMART CONVERT — MAXIMUM INTELLIGENCE v3
+// Handles: Q1. / 1. / प्रश्न 1. / (1) — options: A) (A) [A] क) 1) i) inline
+// Answers: Ans: / उत्तर: / ✓ marker / Answer Key block at end
+// Explanations: Exp: / Sol: / व्याख्या: / multi-line
+// Special: No blank lines between Qs, Springboard [1-4] format, mixed Hindi+English
+function smartConvert(){
+  const raw=document.getElementById('rawInput').value.trim();
+  if(!raw){showRes('⚠️ Questions paste करें!','warn');return;}
+
+  // ─── PHASE 1: DEEP CLEAN ───────────────────────────
+  const FIXES={'\u2013':'-','\u2014':'-','\u2019':"'",'\u2018':"'",'\u201C':'"','\u201D':'"','\u00A0':' ','\u2022':'','\u25CF':'','\u25CB':''};
+  let text=raw;
+  for(const[f,t]of Object.entries(FIXES))text=text.split(f).join(t);
+  text=text
+    .replace(/\r\n/g,'\n').replace(/\r/g,'\n').replace(/\t/g,'  ')
+    .replace(/Page\s*No\.?\s*[:\{]?\s*\{?\s*\d+\s*\}?/gi,'')
+    .replace(/^\s*Page\s+\d+\s*$/gim,'')
+    .replace(/Space\s+[Ff]or\s+[Rr]ough\s+[Ww]ork.*/gi,'')
+    .replace(/^\s*SBA\s*:\s*\d{4}\s*$/gim,'')
+    .replace(/^\s*\[\s*Space.*\]\s*$/gim,'')
+    .replace(/[ \t]{3,}/g,'  ')
+    .replace(/\n{4,}/g,'\n\n\n');
+
+  // ─── PHASE 2: HELPERS ─────────────────────────────
+  const HL={'क':'A','ख':'B','ग':'C','घ':'D'};
+  const NL={'1':'A','2':'B','3':'C','4':'D'};
+  const RL={'i':'A','ii':'B','iii':'C','iv':'D'};
+  function toL(s){
+    if(!s)return'';s=s.trim();
+    const u=s.toUpperCase();
+    if('ABCD'.includes(u)&&u.length===1)return u;
+    if(NL[s])return NL[s];if(HL[s])return HL[s];
+    const r=RL[s.toLowerCase()];if(r)return r;
+    const hm=s.match(/[कखगघ]/);if(hm)return HL[hm[0]]||'';
+    const lm=s.match(/[ABCDabcd]/);if(lm)return lm[0].toUpperCase();
+    return'';
+  }
+  // Question patterns — all supported
+  const QP=[
+    /^Q\.?\s*[\.\-]?\s*(\d+)\s*[\.\)\:\s]/i,
+    /^(\d{1,3})\.\s(?!\s*[\(\[ABCDabcdकखगघ1-4][\)\].]\s)/,
+    /^(\d{1,3})\)\s(?!\s*[\(\[ABCDabcdकखगघ1-4][\)\].]\s)/,
+    /^[\(\[]\s*(\d{1,3})\s*[\)\]]\s.{8,}/,
+    /^(?:प्रश्न|प्र\.?)\s*(?:सं\.?\s*)?(\d+)/,
+  ];
+  function isQL(l){
+    if(!l||l.length<4)return false;
+    if(isOL(l))return false;
+    for(const p of QP){if(p.test(l))return true;}
+    return false;
+  }
+  function getQN(l){
+    for(const p of QP){const m=l.match(p);if(m)return parseInt(m[1]||1);}
+    return null;
+  }
+  function stripQ(l){
+    return l
+      .replace(/^Q\.?\s*[\.\-]?\s*\d+\s*[\.\)\:\s]+/i,'')
+      .replace(/^\d{1,3}[\.\)]\s/,'')
+      .replace(/^[\(\[]\s*\d{1,3}\s*[\)\]]\s/,'')
+      .replace(/^[\u092A\u094D\u0930\u0936\u094D\u0928|\u092A\u094D\u0930\u0964?\.?]\s*\d+[\.\)\:\s]+/,'')
+      .trim();
+  }
+  // Option patterns — all supported
+  function isOL(l){
+    if(!l||l.length<2)return false;
+    if(/^[\(\[]?[ABCDabcd][\)\]\.\:\-]\s\S/.test(l))return true;
+    if(/^[\(\[]?[कखगघ][\)\]\.\-]\s/.test(l))return true;
+    if(/^[\(\[]?[1-4][\)\]\.\-]\s\S/.test(l))return true;
+    if(/^[\(\[]?(i{1,3}v?|iv)[\)\]\.\-]\s/i.test(l))return true;
+    return false;
+  }
+  function getOK(l){
+    const m=l.match(/^[\(\[]?([ABCDabcdकखगघ1-4]|i{1,3}v?|iv)[\)\]\.\:\-]\s/i);
+    if(!m)return null;
+    const k=toL(m[1]);return'ABCD'.includes(k)?k:null;
+  }
+  function stripO(l){
+    return l.replace(/^[\(\[]?([ABCDabcdकखगघ1-4]|i{1,3}v?|iv)[\)\]\.\:\-]\s+/i,'').trim();
+  }
+  // Inline options parser: (A) text (B) text / 1. text 2. text
+  function parseIO(l){
+    const re1=/[\(\[]\s*([ABCDabcdकखगघ1-4])\s*[\)\]]\s*([^\(\[\)\]✓✔✅\*]{2,90}?)(?=\s*[\(\[]|\s*[✓✔✅]?\s*$)/gi;
+    const m1=[...l.matchAll(re1)];
+    if(m1.length>=2){
+      const r={};
+      for(const m of m1){const k=toL(m[1]);if('ABCD'.includes(k)){const v=m[2].trim();if(/[✓✔✅\*]/.test(v))r['_c']=k;r[k]=v.replace(/[✓✔✅\*]/g,'').trim();}}
+      if(Object.keys(r).filter(k=>'ABCD'.includes(k)).length>=2)return r;
+    }
+    return null;
+  }
+  // Answer line detection — all formats
+  const AR=/^(Ans(?:wer)?\.?|उत्तर|सही\s*उत्तर|Correct\s*Ans(?:wer)?|Answer\s*Key|सही\s*विकल्प|Ans\.?\s*Key|उ\.)\s*[:=\-\s]/i;
+  function isAL(l){return AR.test(l);}
+  function parseA(l){
+    const txt=l.replace(AR,'').trim();
+    const ltr=toL(txt.charAt(0));if(ltr)return ltr;
+    const m1=txt.match(/^[\(\[]\s*([ABCDabcdकखगघ1-4])\s*[\)\]]/);if(m1)return toL(m1[1]);
+    const m2=txt.match(/(?:option|विकल्प)\s*[\(\[]?\s*([ABCDabcdकखगघ1-4])\s*[\)\]]?/i);if(m2)return toL(m2[1]);
+    const m3=txt.match(/\b([ABCDabcd])\b/);if(m3)return m3[1].toUpperCase();
+    return'';
+  }
+  // Explanation line detection — all formats
+  const ER=/^(Exp(?:l(?:anation)?)?\.?|व्याख्या|Sol(?:ution)?\.?|Note|Hint|कारण|विश्लेषण|स्पष्टीकरण|Reason|हल|समाधान|Rationale|Justification|Explanation)\s*[:=\-]/i;
+  function isEL(l){return ER.test(l);}
+  function stripE(l){return l.replace(ER,'').trim();}
+  // Marker helpers
+  function hasM(v){return/[✓✔✅\*]/.test(v);}
+  function cleanM(v){return v.replace(/[✓✔✅\*]/g,'').trim();}
+  // Noise line detection
+  function isNoise(l){
+    if(!l)return true;
+    if(/^Page\s*No/i.test(l))return true;
+    if(/^\s*\d{1,3}\s*$/.test(l))return true;
+    if(/अनुत्तरित|Question\s+Not\s+Attempt/i.test(l)&&l.length<50)return true;
+    if(/^\[5\]/i.test(l))return true;
+    if(/^SBA\s*:\s*\d{4}/i.test(l))return true;
+    return false;
+  }
+
+  // ─── PHASE 3: ANSWER KEY BLOCK DETECTION ──────────
+  const AKM={};
+  const tail=text.slice(-Math.min(text.length,3000));
+  const akRe=/\b(\d{1,3})\s*[\-\.→]\s*([ABCDabcd1-4])\b/g;
+  const akC=[];let akM;
+  while((akM=akRe.exec(tail))!==null){
+    const n=parseInt(akM[1]),a=toL(akM[2]);
+    if(a&&n>0&&n<300)akC.push([n,a]);
+  }
+  if(akC.length>=5){
+    akC.sort((a,b)=>a[0]-b[0]);
+    let seq=0;
+    for(let i=1;i<akC.length;i++){if(akC[i][0]===akC[i-1][0]+1)seq++;}
+    if(seq>=4){for(const[n,a]of akC)if(!AKM[n])AKM[n]=a;}
+  }
+
+  // ─── PHASE 4: SMART BOUNDARY PRE-PROCESS ──────────
+  // Insert virtual blank before new Q when it starts right after option/ans
+  const rawLines=text.split('\n');
+  const lines=[];
+  for(let i=0;i<rawLines.length;i++){
+    const l=rawLines[i].trim();
+    const prev=lines.length>0?lines[lines.length-1]:'';
+    if(l&&isQL(l)&&prev&&(isOL(prev)||isAL(prev)||isEL(prev)||(/^Q\d|^\d{1,3}[\.\)]/.test(prev)))){
+      lines.push(''); // virtual separator
+    }
+    lines.push(l);
+  }
+
+  // ─── PHASE 5: MAIN PARSE LOOP ─────────────────────
+  const qs=[];
+  let cur=null,inExp=false,expBuf=[];
+
+  function pushCur(){
+    if(!cur)return;
+    if(expBuf.length)cur.exp=expBuf.join(' ').replace(/\s+/g,' ').trim();
+    qs.push(cur);
+    cur=null;expBuf=[];inExp=false;
+  }
+
+  for(let i=0;i<lines.length;i++){
+    const line=lines[i];
+    if(isNoise(line))continue;
+    if(!line){inExp=false;continue;}
+
+    // ── New question ──
+    if(isQL(line)){
+      pushCur();
+      const num=getQN(line)||(qs.length+1);
+      const qt=stripQ(line);
+      cur={num,text:qt,A:'',B:'',C:'',D:'',answer:AKM[num]||'',exp:''};
+      // Inline options on same line?
+      const io=parseIO(qt);
+      if(io){'ABCD'.split('').forEach(k=>{if(io[k])cur[k]=io[k];});if(io['_c']&&!cur.answer)cur.answer=io['_c'];cur.text=qt.replace(/[\(\[]\s*[ABCDabcdकखगघ1-4]\s*[\)\]].*/i,'').trim();}
+    }
+
+    else if(cur){
+      // Inline options line (before any options set)?
+      if(!cur.A&&!cur.B){
+        const io=parseIO(line);
+        if(io){inExp=false;'ABCD'.split('').forEach(k=>{if(io[k])cur[k]=io[k];});if(io['_c']&&!cur.answer)cur.answer=io['_c'];continue;}
+      }
+      // Answer line
+      if(isAL(line)){
+        inExp=false;
+        const a=parseA(line);if(a)cur.answer=a;
+        // Inline exp after answer? e.g. "Ans: B — because X"
+        const rest=line.replace(AR,'').replace(/^[\(\[]?[ABCDabcdकखगघ1-4][\)\]]?\s*/i,'').replace(/^[\-–:]\s*/,'').trim();
+        if(rest.length>10){inExp=true;expBuf=[rest];}
+      }
+      // Explanation line
+      else if(isEL(line)){
+        inExp=true;expBuf=[stripE(line)];
+      }
+      // Multi-line explanation continuation
+      else if(inExp&&!isQL(line)&&!isOL(line)&&!isAL(line)&&line.length>1){
+        expBuf.push(line);
+      }
+      // Option line
+      else if(isOL(line)){
+        inExp=false;
+        const k=getOK(line);
+        if(k&&'ABCD'.includes(k)){
+          let v=stripO(line);
+          if(/अनुत्तरित|Question\s+Not\s+Attempt/i.test(v))continue;
+          // Multi-line option: absorb continuation lines
+          while(i+1<lines.length){
+            const nx=lines[i+1].trim();
+            if(!nx||isOL(nx)||isQL(nx)||isAL(nx)||isEL(nx)||isNoise(nx))break;
+            v+=' '+nx;i++;
+          }
+          if(hasM(v)&&!cur.answer)cur.answer=k;
+          cur[k]=cleanM(v);
+        }
+      }
+      // Lone answer letter: just "B" or "(C)" on its own line
+      else if(!inExp&&line.length<=6){
+        const lm=line.match(/^[\(\[]?\s*([ABCDabcdकखगघ1-4])\s*[\)\]]?$/);
+        if(lm&&(cur.A||cur.B||cur.C)){
+          const a=toL(lm[1]);if(a&&!cur.answer)cur.answer=a;
+        } else if(line.length>2){cur.text+=' '+line;}
+      }
+      // Question text continuation (multi-line question, no options yet)
+      else if(!cur.A&&!cur.B&&!isAL(line)&&!isEL(line)){
+        inExp=false;cur.text+=' '+line;
+      }
+    }
+  }
+  pushCur();
+
+  // ─── PHASE 6: VALIDATE & OUTPUT ───────────────────
+  const valid=qs.filter(q=>{
+    if(!q.text||q.text.trim().length<3)return false;
+    return['A','B','C','D'].filter(k=>q[k]&&q[k].trim()).length>=2;
+  });
+
+  if(!valid.length){
+    showRes('❌ Questions detect नहीं हुए!<br><small style="color:#8890b0">Formats: Q1. / 1. / प्रश्न 1. &nbsp;|&nbsp; Options: A) (A) [A] क) 1) i) &nbsp;|&nbsp; Ans: / उत्तर:</small>','err');
+    return;
+  }
+
+  valid.forEach((q,i)=>{
+    q.num=i+1;
+    q.text=q.text.replace(/\s{2,}/g,' ').replace(/\s+([?।])/g,'$1').trim();
+    q.exp=q.exp.replace(/\s{2,}/g,' ').trim();
+    if(!q.answer&&AKM[q.num])q.answer=AKM[q.num];
+  });
+
+  const out=valid.map(q=>{
+    let o='Q'+q.num+'. '+q.text;
+    if(q.A)o+='\nA) '+q.A;if(q.B)o+='\nB) '+q.B;
+    if(q.C)o+='\nC) '+q.C;if(q.D)o+='\nD) '+q.D;
+    if(q.answer)o+='\nAns: '+q.answer;if(q.exp)o+='\nExp: '+q.exp;
+    return o;
+  }).join('\n\n');
+
+  document.getElementById('qi').value=out;
+  const skip=qs.length-valid.length,wa=valid.filter(q=>q.answer).length,we=valid.filter(q=>q.exp).length;
+  const akf=Object.keys(AKM).length>0;
+  showRes('✅ <strong>'+valid.length+' questions</strong> detect हुए!'
+    +' &nbsp;|&nbsp; ✅ Ans: '+wa
+    +' &nbsp;|&nbsp; 📝 Exp: '+we
+    +(skip>0?' &nbsp;|&nbsp; ⚠️ Skip: '+skip:'')
+    +(akf?' &nbsp;|&nbsp; 🗝️ Answer Key applied!':''),'ok');
+  log('✅ Smart Convert MAX v3: '+valid.length+' Q | Ans:'+wa+' | Exp:'+we,'t');
+  doparse();
+}
+
+// PARSER
+function parseQs(txt){
+  const qs=[],blocks=txt.trim().split(/\n\s*\n+/).filter(b=>b.trim().length>5);let n=1;
+  for(const blk of blocks){
+    const lines=blk.trim().split('\n').map(l=>l.trim()).filter(l=>l.length>0);if(lines.length<2)continue;
+    const q={num:n,text:'',A:'',B:'',C:'',D:'',answer:'',explanation:''};
+    for(const ln of lines){
+      if(!q.text&&/^(Q\.?\s*)?\d+[\.\)\s]\s*\S/i.test(ln)){q.text=ln.replace(/^(Q\.?\s*)?\d+[\.\)\s]+/i,'').trim();const m=ln.match(/\d+/);if(m)q.num=parseInt(m[0]);}
+      else if(/^[\(\[]?[Aa][\)\].]\s/.test(ln))q.A=ln.replace(/^[\(\[]?[Aa][\)\].]\s*/,'').trim();
+      else if(/^[\(\[]?[Bb][\)\].]\s/.test(ln))q.B=ln.replace(/^[\(\[]?[Bb][\)\].]\s*/,'').trim();
+      else if(/^[\(\[]?[Cc][\)\].]\s/.test(ln))q.C=ln.replace(/^[\(\[]?[Cc][\)\].]\s*/,'').trim();
+      else if(/^[\(\[]?[Dd][\)\].]\s/.test(ln))q.D=ln.replace(/^[\(\[]?[Dd][\)\].]\s*/,'').trim();
+      else if(/^(Ans|Answer|उत्तर)\s*[:=\-]/i.test(ln))q.answer=ln.replace(/^(Ans|Answer|उत्तर)\s*[:=\-]\s*/i,'').trim().charAt(0).toUpperCase();
+      else if(/^(Exp|Explanation|व्याख्या|Sol)\s*[:=\-]/i.test(ln))q.explanation=ln.replace(/^(Exp|Explanation|व्याख्या|Sol)\s*[:=\-]\s*/i,'').trim();
+    }
+    if(q.text&&(q.A||q.B||q.C)){qs.push(q);n++}
+  }
+  return qs;
+}
+function doparse(){
+  const txt=document.getElementById('qi').value;
+  if(!txt.trim()){log('⚠️ Input खाली है।','e');return;}
+  QS=parseQs(txt);if(!QS.length){log('❌ Format match नहीं — Smart Convert करें।','e');return;}
+  const wa=QS.filter(q=>q.answer).length,we=QS.filter(q=>q.explanation).length;
+  document.getElementById('st').textContent=QS.length;document.getElementById('sa').textContent=wa;
+  document.getElementById('se').textContent=we;document.getElementById('ss').textContent=QS.length*2;
+  document.getElementById('sr').style.display='flex';document.getElementById('ac').style.display='block';
+  document.getElementById('pt').textContent=QS.length;
+  document.getElementById('pb2').innerHTML=QS.slice(0,20).map(q=>`<tr><td style="color:#6870a0">${q.num}</td><td>${q.text.length>72?q.text.slice(0,72)+'…':q.text}</td><td>${q.answer?`<span class="bdg">${q.answer}</span>`:'—'}</td><td style="text-align:center">${q.explanation?'✅':'—'}</td></tr>`).join('');
+  document.getElementById('pc').style.display='block';
+  document.getElementById('saveCount').textContent=QS.length;
+  document.getElementById('savePanel').style.display='block';
+  log(`✅ ${QS.length} Q loaded (${wa} Ans, ${we} Exp) — Generate करें या Save करें।`,'s');
+}
+
+// BANK OPS
+function findDupes(newQs){
+  const dupes=[];
+  for(const nq of newQs){
+    const nn=normQ(nq.text);if(nn.length<10)continue;
+    const match=BANK.questions.find(eq=>{const en=normQ(eq.text);return nn===en||(nn.length>35&&en.length>35&&nn.substring(0,40)===en.substring(0,40));});
+    if(match)dupes.push({nq,match});
+  }
+  return dupes;
+}
+function doSave(){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  const subj=document.getElementById('bankSubject').value.trim()||'General';
+  const topic=document.getElementById('bankTopic').value.trim()||'';
+  const dupes=findDupes(QS);
+  if(dupes.length>0){
+    document.getElementById('dupeList').innerHTML=dupes.map(d=>`<div class="dupe-item">⚠️ Q.${d.nq.num}: "${d.nq.text.substring(0,55)}..." → already in bank</div>`).join('');
+    document.getElementById('dupeWarn').style.display='block';
+    log(`⚠️ ${dupes.length} duplicates मिले!`,'g');return;
+  }
+  perfSave(QS,subj,topic);
+}
+function forceSave(){
+  document.getElementById('dupeWarn').style.display='none';
+  const subj=document.getElementById('bankSubject').value.trim()||'General';
+  const topic=document.getElementById('bankTopic').value.trim()||'';
+  const dupes=findDupes(QS);
+  BANK.dupesBlocked=(BANK.dupesBlocked||0)+dupes.length;
+  const toSave=QS.filter(nq=>!findDupes([nq]).length);
+  perfSave(toSave,subj,topic);
+}
+function perfSave(qs,subj,topic){
+  const now=new Date().toISOString();
+  BANK.questions.push(...qs.map(q=>({...q,id:uid(),subject:subj,topic,savedAt:now})));
+  const ok=saveStoredBank();
+  if(ok){refreshBankUI();document.getElementById('bankBody').style.display='block';document.getElementById('bti').textContent='▲';document.getElementById('bankSubject').value='';document.getElementById('bankTopic').value='';log(`✅ ${qs.length} Q saved! Bank total: ${BANK.questions.length}`,'s');}
+  else log('❌ Save failed','e');
+}
+function loadBank(){
+  const ids=[...document.querySelectorAll('.bq-cb:checked')].map(c=>c.value);
+  if(!ids.length){log('⚠️ Questions select (checkbox) करें।','g');return;}
+  const toLoad=BANK.questions.filter(q=>ids.includes(q.id));
+  const fmt=toLoad.map((q,i)=>{let o=`Q${i+1}. ${q.text}`;if(q.A)o+=`\nA) ${q.A}`;if(q.B)o+=`\nB) ${q.B}`;if(q.C)o+=`\nC) ${q.C}`;if(q.D)o+=`\nD) ${q.D}`;if(q.answer)o+=`\nAns: ${q.answer}`;if(q.explanation)o+=`\nExp: ${q.explanation}`;return o;}).join('\n\n');
+  document.getElementById('qi').value=fmt;
+  log(`✅ ${toLoad.length} Q bank से load हुए!`,'s');doparse();
+  document.getElementById('qi').scrollIntoView({behavior:'smooth'});
+}
+function delSel(){
+  const ids=[...document.querySelectorAll('.bq-cb:checked')].map(c=>c.value);
+  if(!ids.length){log('⚠️ Delete के लिए select करें।','g');return;}
+  if(!confirm(`${ids.length} questions delete करें?`))return;
+  BANK.questions=BANK.questions.filter(q=>!ids.includes(q.id));
+  saveStoredBank();refreshBankUI();log(`✅ ${ids.length} Q deleted। Bank: ${BANK.questions.length}`,'s');
+}
+function delOne(id){BANK.questions=BANK.questions.filter(q=>q.id!==id);saveStoredBank();refreshBankUI();}
+function clearBank(){if(!confirm('सारा Bank clear करें?'))return;BANK={questions:[],dupesBlocked:0};saveStoredBank();refreshBankUI();log('🗑️ Bank cleared.','g');}
+
+// BANK UI
+function refreshBankUI(){
+  const qs=BANK.questions;
+  document.getElementById('bankBadge').textContent=qs.length+' Q';
+  document.getElementById('bsT').textContent=qs.length;
+  document.getElementById('bsSub').textContent=[...new Set(qs.map(q=>q.subject))].length;
+  document.getElementById('bsA').textContent=qs.filter(q=>q.answer).length;
+  document.getElementById('bsE').textContent=qs.filter(q=>q.explanation).length;
+  document.getElementById('bsD').textContent=BANK.dupesBlocked||0;
+  const subjects=[...new Set(qs.map(q=>q.subject))].filter(Boolean);
+  const sel=document.getElementById('bFilter'),cv=sel.value;
+  sel.innerHTML='<option value="">📚 All Subjects</option>'+subjects.map(s=>`<option value="${s}">${s} (${qs.filter(q=>q.subject===s).length})</option>`).join('');
+  sel.value=cv;renderBank();
+}
+function renderBank(){
+  const srch=(document.getElementById('bSearch').value||'').toLowerCase();
+  const subf=document.getElementById('bFilter').value;
+  let qs=BANK.questions;
+  if(subf)qs=qs.filter(q=>q.subject===subf);
+  if(srch)qs=qs.filter(q=>q.text.toLowerCase().includes(srch)||(q.subject||'').toLowerCase().includes(srch));
+  const list=document.getElementById('bankList');
+  if(!qs.length){list.innerHTML=`<div class="empty-bank">📭 ${BANK.questions.length?'Search से कोई result नहीं।':'Bank खाली है। Questions parse करके Save करें।'}</div>`;return;}
+  list.innerHTML=qs.map(q=>`<div class="bq"><input type="checkbox" class="bq-cb" value="${q.id}" onchange="updSel()"><div class="bq-info"><div class="bq-txt">${q.text.length>80?q.text.slice(0,80)+'…':q.text}</div><div class="bq-meta"><span class="tag tag-s">${q.subject||'—'}</span>${q.topic?`<span class="tag tag-t">${q.topic}</span>`:''} ${q.answer?`<span class="bdg">${q.answer}</span>`:''} ${q.explanation?'📝':''} <span style="color:#3a4060;font-size:9px">${new Date(q.savedAt||Date.now()).toLocaleDateString('hi-IN')}</span></div></div><button class="bq-del" onclick="delOne('${q.id}')" title="Delete">🗑</button></div>`).join('');
+  updSel();
+}
+
+// PPTX
+function mkr(x,y,w,h,f,bc,bw){const id=++SC,fx2=f?`<a:solidFill><a:srgbClr val="${f}"/></a:solidFill>`:'<a:noFill/>',lx=bc?`<a:ln w="${lw(bw||1)}"><a:solidFill><a:srgbClr val="${bc}"/></a:solidFill></a:ln>`:'<a:ln><a:noFill/></a:ln>';return `<p:sp><p:nvSpPr><p:cNvPr id="${id}" name="r${id}"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="${emu(x)}" y="${emu(y)}"/><a:ext cx="${emu(w)}" cy="${emu(h)}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom>${fx2}${lx}</p:spPr><p:txBody><a:bodyPr/><a:lstStyle/><a:p/></p:txBody></p:sp>`;}
+function mkt(x,y,w,h,txt,sz,b,clr,ha,va,fill,bc,bw){const id=++SC,fx2=fill?`<a:solidFill><a:srgbClr val="${fill}"/></a:solidFill>`:'<a:noFill/>',lx=bc?`<a:ln w="${lw(bw||1)}"><a:solidFill><a:srgbClr val="${bc}"/></a:solidFill></a:ln>`:'<a:ln><a:noFill/></a:ln>',va2=va==='m'?'ctr':va==='b'?'b':'t';return `<p:sp><p:nvSpPr><p:cNvPr id="${id}" name="t${id}"/><p:cNvSpPr txBox="1"><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="${emu(x)}" y="${emu(y)}"/><a:ext cx="${emu(w)}" cy="${emu(h)}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom>${fx2}${lx}</p:spPr><p:txBody><a:bodyPr wrap="square" anchor="${va2}" overflow="overflow"/><a:lstStyle/><a:p><a:pPr algn="${ha||'l'}"/><a:r><a:rPr lang="hi-IN" altLang="en-US" sz="${sz*100}" ${b?'b="1"':''} dirty="0"><a:solidFill><a:srgbClr val="${clr}"/></a:solidFill><a:cs typeface="+mj-cs"/></a:rPr><a:t>${fx(txt)}</a:t></a:r></a:p></p:txBody></p:sp>`;}
+function mkSld(sp,bg){return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sld xmlns:a="${NA}" xmlns:p="${NP}" xmlns:r="${NR}"><p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="${bg}"/></a:solidFill></p:bgPr></p:bg><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>${sp.join('')}</p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>`;}
+function mkQsld(q,tot){SC=9;const C={NV:'1B2A6B',SF:'FF6B00',WH:'FFFFFF',TXT:'1A1A4A',OBD:'B8C5EC',STR:'E8EDFF'};const sp=[];sp.push(mkr(0,0,0.14,7.5,C.NV));sp.push(mkr(0.14,0,13.19,2.45,C.NV));sp.push(mkt(0.3,0.22,0.92,0.92,String(q.num),22,true,C.WH,'ctr','m',C.SF));sp.push(mkt(1.38,0.2,11.8,2.1,q.text,qfs(q.text),true,C.WH,'l','t'));sp.push(mkr(0.14,2.45,13.19,0.07,C.SF));const OPS=[{k:'A',v:q.A,x:0.3,y:2.7},{k:'B',v:q.B,x:6.95,y:2.7},{k:'C',v:q.C,x:0.3,y:4.15},{k:'D',v:q.D,x:6.95,y:4.15}];for(const o of OPS){if(!o.v||o.v==='—')continue;sp.push(mkr(o.x,o.y,6.12,1.28,C.WH,C.OBD,1.5));sp.push(mkt(o.x+0.12,o.y+0.22,0.82,0.82,o.k,18,true,C.WH,'ctr','m',C.SF));sp.push(mkt(o.x+1.08,o.y+0.12,5.0,1.04,o.v,15,false,C.TXT,'l','m'));}sp.push(mkr(0.14,5.62,13.19,0.52,C.STR));sp.push(mkt(0.3,5.68,13.0,0.4,'🕉️  New India Education (NIEd)  |  omkarsir.com  |  Jaipur',11,false,C.NV,'ctr','m'));sp.push(mkt(0.3,6.9,12.8,0.4,'Q '+q.num+'/'+tot+'  |  Student',10,false,'9090A8','r','b'));return mkSld(sp,'F5F7FF');}
+function mkAnsSld(q,tot){SC=9;const C={GH:'006B2D',SF:'FF6B00',WH:'FFFFFF',GR:'00AA44',ABG:'DFF7EB',EBG:'FFFBF0',EBD:'FFB830',TXT:'1A1A1A',GTXT:'005A24'};const sp=[];sp.push(mkr(0,0,0.14,7.5,C.GR));sp.push(mkr(0.14,0,13.19,1.5,C.GH));sp.push(mkt(0.3,0.12,1.3,0.5,'Q.'+q.num,14,true,'AAFFCC','l','m'));sp.push(mkt(1.75,0.1,11.3,1.3,'\u2705  \u0938\u0939\u0940 \u0909\u0924\u094d\u0924\u0930  (Correct Answer)',24,true,C.WH,'l','m'));sp.push(mkr(0.14,1.5,13.19,0.07,C.SF));const av=q[q.answer]||'';sp.push(mkr(0.3,1.75,12.73,1.55,C.ABG,'00AA44',2.5));sp.push(mkt(0.42,1.8,1.05,1.45,q.answer||'?',32,true,C.WH,'ctr','m',C.GR));sp.push(mkt(1.6,1.84,11.3,1.38,av,20,true,C.GTXT,'l','m'));const expTxt=q.explanation||'\u0935\u094d\u092f\u093e\u0916\u094d\u092f\u093e \u0909\u092a\u0932\u092c\u094d\u0927 \u0928\u0939\u0940\u0902\u0964';sp.push(mkr(0.3,3.5,12.73,2.75,C.EBG,C.EBD,1.5));sp.push(mkr(0.3,3.5,0.1,2.75,C.SF));sp.push(mkt(0.55,3.58,12.4,0.52,'\ud83d\udcdd  \u0935\u094d\u092f\u093e\u0916\u094d\u092f\u093e  (Explanation)',13,true,C.SF,'l','m'));sp.push(mkt(0.55,4.16,12.35,1.98,expTxt,efs(expTxt),false,C.TXT,'l','t'));sp.push(mkr(0.14,6.45,13.19,0.45,'E8EDFF'));sp.push(mkt(0.3,6.5,13.0,0.35,'New India Education (NIEd)  |  omkarsir.com',11,false,'1B2A6B','ctr','m'));sp.push(mkt(0.3,7.0,12.8,0.35,'Q.'+q.num+'/'+tot+'  |  Teacher',10,false,'9090A8','r','b'));return mkSld(sp,'F5F7FF');}
+
+async function mkppt(v){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  if(typeof JSZip==='undefined'){log('❌ JSZip missing.','e');return;}
+  const btn=document.getElementById(v===1?'b1':'b2'),orig=btn.innerHTML;
+  btn.disabled=true;btn.innerHTML=`<span class="sp"></span> Building...`;prog(5);
+  try{
+    const zip=new JSZip(),n=QS.length,tot=v===1?n:n*2;
+    const sIds=Array.from({length:tot},(_,i)=>`<p:sldId id="${256+i}" r:id="rId${i+2}"/>`).join('');
+    const sRls=Array.from({length:tot},(_,i)=>`<Relationship Id="rId${i+2}" Type="${NR}/slide" Target="slides/slide${i+1}.xml"/>`).join('');
+    const cOvr=Array.from({length:tot},(_,i)=>`<Override PartName="/ppt/slides/slide${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>`).join('');
+    zip.file('[Content_Types].xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="${NC}"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/ppt/presentation.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml"/><Override PartName="/ppt/slideMasters/slideMaster1.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slideMaster+xml"/><Override PartName="/ppt/slideLayouts/slideLayout1.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml"/><Override PartName="/ppt/theme/theme1.xml" ContentType="application/vnd.openxmlformats-officedocument.theme+xml"/>${cOvr}</Types>`);
+    zip.file('_rels/.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK}"><Relationship Id="rId1" Type="${NR}/officeDocument" Target="ppt/presentation.xml"/></Relationships>`);
+    zip.file('ppt/presentation.xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:presentation xmlns:a="${NA}" xmlns:p="${NP}" xmlns:r="${NR}" saveSubsetFonts="1"><p:sldMasterIdLst><p:sldMasterId id="2147483648" r:id="rId1"/></p:sldMasterIdLst><p:sldIdLst>${sIds}</p:sldIdLst><p:sldSz cx="12192000" cy="6858000" type="screen16x9"/><p:notesSz cx="6858000" cy="9144000"/><p:defaultTextStyle/></p:presentation>`);
+    zip.file('ppt/_rels/presentation.xml.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK}"><Relationship Id="rId1" Type="${NR}/slideMaster" Target="slideMasters/slideMaster1.xml"/>${sRls}</Relationships>`);
+    zip.file('ppt/theme/theme1.xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><a:theme xmlns:a="${NA}" name="NIEd"><a:themeElements><a:clrScheme name="NIEd"><a:dk1><a:srgbClr val="1A1A4A"/></a:dk1><a:lt1><a:srgbClr val="F5F7FF"/></a:lt1><a:dk2><a:srgbClr val="1B2A6B"/></a:dk2><a:lt2><a:srgbClr val="E8EDFF"/></a:lt2><a:accent1><a:srgbClr val="FF6B00"/></a:accent1><a:accent2><a:srgbClr val="00AA44"/></a:accent2><a:accent3><a:srgbClr val="4466CC"/></a:accent3><a:accent4><a:srgbClr val="FF3B30"/></a:accent4><a:accent5><a:srgbClr val="FFB830"/></a:accent5><a:accent6><a:srgbClr val="7C3AED"/></a:accent6><a:hlink><a:srgbClr val="FF6B00"/></a:hlink><a:folHlink><a:srgbClr val="953734"/></a:folHlink></a:clrScheme><a:fontScheme name="NIEd"><a:majorFont><a:latin typeface="Calibri Light"/><a:ea typeface=""/><a:cs typeface="Mangal"/></a:majorFont><a:minorFont><a:latin typeface="Calibri"/><a:ea typeface=""/><a:cs typeface="Mangal"/></a:minorFont></a:fontScheme><a:fmtScheme name="NIEd"><a:fillStyleLst><a:solidFill><a:schemeClr val="phClr"/></a:solidFill><a:solidFill><a:schemeClr val="phClr"/></a:solidFill><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:fillStyleLst><a:lnStyleLst><a:ln w="6350"><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:ln><a:ln w="12700"><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:ln><a:ln w="19050"><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:ln></a:lnStyleLst><a:effectStyleLst><a:effectStyle><a:effectLst/></a:effectStyle><a:effectStyle><a:effectLst/></a:effectStyle><a:effectStyle><a:effectLst/></a:effectStyle></a:effectStyleLst><a:bgFillStyleLst><a:solidFill><a:schemeClr val="phClr"/></a:solidFill><a:solidFill><a:schemeClr val="phClr"/></a:solidFill><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:bgFillStyleLst></a:fmtScheme></a:themeElements></a:theme>`);
+    zip.file('ppt/slideMasters/slideMaster1.xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sldMaster xmlns:a="${NA}" xmlns:p="${NP}" xmlns:r="${NR}"><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr></p:spTree></p:cSld><p:clrMap bg1="lt1" tx1="dk1" bg2="lt2" tx2="dk2" accent1="accent1" accent2="accent2" accent3="accent3" accent4="accent4" accent5="accent5" accent6="accent6" hlink="hlink" folHlink="folHlink"/><p:sldLayoutIdLst><p:sldLayoutId id="2147483649" r:id="rId1"/></p:sldLayoutIdLst><p:txStyles><p:titleStyle/><p:bodyStyle/><p:otherStyle/></p:txStyles></p:sldMaster>`);
+    zip.file('ppt/slideMasters/_rels/slideMaster1.xml.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK}"><Relationship Id="rId1" Type="${NR}/slideLayout" Target="../slideLayouts/slideLayout1.xml"/><Relationship Id="rId2" Type="${NR}/theme" Target="../theme/theme1.xml"/></Relationships>`);
+    zip.file('ppt/slideLayouts/slideLayout1.xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sldLayout xmlns:a="${NA}" xmlns:p="${NP}" xmlns:r="${NR}" type="blank" preserve="1"><p:cSld name="Blank"><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr></p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sldLayout>`);
+    zip.file('ppt/slideLayouts/_rels/slideLayout1.xml.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK}"><Relationship Id="rId1" Type="${NR}/slideMaster" Target="../slideMasters/slideMaster1.xml"/></Relationships>`);
+    const SLR=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK}"><Relationship Id="rId1" Type="${NR}/slideLayout" Target="../slideLayouts/slideLayout1.xml"/></Relationships>`;
+    for(let i=0;i<n;i++){
+      if(v===1){zip.file(`ppt/slides/slide${i+1}.xml`,mkQsld(QS[i],n));zip.file(`ppt/slides/_rels/slide${i+1}.xml.rels`,SLR);}
+      else{zip.file(`ppt/slides/slide${i*2+1}.xml`,mkQsld(QS[i],n));zip.file(`ppt/slides/_rels/slide${i*2+1}.xml.rels`,SLR);zip.file(`ppt/slides/slide${i*2+2}.xml`,mkAnsSld(QS[i],n));zip.file(`ppt/slides/_rels/slide${i*2+2}.xml.rels`,SLR);}
+      if(i%5===0){prog(5+Math.floor(i/n*85));await new Promise(r=>setTimeout(r,0));}
+    }
+    prog(95);
+    const blob=await zip.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.presentationml.presentation',compression:'DEFLATE',compressionOptions:{level:6}});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;a.download=v===1?'NIEd_Student.pptx':'NIEd_Teacher.pptx';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+    prog(100);log(`✅ PPT v${v}: ${tot} slides! 🎉`,'s');setTimeout(()=>prog(0),2000);
+  }catch(err){log(`❌ ${err.message}`,'e');}
+  btn.disabled=false;btn.innerHTML=orig;
+}
+
+function mkpdf(){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  const d=new Date().toLocaleDateString('hi-IN');
+  const html=`<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><title>NIEd Test Paper</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"><style>@page{size:A4;margin:13mm 12mm}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Noto Sans Devanagari','Arial Unicode MS',serif;font-size:10.5pt;color:#1a1a1a;line-height:1.5}.hdr{border-bottom:3px solid #FF6B00;padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}.org{color:#1B2A6B;font-size:16pt;font-weight:700}.sub{font-size:8.5pt;color:#555}.ti{text-align:right;font-size:8.5pt}.ti strong{font-size:11pt;color:#FF6B00;display:block}.inst{background:#FFF3E0;border:1px solid #FF6B00;border-radius:3px;padding:6px 10px;margin-bottom:12px;font-size:9pt}.q{margin-bottom:12px;page-break-inside:avoid}.qh{display:flex;gap:6px;align-items:flex-start}.qn{background:#1B2A6B;color:white;font-weight:700;font-size:9.5pt;min-width:26px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:2px;flex-shrink:0;margin-top:2px}.qt{font-weight:600}.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;margin-top:4px;margin-left:32px}.opt{font-size:10pt;display:flex;gap:4px}.ok{font-weight:700;color:#FF6B00;min-width:18px}hr.dv{border:none;border-top:1px solid #e5e5e5;margin:4px 0 8px 0}.as{margin-top:18px;border-top:2px solid #1B2A6B;padding-top:10px;page-break-before:always}.as h2{color:#1B2A6B;font-size:12pt;margin-bottom:8px}.ag{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin-bottom:14px}.ac{border:1px solid #ccc;padding:3px;text-align:center;font-size:8.5pt}.qn2{color:#999;font-size:7.5pt;display:block}.an{font-weight:700;color:#1B2A6B;font-size:10pt}.exps h3{color:#1B2A6B;font-size:10.5pt;margin-bottom:7px}.ei{margin-bottom:7px;padding:5px 9px;background:#f9f9f9;border-left:3px solid #FF6B00;font-size:9pt;page-break-inside:avoid}.ft{text-align:center;font-size:8pt;color:#999;margin-top:14px;border-top:1px solid #eee;padding-top:7px}.nprt{background:#1B2A6B;color:white;padding:10px 18px;text-align:center;font-size:12px;position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:center;gap:14px}.pbtn{background:#FF6B00;color:white;border:none;padding:5px 18px;border-radius:4px;cursor:pointer;font-size:12px}@media print{.nprt{display:none}}</style></head><body><div class="nprt"><strong>📄 NIEd Test Paper</strong><button class="pbtn" onclick="window.print()">🖨️ Print / Save PDF</button></div><div style="padding:6mm 0"><div class="hdr"><div><div class="org">🕉️ New India Education (NIEd)</div><div class="sub">omkarsir.com | Jaipur, Rajasthan</div></div><div class="ti"><strong>MCQ Test Paper</strong>Total: ${QS.length}<br>${d}</div></div><div class="inst">📋 चार विकल्पों में से एक सही उत्तर चुनें।</div>${QS.map((q,i)=>`<div class="q"><div class="qh"><div class="qn">${q.num}</div><div class="qt">${q.text}</div></div><div class="opts">${['A','B','C','D'].filter(k=>q[k]&&q[k]!=='—').map(k=>`<div class="opt"><span class="ok">(${k})</span><span>${q[k]}</span></div>`).join('')}</div>${i<QS.length-1?'<hr class="dv">':''}</div>`).join('')}<div class="as"><h2>📋 उत्तर कुंजी</h2><div class="ag">${QS.map(q=>`<div class="ac"><span class="qn2">Q.${q.num}</span><span class="an">${q.answer||'—'}</span></div>`).join('')}</div>${QS.some(q=>q.explanation)?`<div class="exps"><h3>📝 व्याख्या</h3>${QS.filter(q=>q.explanation).map(q=>`<div class="ei"><strong>Q.${q.num}.</strong> <strong style="color:#00AA44">Ans:(${q.answer})</strong> — ${q.explanation}</div>`).join('')}</div>`:''}</div><div class="ft">New India Education (NIEd) | omkarsir.com</div></div></body></html>`;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});window.open(URL.createObjectURL(blob),'_blank');
+  log('✅ PDF खुला — Ctrl+P → Save as PDF','s');
+}
+// ===== SOLUTION BOOKLET PDF =====
+function mkSolutionBooklet(){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  const d=new Date().toLocaleDateString('hi-IN');
+  const withExp=QS.filter(q=>q.explanation).length;
+  const css=`@page{size:A4;margin:14mm 13mm}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Arial Unicode MS',serif;font-size:10.5pt;color:#1a1a1a;line-height:1.55}
+.nprt{background:#1B2A6B;color:white;padding:9px 16px;text-align:center;font-size:12px;position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:center;gap:12px}
+.pbtn{background:#FF6B00;color:white;border:none;padding:5px 16px;border-radius:4px;cursor:pointer;font-size:12px}
+@media print{.nprt{display:none}}
+.cover{text-align:center;padding:40mm 20mm;border-bottom:4px solid #FF6B00;margin-bottom:20px;page-break-after:always}
+.cover-logo{font-size:36pt;margin-bottom:8px}
+.cover-org{color:#1B2A6B;font-size:22pt;font-weight:700;margin-bottom:4px}
+.cover-sub{color:#555;font-size:11pt;margin-bottom:20px}
+.cover-badge{display:inline-block;background:#1B2A6B;color:white;padding:8px 24px;border-radius:4px;font-size:12pt;font-weight:700;margin-bottom:8px}
+.cover-meta{font-size:10pt;color:#666;margin-top:16px}
+.cover-meta span{display:inline-block;margin:0 8px;padding:4px 12px;background:#f0f4ff;border-radius:3px}
+.q-block{margin-bottom:18px;page-break-inside:avoid;border:1px solid #e0e4f0;border-radius:6px;overflow:hidden}
+.q-hdr{background:#1B2A6B;color:white;padding:7px 12px;display:flex;align-items:flex-start;gap:10px}
+.q-num{background:#FF6B00;color:white;font-weight:700;font-size:11pt;min-width:28px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:3px;flex-shrink:0;margin-top:1px}
+.q-text{font-weight:600;font-size:11pt;line-height:1.5}
+.q-body{padding:10px 12px}
+.opts-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px 16px;margin-bottom:10px}
+.opt-row{display:flex;align-items:flex-start;gap:6px;padding:5px 8px;border-radius:4px;font-size:10.5pt}
+.opt-row.correct{background:#E8FFF3;border:1.5px solid #00AA44}
+.opt-row.wrong{background:#fafafa;border:1px solid #e8e8e8;color:#777}
+.opt-key{font-weight:700;min-width:22px;flex-shrink:0;font-size:10.5pt}
+.opt-key.correct{color:#00AA44}
+.opt-key.wrong{color:#aaa}
+.opt-mark{margin-left:auto;font-size:12pt;flex-shrink:0}
+.exp-box{background:#FFFBF0;border-left:4px solid #FF6B00;border-top:1px solid #FFD080;padding:8px 12px;border-radius:0 4px 4px 0}
+.exp-label{font-size:9pt;font-weight:700;color:#FF6B00;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.5px}
+.exp-text{font-size:10.5pt;color:#2a1800;line-height:1.6}
+.no-exp{font-size:9.5pt;color:#aaa;font-style:italic;padding:5px 0}
+.ft{text-align:center;font-size:8pt;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:7px}`;
+
+  const questionsHtml=QS.map(q=>{
+    const opts=['A','B','C','D'];
+    const optsHtml=opts.filter(k=>q[k]&&q[k]!=='—').map(k=>{
+      const isCorrect=k===q.answer;
+      return `<div class="opt-row ${isCorrect?'correct':'wrong'}">
+        <span class="opt-key ${isCorrect?'correct':'wrong'}">(${k})</span>
+        <span style="flex:1">${q[k]}</span>
+        <span class="opt-mark">${isCorrect?'<span style="color:#00AA44;font-weight:700">✓</span>':'<span style="color:#ccc">✗</span>'}</span>
+      </div>`;
+    }).join('');
+    const expHtml=q.explanation
+      ?`<div class="exp-box"><div class="exp-label">📝 व्याख्या (Explanation)</div><div class="exp-text">${q.explanation}</div></div>`
+      :`<div class="no-exp">व्याख्या उपलब्ध नहीं है।</div>`;
+    return `<div class="q-block">
+      <div class="q-hdr"><div class="q-num">${q.num}</div><div class="q-text">${q.text}</div></div>
+      <div class="q-body">
+        <div class="opts-grid">${optsHtml}</div>
+        ${expHtml}
+      </div>
+    </div>`;
+  }).join('');
+
+  const html=`<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><title>NIEd Solution Booklet</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>${css}</style></head><body>
+<div class="nprt"><strong>📚 NIEd Solution Booklet</strong><button class="pbtn" onclick="window.print()">🖨️ Print / Save PDF</button><span style="font-size:10px;color:#aaa">Ctrl+P → Save as PDF</span></div>
+<div style="padding:5mm 0">
+<div class="cover">
+  <div class="cover-logo">🕉️</div>
+  <div class="cover-org">New India Education (NIEd)</div>
+  <div class="cover-sub">omkarsir.com | Jaipur, Rajasthan</div>
+  <div class="cover-badge">📚 Solution Booklet</div>
+  <div class="cover-meta">
+    <span>कुल प्रश्न: <strong>${QS.length}</strong></span>
+    <span>व्याख्या: <strong>${withExp} / ${QS.length}</strong></span>
+    <span>दिनांक: <strong>${d}</strong></span>
+  </div>
+</div>
+${questionsHtml}
+<div class="ft">New India Education (NIEd) | omkarsir.com | Jaipur, Rajasthan</div>
+</div></body></html>`;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  window.open(URL.createObjectURL(blob),'_blank');
+  log('✅ Solution Booklet PDF खुला — Ctrl+P → Save as PDF','s');
+}
+
+// ===== COMPARATIVE ANSWER SHEET PDF =====
+function mkComparativeSheet(){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  const d=new Date().toLocaleDateString('hi-IN');
+  const hasExp=QS.some(q=>q.explanation);
+  const css=`@page{size:A4 landscape;margin:10mm 12mm}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Arial Unicode MS',serif;font-size:9.5pt;color:#1a1a1a;line-height:1.45}
+.nprt{background:#1B2A6B;color:white;padding:8px 14px;text-align:center;font-size:12px;position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:center;gap:12px}
+.pbtn{background:#FF6B00;color:white;border:none;padding:4px 14px;border-radius:4px;cursor:pointer;font-size:12px}
+@media print{.nprt{display:none}}
+.hdr{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #FF6B00;padding-bottom:7px;margin-bottom:10px}
+.org{color:#1B2A6B;font-size:15pt;font-weight:700}.sub{font-size:8pt;color:#555}
+.ti{text-align:right;font-size:8.5pt}.ti strong{color:#FF6B00;display:block;font-size:10pt}
+.teacher-badge{display:inline-block;background:#1B2A6B;color:white;padding:2px 10px;border-radius:3px;font-size:9pt;font-weight:700;margin-left:8px}
+table{width:100%;border-collapse:collapse;font-size:9.5pt}
+thead tr{background:#1B2A6B;color:white}
+thead th{padding:5px 8px;text-align:left;font-size:9pt;font-weight:700;white-space:nowrap}
+tbody tr:nth-child(even){background:#F5F7FF}
+tbody tr:hover{background:#EEF2FF}
+td{padding:5px 7px;border-bottom:1px solid #DDE2F0;vertical-align:top}
+.td-num{text-align:center;font-weight:700;color:#1B2A6B;width:32px;white-space:nowrap}
+.td-q{max-width:240px;font-weight:600;font-size:9.5pt;color:#1a1a1a}
+.td-ans{text-align:center;width:38px}
+.ans-badge{display:inline-block;background:#1B2A6B;color:white;font-weight:700;font-size:10pt;width:24px;height:24px;line-height:24px;border-radius:3px;text-align:center}
+.ans-badge.A{background:#0284C7}.ans-badge.B{background:#7C3AED}.ans-badge.C{background:#DC2626}.ans-badge.D{background:#059669}
+.td-opt{font-size:9pt;color:#059669;font-weight:600;max-width:180px}
+.td-exp{font-size:8.5pt;color:#444;max-width:280px;line-height:1.4}
+.no-exp{color:#bbb;font-style:italic;font-size:8pt}
+.ft{text-align:center;font-size:7.5pt;color:#999;margin-top:12px;border-top:1px solid #eee;padding-top:6px}
+.summary{background:#F0F4FF;border:1px solid #C8D0F0;border-radius:4px;padding:5px 10px;margin-bottom:8px;font-size:9pt;display:flex;gap:16px;align-items:center}
+.summary strong{color:#1B2A6B}`;
+
+  const rows=QS.map(q=>{
+    const ansColor=q.answer||'';
+    const correctOptText=q[q.answer]||'—';
+    const expText=q.explanation||'';
+    return `<tr>
+      <td class="td-num">${q.num}</td>
+      <td class="td-q">${q.text.length>90?q.text.slice(0,88)+'…':q.text}</td>
+      <td class="td-ans">${q.answer?`<span class="ans-badge ${ansColor}">${q.answer}</span>`:'<span style="color:#ccc">—</span>'}</td>
+      <td class="td-opt">${correctOptText.length>45?correctOptText.slice(0,43)+'…':correctOptText}</td>
+      ${hasExp?`<td class="td-exp">${expText?expText.length>80?expText.slice(0,78)+'…':expText:'<span class="no-exp">—</span>'}</td>`:''}
+    </tr>`;
+  }).join('');
+
+  const html=`<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><title>NIEd Comparative Answer Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>${css}</style></head><body>
+<div class="nprt"><strong>📋 Comparative Answer Sheet</strong><button class="pbtn" onclick="window.print()">🖨️ Print / Save PDF</button><span style="font-size:10px;color:#aaa">Ctrl+P → Landscape → Save</span></div>
+<div style="padding:4mm 0">
+<div class="hdr">
+  <div><div class="org">🕉️ New India Education (NIEd) <span class="teacher-badge">📋 TEACHER COPY</span></div><div class="sub">omkarsir.com | Jaipur, Rajasthan</div></div>
+  <div class="ti"><strong>Comparative Answer Sheet</strong>Total: ${QS.length} Q | ${d}</div>
+</div>
+<div class="summary">
+  <span>📊 कुल प्रश्न: <strong>${QS.length}</strong></span>
+  <span>✅ उत्तर: <strong>${QS.filter(q=>q.answer).length}</strong></span>
+  <span>📝 व्याख्या: <strong>${QS.filter(q=>q.explanation).length}</strong></span>
+  <span style="margin-left:auto;color:#555;font-size:8pt">⚠️ TEACHER COPY — Students को न दें</span>
+</div>
+<table>
+  <thead><tr>
+    <th style="width:32px">Q</th>
+    <th>प्रश्न (Question)</th>
+    <th style="width:38px;text-align:center">Ans</th>
+    <th>सही विकल्प (Correct Option)</th>
+    ${hasExp?'<th>व्याख्या (Explanation)</th>':''}
+  </tr></thead>
+  <tbody>${rows}</tbody>
+</table>
+<div class="ft">New India Education (NIEd) | omkarsir.com | Teacher Copy — Confidential</div>
+</div></body></html>`;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  window.open(URL.createObjectURL(blob),'_blank');
+  log('✅ Comparative Answer Sheet खुला — Ctrl+P → Landscape → Save as PDF','s');
+}
+
+// ===== TRANSLATION ENGINE (Google Translate — Free, No Key) =====
+let ENG_QS=[],transCache={},transReady=false;
+function isHindi(s){return /[\u0900-\u097F]/.test(s||'');}
+function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+
+async function apiTrans(text){
+  if(!text||!isHindi(text))return text;
+  const k=text.trim();
+  if(transCache[k])return transCache[k];
+  try{
+    // Google Translate unofficial free API — no key needed, no daily limit
+    const url=`https://translate.googleapis.com/translate_a/single?client=gtx&sl=hi&tl=en&dt=t&q=${encodeURIComponent(k)}`;
+    const r=await fetch(url);
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    const t=d[0].map(item=>item[0]||'').join('').trim();
+    if(!t)return k;
+    transCache[k]=t;return t;
+  }catch(e){
+    // Fallback: MyMemory as backup
+    try{
+      const r2=await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(k)}&langpair=hi|en`);
+      const d2=await r2.json();
+      if(d2.responseStatus===200){const t2=d2.responseData.translatedText;transCache[k]=t2;return t2;}
+    }catch(e2){}
+    return k;
+  }
+}
+
+async function transQ(q){
+  // Translate each field independently — Google API is fast and reliable
+  if(![q.text,q.A,q.B,q.C,q.D,q.explanation].some(p=>isHindi(p||'')))return{...q};
+  const tText=await apiTrans(q.text);   await delay(80);
+  const tA=await apiTrans(q.A||'');     await delay(60);
+  const tB=await apiTrans(q.B||'');     await delay(60);
+  const tC=await apiTrans(q.C||'');     await delay(60);
+  const tD=await apiTrans(q.D||'');
+  const tExp=q.explanation?(await delay(80),await apiTrans(q.explanation)):'';
+  return{...q,text:tText||q.text,A:tA||q.A,B:tB||q.B,C:tC||q.C,D:tD||q.D,explanation:tExp||q.explanation};
+}
+
+async function runWithTranslation(mode){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  if(transReady&&ENG_QS.length===QS.length){runEngOutput(mode,ENG_QS);return;}
+  const panel=document.getElementById('transPanel');
+  panel.style.display='block';panel.scrollIntoView({behavior:'smooth'});
+  ENG_QS=[];transReady=false;
+  const total=QS.length;
+  for(let i=0;i<total;i++){
+    document.getElementById('transMsg').textContent=`🌐 Translating Q${i+1}/${total}...`;
+    document.getElementById('transBar').style.width=((i/total)*100)+'%';
+    ENG_QS.push(await transQ(QS[i]));
+    await delay(130);
+  }
+  document.getElementById('transBar').style.width='100%';
+  document.getElementById('transMsg').textContent=`✅ ${total} questions translated! Output बन रहा है...`;
+  transReady=true;
+  setTimeout(()=>{panel.style.display='none';runEngOutput(mode,ENG_QS);},800);
+}
+
+function runEngOutput(mode,eqs){
+  if(mode==='pdf')mkEngPdf(eqs);
+  else if(mode==='bilingual')mkBilingualPdf(eqs);
+  else if(mode==='classplus')mkEngClassplusDocx(eqs);
+}
+
+// ===== ENGLISH PDF =====
+function mkEngPdf(eqs){
+  const d=new Date().toLocaleDateString('en-IN');
+  const html=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>NIEd English Test Paper</title><style>@page{size:A4;margin:13mm 12mm}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;font-size:10.5pt;color:#1a1a1a;line-height:1.5}.hdr{border-bottom:3px solid #FF6B00;padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}.org{color:#1B2A6B;font-size:16pt;font-weight:700}.sub{font-size:8.5pt;color:#555}.ti{text-align:right;font-size:8.5pt}.ti strong{font-size:11pt;color:#FF6B00;display:block}.inst{background:#FFF3E0;border:1px solid #FF6B00;border-radius:3px;padding:6px 10px;margin-bottom:12px;font-size:9pt}.q{margin-bottom:12px;page-break-inside:avoid}.qh{display:flex;gap:6px;align-items:flex-start}.qn{background:#1B2A6B;color:white;font-weight:700;font-size:9.5pt;min-width:26px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:2px;flex-shrink:0;margin-top:2px}.qt{font-weight:600}.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;margin-top:4px;margin-left:32px}.opt{font-size:10pt;display:flex;gap:4px}.ok{font-weight:700;color:#FF6B00;min-width:18px}hr.dv{border:none;border-top:1px solid #e5e5e5;margin:4px 0 8px 0}.as{margin-top:18px;border-top:2px solid #1B2A6B;padding-top:10px;page-break-before:always}.as h2{color:#1B2A6B;font-size:12pt;margin-bottom:8px}.ag{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin-bottom:14px}.ac{border:1px solid #ccc;padding:3px;text-align:center;font-size:8.5pt}.qn2{color:#999;font-size:7.5pt;display:block}.an{font-weight:700;color:#1B2A6B;font-size:10pt}.ei{margin-bottom:7px;padding:5px 9px;background:#f9f9f9;border-left:3px solid #FF6B00;font-size:9pt;page-break-inside:avoid}.ft{text-align:center;font-size:8pt;color:#999;margin-top:14px;border-top:1px solid #eee;padding-top:7px}.nprt{background:#1B2A6B;color:white;padding:10px 18px;text-align:center;font-size:12px;position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:center;gap:14px}.pbtn{background:#FF6B00;color:white;border:none;padding:5px 18px;border-radius:4px;cursor:pointer;font-size:12px}@media print{.nprt{display:none}}</style></head><body><div class="nprt"><strong>📄 NIEd English Test Paper</strong><button class="pbtn" onclick="window.print()">🖨️ Print / Save PDF</button></div><div style="padding:6mm 0"><div class="hdr"><div><div class="org">🕉️ New India Education (NIEd)</div><div class="sub">omkarsir.com | Jaipur, Rajasthan</div></div><div class="ti"><strong>MCQ Test Paper (English)</strong>Total: ${eqs.length} Q<br>${d}</div></div><div class="inst">📋 Instructions: Choose the correct answer from four options.</div>${eqs.map((q,i)=>`<div class="q"><div class="qh"><div class="qn">${q.num}</div><div class="qt">${q.text}</div></div><div class="opts">${['A','B','C','D'].filter(k=>q[k]&&q[k]!=='—').map(k=>`<div class="opt"><span class="ok">(${k})</span><span>${q[k]}</span></div>`).join('')}</div>${i<eqs.length-1?'<hr class="dv">':''}</div>`).join('')}<div class="as"><h2>📋 Answer Key</h2><div class="ag">${eqs.map(q=>`<div class="ac"><span class="qn2">Q.${q.num}</span><span class="an">${q.answer||'—'}</span></div>`).join('')}</div>${eqs.some(q=>q.explanation)?`<div><h3 style="color:#1B2A6B;font-size:10.5pt;margin-bottom:7px;margin-top:10px">📝 Explanations</h3>${eqs.filter(q=>q.explanation).map(q=>`<div class="ei"><strong>Q.${q.num}.</strong> <strong style="color:#00AA44">Ans:(${q.answer})</strong> — ${q.explanation}</div>`).join('')}</div>`:''}</div><div class="ft">New India Education (NIEd) | omkarsir.com | Jaipur, Rajasthan</div></div></body></html>`;
+  window.open(URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),'_blank');
+  log('✅ English PDF खुला — Ctrl+P → Save as PDF','s');
+}
+
+// ===== BILINGUAL PDF =====
+function mkBilingualPdf(eqs){
+  const d=new Date().toLocaleDateString('en-IN');
+  const css=`@page{size:A4;margin:12mm 11mm}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,'Arial Unicode MS',sans-serif;font-size:9.5pt;color:#1a1a1a;line-height:1.45}.nprt{background:#1B2A6B;color:white;padding:8px 14px;text-align:center;font-size:12px;position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:center;gap:12px}.pbtn{background:#FF6B00;color:white;border:none;padding:4px 14px;border-radius:4px;cursor:pointer;font-size:12px}@media print{.nprt{display:none}}.hdr{border-bottom:3px solid #FF6B00;padding-bottom:7px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}.org{color:#1B2A6B;font-size:14pt;font-weight:700}.sub{font-size:8pt;color:#555}.ti{text-align:right;font-size:8pt}.ti strong{color:#FF6B00;display:block;font-size:10pt}.bil-q{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:10px;page-break-inside:avoid;border:1px solid #DDE0F0;border-radius:5px;overflow:hidden}.hi-col{background:#F8F9FF;padding:8px 10px;border-right:2px solid #DDE0F0}.en-col{background:#F0FFF8;padding:8px 10px}.lang-badge{font-size:8pt;font-weight:700;padding:1px 7px;border-radius:3px;margin-bottom:5px;display:inline-block}.hi-b{background:#FF6B00;color:white}.en-b{background:#059669;color:white}.qn-box{background:#1B2A6B;color:white;font-weight:700;padding:1px 7px;border-radius:3px;font-size:9pt;display:inline-block;margin-bottom:5px}.q-txt{font-weight:600;font-size:9.5pt;margin-bottom:5px}.opt-list{font-size:9pt;margin-left:4px}.opt-item{display:flex;gap:5px;margin-bottom:2px}.opt-key{font-weight:700;color:#FF6B00;min-width:18px;flex-shrink:0}.ans-bar{background:#E8FFF3;border-top:1px solid #B2F0D0;padding:4px 8px;font-size:8.5pt;font-weight:600;color:#059669}.as{margin-top:16px;border-top:2px solid #1B2A6B;padding-top:8px;page-break-before:always}.as h2{color:#1B2A6B;font-size:11pt;margin-bottom:7px}.ag{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}.ac{border:1px solid #ccc;padding:3px;text-align:center;font-size:8pt}.qn2{color:#999;font-size:7pt;display:block}.an{font-weight:700;color:#1B2A6B;font-size:9.5pt}.ft{text-align:center;font-size:7.5pt;color:#999;margin-top:12px;border-top:1px solid #eee;padding-top:6px}`;
+
+  const questions=QS.map((q,i)=>{
+    const eq=eqs[i]||q;
+    const opts=['A','B','C','D'].filter(k=>q[k]&&q[k]!=='—');
+    const hiOpts=opts.map(k=>`<div class="opt-item"><span class="opt-key">(${k})</span><span>${q[k]}</span></div>`).join('');
+    const enOpts=opts.map(k=>`<div class="opt-item"><span class="opt-key">(${k})</span><span>${eq[k]||q[k]}</span></div>`).join('');
+    const ansRow=q.answer?`<div class="ans-bar" style="grid-column:1/-1">✅ Correct Answer: (${q.answer})</div>`:'';
+    return `<div class="bil-q">
+      <div class="hi-col"><span class="lang-badge hi-b">🇮🇳 हिंदी</span><div class="qn-box">Q.${q.num}</div><div class="q-txt">${q.text}</div><div class="opt-list">${hiOpts}</div></div>
+      <div class="en-col"><span class="lang-badge en-b">🇺🇸 English</span><div style="height:19px"></div><div class="q-txt">${eq.text||q.text}</div><div class="opt-list">${enOpts}</div></div>
+      ${ansRow}
+    </div>`;
+  }).join('');
+
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>NIEd Bilingual Test Paper</title><style>${css}</style></head><body><div class="nprt"><strong>📋 NIEd Bilingual PDF</strong><button class="pbtn" onclick="window.print()">🖨️ Print / Save PDF</button></div><div style="padding:5mm 0"><div class="hdr"><div><div class="org">🕉️ New India Education (NIEd)</div><div class="sub">omkarsir.com | Jaipur, Rajasthan</div></div><div class="ti"><strong>Bilingual MCQ Paper</strong>${QS.length} Q | ${d}</div></div>${questions}<div class="as"><h2>📋 Answer Key</h2><div class="ag">${QS.map(q=>`<div class="ac"><span class="qn2">Q.${q.num}</span><span class="an">${q.answer||'—'}</span></div>`).join('')}</div></div><div class="ft">New India Education (NIEd) | omkarsir.com | Jaipur, Rajasthan</div></div></body></html>`;
+  window.open(URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),'_blank');
+  log('✅ Bilingual PDF खुला — Ctrl+P → Save as PDF','s');
+}
+
+// ===== ENGLISH CLASSPLUS DOCX =====
+function mkEngClassplusDocx(eqs){
+  if(typeof JSZip==='undefined'){log('❌ JSZip load नहीं हुआ।','e');return;}
+  const posM=parseInt(document.getElementById('cpPos').value)||4;
+  const negM=parseInt(document.getElementById('cpNeg').value)||1;
+  const validQs=eqs.filter(q=>q.answer&&q[q.answer]);
+  if(!validQs.length){log('⚠️ Answer वाले questions नहीं मिले!','e');return;}
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function cell(w,txt){return `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/><w:tcMar><w:top w:w="80" w:type="dxa"/><w:left w:w="115" w:type="dxa"/><w:bottom w:w="80" w:type="dxa"/><w:right w:w="115" w:type="dxa"/></w:tcMar></w:tcPr><w:p><w:r><w:t xml:space="preserve">${esc(txt)}</w:t></w:r></w:p></w:tc>`;}
+  function row(l,c,s){return `<w:tr>${cell(1800,l)}${cell(5760,c)}${cell(1800,s||'')}</w:tr>`;}
+  const borders=`<w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/></w:tblBorders>`;
+  function mkTbl(q){
+    const opts=['A','B','C','D'].filter(k=>q[k]&&q[k]!=='—');
+    const optRows=opts.map(k=>row('Option',q[k],k===q.answer?'correct':'incorrect')).join('');
+    return `<w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/>${borders}</w:tblPr><w:tblGrid><w:gridCol w:w="1800"/><w:gridCol w:w="5760"/><w:gridCol w:w="1800"/></w:tblGrid>${row('Question',q.text)}${row('Type','multiple_choice')}${optRows}${row('Solution',q.explanation||(q[q.answer]||''))}${row('Marks',String(posM),String(negM))}</w:tbl>`;
+  }
+  const NW='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+  const NK2='http://schemas.openxmlformats.org/package/2006/relationships';
+  const NR2='http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+  const NC2='http://schemas.openxmlformats.org/package/2006/content-types';
+  const emptyP='<w:p><w:pPr><w:spacing w:after="120"/></w:pPr></w:p>';
+  const body=validQs.map(q=>mkTbl(q)+emptyP).join('');
+  const docXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="${NW}"><w:body>${body}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080"/></w:sectPr></w:body></w:document>`;
+  const zip=new JSZip();
+  zip.file('[Content_Types].xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="${NC2}"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>`);
+  zip.file('_rels/.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK2}"><Relationship Id="rId1" Type="${NR2}/officeDocument" Target="word/document.xml"/></Relationships>`);
+  zip.file('word/document.xml',docXml);
+  zip.file('word/_rels/document.xml.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK2}"></Relationships>`);
+  zip.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'})
+    .then(blob=>{
+      const url=URL.createObjectURL(blob),a=document.createElement('a');
+      a.href=url;a.download='NIEd_Classplus_English.docx';
+      document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+      log(`✅ English Classplus DOCX download! ${validQs.length} Q`,'s');
+    }).catch(err=>{log(`❌ ${err.message}`,'e');});
+}
+
+// ===== CLASSPLUS DOCX EXPORT =====
+function showCpPanel(){
+  if(!QS.length){log('⚠️ पहले Parse करें!','e');return;}
+  const validQs=QS.filter(q=>q.answer&&q[q.answer]);
+  const skipped=QS.length-validQs.length;
+  document.getElementById('cpPanel').style.display='block';
+  const info=document.getElementById('cpInfo');
+  info.style.display='block';
+  info.innerHTML=`✅ ${validQs.length} questions export होंगे${skipped?` &nbsp;|&nbsp; ⚠️ ${skipped} skip (no answer)`:''}`;
+  document.getElementById('cpPanel').scrollIntoView({behavior:'smooth'});
+}
+
+function mkClassplusDocx(){
+  if(!QS.length){log('⚠️ Parse करें!','e');return;}
+  if(typeof JSZip==='undefined'){log('❌ JSZip load नहीं हुआ।','e');return;}
+  const posM=parseInt(document.getElementById('cpPos').value)||4;
+  const negM=parseInt(document.getElementById('cpNeg').value)||1;
+  const validQs=QS.filter(q=>q.answer&&q[q.answer]);
+  if(!validQs.length){log('⚠️ Answer वाले questions नहीं मिले!','e');return;}
+  const skipped=QS.length-validQs.length;
+
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  function cell(w,txt){return `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/><w:tcMar><w:top w:w="80" w:type="dxa"/><w:left w:w="115" w:type="dxa"/><w:bottom w:w="80" w:type="dxa"/><w:right w:w="115" w:type="dxa"/></w:tcMar></w:tcPr><w:p><w:r><w:t xml:space="preserve">${esc(txt)}</w:t></w:r></w:p></w:tc>`;}
+
+  function row(label,content,status){return `<w:tr>${cell(1800,label)}${cell(5760,content)}${cell(1800,status||'')}</w:tr>`;}
+
+  const borders=`<w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/></w:tblBorders>`;
+
+  function makeTable(q){
+    const opts=['A','B','C','D'].filter(k=>q[k]&&q[k]!=='—');
+    const optRows=opts.map(k=>row('Option',q[k],k===q.answer?'correct':'incorrect')).join('');
+    const sol=q.explanation||(q[q.answer]||'');
+    return `<w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/>${borders}</w:tblPr><w:tblGrid><w:gridCol w:w="1800"/><w:gridCol w:w="5760"/><w:gridCol w:w="1800"/></w:tblGrid>${row('Question',q.text)}${row('Type','multiple_choice')}${optRows}${row('Solution',sol)}${row('Marks',String(posM),String(negM))}</w:tbl>`;
+  }
+
+  const NW='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+  const NK2='http://schemas.openxmlformats.org/package/2006/relationships';
+  const NR2='http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+  const NC2='http://schemas.openxmlformats.org/package/2006/content-types';
+
+  const emptyP='<w:p><w:pPr><w:spacing w:after="120"/></w:pPr></w:p>';
+  const body=validQs.map(q=>makeTable(q)+emptyP).join('');
+  const docXml=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="${NW}"><w:body>${body}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080"/></w:sectPr></w:body></w:document>`;
+
+  const zip=new JSZip();
+  zip.file('[Content_Types].xml',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="${NC2}"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>`);
+  zip.file('_rels/.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK2}"><Relationship Id="rId1" Type="${NR2}/officeDocument" Target="word/document.xml"/></Relationships>`);
+  zip.file('word/document.xml',docXml);
+  zip.file('word/_rels/document.xml.rels',`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NK2}"></Relationships>`);
+
+  zip.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',compression:'DEFLATE'})
+    .then(blob=>{
+      const url=URL.createObjectURL(blob),a=document.createElement('a');
+      a.href=url;a.download='NIEd_Classplus_Questions.docx';
+      document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+      const msg=`✅ Classplus DOCX download! ${validQs.length} Q${skipped?' | '+skipped+' skipped':''}`;
+      log(msg,'s');document.getElementById('cpInfo').innerHTML='🎉 '+msg+' — CMS में upload करें!';
+    }).catch(err=>{log(`❌ ${err.message}`,'e');});
+}
+
+window.addEventListener('load',function(){setTimeout(init,400);});
+</script>
+</body>
+</html>
