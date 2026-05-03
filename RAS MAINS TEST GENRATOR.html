@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIEd RAS Mains Paper Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--nv:#1B2A6B;--dk:#080E28;--nl:#253590;--sf:#FF6B00;--sf2:#FF8C2A;--wh:#fff;--gr:#00AA44;--tl:#0EA5E9;--gold:#FFB830;--red:#FF3B30;--pur:#A855F7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari','Segoe UI','Arial Unicode MS',sans-serif;background:var(--dk);color:var(--wh);min-height:100vh;font-size:13px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--dk)}::-webkit-scrollbar-thumb{background:var(--nl);border-radius:3px}
+
+/* ── HEADER ── */
+.hdr{background:linear-gradient(135deg,#1B2A6B,#080E28);border-bottom:3px solid var(--sf);padding:12px 18px;display:flex;align-items:center;gap:12px}
+.hdr-icon{font-size:24px}
+.hdr-title{font-size:14px;color:var(--sf);font-weight:700}
+.hdr-sub{font-size:10px;color:#8890b0}
+
+/* ── MAIN ── */
+.main{padding:12px;max-width:1000px;margin:0 auto}
+
+/* ── STATUS BAR ── */
+.stl{background:var(--nv);border:1px solid var(--nl);border-radius:7px;padding:8px 12px;margin-bottom:10px;font-size:11px;color:#8890b0}
+.stl .ls{color:var(--gr)}.stl .li{color:var(--sf)}.stl .lt{color:var(--tl)}
+
+/* ── CARD ── */
+.card{background:var(--nv);border:1px solid var(--nl);border-radius:10px;padding:14px;margin-bottom:10px}
+.card.smart{border-color:var(--tl);background:linear-gradient(135deg,#0C1E40,#081828)}
+.card.input-card{border-color:var(--sf);background:linear-gradient(135deg,#140A00,#080E28)}
+.card.gen-card-wrap{border-color:var(--gold);background:linear-gradient(135deg,#1A1000,#080E28);display:none}
+.card.settings-card{border-color:#334;background:linear-gradient(135deg,#0a0f22,#080E28)}
+
+/* ── CARD TITLE ── */
+.ct{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sbadge{background:rgba(255,107,0,.15);border:1px solid var(--sf);color:var(--sf);padding:1px 7px;border-radius:4px;font-size:9px;font-weight:700;letter-spacing:1px}
+.sbadge-tl{background:rgba(14,165,233,.15);border-color:var(--tl);color:#38BDF8}
+.sbadge-gold{background:rgba(255,184,48,.15);border-color:var(--gold);color:var(--gold)}
+
+/* ── TEXTAREA ── */
+textarea{width:100%;background:var(--dk);border:1px solid var(--nl);border-radius:7px;color:var(--wh);font-size:12px;line-height:1.75;padding:10px;resize:vertical;font-family:'Noto Sans Devanagari',monospace}
+textarea:focus{outline:none;border-color:var(--sf)}
+textarea::placeholder{color:#3a4060}
+
+/* ── INPUTS ── */
+input[type=text],input[type=number],select{background:var(--dk);border:1px solid var(--nl);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;width:100%;font-family:'Noto Sans Devanagari',sans-serif}
+input:focus,select:focus{border-color:var(--sf)}
+input::placeholder{color:#3a4060}
+select{cursor:pointer}select option{background:var(--dk)}
+
+/* ── BUTTONS ── */
+.btn{padding:8px 16px;border-radius:6px;border:none;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;font-family:'Noto Sans Devanagari',sans-serif}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn-tl{background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff}
+.btn-sf{background:var(--sf);color:#fff}.btn-sf:hover{background:var(--sf2)}
+.btn-gold{background:linear-gradient(135deg,#D97706,#B45309);color:#fff}
+.btn-gr{background:linear-gradient(135deg,#059669,#047857);color:#fff}
+.btn-pur{background:linear-gradient(135deg,#9333ea,#7c3aed);color:#fff}
+.btn-out{background:none;border:1px solid var(--nl);color:#8890b0;padding:5px 10px;border-radius:5px;font-size:11px;cursor:pointer}
+.btn-out:hover{border-color:var(--tl);color:#38BDF8}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:9px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}
+
+/* ── FORMAT GUIDE ── */
+.fmt-box{background:rgba(255,107,0,.06);border:1px solid rgba(255,107,0,.2);border-radius:7px;padding:9px 12px;font-size:11px;color:#9aa0c0;margin-bottom:10px;line-height:1.8}
+.fmt-box code{color:var(--gold);background:rgba(255,184,48,.1);padding:1px 5px;border-radius:3px}
+
+/* ── STATS ── */
+.sr{display:none;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.sb{background:var(--dk);border:1px solid var(--nl);border-radius:8px;padding:9px 13px;flex:1;min-width:80px;text-align:center}
+.sn{font-size:20px;font-weight:700;color:var(--sf)}.sl{font-size:10px;color:#6870a0;margin-top:2px}
+
+/* ── PREVIEW TABLE ── */
+.pc{display:none;background:var(--dk);border:1px solid var(--nl);border-radius:8px;padding:12px;margin-bottom:10px}
+.tbl{width:100%;border-collapse:collapse;font-size:11px}
+.tbl th{background:rgba(0,0,0,.4);color:var(--sf);padding:5px 9px;text-align:left;font-size:10px;text-transform:uppercase}
+.tbl td{padding:5px 9px;border-bottom:1px solid var(--nl);vertical-align:top}
+.tbl tr:hover td{background:rgba(255,107,0,.04)}
+.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:600}
+.tag5{background:rgba(0,212,154,.15);color:#00d49a;border:1px solid #00d49a}
+.tag10{background:rgba(255,107,0,.15);color:var(--sf);border:1px solid var(--sf)}
+.tagA{background:rgba(0,170,68,.15);color:#4ade80;border:1px solid #4ade80;font-size:9px}
+
+/* ── GENERATE BUTTONS ── */
+.ag{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:9px;margin-bottom:10px}
+.ab{padding:12px;border-radius:8px;border:2px solid;cursor:pointer;font-size:12px;font-weight:600;display:flex;align-items:center;gap:9px;background:none;color:#fff;width:100%;text-align:left;transition:all .2s;font-family:'Noto Sans Devanagari',sans-serif}
+.ab:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.ab:active{transform:none}
+.ab-icon{font-size:18px;flex-shrink:0}
+.ab-title{font-size:12px;font-weight:700;display:block;margin-bottom:2px}
+.ab-sub{font-size:10px;color:#8890b0;font-weight:400}
+
+/* ── PROGRESS ── */
+.pb{width:100%;height:4px;background:var(--nl);border-radius:2px;margin-top:9px;display:none}
+.pf{height:100%;background:var(--sf);border-radius:2px;transition:width .3s}
+
+/* ── RESULT ── */
+.res{background:var(--dk);border:1px solid var(--nl);border-radius:5px;padding:8px 11px;margin-top:7px;font-size:11px;display:none}
+.res.ok{border-color:var(--gr);color:#6EFFA8;background:rgba(0,170,68,.06)}
+.res.er{border-color:var(--red);color:#FF8B85;background:rgba(255,59,48,.06)}
+
+/* ── COLLAPSIBLE STEPS ── */
+.step-card{border-radius:10px;margin-bottom:10px;overflow:hidden}
+.step-card.s0{background:linear-gradient(135deg,#0a0f22,#080E28);border:1px solid #2a3060}
+.step-card.s1{background:linear-gradient(135deg,#0C1E40,#081828);border:1px solid var(--tl)}
+.step-card.s2{background:linear-gradient(135deg,#140A00,#080E28);border:1px solid var(--sf)}
+.step-card.s3{background:linear-gradient(135deg,#1A1000,#080E28);border:1px solid var(--gold);display:none}
+
+.step-hdr{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;user-select:none;gap:10px}
+.step-hdr:hover{background:rgba(255,255,255,.03)}
+.step-left{display:flex;align-items:center;gap:10px}
+.step-num{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.s0 .step-num{background:rgba(42,48,96,.4);border:1px solid #2a3060;color:#6870a0}
+.s1 .step-num{background:rgba(14,165,233,.15);border:1px solid var(--tl);color:#38BDF8}
+.s2 .step-num{background:rgba(255,107,0,.15);border:1px solid var(--sf);color:var(--sf)}
+.s3 .step-num{background:rgba(255,184,48,.15);border:1px solid var(--gold);color:var(--gold)}
+.step-title{font-size:13px;font-weight:700;color:var(--wh)}
+.step-arrow{color:#3a4060;font-size:13px;transition:transform .25s;flex-shrink:0}
+.step-card.collapsed .step-arrow{transform:rotate(-90deg)}
+.step-body{padding:0 14px 14px;border-top:1px solid rgba(255,255,255,.05)}
+.step-card.collapsed .step-body{display:none}
+
+/* ── SETTINGS TOGGLE (legacy - remove) ── */
+.settings-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.settings-body{display:none;margin-top:12px;border-top:1px solid #1a2550;padding-top:12px}
+.settings-body.open{display:block}
+label.lbl{font-size:10px;color:#6870a0;display:block;margin-bottom:4px;margin-top:8px}
+label.lbl:first-child{margin-top:0}
+
+/* ── CHAT STYLES ── */
+.qchip{padding:5px 11px;border-radius:20px;border:1px solid var(--nl);background:rgba(27,42,107,.4);color:#8890b0;font-size:11px;cursor:pointer;transition:all .2s;font-family:inherit;}
+.qchip:hover{border-color:var(--sf);color:var(--sf);background:rgba(255,107,0,.08);}
+.chat-user-msg{display:flex;gap:9px;align-items:flex-start;flex-direction:row-reverse;}
+.chat-user-bubble{background:linear-gradient(135deg,var(--sf),#cc5500);border-radius:9px 0 9px 9px;padding:9px 13px;font-size:12px;line-height:1.7;max-width:88%;color:#fff;}
+.chat-ai-msg{display:flex;gap:9px;align-items:flex-start;}
+.chat-ai-bubble{background:var(--nv);border:1px solid var(--nl);border-radius:0 9px 9px 9px;padding:10px 13px;font-size:12px;line-height:1.7;max-width:88%;color:var(--wh);}
+.chat-avatar-ai{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--sf),#cc5500);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.chat-avatar-user{width:28px;height:28px;border-radius:50%;background:var(--nl);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.chat-action-btn{margin-top:8px;padding:5px 12px;border-radius:6px;border:1px solid var(--gr);background:rgba(0,170,68,.1);color:#4ade80;font-size:11px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px;}
+.chat-action-btn:hover{background:rgba(0,170,68,.2);}
+.typing-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sf);animation:td .9s infinite ease-in-out;margin:0 2px;}
+.typing-dot:nth-child(2){animation-delay:.2s;}.typing-dot:nth-child(3){animation-delay:.4s;}
+@keyframes td{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(70px);background:#1a2550;border:1px solid var(--sf);color:var(--wh);padding:9px 18px;border-radius:9px;font-size:12px;box-shadow:0 6px 24px rgba(0,0,0,.5);transition:transform .3s;z-index:999;pointer-events:none;white-space:nowrap}
+#toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ══════════════════════════════════════════
+   PRINT / PAPER STYLES
+══════════════════════════════════════════ */
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  @page{size:A4;margin:0}
+  .hdr,.main,#toast{display:none!important}
+  #paper-out{display:block!important;visibility:visible!important}
+  #paperWrap{background:none!important;padding:0!important}
+  .print-page{width:210mm!important;height:297mm!important;padding:19mm 16mm 12mm 20mm!important;margin:0!important;box-shadow:none!important;page-break-after:always!important;break-after:page!important;overflow:hidden!important}
+  .print-page:last-of-type{page-break-after:avoid!important;break-after:avoid!important}
+  .phead{background:#1B2A6B!important;-webkit-print-color-adjust:exact!important}
+  .dnw{background:repeating-linear-gradient(-45deg,#ccc 0,#ccc 3px,#fff 3px,#fff 9px)!important}
+}
+#paper-out{display:none}
+.paper-wrap{background:#444;padding:20px;margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:0}
+.print-page{width:210mm;height:297mm;padding:19mm 16mm 12mm 20mm;margin:0 0 20px;background:#fff;color:#111;box-shadow:0 4px 20px rgba(0,0,0,.5);font-family:'Times New Roman',serif;font-size:10.5pt;position:relative;overflow:hidden;flex-shrink:0}
+.phead{position:absolute;top:0;left:0;right:0;background:#1B2A6B;color:#FFD700;text-align:center;font-size:8pt;font-weight:700;padding:3mm 5mm;z-index:2}
+.phead a{color:#FFD700;text-decoration:none}
+.pfoot{position:absolute;bottom:0;left:0;right:0;background:#f5f5f5;border-top:1px solid #ccc;text-align:center;font-size:8pt;color:#555;padding:2mm 5mm;z-index:2}
+.pfoot a{color:#1B2A6B;text-decoration:none;font-weight:600}
+.wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-45deg);pointer-events:none;z-index:0;text-align:center;white-space:nowrap;line-height:1.3;user-select:none}
+.wm-l1{font-size:38pt;font-weight:800;letter-spacing:2px;color:#1B2A6B}
+.wm-l2{font-size:16pt;font-weight:600;color:#1B2A6B;display:block;margin-top:4px}
+.pp-hdr{display:flex;justify-content:space-between;margin-bottom:4px}
+.pp-bc{text-align:center;margin-bottom:7px}
+.bc-bar{display:inline-block;background:repeating-linear-gradient(90deg,#000 0,#000 2px,#fff 2px,#fff 4px);width:55mm;height:10mm;border:1px solid #555}
+.cover-box{border:2px solid #1B2A6B;border-radius:4px;padding:11px;margin-bottom:10px}
+.cover-title{text-align:center;border-bottom:2px solid #FF6B00;padding-bottom:7px;margin-bottom:9px}
+.cover-title h2{font-size:13pt;font-weight:bold;color:#1B2A6B}
+.cover-title p{font-size:11pt;margin-top:3px}
+.cover-fields p{font-size:10.5pt;margin-bottom:9px;display:flex;align-items:flex-end;gap:8px}
+.cover-fields b{min-width:180px;font-weight:bold}
+.uline{flex:1;border-bottom:1px solid #555;min-height:18px}
+.unit-head{display:flex;justify-content:space-between;border-top:1.5px solid #333;border-bottom:1px solid #333;padding:3px 2px;margin-bottom:6px;font-size:10.5pt;font-weight:bold}
+.note-ln{font-size:10pt;margin-bottom:8px;line-height:1.5}
+.q-box{border:1.5px solid #333;margin-bottom:0}
+.q-box+.q-box{border-top:none}
+.q-inner{padding:8px 10px}
+.q-num{font-weight:bold;margin-bottom:4px}
+.q-hi{font-family:'Noto Sans Devanagari','Times New Roman',serif;line-height:1.6}
+.q-en{line-height:1.5;margin-bottom:3px;color:#333}
+.ans-block{padding:4px 10px 6px}
+.aline{border-bottom:1px solid #666;height:9mm;display:block}
+.dnw{background:repeating-linear-gradient(-45deg,#ddd 0,#ddd 3px,#fff 3px,#fff 9px);border:1.5px solid #333;border-top:none;text-align:center;padding:16px;min-height:28mm;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px}
+.dnw p{font-size:11pt;font-weight:bold}
+.dnw .dh{font-family:'Noto Sans Devanagari',sans-serif}
+/* Model Answer styles */
+.ma-qbox{border:1.5px solid #1B2A6B;border-radius:3px;margin-bottom:8px}
+.ma-qtop{background:#1B2A6B;color:#FFD700;padding:5px 10px;font-size:9.5pt;font-weight:bold;display:flex;justify-content:space-between}
+.ma-qtext{padding:7px 10px;font-size:10pt;font-family:'Noto Sans Devanagari',serif;line-height:1.6;border-bottom:1px solid #ddd}
+.ma-ans{padding:8px 10px;font-size:10pt;font-family:'Noto Sans Devanagari',serif;line-height:1.85;background:#f8fff8}
+.ma-ans-lbl{font-size:9pt;font-weight:bold;color:#1B2A6B;margin-bottom:4px;display:block}
+.ma-blank{padding:6px 10px;font-size:9pt;color:#aaa;font-style:italic}
+/* Bilingual */
+.bi-q{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid #333;margin-bottom:0}
+.bi-q+.bi-q{border-top:none}
+.bi-hi{padding:8px;border-right:1px solid #999;font-family:'Noto Sans Devanagari',serif;font-size:10pt;line-height:1.5}
+.bi-en{padding:8px;font-size:10pt;line-height:1.5}
+.bi-lines{grid-column:1/-1;padding:3px 8px 5px}
+@media(max-width:600px){.row2,.row3{grid-template-columns:1fr}.print-page{width:100%;padding:12mm 8mm}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <span class="hdr-icon">🕉️</span>
+  <div>
+    <div class="hdr-title">NIEd RAS Mains Paper Generator</div>
+    <div class="hdr-sub">Smart Convert + Blank Workbook + Model Answer + Bilingual | New India Education</div>
+  </div>
+</div>
+<div class="main">
+
+<!-- STATUS BAR -->
+<div class="stl" id="stl">✅ Ready — STEP 0 में settings check करें, फिर questions add करें।</div>
+
+<!-- ═══ STEP 0: PAPER SETTINGS ═══ -->
+<div class="step-card s0 collapsed" id="s0">
+  <div class="step-hdr" onclick="toggleStep('s0')">
+    <div class="step-left">
+      <span class="step-num">STEP 0</span>
+      <span class="step-title">⚙️ Paper Settings</span>
+    </div>
+    <span class="step-arrow">▼</span>
+  </div>
+  <div class="step-body" style="padding-top:12px;">
+    <div class="row2">
+      <div><label class="lbl">Exam / Test Name</label><input id="examName" type="text" value="RAS Mains Practice Test"></div>
+      <div><label class="lbl">Subject / Paper</label><input id="subject" type="text" value="General Studies — Paper I"></div>
+    </div>
+    <div class="row3">
+      <div><label class="lbl">Total Marks</label><input id="totalMarks" type="number" value="200"></div>
+      <div><label class="lbl">Time</label><input id="timeAllowed" type="text" value="3 Hours"></div>
+      <div><label class="lbl">Date</label><input id="testDate" type="text"></div>
+    </div>
+    <div class="row2">
+      <div><label class="lbl">Batch / Series</label><input id="batchName" type="text" placeholder="Batch-2026 Series-1"></div>
+      <div><label class="lbl">Institute</label><input id="institute" type="text" value="New India Education (NIEd)"></div>
+    </div>
+    <div class="row2">
+      <div><label class="lbl">5M → Blank Lines</label><input id="lines5" type="number" value="8" min="5" max="15"></div>
+      <div><label class="lbl">10M → Blank Lines</label><input id="lines10" type="number" value="14" min="8" max="22"></div>
+    </div>
+    <div style="margin-top:12px;border-top:1px solid #1a2550;padding-top:10px">
+      <div style="font-size:10px;color:#38BDF8;font-weight:700;margin-bottom:8px;">🔖 Header / Footer</div>
+      <div class="row2">
+        <div><label class="lbl">Header Text</label><input id="headerText" type="text" value="New India Education (NIEd) — www.omkarsir.in"></div>
+        <div><label class="lbl">Header URL</label><input id="headerUrl" type="text" value="https://www.omkarsir.in"></div>
+      </div>
+      <div class="row2">
+        <div><label class="lbl">Footer Text</label><input id="footerText" type="text" value="New India Education (NIEd) — www.omkarsir.in"></div>
+        <div><label class="lbl">Footer URL</label><input id="footerUrl" type="text" value="https://www.omkarsir.in"></div>
+      </div>
+    </div>
+    <div style="margin-top:10px;border-top:1px solid #1a2550;padding-top:10px">
+      <div style="font-size:10px;color:var(--sf);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+        🔏 Watermark
+        <label style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:400;color:var(--wh);cursor:pointer;">
+          <input type="checkbox" id="wmEnable" checked style="accent-color:var(--sf);"> Enable
+        </label>
+      </div>
+      <div class="row3">
+        <div><label class="lbl">Line 1</label><input id="wmLine1" type="text" value="NEW INDIA EDUCATION"></div>
+        <div><label class="lbl">Line 2</label><input id="wmLine2" type="text" value="www.omkarsir.in"></div>
+        <div><label class="lbl">Opacity (10-50)</label><input id="wmOpacity" type="number" value="12" min="10" max="50"></div>
+      </div>
+    </div>
+    <div style="margin-top:10px;border-top:1px solid #1a2550;padding-top:10px">
+      <div style="font-size:10px;color:var(--pur);font-weight:700;margin-bottom:6px;">🤖 Claude API Key (AI Convert के लिए)</div>
+      <input id="apiKeyInput" type="password" placeholder="sk-ant-api03-...">
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STEP 1: SMART CONVERT ═══ -->
+<div class="step-card s1" id="s1">
+  <div class="step-hdr" onclick="toggleStep('s1')">
+    <div class="step-left">
+      <span class="step-num">STEP 1</span>
+      <span class="step-title">⚡ Smart Convert — कोई भी format paste करें</span>
+    </div>
+    <span class="step-arrow">▼</span>
+  </div>
+  <div class="step-body" style="padding-top:12px;">
+
+    <!-- MAIN TABS: Paste | Generate | Chat -->
+    <div style="display:flex;gap:0;margin-bottom:12px;border-radius:8px;overflow:hidden;border:1px solid var(--nl);">
+      <button id="tabPaste" onclick="switchMainTab('paste')"
+        style="flex:1;padding:9px;background:rgba(14,165,233,.15);border:none;color:#38BDF8;font-size:12px;font-weight:700;cursor:pointer;border-right:1px solid var(--nl);font-family:inherit;">
+        📋 Paste
+      </button>
+      <button id="tabGen" onclick="switchMainTab('gen')"
+        style="flex:1;padding:9px;background:rgba(0,0,0,.2);border:none;color:#6870a0;font-size:12px;font-weight:700;cursor:pointer;border-right:1px solid var(--nl);font-family:inherit;">
+        ✨ Generator
+      </button>
+      <button id="tabChat" onclick="switchMainTab('chat')"
+        style="flex:1;padding:9px;background:rgba(0,0,0,.2);border:none;color:#6870a0;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">
+        💬 AI Chat
+      </button>
+    </div>
+
+    <!-- PANEL A: PASTE MODE -->
+    <div id="panelPaste">
+      <div class="fmt-box">
+        📌 कोई भी format paste करें — numbers, bullets, any language, with/without answers<br>
+        💡 Marks auto-detect: <code>(5)</code> <code>(10)</code> या question length से &nbsp;|&nbsp; Answer: <code>Ans:</code> के बाद लिखें
+      </div>
+      <textarea id="rawInput" rows="6" placeholder="कोई भी format paste करें:
+
+(5) जंतर-मंतर के सम्राट यंत्र पर टिप्पणी कीजिए।  Ans: सम्राट यंत्र विश्व की सबसे बड़ी सूर्य घड़ी है।
+
+1. मध्यकालीन राजस्थान की राजस्व व्यवस्था का वर्णन कीजिए। [10 marks]
+Answer: रैयतवाड़ी और जागीरदारी पद्धति पर आधारित थी।
+
+Describe the revenue system of Mediaeval Rajasthan. (10)"></textarea>
+
+      <!-- AI MODE for paste -->
+      <div style="margin-top:10px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.25);border-radius:8px;padding:10px 12px;">
+        <div style="font-size:10px;font-weight:700;color:#a78bfa;margin-bottom:8px;">🤖 AI Convert Mode</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 12px;border-radius:6px;border:1px solid rgba(124,58,237,.3);background:rgba(124,58,237,.05);flex:1;min-width:150px;">
+            <input type="radio" name="aiMode" id="modeFormat" value="format" checked style="accent-color:#a78bfa;">
+            <span>
+              <span style="font-size:12px;font-weight:600;color:var(--wh);display:block;">📋 Format Only</span>
+              <span style="font-size:10px;color:#6870a0;">Questions format करो</span>
+            </span>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 12px;border-radius:6px;border:1px solid rgba(0,170,68,.3);background:rgba(0,170,68,.05);flex:1;min-width:150px;">
+            <input type="radio" name="aiMode" id="modeGenAns" value="gen_ans" style="accent-color:#4ade80;">
+            <span>
+              <span style="font-size:12px;font-weight:600;color:var(--wh);display:block;">✍️ Format + Model Answer</span>
+              <span style="font-size:10px;color:#6870a0;">AI Model Answers लिखेगी</span>
+            </span>
+          </label>
+        </div>
+        <div id="subjectHint" style="display:none;margin-top:8px;">
+          <label style="font-size:10px;color:#6870a0;display:block;margin-bottom:4px;">📚 Subject / Context</label>
+          <input type="text" id="aiSubjectCtx" placeholder="जैसे: RAS Mains Rajasthan GK, Medieval History..." style="width:100%;background:var(--dk);border:1px solid rgba(0,170,68,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;font-family:inherit;">
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="btn btn-tl" onclick="smartConvert()">⚡ Smart Convert</button>
+        <button class="btn" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;" onclick="aiConvert()">
+          🤖 AI Convert <span style="font-size:9px;opacity:.8;">(Free)</span>
+        </button>
+        <button class="btn-out" onclick="loadSampleRaw()">📄 Sample</button>
+      </div>
+      <div class="res" id="res1"></div>
+    </div>
+
+    <!-- PANEL B: AI QUESTION GENERATOR -->
+    <div id="panelGen" style="display:none;">
+      <div style="background:rgba(0,170,68,.06);border:1px solid rgba(0,170,68,.25);border-radius:8px;padding:12px;margin-bottom:10px;">
+        <div style="font-size:10px;font-weight:700;color:#4ade80;margin-bottom:10px;">✨ AI Question Generator — Subject + Chapter बताओ, Questions तैयार!</div>
+
+        <div class="row2">
+          <div>
+            <label class="lbl">📚 Subject *</label>
+            <select id="genSubject" style="width:100%;background:var(--dk);border:1px solid rgba(0,170,68,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;cursor:pointer;font-family:inherit;">
+              <option value="">-- Subject चुनें --</option>
+              <optgroup label="Rajasthan GK">
+                <option value="राजस्थान का इतिहास">राजस्थान का इतिहास</option>
+                <option value="राजस्थान का भूगोल">राजस्थान का भूगोल</option>
+                <option value="राजस्थान की राजव्यवस्था एवं प्रशासन">राजस्थान की राजव्यवस्था</option>
+                <option value="राजस्थान की अर्थव्यवस्था">राजस्थान की अर्थव्यवस्था</option>
+                <option value="राजस्थान की कला एवं संस्कृति">राजस्थान की कला एवं संस्कृति</option>
+                <option value="राजस्थान का समाज एवं धर्म">राजस्थान समाज एवं धर्म</option>
+              </optgroup>
+              <optgroup label="General Studies">
+                <option value="भारतीय इतिहास">भारतीय इतिहास</option>
+                <option value="भारतीय भूगोल">भारतीय भूगोल</option>
+                <option value="भारतीय राजव्यवस्था एवं शासन">भारतीय राजव्यवस्था</option>
+                <option value="भारतीय अर्थव्यवस्था">भारतीय अर्थव्यवस्था</option>
+                <option value="विज्ञान एवं प्रौद्योगिकी">विज्ञान एवं प्रौद्योगिकी</option>
+                <option value="पर्यावरण एवं पारिस्थितिकी">पर्यावरण एवं पारिस्थितिकी</option>
+                <option value="अंतर्राष्ट्रीय संबंध">अंतर्राष्ट्रीय संबंध</option>
+                <option value="करंट अफेयर्स">करंट अफेयर्स</option>
+              </optgroup>
+              <option value="custom">✏️ Custom (नीचे लिखें)</option>
+            </select>
+          </div>
+          <div>
+            <label class="lbl">📖 Chapter / Topic *</label>
+            <input type="text" id="genChapter" placeholder="जैसे: मुगल स्थापत्य कला, नदी तंत्र, GST..." style="width:100%;background:var(--dk);border:1px solid rgba(0,170,68,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;font-family:inherit;">
+          </div>
+        </div>
+
+        <!-- Custom subject -->
+        <div id="customSubjectRow" style="display:none;margin-top:8px;">
+          <label class="lbl">✏️ Custom Subject लिखें</label>
+          <input type="text" id="genCustomSubject" placeholder="अपना subject लिखें..." style="width:100%;background:var(--dk);border:1px solid rgba(0,170,68,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;font-family:inherit;">
+        </div>
+
+        <!-- Question count -->
+        <div style="margin-top:10px;">
+          <label class="lbl" style="margin-bottom:8px;">🔢 कितने Questions चाहिए?</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+            <div style="background:rgba(0,212,154,.08);border:1px solid rgba(0,212,154,.3);border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-size:10px;color:#00d49a;font-weight:700;margin-bottom:6px;">5 Marks Questions</div>
+              <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+                <button onclick="adjCount('q5count',-1)" style="width:26px;height:26px;border-radius:5px;border:1px solid rgba(0,212,154,.4);background:rgba(0,212,154,.1);color:#00d49a;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
+                <span id="q5count" style="font-size:22px;font-weight:700;color:#00d49a;min-width:28px;text-align:center;">2</span>
+                <button onclick="adjCount('q5count',1)" style="width:26px;height:26px;border-radius:5px;border:1px solid rgba(0,212,154,.4);background:rgba(0,212,154,.1);color:#00d49a;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
+              </div>
+              <div style="font-size:9px;color:#3a4060;margin-top:4px;">50 words each</div>
+            </div>
+            <div style="background:rgba(255,107,0,.08);border:1px solid rgba(255,107,0,.3);border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-size:10px;color:var(--sf);font-weight:700;margin-bottom:6px;">10 Marks Questions</div>
+              <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+                <button onclick="adjCount('q10count',-1)" style="width:26px;height:26px;border-radius:5px;border:1px solid rgba(255,107,0,.4);background:rgba(255,107,0,.1);color:var(--sf);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
+                <span id="q10count" style="font-size:22px;font-weight:700;color:var(--sf);min-width:28px;text-align:center;">2</span>
+                <button onclick="adjCount('q10count',1)" style="width:26px;height:26px;border-radius:5px;border:1px solid rgba(255,107,0,.4);background:rgba(255,107,0,.1);color:var(--sf);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
+              </div>
+              <div style="font-size:9px;color:#3a4060;margin-top:4px;">100 words each</div>
+            </div>
+            <div style="background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.3);border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-size:10px;color:#a78bfa;font-weight:700;margin-bottom:6px;">Model Answers भी?</div>
+              <label style="display:flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;margin-top:8px;">
+                <input type="checkbox" id="genWithAns" checked style="accent-color:#a78bfa;width:16px;height:16px;">
+                <span style="font-size:12px;color:var(--wh);font-weight:600;">हाँ, Answers भी</span>
+              </label>
+              <div style="font-size:9px;color:#3a4060;margin-top:6px;">Q + Model Answer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Difficulty & Language -->
+        <div class="row2" style="margin-top:10px;">
+          <div>
+            <label class="lbl">📊 Difficulty Level</label>
+            <select id="genDiff" style="width:100%;background:var(--dk);border:1px solid rgba(0,170,68,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;cursor:pointer;font-family:inherit;">
+              <option value="medium">Medium (Standard RAS)</option>
+              <option value="easy">Easy (Basic Level)</option>
+              <option value="hard">Hard (Advanced Level)</option>
+            </select>
+          </div>
+          <div>
+            <label class="lbl">🌐 Question Language</label>
+            <select id="genLang" style="width:100%;background:var(--dk);border:1px solid rgba(0,170,68,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;cursor:pointer;font-family:inherit;">
+              <option value="hindi">हिंदी</option>
+              <option value="bilingual">हिंदी + English (Bilingual)</option>
+              <option value="english">English Only</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Extra instructions -->
+        <div style="margin-top:8px;">
+          <label class="lbl">💬 Extra Instructions (optional)</label>
+          <textarea id="genExtra" rows="2" placeholder="जैसे: PYQ style में बनाओ, current affairs से जोड़ो, 2025 के data include करो..." style="background:var(--dk);border:1px solid rgba(0,170,68,.25);"></textarea>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+          <button class="btn btn-gr" onclick="aiGenerateQuestions()" style="font-size:13px;">
+            ✨ Generate Questions
+          </button>
+          <button class="btn-out" onclick="loadGenSample()">📄 Example</button>
+        </div>
+        <div class="res" id="res2"></div>
+      </div>
+    </div>
+
+    <!-- PANEL C: AI CHAT -->
+    <div id="panelChat" style="display:none;">
+      <div id="chatBox" style="height:340px;overflow-y:auto;background:var(--dk);border:1px solid var(--nl);border-radius:9px;padding:12px;display:flex;flex-direction:column;gap:10px;margin-bottom:10px;scroll-behavior:smooth;">
+        <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--sf),#cc5500);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🤖</div>
+          <div style="background:var(--nv);border:1px solid var(--nl);border-radius:0 9px 9px 9px;padding:10px 13px;font-size:12px;line-height:1.7;max-width:88%;color:var(--wh);">
+            नमस्ते! मैं आपका RAS Mains Assistant हूं। 🙏<br><br>
+            मुझसे सीधे बोलें:<br>
+            <span style="color:#4ade80;">• "राजस्थान नदी तंत्र पर 3×5M और 2×10M questions with answers"</span><br>
+            <span style="color:#4ade80;">• "Mughal architecture hard level questions"</span><br>
+            <span style="color:#4ade80;">• "GST पर 5 questions, हिंदी में, model answers भी"</span><br><br>
+            Questions automatically STEP 2 में चले जाएंगे! ✅
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick chips -->
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+        <button class="qchip" onclick="chatChip('राजस्थान इतिहास पर 3×5M और 2×10M questions with model answers बनाओ')">🏰 Raj. History</button>
+        <button class="qchip" onclick="chatChip('भारतीय राजव्यवस्था पर 4 questions mixed marks with answers')">⚖️ Polity</button>
+        <button class="qchip" onclick="chatChip('पर्यावरण पर 5M के 5 questions with model answers')">🌿 Environment</button>
+        <button class="qchip" onclick="chatChip('करंट अफेयर्स 2025 पर 3×10M detailed questions with answers')">📰 Current Affairs</button>
+        <button class="qchip" onclick="chatChip('राजस्थान अर्थव्यवस्था पर 5 mixed questions with answers')">💰 Economy</button>
+        <button class="qchip" onclick="chatChip('इन questions के model answers हिंदी में लिखो: ' + (document.getElementById('qi').value.substring(0,200)||'[STEP 2 से questions लो]'))">✍️ Answers लिखो</button>
+      </div>
+
+      <!-- Input -->
+      <div style="display:flex;gap:8px;align-items:flex-end;">
+        <textarea id="chatInput" rows="2" style="flex:1;resize:none;border-radius:8px;min-height:46px;max-height:120px;font-size:13px;"
+          placeholder="यहाँ type करें... Enter = Send, Shift+Enter = नई line"
+          onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}"></textarea>
+        <button onclick="sendChat()" title="Send" style="padding:0 16px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--sf),#cc5500);color:#fff;font-size:20px;cursor:pointer;height:46px;flex-shrink:0;">➤</button>
+      </div>
+      <div style="font-size:10px;color:#3a4060;margin-top:5px;">Enter = Send &nbsp;|&nbsp; Shift+Enter = New line &nbsp;|&nbsp; Questions auto STEP 2 में जाते हैं</div>
+      <div id="chatStatus" style="display:none;margin-top:8px;padding:7px 10px;background:rgba(255,107,0,.08);border:1px solid rgba(255,107,0,.25);border-radius:7px;font-size:11px;color:var(--sf);">
+        ⏳ AI सोच रही है...
+      </div>
+    </div><!-- /panelChat -->
+
+  </div>
+</div>
+
+<!-- ═══ STEP 2: QUESTIONS INPUT ═══ -->
+<div class="step-card s2" id="s2">
+  <div class="step-hdr" onclick="toggleStep('s2')">
+    <div class="step-left">
+      <span class="step-num">STEP 2</span>
+      <span class="step-title">✍️ Questions Input</span>
+    </div>
+    <span class="step-arrow">▼</span>
+  </div>
+  <div class="step-body" style="padding-top:12px;">
+    <textarea id="qi" rows="10" placeholder="ऊपर Smart Convert करें या यहाँ directly paste करें...
+
+Q1. जंतर-मंतर के सम्राट यंत्र पर टिप्पणी कीजिए।
+M: 5
+A: सम्राट यंत्र विश्व की सबसे बड़ी पत्थर की सूर्य घड़ी है।
+
+Q2. मध्यकालीन राजस्थान की राजस्व व्यवस्था का वर्णन कीजिए।
+M: 10
+A: रैयतवाड़ी और जागीरदारी पद्धति पर आधारित थी।"></textarea>
+    <div class="row">
+      <button class="btn btn-sf" onclick="doparse()">🔍 Parse करें → Load करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="sr" id="sr">
+  <div class="sb"><div class="sn" id="st">0</div><div class="sl">कुल प्रश्न</div></div>
+  <div class="sb"><div class="sn" id="st5" style="color:#00d49a">0</div><div class="sl">5M प्रश्न</div></div>
+  <div class="sb"><div class="sn" id="st10">0</div><div class="sl">10M प्रश्न</div></div>
+  <div class="sb"><div class="sn" id="sa" style="color:var(--gold)">0</div><div class="sl">Ans सहित</div></div>
+  <div class="sb"><div class="sn" id="spg" style="color:#a78bfa">~0</div><div class="sl">Est. Pages</div></div>
+</div>
+
+<!-- PREVIEW TABLE -->
+<div class="pc" id="pc">
+  <div class="ct" style="color:var(--sf)">👁️ Preview — <span id="pt">0</span> Q loaded</div>
+  <table class="tbl">
+    <thead><tr><th style="width:32px">Q#</th><th>प्रश्न</th><th style="width:48px">Marks</th><th style="width:42px">Ans?</th></tr></thead>
+    <tbody id="pb2"></tbody>
+  </table>
+</div>
+
+<!-- ═══ STEP 3: GENERATE ═══ -->
+<div class="step-card s3" id="s3wrap">
+  <div class="step-hdr" onclick="toggleStep('s3wrap')">
+    <div class="step-left">
+      <span class="step-num">STEP 3</span>
+      <span class="step-title">⚡ Generate करें</span>
+    </div>
+    <span class="step-arrow">▼</span>
+  </div>
+  <div class="step-body" style="padding-top:12px;">
+    <div style="font-size:10px;color:#6870a0;font-weight:700;letter-spacing:1px;margin-bottom:7px;">📄 HINDI OUTPUT</div>
+    <div class="ag">
+      <button class="ab" style="border-color:#4466CC" onclick="gen('workbook')">
+        <span class="ab-icon">📄</span>
+        <span><span class="ab-title">Blank Test Workbook</span><span class="ab-sub">छात्रों के लिए | Blank answer lines</span></span>
+      </button>
+      <button class="ab" style="border-color:var(--sf)" onclick="gen('workbook_dnw')">
+        <span class="ab-icon">📋</span>
+        <span><span class="ab-title">RAS Style Workbook</span><span class="ab-sub">Original RAS format | Do Not Write box</span></span>
+      </button>
+      <button class="ab" style="border-color:var(--gr)" onclick="gen('model_ans')">
+        <span class="ab-icon">📚</span>
+        <span><span class="ab-title">Model Answer Booklet</span><span class="ab-sub">Q + Model Answer | Teacher copy</span></span>
+      </button>
+      <button class="ab" style="border-color:var(--pur)" onclick="gen('anskey')">
+        <span class="ab-icon">🔑</span>
+        <span><span class="ab-title">Answer Key Sheet</span><span class="ab-sub">Teacher copy | Q list + score</span></span>
+      </button>
+    </div>
+    <div style="border-top:1px solid #1a2550;margin-top:10px;padding-top:10px">
+      <div style="font-size:10px;color:#38BDF8;font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:6px">
+        🌐 ENGLISH OUTPUT
+        <span style="background:rgba(14,165,233,.15);border:1px solid rgba(14,165,233,.3);padding:1px 7px;border-radius:3px;font-size:9px">Google Translate • Free</span>
+        <span id="transStatus" style="display:none;color:var(--gold);font-size:10px">⏳ Translating...</span>
+      </div>
+      <div class="ag">
+        <button class="ab" style="border-color:#0EA5E9" onclick="gen('eng_workbook')">
+          <span class="ab-icon">🌐</span>
+          <span><span class="ab-title">English Workbook</span><span class="ab-sub">Translated questions | Blank lines</span></span>
+        </button>
+        <button class="ab" style="border-color:#A78BFA" onclick="gen('bilingual')">
+          <span class="ab-icon">📋</span>
+          <span><span class="ab-title">Bilingual Workbook</span><span class="ab-sub">Hindi + English | दोनों एक साथ</span></span>
+        </button>
+        <button class="ab" style="border-color:#34D399" onclick="gen('eng_model')">
+          <span class="ab-icon">📚</span>
+          <span><span class="ab-title">English Model Answer</span><span class="ab-sub">Q + Answer in English</span></span>
+        </button>
+        <button class="ab" style="border-color:#F59E0B" onclick="gen('both')">
+          <span class="ab-icon">📦</span>
+          <span><span class="ab-title">Full Set</span><span class="ab-sub">Workbook + Model Ans + Key</span></span>
+        </button>
+      </div>
+    </div>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-gr" onclick="printOut()">🖨️ Print / Save as PDF</button>
+      <button class="btn-out" onclick="clearOut()">✕ Preview Clear</button>
+    </div>
+    <div class="pb" id="pb"><div class="pf" id="pf" style="width:0%"></div></div>
+  </div>
+</div>
+
+<!-- ═══ PROMPT BUILDER ═══ -->
+<div class="step-card collapsed" id="promptCard"
+  style="border-color:#e879f9;background:linear-gradient(135deg,#1a0a2e,#080E28);">
+  <div class="step-hdr" onclick="toggleStep('promptCard')">
+    <div class="step-left">
+      <span class="step-num" style="background:rgba(232,121,249,.15);border-color:#e879f9;color:#e879f9;">BONUS</span>
+      <span class="step-title">📋 AI Prompt Builder — किसी भी AI के लिए Prompt बनाएं</span>
+    </div>
+    <span class="step-arrow" style="color:#e879f9;">▼</span>
+  </div>
+  <div class="step-body" style="padding-top:14px;">
+
+    <div style="font-size:11px;color:#c084fc;background:rgba(232,121,249,.07);border:1px solid rgba(232,121,249,.2);border-radius:8px;padding:9px 12px;margin-bottom:12px;line-height:1.7;">
+      💡 यहाँ Subject + Chapter भरो → Prompt auto-generate होगा → Copy करो → ChatGPT / Gemini / Grok में paste करो → Output को STEP 2 में paste करो
+    </div>
+
+    <!-- FORM -->
+    <div class="row2">
+      <div>
+        <label class="lbl">📚 Subject *</label>
+        <select id="pb_subject" onchange="buildPrompt();showPbCustom()" style="width:100%;background:var(--dk);border:1px solid rgba(232,121,249,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;cursor:pointer;font-family:inherit;">
+          <option value="">-- Subject चुनें --</option>
+          <optgroup label="── Rajasthan GK ──">
+            <option>राजस्थान का प्राचीन एवं मध्यकालीन इतिहास</option>
+            <option>राजस्थान का आधुनिक इतिहास एवं स्वतंत्रता आन्दोलन</option>
+            <option>राजस्थान की कला, संस्कृति एवं विरासत</option>
+            <option>राजस्थान का भूगोल</option>
+            <option>राजस्थान की राजव्यवस्था एवं प्रशासन</option>
+            <option>राजस्थान की अर्थव्यवस्था</option>
+            <option>राजस्थान का समाज एवं जनजातियाँ</option>
+          </optgroup>
+          <optgroup label="── General Studies ──">
+            <option>भारतीय इतिहास</option>
+            <option>भारतीय राजव्यवस्था एवं संविधान</option>
+            <option>भारतीय अर्थव्यवस्था</option>
+            <option>भारत एवं विश्व का भूगोल</option>
+            <option>विज्ञान एवं प्रौद्योगिकी</option>
+            <option>पर्यावरण एवं पारिस्थितिकी</option>
+            <option>अंतर्राष्ट्रीय संबंध</option>
+            <option>करंट अफेयर्स 2024-25</option>
+          </optgroup>
+          <option value="__custom__">✏️ Custom Subject लिखें</option>
+        </select>
+        <div id="pb_customSubRow" style="display:none;margin-top:6px;">
+          <input type="text" id="pb_customSub" placeholder="Custom subject लिखें..." oninput="buildPrompt()"
+            style="background:var(--dk);border:1px solid rgba(232,121,249,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;width:100%;font-family:inherit;">
+        </div>
+      </div>
+      <div>
+        <label class="lbl">📖 Chapter / Topic *</label>
+        <input type="text" id="pb_chapter" placeholder="जैसे: नदी तंत्र, GST, मुगल वास्तुकला..." oninput="buildPrompt()"
+          style="background:var(--dk);border:1px solid rgba(232,121,249,.3);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;width:100%;font-family:inherit;">
+      </div>
+    </div>
+
+    <!-- Q COUNTS -->
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;">
+      <div style="background:rgba(0,212,154,.07);border:1px solid rgba(0,212,154,.25);border-radius:8px;padding:9px;text-align:center;">
+        <div style="font-size:10px;color:#00d49a;font-weight:700;margin-bottom:5px;">5M Questions</div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
+          <button onclick="pbAdj('pb_q5',-1)" style="width:22px;height:22px;border-radius:4px;border:1px solid rgba(0,212,154,.4);background:rgba(0,212,154,.1);color:#00d49a;font-size:14px;cursor:pointer;line-height:1;">−</button>
+          <span id="pb_q5" style="font-size:20px;font-weight:700;color:#00d49a;min-width:24px;text-align:center;">3</span>
+          <button onclick="pbAdj('pb_q5',1)" style="width:22px;height:22px;border-radius:4px;border:1px solid rgba(0,212,154,.4);background:rgba(0,212,154,.1);color:#00d49a;font-size:14px;cursor:pointer;line-height:1;">+</button>
+        </div>
+      </div>
+      <div style="background:rgba(255,107,0,.07);border:1px solid rgba(255,107,0,.25);border-radius:8px;padding:9px;text-align:center;">
+        <div style="font-size:10px;color:var(--sf);font-weight:700;margin-bottom:5px;">10M Questions</div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
+          <button onclick="pbAdj('pb_q10',-1)" style="width:22px;height:22px;border-radius:4px;border:1px solid rgba(255,107,0,.4);background:rgba(255,107,0,.1);color:var(--sf);font-size:14px;cursor:pointer;line-height:1;">−</button>
+          <span id="pb_q10" style="font-size:20px;font-weight:700;color:var(--sf);min-width:24px;text-align:center;">2</span>
+          <button onclick="pbAdj('pb_q10',1)" style="width:22px;height:22px;border-radius:4px;border:1px solid rgba(255,107,0,.4);background:rgba(255,107,0,.1);color:var(--sf);font-size:14px;cursor:pointer;line-height:1;">+</button>
+        </div>
+      </div>
+      <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:8px;padding:9px;">
+        <div style="font-size:10px;color:#a78bfa;font-weight:700;margin-bottom:5px;">Difficulty</div>
+        <select id="pb_diff" onchange="buildPrompt()" style="width:100%;background:var(--dk);border:1px solid rgba(124,58,237,.3);border-radius:5px;color:var(--wh);padding:4px 6px;font-size:11px;outline:none;cursor:pointer;font-family:inherit;">
+          <option value="Medium (Standard RAS Mains Level)">⚖️ Medium</option>
+          <option value="Easy (Basic Level)">🟢 Easy</option>
+          <option value="Hard (Advanced/PYQ Level)">🔴 Hard</option>
+        </select>
+      </div>
+      <div style="background:rgba(14,165,233,.07);border:1px solid rgba(14,165,233,.25);border-radius:8px;padding:9px;">
+        <div style="font-size:10px;color:#38BDF8;font-weight:700;margin-bottom:5px;">Answers?</div>
+        <select id="pb_ans" onchange="buildPrompt()" style="width:100%;background:var(--dk);border:1px solid rgba(14,165,233,.3);border-radius:5px;color:var(--wh);padding:4px 6px;font-size:11px;outline:none;cursor:pointer;font-family:inherit;">
+          <option value="yes">✅ हाँ, Answers भी</option>
+          <option value="no">❌ सिर्फ Questions</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Extra instructions -->
+    <div style="margin-top:8px;">
+      <label class="lbl">💬 Extra Instructions (optional)</label>
+      <input type="text" id="pb_extra" placeholder="जैसे: PYQ style, 2025 data, bilingual..." oninput="buildPrompt()"
+        style="background:var(--dk);border:1px solid rgba(232,121,249,.2);border-radius:6px;color:var(--wh);padding:7px 11px;font-size:12px;outline:none;width:100%;font-family:inherit;">
+    </div>
+
+    <!-- GENERATED PROMPT -->
+    <div style="margin-top:12px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <label class="lbl" style="margin:0;color:#c084fc;">✨ Generated Prompt (ready to copy):</label>
+        <div style="display:flex;gap:6px;">
+          <button onclick="copyPrompt()" style="padding:5px 12px;border-radius:6px;border:1px solid #e879f9;background:rgba(232,121,249,.12);color:#e879f9;font-size:11px;cursor:pointer;font-family:inherit;font-weight:700;">📋 Copy</button>
+          <button onclick="openAiWithPrompt('chatgpt')" style="padding:5px 12px;border-radius:6px;border:1px solid #10a37f;background:rgba(16,163,127,.1);color:#10a37f;font-size:11px;cursor:pointer;font-family:inherit;font-weight:700;">🔗 ChatGPT</button>
+          <button onclick="openAiWithPrompt('gemini')" style="padding:5px 12px;border-radius:6px;border:1px solid #4285f4;background:rgba(66,133,244,.1);color:#7baaf7;font-size:11px;cursor:pointer;font-family:inherit;font-weight:700;">🔗 Gemini</button>
+        </div>
+      </div>
+      <textarea id="pb_output" rows="10" readonly
+        style="background:#050d1a;border:1px solid rgba(232,121,249,.25);border-radius:8px;color:#c0caf5;font-size:11px;line-height:1.7;cursor:text;font-family:monospace;resize:vertical;"
+        placeholder="ऊपर Subject और Chapter भरें → Prompt यहाँ दिखेगा..."></textarea>
+    </div>
+
+    <div id="pb_copyMsg" style="display:none;margin-top:6px;padding:7px 12px;background:rgba(0,212,154,.1);border:1px solid #00d49a;border-radius:7px;font-size:11px;color:#4ade80;">
+      ✅ Prompt copied! ChatGPT / Gemini / Grok में paste करें → Output को STEP 2 में paste करें।
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- PAPER OUTPUT -->
+<div id="paper-out">
+  <div class="paper-wrap" id="paperWrap"></div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+//  PROMPT BUILDER
+// ══════════════════════════════════════════
+function pbAdj(id, delta) {
+  var el = document.getElementById(id);
+  var v = parseInt(el.textContent) + delta;
+  el.textContent = Math.max(0, Math.min(15, v));
+  buildPrompt();
+}
+
+function showPbCustom() {
+  var sel = document.getElementById('pb_subject');
+  var row = document.getElementById('pb_customSubRow');
+  row.style.display = sel.value === '__custom__' ? 'block' : 'none';
+  buildPrompt();
+}
+
+function buildPrompt() {
+  var subEl = document.getElementById('pb_subject');
+  var subject = subEl.value === '__custom__'
+    ? (document.getElementById('pb_customSub').value.trim() || '[Subject यहाँ लिखें]')
+    : (subEl.value || '[Subject चुनें]');
+  var chapter = document.getElementById('pb_chapter').value.trim() || '[Chapter / Topic यहाँ लिखें]';
+  var q5      = parseInt(document.getElementById('pb_q5').textContent) || 0;
+  var q10     = parseInt(document.getElementById('pb_q10').textContent) || 0;
+  var diff    = document.getElementById('pb_diff').value;
+  var withAns = document.getElementById('pb_ans').value === 'yes';
+  var extra   = document.getElementById('pb_extra').value.trim();
+
+  var ansRule = withAns
+    ? 'हर question का एक high-quality Model Answer हिंदी में लिखो।\n5M Answer = 50 शब्द (3-4 वाक्य)\n10M Answer = 100 शब्द (6-8 वाक्य, structured)'
+    : 'सिर्फ Questions बनाओ — A: lines मत लिखो।';
+
+  var lines = [];
+  if (q5  > 0) lines.push('• ' + q5  + ' questions of 5 marks');
+  if (q10 > 0) lines.push('• ' + q10 + ' questions of 10 marks');
+
+  var prompt = 'तुम एक expert RAS Mains परीक्षा के teacher और question setter हो।\n\n'
+    + '━━━ TASK ━━━\n'
+    + 'Subject: ' + subject + '\n'
+    + 'Chapter/Topic: ' + chapter + '\n'
+    + 'Create:\n' + lines.join('\n') + '\n'
+    + 'Difficulty: ' + diff + '\n'
+    + (extra ? 'Special Note: ' + extra + '\n' : '')
+    + '\n━━━ OUTPUT FORMAT (बिल्कुल यही follow करो) ━━━\n\n'
+    + 'Q1. [प्रश्न — हिंदी में]\n'
+    + 'M: [5 या 10]\n'
+    + (withAns ? 'A: [Model Answer — हिंदी में]\n' : '')
+    + '\nQ2. [प्रश्न]\n'
+    + 'M: [5 या 10]\n'
+    + (withAns ? 'A: [Model Answer]\n' : '')
+    + '\n[हर question के बाद एक blank line]\n'
+    + '\n━━━ STRICT RULES ━━━\n'
+    + '1. Q1, Q2, Q3... numbering\n'
+    + '2. M: line में सिर्फ 5 या 10\n'
+    + '3. ' + ansRule + '\n'
+    + '4. कोई extra heading, intro, conclusion मत लिखो\n'
+    + '5. Output में सिर्फ formatted questions ही हों\n'
+    + (withAns ? '\n━━━ ANSWER QUALITY GUIDE ━━━\n'
+      + '5M (50 शब्द): परिचय (1 वाक्य) + मुख्य तथ्य (2-3 वाक्य) + key data\n'
+      + '10M (100 शब्द): प्रस्तावना → 3-4 main points → example/data → निष्कर्ष\n' : '');
+
+  document.getElementById('pb_output').value = prompt;
+}
+
+function copyPrompt() {
+  var txt = document.getElementById('pb_output').value;
+  if (!txt.trim() || txt.indexOf('[Subject') !== -1 || txt.indexOf('[Chapter') !== -1) {
+    toast('⚠️ पहले Subject और Chapter भरें!'); return;
+  }
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt).then(function(){
+      showCopyMsg();
+    }).catch(function(){ fallbackCopy(txt); });
+  } else { fallbackCopy(txt); }
+}
+
+function fallbackCopy(txt) {
+  var ta = document.getElementById('pb_output');
+  ta.select(); ta.setSelectionRange(0, 99999);
+  try { document.execCommand('copy'); showCopyMsg(); }
+  catch(e) { toast('❌ Copy failed — manually select and copy करें'); }
+}
+
+function showCopyMsg() {
+  var msg = document.getElementById('pb_copyMsg');
+  msg.style.display = 'block';
+  setTimeout(function(){ msg.style.display='none'; }, 4000);
+  toast('✅ Prompt copied!');
+}
+
+function openAiWithPrompt(ai) {
+  var txt = document.getElementById('pb_output').value;
+  if (!txt.trim()) { toast('⚠️ पहले Subject और Chapter भरें!'); return; }
+  if (navigator.clipboard) navigator.clipboard.writeText(txt).catch(function(){});
+  var urls = { chatgpt:'https://chat.openai.com/', gemini:'https://gemini.google.com/app' };
+  window.open(urls[ai], '_blank');
+  toast('✅ Prompt copied! ' + (ai==='chatgpt'?'ChatGPT':'Gemini') + ' खुल रहा है।');
+}
+
+// ══════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════
+var qs = [];  // [{marks, hindi, english, answer, ansEng}]
+
+// ══════════════════════════════════════════
+//  STEP COLLAPSE / EXPAND
+// ══════════════════════════════════════════
+function toggleStep(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('collapsed');
+}
+
+// ══════════════════════════════════════════
+//  STEP 1 TAB SWITCHING (3 tabs)
+// ══════════════════════════════════════════
+function switchMainTab(tab) {
+  document.getElementById('panelPaste').style.display  = tab==='paste'  ? 'block':'none';
+  document.getElementById('panelGen').style.display    = tab==='gen'    ? 'block':'none';
+  document.getElementById('panelChat').style.display   = tab==='chat'   ? 'block':'none';
+
+  var tabs = {
+    paste: { bg:'rgba(14,165,233,.15)', color:'#38BDF8' },
+    gen:   { bg:'rgba(0,170,68,.15)',   color:'#4ade80' },
+    chat:  { bg:'rgba(255,107,0,.15)',  color:'var(--sf)' }
+  };
+  ['paste','gen','chat'].forEach(function(t){
+    var btn = document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1));
+    if (!btn) return;
+    var isActive = (t === tab);
+    btn.style.background = isActive ? tabs[t].bg : 'rgba(0,0,0,.2)';
+    btn.style.color = isActive ? tabs[t].color : '#6870a0';
+  });
+}
+
+// ══════════════════════════════════════════
+//  CHAT FUNCTIONS
+// ══════════════════════════════════════════
+var chatHistory = [];  // [{role, content}]
+var CHAT_SYS = 'You are an expert RAS (Rajasthan Administrative Service) Mains exam teacher and question creator. You help create, format, and evaluate RAS Mains questions.\n\nWhen the user asks you to CREATE questions, always output them in this EXACT format (required for the paper generator):\n\nQ1. [question text in Hindi or as requested]\nM: [5 or 10]\nA: [model answer — include if user wants answers, else omit A: line]\n\nQ2. [question text]\nM: [5 or 10]\nA: [model answer]\n\n... and so on\n\nRules:\n- M: 5 = short answer, 50 words, factual/conceptual\n- M: 10 = descriptive, 100 words, analytical\n- If user asks for answers/solutions, include A: lines with quality model answers in Hindi\n- If user just asks questions, omit A: lines\n- After generating, add a short note: "✅ ऊपर [N] questions हैं — STEP 2 में जाने के लिए नीचे बटन दबाएं"\n\nFor general questions/chat, answer normally in Hindi. Be friendly and helpful.';
+
+async function sendChat() {
+  var inp = document.getElementById('chatInput');
+  var msg = inp.value.trim();
+  if (!msg) return;
+  inp.value = '';
+  addChatMsg('user', msg);
+  chatHistory.push({ role:'user', content: msg });
+  showChatTyping();
+
+  var key = document.getElementById('apiKeyInput').value.trim();
+  var response = '';
+
+  // ── Claude API ──
+  if (key) {
+    try {
+      var r = await fetch('https://api.anthropic.com/v1/messages', {
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'x-api-key':key,
+          'anthropic-version':'2023-06-01',
+          'anthropic-dangerous-direct-browser-access':'true'
+        },
+        body: JSON.stringify({
+          model:'claude-sonnet-4-20250514',
+          max_tokens:5000,
+          system: CHAT_SYS,
+          messages: chatHistory
+        })
+      });
+      var d = await r.json();
+      if (!d.error && d.content && d.content[0]) {
+        response = d.content[0].text.trim();
+      }
+    } catch(e){}
+  }
+
+  // ── Pollinations (Free) ──
+  if (!response) {
+    try {
+      var msgs = [{ role:'user', content: CHAT_SYS + '\n\nUser: ' + msg }];
+      var r2 = await fetch('https://text.pollinations.ai/', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ messages: msgs, model:'openai', seed:42, private:true })
+      });
+      response = (await r2.text()).trim();
+    } catch(e2){
+      response = '⚠️ AI connect नहीं हो पाई। Internet check करें या STEP 0 में API Key डालें।';
+    }
+  }
+
+  removeChatTyping();
+  chatHistory.push({ role:'assistant', content: response });
+
+  // Check if response has Q format → show Load button
+  var hasQFormat = /^Q\d+\./m.test(response);
+  addChatMsg('ai', response, hasQFormat ? response : null);
+}
+
+function chatChip(text) {
+  document.getElementById('chatInput').value = text;
+  sendChat();
+}
+
+function addChatMsg(role, text, qData) {
+  var box = document.getElementById('chatBox');
+  var div = document.createElement('div');
+
+  // Format text — convert newlines and Q format highlights
+  var formatted = esc(text)
+    .replace(/\n/g,'<br>')
+    .replace(/Q(\d+)\./g,'<b style="color:var(--sf)">Q$1.</b>')
+    .replace(/M: (5|10)/g,'<span style="background:rgba(255,107,0,.15);color:var(--sf);padding:1px 5px;border-radius:3px;font-size:10px;font-weight:700;">M:$1</span>')
+    .replace(/A: /g,'<span style="color:#4ade80;font-weight:700;">A: </span>')
+    .replace(/✅/g,'<span style="color:#4ade80;">✅</span>');
+
+  if (role==='user') {
+    div.innerHTML = '<div class="chat-user-msg"><div class="chat-avatar-user">👤</div><div class="chat-user-bubble">'+formatted+'</div></div>';
+  } else {
+    var actionBtn = qData
+      ? '<br><button class="chat-action-btn" onclick="loadChatToStep2(this)" data-q="'+encodeURIComponent(qData)+'">📥 STEP 2 में Load करें → Parse करें</button>'
+      : '';
+    div.innerHTML = '<div class="chat-ai-msg"><div class="chat-avatar-ai">🤖</div><div class="chat-ai-bubble">'+formatted+actionBtn+'</div></div>';
+  }
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
+function showChatTyping() {
+  var box = document.getElementById('chatBox');
+  var div = document.createElement('div');
+  div.id = 'typingDiv';
+  div.innerHTML = '<div class="chat-ai-msg"><div class="chat-avatar-ai">🤖</div><div class="chat-ai-bubble" style="padding:12px 16px;"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div></div>';
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
+function removeChatTyping() {
+  var el = document.getElementById('typingDiv');
+  if (el) el.remove();
+}
+
+function loadChatToStep2(btn) {
+  var qData = decodeURIComponent(btn.getAttribute('data-q'));
+  // Extract only Q/M/A lines
+  var lines = qData.split('\n');
+  var clean = lines.filter(function(l){ return /^Q\d+\.|^M:|^A:|^$/.test(l.trim()); }).join('\n');
+  document.getElementById('qi').value = clean || qData;
+  // Switch to step 2 and parse
+  openStep2();
+  setTimeout(function(){ doparse(); }, 400);
+  toast('✅ Questions STEP 2 में load हुए!');
+}
+
+// ══════════════════════════════════════════
+//  QUESTION COUNTER ± BUTTONS
+// ══════════════════════════════════════════
+function adjCount(id, delta) {
+  var el = document.getElementById(id);
+  var val = parseInt(el.textContent) + delta;
+  if (val < 0) val = 0;
+  if (val > 15) val = 15;
+  el.textContent = val;
+}
+
+// ══════════════════════════════════════════
+//  AI QUESTION GENERATOR
+// ══════════════════════════════════════════
+async function aiGenerateQuestions() {
+  var subjectEl = document.getElementById('genSubject');
+  var subject = subjectEl.value === 'custom'
+    ? document.getElementById('genCustomSubject').value.trim()
+    : subjectEl.value;
+  var chapter  = document.getElementById('genChapter').value.trim();
+  var q5       = parseInt(document.getElementById('q5count').textContent) || 0;
+  var q10      = parseInt(document.getElementById('q10count').textContent) || 0;
+  var withAns  = document.getElementById('genWithAns').checked;
+  var diff     = document.getElementById('genDiff').value;
+  var lang     = document.getElementById('genLang').value;
+  var extra    = document.getElementById('genExtra').value.trim();
+
+  if (!subject) { toast('⚠️ Subject ज़रूर चुनें!'); return; }
+  if (!chapter) { toast('⚠️ Chapter / Topic लिखें!'); return; }
+  if (q5 + q10 === 0) { toast('⚠️ कम से कम 1 question count set करें!'); return; }
+
+  var diffMap = { easy:'आसान (Basic Level)', medium:'मध्यम (Standard RAS Mains Level)', hard:'कठिन (Advanced/PYQ Level)' };
+  var langMap = { hindi:'हिंदी में', bilingual:'हिंदी + English (Bilingual) में — Hindi पहले, (English) bracket में', english:'English में' };
+
+  var prompt = 'You are an expert RAS (Rajasthan Administrative Service) Mains exam teacher.\n\n'
+    + 'Generate ' + (q5 + q10) + ' unique RAS Mains questions for:\n'
+    + '- Subject: ' + subject + '\n'
+    + '- Chapter/Topic: ' + chapter + '\n'
+    + '- Difficulty: ' + diffMap[diff] + '\n'
+    + '- Language: ' + langMap[lang] + '\n'
+    + (extra ? '- Special Instructions: ' + extra + '\n' : '')
+    + '\nQuestion breakdown:\n'
+    + (q5  > 0 ? '- ' + q5  + ' questions of 5 marks (short answer, ~50 words)\n' : '')
+    + (q10 > 0 ? '- ' + q10 + ' questions of 10 marks (descriptive, ~100 words)\n' : '')
+    + '\n' + (withAns
+      ? 'For each question, also write a high-quality model answer in Hindi. 5M = 3-4 sentences. 10M = 6-8 sentences with proper structure.\n'
+      : 'Do NOT include answers.\n')
+    + '\nOutput EXACTLY this format (one blank line between questions):\n\n'
+    + 'Q1. [question text]\nM: [5 or 10]\n' + (withAns ? 'A: [model answer]\n' : '')
+    + '\nQ2. [question text]\nM: [5 or 10]\n' + (withAns ? 'A: [model answer]\n' : '')
+    + '\n... and so on\n\n'
+    + 'Output ONLY the formatted questions. No intro, no explanation, no markdown.';
+
+  showRes('res2','ok','⏳ AI questions बना रही है... (' + (q5+q10) + ' questions)');
+
+  var key = document.getElementById('apiKeyInput').value.trim();
+
+  // ── Claude API ──
+  if (key) {
+    try {
+      var r = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 6000,
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+      var d = await r.json();
+      if (!d.error && d.content && d.content[0]) {
+        var txt = d.content[0].text.trim();
+        document.getElementById('qi').value = txt;
+        showRes('res2','ok','✅ ' + (q5+q10) + ' Questions generate हुए! STEP 2 में Parse करें।');
+        openStep2(); return;
+      }
+    } catch(e) { /* fallthrough */ }
+  }
+
+  // ── Pollinations AI (Free) ──
+  try {
+    var r2 = await fetch('https://text.pollinations.ai/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: [{ role: 'user', content: prompt }],
+        model: 'openai',
+        seed: Math.floor(Math.random()*9999),
+        private: true
+      })
+    });
+    var txt2 = await r2.text();
+    txt2 = txt2.trim();
+    if (txt2 && txt2.length > 30) {
+      document.getElementById('qi').value = txt2;
+      showRes('res2','ok','✅ Questions ready! STEP 2 में Parse करें।');
+      openStep2(); return;
+    }
+  } catch(e2) { /* fallthrough */ }
+
+  showRes('res2','er','⚠️ AI unavailable। Internet check करें या STEP 0 में API Key डालें।');
+}
+
+function loadGenSample() {
+  document.getElementById('genSubject').value = 'राजस्थान का इतिहास';
+  document.getElementById('genChapter').value = 'मुगलकालीन वास्तुकला एवं राजपूत-मुगल संबंध';
+  document.getElementById('q5count').textContent = '3';
+  document.getElementById('q10count').textContent = '2';
+  document.getElementById('genWithAns').checked = true;
+  document.getElementById('genDiff').value = 'medium';
+  toast('📄 Example set हुआ!');
+}
+
+// ══════════════════════════════════════════
+//  SMART CONVERT (Step 1 → Step 2)
+// ══════════════════════════════════════════
+function smartConvert() {
+  var raw = document.getElementById('rawInput').value.trim();
+  if (!raw) { toast('⚠️ कुछ paste करें!'); return; }
+
+  // Split into blocks by double newline or by numbered/question patterns
+  var blocks = raw.split(/\n{2,}/);
+  var out = [];
+  var qNum = 1;
+
+  for (var i = 0; i < blocks.length; i++) {
+    var blk = blocks[i].trim();
+    if (!blk || blk.length < 5) continue;
+
+    // Extract marks
+    var marks = 0;
+    if (/\(10\)|10\s*[Mm](?:arks?)?\b|10\s*अंक|\[10\]/.test(blk)) marks = 10;
+    else if (/\(5\)|5\s*[Mm](?:arks?)?\b|5\s*अंक|\[5\]/.test(blk)) marks = 5;
+
+    // Split Q and Ans
+    var ansSplit = blk.split(/\n?\s*(?:Ans(?:wer)?|उत्तर|Model\s*Ans(?:wer)?)\s*[:=]\s*/i);
+    var qRaw = ansSplit[0] || '';
+    var ansRaw = (ansSplit[1] || '').trim();
+
+    // Clean question
+    var q = qRaw
+      .replace(/^\s*Q?\d+[\.\)\:]?\s*/i, '')
+      .replace(/\(\s*10\s*\)|\(\s*5\s*\)/g, '')
+      .replace(/\[\s*10\s*[Mm](?:arks?)?\s*\]|\[\s*5\s*[Mm](?:arks?)?\s*\]/gi, '')
+      .replace(/10\s*[Mm]arks?:|5\s*[Mm]arks?:/gi, '')
+      .replace(/\n/g, ' ').trim();
+
+    if (q.length < 5) continue;
+
+    // Auto-detect marks
+    if (!marks) {
+      var is10 = /वर्णन\s*कीजिए|विवेचना|परीक्षण\s*कीजिए|समीक्षा|विश्लेषण|तुलना\s*कीजिए|Describe|Elucidate|Examine|Analyse|Compare|Critically|Discuss in detail|समझाइए.*विस्तार/i.test(q);
+      marks = (is10 || q.split(/\s+/).length > 22) ? 10 : 5;
+    }
+
+    out.push('Q' + qNum + '. ' + q);
+    out.push('M: ' + marks);
+    if (ansRaw) out.push('A: ' + ansRaw);
+    out.push('');
+    qNum++;
+  }
+
+  if (!out.length) { showRes('res1','er','⚠️ कोई question detect नहीं हुआ।'); return; }
+  document.getElementById('qi').value = out.join('\n').trim();
+  showRes('res1','ok','✅ ' + (qNum-1) + ' questions convert हुए! अब STEP 2 में Parse करें।');
+  openStep2();
+}
+
+// ══════════════════════════════════════════
+//  AI CONVERT — Pollinations (Free) + Claude (Optional)
+// ══════════════════════════════════════════
+async function aiConvert() {
+  var raw = document.getElementById('rawInput').value.trim();
+  if (!raw) { toast('⚠️ STEP 1 में questions paste करें!'); return; }
+
+  var mode = document.querySelector('input[name="aiMode"]:checked').value;
+  var subCtx = document.getElementById('aiSubjectCtx').value.trim();
+  var key = document.getElementById('apiKeyInput').value.trim();
+
+  // Build prompt based on mode
+  var prompt = '';
+  if (mode === 'gen_ans') {
+    // Mode: Format + Generate Model Answers
+    prompt = 'You are an expert RAS (Rajasthan Administrative Service) Mains exam teacher.'
+      + (subCtx ? ' Subject/Context: ' + subCtx + '.' : '')
+      + ' For each question below:\n'
+      + '1. Format it properly\n'
+      + '2. Detect marks: (5) or (10) or from question complexity. M:5 = short answer ~50 words, M:10 = detailed ~100 words\n'
+      + '3. Write a high-quality model answer in Hindi (Devanagari). 5M = 3-4 sentences. 10M = 6-8 sentences with proper structure.\n'
+      + '4. If answer already provided, use and improve it.\n\n'
+      + 'Output EXACTLY this format (one blank line between questions):\n\n'
+      + 'Q1. [question]\nM: [5 or 10]\nA: [model answer in Hindi]\n\n'
+      + 'Output ONLY the formatted questions. No intro, no explanation.\n\nQuestions:\n' + raw;
+  } else {
+    // Mode: Format Only
+    prompt = 'You are a RAS Mains Exam question formatter. Convert the input to this EXACT format. ONE blank line between questions:\n\n'
+      + 'Q1. [question text]\nM: [5 or 10]\nA: [answer if present, else omit A: line]\n\n'
+      + 'Rules: M: 5 for short questions, M: 10 for detailed/descriptive. Extract answer from Ans:, Answer:, उत्तर: etc. Clean question text. Start from Q1. Output ONLY the formatted text.\n\nInput:\n' + raw;
+  }
+
+  var modeLabel = mode === 'gen_ans' ? 'Model Answer generate हो रहा है...' : 'Format हो रहा है...';
+  showRes('res1','ok','⏳ ' + modeLabel + ' (Free AI)');
+
+  // ── Option A: Claude API ──
+  if (key) {
+    try {
+      var r = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 6000,
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+      var d = await r.json();
+      if (!d.error && d.content && d.content[0]) {
+        var txt = d.content[0].text.trim();
+        document.getElementById('qi').value = txt;
+        var label = mode === 'gen_ans' ? '⚡ Model Answers generate हुए!' : '⚡ Format हुआ!';
+        showRes('res1','ok', label + ' STEP 2 में Parse करें।');
+        openStep2(); return;
+      }
+    } catch(e) { /* fallthrough */ }
+  }
+
+  // ── Option B: Pollinations AI (Free) ──
+  try {
+    var r2 = await fetch('https://text.pollinations.ai/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: [{ role: 'user', content: prompt }],
+        model: 'openai',
+        seed: 42,
+        private: true
+      })
+    });
+    var txt2 = await r2.text();
+    txt2 = txt2.trim();
+    if (txt2 && txt2.length > 20) {
+      document.getElementById('qi').value = txt2;
+      var label2 = mode === 'gen_ans' ? '✅ Model Answers तैयार!' : '✅ Format हुआ!';
+      showRes('res1','ok', label2 + ' STEP 2 में Parse करें।');
+      openStep2(); return;
+    }
+  } catch(e2) { /* fallthrough */ }
+
+  // ── Fallback: Smart Convert ──
+  if (mode === 'format') {
+    showRes('res1','er','⚠️ AI unavailable — Smart Convert से try कर रहे हैं...');
+    setTimeout(smartConvert, 500);
+  } else {
+    showRes('res1','er','⚠️ AI unavailable। Internet check करें या API Key डालें (STEP 0)।');
+  }
+}
+
+function openStep2() {
+  var s2 = document.getElementById('s2');
+  if (s2.classList.contains('collapsed')) s2.classList.remove('collapsed');
+  s2.scrollIntoView({behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════
+//  PARSE (Step 2)
+// ══════════════════════════════════════════
+function doparse() {
+  var raw = document.getElementById('qi').value.trim();
+  if (!raw) { toast('⚠️ STEP 2 में कुछ नहीं है!'); return; }
+
+  var lines = raw.split('\n');
+  var parsed = [];
+  var cur = null;
+
+  for (var i = 0; i < lines.length; i++) {
+    var ln = lines[i];
+    var mQ = ln.match(/^Q(\d+)\.\s*(.+)/i);
+    var mM = ln.match(/^M\s*:\s*(\d+)/i);
+    var mA = ln.match(/^A\s*:\s*([\s\S]*)/i);
+
+    if (mQ) {
+      if (cur && cur.hindi) parsed.push(cur);
+      cur = { marks: 5, hindi: mQ[2].trim(), english: '', answer: '', ansEng: '' };
+    } else if (mM && cur) {
+      cur.marks = parseInt(mM[1]) === 10 ? 10 : 5;
+    } else if (mA && cur) {
+      cur.answer = mA[1].trim();
+    } else if (ln.trim() && cur && !mM && !mA) {
+      // Continuation of answer
+      if (cur.answer) cur.answer += ' ' + ln.trim();
+    }
+  }
+  if (cur && cur.hindi) parsed.push(cur);
+
+  if (!parsed.length) { toast('⚠️ Parse नहीं हुआ। Format check करें।'); return; }
+  qs = parsed;
+  renderPreview();
+  renderStats();
+  document.getElementById('s3wrap').style.display = 'block';
+  // Remove collapsed if was previously hidden
+  document.getElementById('s3wrap').classList.remove('collapsed');
+  document.getElementById('sr').style.display = 'flex';
+  document.getElementById('pc').style.display = 'block';
+  setStatus('<span class="ls">✅ ' + qs.length + ' Q loaded</span> — Step 3 से Generate करें।');
+  toast('✅ ' + qs.length + ' questions load हुए!');
+  document.getElementById('s3wrap').scrollIntoView({behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════
+//  RENDER PREVIEW TABLE
+// ══════════════════════════════════════════
+function renderPreview() {
+  document.getElementById('pt').textContent = qs.length;
+  var html = '';
+  for (var i = 0; i < qs.length; i++) {
+    var q = qs[i];
+    var hasAns = q.answer && q.answer.trim();
+    html += '<tr>'
+      + '<td style="color:#6870a0;">' + (i+1) + '</td>'
+      + '<td>' + esc(q.hindi.substring(0,80)) + (q.hindi.length>80?'...':'')
+      + (hasAns ? '<div style="color:#4ade80;font-size:10px;margin-top:2px;">✅ ' + esc(q.answer.substring(0,50)) + (q.answer.length>50?'...':'') + '</div>' : '')
+      + '</td>'
+      + '<td><span class="tag ' + (q.marks===5?'tag5':'tag10') + '">' + q.marks + 'M</span></td>'
+      + '<td style="text-align:center;">' + (hasAns ? '<span class="tag tagA">ANS</span>' : '<span style="color:#3a4060;">—</span>') + '</td>'
+      + '</tr>';
+  }
+  document.getElementById('pb2').innerHTML = html;
+}
+
+function renderStats() {
+  var t=qs.length,c5=0,c10=0,ca=0;
+  for(var i=0;i<qs.length;i++){if(qs[i].marks===5)c5++;else c10++;if(qs[i].answer&&qs[i].answer.trim())ca++;}
+  document.getElementById('st').textContent=t;
+  document.getElementById('st5').textContent=c5;
+  document.getElementById('st10').textContent=c10;
+  document.getElementById('sa').textContent=ca;
+  document.getElementById('spg').textContent='~'+(Math.ceil(t/2)+1);
+}
+
+// ══════════════════════════════════════════
+//  SAMPLE
+// ══════════════════════════════════════════
+function loadSampleRaw() {
+  document.getElementById('rawInput').value = `(5) जंतर-मंतर, जयपुर के 'सम्राट यंत्र' पर टिप्पणी कीजिए।
+Ans: सम्राट यंत्र विश्व की सबसे बड़ी पत्थर की सूर्य घड़ी है। इसे 1724 में महाराजा सवाई जयसिंह द्वितीय ने बनवाया था।
+
+राजस्थान के किसान आन्दोलन में चंडावल घटना, 1942 पर प्रकाश डालिए। (5 marks)
+Ans: 1942 में चूरू जिले में पुलिस ने किसानों पर अत्याचार किए। किसान नेता हनुमान सिंह ने बीकानेर महाराजा से न्याय माँगा।
+
+Describe the revenue system of Mediaeval Rajasthan. [10 marks]
+Answer: The revenue system was based on Raiyatwari and Jagirdari patterns. Land tax was the main income source collected through Batai, cash or mixed methods.
+
+(10) भारतीय स्वतंत्रता संग्राम में महात्मा गांधी की तीन दशकीय भूमिका की विवेचना कीजिए।
+
+राजस्थान की नमो ड्रोन दीदी योजना का मुख्य उद्देश्य क्या है?`;
+  toast('📄 Sample load हुआ!');
+}
+
+// ══════════════════════════════════════════
+//  GOOGLE TRANSLATE
+// ══════════════════════════════════════════
+async function gtrans(text, to) {
+  if (!text||!text.trim()) return '';
+  try {
+    var url='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl='+to+'&dt=t&q='+encodeURIComponent(text);
+    var r=await fetch(url); var d=await r.json();
+    return d[0].map(function(x){return x[0]||'';}).join('');
+  } catch(e){ return text; }
+}
+
+async function translateAll() {
+  document.getElementById('transStatus').style.display='inline';
+  for (var i=0;i<qs.length;i++) {
+    if (!qs[i].english) qs[i].english = await gtrans(qs[i].hindi,'en');
+    if (qs[i].answer && !qs[i].ansEng) qs[i].ansEng = await gtrans(qs[i].answer,'en');
+  }
+  document.getElementById('transStatus').style.display='none';
+}
+
+// ══════════════════════════════════════════
+//  GENERATE
+// ══════════════════════════════════════════
+async function gen(type) {
+  if (!qs.length) { toast('⚠️ पहले Parse करें!'); return; }
+
+  var cfg = {
+    exam:       v('examName'),
+    subject:    v('subject'),
+    marks:      v('totalMarks'),
+    time:       v('timeAllowed'),
+    date:       v('testDate'),
+    batch:      v('batchName'),
+    institute:  v('institute'),
+    lines5:     parseInt(v('lines5'))||8,
+    lines10:    parseInt(v('lines10'))||14,
+    dnw:        type==='workbook_dnw',
+    wmOn:       document.getElementById('wmEnable').checked,
+    wmLine1:    v('wmLine1')||'NEW INDIA EDUCATION',
+    wmLine2:    v('wmLine2')||'www.omkarsir.in',
+    wmOpacity:  (parseInt(v('wmOpacity'))||12)/100,
+    headerText: v('headerText')||'New India Education (NIEd) — www.omkarsir.in',
+    headerUrl:  v('headerUrl')||'https://www.omkarsir.in',
+    footerText: v('footerText')||'New India Education (NIEd) — www.omkarsir.in',
+    footerUrl:  v('footerUrl')||'https://www.omkarsir.in',
+  };
+
+  if (type==='eng_workbook'||type==='bilingual'||type==='eng_model') {
+    toast('🌐 Translating... कुछ seconds wait करें');
+    await translateAll();
+  }
+
+  var html = '';
+  if      (type==='workbook')     html = bldCover(cfg) + bldQPages(cfg, false);
+  else if (type==='workbook_dnw') html = bldCover(cfg) + bldQPages(cfg, false);
+  else if (type==='model_ans')    html = bldCover(cfg) + bldModelPages(cfg,'hi');
+  else if (type==='anskey')       html = bldKeyPage(cfg);
+  else if (type==='eng_workbook') html = bldCover(cfg) + bldQPages(cfg, true);
+  else if (type==='bilingual')    html = bldCover(cfg) + bldBiPages(cfg);
+  else if (type==='eng_model')    html = bldCover(cfg) + bldModelPages(cfg,'en');
+  else if (type==='both')         html = bldCover(cfg)+bldQPages(cfg,false)+bldModelPages(cfg,'hi')+bldKeyPage(cfg);
+
+  document.getElementById('paperWrap').innerHTML = html;
+  document.getElementById('paper-out').style.display = 'block';
+  setTimeout(function(){ document.getElementById('paper-out').scrollIntoView({behavior:'smooth'}); }, 100);
+  toast('✅ Paper ready! Print/Save as PDF करें।');
+}
+
+function v(id){ var el=document.getElementById(id); return el?el.value:''; }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ══════════════════════════════════════════
+//  PAPER BUILDERS
+// ══════════════════════════════════════════
+function buildHF(cfg) {
+  return {
+    h:'<div class="phead"><a href="'+esc(cfg.headerUrl)+'" target="_blank">'+esc(cfg.headerText)+'</a></div>',
+    f:'<div class="pfoot"><a href="'+esc(cfg.footerUrl)+'" target="_blank">'+esc(cfg.footerText)+'</a></div>'
+  };
+}
+
+function buildWM(cfg) {
+  if (!cfg.wmOn) return '';
+  return '<div class="wm" style="opacity:'+cfg.wmOpacity+'"><div class="wm-l1">'+esc(cfg.wmLine1)+'</div><div class="wm-l2">'+esc(cfg.wmLine2)+'</div></div>';
+}
+
+function wrapPg(content, num, cfg, dnw) {
+  var hf=buildHF(cfg);
+  return '<div class="print-page">'+hf.h+buildWM(cfg)
+    +'<div class="pp-hdr"><span>Paper-I</span><span>'+num+'</span></div>'
+    +'<div class="pp-bc"><div class="bc-bar"></div></div>'
+    +content
+    +(dnw?'<div class="dnw"><p>Do Not Write Here</p><p class="dh">यहाँ कुछ नहीं लिखें</p></div>':'')
+    +hf.f+'</div>';
+}
+
+function bldCover(cfg) {
+  var hf=buildHF(cfg);
+  return '<div class="print-page">'+hf.h+buildWM(cfg)
+    +'<div class="pp-hdr"><span>Paper-I</span><span>1</span></div>'
+    +'<div class="pp-bc"><div class="bc-bar"></div></div>'
+    +'<div class="cover-box"><div class="cover-title"><h2>'+esc(cfg.institute)+'</h2><p>'+esc(cfg.exam)+'</p><p style="font-size:10.5pt;margin-top:2px;">'+esc(cfg.subject)+'</p></div>'
+    +'<div style="display:flex;justify-content:space-between;font-size:10.5pt;margin-bottom:10px;">'
+    +'<span><b>Total Marks:</b> '+esc(cfg.marks)+'</span><span><b>Time:</b> '+esc(cfg.time)+'</span>'
+    +(cfg.date?'<span><b>Date:</b> '+esc(cfg.date)+'</span>':'')
+    +(cfg.batch?'<span><b>Batch:</b> '+esc(cfg.batch)+'</span>':'')+'</div>'
+    +'<div class="cover-fields">'
+    +'<p><b>Name / नाम:</b><span class="uline"></span></p>'
+    +'<p><b>Roll No. / रोल नं.:</b><span class="uline" style="max-width:150px"></span>&nbsp;&nbsp;<b>Medium:</b><span class="uline" style="max-width:90px"></span></p>'
+    +'<p><b>Father\'s Name / पिता का नाम:</b><span class="uline"></span></p>'
+    +'<p><b>Signature / हस्ताक्षर:</b><span class="uline"></span></p>'
+    +'</div></div>'
+    +'<div style="border:1px solid #555;border-radius:3px;padding:8px 10px;font-size:9pt;line-height:1.6;">'
+    +'<b>महत्त्वपूर्ण निर्देश / IMPORTANT INSTRUCTIONS</b>'
+    +'<ul style="padding-left:14px;margin-top:4px;">'
+    +'<li>उत्तर निर्धारित स्थान पर ही लिखें। / Answer within the prescribed space only.</li>'
+    +'<li>निर्धारित शब्द सीमा से अधिक न लिखें। / Do not exceed the word limit.</li>'
+    +'<li>Correction Pen का उपयोग निषिद्ध है। / Use of Correction Pen is strictly forbidden.</li>'
+    +'<li>उत्तर हिंदी या अंग्रेजी में दीजिए। / Answer in Hindi or English.</li>'
+    +'</ul></div>'
+    +hf.f+'</div>';
+}
+
+function calcH(marks,lines,first){return 20+(lines*9)+5+(first?20:0);}
+
+function bldQPages(cfg, eng) {
+  var html='',pc='',pn=2,pm=0,um=0,first=true;
+  for (var i=0;i<qs.length;i++) {
+    var q=qs[i],L=q.marks===5?cfg.lines5:cfg.lines10,mc=(q.marks!==pm);
+    var nh=calcH(q.marks,L,first||mc);
+    if (i>0&&(mc||um+nh>242)){html+=wrapPg(pc,pn,cfg,false);pc='';pn++;um=0;first=true;nh=calcH(q.marks,L,true);}
+    if (mc||i===0){pc+=bldUnitHead(q.marks,eng);um+=20;pm=q.marks;}
+    var qt=eng?(q.english||q.hindi):q.hindi;
+    var ls='';for(var j=0;j<L;j++)ls+='<div class="aline"></div>';
+    pc+='<div class="q-box"><div class="q-inner"><div class="q-num">'+(i+1)+'.</div>'
+      +(eng?'<div class="q-en">'+esc(qt)+'</div>':'<div class="q-hi">'+esc(qt)+'</div>')
+      +'</div><div class="ans-block">'+ls+'</div></div>';
+    um+=calcH(q.marks,L,false);first=false;
+  }
+  if(pc)html+=wrapPg(pc,pn,cfg,cfg.dnw);
+  return html;
+}
+
+function bldUnitHead(m,eng) {
+  var w=m===5?'50':'100';
+  if(eng) return '<div class="unit-head"><span>Unit / Part</span><span>Marks: '+m+'</span></div>'
+    +'<div class="note-ln"><b>Note:</b> Answer in <b>'+w+'</b> words. Each question carries <b>'+m+'</b> marks.</div>';
+  return '<div class="unit-head"><span>Unit / Part</span><span>Marks: '+m+'</span></div>'
+    +'<div class="note-ln"><b>Note:</b> Answer in <b>'+w+'</b> words. <b>नोट:</b> प्रत्येक प्रश्न के <b>'+w+'</b> शब्दों में उत्तर दें। प्रत्येक के <b>'+m+'</b> अंक।</div>';
+}
+
+function bldModelPages(cfg, lang) {
+  var html='',pc='',pn=2,um=0;
+  for(var i=0;i<qs.length;i++){
+    var q=qs[i];
+    var qt=lang==='en'?(q.english||q.hindi):q.hindi;
+    var at=lang==='en'?(q.ansEng||q.answer||''):(q.answer||'');
+    var bh=30+Math.max(20,Math.ceil((at.length||30)/55)*6);
+    if(i>0&&um+bh>230){html+=wrapPg(pc,pn,cfg,false);pc='';pn++;um=0;}
+    if(um===0){pc+='<div style="text-align:center;border-bottom:2px solid #1B2A6B;margin-bottom:8px;padding-bottom:4px;font-weight:bold;font-size:11pt;color:#1B2A6B;">📚 Model Answer Booklet</div>';um+=12;}
+    pc+='<div class="ma-qbox">'
+      +'<div class="ma-qtop"><span>Q'+(i+1)+'. ['+q.marks+' Marks]</span></div>'
+      +'<div class="ma-qtext">'+esc(qt)+'</div>'
+      +(at?'<div class="ma-ans"><span class="ma-ans-lbl">✅ Model Answer:</span>'+esc(at)+'</div>'
+          :'<div class="ma-blank">— No model answer provided —</div>')
+      +'</div>';
+    um+=bh;
+  }
+  if(pc)html+=wrapPg(pc,pn,cfg,false);
+  return html;
+}
+
+function bldBiPages(cfg) {
+  var html='',pc='',pn=2,pm=0,um=0;
+  for(var i=0;i<qs.length;i++){
+    var q=qs[i],L=q.marks===5?cfg.lines5:cfg.lines10,mc=(q.marks!==pm);
+    var bh=calcH(q.marks,L,mc||i===0)+15;
+    if(i>0&&(mc||um+bh>240)){html+=wrapPg(pc,pn,cfg,false);pc='';pn++;um=0;}
+    if(mc||i===0){pc+=bldUnitHead(q.marks,false);um+=20;pm=q.marks;}
+    var ls='';for(var j=0;j<L;j++)ls+='<div class="aline"></div>';
+    pc+='<div class="q-box"><div class="q-inner"><div class="q-num">'+(i+1)+'.</div>'
+      +'<div class="q-hi">'+esc(q.hindi)+'</div>'
+      +(q.english?'<div class="q-en">'+esc(q.english)+'</div>':'')
+      +'</div><div class="ans-block">'+ls+'</div></div>';
+    um+=bh;
+  }
+  if(pc)html+=wrapPg(pc,pn,cfg,cfg.dnw);
+  return html;
+}
+
+function bldKeyPage(cfg) {
+  var hf=buildHF(cfg);
+  var rows='',tot=0;
+  for(var i=0;i<qs.length;i++){
+    tot+=qs[i].marks;
+    rows+='<tr><td style="padding:5px 8px;border:1px solid #ccc;font-weight:bold;">'+(i+1)+'</td>'
+      +'<td style="padding:5px 8px;border:1px solid #ccc;font-family:\'Noto Sans Devanagari\',serif;">'+esc(qs[i].hindi)+'</td>'
+      +'<td style="padding:5px 8px;border:1px solid #ccc;text-align:center;">'+qs[i].marks+'</td>'
+      +'<td style="padding:5px 8px;border:1px solid #ccc;min-width:100px;">&nbsp;</td></tr>';
+  }
+  return '<div class="print-page">'+hf.h+buildWM(cfg)
+    +'<div class="pp-hdr"><span>Answer Key</span><span>KEY</span></div>'
+    +'<div style="text-align:center;border-bottom:2px solid #1B2A6B;padding-bottom:8px;margin-bottom:12px;">'
+    +'<b style="font-size:13pt;color:#1B2A6B;">'+esc(cfg.exam)+'</b><br>'
+    +'<span style="font-size:10pt;">'+esc(cfg.institute)+'</span>'
+    +(cfg.date?' &nbsp;|&nbsp; <b>Date:</b> '+esc(cfg.date):'')+'</div>'
+    +'<table style="width:100%;border-collapse:collapse;font-size:10pt;">'
+    +'<thead><tr style="background:#1B2A6B;color:white;">'
+    +'<th style="padding:6px 8px;border:1px solid #1B2A6B;width:35px">Q#</th>'
+    +'<th style="padding:6px 8px;border:1px solid #1B2A6B;">Question</th>'
+    +'<th style="padding:6px 8px;border:1px solid #1B2A6B;width:55px">Marks</th>'
+    +'<th style="padding:6px 8px;border:1px solid #1B2A6B;width:100px">Score</th></tr></thead>'
+    +'<tbody>'+rows+'</tbody>'
+    +'<tfoot><tr><td colspan="2" style="padding:6px 8px;border:1px solid #ccc;font-weight:bold;">Total</td>'
+    +'<td style="padding:6px 8px;border:1px solid #ccc;text-align:center;font-weight:bold;">'+tot+'</td>'
+    +'<td style="padding:6px 8px;border:1px solid #ccc;">&nbsp;</td></tr></tfoot>'
+    +'</table>'+hf.f+'</div>';
+}
+
+// ══════════════════════════════════════════
+//  UTILS
+// ══════════════════════════════════════════
+function printOut() {
+  if (document.getElementById('paper-out').style.display==='none') { toast('⚠️ पहले Generate करें!'); return; }
+  window.print();
+}
+function clearOut() {
+  document.getElementById('paper-out').style.display='none';
+  document.getElementById('paperWrap').innerHTML='';
+}
+function setStatus(msg){ document.getElementById('stl').innerHTML=msg; }
+function showRes(id,cls,msg){ var el=document.getElementById(id); el.className='res '+cls; el.textContent=msg; el.style.display='block'; }
+function toast(msg){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(function(){t.classList.remove('show');},2800); }
+
+// ══════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════
+(function(){
+  var d=new Date();
+  document.getElementById('testDate').value=('0'+d.getDate()).slice(-2)+'/'+ ('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
+
+  // Show/hide subject context for Format+Answer mode
+  document.querySelectorAll('input[name="aiMode"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      var sh = document.getElementById('subjectHint');
+      if (sh) sh.style.display = this.value === 'gen_ans' ? 'block' : 'none';
+    });
+  });
+
+  // Show custom subject input when "custom" selected
+  var genSub = document.getElementById('genSubject');
+  if (genSub) {
+    genSub.addEventListener('change', function(){
+      document.getElementById('customSubjectRow').style.display = this.value === 'custom' ? 'block' : 'none';
+    });
+  }
+})();
+</script>
+</body>
+</html>
