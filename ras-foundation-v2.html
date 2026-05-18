@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>RAS Foundation Course 2026 | Omkar Sir | New India Education</title>
+<meta name="description" content="RAS 2026 की पूरी तैयारी — Notes, Videos, MCQs, Mains Writing — सब एक जगह। Rajasthan का सबसे Best RAS Course।"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --orange:#ff6b00;--navy:#1a237e;--gold:#f5a623;
+  --green:#00a651;--red:#e53935;--light:#f8f9ff;
+  --cream:#fff8f0;--white:#fff;--text:#1c1c2e;--gray:#6b7280;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* ── ANNOUNCEMENT BAR ── */
+.ann-bar{background:linear-gradient(90deg,#1a237e,#283593);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:700}
+.ann-bar span{color:#ffd54f}
+.ann-bar .timer-inline{background:rgba(255,107,0,.9);border-radius:6px;padding:2px 10px;margin-left:8px;font-size:13px}
+
+/* ── NAV ── */
+nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.nav-logo{font-size:15px;font-weight:800;color:var(--navy)}
+.nav-logo span{color:var(--orange)}
+.nav-cta{background:var(--orange);color:#fff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:25px;border:none;cursor:pointer;white-space:nowrap}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#fff8f0 0%,#f0f4ff 100%);padding:40px 20px 50px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-40px;left:0;right:0;height:80px;background:#fff;clip-path:ellipse(55% 50% at 50% 100%)}
+.badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:18px}
+.badge{display:inline-block;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.badge-orange{background:#fff0e0;color:var(--orange);border:1px solid #ffd0a0}
+.badge-navy{background:#e8eaf6;color:var(--navy);border:1px solid #c5cae9}
+.badge-green{background:#e8f5e9;color:var(--green);border:1px solid #a5d6a7}
+.hero h1{font-size:clamp(24px,5.5vw,42px);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:10px}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero .tagline{font-size:clamp(15px,3vw,19px);color:var(--gray);margin-bottom:20px;line-height:1.6}
+.hero .tagline strong{color:var(--navy)}
+
+/* price hero */
+.price-hero{display:inline-flex;flex-direction:column;align-items:center;background:#fff;border-radius:20px;padding:20px 32px;box-shadow:0 4px 24px rgba(0,0,0,.1);margin-bottom:24px;border:2px solid #ffe0cc}
+.ph-original{font-size:16px;color:#aaa;text-decoration:line-through}
+.ph-price{font-size:clamp(62px,13vw,90px);font-weight:900;color:var(--orange);line-height:1;text-shadow:0 2px 8px rgba(255,107,0,.2)}
+.ph-price small{font-size:32px}
+.ph-save{background:#fff0e0;color:var(--orange);font-size:14px;font-weight:800;padding:6px 16px;border-radius:8px;margin-top:8px}
+.ph-validity{font-size:14px;color:var(--green);font-weight:700;margin-top:5px}
+/* coupon box */
+.coupon-box{background:linear-gradient(135deg,#fff8e1,#fff3cd);border:2px dashed #f5a623;border-radius:14px;padding:14px 22px;margin:16px 0;text-align:center;max-width:340px;width:100%}
+.coupon-label{font-size:12px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.coupon-code{font-size:26px;font-weight:900;color:var(--navy);letter-spacing:4px;font-family:monospace}
+.coupon-desc{font-size:13px;color:var(--green);font-weight:700;margin-top:4px}
+.coupon-final{font-size:14px;color:var(--red);font-weight:800;margin-top:4px}
+/* hero course image */
+.hero-img-wrap{margin:0 auto 20px;max-width:480px;width:100%}
+.hero-img-wrap img{width:100%;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+
+/* countdown */
+.cd-section{margin-bottom:24px}
+.cd-title{font-size:13px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.cd-boxes{display:flex;justify-content:center;gap:10px}
+.cd-box{background:#fff;border:2px solid #ffe0cc;border-radius:12px;padding:10px 14px;min-width:60px;text-align:center;box-shadow:0 2px 8px rgba(255,107,0,.12)}
+.cd-num{font-size:28px;font-weight:900;color:var(--orange);display:block;line-height:1}
+.cd-lbl{font-size:11px;color:var(--gray);margin-top:2px}
+
+.btn-join{display:inline-block;background:linear-gradient(135deg,#ff6b00,#ff9800);color:#fff;font-size:clamp(16px,3.5vw,20px);font-weight:800;padding:16px 40px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(255,107,0,.4);transition:transform .2s,box-shadow .2s;margin:6px}
+.btn-join:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,107,0,.5)}
+.btn-wa{display:inline-block;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-size:15px;font-weight:700;padding:13px 26px;border-radius:50px;box-shadow:0 4px 14px rgba(37,211,102,.35);transition:transform .2s;margin:6px}
+.btn-wa:hover{transform:translateY(-2px)}
+.hero-trust{margin-top:14px;font-size:13px;color:var(--gray)}
+.hero-trust span{color:var(--green);font-weight:700}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--navy);padding:20px 16px}
+.stats-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+.stat-item{text-align:center;color:#fff}
+.stat-num{font-size:26px;font-weight:900;color:#ffd54f;display:block}
+.stat-lbl{font-size:12px;color:#b0bec5}
+
+/* ── SECTION COMMONS ── */
+section{padding:52px 16px}
+.sec-title{text-align:center;font-size:clamp(21px,4vw,32px);font-weight:900;color:var(--navy);margin-bottom:8px}
+.sec-title em{color:var(--orange);font-style:normal}
+.sec-sub{text-align:center;color:var(--gray);font-size:15px;margin-bottom:36px}
+.max-w{max-width:960px;margin:0 auto}
+.max-w-7{max-width:700px;margin:0 auto}
+
+/* ── RAS INFO ── */
+.ras-info{background:#f0f4ff}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.info-card{background:#fff;border-radius:16px;padding:22px 18px;border-top:4px solid var(--orange);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.info-icon{font-size:30px;margin-bottom:10px}
+.info-title{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.info-body{font-size:13px;color:#555;line-height:1.7}
+.info-body strong{color:var(--navy)}
+
+/* cutoff table */
+.table-wrap{overflow-x:auto;margin-top:20px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--navy);color:#fff;padding:10px 14px;text-align:center}
+td{padding:9px 14px;text-align:center;border-bottom:1px solid #e5e7eb}
+tr:nth-child(even) td{background:#f8f9ff}
+
+/* ── WHY US ── */
+.why-us{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.why-card{border-radius:16px;padding:22px 20px;border:2px solid #e5e7eb;transition:border-color .2s,box-shadow .2s}
+.why-card:hover{border-color:var(--orange);box-shadow:0 4px 20px rgba(255,107,0,.1)}
+.why-emoji{font-size:32px;margin-bottom:12px}
+.why-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.why-desc{font-size:14px;color:#555;line-height:1.7}
+
+/* coaching vs us */
+.compare-section{background:var(--cream)}
+.compare-table-wrap{overflow-x:auto}
+.compare-table{width:100%;max-width:800px;margin:0 auto;border-collapse:collapse;font-size:14px}
+.compare-table th{padding:14px 16px;font-size:15px;font-weight:800}
+.compare-table th:nth-child(1){background:#f3f4f6;color:var(--text)}
+.compare-table th:nth-child(2){background:#ffebee;color:var(--red)}
+.compare-table th:nth-child(3){background:#e8f5e9;color:var(--green)}
+.compare-table td{padding:12px 16px;border-bottom:1px solid #e5e7eb;text-align:center}
+.compare-table td:first-child{text-align:left;font-weight:600;color:var(--navy)}
+.tick{color:var(--green);font-size:17px;font-weight:800}
+.cross{color:var(--red);font-size:17px}
+
+/* ── COURSE CONTENT BREAKDOWN ── */
+.content-breakdown{background:#f8f9ff}
+.content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.content-box{background:#fff;border-radius:14px;padding:20px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06);border-bottom:3px solid var(--orange)}
+.content-icon{font-size:28px;margin-bottom:8px}
+.content-count{font-size:26px;font-weight:900;color:var(--orange)}
+.content-type{font-size:13px;color:var(--gray);font-weight:600;margin-top:4px}
+
+/* checklist */
+.check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:24px}
+.check-row{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;background:#fff;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+.ck{width:22px;height:22px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0;margin-top:1px}
+.ck-text{font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
+
+/* ── PROMISES ── */
+.promises{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;text-align:center;padding:52px 20px}
+.promises .sec-title{color:#fff}
+.promises .sec-title em{color:#ffd54f}
+.promises .sec-sub{color:#b0bec5}
+.promise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.promise-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 18px;text-align:center}
+.promise-icon{font-size:36px;margin-bottom:12px}
+.promise-title{font-size:15px;font-weight:800;color:#ffd54f;margin-bottom:8px}
+.promise-desc{font-size:13px;color:#cfd8dc;line-height:1.6}
+
+/* ── CTA MIDDLE ── */
+.cta-mid{background:var(--cream);text-align:center;padding:52px 20px}
+.cta-mid h2{font-size:clamp(20px,4vw,30px);font-weight:900;color:var(--navy);margin-bottom:8px}
+.cta-mid h2 span{color:var(--orange)}
+.cta-mid p{color:var(--gray);margin-bottom:24px;font-size:15px}
+
+/* ── PRICING ── */
+.pricing{background:#fff}
+.pricing-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;max-width:700px;margin:0 auto}
+.p-card{border-radius:20px;padding:30px 24px;border:2px solid #e5e7eb;text-align:center;position:relative;transition:transform .2s}
+.p-card:hover{transform:translateY(-4px)}
+.p-card.best{border-color:var(--orange);background:linear-gradient(135deg,#fff8f0,#fff);box-shadow:0 8px 32px rgba(255,107,0,.15)}
+.p-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-size:12px;font-weight:800;padding:5px 20px;border-radius:20px;white-space:nowrap}
+.p-name{font-size:13px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.p-original{font-size:13px;color:#bbb;text-decoration:line-through;margin-bottom:4px}
+.p-price{font-size:44px;font-weight:900;color:var(--navy);line-height:1}
+.p-price small{font-size:20px}
+.p-val{font-size:14px;color:var(--green);font-weight:700;margin:8px 0}
+.p-saving{background:#fff0e0;color:var(--orange);font-size:13px;font-weight:700;padding:4px 14px;border-radius:8px;display:inline-block;margin-bottom:20px}
+.btn-join-sm{display:block;width:100%;background:linear-gradient(135deg,#ff6b00,#ff9800);color:#fff;font-size:16px;font-weight:800;padding:14px;border-radius:40px;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(255,107,0,.35);text-align:center}
+
+/* ── OTHER COURSES ── */
+.other-courses{background:#f8f9ff}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.course-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,.08);border:1px solid #e5e7eb;transition:transform .2s,box-shadow .2s}
+.course-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.cc-top{padding:20px;border-bottom:1px solid #f0f0f0}
+.cc-badge{font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px;display:inline-block;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.cc-badge.free{background:#e8f5e9;color:var(--green)}
+.cc-badge.paid{background:#e8eaf6;color:var(--navy)}
+.cc-name{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.cc-desc{font-size:13px;color:var(--gray);line-height:1.5}
+.cc-bottom{padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.cc-price{font-size:18px;font-weight:900;color:var(--navy)}
+.cc-price s{font-size:13px;color:#bbb;margin-right:6px}
+.cc-btn{background:var(--orange);color:#fff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:20px}
+
+/* ── FAQ ── */
+.faq{background:#fff}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border:1px solid #e5e7eb;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--navy);font-size:15px;background:#fff}
+.faq-q::after{content:'+';font-size:20px;color:var(--orange);transition:transform .3s;font-weight:400}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 20px 16px;color:#555;font-size:14px;line-height:1.8;border-top:1px solid #f0f0f0}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:#b0bec5;text-align:center;padding:28px 16px;font-size:13px}
+footer strong{color:#ffd54f}
+
+/* ── FLOATING WA ── */
+.wa-float{position:fixed;bottom:24px;right:20px;background:#25d366;color:#fff;border-radius:50px;padding:13px 20px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 4px 18px rgba(37,211,102,.5);z-index:999;display:flex;align-items:center;gap:8px;transition:transform .2s}
+.wa-float:hover{transform:scale(1.05)}
+.wa-float svg{width:20px;height:20px;fill:#fff}
+
+/* divider */
+.divider{height:4px;background:linear-gradient(90deg,var(--navy),var(--orange),var(--navy));opacity:.15}
+
+/* ── APP DOWNLOAD ── */
+.app-dl-row{margin-top:22px;text-align:center}
+.app-dl-label{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.app-dl-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.app-btn-play,.app-btn-apple{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:12px;font-weight:700;font-size:14px;
+  transition:transform .2s,box-shadow .2s;cursor:pointer;
+}
+.app-btn-play{background:#1a1a1a;color:#fff;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+.app-btn-apple{background:#1a1a1a;color:#fff;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+.app-btn-play:hover,.app-btn-apple:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+
+@media(max-width:480px){
+  .cd-box{min-width:52px;padding:8px 10px}
+  .cd-num{font-size:22px}
+  .price-hero{padding:16px 22px}
+  .app-dl-btns{flex-direction:column;align-items:center}
+  .app-btn-play,.app-btn-apple{width:200px;justify-content:center}
+  nav .nav-logo{font-size:13px}
+  .compare-table{font-size:12px}
+  .compare-table th,.compare-table td{padding:9px 10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ ANNOUNCEMENT BAR ══ -->
+<div class="ann-bar">
+  🔥 RAS 2026 Special Offer — ₹25,000 का Course सिर्फ <span>₹4,999</span> में!
+  <span class="timer-inline">⏰ Offer खत्म: <b id="ann-time">loading...</b></span>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-logo">🔱 <span>Omkar</span>Sir &nbsp;|&nbsp; New India Education</div>
+  <a href="https://www.omkarsir.in/courses/138711" class="nav-cta">Join Now ₹4,999 →</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="badge-row">
+    <span class="badge badge-orange">🏆 Rajasthan का No.1 RAS Course</span>
+    <span class="badge badge-navy">📱 Bilingual — Hindi + English</span>
+    <span class="badge badge-green">✅ 710+ Students Enrolled</span>
+  </div>
+
+  <h1>📘🔱 RAS FOUNDATION<br/><em>COURSE 2026</em></h1>
+  <p class="tagline">
+    Pre + Mains… दोनों की <strong>पूरी तैयारी एक ही जगह!</strong><br/>
+    Video Lectures · PPT · PDF · PYQ Tests · Mains Workbook · सब एक साथ
+  </p>
+
+  <!-- Course Image -->
+  <div class="hero-img-wrap">
+    <img src="https://cdn-wl-assets.classplus.co/production/single/techa/44f20deb-34a9-48eb-8ab9-0dc430ed3479.jpg" alt="RAS Foundation Course 2026 — Omkar Sir"/>
+  </div>
+
+  <div class="price-hero">
+    <div class="ph-original">Original Price: ₹25,000 &nbsp;|&nbsp; 80% OFF</div>
+    <div class="ph-price"><small>₹</small>4,999</div>
+    <div class="ph-save">🔥 Coupon लगाओ → सिर्फ ₹3,799 में!</div>
+    <div class="ph-validity">✅ 2 साल Validity | 5 साल: ₹5,999</div>
+
+    <div class="coupon-box">
+      <div class="coupon-label">🎟️ Special Coupon Code</div>
+      <div class="coupon-code">RAS50</div>
+      <div class="coupon-desc">50% OFF — अधिकतम ₹1,200 की छूट</div>
+      <div class="coupon-final">💰 Final Price: सिर्फ ₹3,799!</div>
+    </div>
+  </div>
+
+  <div class="cd-section">
+    <div class="cd-title">⚡ आज रात 12 बजे Offer बंद — बचा है:</div>
+    <div class="cd-boxes">
+      <div class="cd-box"><span class="cd-num" id="cd-h">--</span><div class="cd-lbl">घंटे</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">--</span><div class="cd-lbl">मिनट</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">--</span><div class="cd-lbl">सेकंड</div></div>
+    </div>
+  </div>
+
+  <div>
+    <a href="https://www.omkarsir.in/courses/138711" class="btn-join">🚀 अभी Join करें — ₹4,999</a>
+    <a href="https://wa.me/917023166962?text=RAS Foundation Course 2026 के बारे में जानकारी चाहिए" class="btn-wa">💬 WhatsApp पर पूछें</a>
+  </div>
+
+  <!-- APP DOWNLOAD — HERO -->
+  <div class="app-dl-row">
+    <p class="app-dl-label">📱 App पर पढ़ो — Free Download करें:</p>
+    <div class="app-dl-btns">
+      <a href="https://play.google.com/store/apps/details?id=co.classplus.techa" target="_blank" class="app-btn-play">
+        <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M3.18 23.76c.3.17.65.19.98.07l12.49-7.21-2.79-2.79-10.68 9.93zm-1.15-20.1C1.7 4.08 1.5 4.63 1.5 5.28v13.44c0 .65.2 1.2.53 1.62l.09.08L9.4 13.1v-.2L2.12 3.58l-.09.08zm16.09 8.25-2.11-1.22-3.14 3.14 3.14 3.14 2.13-1.23c.61-.35.61-.92 0-1.83zm-14.97 9.09 10.69-9.93-2.79-2.79-12.49 7.21c-.33.19-.54.49-.54.83l5.13 4.68z"/></svg>
+        Google Play
+      </a>
+      <a href="https://apps.apple.com/in/app/classplus/id1324522260" target="_blank" class="app-btn-apple">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+    </div>
+  </div>
+
+  <p class="hero-trust"><span>710+</span> Students · <span>2044+</span> Content Items · <span>548+</span> Likes · Secure Payment ✅</p>
+</section>
+
+<!-- ══ STATS BAR ══ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-num">710+</span><div class="stat-lbl">Students Enrolled</div></div>
+    <div class="stat-item"><span class="stat-num">2044+</span><div class="stat-lbl">Content Items</div></div>
+    <div class="stat-item"><span class="stat-num">548+</span><div class="stat-lbl">Happy Students ❤️</div></div>
+    <div class="stat-item"><span class="stat-num">Pre+Mains</span><div class="stat-lbl">Full Coverage</div></div>
+    <div class="stat-item"><span class="stat-num">Bilingual</span><div class="stat-lbl">Hindi + English</div></div>
+    <div class="stat-item"><span class="stat-num">5 साल</span><div class="stat-lbl">Max Validity</div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- ══ RAS EXAM INFO ══ -->
+<section class="ras-info">
+  <div class="max-w">
+    <h2 class="sec-title">RAS 2026 — <em>क्या है? क्यों करें?</em></h2>
+    <p class="sec-sub">पहले exam समझो, फिर तैयारी करो — यही Omkar Sir का formula है</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">🏛️</div>
+        <div class="info-title">Exam क्या है?</div>
+        <div class="info-body">RPSC (Rajasthan Public Service Commission), Ajmer द्वारा आयोजित। किसी भी stream में Graduation काफी है। Age: General Male <strong>21-40 वर्ष</strong> (category-wise छूट मिलती है)।</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🏅</div>
+        <div class="info-title">Selection के बाद मिलता है</div>
+        <div class="info-body"><strong>30+ Posts!</strong> Top 50 Rank = SDM, Top 100 = RPS (DSP). तहसीलदार, CTO, Accounts Officer — सभी Rajasthan Govt. की Grade-A/B posts।</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📝</div>
+        <div class="info-title">Exam Pattern</div>
+        <div class="info-body">
+          <strong>Pre:</strong> 150 MCQ, 200 Marks, 1/3 Negative Marking<br/>
+          <strong>Mains:</strong> 4 Papers, 800 Marks, Descriptive<br/>
+          <strong>Interview:</strong> 100 Marks<br/>
+          <strong>Total Merit: 900 Marks</strong>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📊</div>
+        <div class="info-title">Prelims Syllabus</div>
+        <div class="info-body">
+          <strong>Rajasthan GK:</strong> 55-60 सवाल 🏆<br/>
+          <strong>India GK:</strong> 50-60 सवाल<br/>
+          <strong>Current+Maths+Reasoning:</strong> 40 सवाल<br/>
+          Rajasthan Economy & Geography = सबसे ज़्यादा Score!
+        </div>
+      </div>
+    </div>
+
+    <!-- Cut-off Table -->
+    <div class="table-wrap" style="margin-top:32px">
+      <h3 style="text-align:center;font-size:18px;font-weight:800;color:var(--navy);margin-bottom:14px">📉 Cut-off Trend (2018–2024)</h3>
+      <table>
+        <tr><th>Year</th><th>Pre Cut-off</th><th>Mains Cut-off</th><th>Trend</th></tr>
+        <tr><td>2018</td><td>78</td><td>332</td><td>📈 High</td></tr>
+        <tr><td>2021</td><td>84</td><td>—</td><td>📈 High</td></tr>
+        <tr><td>2023</td><td>100</td><td>—</td><td>📈 Highest</td></tr>
+        <tr><td>2024</td><td>Very Low*</td><td>208</td><td>📉 Paper Hard था</td></tr>
+      </table>
+      <p style="text-align:center;font-size:12px;color:var(--gray);margin-top:8px">*2024 में paper बहुत कठिन था — Cut-off unusually कम गई</p>
+    </div>
+
+    <!-- Paper-4 tip -->
+    <div style="background:linear-gradient(135deg,#fff8f0,#fff0f0);border-left:4px solid var(--orange);border-radius:12px;padding:20px 22px;margin-top:24px">
+      <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px">💡 Rank की असली चाबी — Paper-4!</div>
+      <div style="font-size:14px;color:#555;line-height:1.8">Mains में <strong>Hindi + English + Essay = 200 Marks</strong> आते हैं। Grammar वाले section में Full Marks मिल सकते हैं। <strong>Top Rank के लिए Paper-4 सबसे ज़रूरी है</strong> — और हमारे Foundation Course में यह भी covered है! 🔱</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ WHY OUR COURSE ══ -->
+<section class="why-us">
+  <div class="max-w">
+    <h2 class="sec-title">हमारा Course <em>क्यों?</em></h2>
+    <p class="sec-sub">Rajasthan के हज़ारों RAS aspirants का भरोसा — वजह जानिए</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-emoji">🎥</div>
+        <div class="why-title">Video Lectures + PPT</div>
+        <div class="why-desc">हर Topic का complete video lecture + beautifully designed PPT slides। Visual learning से concept जल्दी समझ आता है। कभी भी, कितनी बार भी देखो।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-emoji">🌐</div>
+        <div class="why-title">Bilingual — Hindi + English</div>
+        <div class="why-desc">हर concept Hindi और English दोनों में। RPSC की भाषा समझो, answers दोनों languages में लिखना सीखो। Medium की कोई चिंता नहीं।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-emoji">📄</div>
+        <div class="why-title">Topic-wise PDFs + Notes</div>
+        <div class="why-desc">OMASTRA-style clean typed notes + handwritten notes — दोनों साथ। Exam से पहले revision आसान। RBSE, NCERT, सभी reference books का सार।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-emoji">🧩</div>
+        <div class="why-title">Topic-wise PYQ Tests + PDFs</div>
+        <div class="why-desc">RPSC pattern के हिसाब से topic-wise MCQs। Previous Year Questions का PDF + Online Test दोनों। Real exam जैसी practice — score improve guaranteed।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-emoji">✍️</div>
+        <div class="why-title">Mains Workbook + Model Answers</div>
+        <div class="why-desc">Topic-wise Mains answer writing practice। Bilingual model answers (Hindi + English)। Video explanation के साथ — Mains में भी topper बनो।</div>
+      </div>
+      <div class="why-card">
+        <div class="why-emoji">📚</div>
+        <div class="why-title">सभी Books का सार — एक जगह</div>
+        <div class="why-desc">RBSE + NCERT + Gopinath Sharma + Laxmikanth + Spectrum — सभी reference books का essence हमारे notes में। अलग से कोई book खरीदने की ज़रूरत नहीं।</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ COACHING vs US ══ -->
+<section class="compare-section">
+  <div class="max-w">
+    <h2 class="sec-title">Coaching vs <em>Omkar Sir Course</em></h2>
+    <p class="sec-sub">समय और पैसा बर्बाद मत करो — सही choice करो</p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <tr>
+          <th>Feature</th>
+          <th>❌ Coaching Institute</th>
+          <th>✅ Omkar Sir Course</th>
+        </tr>
+        <tr><td>Price</td><td>₹50,000 – ₹1,50,000</td><td class="tick">सिर्फ ₹4,999</td></tr>
+        <tr><td>Repeat देखना</td><td class="cross">❌ नहीं</td><td class="tick">✅ Unlimited बार</td></tr>
+        <tr><td>Notes Quality</td><td class="cross">❌ Generic</td><td class="tick">✅ Latest Technology से बने</td></tr>
+        <tr><td>Bilingual Content</td><td class="cross">❌ Usually नहीं</td><td class="tick">✅ Hindi + English दोनों</td></tr>
+        <tr><td>PYQ Tests Topic-wise</td><td class="cross">❌ Limited</td><td class="tick">✅ Complete</td></tr>
+        <tr><td>Mains Answer Writing</td><td class="cross">❌ Extra fees</td><td class="tick">✅ Included</td></tr>
+        <tr><td>Validity</td><td class="cross">❌ Batch खत्म = Gone</td><td class="tick">✅ 2-5 साल</td></tr>
+        <tr><td>Mobile Access</td><td class="cross">❌ Classroom only</td><td class="tick">✅ App पर 24×7</td></tr>
+        <tr><td>Travel Time</td><td class="cross">❌ रोज़ जाना पड़ता है</td><td class="tick">✅ घर बैठे पढ़ो</td></tr>
+      </table>
+    </div>
+    <p style="text-align:center;font-size:14px;color:var(--gray);margin-top:16px">🧠 <em>"Offline Coaching का महत्व घट गया है — समय और पैसा बर्बाद होते हैं। Online Course + Self-Study सबसे बेहतर।"</em> — Omkar Sir</p>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ CONTENT BREAKDOWN ══ -->
+<section class="content-breakdown">
+  <div class="max-w">
+    <h2 class="sec-title">Course में <em>क्या-क्या है?</em></h2>
+    <p class="sec-sub">2044+ content items — RAS 2026 का सबसे comprehensive course</p>
+
+    <div class="content-grid">
+      <div class="content-box"><div class="content-icon">🎥</div><div class="content-count">500+</div><div class="content-type">Video Lectures</div></div>
+      <div class="content-box"><div class="content-icon">📊</div><div class="content-count">300+</div><div class="content-type">PPT Slides Sets</div></div>
+      <div class="content-box"><div class="content-icon">📄</div><div class="content-count">400+</div><div class="content-type">PDF Notes</div></div>
+      <div class="content-box"><div class="content-icon">🧩</div><div class="content-count">2000+</div><div class="content-type">MCQs + PYQs</div></div>
+      <div class="content-box"><div class="content-icon">✍️</div><div class="content-count">200+</div><div class="content-type">Mains Q&A</div></div>
+      <div class="content-box"><div class="content-icon">📝</div><div class="content-count">100+</div><div class="content-type">Topic-wise Tests</div></div>
+    </div>
+
+    <div class="check-grid">
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">RBSE + NCERT + सभी Reference Books का Coverage</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Topic-wise PYQ PDF + Online Test दोनों</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Bilingual Model Answers (Hindi + English)</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">OMASTRA-style Handwritten + Typed Notes</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Rajasthan Economy & Geography Special Focus</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Paper-4 Hindi + English + Essay Guidance</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Video Solutions — MCQ हल कैसे करें</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Current Affairs Integration</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">Classplus App — Offline Access भी</div></div>
+      <div class="check-row"><div class="ck">✓</div><div class="ck-text">2 साल Validity — RAS 2026 + 2027</div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ PROMISES ══ -->
+<section class="promises">
+  <h2 class="sec-title">हमारे <em>Promises</em></h2>
+  <p class="sec-sub">Rajasthan में सबसे बेहतर — यह हमारा वादा है</p>
+  <div class="promise-grid">
+    <div class="promise-card">
+      <div class="promise-icon">🏆</div>
+      <div class="promise-title">Rajasthan का Best Content</div>
+      <div class="promise-desc">Latest Technology से बने Notes। कोई भी coaching या online platform हमसे better notes नहीं दे सकता।</div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-icon">🎯</div>
+      <div class="promise-title">100% Syllabus Coverage</div>
+      <div class="promise-desc">RPSC के हर topic को cover किया है। Pre से Mains तक — एक भी topic miss नहीं होगा।</div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-icon">🔄</div>
+      <div class="promise-title">Regular Updates</div>
+      <div class="promise-desc">नया syllabus आए, नया exam pattern आए — course regularly update होता रहेगा। Extra charge नहीं।</div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-icon">💬</div>
+      <div class="promise-title">Support Available</div>
+      <div class="promise-desc">कोई doubt हो तो WhatsApp पर पूछो। Community में हज़ारों fellow aspirants हैं।</div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-icon">📱</div>
+      <div class="promise-title">कभी भी, कहीं भी</div>
+      <div class="promise-desc">Mobile App पर 24×7 access। Internet नहीं है? Offline mode में भी पढ़ो।</div>
+    </div>
+    <div class="promise-card">
+      <div class="promise-icon">💰</div>
+      <div class="promise-title">Best Value for Money</div>
+      <div class="promise-desc">₹4,999 में वो सब जो coaching में ₹50,000+ में मिलता है। RAS की असली तैयारी — affordable।</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ CTA MIDDLE ══ -->
+<section class="cta-mid">
+  <div class="cd-section" style="margin-bottom:20px">
+    <div class="cd-title">⚡ आज रात 12 बजे Offer बंद — अभी बचा है:</div>
+    <div class="cd-boxes">
+      <div class="cd-box"><span class="cd-num" id="cd-h2">--</span><div class="cd-lbl">घंटे</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m2">--</span><div class="cd-lbl">मिनट</div></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s2">--</span><div class="cd-lbl">सेकंड</div></div>
+    </div>
+  </div>
+  <h2><span>₹25,000</span> का Course — आज सिर्फ <span>₹4,999</span> में!</h2>
+  <p>710+ students पहले ही join कर चुके हैं। आज ही शुरू करो।</p>
+  <a href="https://www.omkarsir.in/courses/138711" class="btn-join">🔱 अभी Join करें — ₹4,999</a>
+  <br/>
+  <a href="https://wa.me/917023166962?text=Foundation Course join करना है" class="btn-wa" style="margin-top:12px">💬 पहले जानकारी चाहिए? WhatsApp करें</a>
+</section>
+<div class="divider"></div>
+
+<!-- ══ PRICING ══ -->
+<section class="pricing">
+  <div class="max-w">
+    <h2 class="sec-title">Plan <em>चुनें</em></h2>
+    <p class="sec-sub">एक बार invest करो — RAS की पूरी तैयारी करो</p>
+    <div class="pricing-wrap">
+      <div class="p-card best">
+        <div class="p-badge">⭐ Most Popular — 2 साल</div>
+        <div class="p-name">Foundation Plan</div>
+        <div class="p-original">₹25,000</div>
+        <div class="p-price"><small>₹</small>4,999</div>
+        <div class="p-val">✅ 2 साल Validity</div>
+        <div class="p-saving">💰 ₹20,001 बचाओ!</div>
+        <div style="background:#fff8e1;border:2px dashed #f5a623;border-radius:10px;padding:10px;margin-bottom:14px">
+          <div style="font-size:11px;color:#888;font-weight:700;text-transform:uppercase">Coupon Code</div>
+          <div style="font-size:22px;font-weight:900;color:var(--navy);letter-spacing:3px;font-family:monospace">RAS50</div>
+          <div style="font-size:12px;color:var(--green);font-weight:700">→ Final Price: ₹3,799 🎉</div>
+        </div>
+        <a href="https://www.omkarsir.in/courses/138711" class="btn-join-sm">Join Now — ₹4,999 🚀</a>
+        <p style="font-size:12px;color:var(--gray);margin-top:12px">Instant Access · Secure Payment · App + Web</p>
+      </div>
+      <div class="p-card">
+        <div class="p-name">Long-term Plan</div>
+        <div class="p-original">₹25,000</div>
+        <div class="p-price"><small>₹</small>5,999</div>
+        <div class="p-val">✅ 5 साल Validity</div>
+        <div class="p-saving">💰 ₹19,001 बचाओ!</div>
+        <a href="https://www.omkarsir.in/courses/138711" class="btn-join-sm" style="background:linear-gradient(135deg,#1a237e,#283593)">Join Now — ₹5,999</a>
+        <p style="font-size:12px;color:var(--gray);margin-top:12px">Best for long-term preparation</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--gray);font-size:13px;margin-top:20px">🔒 UPI · Debit/Credit Card · Net Banking · Secure Payment via Classplus</p>
+
+    <!-- APP DOWNLOAD — PRICING -->
+    <div class="app-dl-row" style="margin-top:28px">
+      <p class="app-dl-label">📲 Classplus App पर Join करें — अभी Download करें:</p>
+      <div class="app-dl-btns">
+        <a href="https://play.google.com/store/apps/details?id=co.classplus.techa" target="_blank" class="app-btn-play">
+          <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M3.18 23.76c.3.17.65.19.98.07l12.49-7.21-2.79-2.79-10.68 9.93zm-1.15-20.1C1.7 4.08 1.5 4.63 1.5 5.28v13.44c0 .65.2 1.2.53 1.62l.09.08L9.4 13.1v-.2L2.12 3.58l-.09.08zm16.09 8.25-2.11-1.22-3.14 3.14 3.14 3.14 2.13-1.23c.61-.35.61-.92 0-1.83zm-14.97 9.09 10.69-9.93-2.79-2.79-12.49 7.21c-.33.19-.54.49-.54.83l5.13 4.68z"/></svg>
+          Google Play
+        </a>
+        <a href="https://apps.apple.com/in/app/classplus/id1324522260" target="_blank" class="app-btn-apple">
+          <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ OTHER COURSES ══ -->
+<section class="other-courses">
+  <div class="max-w">
+    <h2 class="sec-title">हमारे <em>Other Courses</em> भी देखें</h2>
+    <p class="sec-sub">Foundation लेने से पहले free test try करो — quality खुद judge करो!</p>
+    <div class="courses-grid">
+
+      <!-- Free Test Series -->
+      <div class="course-card">
+        <div class="cc-top">
+          <span class="cc-badge free">🆓 Free Test</span>
+          <div class="cc-name">RAS Pre 2026 — Free Test Series</div>
+          <div class="cc-desc">Foundation लेने से पहले हमारी quality को free में check करो। 100+ MCQs, RPSC pattern, detailed solutions।</div>
+        </div>
+        <div class="cc-bottom">
+          <div class="cc-price"><s>₹999</s> <span style="color:var(--green);font-weight:900">FREE</span></div>
+          <a href="https://www.omkarsir.in" class="cc-btn">Start Free →</a>
+        </div>
+      </div>
+
+      <!-- Super 60 -->
+      <div class="course-card">
+        <div class="cc-top">
+          <span class="cc-badge paid">⚡ Crash Course</span>
+          <div class="cc-name">Super 60 — RAS Prelims 2026</div>
+          <div class="cc-desc">Exam से पहले 60 days में पूरा Pre syllabus। Most important topics, rapid revision, MCQ practice।</div>
+        </div>
+        <div class="cc-bottom">
+          <div class="cc-price"><s>₹5,999</s> ₹2,999</div>
+          <a href="https://www.omkarsir.in" class="cc-btn">Join →</a>
+        </div>
+      </div>
+
+      <!-- Foundation (highlight) -->
+      <div class="course-card" style="border:2px solid var(--orange)">
+        <div class="cc-top">
+          <span class="cc-badge" style="background:#fff0e0;color:var(--orange)">🔱 Foundation</span>
+          <div class="cc-name">RAS Foundation Course 2026</div>
+          <div class="cc-desc">Pre + Mains दोनों की पूरी तैयारी। 2044+ content items। Rajasthan का No.1 comprehensive course।</div>
+        </div>
+        <div class="cc-bottom">
+          <div class="cc-price"><s>₹25,000</s> ₹4,999</div>
+          <a href="https://www.omkarsir.in/courses/138711" class="cc-btn" style="background:var(--navy)">Join ₹4,999 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ FAQ ══ -->
+<section class="faq">
+  <div class="max-w-7">
+    <h2 class="sec-title">अक्सर पूछे जाने वाले <em>सवाल</em></h2>
+    <p class="sec-sub">कोई doubt नहीं रहना चाहिए</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">यह course किस medium में है?</div>
+        <div class="faq-a"><div class="faq-a-inner">यह course <strong>Bilingual (Hindi + English)</strong> है। Notes, Videos, Model Answers — सब Hindi और English दोनों में। चाहे आपका medium कोई भी हो, आप comfortably पढ़ सकते हो।</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">क्या Mains की भी तैयारी होगी?</div>
+        <div class="faq-a"><div class="faq-a-inner">हाँ! यह <strong>Foundation Course</strong> है — Pre + Mains दोनों cover हैं। Topic-wise Mains Workbook, Model Answers (Bilingual), और Video Explanations included हैं।</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Course कैसे access होगा?</div>
+        <div class="faq-a"><div class="faq-a-inner">Payment के तुरंत बाद <strong>Classplus App</strong> पर instant access मिलेगा। Google Play Store और Apple App Store दोनों पर available है। Offline mode में भी पढ़ सकते हो।</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">क्या Notes physical मिलेंगे?</div>
+        <div class="faq-a"><div class="faq-a-inner">Notes <strong>Digital PDF format</strong> में मिलेंगे जिन्हें आप print कर सकते हो। OMASTRA-style typed notes + handwritten notes — दोनों PDF में available हैं।</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">₹4,999 vs ₹5,999 — कौन सा लूं?</div>
+        <div class="faq-a"><div class="faq-a-inner">अगर आप <strong>RAS 2026</strong> दे रहे हो तो ₹4,999 (2 साल) काफी है। अगर आगे RAS 2027 या 2028 भी दे सकते हो, तो ₹5,999 (5 साल) better value है।</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Coaching join की है — क्या यह course भी लूं?</div>
+        <div class="faq-a"><div class="faq-a-inner">हाँ! हमारा course <strong>supplement के रूप में</strong> बहुत अच्छा काम करता है। Topic-wise PYQ tests, Mains workbook, और bilingual notes — ये coaching में नहीं मिलते।</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ FINAL CTA ══ -->
+<section style="background:linear-gradient(135deg,#ff6b00,#ff9800);padding:52px 20px;text-align:center">
+  <div class="cd-section" style="margin-bottom:20px">
+    <div class="cd-title" style="color:rgba(255,255,255,.85)">⚡ आज रात 12 बजे Offer बंद — अभी बचा है:</div>
+    <div class="cd-boxes">
+      <div class="cd-box" style="background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3)">
+        <span class="cd-num" id="cd-h3" style="color:#fff">--</span><div class="cd-lbl" style="color:rgba(255,255,255,.8)">घंटे</div>
+      </div>
+      <div class="cd-box" style="background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3)">
+        <span class="cd-num" id="cd-m3" style="color:#fff">--</span><div class="cd-lbl" style="color:rgba(255,255,255,.8)">मिनट</div>
+      </div>
+      <div class="cd-box" style="background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3)">
+        <span class="cd-num" id="cd-s3" style="color:#fff">--</span><div class="cd-lbl" style="color:rgba(255,255,255,.8)">सेकंड</div>
+      </div>
+    </div>
+  </div>
+  <h2 style="color:#fff;font-size:clamp(22px,4.5vw,34px);font-weight:900;margin-bottom:10px">🔱 RAS 2026 की तैयारी आज से शुरू करो!</h2>
+  <p style="color:rgba(255,255,255,.9);font-size:16px;margin-bottom:26px">710+ students पहले ही join कर चुके हैं। Rajasthan का No.1 RAS Course।</p>
+  <a href="https://www.omkarsir.in/courses/138711" class="btn-join" style="background:#fff;color:var(--orange);font-size:18px;padding:18px 44px">अभी Join करें — ₹4,999 🚀</a>
+  <br/>
+  <a href="https://wa.me/917023166962?text=RAS Foundation Course join करना है, details chahiye" class="btn-wa" style="margin-top:14px;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5)">💬 WhatsApp पर पूछें</a>
+
+  <!-- APP DOWNLOAD — FINAL CTA -->
+  <div class="app-dl-row" style="margin-top:28px">
+    <p class="app-dl-label" style="color:rgba(255,255,255,.9)">📲 App Download करें — Free · Instant Access:</p>
+    <div class="app-dl-btns">
+      <a href="https://play.google.com/store/apps/details?id=co.classplus.techa" target="_blank" class="app-btn-play" style="background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4)">
+        <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M3.18 23.76c.3.17.65.19.98.07l12.49-7.21-2.79-2.79-10.68 9.93zm-1.15-20.1C1.7 4.08 1.5 4.63 1.5 5.28v13.44c0 .65.2 1.2.53 1.62l.09.08L9.4 13.1v-.2L2.12 3.58l-.09.08zm16.09 8.25-2.11-1.22-3.14 3.14 3.14 3.14 2.13-1.23c.61-.35.61-.92 0-1.83zm-14.97 9.09 10.69-9.93-2.79-2.79-12.49 7.21c-.33.19-.54.49-.54.83l5.13 4.68z"/></svg>
+        Google Play
+      </a>
+      <a href="https://apps.apple.com/in/app/classplus/id1324522260" target="_blank" class="app-btn-apple" style="background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4)">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>© 2026 <strong>New India Education — Omkar Sir</strong> | All Rights Reserved</p>
+  <p style="margin-top:8px">🔱 <em>"RAS की असली तैयारी — Notes, Videos, Practice… सब एक जगह!"</em></p>
+</footer>
+
+<!-- ══ FLOATING WA ══ -->
+<a href="https://wa.me/917023166962?text=RAS Foundation Course 2026 के बारे में जानकारी चाहिए" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  💬 WhatsApp
+</a>
+
+<script>
+// ══ MIDNIGHT COUNTDOWN ══
+function getMidnight(){
+  var now=new Date();
+  var mid=new Date(now);
+  mid.setHours(24,0,0,0);
+  return mid.getTime();
+}
+var endTime=getMidnight();
+
+function fmt(n){return String(n).padStart(2,'0')}
+
+function tick(){
+  var diff=endTime-Date.now();
+  if(diff<=0){
+    // reset to next midnight
+    endTime=getMidnight();
+    diff=endTime-Date.now();
+  }
+  var h=Math.floor(diff/3600000);
+  var m=Math.floor((diff%3600000)/60000);
+  var s=Math.floor((diff%60000)/1000);
+  var ht=fmt(h), mt=fmt(m), st=fmt(s);
+  var annEl=document.getElementById('ann-time');
+  if(annEl) annEl.textContent=ht+'ᵥ '+mt+'ₘ '+st+'ₛ';
+  ['cd-h','cd-h2','cd-h3'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=ht});
+  ['cd-m','cd-m2','cd-m3'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=mt});
+  ['cd-s','cd-s2','cd-s3'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=st});
+}
+tick();
+setInterval(tick,1000);
+
+// ══ FAQ ══
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.closest('.faq-item');
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
