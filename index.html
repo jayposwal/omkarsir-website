@@ -77,107 +77,155 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 .dropdown-menu li a{display:flex;align-items:center;gap:8px;padding:10px 16px;color:#333;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.15s}
 .dropdown-menu li a:hover{background:#FFF3E8;color:#FF6B00}
 .nav-links li:hover .dropdown-menu{display:block}
-.has-dropdown > a::after{content:' ▾';font-size:10px;color:#999}
+.has-dropdown > a::after{content:' â¾';font-size:10px;color:#999}
 .dropdown-menu::before{content:'';position:absolute;top:-6px;left:18px;width:12px;height:12px;background:#fff;border-left:1px solid #E8EAF0;border-top:1px solid #E8EAF0;transform:rotate(45deg)}
+
+/* ===== LATEST POSTS SIDEBAR ===== */
+.page-layout{display:flex;gap:0;align-items:flex-start}
+.main-content-col{flex:1 1 0;min-width:0}
+.sidebar-col{width:260px;min-width:240px;max-width:280px;flex-shrink:0;padding:20px 12px 20px 0}
+.sidebar-box{background:#fff;border-radius:14px;border:1.5px solid #E8EAF0;box-shadow:0 2px 10px rgba(0,0,0,0.06);overflow:hidden;position:sticky;top:20px}
+.sidebar-header{background:linear-gradient(135deg,#FF6B00 0%,#ff8c3a 100%);color:white;padding:13px 16px;font-family:'Baloo 2',cursive;font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px}
+.sidebar-post-list{list-style:none;margin:0;padding:0;max-height:500px;overflow-y:auto}
+.sidebar-post-item{border-bottom:1px solid #f3f3f3}
+.sidebar-post-item:last-child{border-bottom:none}
+.sidebar-post-link{display:flex;align-items:flex-start;gap:9px;padding:10px 14px;text-decoration:none;color:#1A1A2E;transition:background 0.15s}
+.sidebar-post-link:hover{background:#fff7f0;color:#FF6B00}
+.sidebar-post-icon{font-size:17px;flex-shrink:0;margin-top:1px}
+.sidebar-post-title{font-weight:600;font-size:12.5px;line-height:1.4;color:inherit;display:block}
+.sidebar-footer-link{display:block;text-align:center;padding:9px;font-size:12px;color:#FF6B00;text-decoration:none;font-weight:700;border-top:1.5px solid #FFE0CC;background:#fff7f0}
+.sidebar-footer-link:hover{background:#fff0e6}
+@media(max-width:820px){.page-layout{flex-direction:column-reverse}.sidebar-col{width:100%;max-width:100%;min-width:0;padding:16px 0 0 0}}
 </style>
 </head>
 <body>
 <div id="nied-navbar"></div>
+<div class="page-layout">
+<div class="main-content-col">
 
 <div class="tri"></div>
 <div style="display:none" data-nied-old-menu="true"><nav>
   <a href="/" class="logo">
-    <div class="logo-icon">🎓</div>
+    <div class="logo-icon">ð</div>
     <div>
       <div class="logo-name">Omkar Sir<span>.</span></div>
       <div class="logo-sub">New India Education</div>
     </div>
   </a>
   <ul class="nav-links">
-    <li class="has-dropdown"><a href="#">📚 विषय</a><ul class="dropdown-menu"><li><a href="rajasthan-bhugol.html">🗺️ राजस्थान भूगोल</a></li><li><a href="praaciin-bhaarat-itihaas.html">🏛️ भारतीय इतिहास</a></li><li><a href="#">⚖️ राजव्यवस्था</a></li><li><a href="#">📈 अर्थव्यवस्था</a></li><li><a href="#">🌍 विश्व भूगोल</a></li><li><a href="#">🔬 सामान्य विज्ञान</a></li><li><a href="#">🏰 राजस्थान GK</a></li><li><a href="#">📰 Current Affairs</a></li></ul></li>
-    <li class="has-dropdown"><a href="#">🎯 परीक्षाएं</a><ul class="dropdown-menu"><li><a href="#">🏛️ RAS / RTS — RPSC</a></li><li><a href="#">🇮🇳 IAS / UPSC</a></li><li><a href="#">📋 SSC CGL</a></li><li><a href="#">🚂 Railway — RRB NTPC</a></li><li><a href="#">👮 Rajasthan Police</a></li><li><a href="#">📝 पटवारी / Patwar</a></li></ul></li>
-    <li><a href="#">📄 नोट्स</a></li>
-    <li><a href="test_genrator_final_02_.html">🧪 Quiz</a></li>
-    <li><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="nav-app">📱 App Download</a></li>
+    <li class="has-dropdown"><a href="#">ð à¤µà¤¿à¤·à¤¯</a><ul class="dropdown-menu"><li><a href="rajasthan-bhugol.html">ðºï¸ à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ à¤­à¥à¤à¥à¤²</a></li><li><a href="praaciin-bhaarat-itihaas.html">ðï¸ à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤à¤¤à¤¿à¤¹à¤¾à¤¸</a></li><li><a href="#">âï¸ à¤°à¤¾à¤à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</a></li><li><a href="#">ð à¤à¤°à¥à¤¥à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</a></li><li><a href="#">ð à¤µà¤¿à¤¶à¥à¤µ à¤­à¥à¤à¥à¤²</a></li><li><a href="#">ð¬ à¤¸à¤¾à¤®à¤¾à¤¨à¥à¤¯ à¤µà¤¿à¤à¥à¤à¤¾à¤¨</a></li><li><a href="#">ð° à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ GK</a></li><li><a href="#">ð° Current Affairs</a></li></ul></li>
+    <li class="has-dropdown"><a href="#">ð¯ à¤ªà¤°à¥à¤à¥à¤·à¤¾à¤à¤</a><ul class="dropdown-menu"><li><a href="#">ðï¸ RAS / RTS â RPSC</a></li><li><a href="#">ð®ð³ IAS / UPSC</a></li><li><a href="#">ð SSC CGL</a></li><li><a href="#">ð Railway â RRB NTPC</a></li><li><a href="#">ð® Rajasthan Police</a></li><li><a href="#">ð à¤ªà¤à¤µà¤¾à¤°à¥ / Patwar</a></li></ul></li>
+    <li><a href="#">ð à¤¨à¥à¤à¥à¤¸</a></li>
+    <li><a href="test_genrator_final_02_.html">ð§ª Quiz</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="nav-app">ð± App Download</a></li>
   </ul>
 </nav></div>
 <section class="hero">
-  <div class="hero-badge">⭐ राजस्थान का #1 हिंदी माध्यम Platform</div>
-  <h1>RAS · IAS · SSC की तैयारी<br><span>एक जगह, किफायती कीमत पर</span></h1>
-  <p>6 लाख+ Students का भरोसा। बेहतरीन नोट्स, PYQs, Daily Quiz और Video Lectures — सब हिंदी में, नाममात्र कीमत पर।</p>
+  <div class="hero-badge">â­ à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ à¤à¤¾ #1 à¤¹à¤¿à¤à¤¦à¥ à¤®à¤¾à¤§à¥à¤¯à¤® Platform</div>
+  <h1>RAS Â· IAS Â· SSC à¤à¥ à¤¤à¥à¤¯à¤¾à¤°à¥<br><span>à¤à¤ à¤à¤à¤¹, à¤à¤¿à¤«à¤¾à¤¯à¤¤à¥ à¤à¥à¤®à¤¤ à¤ªà¤°</span></h1>
+  <p>6 à¤²à¤¾à¤+ Students à¤à¤¾ à¤­à¤°à¥à¤¸à¤¾à¥¤ à¤¬à¥à¤¹à¤¤à¤°à¥à¤¨ à¤¨à¥à¤à¥à¤¸, PYQs, Daily Quiz à¤à¤° Video Lectures â à¤¸à¤¬ à¤¹à¤¿à¤à¤¦à¥ à¤®à¥à¤, à¤¨à¤¾à¤®à¤®à¤¾à¤¤à¥à¤° à¤à¥à¤®à¤¤ à¤ªà¤°à¥¤</p>
   <div class="hero-btns">
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">📄 नोट्स अभी Download करो</a>
-    <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">🎥 YouTube Channel</a>
+    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">ð à¤¨à¥à¤à¥à¤¸ à¤à¤­à¥ Download à¤à¤°à¥</a>
+    <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">ð¥ YouTube Channel</a>
   </div>
 </section>
 <div class="stats">
   <div class="stats-grid">
-    <div class="stat"><span class="stat-num">6 लाख+</span><div class="stat-label">📺 YouTube Subscribers</div></div>
-    <div class="stat"><span class="stat-num">2 लाख+</span><div class="stat-label">📱 App Users</div></div>
-    <div class="stat"><span class="stat-num">500+</span><div class="stat-label">📄 Study नोट्स</div></div>
-    <div class="stat"><span class="stat-num">10,000+</span><div class="stat-label">🏆 Students Selected</div></div>
+    <div class="stat"><span class="stat-num">6 à¤²à¤¾à¤+</span><div class="stat-label">ðº YouTube Subscribers</div></div>
+    <div class="stat"><span class="stat-num">2 à¤²à¤¾à¤+</span><div class="stat-label">ð± App Users</div></div>
+    <div class="stat"><span class="stat-num">500+</span><div class="stat-label">ð Study à¤¨à¥à¤à¥à¤¸</div></div>
+    <div class="stat"><span class="stat-num">10,000+</span><div class="stat-label">ð Students Selected</div></div>
   </div>
 </div>
 <section class="features">
-  <h2 class="sec-title">हमारे <span>फीचर</span></h2>
-  <p class="sec-sub">सब कुछ जो आपको चाहिए यहाँ मिलेगा</p>
+  <h2 class="sec-title">à¤¹à¤®à¤¾à¤°à¥ <span>à¤«à¥à¤à¤°</span></h2>
+  <p class="sec-sub">à¤¸à¤¬ à¤à¥à¤ à¤à¥ à¤à¤ªà¤à¥ à¤à¤¾à¤¹à¤¿à¤ à¤¯à¤¹à¤¾à¤ à¤®à¤¿à¤²à¥à¤à¤¾</p>
   <div class="features-grid">
-    <div class="feature-card"><span class="feature-icon">📄</span><div class="feature-title">बेहतरीन नोट्स</div><div class="feature-desc">500+ हिंदी नोट्स किफायती दाम में</div></div>
-    <div class="feature-card"><span class="feature-icon">🧪</span><div class="feature-title">Daily Quiz</div><div class="feature-desc">रोज नए Quiz से तैयारी जाँचो</div></div>
-    <div class="feature-card"><span class="feature-icon">🎥</span><div class="feature-title">Video Lectures</div><div class="feature-desc">हिंदी में शानदार Video Lectures</div></div>
-    <div class="feature-card"><span class="feature-icon">📝</span><div class="feature-title">PYQ Papers</div><div class="feature-desc">पुराने प्रश्न पत्रों का अभ्यास करो</div></div>
+    <div class="feature-card"><span class="feature-icon">ð</span><div class="feature-title">à¤¬à¥à¤¹à¤¤à¤°à¥à¤¨ à¤¨à¥à¤à¥à¤¸</div><div class="feature-desc">500+ à¤¹à¤¿à¤à¤¦à¥ à¤¨à¥à¤à¥à¤¸ à¤à¤¿à¤«à¤¾à¤¯à¤¤à¥ à¤¦à¤¾à¤® à¤®à¥à¤</div></div>
+    <div class="feature-card"><span class="feature-icon">ð§ª</span><div class="feature-title">Daily Quiz</div><div class="feature-desc">à¤°à¥à¤ à¤¨à¤ Quiz à¤¸à¥ à¤¤à¥à¤¯à¤¾à¤°à¥ à¤à¤¾à¤à¤à¥</div></div>
+    <div class="feature-card"><span class="feature-icon">ð¥</span><div class="feature-title">Video Lectures</div><div class="feature-desc">à¤¹à¤¿à¤à¤¦à¥ à¤®à¥à¤ à¤¶à¤¾à¤¨à¤¦à¤¾à¤° Video Lectures</div></div>
+    <div class="feature-card"><span class="feature-icon">ð</span><div class="feature-title">PYQ Papers</div><div class="feature-desc">à¤ªà¥à¤°à¤¾à¤¨à¥ à¤ªà¥à¤°à¤¶à¥à¤¨ à¤ªà¤¤à¥à¤°à¥à¤ à¤à¤¾ à¤à¤­à¥à¤¯à¤¾à¤¸ à¤à¤°à¥</div></div>
   </div>
 </section>
 <section class="section">
-  <h2 class="sec-title">सभी <span>विषय</span></h2>
-  <p class="sec-sub">अपना विषय चुनो और पढ़ना शुरू करो</p>
+  <h2 class="sec-title">à¤¸à¤­à¥ <span>à¤µà¤¿à¤·à¤¯</span></h2>
+  <p class="sec-sub">à¤à¤ªà¤¨à¤¾ à¤µà¤¿à¤·à¤¯ à¤à¥à¤¨à¥ à¤à¤° à¤ªà¤¢à¤¼à¤¨à¤¾ à¤¶à¥à¤°à¥ à¤à¤°à¥</p>
   <div class="subjects-grid">
-    <a href="rajasthan-bhugol.html" class="sub-card"><span class="sub-icon">🗺️</span><div class="sub-name">राजस्थान भूगोल</div></a>
-    <a href="praaciin-bhaarat-itihaas.html" class="sub-card"><span class="sub-icon">🏛️</span><div class="sub-name">भारतीय इतिहास</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">⚖️</span><div class="sub-name">राजव्यवस्था</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">📈</span><div class="sub-name">अर्थव्यवस्था</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">🌍</span><div class="sub-name">विश्व भूगोल</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">🔬</span><div class="sub-name">सामान्य विज्ञान</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">🏰</span><div class="sub-name">राजस्थान GK</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">📰</span><div class="sub-name">Current Affairs</div></a>
+    <a href="rajasthan-bhugol.html" class="sub-card"><span class="sub-icon">ðºï¸</span><div class="sub-name">à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ à¤­à¥à¤à¥à¤²</div></a>
+    <a href="praaciin-bhaarat-itihaas.html" class="sub-card"><span class="sub-icon">ðï¸</span><div class="sub-name">à¤­à¤¾à¤°à¤¤à¥à¤¯ à¤à¤¤à¤¿à¤¹à¤¾à¤¸</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">âï¸</span><div class="sub-name">à¤°à¤¾à¤à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">ð</span><div class="sub-name">à¤à¤°à¥à¤¥à¤µà¥à¤¯à¤µà¤¸à¥à¤¥à¤¾</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">ð</span><div class="sub-name">à¤µà¤¿à¤¶à¥à¤µ à¤­à¥à¤à¥à¤²</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">ð¬</span><div class="sub-name">à¤¸à¤¾à¤®à¤¾à¤¨à¥à¤¯ à¤µà¤¿à¤à¥à¤à¤¾à¤¨</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">ð°</span><div class="sub-name">à¤°à¤¾à¤à¤¸à¥à¤¥à¤¾à¤¨ GK</div></a>
+    <a href="#" class="sub-card"><span class="sub-icon">ð°</span><div class="sub-name">Current Affairs</div></a>
   </div>
 </section>
 <section class="section exams-bg">
-  <h2 class="sec-title">कौन सी <span>परीक्षा</span> की तैयारी?</h2>
-  <p class="sec-sub">अपनी परीक्षा चुनो</p>
+  <h2 class="sec-title">à¤à¥à¤¨ à¤¸à¥ <span>à¤ªà¤°à¥à¤à¥à¤·à¤¾</span> à¤à¥ à¤¤à¥à¤¯à¤¾à¤°à¥?</h2>
+  <p class="sec-sub">à¤à¤ªà¤¨à¥ à¤ªà¤°à¥à¤à¥à¤·à¤¾ à¤à¥à¤¨à¥</p>
   <div class="exams-grid">
-    <a href="#" class="exam-card"><span class="exam-icon">🏛️</span><div class="exam-name">RAS / RTS</div><div class="exam-desc">RPSC — Pre &amp; Mains</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">🇮🇳</span><div class="exam-name">IAS / UPSC</div><div class="exam-desc">UPSC — Civil Services</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">📋</span><div class="exam-name">SSC CGL</div><div class="exam-desc">Staff Selection Commission</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">🚂</span><div class="exam-name">Railway</div><div class="exam-desc">RRB NTPC / Group D</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">👮</span><div class="exam-name">Police / पटवारी</div><div class="exam-desc">Rajasthan Police / Patwar</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">ðï¸</span><div class="exam-name">RAS / RTS</div><div class="exam-desc">RPSC â Pre &amp; Mains</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">ð®ð³</span><div class="exam-name">IAS / UPSC</div><div class="exam-desc">UPSC â Civil Services</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">ð</span><div class="exam-name">SSC CGL</div><div class="exam-desc">Staff Selection Commission</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">ð</span><div class="exam-name">Railway</div><div class="exam-desc">RRB NTPC / Group D</div></a>
+    <a href="#" class="exam-card"><span class="exam-icon">ð®</span><div class="exam-name">Police / à¤ªà¤à¤µà¤¾à¤°à¥</div><div class="exam-desc">Rajasthan Police / Patwar</div></a>
   </div>
 </section>
 <section class="cta">
-  <h2>🚀 आज ही <span>शुरू करो!</span></h2>
-  <p>App download करो और OMASTRA व SAMPOORNA courses join करो</p>
+  <h2>ð à¤à¤ à¤¹à¥ <span>à¤¶à¥à¤°à¥ à¤à¤°à¥!</span></h2>
+  <p>App download à¤à¤°à¥ à¤à¤° OMASTRA à¤µ SAMPOORNA courses join à¤à¤°à¥</p>
   <div class="hero-btns">
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">📱 App Download करो</a>
-    <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">🎥 YouTube Channel देखो</a>
+    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">ð± App Download à¤à¤°à¥</a>
+    <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">ð¥ YouTube Channel à¤¦à¥à¤à¥</a>
   </div>
 </section>
 
   <!-- About Section -->
   <section class="section" style="background:#FFF8F2;">
-  <h2 class="sec-title">🕉️ नमस्कार, <span>राम राम सा!</span></h2>
-  <p class="sec-sub">आप सभी का 🕉️ New India Education – नव भारत निर्माण 🌟 के इस प्लेटफ़ॉर्म पर हार्दिक स्वागत है! 🇮🇳</p>
+  <h2 class="sec-title">ðï¸ à¤¨à¤®à¤¸à¥à¤à¤¾à¤°, <span>à¤°à¤¾à¤® à¤°à¤¾à¤® à¤¸à¤¾!</span></h2>
+  <p class="sec-sub">à¤à¤ª à¤¸à¤­à¥ à¤à¤¾ ðï¸ New India Education â à¤¨à¤µ à¤­à¤¾à¤°à¤¤ à¤¨à¤¿à¤°à¥à¤®à¤¾à¤£ ð à¤à¥ à¤à¤¸ à¤ªà¥à¤²à¥à¤à¥à¥à¤°à¥à¤® à¤ªà¤° à¤¹à¤¾à¤°à¥à¤¦à¤¿à¤ à¤¸à¥à¤µà¤¾à¤à¤¤ à¤¹à¥! ð®ð³</p>
   <div style="max-width:800px;margin:24px auto;background:white;padding:28px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
-    <p style="font-size:15px;line-height:1.8;margin-bottom:16px;"><strong>🌱 New India Education</strong> सिर्फ़ एक YouTube चैनल नहीं है — बल्कि एक <strong>शैक्षणिक आंदोलन (Educational Movement)</strong> है 💫 जो हर उस छात्र के लिए बना है जो मेहनत से अपने सपनों को हक़ीकत में बदलना चाहता है। ✨</p>
-    <p style="font-size:15px;line-height:1.8;margin-bottom:16px;">🔹 सच्ची शिक्षा — बिना दिखावे के<br>🔹 Concept + Revision + Motivation का संगम<br>🔹 Real Knowledge + Practical Understanding<br>🔹 Modern Approach, Indian Values 🇮🇳</p>
-    <p style="font-size:16px;line-height:1.8;margin:20px 0;font-weight:700;color:#FF6B00;">🎯 हमारा सपना: "भारत का हर विद्यार्थी — कम साधनों में भी बड़ी सफ़लता हासिल करे!"</p>
-    <p style="font-size:15px;line-height:1.8;">⚡ हमारा विश्वास: <strong>Knowledge ही असली शक्ति है</strong>, और यही है हमारे नव भारत निर्माण का सच्चा आधार! 🇮🇳</p>
+    <p style="font-size:15px;line-height:1.8;margin-bottom:16px;"><strong>ð± New India Education</strong> à¤¸à¤¿à¤°à¥à¥ à¤à¤ YouTube à¤à¥à¤¨à¤² à¤¨à¤¹à¥à¤ à¤¹à¥ â à¤¬à¤²à¥à¤à¤¿ à¤à¤ <strong>à¤¶à¥à¤à¥à¤·à¤£à¤¿à¤ à¤à¤à¤¦à¥à¤²à¤¨ (Educational Movement)</strong> à¤¹à¥ ð« à¤à¥ à¤¹à¤° à¤à¤¸ à¤à¤¾à¤¤à¥à¤° à¤à¥ à¤²à¤¿à¤ à¤¬à¤¨à¤¾ à¤¹à¥ à¤à¥ à¤®à¥à¤¹à¤¨à¤¤ à¤¸à¥ à¤à¤ªà¤¨à¥ à¤¸à¤ªà¤¨à¥à¤ à¤à¥ à¤¹à¤à¤¼à¥à¤à¤¤ à¤®à¥à¤ à¤¬à¤¦à¤²à¤¨à¤¾ à¤à¤¾à¤¹à¤¤à¤¾ à¤¹à¥à¥¤ â¨</p>
+    <p style="font-size:15px;line-height:1.8;margin-bottom:16px;">ð¹ à¤¸à¤à¥à¤à¥ à¤¶à¤¿à¤à¥à¤·à¤¾ â à¤¬à¤¿à¤¨à¤¾ à¤¦à¤¿à¤à¤¾à¤µà¥ à¤à¥<br>ð¹ Concept + Revision + Motivation à¤à¤¾ à¤¸à¤à¤à¤®<br>ð¹ Real Knowledge + Practical Understanding<br>ð¹ Modern Approach, Indian Values ð®ð³</p>
+    <p style="font-size:16px;line-height:1.8;margin:20px 0;font-weight:700;color:#FF6B00;">ð¯ à¤¹à¤®à¤¾à¤°à¤¾ à¤¸à¤ªà¤¨à¤¾: "à¤­à¤¾à¤°à¤¤ à¤à¤¾ à¤¹à¤° à¤µà¤¿à¤¦à¥à¤¯à¤¾à¤°à¥à¤¥à¥ â à¤à¤® à¤¸à¤¾à¤§à¤¨à¥à¤ à¤®à¥à¤ à¤­à¥ à¤¬à¥à¥ à¤¸à¥à¤²à¤¤à¤¾ à¤¹à¤¾à¤¸à¤¿à¤² à¤à¤°à¥!"</p>
+    <p style="font-size:15px;line-height:1.8;">â¡ à¤¹à¤®à¤¾à¤°à¤¾ à¤µà¤¿à¤¶à¥à¤µà¤¾à¤¸: <strong>Knowledge à¤¹à¥ à¤à¤¸à¤²à¥ à¤¶à¤à¥à¤¤à¤¿ à¤¹à¥</strong>, à¤à¤° à¤¯à¤¹à¥ à¤¹à¥ à¤¹à¤®à¤¾à¤°à¥ à¤¨à¤µ à¤­à¤¾à¤°à¤¤ à¤¨à¤¿à¤°à¥à¤®à¤¾à¤£ à¤à¤¾ à¤¸à¤à¥à¤à¤¾ à¤à¤§à¤¾à¤°! ð®ð³</p>
   </div>
   <div style="max-width:600px;margin:24px auto;background:white;padding:24px;border-radius:12px;border-left:4px solid #FF6B00;">
-    <h3 style="font-family:'Baloo 2';font-size:18px;font-weight:800;margin-bottom:12px;color:#FF6B00;">👨‍🏫 By Omkar Sir</h3>
-    <p style="font-size:14px;line-height:1.7;">🌟 Founder: New India Education / नव भारत निर्माण<br>📚 Experience: <strong>8+ Years</strong> (RAS, IAS, SSC & Other Competitive Exams)</p>
+    <h3 style="font-family:'Baloo 2';font-size:18px;font-weight:800;margin-bottom:12px;color:#FF6B00;">ð¨âð« By Omkar Sir</h3>
+    <p style="font-size:14px;line-height:1.7;">ð Founder: New India Education / à¤¨à¤µ à¤­à¤¾à¤°à¤¤ à¤¨à¤¿à¤°à¥à¤®à¤¾à¤£<br>ð Experience: <strong>8+ Years</strong> (RAS, IAS, SSC & Other Competitive Exams)</p>
   </div>
 </section>
 <div id="nied-latest-posts"></div>
+</div>
+<div class="sidebar-col">
+  <div class="sidebar-box">
+    <div class="sidebar-header">📚 नवीनतम पेजेस</div>
+    <ul class="sidebar-post-list">
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="Buddhism_Jainism_Notes.html"><span class="sidebar-post-icon">☸️</span><span class="sidebar-post-title">Buddhism Jainism Notes</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="Ethical_Concerns_and_Challenges.html"><span class="sidebar-post-icon">⚖️</span><span class="sidebar-post-title">Ethical Concerns And Challenges</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="MCQ_TEST_MAKIING_01.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">MCQ TEST MAKIING 01</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS MAINS OMKARSIR TEST.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">RAS MAINS OMKARSIR TEST</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS MAINS TEST  FINAL .html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">RAS MAINS TEST  FINAL </span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS MAINS TEST GENRATOR.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">RAS MAINS TEST GENRATOR</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS PRE TEST OMKAR.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">RAS PRE TEST OMKAR</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="praaciin-bhaarat-itihaas.html"><span class="sidebar-post-icon">📜</span><span class="sidebar-post-title">Praaciin Bhaarat Itihaas</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol-parichay.html"><span class="sidebar-post-icon">🌍</span><span class="sidebar-post-title">Rajasthan Bhugol Parichay</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol-vibhajan.html"><span class="sidebar-post-icon">🌍</span><span class="sidebar-post-title">Rajasthan Bhugol Vibhajan</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol.html"><span class="sidebar-post-icon">🌍</span><span class="sidebar-post-title">Rajasthan Bhugol</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-itihas.html"><span class="sidebar-post-icon">📜</span><span class="sidebar-post-title">Rajasthan Itihas</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-lakes.html"><span class="sidebar-post-icon">💧</span><span class="sidebar-post-title">Rajasthan Lakes</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthanlakes.html"><span class="sidebar-post-icon">💧</span><span class="sidebar-post-title">Rajasthanlakes</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajvegetation.html"><span class="sidebar-post-icon">🌳</span><span class="sidebar-post-title">Rajvegetation</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="ras-foundation-v2.html"><span class="sidebar-post-icon">🎯</span><span class="sidebar-post-title">Ras Foundation V2</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="samvidhan.html"><span class="sidebar-post-icon">📋</span><span class="sidebar-post-title">Samvidhan</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="test_genrator_final_02_.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">Test Genrator Final 02 </span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="न्यायिक पुनरावलोकन _ न्यायिक सक्रियता _ PIL जनहित याचिका _nied (1).html"><span class="sidebar-post-icon">⚖️</span><span class="sidebar-post-title">न्यायिक पुनरावलोकन _ न्यायिक सक्रिय...</span></a></li>
+    </ul>
+    <a class="sidebar-footer-link" href="courses.html">सभी Courses देखें →</a>
+  </div>
+</div>
+</div>
 <footer>
   <div class="footer-logo">Omkar Sir<span>.</span></div>
   <div style="font-size:13px;margin-bottom:10px">New India Education, Jaipur, Rajasthan</div>
@@ -191,7 +239,7 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
     <a href="#">Privacy Policy</a>
   </div>
   <div style="margin-top:8px
-      <div style="margin-top:8px;font-size:12px;">📧 email2omkara@gmail.com | 📱 7023166962</div>">© 2025 Omkar Sir | All Rights Reserved</div>
+      <div style="margin-top:8px;font-size:12px;">ð§ email2omkara@gmail.com | ð± 7023166962</div>">Â© 2025 Omkar Sir | All Rights Reserved</div>
 </footer>
 <script src="/nied-menu.js" defer></script>
 <script src="/nied-latest-posts.js" defer></script>
