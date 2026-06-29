@@ -65,6 +65,14 @@
         {
           "label": "👮 Rajasthan Police / पटवारी",
           "url": "#"
+        },
+        {
+          "label": "नया Item",
+          "url": "#REET EXAM"
+        },
+        {
+          "label": "RAJ SUB INSPECTOR EXAM ",
+          "url": "#"
         }
       ]
     },
@@ -74,14 +82,22 @@
       "url": "#"
     },
     {
-      "label": "🧪 Quiz",
-      "type": "link",
-      "url": "/test_genrator_final_02_.html"
-    },
-    {
-      "label": "📱 App Download",
-      "type": "link",
-      "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
+      "label": "NCERT BOOKS ",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "नया Item",
+          "url": "#CLASS 6"
+        },
+        {
+          "label": "नया Item",
+          "url": "#CLASS 07 "
+        },
+        {
+          "label": "CLASS 08",
+          "url": "#"
+        }
+      ]
     }
   ]
 }
