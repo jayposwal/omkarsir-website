@@ -4,88 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Omkar Sir - RAS | IAS | SSC | Hindi Notes</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students। RAS, IAS, SSC, Railway, Police की तैयारी हिंदी में।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Hind',sans-serif;background:#F8F9FA;colzor:#1A1A2E}
-h1,h2,h3{font-family:'Baloo 2',cursive}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
+h1,h2,h3{font-family:'Poppins',sans-serif}
 .tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
-nav{background:#fff;border-bottom:1px solid #E8EAF0;padding:0 6%;height:65px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,0.06)}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,#FF6B00,#FFB347);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
-.logo-name{font-family:'Baloo 2',cursive;font-size:18px;font-weight:800;color:#1A1A2E}
-.logo-name span{color:#FF6B00}
-.logo-sub{font-size:11px;color:#999}
-.nav-links{display:flex;gap:4px;list-style:none}
-.nav-links a{color:#555;text-decoration:none;padding:7px 12px;border-radius:8px;font-size:14px;font-weight:500;transition:all 0.2s}
-.nav-links a:hover{background:#FFF3E8;color:#FF6B00}
-.nav-app{background:#FF6B00!important;color:white!important;font-weight:700!important;border-radius:8px}
-.nav-app:hover{background:#E05500!important}
-.hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:70px 6%;border-bottom:1px solid #FFE0C0;text-align:center}
-.hero-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:18px}
-.hero h1{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.25;margin-bottom:14px}
-.hero h1 span{color:#FF6B00}
-.hero p{font-size:16px;color:#666;max-width:500px;margin:0 auto 28px;line-height:1.7}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 45%,#0f3460 100%);padding:64px 6% 56px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 18% 40%,rgba(255,107,0,.16) 0%,transparent 55%),radial-gradient(circle at 85% 25%,rgba(245,166,35,.12) 0%,transparent 50%);pointer-events:none}
+.hero-inner{position:relative;max-width:640px;margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(255,107,0,.15);border:1px solid rgba(255,150,60,.4);color:#ffb066;padding:6px 18px;border-radius:50px;font-size:12.5px;font-weight:600;margin-bottom:20px;letter-spacing:.2px}
+.hero h1{font-size:clamp(26px,4.2vw,42px);font-weight:800;line-height:1.28;margin-bottom:14px}
+.hero h1 span{color:#f5a623}
+.hero p{font-size:14.5px;color:rgba(255,255,255,.68);max-width:480px;margin:0 auto 8px;line-height:1.65}
+.hero .credibility{font-size:13px;font-weight:700;color:#ffcf94;max-width:480px;margin:0 auto 26px;line-height:1.6}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-main{background:#FF6B00;color:white;padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 4px 16px rgba(255,107,0,0.3);transition:all 0.2s;display:inline-block}
-.btn-main:hover{background:#E05500;transform:translateY(-2px)}
-.btn-sec{background:white;color:#1A1A2E;padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:2px solid #E8EAF0;transition:all 0.2s;display:inline-block}
-.btn-sec:hover{border-color:#FF6B00;color:#FF6B00}
+.btn-main{background:linear-gradient(135deg,#f5a623,#e65100);color:white;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px rgba(245,166,35,.35);transition:transform .2s;display:inline-block}
+.btn-main:hover{transform:scale(1.04)}
+.btn-sec{background:rgba(255,255,255,.08);color:#fff;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14.5px;border:1.5px solid rgba(255,255,255,.25);transition:all .2s;display:inline-block}
+.btn-sec:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.4)}
+
+/* ===== STATS ===== */
 .stats{background:white;border-bottom:1px solid #E8EAF0}
 .stats-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:24px 16px;text-align:center;border-right:1px solid #E8EAF0}
+.stat{padding:22px 16px;text-align:center;border-right:1px solid #E8EAF0}
 .stat:last-child{border-right:none}
-.stat-num{font-family:'Baloo 2',cursive;font-size:28px;font-weight:800;color:#FF6B00;display:block}
-.stat-label{font-size:12px;color:#999;margin-top:3px}
-.section{padding:55px 6%}
-.sec-title{text-align:center;font-size:28px;font-weight:800;margin-bottom:6px}
+.stat-num{font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;color:#FF6B00;display:block}
+.stat-label{font-size:11.5px;color:#999;margin-top:3px}
+@media(max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== COURSES TABS ===== */
+.courses-sec{padding:52px 6% 60px;background:#f0f2f8}
+.sec-title{text-align:center;font-size:25px;font-weight:800;margin-bottom:6px}
 .sec-title span{color:#FF6B00}
-.sec-sub{text-align:center;color:#999;font-size:14px;margin-bottom:34px}
-.subjects-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px}
-.sub-card{background:white;border-radius:14px;padding:22px 14px;text-align:center;text-decoration:none;color:inherit;border:2px solid #E8EAF0;transition:all 0.25s;display:block}
-.sub-card:hover{border-color:#FF6B00;transform:translateY(-4px);box-shadow:0 8px 24px rgba(255,107,0,0.1)}
-.sub-icon{font-size:36px;margin-bottom:8px;display:block}
-.sub-name{font-family:'Baloo 2',cursive;font-size:14px;font-weight:700}
-.exams-bg{background:white}
-.exams-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.exam-card{border-radius:14px;padding:22px;background:#FFF8F2;border:1.5px solid #FFD5B0;text-decoration:none;color:inherit;transition:all 0.25s;display:block}
-.exam-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
-.exam-icon{font-size:28px;margin-bottom:8px;display:block}
-.exam-name{font-family:'Baloo 2',cursive;font-size:17px;font-weight:800;margin-bottom:3px}
-.exam-desc{font-size:12px;color:#999}
-.cta{background:#FFF3E8;border-top:1px solid #FFD5B0;border-bottom:1px solid #FFD5B0;padding:55px 6%;text-align:center}
-.cta h2{font-size:30px;font-weight:800;margin-bottom:10px}
-.cta h2 span{color:#FF6B00}
-.cta p{color:#666;font-size:15px;margin-bottom:26px}
-.features{background:#fff;padding:55px 6%}
-.features-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.feature-card{background:#F8F9FA;border-radius:16px;padding:28px 22px;text-align:center;border:1px solid #E8EAF0;transition:all 0.25s}
-.feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.07);border-color:#FF6B00}
-.feature-icon{font-size:40px;margin-bottom:12px;display:block}
-.feature-title{font-family:'Baloo 2',cursive;font-size:16px;font-weight:800;margin-bottom:6px}
-.feature-desc{font-size:13px;color:#888;line-height:1.5}
-footer{background:#1A1A2E;padding:36px 6%;text-align:center;color:#aaa;font-size:13px}
-.footer-logo{font-family:'Baloo 2',cursive;font-size:22px;font-weight:800;color:white;margin-bottom:8px}
+.sec-sub{text-align:center;color:#999;font-size:13.5px;margin-bottom:28px}
+.courses-filter-bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px;position:sticky;top:0;z-index:20;background:#f0f2f8;padding:10px 0}
+.courses-filter-bar button{padding:9px 22px;border:2px solid #e0e4ef;background:white;border-radius:50px;font-size:.85rem;font-weight:600;color:#555;cursor:pointer;transition:all .2s ease;font-family:inherit}
+.courses-filter-bar button:hover{border-color:#e53935;color:#e53935}
+.courses-filter-bar button.cf-active{background:linear-gradient(135deg,#e53935,#c62828);border-color:transparent;color:white;box-shadow:0 4px 15px rgba(229,57,53,.3)}
+.courses-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;max-width:1150px;margin:0 auto}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:all .3s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid rgba(0,0,0,.05)}
+.c-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,.13)}
+.c-card-head{padding:24px 20px 16px;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;min-height:96px;display:flex;align-items:center;gap:12px;position:relative}
+.c-card-head.head-omastra{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-card-head.head-sampoorna{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
+.c-card-head.head-ias{background:linear-gradient(135deg,#1a237e,#283593)}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-ssc{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
+.c-card-head.head-railway{background:linear-gradient(135deg,#bf360c,#e64a19)}
+.c-card-head.head-history{background:linear-gradient(135deg,#4e342e,#6d4c41)}
+.c-card-head.head-geo{background:linear-gradient(135deg,#1b5e20,#388e3c)}
+.c-card-head.head-polity{background:linear-gradient(135deg,#1a237e,#3949ab)}
+.c-icon{font-size:1.8rem;flex-shrink:0}
+.c-title{font-size:.98rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-foot{padding:13px 20px;border-top:1px solid #f0f2f8;display:flex;align-items:center;justify-content:space-between}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-price.price-free{color:#2e7d32}
+.c-arrow{font-size:.8rem;font-weight:700;color:#FF6B00}
+.courses-more{text-align:center;margin-top:34px}
+.courses-more .btn-main{background:linear-gradient(135deg,#FF6B00,#e65100);box-shadow:0 6px 20px rgba(255,107,0,.3)}
+
+/* ===== CTA ===== */
+.cta{background:#1a1a2e;padding:48px 6%;text-align:center;color:#fff}
+.cta h2{font-size:25px;font-weight:800;margin-bottom:8px}
+.cta h2 span{color:#f5a623}
+.cta p{color:rgba(255,255,255,.65);font-size:13.5px;margin-bottom:24px}
+
+footer{background:#12121f;padding:36px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:white;margin-bottom:8px}
 .footer-logo span{color:#FF6B00}
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 .footer-links{margin:12px 0 8px}
-@media(max-width:700px){.nav-links{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}}
-
-/* Dropdown */
-.nav-links li{position:relative}
-.dropdown-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;background:#fff;border:1px solid #E8EAF0;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.12);min-width:200px;z-index:999;padding:8px 0;list-style:none}
-.dropdown-menu li a{display:flex;align-items:center;gap:8px;padding:10px 16px;color:#333;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.15s}
-.dropdown-menu li a:hover{background:#FFF3E8;color:#FF6B00}
-.nav-links li:hover .dropdown-menu{display:block}
-.has-dropdown > a::after{content:' ▾';font-size:10px;color:#999}
-.dropdown-menu::before{content:'';position:absolute;top:-6px;left:18px;width:12px;height:12px;background:#fff;border-left:1px solid #E8EAF0;border-top:1px solid #E8EAF0;transform:rotate(45deg)}
 
 /* ===== LATEST POSTS SIDEBAR ===== */
 .page-layout{display:flex;gap:0;align-items:flex-start}
 .main-content-col{flex:1 1 0;min-width:0}
 .sidebar-col{width:260px;min-width:240px;max-width:280px;flex-shrink:0;padding:20px 12px 20px 0}
 .sidebar-box{background:#fff;border-radius:14px;border:1.5px solid #E8EAF0;box-shadow:0 2px 10px rgba(0,0,0,0.06);overflow:hidden;position:sticky;top:20px}
-.sidebar-header{background:linear-gradient(135deg,#FF6B00 0%,#ff8c3a 100%);color:white;padding:13px 16px;font-family:'Baloo 2',cursive;font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px}
+.sidebar-header{background:linear-gradient(135deg,#FF6B00 0%,#ff8c3a 100%);color:white;padding:13px 16px;font-family:'Poppins',sans-serif;font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px}
 .sidebar-post-list{list-style:none;margin:0;padding:0;max-height:520px;overflow-y:auto}
 .sidebar-post-item{border-bottom:1px solid #f3f3f3}
 .sidebar-post-item:last-child{border-bottom:none}
@@ -104,31 +105,20 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 <div class="main-content-col">
 
 <div class="tri"></div>
-<div style="display:none" data-nied-old-menu="true"><nav>
-  <a href="/" class="logo">
-    <div class="logo-icon">🎓</div>
-    <div>
-      <div class="logo-name">Omkar Sir<span>.</span></div>
-      <div class="logo-sub">New India Education</div>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li class="has-dropdown"><a href="#">📚 विषय</a><ul class="dropdown-menu"><li><a href="rajasthan-bhugol.html">🗺️ राजस्थान भूगोल</a></li><li><a href="praaciin-bhaarat-itihaas.html">🏛️ भारतीय इतिहास</a></li><li><a href="#">⚖️ राजव्यवस्था</a></li><li><a href="#">📈 अर्थव्यवस्था</a></li><li><a href="#">🌍 विश्व भूगोल</a></li><li><a href="#">🔬 सामान्य विज्ञान</a></li><li><a href="#">🏰 राजस्थान GK</a></li><li><a href="#">📰 Current Affairs</a></li></ul></li>
-    <li class="has-dropdown"><a href="#">🎯 परीक्षाएं</a><ul class="dropdown-menu"><li><a href="#">🏛️ RAS / RTS — RPSC</a></li><li><a href="#">🇮🇳 IAS / UPSC</a></li><li><a href="#">📋 SSC CGL</a></li><li><a href="#">🚂 Railway — RRB NTPC</a></li><li><a href="#">👮 Rajasthan Police</a></li><li><a href="#">📝 पटवारी / Patwar</a></li></ul></li>
-    <li><a href="#">📄 नोट्स</a></li>
-    <li><a href="test_genrator_final_02_.html">🧪 Quiz</a></li>
-    <li><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="nav-app">📱 App Download</a></li>
-  </ul>
-</nav></div>
+
 <section class="hero">
-  <div class="hero-badge">⭐ राजस्थान का #1 हिंदी माध्यम Platform</div>
-  <h1>RAS · IAS · SSC की तैयारी<br><span>एक जगह, किफायती कीमत पर</span></h1>
-  <p>6 लाख+ Students का भरोसा। बेहतरीन नोट्स, PYQs, Daily Quiz और Video Lectures — सब हिंदी में, नाममात्र कीमत पर।</p>
-  <div class="hero-btns">
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">📄 नोट्स अभी Download करो</a>
-    <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">🎥 YouTube Channel</a>
+  <div class="hero-inner">
+    <div class="hero-badge">⭐ राजस्थान का #1 हिंदी माध्यम Platform</div>
+    <h1>RAS · IAS · SSC की तैयारी<br><span>एक जगह, किफायती कीमत पर</span></h1>
+    <p>6 लाख+ Students का भरोसा। बेहतरीन नोट्स, PYQs, Daily Quiz और Video Lectures — सब हिंदी में।</p>
+    <p class="credibility">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</p>
+    <div class="hero-btns">
+      <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">📄 नोट्स अभी Download करो</a>
+      <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">🎥 YouTube Channel</a>
+    </div>
   </div>
 </section>
+
 <div class="stats">
   <div class="stats-grid">
     <div class="stat"><span class="stat-num">6 लाख+</span><div class="stat-label">📺 YouTube Subscribers</div></div>
@@ -137,41 +127,76 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
     <div class="stat"><span class="stat-num">10,000+</span><div class="stat-label">🏆 Students Selected</div></div>
   </div>
 </div>
-<section class="features">
-  <h2 class="sec-title">हमारे <span>फीचर</span></h2>
-  <p class="sec-sub">सब कुछ जो आपको चाहिए यहाँ मिलेगा</p>
-  <div class="features-grid">
-    <div class="feature-card"><span class="feature-icon">📄</span><div class="feature-title">बेहतरीन नोट्स</div><div class="feature-desc">500+ हिंदी नोट्स किफायती दाम में</div></div>
-    <div class="feature-card"><span class="feature-icon">🧪</span><div class="feature-title">Daily Quiz</div><div class="feature-desc">रोज नए Quiz से तैयारी जाँचो</div></div>
-    <div class="feature-card"><span class="feature-icon">🎥</span><div class="feature-title">Video Lectures</div><div class="feature-desc">हिंदी में शानदार Video Lectures</div></div>
-    <div class="feature-card"><span class="feature-icon">📝</span><div class="feature-title">PYQ Papers</div><div class="feature-desc">पुराने प्रश्न पत्रों का अभ्यास करो</div></div>
+
+<section class="courses-sec">
+  <h2 class="sec-title">सभी <span>Courses</span></h2>
+  <p class="sec-sub">अपना Course चुनो और आज ही शुरू करो</p>
+
+  <div class="courses-filter-bar">
+    <button class="cf-active" data-filter="all">All Courses</button>
+    <button data-filter="ias">IAS</button>
+    <button data-filter="ras">RAS</button>
+    <button data-filter="ssc">SSC</button>
+    <button data-filter="railway">Railway</button>
+    <button data-filter="series">Special Series</button>
+  </div>
+
+  <div class="courses-card-grid">
+    <a href="courses.html" class="c-card" data-category="series">
+      <div class="c-card-head head-omastra"><div class="c-icon">🔱</div><h3 class="c-title">OMASTRA Series — Complete</h3></div>
+      <div class="c-foot"><span class="c-price price-free">FREE</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="series">
+      <div class="c-card-head head-sampoorna"><div class="c-icon">📚</div><h3 class="c-title">SAMPOORNA Series — Premium</h3></div>
+      <div class="c-foot"><span class="c-price">₹299+</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ias">
+      <div class="c-card-head head-ias"><div class="c-icon">🏛️</div><h3 class="c-title">IAS Foundation 2026</h3></div>
+      <div class="c-foot"><span class="c-price">₹499+</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ias">
+      <div class="c-card-head head-ias"><div class="c-icon">⚡</div><h3 class="c-title">IAS Prelims Crash Course</h3></div>
+      <div class="c-foot"><span class="c-price">₹299+</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ras">
+      <div class="c-card-head head-ras"><div class="c-icon">🏜️</div><h3 class="c-title">RAS Complete Course 2026</h3></div>
+      <div class="c-foot"><span class="c-price">₹399+</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ras">
+      <div class="c-card-head head-ras"><div class="c-icon">✍️</div><h3 class="c-title">RAS Mains Answer Writing</h3></div>
+      <div class="c-foot"><span class="c-price">₹199+</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ssc">
+      <div class="c-card-head head-ssc"><div class="c-icon">📋</div><h3 class="c-title">SSC CGL Complete Course</h3></div>
+      <div class="c-foot"><span class="c-price price-free">FREE</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ssc">
+      <div class="c-card-head head-ssc"><div class="c-icon">📝</div><h3 class="c-title">SSC CHSL + MTS Batch</h3></div>
+      <div class="c-foot"><span class="c-price price-free">FREE</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="railway">
+      <div class="c-card-head head-railway"><div class="c-icon">🚂</div><h3 class="c-title">Railway Group D + NTPC</h3></div>
+      <div class="c-foot"><span class="c-price">₹149+</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ias">
+      <div class="c-card-head head-history"><div class="c-icon">📜</div><h3 class="c-title">Complete History — Ancient to Modern</h3></div>
+      <div class="c-foot"><span class="c-price price-free">FREE</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ias">
+      <div class="c-card-head head-geo"><div class="c-icon">🌍</div><h3 class="c-title">Geography — India + World + Rajasthan</h3></div>
+      <div class="c-foot"><span class="c-price price-free">FREE</span><span class="c-arrow">देखें →</span></div>
+    </a>
+    <a href="courses.html" class="c-card" data-category="ias">
+      <div class="c-card-head head-polity"><div class="c-icon">⚖️</div><h3 class="c-title">Indian Polity &amp; Constitution</h3></div>
+      <div class="c-foot"><span class="c-price price-free">FREE</span><span class="c-arrow">देखें →</span></div>
+    </a>
+  </div>
+
+  <div class="courses-more">
+    <a href="courses.html" class="btn-main">📄 सभी Courses देखें</a>
   </div>
 </section>
-<section class="section">
-  <h2 class="sec-title">सभी <span>विषय</span></h2>
-  <p class="sec-sub">अपना विषय चुनो और पढ़ना शुरू करो</p>
-  <div class="subjects-grid">
-    <a href="rajasthan-bhugol.html" class="sub-card"><span class="sub-icon">🗺️</span><div class="sub-name">राजस्थान भूगोल</div></a>
-    <a href="praaciin-bhaarat-itihaas.html" class="sub-card"><span class="sub-icon">🏛️</span><div class="sub-name">भारतीय इतिहास</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">⚖️</span><div class="sub-name">राजव्यवस्था</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">📈</span><div class="sub-name">अर्थव्यवस्था</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">🌍</span><div class="sub-name">विश्व भूगोल</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">🔬</span><div class="sub-name">सामान्य विज्ञान</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">🏰</span><div class="sub-name">राजस्थान GK</div></a>
-    <a href="#" class="sub-card"><span class="sub-icon">📰</span><div class="sub-name">Current Affairs</div></a>
-  </div>
-</section>
-<section class="section exams-bg">
-  <h2 class="sec-title">कौन सी <span>परीक्षा</span> की तैयारी?</h2>
-  <p class="sec-sub">अपनी परीक्षा चुनो</p>
-  <div class="exams-grid">
-    <a href="#" class="exam-card"><span class="exam-icon">🏛️</span><div class="exam-name">RAS / RTS</div><div class="exam-desc">RPSC — Pre &amp; Mains</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">🇮🇳</span><div class="exam-name">IAS / UPSC</div><div class="exam-desc">UPSC — Civil Services</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">📋</span><div class="exam-name">SSC CGL</div><div class="exam-desc">Staff Selection Commission</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">🚂</span><div class="exam-name">Railway</div><div class="exam-desc">RRB NTPC / Group D</div></a>
-    <a href="#" class="exam-card"><span class="exam-icon">👮</span><div class="exam-name">Police / पटवारी</div><div class="exam-desc">Rajasthan Police / Patwar</div></a>
-  </div>
-</section>
+
 <section class="cta">
   <h2>🚀 आज ही <span>शुरू करो!</span></h2>
   <p>App download करो और OMASTRA व SAMPOORNA courses join करो</p>
@@ -181,46 +206,31 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   </div>
 </section>
 
-  <!-- About Section -->
-  <section class="section" style="background:#FFF8F2;">
-  <h2 class="sec-title">🕉️ नमस्कार, <span>राम राम सा!</span></h2>
-  <p class="sec-sub">आप सभी का 🕉️ New India Education – नव भारत निर्माण 🌟 के इस प्लेटफ़ॉर्म पर हार्दिक स्वागत है! 🇮🇳</p>
-  <div style="max-width:800px;margin:24px auto;background:white;padding:28px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
-    <p style="font-size:15px;line-height:1.8;margin-bottom:16px;"><strong>🌱 New India Education</strong> सिर्फ़ एक YouTube चैनल नहीं है — बल्कि एक <strong>शैक्षणिक आंदोलन (Educational Movement)</strong> है 💫 जो हर उस छात्र के लिए बना है जो मेहनत से अपने सपनों को हक़ीकत में बदलना चाहता है। ✨</p>
-    <p style="font-size:15px;line-height:1.8;margin-bottom:16px;">🔹 सच्ची शिक्षा — बिना दिखावे के<br>🔹 Concept + Revision + Motivation का संगम<br>🔹 Real Knowledge + Practical Understanding<br>🔹 Modern Approach, Indian Values 🇮🇳</p>
-    <p style="font-size:16px;line-height:1.8;margin:20px 0;font-weight:700;color:#FF6B00;">🎯 हमारा सपना: "भारत का हर विद्यार्थी — कम साधनों में भी बड़ी सफ़लता हासिल करे!"</p>
-    <p style="font-size:15px;line-height:1.8;">⚡ हमारा विश्वास: <strong>Knowledge ही असली शक्ति है</strong>, और यही है हमारे नव भारत निर्माण का सच्चा आधार! 🇮🇳</p>
-  </div>
-  <div style="max-width:600px;margin:24px auto;background:white;padding:24px;border-radius:12px;border-left:4px solid #FF6B00;">
-    <h3 style="font-family:'Baloo 2';font-size:18px;font-weight:800;margin-bottom:12px;color:#FF6B00;">👨‍🏫 By Omkar Sir</h3>
-    <p style="font-size:14px;line-height:1.7;">🌟 Founder: New India Education / नव भारत निर्माण<br>📚 Experience: <strong>8+ Years</strong> (RAS, IAS, SSC & Other Competitive Exams)</p>
-  </div>
-</section>
 <div id="nied-latest-posts"></div>
 </div>
 <div class="sidebar-col">
   <div class="sidebar-box">
-    <div class="sidebar-header">&#128218; &#2344;&#2357;&#2368;&#2344;&#2340;&#2350; &#2346;&#2375;&#2332;&#2375;&#2360;</div>
+    <div class="sidebar-header">📚 नवीनतम पेजेस</div>
     <ul class="sidebar-post-list">
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="Buddhism_Jainism_Notes.html"><span class="sidebar-post-icon">&#9784;</span><span class="sidebar-post-title">Buddhism &amp; Jainism Notes</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="Ethical_Concerns_and_Challenges.html"><span class="sidebar-post-icon">&#9878;</span><span class="sidebar-post-title">Ethical Concerns &amp; Challenges</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="MCQ_TEST_MAKIING_01.html"><span class="sidebar-post-icon">&#128221;</span><span class="sidebar-post-title">MCQ Test 01</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20MAINS%20OMKARSIR%20TEST.html"><span class="sidebar-post-icon">&#127919;</span><span class="sidebar-post-title">RAS Mains Test</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20MAINS%20TEST%20%20FINAL%20.html"><span class="sidebar-post-icon">&#127919;</span><span class="sidebar-post-title">RAS Mains Test Final</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20MAINS%20TEST%20GENRATOR.html"><span class="sidebar-post-icon">&#127919;</span><span class="sidebar-post-title">RAS Mains Test Generator</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20PRE%20TEST%20OMKAR.html"><span class="sidebar-post-icon">&#127919;</span><span class="sidebar-post-title">RAS Pre Test</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="praaciin-bhaarat-itihaas.html"><span class="sidebar-post-icon">&#128218;</span><span class="sidebar-post-title">&#2346;&#2381;&#2352;&#2366;&#2330;&#2368;&#2344; &#2349;&#2366;&#2352;&#2340; &#2311;&#2340;&#2367;&#2361;&#2366;&#2360;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol-parichay.html"><span class="sidebar-post-icon">&#127757;</span><span class="sidebar-post-title">Raj. &#2349;&#2370;&#2327;&#2379;&#2354; &#2346;&#2352;&#2367;&#2330;&#2351;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol-vibhajan.html"><span class="sidebar-post-icon">&#127757;</span><span class="sidebar-post-title">Raj. &#2349;&#2370;&#2327;&#2379;&#2354; &#2357;&#2367;&#2349;&#2366;&#2332;&#2344;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol.html"><span class="sidebar-post-icon">&#127757;</span><span class="sidebar-post-title">&#2352;&#2366;&#2332;&#2360;&#2381;&#2341;&#2366;&#2344; &#2349;&#2370;&#2327;&#2379;&#2354;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-itihas.html"><span class="sidebar-post-icon">&#128218;</span><span class="sidebar-post-title">&#2352;&#2366;&#2332;&#2360;&#2381;&#2341;&#2366;&#2344; &#2311;&#2340;&#2367;&#2361;&#2366;&#2360;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-lakes.html"><span class="sidebar-post-icon">&#128167;</span><span class="sidebar-post-title">&#2352;&#2366;&#2332;&#2360;&#2381;&#2341;&#2366;&#2344; &#2313;&#2303;&#2354;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajvegetation.html"><span class="sidebar-post-icon">&#127795;</span><span class="sidebar-post-title">&#2352;&#2366;&#2332;&#2360;&#2381;&#2341;&#2366;&#2344; &#2357;&#2344;&#2360;&#2381;&#2346;&#2340;&#2367;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="ras-foundation-v2.html"><span class="sidebar-post-icon">&#127963;</span><span class="sidebar-post-title">RAS Foundation</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="samvidhan.html"><span class="sidebar-post-icon">&#128203;</span><span class="sidebar-post-title">&#2360;&#2306;&#2357;&#2367;&#2343;&#2366;&#2344;</span></a></li>
-<li class="sidebar-post-item"><a class="sidebar-post-link" href="test_genrator_final_02_.html"><span class="sidebar-post-icon">&#128221;</span><span class="sidebar-post-title">Test Generator Final</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="Buddhism_Jainism_Notes.html"><span class="sidebar-post-icon">☸</span><span class="sidebar-post-title">Buddhism &amp; Jainism Notes</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="Ethical_Concerns_and_Challenges.html"><span class="sidebar-post-icon">⚖</span><span class="sidebar-post-title">Ethical Concerns &amp; Challenges</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="MCQ_TEST_MAKIING_01.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">MCQ Test 01</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20MAINS%20OMKARSIR%20TEST.html"><span class="sidebar-post-icon">🎯</span><span class="sidebar-post-title">RAS Mains Test</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20MAINS%20TEST%20%20FINAL%20.html"><span class="sidebar-post-icon">🎯</span><span class="sidebar-post-title">RAS Mains Test Final</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20MAINS%20TEST%20GENRATOR.html"><span class="sidebar-post-icon">🎯</span><span class="sidebar-post-title">RAS Mains Test Generator</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="RAS%20PRE%20TEST%20OMKAR.html"><span class="sidebar-post-icon">🎯</span><span class="sidebar-post-title">RAS Pre Test</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="praaciin-bhaarat-itihaas.html"><span class="sidebar-post-icon">📚</span><span class="sidebar-post-title">प्राचीन भारत इतिहास</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol-parichay.html"><span class="sidebar-post-icon">🌍</span><span class="sidebar-post-title">Raj. भूगोल परिचय</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol-vibhajan.html"><span class="sidebar-post-icon">🌍</span><span class="sidebar-post-title">Raj. भूगोल विभाजन</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-bhugol.html"><span class="sidebar-post-icon">🌍</span><span class="sidebar-post-title">राजस्थान भूगोल</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-itihas.html"><span class="sidebar-post-icon">📚</span><span class="sidebar-post-title">राजस्थान इतिहास</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajasthan-lakes.html"><span class="sidebar-post-icon">💧</span><span class="sidebar-post-title">राजस्थान उझल</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="rajvegetation.html"><span class="sidebar-post-icon">🌳</span><span class="sidebar-post-title">राजस्थान वनस्पति</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="ras-foundation-v2.html"><span class="sidebar-post-icon">🏛</span><span class="sidebar-post-title">RAS Foundation</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="samvidhan.html"><span class="sidebar-post-icon">📋</span><span class="sidebar-post-title">संविधान</span></a></li>
+<li class="sidebar-post-item"><a class="sidebar-post-link" href="test_genrator_final_02_.html"><span class="sidebar-post-icon">📝</span><span class="sidebar-post-title">Test Generator Final</span></a></li>
     </ul>
-    <a class="sidebar-footer-link" href="courses.html">&#2360;&#2349;&#2368; Courses &#2342;&#2375;&#2326;&#2375;&#2306; &rarr;</a>
+    <a class="sidebar-footer-link" href="courses.html">सभी Courses देखें →</a>
   </div>
 </div>
 </div>
@@ -231,15 +241,26 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
     <a href="https://youtube.com/@thenewindiaeducation">YouTube</a>
     <a href="https://t.me/omkarsirofficial">Telegram</a>
     <a href="https://play.google.com/store/apps/details?id=co.april2019.techa">App Download</a>
-        <a href="https://instagram.com/omkar_sir_official">Instagram</a>
-        <a href="https://whatsapp.com/channel/0029Va4yS7h6buMLgA7alj3H">WhatsApp</a>
-        <a href="https://youtube.com/@technicalawara3680">Technical Awara</a>
-    <a href="#">Privacy Policy</a>
+    <a href="https://instagram.com/omkar_sir_official">Instagram</a>
+    <a href="https://whatsapp.com/channel/0029Va4yS7h6buMLgA7alj3H">WhatsApp</a>
+    <a href="https://youtube.com/@technicalawara3680">Technical Awara</a>
   </div>
-  <div style="margin-top:8px
-      <div style="margin-top:8px;font-size:12px;">📧 email2omkara@gmail.com | 📱 7023166962</div>">© 2025 Omkar Sir | All Rights Reserved</div>
+  <div style="margin-top:8px;font-size:12px;">📧 email2omkara@gmail.com | 📱 7023166962</div>
+  <div style="margin-top:8px">© 2026 Omkar Sir | All Rights Reserved</div>
 </footer>
 <script src="/nied-menu.js" defer></script>
 <script src="/nied-latest-posts.js" defer></script>
+<script>
+document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.courses-filter-bar button').forEach(function(b){b.classList.remove('cf-active')});
+    btn.classList.add('cf-active');
+    var f=btn.getAttribute('data-filter');
+    document.querySelectorAll('.c-card').forEach(function(card){
+      card.style.display=(f==='all'||card.getAttribute('data-category')===f)?'flex':'none';
+    });
+  });
+});
+</script>
 </body>
 </html>

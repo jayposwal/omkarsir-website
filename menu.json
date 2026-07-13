@@ -17,87 +17,25 @@
           "url": "/praaciin-bhaarat-itihaas.html"
         },
         {
-          "label": "⚖️ राजव्यवस्था",
-          "url": "#"
-        },
-        {
-          "label": "📈 अर्थव्यवस्था",
-          "url": "#"
-        },
-        {
-          "label": "🌍 विश्व भूगोल",
-          "url": "#"
-        },
-        {
-          "label": "🔬 सामान्य विज्ञान",
-          "url": "#"
-        },
-        {
-          "label": "🏰 राजस्थान GK",
-          "url": "#"
-        },
-        {
-          "label": "📰 Current Affairs",
-          "url": "#"
+          "label": "📋 संविधान",
+          "url": "/samvidhan.html"
         }
       ]
     },
     {
-      "label": "🎯 परीक्षाएं",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🏛️ RAS / RTS — RPSC",
-          "url": "#"
-        },
-        {
-          "label": "🇮🇳 IAS / UPSC",
-          "url": "#"
-        },
-        {
-          "label": "📋 SSC CGL",
-          "url": "#"
-        },
-        {
-          "label": "🚂 Railway — RRB NTPC",
-          "url": "#"
-        },
-        {
-          "label": "👮 Rajasthan Police / पटवारी",
-          "url": "#"
-        },
-        {
-          "label": "नया Item",
-          "url": "#REET EXAM"
-        },
-        {
-          "label": "RAJ SUB INSPECTOR EXAM ",
-          "url": "#"
-        }
-      ]
-    },
-    {
-      "label": "📄 नोट्स",
+      "label": "📄 सभी Courses",
       "type": "link",
-      "url": "#"
+      "url": "/courses.html"
     },
     {
-      "label": "NCERT BOOKS ",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "नया Item",
-          "url": "#CLASS 6"
-        },
-        {
-          "label": "नया Item",
-          "url": "#CLASS 07 "
-        },
-        {
-          "label": "CLASS 08",
-          "url": "#"
-        }
-      ]
+      "label": "🧪 Quiz",
+      "type": "link",
+      "url": "/test_genrator_final_02_.html"
+    },
+    {
+      "label": "📱 App Download",
+      "type": "link",
+      "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
     }
   ]
 }
