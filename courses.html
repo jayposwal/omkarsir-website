@@ -8,11 +8,13 @@
 <title>Courses | New India Education — RAS &amp; GK Preparation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕉</text></svg>">
 <style>
-*,*::before,*::after{box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
 .courses-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:60px 20px 50px;text-align:center;border-bottom:1px solid #FFE0C0}
 .courses-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin:0 0 12px;font-family:'Poppins',sans-serif;color:#1A1A2E}
 .courses-hero h1 span{color:#FF6B00}
@@ -49,33 +51,21 @@
 .courses-app-cta p{color:rgba(255,255,255,.7);margin:0 0 28px;font-size:1rem}
 .cta-app-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#f5a623,#e65100);color:white;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 6px 20px rgba(245,166,35,.4);transition:transform .2s}
 .cta-app-btn:hover{transform:scale(1.05)}
+
+/* ===== FOOTER (self-contained, no external CSS) ===== */
+footer{background:#1A1A2E;padding:36px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:white;margin-bottom:8px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+.footer-links{margin:12px 0 8px}
+
 @media(max-width:600px){.courses-card-grid{grid-template-columns:1fr;padding:20px 16px}.courses-hero{padding:50px 16px 40px}}
 </style>
 </head>
 <body>
 <div id="nied-navbar"></div>
-<header class="header">
-<div class="container">
-<a href="index.html" class="logo"><div class="logo-icon">NI</div>New India <span>Education</span></a>
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="courses.html" class="active">Courses</a>
-<a href="blog.html">Blog</a>
-<a href="study-material.html">Study Material</a>
-<a href="about.html">About</a>
-</nav>
-<a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn btn-primary btn-sm nav-cta">Download App</a>
-<button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</div>
-</header>
-<div class="mobile-menu">
-<a href="index.html">Home</a>
-<a href="courses.html" class="active">Courses</a>
-<a href="blog.html">Blog</a>
-<a href="study-material.html">Study Material</a>
-<a href="about.html">About</a>
-<a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn btn-primary">Download App</a>
-</div>
+<div class="tri"></div>
+
 <div class="courses-hero">
 <h1>सभी <span>Courses</span></h1>
 <p>RAS Foundation, Test Series और OMASTRA GK Series — सब एक जगह</p>
@@ -162,40 +152,19 @@
 <p>App download करें और कभी भी, कहीं भी पढ़ें। 2 लाख+ students already joined।</p>
 <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="cta-app-btn">📱 Download App — Free</a>
 </div>
-<footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<div class="footer-logo"><div class="logo-icon">NI</div>New India Education</div>
-<p>ओमकार सिंह गुर्जर द्वारा — RAS, IAS और सभी competitive exams की best online preparation।</p>
-<div class="footer-social">
-<a href="https://youtube.com/@thenewindiaeducation" aria-label="YouTube">▶</a>
-<a href="https://t.me/omkarsirofficial" aria-label="Telegram">✈</a>
-<a href="https://instagram.com/omkar_sir_official" aria-label="Instagram">📷</a>
-<a href="https://whatsapp.com/channel/0029Va4yS7h6buMLgA7alj3H" aria-label="WhatsApp">💬</a>
-</div>
-</div>
-<div class="footer-col">
-<h4>Quick Links</h4>
-<a href="courses.html">All Courses</a>
-<a href="blog.html">Blog</a>
-<a href="study-material.html">Free Study Material</a>
-<a href="about.html">About Us</a>
-</div>
-<div class="footer-col">
-<h4>Subjects</h4>
-<a href="study-material.html">History</a>
-<a href="study-material.html">Geography</a>
-<a href="study-material.html">Polity</a>
-<a href="study-material.html">Biology</a>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© 2026 New India Education. All rights reserved.</span>
-</div>
-</div>
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:13px;margin-bottom:10px">New India Education, Jaipur, Rajasthan</div>
+  <div class="footer-links">
+    <a href="https://youtube.com/@thenewindiaeducation">YouTube</a>
+    <a href="https://t.me/omkarsirofficial">Telegram</a>
+    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa">App Download</a>
+    <a href="https://instagram.com/omkar_sir_official">Instagram</a>
+    <a href="https://whatsapp.com/channel/0029Va4yS7h6buMLgA7alj3H">WhatsApp</a>
+  </div>
+  <div style="margin-top:8px;font-size:12px;">📧 email2omkara@gmail.com | 📱 7023166962</div>
+  <div style="margin-top:8px">© 2026 Omkar Sir | All Rights Reserved</div>
 </footer>
-<script src="script.js"></script>
 <script src="/nied-menu.js" defer></script>
 <script>
 document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
