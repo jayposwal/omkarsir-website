@@ -1,28 +1,25 @@
 {
   "posts": [
-    {
-      "title": "लोक प्रशासन  CHAPTER 02 सिद्धांत एवं उपागम",
-      "url": "/pubadchpater02.html",
-      "icon": "📄",
-      "date": "2026-07-04T04:25:16.131Z"
-    },
-    {
-      "title": "ES07mcq",
-      "url": "/ES07mcq.html",
-      "icon": "📄",
-      "date": "2026-06-24T09:05:58.089Z"
-    },
-    {
-      "title": "प्रशासन में नैतिक चिंताएँ, दुविधाएँ और चुनौतियाँ",
-      "url": "/ethics07.html",
-      "icon": "📄",
-      "date": "2026-06-21T05:58:40.552Z"
-    },
-    {
-      "title": "ES 07 short notes",
-      "url": "/rajes07shortnotes.html",
-      "icon": "📄",
-      "date": "2026-06-21T05:27:48.584Z"
-    }
+    { "title": "RAS Prelims Exam Quiz — 12 जुलाई (v2)", "url": "/quizzes/ras-prelims-exam-2026-07-12-v7u9.html", "icon": "🎯", "date": "2026-07-12T17:52:11Z" },
+    { "title": "RAS Prelims Exam Quiz — 12 जुलाई", "url": "/quizzes/ras-prelims-exam-2026-07-12-cl2o.html", "icon": "🎯", "date": "2026-07-12T17:31:09Z" },
+    { "title": "लोक प्रशासन Chapter 02: सिद्धांत एवं उपागम", "url": "/pubadchpater02.html", "icon": "📄", "date": "2026-07-04T04:25:15Z" },
+    { "title": "Environment & Science 07 MCQ Test", "url": "/ES07mcq.html", "icon": "📝", "date": "2026-06-29T04:54:36Z" },
+    { "title": "प्रशासन में नैतिक चिंताएँ, दुविधाएँ और चुनौतियाँ", "url": "/ethics07.html", "icon": "⚖️", "date": "2026-06-21T05:58:40Z" },
+    { "title": "Ethical Concerns & Challenges", "url": "/Ethical_Concerns_and_Challenges.html", "icon": "⚖️", "date": "2026-06-14T12:39:34Z" },
+    { "title": "राजस्थान की झीलें", "url": "/rajasthan-lakes.html", "icon": "💧", "date": "2026-06-14T08:53:28Z" },
+    { "title": "Test Generator Final", "url": "/test_genrator_final_02_.html", "icon": "📝", "date": "2026-06-14T07:51:05Z" },
+    { "title": "संविधान", "url": "/samvidhan.html", "icon": "📋", "date": "2026-06-14T07:51:03Z" },
+    { "title": "RAS Foundation", "url": "/ras-foundation-v2.html", "icon": "🏛️", "date": "2026-06-14T07:51:01Z" },
+    { "title": "राजस्थान इतिहास", "url": "/rajasthan-itihas.html", "icon": "📚", "date": "2026-06-14T07:50:58Z" },
+    { "title": "राजस्थान भूगोल", "url": "/rajasthan-bhugol.html", "icon": "🌍", "date": "2026-06-14T07:50:56Z" },
+    { "title": "राजस्थान भूगोल विभाजन", "url": "/rajasthan-bhugol-vibhajan.html", "icon": "🌍", "date": "2026-06-14T07:50:54Z" },
+    { "title": "राजस्थान भूगोल परिचय", "url": "/rajasthan-bhugol-parichay.html", "icon": "🌍", "date": "2026-06-14T07:50:52Z" },
+    { "title": "प्राचीन भारत इतिहास", "url": "/praaciin-bhaarat-itihaas.html", "icon": "📚", "date": "2026-06-14T07:50:50Z" },
+    { "title": "RAS Pre Test", "url": "/RAS%20PRE%20TEST%20OMKAR.html", "icon": "🎯", "date": "2026-06-14T07:50:44Z" },
+    { "title": "RAS Mains Test Generator", "url": "/RAS%20MAINS%20TEST%20GENRATOR.html", "icon": "🎯", "date": "2026-06-14T07:50:42Z" },
+    { "title": "RAS Mains Test Final", "url": "/RAS%20MAINS%20TEST%20%20FINAL%20.html", "icon": "🎯", "date": "2026-06-14T07:50:39Z" },
+    { "title": "RAS Mains Test", "url": "/RAS%20MAINS%20OMKARSIR%20TEST.html", "icon": "🎯", "date": "2026-06-14T07:50:37Z" },
+    { "title": "MCQ Test 01", "url": "/MCQ_TEST_MAKIING_01.html", "icon": "📝", "date": "2026-06-14T07:50:34Z" },
+    { "title": "Buddhism & Jainism Notes", "url": "/Buddhism_Jainism_Notes.html", "icon": "☸️", "date": "2026-06-14T07:50:29Z" }
   ]
 }

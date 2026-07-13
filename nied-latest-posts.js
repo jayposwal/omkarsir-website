@@ -26,7 +26,10 @@
       + '.nied-lp-info{flex:1;min-width:0;}'
       + '.nied-lp-cardtitle{font-weight:700;color:#1A1A2E;font-size:14px;line-height:1.4;font-family:"Baloo 2","Noto Sans Devanagari",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}'
       + '.nied-lp-date{font-size:12px;color:#999;margin-top:3px;}'
-      + '.nied-lp-arrow{color:#FF6B00;font-size:18px;flex-shrink:0;}';
+      + '.nied-lp-arrow{color:#FF6B00;font-size:18px;flex-shrink:0;}'
+      + '.nied-lp-more{max-width:1100px;margin:22px auto 0;text-align:center;}'
+      + '.nied-lp-more a{display:inline-block;padding:11px 30px;background:#FF6B00;color:#fff;border-radius:50px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 6px 18px rgba(255,107,0,.28);transition:transform .2s;}'
+      + '.nied-lp-more a:hover{transform:scale(1.04);background:#E05500;}';
     var style = document.createElement('style');
     style.id = 'nied-lp-style';
     style.textContent = css;
@@ -36,7 +39,7 @@
   function render(mount, posts){
     if(!posts || !posts.length){ return; }
     injectStyles();
-    var html = '<section class="nied-lp-section"><h2 class="nied-lp-title">📝 नवीनतम <span>Notes</span></h2>'
+    var html = '<section class="nied-lp-section"><h2 class="nied-lp-title">📝 नवीनतम <span>पोस्ट</span></h2>'
       + '<p class="nied-lp-sub">हाल ही में जोड़े गए नोट्स यहाँ देखें</p><div class="nied-lp-grid">';
     posts.slice(0, 6).forEach(function(p){
       html += '<a class="nied-lp-card" href="' + esc(p.url) + '">'
@@ -45,7 +48,7 @@
         + '<div class="nied-lp-date">' + esc(fmtDate(p.date)) + '</div></div>'
         + '<span class="nied-lp-arrow">→</span></a>';
     });
-    html += '</div></section>';
+    html += '</div><div class="nied-lp-more"><a href="/all-notes.html">📚 और देखें — सभी नवीनतम पोस्ट →</a></div></section>';
     mount.innerHTML = html;
   }
 

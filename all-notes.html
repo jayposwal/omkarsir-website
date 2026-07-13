@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सभी नवीनतम Notes | Omkar Sir — New India Education</title>
+<meta name="description" content="Omkar Sir के सभी नवीनतम Notes, Tests और Study Material एक जगह — RAS, Rajasthan GK, History, Geography, Polity।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.page-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:46px 6% 38px;border-bottom:1px solid #FFE0C0;text-align:center}
+.page-hero h1{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:8px}
+.page-hero h1 span{color:#FF6B00}
+.page-hero p{color:#666;font-size:14px}
+.notes-wrap{max-width:1100px;margin:0 auto;padding:40px 6% 60px}
+.notes-count{text-align:center;color:#999;font-size:13px;margin-bottom:26px}
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.note-card{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:all .2s}
+.note-card:hover{border-color:#FF6B00;transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,107,0,.12)}
+.note-icon{font-size:28px;flex-shrink:0;width:50px;height:50px;border-radius:12px;background:#FFF3E8;display:flex;align-items:center;justify-content:center}
+.note-info{flex:1;min-width:0}
+.note-title{font-weight:700;color:#1A1A2E;font-size:14.5px;line-height:1.4;font-family:'Poppins',sans-serif}
+.note-date{font-size:12px;color:#999;margin-top:4px}
+.note-arrow{color:#FF6B00;font-size:18px;flex-shrink:0}
+.back-link{display:block;text-align:center;margin-top:36px}
+.back-link a{color:#FF6B00;text-decoration:none;font-weight:700;font-size:14px}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="page-hero">
+  <h1>📝 सभी नवीनतम <span>पोस्ट</span></h1>
+  <p>हाल ही में जोड़े गए सभी Notes, Tests और Study Material यहाँ देखें</p>
+</section>
+
+<div class="notes-wrap">
+  <p class="notes-count" id="notesCount">Loading...</p>
+  <div class="notes-grid" id="notesGrid"></div>
+  <div class="back-link"><a href="index.html">← Home पर वापस जाएं</a></div>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px">New India Education, Jaipur, Rajasthan</div>
+</footer>
+
+<script src="/nied-menu.js" defer></script>
+<script>
+function esc(s){
+  var d = document.createElement('div');
+  d.textContent = (s===null||s===undefined) ? '' : String(s);
+  return d.innerHTML;
+}
+function fmtDate(iso){
+  try{
+    var d = new Date(iso);
+    var months = ['जन','फ़र','मार्च','अप्रैल','मई','जून','जुल','अग','सित','अक्तू','नव','दिस'];
+    return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  }catch(e){ return ''; }
+}
+fetch('/posts.json', {cache:'no-store'})
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var posts = data.posts || [];
+    document.getElementById('notesCount').textContent = 'कुल ' + posts.length + ' पोस्ट';
+    var grid = document.getElementById('notesGrid');
+    var html = '';
+    posts.forEach(function(p){
+      html += '<a class="note-card" href="' + esc(p.url) + '">'
+        + '<span class="note-icon">' + esc(p.icon || '📄') + '</span>'
+        + '<div class="note-info"><div class="note-title">' + esc(p.title) + '</div>'
+        + '<div class="note-date">' + esc(fmtDate(p.date)) + '</div></div>'
+        + '<span class="note-arrow">→</span></a>';
+    });
+    grid.innerHTML = html;
+  })
+  .catch(function(err){
+    document.getElementById('notesCount').textContent = 'Posts load नहीं हो पाए।';
+    console.error('all-notes error:', err);
+  });
+</script>
+</body>
+</html>
