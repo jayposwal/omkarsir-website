@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="New India Education Courses — IAS, RAS, SSC, Railway सभी competitive exams के courses। OMASTRA Series, SAMPOORNA Series और more।">
-<meta name="keywords" content="IAS course, RAS course, SSC course, OMASTRA, SAMPOORNA, Omkar Singh courses, competitive exam preparation">
-<title>Courses | New India Education — Competitive Exam Preparation</title>
+<meta name="description" content="New India Education Courses — RAS Foundation, RAS Test Series, OMASTRA GK Series (History, Geography, Polity, Biology, Math)। सभी courses एक जगह।">
+<meta name="keywords" content="RAS course, RAS Foundation, OMASTRA, RAS test series, Omkar Sir courses">
+<title>Courses | New India Education — RAS &amp; GK Preparation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -13,34 +13,24 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕉</text></svg>">
 <style>
 *,*::before,*::after{box-sizing:border-box}
-.courses-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);padding:70px 20px 60px;text-align:center;color:white;position:relative;overflow:hidden}
-.courses-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%,rgba(229,57,53,.1) 0%,transparent 50%),radial-gradient(circle at 80% 30%,rgba(255,193,7,.08) 0%,transparent 50%);pointer-events:none}
-.courses-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 14px;font-family:'Poppins',sans-serif;position:relative}
-.courses-hero h1 span{color:#f5a623}
-.courses-hero p{font-size:1.1rem;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto;position:relative}
+.courses-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:60px 20px 50px;text-align:center;border-bottom:1px solid #FFE0C0}
+.courses-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin:0 0 12px;font-family:'Poppins',sans-serif;color:#1A1A2E}
+.courses-hero h1 span{color:#FF6B00}
+.courses-hero p{font-size:1.05rem;color:#666;max-width:600px;margin:0 auto}
 .courses-filter-bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:24px 20px;background:rgba(248,249,252,.97);border-bottom:1px solid #e0e4ef;position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
 .courses-filter-bar button{padding:9px 22px;border:2px solid #e0e4ef;background:white;border-radius:50px;font-size:.88rem;font-weight:600;color:#555;cursor:pointer;transition:all .2s ease;font-family:inherit}
-.courses-filter-bar button:hover{border-color:#e53935;color:#e53935;transform:translateY(-1px);box-shadow:0 4px 12px rgba(229,57,53,.15)}
-.courses-filter-bar button.cf-active{background:linear-gradient(135deg,#e53935,#c62828);border-color:transparent;color:white;box-shadow:0 4px 15px rgba(229,57,53,.35)}
+.courses-filter-bar button:hover{border-color:#FF6B00;color:#FF6B00;transform:translateY(-1px)}
+.courses-filter-bar button.cf-active{background:#FF6B00;border-color:transparent;color:white;box-shadow:0 4px 15px rgba(255,107,0,.3)}
 .courses-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto;padding:40px 24px;background:#f0f2f8;min-height:60vh}
 .c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:all .3s ease;display:flex;flex-direction:column;position:relative;border:1px solid rgba(0,0,0,.05)}
 .c-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.13)}
 .c-badge{position:absolute;top:14px;right:14px;padding:4px 12px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;z-index:2}
 .c-badge-free{background:#e8f5e9;color:#2e7d32}
-.c-badge-premium{background:#fff3e0;color:#e65100}
-.c-badge-new{background:#e3f2fd;color:#1565c0}
-.c-badge-popular{background:#fce4ec;color:#c62828}
-.c-badge-bestseller{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
-.c-card-head{padding:28px 20px 18px;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;min-height:115px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
-.c-card-head.head-ias{background:linear-gradient(135deg,#1a237e,#283593)}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:28px 20px 18px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:100px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
 .c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
-.c-card-head.head-ssc{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
-.c-card-head.head-railway{background:linear-gradient(135deg,#bf360c,#e64a19)}
-.c-card-head.head-omastra{background:linear-gradient(135deg,#0d47a1,#1565c0)}
-.c-card-head.head-sampoorna{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
-.c-card-head.head-history{background:linear-gradient(135deg,#4e342e,#6d4c41)}
-.c-card-head.head-geo{background:linear-gradient(135deg,#1b5e20,#388e3c)}
-.c-card-head.head-polity{background:linear-gradient(135deg,#1a237e,#3949ab)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-card-head.head-test{background:linear-gradient(135deg,#00695c,#00897b)}
 .c-icon{font-size:2rem;margin-bottom:8px}
 .c-title{font-size:1.05rem;font-weight:700;color:white;margin:0;line-height:1.3;font-family:'Poppins',sans-serif}
 .c-body{padding:16px 20px;flex:1}
@@ -48,10 +38,13 @@
 .c-tags{display:flex;flex-wrap:wrap;gap:6px}
 .c-tag{background:#f0f2f8;color:#444;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:500}
 .c-foot{padding:14px 20px;border-top:1px solid #f0f2f8;display:flex;align-items:center;justify-content:space-between}
+.c-price-wrap{display:flex;flex-direction:column}
 .c-price{font-size:1.25rem;font-weight:800;color:#e53935}
 .c-price.price-free{color:#2e7d32}
-.c-btn{padding:8px 20px;background:linear-gradient(135deg,#e53935,#c62828);color:white;border:none;border-radius:25px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;text-decoration:none;display:inline-block}
-.c-btn:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(229,57,53,.4)}
+.c-orig{font-size:.75rem;color:#aaa;text-decoration:line-through}
+.c-btn{padding:8px 20px;background:#FF6B00;color:white;border:none;border-radius:25px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;text-decoration:none;display:inline-block}
+.c-btn:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(255,107,0,.4)}
+.c-btn.pending{background:#e0e4ef;color:#999;cursor:default;pointer-events:none}
 .courses-app-cta{background:linear-gradient(135deg,#1a1a2e,#0f3460);color:white;text-align:center;padding:60px 20px}
 .courses-app-cta h2{font-size:1.8rem;font-family:'Poppins',sans-serif;margin:0 0 12px}
 .courses-app-cta p{color:rgba(255,255,255,.7);margin:0 0 28px;font-size:1rem}
@@ -86,89 +79,84 @@
 </div>
 <div class="courses-hero">
 <h1>सभी <span>Courses</span></h1>
-<p>IAS, RAS, SSC, Railway — सभी competitive exams की structured preparation</p>
+<p>RAS Foundation, Test Series और OMASTRA GK Series — सब एक जगह</p>
 </div>
 <div class="courses-filter-bar">
 <button class="cf-active" data-filter="all">All Courses</button>
-<button data-filter="ias">IAS</button>
 <button data-filter="ras">RAS</button>
-<button data-filter="ssc">SSC</button>
-<button data-filter="railway">Railway</button>
-<button data-filter="series">Special Series</button>
+<button data-filter="gk">GK Series</button>
+<button data-filter="test">Test Series</button>
 </div>
 <div class="courses-card-grid">
-<div class="c-card" data-category="series">
+
+<div class="c-card" data-category="ras test">
 <span class="c-badge c-badge-free">FREE</span>
-<div class="c-card-head head-omastra"><div class="c-icon">🔱</div><h3 class="c-title">OMASTRA Series — Complete</h3></div>
-<div class="c-body"><p class="c-desc">हर 15 दिन में 10+ घंटे की marathon video। सभी subjects covered। YouTube पर Free। PDF + MCQ App पर ₹99-199।</p><div class="c-tags"><span class="c-tag">📹 Marathon Videos</span><span class="c-tag">📄 PDF ₹99</span></div></div>
-<div class="c-foot"><span class="c-price price-free">FREE</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+<div class="c-card-head head-test"><div class="c-icon">🚀</div><h3 class="c-title">RAS Pre 2026 BEST Test Series | 18 Tests</h3></div>
+<div class="c-body"><p class="c-desc">RPSC New Syllabus के अनुसार 18 Tests। सीमित समय के लिए बिल्कुल FREE।</p><div class="c-tags"><span class="c-tag">RPSC New Syllabus</span><span class="c-tag">Tests</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price price-free">FREE</span><span class="c-orig">₹999</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="series">
-<span class="c-badge c-badge-premium">PREMIUM</span>
-<div class="c-card-head head-sampoorna"><div class="c-icon">📚</div><h3 class="c-title">SAMPOORNA Series — Premium</h3></div>
-<div class="c-body"><p class="c-desc">Complete consolidated course — Omastra PDFs + Level 1-3 content, MCQ + PYQ + Answer Writing। All-in-one preparation।</p><div class="c-tags"><span class="c-tag">📖 Complete</span><span class="c-tag">✍️ Answer Writing</span></div></div>
-<div class="c-foot"><span class="c-price">₹299+</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
-</div>
-<div class="c-card" data-category="ias">
-<span class="c-badge c-badge-new">NEW</span>
-<div class="c-card-head head-ias"><div class="c-icon">🏛️</div><h3 class="c-title">IAS Foundation 2026</h3></div>
-<div class="c-body"><p class="c-desc">UPSC Civil Services Prelims + Mains। GS Paper 1-4 + CSAT + Optional guidance। Complete roadmap with schedule।</p><div class="c-tags"><span class="c-tag">🎯 UPSC IAS</span><span class="c-tag">⏰ 12 months</span></div></div>
-<div class="c-foot"><span class="c-price">₹499+</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
-</div>
-<div class="c-card" data-category="ias">
-<span class="c-badge c-badge-popular">POPULAR</span>
-<div class="c-card-head head-ias"><div class="c-icon">⚡</div><h3 class="c-title">IAS Prelims Crash Course</h3></div>
-<div class="c-body"><p class="c-desc">Last 3 months Prelims intensive preparation। Previous year questions analysis, mock tests, और revision material।</p><div class="c-tags"><span class="c-tag">🎯 Prelims Focus</span><span class="c-tag">⏰ 3 months</span></div></div>
-<div class="c-foot"><span class="c-price">₹299+</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
-</div>
+
 <div class="c-card" data-category="ras">
-<span class="c-badge c-badge-bestseller">BESTSELLER</span>
-<div class="c-card-head head-ras"><div class="c-icon">🏜️</div><h3 class="c-title">RAS Complete Course 2026</h3></div>
-<div class="c-body"><p class="c-desc">Rajasthan RAS Pre + Mains। Rajasthan GK, History, Geography, Polity, Economy। RBSE + NCERT based content।</p><div class="c-tags"><span class="c-tag">📍 Rajasthan</span><span class="c-tag">⏰ 8 months</span></div></div>
-<div class="c-foot"><span class="c-price">₹399+</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+<span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+<div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️🌟</h3></div>
+<div class="c-body"><p class="c-desc">RAS Pre + Mains की Complete तैयारी। Multiple Validity Options, Tests और Free Content included।</p><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="ras">
-<span class="c-badge c-badge-new">NEW</span>
-<div class="c-card-head head-ras"><div class="c-icon">✍️</div><h3 class="c-title">RAS Mains Answer Writing</h3></div>
-<div class="c-body"><p class="c-desc">RAS Mains के लिए answer writing practice। Model answers, diagram-based answers, और evaluation tips।</p><div class="c-tags"><span class="c-tag">✍️ Writing</span><span class="c-tag">📝 50+ Practice</span></div></div>
-<div class="c-foot"><span class="c-price">₹199+</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="ras test">
+<div class="c-card-head head-ras"><div class="c-icon">🎯</div><h3 class="c-title">RAS Prelims 2026 SUPER 60 Course</h3></div>
+<div class="c-body"><p class="c-desc">Prelims focused intensive preparation। Tests, Videos और Free content के साथ।</p><div class="c-tags"><span class="c-tag">Tests</span><span class="c-tag">Videos</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹3,000</span><span class="c-orig">₹10,000</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="ssc">
-<span class="c-badge c-badge-free">FREE</span>
-<div class="c-card-head head-ssc"><div class="c-icon">📋</div><h3 class="c-title">SSC CGL Complete Course</h3></div>
-<div class="c-body"><p class="c-desc">SSC CGL Tier 1 + Tier 2। Math, Reasoning, English, GK — सभी sections covered with shortcuts।</p><div class="c-tags"><span class="c-tag">📋 SSC CGL</span><span class="c-tag">📹 100+ Videos</span></div></div>
-<div class="c-foot"><span class="c-price price-free">FREE</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-gk"><div class="c-icon">🕉️</div><h3 class="c-title">भारत भूगोल OMASTRA GK सीरीज — India Geography</h3></div>
+<div class="c-body"><p class="c-desc">Complete India Geography — Tests, Videos और Files के साथ OMASTRA format में।</p><div class="c-tags"><span class="c-tag">Tests</span><span class="c-tag">Files</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹999</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="ssc">
-<span class="c-badge c-badge-free">FREE</span>
-<div class="c-card-head head-ssc"><div class="c-icon">📝</div><h3 class="c-title">SSC CHSL + MTS Batch</h3></div>
-<div class="c-body"><p class="c-desc">SSC CHSL और MTS exams। Basic to advanced level preparation। Specially designed for 12th pass students।</p><div class="c-tags"><span class="c-tag">📝 CHSL+MTS</span><span class="c-tag">📹 80+ Videos</span></div></div>
-<div class="c-foot"><span class="c-price price-free">FREE</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-gk"><div class="c-icon">📜</div><h3 class="c-title">India History — भारत का सम्पूर्ण इतिहास</h3></div>
+<div class="c-body"><p class="c-desc">प्राचीन, मध्य और आधुनिक भारत का इतिहास — Tests, Videos और Files के साथ।</p><div class="c-tags"><span class="c-tag">Tests</span><span class="c-tag">Videos</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="railway">
-<span class="c-badge c-badge-popular">POPULAR</span>
-<div class="c-card-head head-railway"><div class="c-icon">🚂</div><h3 class="c-title">Railway Group D + NTPC</h3></div>
-<div class="c-body"><p class="c-desc">Railway Group D और NTPC exam preparation। Math, Reasoning, GK, Science — complete coverage।</p><div class="c-tags"><span class="c-tag">🚂 Railway</span><span class="c-tag">📹 120+ Videos</span></div></div>
-<div class="c-foot"><span class="c-price">₹149+</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-gk"><div class="c-icon">🌍</div><h3 class="c-title">World Geography — विश्व भूगोल</h3></div>
+<div class="c-body"><p class="c-desc">Complete World Geography — Tests, Videos और Files के साथ।</p><div class="c-tags"><span class="c-tag">Tests</span><span class="c-tag">Videos</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="ias">
-<span class="c-badge c-badge-free">FREE</span>
-<div class="c-card-head head-history"><div class="c-icon">📜</div><h3 class="c-title">Complete History — Ancient to Modern</h3></div>
-<div class="c-body"><p class="c-desc">Ancient India, Medieval India, Modern India + World History। सभी competitive exams के लिए। NCERT + Standard books based।</p><div class="c-tags"><span class="c-tag">📜 History</span><span class="c-tag">📹 200+ Videos</span></div></div>
-<div class="c-foot"><span class="c-price price-free">FREE</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-gk"><div class="c-icon">🔢</div><h3 class="c-title">Mathematics &amp; Reasoning Complete Course</h3></div>
+<div class="c-body"><p class="c-desc">Math और Reasoning की Complete तैयारी — PDF Files के साथ।</p><div class="c-tags"><span class="c-tag">Videos</span><span class="c-tag">Files</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹2,099</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="ias">
-<span class="c-badge c-badge-free">FREE</span>
-<div class="c-card-head head-geo"><div class="c-icon">🌍</div><h3 class="c-title">Geography — India + World + Rajasthan</h3></div>
-<div class="c-body"><p class="c-desc">Physical, Human, Economic Geography। India + World + Rajasthan specific। Maps, diagrams, और concepts।</p><div class="c-tags"><span class="c-tag">🌍 Geography</span><span class="c-tag">📹 150+ Videos</span></div></div>
-<div class="c-foot"><span class="c-price price-free">FREE</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-gk"><div class="c-icon">🧬</div><h3 class="c-title">जीव विज्ञान (Biology) — OMASTRA GK Series</h3></div>
+<div class="c-body"><p class="c-desc">Complete Biology — Tests और Videos के साथ OMASTRA format में।</p><div class="c-tags"><span class="c-tag">Tests</span><span class="c-tag">Videos</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹100</span><span class="c-orig">₹500</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
-<div class="c-card" data-category="ias">
-<span class="c-badge c-badge-free">FREE</span>
-<div class="c-card-head head-polity"><div class="c-icon">⚖️</div><h3 class="c-title">Indian Polity &amp; Constitution</h3></div>
-<div class="c-body"><p class="c-desc">Laxmikanth-based Polity course। Constitution, Governance, Panchayati Raj, Judiciary सब covered।</p><div class="c-tags"><span class="c-tag">⚖️ Polity</span><span class="c-tag">📹 130+ Videos</span></div></div>
-<div class="c-foot"><span class="c-price price-free">FREE</span><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-btn">Explore →</a></div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-ras"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+<div class="c-body"><p class="c-desc">Standard GK का पूरा package — Multiple Validity Options के साथ।</p><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
 </div>
+
+<div class="c-card" data-category="gk">
+<div class="c-card-head head-gk"><div class="c-icon">⚖️</div><h3 class="c-title">Polity OMASTRA Course</h3></div>
+<div class="c-body"><p class="c-desc">Complete Polity — Multiple Validity Options और Tests के साथ।</p><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹209</span><span class="c-orig">₹1,010</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
+</div>
+
+<div class="c-card" data-category="test">
+<div class="c-card-head head-test"><div class="c-icon">📝</div><h3 class="c-title">10 हजार अति महत्वपूर्ण प्रश्न</h3></div>
+<div class="c-body"><p class="c-desc">10,000 Important Questions — Tests और Files के फॉर्मेट में।</p><div class="c-tags"><span class="c-tag">Tests</span><span class="c-tag">Files</span></div></div>
+<div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹198</span><span class="c-orig">₹1,198</span></div><a href="javascript:void(0)" class="c-btn pending">जल्द आएगा</a></div>
+</div>
+
 </div>
 <div class="courses-app-cta">
 <h2>सभी Courses App पर Available हैं!</h2>
@@ -180,7 +168,7 @@
 <div class="footer-grid">
 <div class="footer-brand">
 <div class="footer-logo"><div class="logo-icon">NI</div>New India Education</div>
-<p>ओमकार सिंह गुर्जर द्वारा — IAS, RAS, SSC और सभी competitive exams की best online preparation।</p>
+<p>ओमकार सिंह गुर्जर द्वारा — RAS, IAS और सभी competitive exams की best online preparation।</p>
 <div class="footer-social">
 <a href="https://youtube.com/@thenewindiaeducation" aria-label="YouTube">▶</a>
 <a href="https://t.me/omkarsirofficial" aria-label="Telegram">✈</a>
@@ -200,7 +188,7 @@
 <a href="study-material.html">History</a>
 <a href="study-material.html">Geography</a>
 <a href="study-material.html">Polity</a>
-<a href="study-material.html">Economy</a>
+<a href="study-material.html">Biology</a>
 </div>
 </div>
 <div class="footer-bottom">
@@ -217,7 +205,8 @@ document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
     btn.classList.add('cf-active');
     var f=btn.getAttribute('data-filter');
     document.querySelectorAll('.c-card').forEach(function(card){
-      card.style.display=(f==='all'||card.getAttribute('data-category')===f)?'flex':'none';
+      var cats=(card.getAttribute('data-category')||'').split(' ');
+      card.style.display=(f==='all'||cats.indexOf(f)>-1)?'flex':'none';
     });
   });
 });
