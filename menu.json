@@ -38,8 +38,17 @@
     },
     {
       "label": "📝 Previous Year Papers",
-      "type": "link",
-      "url": "/previous-year-papers.html"
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🎯 RAS PYQ (Pre + Mains)",
+          "url": "/previous-year-papers.html#block-ras"
+        },
+        {
+          "label": "👮 Rajasthan SI PYQ",
+          "url": "/previous-year-papers.html#block-si"
+        }
+      ]
     },
     {
       "label": "ℹ️ हमारे बारे में",
