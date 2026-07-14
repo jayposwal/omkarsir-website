@@ -1,228 +1,623 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://omkarsir.com/Buddhism_Jainism_Notes.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omkarsir.com/ES07mcq.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://omkarsir.com/Ethical_Concerns_and_Challenges.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://omkarsir.com/about.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/all-notes.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch01-pragaitihasik-sindhu.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch02-prachin-kala.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch03-mandir-vastukala.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch04-saltanat-mughal.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch05-pradarshankari-kala.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch06-chitrakala-parampara.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch07-sahitya.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch08-shilp-gufa-sthapatya.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch09-prachin-dharmik-andolan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti-ch10-madhyakalin-dharmik-andolan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/bharatiya-kala-sanskriti.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/books.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/courses.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/ethics07.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/praaciin-bhaarat-itihaas.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/lok-prashasan-ch01-arth-prakriti.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch02-siddhant-upagam.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch03-sangathan-siddhant.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch04-prashasnik-vyavhar.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch05-prashasnik-sansthaen.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch06-karmik-prashasan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch07-prashasan-mudde.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch08-prashasan-niyantran.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch09-tulnatmak-prashasan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch10-rajya-prashasan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan-ch11-jila-prashasan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/lok-prashasan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://omkarsir.com/prachin-bharat-ch01-prehistoric.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch02-sindhu-ghati.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch03-vedic-kaal.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch04-jain-baudh.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch05-mahajanapad.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch06-maurya-samrajya.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch07-mauryottar-kaal.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch08-gupta-samrajya.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch09-guptottar-harsha.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-ch10-sangam-yug.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/prachin-bharat-itihas.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/previous-year-papers.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch01-sthiti-vistar.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/premcqtest.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch02-apvah-tantra.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/pubadchpater02.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch03-jalvayu.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/rajasthan-bhugol-parichay.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch04-vanaspati-vanyajeev.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/rajasthan-bhugol-vibhajan.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch05-mrida-sansadhan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch06-krishi.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch07-pashudhan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch08-sinchai.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch09-jansankhya.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch10-shahrikaran.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch11-janjatiyan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch12-khanij-sansadhan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch13-geo-heritage.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-bhugol-ch14-paryatan.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-bhugol.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch01-srot.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/rajasthan-itihas.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch02-pragaitihasik.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch03-tamrapashan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch04-prachin-rajasthan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch05-gurjar-pratihar.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch06-mewar-sisodia.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch07-chauhan-vansh.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch08-rathore-marwar.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch09-kachhwaha-jaipur.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch10-anya-rajvansh.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch11-madhyakalin-prashasan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch12-maratha-british.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch13-1857-kranti.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch14-kisan-andolan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch15-prajamandal.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series-ch16-ekikaran.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-itihas-series.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch01-vastukala.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch02-smarak-jalashay.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch03-chitrakala.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch04-lok-nritya.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch05-sangeet.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch06-bhasha-boliyan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch07-lok-sahitya.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch08-dharmik-jeevan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch09-lok-devta.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch10-mele-tyohar.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch11-samajik-jeevan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch12-janjatiyan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti-ch13-vibhutiyan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/rajasthan-kala-sanskriti.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-lakes.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch01-rajyapal.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch02-mukhyamantri-mantriparishad.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch03-vidhansabha.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch04-sachivalaya.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch05-nyayik-vyavastha.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch06-aayog.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch07-lokayukta.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch08-jila-prashasan.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch09-police-prashasan.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch10-panchayati-raj.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch11-rajnitik-prakriya.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha-ch12-e-governance.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/rajasthan-rajyavyavastha.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/ras-foundation-v2.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch01-tarkik-tarkshakti.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch02-kathan-nishkarsh.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch03-shrinkhala-coding.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch04-rakt-sambandh-disha.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch05-venn-diagram.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch06-baithak-vyavastha.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch07-aakritiyan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch08-anupat-samanupat.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch09-labh-hani-pratishat.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch10-byaj-si-ci.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch11-mensuration.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch12-aankada-vishleshan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch13-madhya-madhyika.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning-ch14-permutation-probability.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/ras-pre-math-reasoning.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://omkarsir.com/samvidhan.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/vyavhar-ch01-buddhimatta.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://omkarsir.com/न्यायिक पुनरावलोकन _ न्यायिक सक्रियता _ PIL जनहित याचिका _nied (1).html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://omkarsir.com/vyavhar-ch02-netritva.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.7</priority>
   </url>
-<url>
-    <loc>https://omkarsir.com/previous-year-papers.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <priority>0.9</priority>
+  <url>
+    <loc>https://omkarsir.com/vyavhar-ch03-sanchar.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
   </url>
-<url>
-    <loc>https://omkarsir.com/books.html</loc>
-    <lastmod>2026-07-14</lastmod>
+  <url>
+    <loc>https://omkarsir.com/vyavhar-ch04-utkarsh-pushpan.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/vyavhar-ch05-burnout-tanav.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://omkarsir.com/vyavhar.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <priority>0.9</priority>
   </url>
 </urlset>
