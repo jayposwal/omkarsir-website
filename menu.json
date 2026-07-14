@@ -37,6 +37,11 @@
       "url": "/all-notes.html"
     },
     {
+      "label": "📝 RAS PYQ Papers",
+      "type": "link",
+      "url": "/ras-previous-year-papers.html"
+    },
+    {
       "label": "ℹ️ हमारे बारे में",
       "type": "link",
       "url": "/about.html"
