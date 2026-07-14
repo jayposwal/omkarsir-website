@@ -37,6 +37,11 @@
       "url": "/all-notes.html"
     },
     {
+      "label": "ℹ️ हमारे बारे में",
+      "type": "link",
+      "url": "/about.html"
+    },
+    {
       "label": "📱 App Download",
       "type": "link",
       "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
