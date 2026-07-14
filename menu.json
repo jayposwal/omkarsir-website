@@ -37,14 +37,9 @@
       "url": "/all-notes.html"
     },
     {
-      "label": "📝 RAS PYQ Papers",
+      "label": "📝 Previous Year Papers",
       "type": "link",
-      "url": "/ras-previous-year-papers.html"
-    },
-    {
-      "label": "👮 SI Previous Papers",
-      "type": "link",
-      "url": "/rajasthan-si-previous-year-papers.html"
+      "url": "/previous-year-papers.html"
     },
     {
       "label": "ℹ️ हमारे बारे में",
