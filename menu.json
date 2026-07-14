@@ -37,6 +37,20 @@
       "url": "/all-notes.html"
     },
     {
+      "label": "📚 Books (NCERT/RBSE)",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🕉️ NCERT Books",
+          "url": "/books.html#block-ncert"
+        },
+        {
+          "label": "🏛️ RBSE Books",
+          "url": "/books.html#block-rbse"
+        }
+      ]
+    },
+    {
       "label": "📝 Previous Year Papers",
       "type": "dropdown",
       "children": [
