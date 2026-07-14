@@ -61,7 +61,7 @@
       "url": "/all-notes.html"
     },
     {
-      "label": "📚 Books (NCERT/RBSE)",
+      "label": "📚 Books",
       "type": "dropdown",
       "children": [
         {
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "label": "📝 Previous Year Papers",
+      "label": "📝 PYQ Papers",
       "type": "dropdown",
       "children": [
         {
