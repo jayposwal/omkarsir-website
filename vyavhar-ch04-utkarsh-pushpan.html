@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 4: कार्यस्थल पर उत्कर्ष (पुष्पन) — व्यवहार (Behavior) | Omkar Sir</title>
+<meta name="description" content="कार्यस्थल पर उत्कर्ष (पुष्पन) (Flourishing at Work) — RAS Pre+Mains के लिए व्यवहार (Behavior) का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🌱 अध्याय 4/5 — व्यवहार (Behavior)</div>
+  <h1>कार्यस्थल पर उत्कर्ष (पुष्पन)</h1>
+  <div class="ch-sub">Flourishing at Work | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>उत्कर्ष ((पुष्पन) का अर्थ (Meaning of Flourishing) एवं सकारात्मक मनोविज्ञान</li><li>सेलिगमन का PERMA मॉडल (Seligman's PERMA Model)</li><li>सद्गुण एवं शक्तियाँ (Virtues &amp; Strengths)</li><li>RAISEC मॉडल (RAISEC/RIASEC Model)</li><li>व्यक्ति-वातावरण अनुकूलता (Person-Environment Fit — PFE)</li></ol></div>
+<p>कल्पना कीजिए — एक होनहार Doctor, जो गहन विश्लेषणात्मक व जिज्ञासु प्रवृत्ति (Investigative Type) का है, परिस्थितिवश एक Arts Teacher की नौकरी करने लगे। भले ही वेतन अच्छा हो, वह व्यक्ति कभी वास्तव में "पुष्पित" (Flourish) नहीं होगा — क्योंकि उसका व्यक्तित्व (Person) उसके कार्य-वातावरण (Environment) से मेल नहीं खाता। यही है व्यक्ति-वातावरण अनुकूलता (Person-Environment Fit) का सिद्धांत — सही व्यक्ति को सही वातावरण चाहिए, तभी वह वास्तविक रूप से खिल (Flourish) सकता है। ठीक इसी तरह, जब एक UPSC टॉपर जो स्वभाव से अन्वेषक (Investigative) व शोधपरक है, उसे IPS में केवल फाइलों वाली डेस्क-जॉब मिल जाए — तो वह ऊबा हुआ (Disengaged) महसूस करता है, भले ही पद प्रतिष्ठापूर्ण हो। इस अध्याय में हम समझेंगे कि कार्यस्थल पर वास्तविक संपन्नता (Flourishing) — केवल सफलता नहीं, बल्कि सकारात्मक भावनाओं, सद्गुणों, सही व्यक्तित्व-वातावरण तालमेल से कैसे प्राप्त होती है।</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">उत्कर्ष ((पुष्पन) का अर्थ (Meaning of Flourishing) एवं सकारात्मक मनोविज्ञान</span></h2>
+<p>उत्कर्ष (पुष्पन )(Flourishing) सकारात्मक मनोविज्ञान (Positive Psychology) की केंद्रीय अवधारणा है — जिसकी स्थापना मार्टिन सेलिगमन (Martin Seligman) ने की। परंपरागत मनोविज्ञान जहाँ मानसिक बीमारी (Mental Illness) के उपचार पर केंद्रित था, वहीं सकारात्मक मनोविज्ञान इस बात का अध्ययन करता है कि व्यक्ति व संगठन किस प्रकार वास्तव में "पनप" (Thrive) सकते हैं — केवल बीमारी की अनुपस्थिति ही पर्याप्त नहीं, बल्कि सकारात्मक कल्याण (Well-being) की उपस्थिति आवश्यक है।</p>
+<h3 class="ch-h3">📊  कीज़ का मानसिक स्वास्थ्य सातत्य मॉडल (Mental Health Continuum Model) ✍️ कोरी कीज़ (Corey Keyes)</h3><p>1. क्षीणता (Languishing) — जीवन में खालीपन, उदासीनता व शून्यता का अनुभव — बीमार नहीं परंतु स्वस्थ भी नहीं (कार्यस्थल पर "Quiet Quitting" जैसी स्थिति)। 2. मध्यम मानसिक स्वास्थ्य (Moderate Mental Health) — औसत स्तर का कल्याण, न अत्यधिक पुष्पित न क्षीण। 3. उत्कर्ष (पुष्पन)(Flourishing) — जीवन व कार्य में उच्च स्तर की सकारात्मक भावना, सार्थकता व संलग्नता का अनुभव — सर्वोच्च मानसिक स्वास्थ्य अवस्था। 4. महत्वपूर्ण बिंदु: मानसिक स्वास्थ्य केवल "बीमारी बनाम स्वस्थ" का द्वि-आधारी (Binary) मामला नहीं, बल्कि एक सातत्य (Continuum) है — जिसमें व्यक्ति क्षीणता से उत्कर्ष (पुष्पन)की ओर बढ़ सकता है।</p>
+<div class="tip-box"><div class="tip-title">💡  मानसिक स्वास्थ्य सातत्य का उदाहरण</div><p>एक कर्मचारी जो रोज़ ऑफिस आता है, काम पूरा करता है परंतु किसी भी चीज़ में उत्साह महसूस नहीं करता, न बीमार है न खुश — वह "Languishing" अवस्था में है। इसके विपरीत, एक शिक्षक जो कक्षा में पूरी तरह डूबकर पढ़ाता है, विद्यार्थियों से जुड़ाव महसूस करता है व अपने काम में अर्थ पाता है — वह "Flourishing" अवस्था में है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">सेलिगमन का PERMA मॉडल (Seligman's PERMA Model)</span></h2>
+<h3 class="ch-h3">🎓  PERMA मॉडल — उत्कर्ष (पुष्पन)के 5 स्तंभ प्रतिपादक (Thinker): मार्टिन सेलिगमन (Martin Seligman), पुस्तक: "Flourish" | वर्ष: 2011</h3><ul class="ch-list"><li>P — सकारात्मक भावनाएँ (Positive Emotions) — आनंद, कृतज्ञता, आशा, संतोष जैसी भावनाओं का अनुभव।</li><li>E — संलग्नता (Engagement) — कार्य में पूर्ण रूप से डूब जाना (Flow State) — समय का भान न रहना।</li><li>R — संबंध (Relationships) — सकारात्मक व सहयोगात्मक पारस्परिक संबंध — टीम भावना, सामाजिक सहयोग।</li><li>M — सार्थकता (Meaning) — अपने कार्य को अपने से बड़े उद्देश्य से जोड़ पाना — "मैं क्यों काम कर रहा हूँ"।</li><li>A — उपलब्धि (Accomplishment) — लक्ष्य प्राप्ति व सफलता की अनुभूति — योग्यता व निपुणता का एहसास।</li></ul>
+<div class="tip-box"><div class="tip-title">💡  PERMA मॉडल का उदाहरण</div><p>जब एक शिक्षक को कक्षा में विद्यार्थियों की सक्रिय भागीदारी (Engagement) मिलती है, और वह महसूस करता है कि वह भविष्य की पीढ़ी गढ़ रहा है (Meaning) — वह एक साथ PERMA के दो तत्वों का अनुभव करता है। इसी तरह, एक RAS अधिकारी जब सफलतापूर्वक किसी गाँव में पेयजल योजना पूरी करता है (Accomplishment) व ग्रामीणों का आभार पाता है (Positive Emotions), तो वह वास्तविक रूप से "पुष्पित" महसूस करता है।</p></div>
+<p>PERMA+4 विस्तार (नवीनतम शोध, 2025): हाल के शोधों ने मूल PERMA मॉडल में 4 अतिरिक्त तत्व जोड़े हैं — शारीरिक स्वास्थ्य (Physical Health), मानसिकता (Mindset), कार्य-वातावरण (Work Environment) व आर्थिक सुरक्षा (Economic Security) — जिसे "PERMA+4" कहा जाता है। शोध में कर्मचारियों को दो श्रेणियों में बाँटा गया — "Flourishers" (उच्च कल्याण वाले) व "Strugglers" — तथा पाया गया कि आत्म-करुणा (Self-Compassion) इन दोनों के बीच के अंतर को कम करने में सहायक है।</p>
+<p>चिक्सेंटमिहाली का प्रवाह सिद्धांत (Csikszentmihalyi's Flow Theory) — Engagement से संबंध</p>
+<h3 class="ch-h3">🎓  प्रवाह सिद्धांत (Flow: The Psychology of Optimal Experience) प्रतिपादक (Thinker): मिहाली चिक्सेंटमिहाली (Mihaly Csikszentmihalyi) | वर्ष: 1990</h3><ul class="ch-list"><li>प्रवाह (Flow) वह मानसिक अवस्था है जिसमें व्यक्ति किसी कार्य में इतना डूब जाता है कि समय, स्वयं व आसपास की चेतना लगभग समाप्त हो जाती है — यह PERMA के "Engagement (E)" तत्व का सैद्धांतिक आधार है।</li><li>प्रवाह तभी उत्पन्न होता है जब कार्य की चुनौती (Challenge) व व्यक्ति का कौशल (Skill) संतुलित हों — न कार्य बहुत कठिन हो (चिंता/Anxiety उत्पन्न होगी), न बहुत सरल (बोरियत/Boredom उत्पन्न होगी)।</li><li>प्रवाह अवस्था के लक्षण: पूर्ण एकाग्रता, आंतरिक प्रेरणा (Intrinsic Motivation), आत्म-चेतना का लोप, कार्य पर नियंत्रण का एहसास।</li><li>कार्यस्थल पर प्रवाह उत्पन्न करने हेतु प्रबंधकों को कर्मचारी के कौशल-स्तर के अनुरूप उपयुक्त चुनौतीपूर्ण कार्य (Right-Challenge Tasks) सौंपने चाहिए।</li></ul>
+<div class="tip-box"><div class="tip-title">💡  प्रवाह (Flow) का उदाहरण</div><p>एक अनुभवी IAS अधिकारी जब किसी जटिल प्रशासनिक संकट (जैसे आपदा प्रबंधन) को सुलझाने में इतना तल्लीन हो जाता है कि उसे भूख-प्यास तक का भान नहीं रहता, और काम पूरा होने पर गहन संतुष्टि मिलती है — यह "Flow" अवस्था है। इसके विपरीत, यदि उसी अधिकारी को बार-बार अत्यंत सरल, नियमित फाइल-वर्क दिया जाए (Skill से कम Challenge), तो वह बोरियत (Boredom) महसूस करेगा — Flow नहीं आएगा।</p></div>
+<h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">सद्गुण एवं शक्तियाँ (Virtues &amp; Strengths)</span></h2>
+<p>अरस्तू का Eudaimonia (सच्ची प्रसन्नता)</p><p>अरस्तू (Aristotle) ने "यूडैमोनिया" (Eudaimonia) की अवधारणा दी — जिसका अर्थ है सद्गुणपूर्ण जीवन जीने व अपनी पूर्ण क्षमता को साकार करने से प्राप्त गहन, सार्थक प्रसन्नता — जो क्षणिक सुख (Hedonia — जैसे भोजन/मनोरंजन से मिलने वाला आनंद) से भिन्न है। कार्यस्थल पर Eudaimonia का अर्थ है — केवल वेतन/पद से संतोष नहीं, बल्कि कार्य में सद्गुण, कौशल व उद्देश्य की पूर्ण अभिव्यक्ति से मिलने वाली गहन संतुष्टि।</p>
+<p>VIA वर्गीकरण — 24 चारित्रिक शक्तियाँ एवं 6 सद्गुण</p>
+<h3 class="ch-h3">🎓  VIA वर्गीकरण (Values in Action Classification) प्रतिपादक (Thinker): क्रिस्टोफर पीटरसन व मार्टिन सेलिगमन (Christopher Peterson &amp; Martin Seligman) | वर्ष: 2004</h3><ul class="ch-list"><li>विश्व की प्रमुख धार्मिक व दार्शनिक परंपराओं (कन्फ्यूशियसवाद, बौद्ध धर्म, यहूदी-ईसाई परंपरा आदि) के गहन अध्ययन से 55 वैज्ञानिकों के सहयोग से यह वर्गीकरण तैयार किया गया।</li><li>24 विशिष्ट "चारित्रिक शक्तियों" (Character Strengths) को 6 व्यापक "सद्गुणों" (Virtues) के अंतर्गत वर्गीकृत किया गया।</li><li>प्रत्येक व्यक्ति में सभी 24 शक्तियाँ अलग-अलग मात्रा में विद्यमान होती हैं — जिससे हर व्यक्ति की एक अनूठी "शक्ति-प्रोफाइल" (Strengths Signature) बनती है।</li><li>अपनी शीर्ष शक्तियों (Signature Strengths) का प्रतिदिन उपयोग करने से जीवन-संतुष्टि व कार्यस्थल प्रदर्शन दोनों में सुधार पाया गया है।</li></ul>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>सद्गुण (Virtue)</th><th>संबंधित चारित्रिक शक्तियाँ (उदाहरण)</th></tr></thead><tbody><tr><td>प्रज्ञा/ज्ञान (Wisdom)</td><td>सृजनात्मकता, जिज्ञासा, निर्णय-क्षमता, सीखने का प्रेम, दूरदृष्टि (Perspective)।</td></tr><tr><td>साहस (Courage)</td><td>वीरता (Bravery), दृढ़ता (Persistence), सत्यनिष्ठा (Honesty), उत्साह (Zest)।</td></tr><tr><td>मानवता (Humanity)</td><td>प्रेम (Love), दयालुता (Kindness), सामाजिक बुद्धिमत्ता (Social Intelligence)।</td></tr><tr><td>न्याय (Justice)</td><td>टीम-वर्क, निष्पक्षता (Fairness), नेतृत्व (Leadership)।</td></tr><tr><td>संयम (Temperance)</td><td>क्षमाशीलता (Forgiveness), विनम्रता (Humility), विवेक (Prudence), आत्म-नियमन (Self-Regulation)।</td></tr><tr><td>उत्कृष्टता/पारगमन (Transcendence)</td><td>सौंदर्य-बोध, कृतज्ञता (Gratitude), आशा (Hope), हास्य-बोध (Humor), आध्यात्मिकता (Spirituality)।</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  VIA शक्तियों का उदाहरण</div><p>एक जिला कलेक्टर की मुख्य शक्तियाँ (Signature Strengths) यदि नेतृत्व (Leadership — न्याय सद्गुण) व निष्पक्षता (Fairness) हों, तो वह राजस्व वितरण (Revenue Distribution) व आपदा राहत में सर्वाधिक प्रभावी सिद्ध होगा। इसी प्रकार, एक शिक्षक जिसकी शीर्ष शक्ति "सीखने का प्रेम" (Love of Learning — प्रज्ञा सद्गुण) है, वह स्वाभाविक रूप से अपने विद्यार्थियों में भी जिज्ञासा जगा पाता है।</p></div>
+<p>शक्ति-आधारित उपागम — Gallup CliftonStrengths</p>
+<p>CliftonStrengths (पूर्व नाम: StrengthsFinder): गैलप संस्थान (Gallup) द्वारा 1998 में विकसित यह उपकरण मूलतः "StrengthsFinder" कहलाता था; 2004 में डॉन क्लिफ्टन (Don Clifton) के सम्मान में इसे "Clifton StrengthsFinder" तथा 2015 में पूर्ण रूप से "CliftonStrengths" नाम दिया गया। यह उपकरण व्यक्ति की 34 प्रतिभा-विषयों (Talent Themes) में से शीर्ष शक्तियों की पहचान करता है — दृष्टिकोण यह है कि "कमजोरी सुधारने" के बजाय "शक्तियों को निखारने" पर ध्यान केंद्रित करने से बेहतर प्रदर्शन मिलता है (Strengths-Based Approach)।</p>
+<p>कार्यस्थल पर अनुप्रयोग — Strengths Mapping एवं Job Crafting</p>
+<ul class="ch-list"><li>शक्ति-मानचित्रण (Strengths Mapping) — कर्मचारियों की शक्तियों की पहचान कर उन्हें उपयुक्त भूमिकाओं में नियोजित करना।</li><li>जॉब क्राफ्टिंग (Job Crafting) — कर्मचारी स्वयं अपने कार्य की सीमाओं (Task, Relational, Cognitive) को अपनी शक्तियों व रुचियों के अनुरूप ढालता है।</li><li>अनुसंधान दर्शाते हैं कि जो कर्मचारी प्रतिदिन अपनी शीर्ष शक्तियों का प्रयोग करते हैं, वे उच्च संलग्नता (Engagement) व निम्न बर्नआउट (Burnout) का अनुभव करते हैं।</li></ul>
+<div class="tip-box"><div class="tip-title">💡  Job Crafting का उदाहरण</div><p>एक क्लर्क जिसकी शक्ति रचनात्मकता (Creativity) है, अपने नियमित डेटा-एंट्री कार्य में स्वयं एक सरल Excel Automation Tool बना लेता है जिससे काम तेज़ हो जाए — यह जॉब क्राफ्टिंग है, जहाँ उसने अपनी शक्ति के अनुसार कार्य को नया आकार दिया, भले ही यह उसके job description में न लिखा हो।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">4</span><span class="ch-h2-text">RAISEC मॉडल (RAISEC/RIASEC Model)</span></h2>
+<h3 class="ch-h3">🎓  RAISEC/RIASEC सिद्धांत (Holland's Theory of Vocational Choice) प्रतिपादक (Thinker): जॉन हॉलैंड (John Holland) | वर्ष: 1959 (मूल सिद्धांत), 1997 (परिष्कृत संस्करण)</h3><ul class="ch-list"><li>हॉलैंड के अनुसार व्यक्ति के व्यवसाय-चयन (Career Choice) व कार्य-संतुष्टि का सीधा संबंध उसके व्यक्तित्व-प्रकार व कार्य-वातावरण के मेल से है।</li><li>व्यक्तित्व को 6 प्रकारों में वर्गीकृत किया गया — Realistic, Investigative, Artistic, Social, Enterprising, Conventional — संक्षेप में RIASEC/RAISEC।</li><li>प्रत्येक व्यक्ति में एक से अधिक प्रकार की प्रवृत्तियाँ होती हैं, परंतु सामान्यतः 2-3 प्रकार प्रभावी होते हैं जिन्हें "Holland Code" कहा जाता है (जैसे SAE, RIC)।</li><li>जितना अधिक व्यक्ति का व्यक्तित्व-प्रकार उसके कार्य-वातावरण से मेल खाता है, उतनी ही अधिक कार्य-संतुष्टि, स्थिरता (Stability) व प्रदर्शन (Performance) प्राप्त होता है।</li></ul>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रकार</th><th>विशेषताएँ</th><th>उपयुक्त करियर उदाहरण</th></tr></thead><tbody><tr><td>R — यथार्थवादी (Realistic)</td><td>व्यावहारिक, हाथों से काम करना पसंद, मशीनों/औजारों में रुचि।</td><td>इंजीनियर, बढ़ई (Carpenter), किसान, पायलट।</td></tr><tr><td>I — जिज्ञासु (Investigative)</td><td>विश्लेषणात्मक, वैज्ञानिक सोच, समस्या-समाधान में रुचि।</td><td>वैज्ञानिक, डॉक्टर, शोधकर्ता (Researcher), डेटा एनालिस्ट।</td></tr><tr><td>A — कलात्मक (Artistic)</td><td>रचनात्मक, अभिव्यक्तिशील, अपरंपरागत सोच।</td><td>डिज़ाइनर, लेखक, अभिनेता, संगीतकार।</td></tr><tr><td>S — सामाजिक (Social)</td><td>लोगों से जुड़ाव, सहायता व शिक्षण में रुचि।</td><td>शिक्षक, सामाजिक कार्यकर्ता, काउंसलर, IAS (जन-सेवा भूमिका)।</td></tr><tr><td>E — उद्यमी (Enterprising)</td><td>नेतृत्व-क्षमता, प्रेरक, जोखिम लेने में सक्षम।</td><td>मैनेजर, वकील, उद्यमी (Entrepreneur), राजनेता।</td></tr><tr><td>C — 
+परंपरागत (Conventional)</td><td>व्यवस्थित, विस्तार-उन्मुख, नियम-पालन में दक्ष।</td><td>अकाउंटेंट, डेटा एंट्री ऑपरेटर, प्रशासनिक अधिकारी।</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  RAISEC मॉडल के उदाहरण</div><p>एक UPSC टॉपर जो स्वभाव से अन्वेषक (Investigative — I) है, यदि उसे IPS में मिलने वाली नियमित डेस्क-जॉब में लगा दिया जाए (जो Conventional — C वातावरण है), तो वह स्वयं को "गलत जगह" (Misfit) महसूस करेगा — यही Person-Fit-Environment की आवश्यकता को दर्शाता है। इसके विपरीत, एक Social (S) प्रवृत्ति वाला व्यक्ति जब IAS बनकर सीधे जन-सेवा (जैसे शिक्षा/स्वास्थ्य विभाग) में कार्य करता है, तो वह स्वाभाविक रूप से "पुष्पित" होता है।</p></div>
+<p>Holland Code एवं SDS उपकरण</p>
+<ul class="ch-list"><li>Holland Code — व्यक्ति के शीर्ष 3 प्रकारों का संयोजन (जैसे SAE — Social, Artistic, Enterprising) — करियर मार्गदर्शन हेतु प्रयुक्त।</li><li>SDS (Self-Directed Search) — हॉलैंड द्वारा विकसित एक स्व-मूल्यांकन उपकरण, जो व्यक्ति को स्वयं अपना Holland Code पहचानने में सहायता करता है।</li><li>अनुप्रयोग: करियर काउंसलिंग (Career Counseling), नौकरी प्लेसमेंट (Job Placement), टीम-निर्माण (Team Formation — पूरक व्यक्तित्व-प्रकारों को एक टीम में जोड़ना)।</li></ul>
+<div class="tip-box"><div class="tip-title">💡  Job Placement एवं Team Formation का उदाहरण</div><p>एक कंपनी का HR रिक्रूटर जब Sales भूमिका हेतु उम्मीदवार चुनता है, तो Enterprising (E) व Social (S) Holland Code वाले उम्मीदवार को प्राथमिकता देता है, न कि Conventional (C) प्रकार को — यह Job Placement में RAISEC का प्रयोग है। इसी तरह, एक प्रोजेक्ट टीम बनाते समय Manager जानबूझकर एक Artistic (रचनात्मक विचार हेतु), एक Investigative (विश्लेषण हेतु) व एक Conventional (व्यवस्था/दस्तावेज़ीकरण हेतु) व्यक्ति को साथ रखता है — यह पूरक (Complementary) व्यक्तित्व-प्रकारों द्वारा संतुलित Team Formation है।</p></div>
+<p>राजस्थान संदर्भ (Rajasthan Context): राजस्थान में RSLDC (Rajasthan Skill &amp; Livelihoods Development Corporation) द्वारा प्रत्येक जिले में मासिक "कौशल-रोजगार-शिक्षा मेले" (SEE Fairs) आयोजित किए जाते हैं जहाँ युवाओं को करियर काउंसलिंग व कौशल-मानचित्रण की सुविधा मिलती है — ऐसे करियर-मार्गदर्शन केंद्रों में RAISEC/Holland Code जैसे वैज्ञानिक उपकरणों का प्रयोग विद्यार्थियों को सही करियर चुनने में सहायक सिद्ध हो सकता है, विशेषकर राजकीय विद्यालयों में करियर काउंसलिंग कार्यक्रमों में।</p>
+<h2 class="ch-h2"><span class="ch-h2-num">5</span><span class="ch-h2-text">व्यक्ति-वातावरण अनुकूलता (Person-Environment Fit — PFE)</span></h2>
+<p>व्यक्ति-वातावरण अनुकूलता का सिद्धांत बताता है कि कर्मचारी की संतुष्टि, प्रदर्शन व दीर्घकालिक स्थिरता तभी सर्वोत्तम होती है जब उसके व्यक्तिगत गुण (Knowledge, Skills, Abilities, Values) उसके कार्य-वातावरण के अनुरूप हों। इसे 4 उप-प्रकारों में विभाजित किया गया है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रकार</th><th>विवरण</th><th>उदाहरण</th></tr></thead><tbody><tr><td>व्यक्ति-कार्य अनुकूलता (Person-Job Fit / PJ Fit)</td><td>व्यक्ति के ज्ञान, कौशल व क्षमताओं (KSA) का विशिष्ट कार्य की माँगों से मेल।</td><td>एक तकनीकी रूप से दक्ष इंजीनियर को उसकी विशेषज्ञता के अनुरूप तकनीकी विभाग में नियुक्त करना।</td></tr><tr><td>व्यक्ति-संगठन अनुकूलता (Person-Organization Fit / PO Fit)</td><td>व्यक्ति के मूल्यों (Values) का संगठन की संस्कृति व मूल्यों से सामंजस्य।</td><td>जन-सेवा भावना रखने वाला व्यक्ति सरकारी प्रशासनिक सेवा में बेहतर ढंग से समायोजित होता है, न कि लाभ-केंद्रित निजी कंपनी में।</td></tr><tr><td>व्यक्ति-समूह अनुकूलता (Person-Group Fit / PG Fit)</td><td>व्यक्ति की कार्यशैली का अपनी टीम/समूह के साथ तालमेल।</td><td>एक अंतर्मुखी (Introvert) शोधकर्ता को स्वतंत्र शोध-टीम में रखना, न कि उच्च-दबाव वाली सेल्स टीम में।</td></tr><tr><td>व्यक्ति-व्यवसाय अनुकूलता (Person-Vocation Fit / PV Fit)</td><td>व्यक्ति की समग्र रुचियों व करियर-आकांक्षाओं का उसके चुने गए व्यवसाय/पेशे से मेल।</td><td>शिक्षण में गहरी रुचि रखने वाला व्यक्ति शिक्षक/प्रोफेसर का पेशा चुनकर दीर्घकालिक संतुष्टि पाता है।</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  Person-Environment Fit का उदाहरण</div><p>एक Investigative (I) प्रवृत्ति के डॉक्टर को यदि रिसर्च-उन्मुख अस्पताल (जहाँ नए इलाज पर शोध होता है) में नियुक्त किया जाए — उच्च PJ Fit व PV Fit दोनों प्राप्त होंगे, और वह वास्तव में पुष्पित होगा। इसके विपरीत, यदि वही डॉक्टर एक साधारण OPD में रूटीन कार्य करे, तो फिट कम होने से संतुष्टि व प्रदर्शन दोनों घटेंगे।</p></div>
+<p>महत्व (Importance of PFE)</p>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">✅ उच्च Fit (Good Fit) के परिणाम</div><ul class="ch-list"><li>उच्च नौकरी-संतुष्टि (Job Satisfaction)।</li><li>बेहतर प्रदर्शन (Performance) व उत्पादकता।</li><li>कर्मचारी प्रतिधारण (Retention) में वृद्धि, Attrition में कमी।</li><li>उच्च कल्याण (Well-being) व निम्न बर्नआउट।</li></ul></div><div class="twocol-col"><div class="twocol-head">❌ निम्न Fit (Poor Fit) के परिणाम</div><ul class="ch-list"><li>निम्न संतुष्टि, कार्य में अरुचि (Disengagement)।</li><li>उच्च Turnover Intention (नौकरी छोड़ने की प्रवृत्ति)।</li><li>तनाव व बर्नआउट का जोखिम बढ़ना।</li><li>संगठनात्मक प्रतिबद्धता (Commitment) में कमी।</li></ul></div></div>
+<p>मूल्यांकन उपकरण (Assessment Tools)</p>
+<ul class="ch-list"><li>O*NET (Occupational Information Network) — अमेरिकी श्रम विभाग द्वारा विकसित व्यापक व्यवसाय-सूचना डेटाबेस, जो प्रत्येक व्यवसाय हेतु आवश्यक कौशल, ज्ञान व व्यक्तित्व-लक्षणों का विवरण देता है।</li><li>MBTI (Myers-Briggs Type Indicator) — व्यक्तित्व वर्गीकरण उपकरण, कार्यस्थल में टीम-निर्माण व भूमिका-निर्धारण हेतु प्रयुक्त।</li><li>Big Five Personality (OCEAN) — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism — कार्य-प्रदर्शन के पूर्वानुमान हेतु सर्वाधिक वैज्ञानिक रूप से मान्य मॉडल।</li></ul>
+<p>वर्तमान आँकड़े (Latest Data — Gallup Report): गैलप के नवीनतम "State of the Global Workplace" रिपोर्ट के अनुसार वैश्विक कर्मचारी संलग्नता (Employee Engagement) घटकर मात्र 20% रह गई है — जो विगत वर्षों में सबसे निम्न स्तर है। भारत में भी लगभग आधे कर्मचारी नौकरी बदलने की इच्छा रखते हैं तथा प्रबंधकीय स्तर पर संलग्नता में उल्लेखनीय गिरावट देखी गई है। यह दर्शाता है कि Person-Environment Fit व Strengths-Based Approach जैसे उपाय आज कार्यस्थल पर उत्कर्ष (पुष्पन)हेतु पहले से कहीं अधिक प्रासंगिक हैं।</p>
+<blockquote class="ch-quote">"कल्याण (Well-being) केवल आपके दिमाग में नहीं हो सकता — यह अच्छा महसूस करने के साथ-साथ वास्तविक सार्थकता, अच्छे संबंधों व उपलब्धि का संयोजन है।" — मार्टिन सेलिगमन (Martin Seligman)</blockquote>
+<div class="angle-box"><div class="angle-title">🎯  कार्यस्थल पर उत्कर्ष (पुष्पन)(Flourishing at Work) — सभी विषय — RAS Mains उत्तर लेखन कोण New Pattern 2026: केवल 5-अंक (60-70 शब्द)</div><ul class="ch-list"><li>परिभाषा (1 line): संबंधित मॉडल/सिद्धांत (जैसे PERMA मॉडल, RAISEC, Person-Environment Fit) को प्रतिपादक सहित एक पंक्ति में परिभाषित करें।</li><li>2-3 बिंदु: प्रतिपादक + वर्ष, मुख्य घटक (जैसे PERMA के 5 तत्व या RAISEC के 6 प्रकार), एक विशेषता/महत्व।</li><li>1 उदाहरण (Compulsory): कार्यस्थल/प्रशासनिक उदाहरण अवश्य दें — जैसे "Investigative Doctor का Desk Job में Misfit" या "Collector की Signature Strength — Fairness"।</li><li>शब्द-सीमा: 60-70 शब्द — परिभाषा में ही उत्तर समाप्त करें, अतिरिक्त विस्तार न करें।</li></ul></div>
+<h3 class="ch-h3">📌  परीक्षा हेतु महत्वपूर्ण तथ्य</h3><p>1. उत्कर्ष (पुष्पन)(Flourishing) सकारात्मक मनोविज्ञान (Positive Psychology — संस्थापक: मार्टिन सेलिगमन) की केंद्रीय अवधारणा है। 2. कीज़ का मानसिक स्वास्थ्य सातत्य मॉडल: Languishing → Moderate Mental Health → Flourishing। 3. सेलिगमन का PERMA मॉडल (2011, पुस्तक "Flourish"): Positive Emotions, Engagement, Relationships, Meaning, Accomplishment। 4. PERMA+4 (नवीनतम विस्तार, 2025): Physical Health, Mindset, Work Environment, Economic Security जोड़े गए। 5. चिक्सेंटमिहाली का प्रवाह सिद्धांत (Flow Theory, 1990): Challenge व Skill के संतुलन से उत्पन्न पूर्ण-तल्लीनता की अवस्था — PERMA के Engagement (E) का सैद्धांतिक आधार। 6. अरस्तू का Eudaimonia — सद्गुणपूर्ण जीवन से प्राप्त गहन प्रसन्नता, क्षणिक सुख (Hedonia) से भिन्न। 7. VIA वर्गीकरण (Peterson &amp; Seligman, 2004): 24 चारित्रिक शक्तियाँ → 6 सद्गुण (Wisdom, Courage, Humanity, Justice, Temperance, Transcendence)। 8. Gallup CliftonStrengths: मूलतः 1998 में "StrengthsFinder", 2004 में "Clifton StrengthsFinder", 2015 से "CliftonStrengths" — 34 Talent Themes। 9. शक्ति-आधारित उपागम (Strengths-Based Approach): कमजोरी सुधारने के बजाय शक्तियों को निखारना। 10. जॉब क्राफ्टिंग (Job Crafting): कर्मचारी स्वयं अपने कार्य को अपनी शक्तियों के अनुरूप ढालता है। 11. हॉलैंड का RIASEC/RAISEC सिद्धांत (1959, परिष्कृत 1997): 6 व्यक्तित्व प्रकार — R, I, A, S, E, C। 12. Holland Code: व्यक्ति के शीर्ष 3 प्रभावी प्रकारों का संयोजन (जैसे SAE, RIC)। 13. SDS (Self-Directed Search): हॉलैंड द्वारा विकसित स्व-मूल्यांकन करियर-काउंसलिंग उपकरण। 14. व्यक्ति-वातावरण अनुकूलता (PFE) के 4 प्रकार: PJ Fit (कार्य), PO Fit (संगठन), PG Fit (समूह), PV Fit (व्यवसाय)। 15. PJ Fit — KSA (Knowledge, Skills, Abilities) का कार्य से मेल; PO Fit — मूल्यों (Values) का संगठन-संस्कृति से मेल। 16. मूल्यांकन उपकरण: O*NET (व्यवसाय-सूचना डेटाबेस), MBTI (व्यक्तित्व प्रकार), Big Five/OCEAN (वैज्ञानिक रूप से सर्वाधिक मान्य)। 17. RSLDC (राजस्थान) द्वारा मासिक SEE Fairs — करियर काउंसलिंग व कौशल-मानचित्रण हेतु मंच। 18. उच्च PFE के परिणाम: उच्च संतुष्टि, प्रदर्शन, प्रतिधारण (Retention); निम्न PFE: उच्च Turnover, बर्नआउट जोखिम। 19. गैलप की नवीनतम रिपोर्ट अनुसार वैश्विक कर्मचारी संलग्नता (Engagement) घटकर 20% — निम्नतम स्तर। 20. PERMA का प्रत्येक तत्व कार्यस्थल पर पृथक रूप से मापा जा सकता है — Workplace PERMA-Profiler उपकरण द्वारा। 21. Job Crafting के 3 आयाम: Task Crafting, Relational Crafting, Cognitive Crafting।</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न + संभावित प्रश्न (PYQs) New Pattern 2026: केवल 5-अंक (60-70 शब्द) प्रश्न</h3><p>Q1. संभावित प्रश्न (5 अंक): सेलिगमन के PERMA मॉडल के 5 तत्वों की व्याख्या उदाहरण सहित कीजिए। Q2. संभावित प्रश्न (5 अंक): VIA वर्गीकरण के अंतर्गत चारित्रिक शक्तियों एवं सद्गुणों को स्पष्ट कीजिए। Q3. संभावित प्रश्न (5 अंक): जॉन हॉलैंड के RAISEC सिद्धांत के 6 व्यक्तित्व प्रकारों को उदाहरण सहित समझाइए। Q4. संभावित प्रश्न (5 अंक): व्यक्ति-वातावरण अनुकूलता (Person-Environment Fit) क्या है? इसके प्रकारों की व्याख्या कीजिए। Q5. संभावित प्रश्न (5 अंक): कार्यस्थल पर उत्कर्ष (पुष्पन)(Flourishing) की अवधारणा को सकारात्मक मनोविज्ञान के संदर्भ में स्पष्ट कीजिए। Q6. संभावित प्रश्न (5 अंक): शक्ति-आधारित उपागम (Strengths-Based Approach) एवं जॉब क्राफ्टिंग पर संक्षिप्त टिप्पणी लिखिए। Q7. संभावित प्रश्न (5 अंक): अरस्तू के Eudaimonia की अवधारणा कार्यस्थल संतुष्टि से किस प्रकार संबंधित है? Q8. संभावित प्रश्न (5 अंक): Person-Job Fit एवं Person-Organization Fit में अंतर स्पष्ट कीजिए। Q9. संभावित प्रश्न (5 अंक): चिक्सेंटमिहाली के प्रवाह सिद्धांत (Flow Theory) को PERMA मॉडल के Engagement तत्व के संदर्भ में समझाइए। Q10. संभावित प्रश्न (5 अंक): RAISEC मॉडल का टीम-निर्माण (Team Formation) एवं नौकरी प्लेसमेंट में अनुप्रयोग स्पष्ट कीजिए।</p>
+<h3 class="ch-h3">कालक्रम/Timeline — उत्कर्ष (पुष्पन)एवं संबंधित सिद्धांत</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>वर्ष</th><th>सिद्धांत/घटना</th><th>विचारक/स्रोत</th></tr></thead><tbody><tr><td>प्राचीन काल</td><td>Eudaimonia की अवधारणा — सद्गुणपूर्ण जीवन से प्रसन्नता</td><td>अरस्तू (Aristotle)</td></tr><tr><td>1959</td><td>RIASEC/RAISEC सिद्धांत का मूल प्रतिपादन</td><td>जॉन हॉलैंड (John Holland)</td></tr><tr><td>1998</td><td>StrengthsFinder उपकरण विकसित</td><td>गैलप (Gallup) संस्थान</td></tr><tr><td>1997</td><td>RIASEC सिद्धांत का परिष्कृत संस्करण</td><td>जॉन हॉलैंड</td></tr><tr><td>2004</td><td>VIA वर्गीकरण (24 शक्तियाँ, 6 सद्गुण); StrengthsFinder का नाम बदलकर "Clifton StrengthsFinder"</td><td>क्रिस्टोफर पीटरसन व मार्टिन सेलिगमन</td></tr><tr><td>1990</td><td>प्रवाह सिद्धांत (Flow: Psychology of Optimal Experience)</td><td>मिहाली चिक्सेंटमिहाली</td></tr><tr><td>2011</td><td>PERMA मॉडल (पुस्तक "Flourish")</td><td>मार्टिन सेलिगमन</td></tr><tr><td>2015</td><td>StrengthsFinder का नाम बदलकर "CliftonStrengths"</td><td>गैलप संस्थान</td></tr><tr><td>2019</td><td>RSLDC द्वारा मासिक SEE Fairs — करियर काउंसलिंग विस्तार</td><td>राजस्थान सरकार</td></tr><tr><td>2025</td><td>PERMA+4 विस्तार (Physical Health, Mindset, Work Environment, Economic Security)</td><td>अकादमिक शोध</td></tr><tr><td>2026</td><td>गैलप वैश्विक कार्यस्थल रिपोर्ट — वैश्विक संलग्नता 20% (न्यूनतम स्तर)</td><td>गैलप संस्थान</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="vyavhar-ch03-sanchar.html" class="ch-nav-btn">← अध्याय 3: कार्यस्थल पर संचार</a>
+  <a href="vyavhar-ch05-burnout-tanav.html" class="ch-nav-btn ch-nav-next">अध्याय 5: बर्नआउट, तनाव एवं सामना →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="vyavhar.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>
