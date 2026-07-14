@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 10: साधारण एवं चक्रवृद्धि ब्याज — RAS Pre — गणित एवं तर्कशक्ति | Omkar Sir</title>
+<meta name="description" content="साधारण एवं चक्रवृद्धि ब्याज (Simple &amp; Compound Interest) — RAS Pre+Mains के लिए RAS Pre — गणित एवं तर्कशक्ति का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🏦 अध्याय 10/14 — RAS Pre — गणित एवं तर्कशक्ति</div>
+  <h1>साधारण एवं चक्रवृद्धि ब्याज</h1>
+  <div class="ch-sub">Simple &amp; Compound Interest | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>साधारण ब्याज (Simple Interest)</li><li>चक्रवृद्धि ब्याज (Compound Interest)</li><li>SI-CI का अंतर एवं संबंध (Relation Between SI &amp; CI)</li></ol></div>
+<p>🎬 एक कहानी से शुरुआत करते हैं...</p><p>कोटा में पढ़ने वाले दो दोस्त — विकास और अंकित — दोनों के पास ₹10,000-10,000 बचे थे। विकास ने अपने पैसे एक ऐसी स्कीम में लगाए जो हर साल मूलधन पर सीधे 10% ब्याज देती थी (साधारण ब्याज)। अंकित ने अपने पैसे बैंक में लगाए, जहाँ हर साल का ब्याज अगले साल के मूलधन में जुड़ जाता था (चक्रवृद्धि ब्याज)। पहले साल दोनों को बराबर ₹1,000 का ब्याज मिला और दोनों खुश थे। लेकिन दूसरे साल अंकित को थोड़ा ज्यादा मिला, तीसरे साल और ज्यादा, और 10 साल बाद अंकित के पैसे विकास से काफी आगे निकल चुके थे — जबकि दोनों ने एक ही दर पर पैसा लगाया था!</p><p>यही है साधारण ब्याज (Simple Interest) और चक्रवृद्धि ब्याज (Compound Interest) का असली फर्क — एक में ब्याज हमेशा शुरुआती मूलधन पर ही मिलता है, दूसरे में ब्याज पर भी ब्याज मिलता रहता है। RAS Pre में हर साल इस टॉपिक से प्रश्न पक्के आते हैं — कभी सीधे ब्याज निकालने को कहा जाता है, कभी CP-CI का अंतर देकर मूलधन पूछा जाता है। चलिए शुरू करते हैं — विकास और अंकित की दौड़ को गणित से समझेंगे!</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">साधारण ब्याज (Simple Interest)</span></h2>
+<p>जब कोई राशि उधार दी या ली जाती है, तो उसे "मूलधन (Principal, P)" कहते हैं, और इसके उपयोग के बदले जो अतिरिक्त राशि दी जाती है उसे "ब्याज (Interest)" कहते हैं। साधारण ब्याज में ब्याज की गणना हमेशा मूल मूलधन पर ही होती है — चाहे कितने भी वर्ष बीत जाएं, हर साल का ब्याज बराबर रहता है। यही वजह है कि साधारण ब्याज की गणना बहुत सीधी होती है: मूलधन × दर × समय को 100 से भाग देना। RAS Pre में इस टॉपिक पर मूलधन ज्ञात करना, दर ज्ञात करना, समय ज्ञात करना, तथा राशि के दुगुना/तिगुना होने में लगने वाला समय — ये चार प्रमुख प्रश्न-प्रकार पूछे जाते हैं।</p>
+<div class="formula-box"><div class="formula-title">📐  साधारण ब्याज (Simple Interest) — सूत्र (Formula)</div><p>SI = (P × R × T) / 100 P = (100 × SI)/(R×T)  |  R = (100 × SI)/(P×T)  |  T = (100 × SI)/(P×R) राशि (Amount) A = P + SI = P × [1 + (RT/100)] राशि n गुना होने में समय: (n−1) = (R×T)/100  ⇒  T = [(n−1)×100]/R</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 1 (आसान) — कोई राशि साधारण ब्याज की दर से 20 वर्ष में स्वयं की 3 गुना हो जाती है। कितने वर्षों में उसी दर से स्वयं की 2 गुना हो जाएगी?</div><p>चरण 1: 3 गुना होने पर: (3−1) = (R×20)/100  ⇒  R = 200/20 = 10% चरण 2: 2 गुना होने के लिए: (2−1) = (R×T)/100  ⇒  1 = (10×T)/100 चरण 3: T = 100/10 = 10 वर्ष ✅ उत्तर (Answer): 10 वर्ष</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 2 (मध्यम) — एक व्यक्ति ₹5,000 की राशि का कुछ भाग 4% तथा शेष 5% की साधारण ब्याज दर पर उधार देता है। 2 वर्षों बाद कुल ब्याज ₹440 मिलता है। दोनों दरों पर लगाई गई राशि का अनुपात ज्ञात करें।</div><p>चरण 1: माना 4% पर लगाई राशि = x, तो 5% पर लगाई राशि = (5000−x) चरण 2: समीकरण: (x×4×2)/100 + [(5000−x)×5×2]/100 = 440 चरण 3: 0.08x + 0.10(5000−x) = 440  ⇒  0.08x+500−0.10x=440 चरण 4: −0.02x = −60  ⇒  x = 3000, दूसरी राशि = 2000 चरण 5: अनुपात = 3000:2000 = 3:2 ✅ उत्तर (Answer): 3 : 2</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 3 (कठिन) — किसी राशि पर 4% वार्षिक दर से 8 महीने का साधारण ब्याज, उसी राशि पर 5% वार्षिक दर से 15 महीने के साधारण ब्याज से ₹129 कम है। वह राशि ज्ञात करें।</div><p>चरण 1: माना राशि = P चरण 2: SI(8 माह, 4%) = P×4×(8/12)/100 = P×32/1200 चरण 3: SI(15 माह, 5%) = P×5×(15/12)/100 = P×75/1200 चरण 4: अंतर: 75P/1200 − 32P/1200 = 129  ⇒  43P/1200=129 चरण 5: P = 129×1200/43 = ₹3,600 ✅ उत्तर (Answer): ₹3,600</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): साधारण ब्याज की स्पीड ट्रिक</div><p>राशि के n गुना होने का समय हमेशा एक लाइन में याद रखें: T = [(n−1)×100]/R — इससे "दुगुना/तिगुना कितने साल में" वाले प्रश्न 5 सेकंड में हल हो जाते हैं। दो अलग-अलग दरों/समय पर SI का अंतर देने वाले प्रश्नों में हमेशा एक चर (x) मानकर सीधे समीकरण बनाएं, यह सबसे तेज़ तरीका है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">चक्रवृद्धि ब्याज (Compound Interest)</span></h2>
+<p>चक्रवृद्धि ब्याज में हर अवधि (वर्ष/छमाही/तिमाही) के अंत में मिलने वाला ब्याज अगली अवधि के मूलधन में जुड़ जाता है — यानी "ब्याज पर भी ब्याज" मिलता है। इसी वजह से लंबी अवधि में CI, SI से हमेशा ज्यादा होता है (सिवाय पहली अवधि के, जहाँ दोनों बराबर होते हैं)। ब्याज वार्षिक (Annually), अर्धवार्षिक (Half-yearly), या त्रैमासिक (Quarterly) रूप से जोड़ा जा सकता है — जितनी बार ब्याज जुड़ता है, दर उतने हिस्सों में बंट जाती है और समय उतना ही गुना हो जाता है। RAS Pre में annual और half-yearly compounding सबसे ज्यादा पूछे जाते हैं।</p>
+<div class="formula-box"><div class="formula-title">📐  चक्रवृद्धि ब्याज (Compound Interest) — सूत्र (Formula)</div><p>वार्षिक संयोजन: A = P × (1 + R/100)ⁿ  |  CI = A − P अर्धवार्षिक संयोजन: A = P × (1 + (R/2)/100)^(2n) त्रैमासिक संयोजन: A = P × (1 + (R/4)/100)^(4n) भिन्नात्मक समय (जैसे 2⅓ वर्ष): A = P×(1+R/100)²×(1+(⅓R)/100)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 4 (आसान) — ₹8,000 की धनराशि पर 15% वार्षिक दर से 2 वर्ष 4 महीने का चक्रवृद्धि ब्याज ज्ञात करें, यदि ब्याज दर वार्षिक संयोजित है।</div><p>चरण 1: पहले 2 पूर्ण वर्षों के लिए: A₂ = 8000×(1+15/100)² = 8000×1.15×1.15 = ₹10,580 चरण 2: शेष 4 महीने (⅓ वर्ष) के लिए साधारण ब्याज जैसा प्रयोग: अतिरिक्त = A₂×(15×⅓)/100 = 10580×5/100 = ₹529 चरण 3: कुल राशि = 10580+529 = ₹11,109 चरण 4: CI = 11109 − 8000 = ₹3,109 ✅ उत्तर (Answer): ₹3,109</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 5 (मध्यम) — ₹12,000 की धनराशि पर 20% वार्षिक दर से 9 माह का चक्रवृद्धि ब्याज ज्ञात करें, यदि ब्याज त्रैमासिक आधार पर जोड़ा जाता है।</div><p>चरण 1: त्रैमासिक दर = 20/4 = 5%; 9 माह = 3 तिमाही चरण 2: A = 12000×(1+5/100)³ = 12000×(1.05)³ = 12000×1.157625 चरण 3: A = ₹13,891.50 चरण 4: CI = 13891.50 − 12000 = ₹1,891.50 ✅ उत्तर (Answer): ₹1,891.50</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 6 (कठिन) — कोई धनराशि चक्रवृद्धि ब्याज पर 4 वर्षों में ₹7,000 तथा 8 वर्षों में ₹10,000 हो जाती है। वह मूल धनराशि ज्ञात करें।</div><p>चरण 1: माना मूलधन=P, दर गुणांक=(1+R/100)=k। तो P×k⁴=7000 और P×k⁸=10000 चरण 2: दूसरे को पहले से भाग दें: k⁴ = 10000/7000 = 10/7 चरण 3: P = 7000/k⁴ = 7000/(10/7) = 7000×7/10 चरण 4: P = ₹4,900 ✅ उत्तर (Answer): ₹4,900</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): चक्रवृद्धि ब्याज की स्पीड ट्रिक</div><p>भिन्नात्मक समय (जैसे 2⅓ वर्ष) में हमेशा पूर्ण वर्षों के लिए चक्रवृद्धि सूत्र लगाएं, और बचे हुए भाग के लिए साधारण ब्याज जैसा (मूलधन की जगह उस समय की राशि पर) प्रयोग करें — यही आधिकारिक नियम है। अर्धवार्षिक/त्रैमासिक प्रश्नों में सबसे पहले दर को बांटें (÷2 या ÷4) और समय को गुणा करें (×2 या ×4), फिर सामान्य वार्षिक सूत्र जैसे हल करें।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">SI-CI का अंतर एवं संबंध (Relation Between SI &amp; CI)</span></h2>
+<p>साधारण ब्याज और चक्रवृद्धि ब्याज पहले वर्ष में हमेशा बराबर होते हैं, क्योंकि पहले वर्ष कोई "ब्याज पर ब्याज" नहीं बना होता। दूसरे वर्ष से इनमें अंतर आना शुरू होता है, और यह अंतर हर साल बढ़ता जाता है। RAS Pre में एक बहुत लोकप्रिय प्रश्न-प्रकार है जहाँ 2 या 3 वर्षों के लिए CI और SI का अंतर देकर मूलधन या दर ज्ञात करने को कहा जाता है — इसके लिए दो सीधे सूत्र याद रखने से समय की बचत होती है।</p>
+<div class="formula-box"><div class="formula-title">📐  SI-CI का अंतर (Difference Between CI &amp; SI) — सूत्र (Formula)</div><p>2 वर्षों के लिए अंतर: CI − SI = P × (R/100)² 3 वर्षों के लिए अंतर: CI − SI = P × (R/100)² × [3 + (R/100)] पहले वर्ष में सदैव: CI = SI (कोई अंतर नहीं)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 7 (आसान) — ₹10,000 की राशि पर 2 वर्षों के चक्रवृद्धि तथा साधारण ब्याज का अंतर ₹25 है। ब्याज की वार्षिक दर ज्ञात करें।</div><p>चरण 1: सूत्र: CI − SI = P × (R/100)² चरण 2: 25 = 10000 × (R/100)² चरण 3: (R/100)² = 25/10000 = 1/400  ⇒  R/100 = 1/20 चरण 4: R = 100/20 = 5% ✅ उत्तर (Answer): 5%</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 8 (मध्यम) — किसी निश्चित धनराशि पर 10% वार्षिक दर से 2 वर्षों का चक्रवृद्धि ब्याज ₹420 है। समान धनराशि पर समान दर से समान समय के लिए साधारण ब्याज ज्ञात करें।</div><p>चरण 1: CI सूत्र से मूलधन निकालें: 420 = P×[(1.10)²−1] = P×0.21 चरण 2: P = 420/0.21 = ₹2,000 चरण 3: SI = P×R×T/100 = 2000×10×2/100 = ₹400 ✅ उत्तर (Answer): ₹400</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 9 (कठिन) — किसी निश्चित धनराशि पर 5% वार्षिक दर से 3 वर्षों के चक्रवृद्धि तथा साधारण ब्याज का अंतर ₹122 है। वह धनराशि ज्ञात करें।</div><p>चरण 1: सूत्र: CI − SI (3 वर्ष) = P × (R/100)² × [3 + R/100] चरण 2: 122 = P × (0.05)² × [3+0.05] = P × 0.0025 × 3.05 चरण 3: 122 = P × 0.007625 चरण 4: P = 122/0.007625 = ₹16,000 ✅ उत्तर (Answer): ₹16,000</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): SI-CI अंतर की स्पीड ट्रिक</div><p>2 वर्षों के अंतर वाले प्रश्नों में सीधे P×(R/100)² सूत्र लगाएं — यह इतना छोटा फॉर्मूला है कि मानसिक गणना से भी हल हो सकता है। 3 वर्षों के अंतर में सूत्र P×(R/100)²×(3+R/100) याद रखें, ध्यान रहे कोष्ठक में "3" जोड़ना अनिवार्य है, यही सबसे ज्यादा भूली जाने वाली बात है।</p></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>अवधारणा</th><th>सूत्र</th><th>प्रमुख बिंदु</th></tr></thead><tbody><tr><td>साधारण ब्याज</td><td>SI = PRT/100</td><td>हर वर्ष ब्याज बराबर रहता है</td></tr><tr><td>चक्रवृद्धि ब्याज (वार्षिक)</td><td>A = P(1+R/100)ⁿ</td><td>ब्याज पर भी ब्याज मिलता है</td></tr><tr><td>अर्धवार्षिक CI</td><td>A = P(1+R/200)²ⁿ</td><td>दर÷2, समय×2</td></tr><tr><td>त्रैमासिक CI</td><td>A = P(1+R/400)⁴ⁿ</td><td>दर÷4, समय×4</td></tr><tr><td>राशि का n गुना होना (SI)</td><td>T=(n−1)×100/R</td><td>दुगुना/तिगुना समय ज्ञात करना</td></tr><tr><td>2 वर्ष CI-SI अंतर</td><td>P×(R/100)²</td><td>छोटा व सीधा सूत्र</td></tr><tr><td>3 वर्ष CI-SI अंतर</td><td>P×(R/100)²×(3+R/100)</td><td>"3" जोड़ना न भूलें</td></tr><tr><td>भिन्नात्मक समय CI</td><td>पूर्ण वर्ष CI + शेष भाग पर SI जैसा</td><td>2⅓, 2¼ वर्ष जैसे प्रश्नों में</td></tr></tbody></table></div>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">🟢 वार्षिक संयोजन (Annually)</div><ul class="ch-list"><li>ब्याज साल में एक बार जुड़ता है</li><li>सूत्र: A = P(1+R/100)ⁿ</li><li>n = वर्षों की संख्या</li><li>सबसे सरल व सबसे सामान्य प्रकार</li></ul></div><div class="twocol-col"><div class="twocol-head">🔴 अर्धवार्षिक/त्रैमासिक (Half-yearly/Quarterly)</div><ul class="ch-list"><li>ब्याज साल में 2 या 4 बार जुड़ता है</li><li>सूत्र: A = P(1+R/200)²ⁿ या P(1+R/400)⁴ⁿ</li><li>दर आधी/चौथाई, समय दोगुना/चौगुना होता है</li><li>समान वार्षिक दर पर CI हमेशा ज्यादा मिलता है</li></ul></div></div>
+<div class="warn-box"><p><strong>⚠️  आम गलतियाँ (Common Mistakes)</strong></p><p>❌ चक्रवृद्धि ब्याज में हर वर्ष ब्याज बराबर मान लेना — जबकि हर वर्ष मूलधन बदलता रहता है ❌ अर्धवार्षिक/त्रैमासिक संयोजन में दर को आधा/चौथाई करना भूल जाना, लेकिन समय को दोगुना/चौगुना करना भूल जाना ❌ 3 वर्षों के CI-SI अंतर सूत्र में "+3" जोड़ना भूल जाना ❌ भिन्नात्मक समय (जैसे 2⅓ वर्ष) में पूरे समय पर सीधे घातांक सूत्र लगा देना, बिना अंतिम भाग को अलग से साधारण ब्याज जैसा हल किए ❌ राशि के "n गुना" होने के प्रश्नों में (n−1) की जगह सीधे n लगा देना ❌ मूलधन (Principal) और राशि (Amount) को आपस में मिला देना — Amount = Principal + Interest होता है ❌ SI और CI के सूत्रों में दर (R) को प्रतिशत के रूप में ही रखना भूलकर सीधे दशमलव से गुणा-भाग में गड़बड़ करना</p></div>
+<p>महत्वपूर्ण: साधारण ब्याज और चक्रवृद्धि ब्याज पहले वर्ष में हमेशा बराबर होते हैं — अंतर दूसरे वर्ष से शुरू होता है। जब भी अर्धवार्षिक या त्रैमासिक संयोजन का प्रश्न आए, तो सबसे पहले दर और समय दोनों को नई इकाई में बदलें (दर÷2 या ÷4, समय×2 या ×4) — इसके बाद ही सूत्र लगाएं, वरना उत्तर गलत आएगा।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>📝  अभ्यास प्रश्न (Practice Questions)</th></tr></thead><tbody><tr><td>Q1. ₹1,500 की धनराशि पर 3 वर्षों में दो भिन्न स्त्रोतों से प्राप्त साधारण ब्याज का अंतर ₹13.50 है। उनकी ब्याज दरों का अंतर ज्ञात करें। Q2. किसी धनराशि का साधारण ब्याज मूलधन का 1/9 है तथा वर्षों की संख्या और ब्याज दर बराबर है। ब्याज दर ज्ञात करें। Q3. किसी धनराशि पर 3 वर्षों में ₹10,648 तथा 2 वर्षों में ₹9,680 चक्रवृद्धि ब्याज से हो जाती है। वार्षिक ब्याज दर ज्ञात करें। Q4. ₹32,000 की राशि पर 10% वार्षिक दर से 4 वर्षों के चक्रवृद्धि तथा साधारण ब्याज का अंतर ज्ञात करें। Q5. किसी धनराशि का 2 वर्षों का साधारण ब्याज ₹100 तथा चक्रवृद्धि ब्याज ₹104 है। ब्याज की वार्षिक दर ज्ञात करें।</td></tr><tr><td>🔑 उत्तर कुंजी (Answer Key): Q1. 0.3%  |  Q2. 3⅓%  |  Q3. 10%  |  Q4. ₹2,051.20  |  Q5. 8%</td></tr></tbody></table></div>
+<h3 class="ch-h3">★  याद रखने योग्य फॉर्मूले एवं तथ्य  ★</h3><p>1. SI = (P×R×T)/100 2. P = 100×SI/(R×T); R = 100×SI/(P×T); T = 100×SI/(P×R) 3. राशि A = P + SI = P×[1+(RT/100)] 4. राशि n गुना होने का समय: T = (n−1)×100/R 5. CI (वार्षिक) — A = P(1+R/100)ⁿ; CI = A−P 6. CI (अर्धवार्षिक) — A = P(1+R/200)²ⁿ 7. CI (त्रैमासिक) — A = P(1+R/400)⁴ⁿ 8. भिन्नात्मक समय: पूर्ण वर्ष CI + शेष भाग पर साधारण ब्याज जैसा प्रयोग 9. 2 वर्ष का CI-SI अंतर = P×(R/100)² 10. 3 वर्ष का CI-SI अंतर = P×(R/100)²×[3+(R/100)] 11. पहले वर्ष में सदैव CI = SI 12. अलग-अलग वर्षों में अलग दर हो तो: A=P(1+R1/100)(1+R2/100)(1+R3/100) 13. n वर्ष बाद x राशि का वर्तमान मूल्य (Present Worth) = x/(1+R/100)ⁿ 14. ऋण को बराबर वार्षिक किस्तों (SI) में चुकाने पर: प्रत्येक किस्त = P/[n+{r×n×(n−1)/(2×100)}] 15. दो अलग दरों पर SI का अंतर देने पर एक चर मानकर सीधे समीकरण बनाएं 16. CI हमेशा SI से अधिक या बराबर होता है, कभी कम नहीं 17. राशि दुगुनी CI पर t वर्ष में हो तो 4t वर्ष में 16 गुनी (2⁴) हो जाएगी 18. दर% को हमेशा भिन्न (fraction) में बदलकर गणना करें, विशेषकर मिश्रित भिन्न (जैसे 12½%) में 19. installment वाले प्रश्नों में CI में present worth विधि तथा SI में सीधा सूत्र प्रयोग करें 20. ब्याज संयोजन जितनी बार अधिक हो (वार्षिक→अर्धवार्षिक→त्रैमासिक), CI उतना ही अधिक मिलता है</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (Pre MCQ)  📝</h3><p>Q1. कोई धनराशि साधारण ब्याज की किसी दर से ¼ वर्ष में स्वयं की 41/40 गुना हो जाती है। वार्षिक ब्याज दर ज्ञात करें। (a) 10%  (b) 1%  (c) 2.5%  (d) 5% Q2. यदि कोई धनराशि साधारण ब्याज पर 12 वर्षों में दुगुनी हो जाती है, तो वार्षिक ब्याज दर ज्ञात करें। (a) 16⅔%  (b) 7.5%  (c) 8⅓%  (d) 10% Q3. दो भिन्न बैंकों से ₹500 पर 2 वर्षों में प्राप्त साधारण ब्याजों का अंतर ₹2.50 है। उनकी वार्षिक ब्याज दरों का अंतर ज्ञात करें। (a) 0.10%  (b) 0.25%  (c) 0.50%  (d) 1.00% Q4. एक राशि 8% वार्षिक चक्रवृद्धि ब्याज की दर से 2 वर्षों में ₹2,916 हो जाती है। उसी राशि पर 9% वार्षिक साधारण ब्याज की दर से 3 वर्षों का ब्याज ज्ञात करें। (a) ₹600  (b) ₹675  (c) ₹650  (d) ₹625 Q5. कोई राशि चक्रवृद्धि ब्याज की दर से 2 वर्षों में ₹4,840 तथा 3 वर्षों में ₹5,324 हो जाती है। प्रतिशत ब्याज दर ज्ञात करें। (a) 12%  (b) 10%  (c) 9%  (d) 8% Q6. ₹12,000 की धनराशि चक्रवृद्धि ब्याज पर 5 वर्षों में दुगुनी हो जाती है। 20 वर्षों बाद यह कितनी हो जाएगी? (a) ₹1,44,000  (b) ₹1,20,000  (c) ₹1,50,000  (d) ₹1,92,000 Q7. किसी धनराशि पर 5% वार्षिक दर से 2 वर्षों के चक्रवृद्धि तथा साधारण ब्याज का अंतर ₹35 है। वह धनराशि ज्ञात करें। (a) ₹10,000  (b) ₹13,000  (c) ₹14,000  (d) इनमें से कोई नहीं</p>
+<p>🔑 उत्तर कुंजी (Answer Key): Q1.(a) 10% | Q2.(c) 8⅓% | Q3.(b) 0.25% | Q4.(b) ₹675 | Q5.(b) 10% | Q6.(d) ₹1,92,000 | Q7.(c) ₹14,000</p>
+<p>📘 संपूर्ण अभ्यास सेट — 18 प्रश्न सह हल (Complete Practice Set)</p><p>इस अंतिम अभ्यास सेट में साधारण ब्याज, चक्रवृद्धि ब्याज एवं दोनों के संबंध से जुड़े सभी प्रकार के प्रश्न शामिल हैं — पहले स्वयं हल करने की कोशिश करें, फिर नीचे दिया गया हल देखें।</p>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-1 — ₹13,360 की धनराशि 8¾% वार्षिक चक्रवृद्धि ब्याज की दर से उधार ली गई तथा दो समान वार्षिक किस्तों में चुकाई गई। प्रत्येक किस्त की राशि ज्ञात करें। (a) ₹5,769  (b) ₹7,569  (c) ₹7,009  (d) ₹7,500</div><p>चरण 1: माना प्रत्येक किस्त=x; दर गुणांक (1+8.75/100)=1.0875 चरण 2: सिद्धांत: उधार राशि = 1 वर्ष बाद की किस्त का वर्तमान मूल्य + 2 वर्ष बाद की किस्त का वर्तमान मूल्य चरण 3: 13360 = x/1.0875 + x/(1.0875)² चरण 4: हल करने पर x = ₹7,569 ✅ उत्तर (Answer): (b) ₹7,569 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-2 — 10% वार्षिक दर से 3 वर्षों के लिए किसी धनराशि के चक्रवृद्धि तथा साधारण ब्याज का अंतर ₹620 है। वह धनराशि ज्ञात करें। (a) ₹40,000  (b) ₹12,000  (c) ₹10,000  (d) ₹20,000</div><p>चरण 1: सूत्र: CI−SI(3वर्ष) = P×(R/100)²×[3+(R/100)] चरण 2: 620 = P×(0.10)²×(3.10) = P×0.031 चरण 3: P = 620/0.031 = ₹20,000 ✅ उत्तर (Answer): (d) ₹20,000 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-3 — 8,000 रुपये पर 3% वार्षिक दर से कितने समय में उतना ही ब्याज होगा जितना ₹6,000 पर 5 वर्षों में 4% साधारण ब्याज दर से होता है? (a) 5 वर्ष  (b) 6 वर्ष  (c) 3 वर्ष  (d) 4 वर्ष</div><p>चरण 1: लक्ष्य ब्याज = 6000×4×5/100 = ₹1,200 चरण 2: 8000 पर 3% दर से t वर्ष में ब्याज: 8000×3×t/100 = 1200 चरण 3: 240t=1200 ⇒ t=5 वर्ष ✅ उत्तर (Answer): (a) 5 वर्ष ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-4 — किस वार्षिक दर से ₹3,000, 3 वर्षों में ₹3,993 हो जाएगी, यदि चक्रवृद्धि ब्याज वार्षिक देय हो? (a) 9%  (b) 10%  (c) 11%  (d) 13%</div><p>चरण 1: A=P(1+R/100)³ ⇒ 3993=3000(1+R/100)³ चरण 2: (1+R/100)³ = 3993/3000 = 1.331 = (1.1)³ चरण 3: 1+R/100=1.1 ⇒ R=10% ✅ उत्तर (Answer): (b) 10% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-5 — यदि 12½% वार्षिक दर से किसी राशि का 2 वर्षों का चक्रवृद्धि ब्याज ₹510 है, तो उसी दर से उसी राशि पर उसी अवधि का साधारण ब्याज ज्ञात करें। (a) ₹400  (b) ₹480  (c) ₹450  (d) ₹460</div><p>चरण 1: CI सूत्र: 510=P×[(1.125)²−1]=P×0.265625 चरण 2: P=510/0.265625=₹1,920 चरण 3: SI=P×R×T/100=1920×12.5×2/100=₹480 ✅ उत्तर (Answer): (b) ₹480 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-6 — 4% वार्षिक चक्रवृद्धि ब्याज पर अर्धवार्षिक रूप से निवेशित कोई निश्चित धनराशि 1 वर्ष के अंत में ₹7,803 हो जाती है। वह धनराशि ज्ञात करें। (a) ₹7,000  (b) ₹7,200  (c) ₹7,500  (d) ₹7,700</div><p>चरण 1: अर्धवार्षिक दर=2%, समय=2 अर्ध-वर्ष चरण 2: A=P(1.02)²=7803 चरण 3: P=7803/1.0404=₹7,500 ✅ उत्तर (Answer): (c) ₹7,500 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-7 — निश्चित ब्याज दर से, किसी धनराशि पर 1 वर्ष का साधारण ब्याज ₹260 है। उसी राशि पर दो वर्षों का चक्रवृद्धि ब्याज ₹540.80 है। ब्याज की वार्षिक दर ज्ञात करें। (a) 4%  (b) 6%  (c) 8%  (d) 10%</div><p>चरण 1: 1 वर्ष का SI=260 ⇒ P×R/100=260 ⇒ P=26000/R चरण 2: 2 वर्ष का CI = P×[2R/100+(R/100)²]=540.80 चरण 3: हल करने पर R=8% ✅ उत्तर (Answer): (c) 8% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-8 — कितने वर्षों में ₹800 की राशि 10% वार्षिक चक्रवृद्धि ब्याज (अर्धवार्षिक संयोजित) की दर से ₹926.10 हो जाएगी? (a) 1½ वर्ष  (b) 3 वर्ष  (c) 2⅓ वर्ष  (d) 2½ वर्ष</div><p>चरण 1: अर्धवार्षिक दर=5%; माना n अर्ध-वर्ष चरण 2: 800×(1.05)ⁿ=926.10 ⇒ (1.05)ⁿ=1.157625 चरण 3: (1.05)³=1.157625 ⇒ n=3 अर्ध-वर्ष = 1.5 वर्ष ✅ उत्तर (Answer): (a) 1½ वर्ष ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-9 — ₹3,200 की राशि 10% वार्षिक दर पर त्रैमासिक आधार पर चक्रवृद्धि ब्याज पर निवेश करने पर ₹3,362 हो जाती है। निवेश की अवधि ज्ञात करें। (a) ½ वर्ष  (b) 1 वर्ष  (c) 2 वर्ष  (d) ¼ वर्ष</div><p>चरण 1: त्रैमासिक दर=2.5%; माना n तिमाही चरण 2: 3200×(1.025)ⁿ=3362 ⇒ (1.025)ⁿ=1.050625 चरण 3: (1.025)²=1.050625 ⇒ n=2 तिमाही = ½ वर्ष ✅ उत्तर (Answer): (a) ½ वर्ष ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-10 — किसी निश्चित धनराशि पर एक निश्चित दर से 2 वर्षों का चक्रवृद्धि ब्याज ₹2,050 है, और उतनी ही धनराशि पर समान दर पर 3 वर्षों का साधारण ब्याज ₹3,000 है। धनराशि ज्ञात करें। (a) ₹20,000  (b) ₹18,000  (c) ₹21,000  (d) ₹25,000</div><p>चरण 1: SI/वर्ष = 3000/3=1000 ⇒ P×R/100=1000 चरण 2: CI(2वर्ष)=P×[2R/100+(R/100)²]=2050 चरण 3: हल करने पर R=5%, P=20,000 ✅ उत्तर (Answer): (a) ₹20,000 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-11 — 10% वार्षिक दर से 1½ वर्षों (अर्धवार्षिक संयोजित) में चक्रवृद्धि तथा साधारण ब्याज का अंतर ₹244 हो, तो वह राशि ज्ञात करें। (a) ₹40,000  (b) ₹36,000  (c) ₹32,000  (d) ₹28,000</div><p>चरण 1: अर्धवार्षिक दर=5%, समय=3 अर्ध-वर्ष चरण 2: CI=P×[(1.05)³−1]; SI=P×10×1.5/100=0.15P चरण 3: हल करने पर P=₹32,000 ✅ उत्तर (Answer): (c) ₹32,000 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-12 — ₹250 की राशि 2 वर्षों में कितनी हो जाएगी, यदि पहले वर्ष के लिए दर 4% तथा दूसरे वर्ष के लिए दर 8% वार्षिक चक्रवृद्धि ब्याज दर हो? (a) ₹280  (b) ₹280.80  (c) ₹468  (d) ₹290.80</div><p>चरण 1: A=250×(1+4/100)×(1+8/100) चरण 2: A=250×1.04×1.08 चरण 3: A=₹280.80 ✅ उत्तर (Answer): (b) ₹280.80 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-13 — किसी निश्चित धनराशि पर 5% वार्षिक दर से 2 वर्षों का चक्रवृद्धि ब्याज ₹410 है। उसी राशि पर समान दर तथा समान समय के लिए साधारण ब्याज ज्ञात करें। (a) ₹400  (b) ₹300  (c) ₹350  (d) ₹405</div><p>चरण 1: CI=P×[(1.05)²−1]=P×0.1025=410 चरण 2: P=410/0.1025=₹4,000 चरण 3: SI=4000×5×2/100=₹400 ✅ उत्तर (Answer): (a) ₹400 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-14 — ₹210 की धनराशि कर्ज पर ली गई, जिसे दो बराबर किस्तों में चुकाया जाना है। यदि ब्याज की दर 10% वार्षिक चक्रवृद्धि हो, तो प्रत्येक किस्त की राशि ज्ञात करें। (a) ₹127  (b) ₹121  (c) ₹210  (d) ₹225</div><p>चरण 1: 210 = x/1.1 + x/(1.1)² चरण 2: हल करने पर x=₹121 ✅ उत्तर (Answer): (b) ₹121 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-15 — ₹2,000 की राशि 1½ वर्षों में ₹2,315.25 हो जाती है, यदि ब्याज अर्धवार्षिक चक्रवृद्धि रूप में संयोजित हो। वार्षिक ब्याज दर ज्ञात करें। (a) 10%  (b) 11.5%  (c) 5%  (d) 20%</div><p>चरण 1: अर्धवार्षिक दर=R/2, समय=3 अर्ध-वर्ष चरण 2: 2000×(1+R/200)³=2315.25 चरण 3: हल करने पर R/200=0.05 ⇒ R=10% ✅ उत्तर (Answer): (a) 10% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-16 — एक पेड़ की ऊँचाई में प्रतिवर्ष ⅛ गुना वृद्धि होती है। यदि वर्तमान ऊँचाई 64 सेमी है, तो 2 वर्ष बाद इसकी ऊँचाई क्या होगी? (a) 70 cm  (b) 80 cm  (c) 81 cm  (d) 84 cm</div><p>चरण 1: प्रत्येक वर्ष गुणांक = (1+⅛) = 9/8 चरण 2: 2 वर्ष बाद ऊँचाई = 64×(9/8)×(9/8) चरण 3: = 64×81/64 = 81 cm ✅ उत्तर (Answer): (c) 81 cm ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-17 — एक राशि को 20% वार्षिक चक्रवृद्धि ब्याज दर पर 2 वर्षों के लिए उधार दिया जाता है। यदि ब्याज अर्धवार्षिक संयोजित हो तो ₹482 अधिक मिलते हैं। राशि ज्ञात करें। (a) ₹18,000  (b) ₹20,000  (c) ₹17,000  (d) ₹19,000</div><p>चरण 1: वार्षिक CI(2वर्ष) = P×[(1.20)²−1] = 0.44P चरण 2: अर्धवार्षिक CI(4 अर्ध-वर्ष, दर10%) = P×[(1.10)⁴−1] = 0.4641P चरण 3: अंतर = 0.4641P−0.44P = 0.0241P = 482 चरण 4: P = 482/0.0241 = ₹20,000 ✅ उत्तर (Answer): (b) ₹20,000 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-18 — एक व्यक्ति ने 4% साधारण ब्याज पर कुछ राशि उधार दी, और 5 वर्षों में, ब्याज मूलधन से ₹520 कम रहा। कितनी राशि उधार दी गई थी? (a) ₹600  (b) ₹650  (c) ₹700  (d) ₹750</div><p>चरण 1: माना मूलधन=P; SI(5वर्ष,4%)=P×4×5/100=0.20P चरण 2: शर्त: ब्याज = मूलधन−520 ⇒ 0.20P=P−520 चरण 3: 520=0.80P ⇒ P=₹650 ✅ उत्तर (Answer): (b) ₹650 ✓</p></div>
+<p>📐 सूत्र पुनरावृत्ति तालिका (Formula Revision Table)</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टॉपिक</th><th>सूत्र (Formula)</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>साधारण ब्याज</td><td>SI = PRT/100</td><td>मूल मूलधन पर सीधा ब्याज चाहिए</td></tr><tr><td>SI से मूलधन/दर/समय</td><td>P,R,T = 100×SI/(शेष दो का गुणनफल)</td><td>SI दिया हो, बाकी चाहिए</td></tr><tr><td>राशि n गुना (SI)</td><td>T = (n−1)×100/R</td><td>दुगुना/तिगुना समय चाहिए</td></tr><tr><td>CI (वार्षिक)</td><td>A = P(1+R/100)ⁿ</td><td>ब्याज हर वर्ष जुड़ता हो</td></tr><tr><td>CI (अर्धवार्षिक)</td><td>A = P(1+R/200)²ⁿ</td><td>ब्याज साल में 2 बार जुड़े</td></tr><tr><td>CI (त्रैमासिक)</td><td>A = P(1+R/400)⁴ⁿ</td><td>ब्याज साल में 4 बार जुड़े</td></tr><tr><td>भिन्नात्मक समय CI</td><td>पूर्ण वर्ष CI + शेष भाग SI जैसा</td><td>2⅓, 2¼ वर्ष जैसे प्रश्न</td></tr><tr><td>2 वर्ष CI-SI अंतर</td><td>P×(R/100)²</td><td>2 वर्षों का अंतर चाहिए</td></tr><tr><td>3 वर्ष CI-SI अंतर</td><td>P×(R/100)²×[3+(R/100)]</td><td>3 वर्षों का अंतर चाहिए</td></tr><tr><td>अलग-अलग वार्षिक दरें</td><td>A=P(1+R1/100)(1+R2/100)(1+R3/100)</td><td>हर वर्ष दर अलग हो</td></tr><tr><td>वर्तमान मूल्य (Present Worth)</td><td>x/(1+R/100)ⁿ</td><td>n वर्ष बाद की राशि का आज का मूल्य चाहिए</td></tr><tr><td>किस्तों में ऋण चुकाना (SI)</td><td>P = n×x + x×r×n(n−1)/200</td><td>बराबर वार्षिक किस्तों में ऋण चुकाना हो</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="ras-pre-math-reasoning-ch09-labh-hani-pratishat.html" class="ch-nav-btn">← अध्याय 9: लाभ-हानि एवं प्रतिशत</a>
+  <a href="ras-pre-math-reasoning-ch11-mensuration.html" class="ch-nav-btn ch-nav-next">अध्याय 11: समतल आकृतियों का परिमाप एवं क्षेत्रफल →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="ras-pre-math-reasoning.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 11: समतल आकृतियों का परिमाप एवं क्षेत्रफल — RAS Pre — गणित एवं तर्कशक्ति | Omkar Sir</title>
+<meta name="description" content="समतल आकृतियों का परिमाप एवं क्षेत्रफल (Mensuration: Perimeter &amp; Area) — RAS Pre+Mains के लिए RAS Pre — गणित एवं तर्कशक्ति का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">📐 अध्याय 11/14 — RAS Pre — गणित एवं तर्कशक्ति</div>
+  <h1>समतल आकृतियों का परिमाप एवं क्षेत्रफल</h1>
+  <div class="ch-sub">Mensuration: Perimeter &amp; Area | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>त्रिभुज, वर्ग, आयत, समांतर चतुर्भुज</li><li>वृत्त, अर्धवृत्त, त्रिज्यखंड (Circle, Semicircle, Sector)</li><li>समलंब चतुर्भुज, बहुभुज (Trapezium, Polygon)</li></ol></div>
+<p>🎬 एक कहानी से शुरुआत करते हैं...</p><p>जयपुर में एक किसान परिवार के पास एक चौकोर खेत था। बेटे ने पिता से कहा — "पापा, अगर हम इस खेत की हर भुजा को थोड़ा बढ़ा दें तो क्षेत्रफल कितना ज्यादा बढ़ेगा?" पिता मुस्कुराए और बोले — "यह तो स्कूल के मेंसुरेशन (क्षेत्रमिति) का सवाल है!" उन्होंने बेटे को समझाया कि खेत का आकार चाहे त्रिभुज हो, वर्ग हो, वृत्त हो या समलंब चतुर्भुज — हर आकृति का अपना परिमाप (Perimeter) और क्षेत्रफल (Area) निकालने का एक निश्चित सूत्र होता है, और यही सूत्र खेत की बाड़ लगाने, बीज खरीदने, या टाइल्स लगवाने जैसे रोज़मर्रा के हिसाब में काम आते हैं।</p><p>RAS Pre में मेंसुरेशन से हर साल 5-6 प्रश्न पक्के आते हैं — त्रिभुज, वर्ग, आयत, वृत्त, त्रिज्यखंड (Sector), और समलंब चतुर्भुज (Trapezium) से जुड़े। सबसे अच्छी बात यह है कि इनमें से ज्यादातर सूत्र-आधारित हैं — एक बार सूत्र याद हो जाएं, तो आधे से ज्यादा प्रश्न सीधे हल हो जाते हैं। चलिए शुरू करते हैं!</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">त्रिभुज, वर्ग, आयत, समांतर चतुर्भुज</span></h2>
+<p>किसी भी बंद आकृति की सीमा रेखा की कुल लंबाई को "परिमाप (Perimeter)" कहते हैं, और उस आकृति के भीतर घिरे स्थान को "क्षेत्रफल (Area)" कहते हैं। आयत और वर्ग के सूत्र सबसे सरल हैं — लंबाई×चौड़ाई और भुजा²। त्रिभुज के लिए दो प्रमुख सूत्र हैं: यदि आधार और ऊँचाई पता हो तो ½×आधार×ऊँचाई, और यदि सिर्फ तीनों भुजाएं पता हों तो हीरोन का सूत्र (Heron's Formula) प्रयोग होता है। समांतर चतुर्भुज और समचतुर्भुज (Rhombus) के अपने अलग सूत्र हैं जो अक्सर एक-दूसरे से जुड़े प्रश्नों में पूछे जाते हैं।</p>
+<div class="formula-box"><div class="formula-title">📐  त्रिभुज, वर्ग, आयत, समांतर चतुर्भुज — सूत्र (Formula)</div><p>आयत: क्षेत्रफल = लंबाई×चौड़ाई; परिमाप = 2(लंबाई+चौड़ाई) वर्ग: क्षेत्रफल = (भुजा)² = ½×(विकर्ण)²; परिमाप = 4×भुजा त्रिभुज: क्षेत्रफल = ½×आधार×ऊँचाई हीरोन सूत्र: क्षेत्रफल = √[s(s−a)(s−b)(s−c)], जहाँ s=(a+b+c)/2 समबाहु त्रिभुज: क्षेत्रफल = (√3/4)×(भुजा)² समांतर चतुर्भुज: क्षेत्रफल = आधार×ऊँचाई  |  समचतुर्भुज (Rhombus): क्षेत्रफल = ½×(विकर्णों का गुणनफल)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 1 (आसान) — किसी आयत की लंबाई और चौड़ाई का अंतर 23 मीटर है। यदि उसका परिमाप 206 मीटर हो, तो क्षेत्रफल ज्ञात करें।</div><p>चरण 1: माना लंबाई=l, चौड़ाई=b। दिया है: l−b=23 और 2(l+b)=206 ⇒ l+b=103 चरण 2: दोनों समीकरण जोड़ें: 2l=126 ⇒ l=63; तब b=103−63=40 चरण 3: क्षेत्रफल = l×b = 63×40 = 2,520 वर्ग मीटर ✅ उत्तर (Answer): 2,520 वर्ग मीटर</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 2 (मध्यम) — किसी त्रिभुज की भुजाएं 16 cm, 12 cm तथा 20 cm हैं। क्षेत्रफल ज्ञात करें।</div><p>चरण 1: s = (16+12+20)/2 = 24 चरण 2: s−a=24−16=8; s−b=24−12=12; s−c=24−20=4 चरण 3: क्षेत्रफल = √(24×8×12×4) = √9216 चरण 4: क्षेत्रफल = 96 वर्ग सेमी ✅ उत्तर (Answer): 96 वर्ग सेमी</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 3 (कठिन) — किसी समचतुर्भुज (Rhombus) का क्षेत्रफल 216 वर्ग सेमी है और एक विकर्ण की लंबाई 24 सेमी है। समचतुर्भुज का परिमाप ज्ञात करें।</div><p>चरण 1: क्षेत्रफल = ½×d₁×d₂ ⇒ 216 = ½×24×d₂ ⇒ d₂ = 18 सेमी चरण 2: समचतुर्भुज में विकर्ण एक-दूसरे को समकोण पर समद्विभाजित करते हैं चरण 3: भुजा = √[(d₁/2)²+(d₂/2)²] = √[12²+9²] = √(144+81) = √225 = 15 सेमी चरण 4: परिमाप = 4×भुजा = 4×15 = 60 सेमी ✅ उत्तर (Answer): 60 सेमी</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): त्रिभुज-चतुर्भुज की स्पीड ट्रिक</div><p>जब तीनों भुजाएं दी हों और वे 3-4-5, 5-12-13, 8-15-17 जैसे "पाइथागोरस त्रिक (Pythagorean triplets)" के गुणज हों, तो हीरोन के सूत्र की जगह सीधे समकोण त्रिभुज मानकर ½×आधार×ऊँचाई से क्षेत्रफल निकालें — यह बहुत तेज़ है। समचतुर्भुज में क्षेत्रफल और एक विकर्ण दिया हो, तो पहले दूसरा विकर्ण निकालें, फिर पाइथागोरस प्रमेय से भुजा निकालें।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">वृत्त, अर्धवृत्त, त्रिज्यखंड (Circle, Semicircle, Sector)</span></h2>
+<p>वृत्त से जुड़े प्रश्नों में त्रिज्या (Radius) सबसे महत्वपूर्ण मात्रा है — एक बार त्रिज्या मिल जाए, तो परिधि और क्षेत्रफल दोनों सीधे निकल आते हैं। अर्धवृत्त (Semicircle) पूरे वृत्त का आधा भाग है, लेकिन ध्यान रहे कि इसका परिमाप सिर्फ आधी परिधि नहीं होता — इसमें व्यास (Diameter) भी जोड़ना पड़ता है। त्रिज्यखंड (Sector) वृत्त का वह भाग है जो केंद्र पर बने कोण से घिरा होता है — इसका क्षेत्रफल और चाप की लंबाई दोनों उस कोण के अनुपात में निकलते हैं। दो संकेंद्रीय वृत्तों (Concentric Circles) के बीच के वलयाकार क्षेत्र (Ring/Annulus) का क्षेत्रफल भी एक लोकप्रिय प्रश्न-प्रकार है।</p>
+<div class="formula-box"><div class="formula-title">📐  वृत्त, अर्धवृत्त, त्रिज्यखंड — सूत्र (Formula)</div><p>वृत्त: क्षेत्रफल = πR²; परिधि = 2πR अर्धवृत्त: क्षेत्रफल = πR²/2; परिमाप = πR + 2R त्रिज्यखंड (Sector, कोण θ): क्षेत्रफल = (πR²θ)/360 = ½×(चाप की लंबाई)×R चाप की लंबाई = (2πRθ)/360 दो संकेंद्रीय वृत्तों के बीच का क्षेत्रफल = π(R₁²−R₂²)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 4 (आसान) — 5 cm त्रिज्या वाले वृत्त के त्रिज्यखंड का क्षेत्रफल ज्ञात करें, जो 3.5 cm लंबाई वाले चाप द्वारा बना हो।</div><p>चरण 1: सूत्र: त्रिज्यखंड का क्षेत्रफल = ½×(चाप की लंबाई)×त्रिज्या चरण 2: = ½×3.5×5 चरण 3: = 8.75 वर्ग सेमी ✅ उत्तर (Answer): 8.75 वर्ग सेमी</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 5 (मध्यम) — एक तार को वर्ग के आकार में मोड़ा जाता है, जिसका क्षेत्रफल 81 वर्ग सेमी है। यदि उसी तार को अर्धवृत्ताकार आकार में मोड़ा जाए, तो अर्धवृत्त का क्षेत्रफल ज्ञात करें (π=22/7 लें)।</div><p>चरण 1: वर्ग का क्षेत्रफल=81 ⇒ भुजा=9 सेमी ⇒ वर्ग का परिमाप=4×9=36 सेमी चरण 2: यही तार अर्धवृत्त बनाएगा, तो अर्धवृत्त का परिमाप भी 36 सेमी होगा चरण 3: परिमाप सूत्र: πR+2R=36 ⇒ R×(22/7+2)=36 ⇒ R×36/7=36 ⇒ R=7 सेमी चरण 4: क्षेत्रफल = πR²/2 = (22/7)×49/2 = 77 वर्ग सेमी ✅ उत्तर (Answer): 77 वर्ग सेमी</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 6 (कठिन) — दो संकेंद्रीय वृत्तों की त्रिज्याएं 5 सेमी और 4 सेमी हैं। इन वृत्तों के बीच वाले स्थान (वलय) का क्षेत्रफल ज्ञात करें (π=22/7 लें)।</div><p>चरण 1: सूत्र: वलय का क्षेत्रफल = π(R₁²−R₂²) चरण 2: = (22/7)×(5²−4²) = (22/7)×(25−16) चरण 3: = (22/7)×9 = 198/7 चरण 4: = 28.29 वर्ग सेमी (लगभग) ✅ उत्तर (Answer): 198/7 वर्ग सेमी (≈ 28.29 वर्ग सेमी)</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): वृत्त-त्रिज्यखंड की स्पीड ट्रिक</div><p>त्रिज्यखंड का क्षेत्रफल निकालने के लिए अगर चाप की लंबाई दी हो, तो कोण (θ) निकालने की जरूरत नहीं — सीधे ½×चाप×त्रिज्या लगाएं, यह सबसे तेज़ तरीका है। दो संकेंद्रीय वृत्तों में हमेशा π(R₁²−R₂²) = π(R₁−R₂)(R₁+R₂) के रूप में भी लिख सकते हैं — जब बड़ी संख्याएं हों तो यह गुणा में आसानी देता है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">समलंब चतुर्भुज, बहुभुज (Trapezium, Polygon)</span></h2>
+<p>समलंब चतुर्भुज (Trapezium) वह चतुर्भुज है जिसकी केवल एक जोड़ी भुजाएं समांतर होती हैं। इसका क्षेत्रफल निकालने के लिए दोनों समांतर भुजाओं का औसत लेकर उनके बीच की लंबवत दूरी (ऊँचाई) से गुणा किया जाता है। नियमित बहुभुज (Regular Polygon), जैसे षट्भुज (Hexagon) या पंचभुज (Pentagon), के लिए अलग-अलग विशेष सूत्र होते हैं जो भुजा की लंबाई पर आधारित होते हैं। जब किसी चतुर्भुज का सिर्फ एक विकर्ण और उस पर डाले गए दोनों लंब पता हों (लेकिन भुजाएं नहीं), तब भी एक सरल सूत्र से क्षेत्रफल निकाला जा सकता है।</p>
+<div class="formula-box"><div class="formula-title">📐  समलंब चतुर्भुज, बहुभुज — सूत्र (Formula)</div><p>समलंब चतुर्भुज: क्षेत्रफल = ½×(समांतर भुजाओं का योग)×(उनके बीच की दूरी) सामान्य चतुर्भुज (विकर्ण d, लंब p₁,p₂): क्षेत्रफल = ½×d×(p₁+p₂) नियमित षट्भुज (भुजा a): क्षेत्रफल = (3√3/2)×a² नियमित पंचभुज (भुजा a): क्षेत्रफल ≈ 1.72×a² नियमित बहुभुज (N भुजाएं, भुजा a): क्षेत्रफल = (Na²)/[4×tan(180°/N)]</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 7 (आसान) — किसी समलंब चतुर्भुज का क्षेत्रफल 1,325 वर्ग मीटर है। यदि दोनों समांतर भुजाएं 33 मीटर और 20 मीटर हों, तो समांतर भुजाओं के बीच की दूरी ज्ञात करें।</div><p>चरण 1: सूत्र: क्षेत्रफल = ½×(a+b)×h चरण 2: 1325 = ½×(33+20)×h = ½×53×h चरण 3: h = 1325×2/53 = 2650/53 चरण 4: h = 50 मीटर ✅ उत्तर (Answer): 50 मीटर</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 8 (मध्यम) — 2√3 सेमी भुजा वाले नियमित षट्भुज (Hexagon) का क्षेत्रफल ज्ञात करें।</div><p>चरण 1: सूत्र: क्षेत्रफल = (3√3/2)×a², यहाँ a=2√3 चरण 2: a² = (2√3)² = 4×3 = 12 चरण 3: क्षेत्रफल = (3√3/2)×12 = 18√3 चरण 4: क्षेत्रफल = 18√3 वर्ग सेमी (≈ 31.18 वर्ग सेमी) ✅ उत्तर (Answer): 18√3 वर्ग सेमी</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 9 (कठिन) — किसी चतुर्भुज के एक विकर्ण की लंबाई 20 सेमी है, तथा विकर्ण पर डाले गए लंब क्रमशः 8 सेमी और 6 सेमी हैं। चतुर्भुज का क्षेत्रफल ज्ञात करें।</div><p>चरण 1: विकर्ण चतुर्भुज को 2 त्रिभुजों में बांटता है, जिनकी ऊँचाई विकर्ण पर डाले गए लंब हैं चरण 2: पहले त्रिभुज का क्षेत्रफल = ½×20×8 = 80 वर्ग सेमी चरण 3: दूसरे त्रिभुज का क्षेत्रफल = ½×20×6 = 60 वर्ग सेमी चरण 4: कुल क्षेत्रफल = 80+60 = 140 वर्ग सेमी ✅ उत्तर (Answer): 140 वर्ग सेमी</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): समलंब-बहुभुज की स्पीड ट्रिक</div><p>चतुर्भुज में एक विकर्ण व दो लंब दिए हों, तो सूत्र को एक ही चरण में याद रखें: क्षेत्रफल = ½×विकर्ण×(लंब₁+लंब₂) — दो अलग त्रिभुज बनाने की जरूरत नहीं। समलंब चतुर्भुज में हमेशा "औसत चौड़ाई × ऊँचाई" के रूप में सोचें — यानी दोनों समांतर भुजाओं का औसत लेकर ऊँचाई से गुणा करें।</p></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>आकृति</th><th>क्षेत्रफल सूत्र</th><th>परिमाप/परिधि सूत्र</th></tr></thead><tbody><tr><td>वर्ग (Square)</td><td>(भुजा)²</td><td>4×भुजा</td></tr><tr><td>आयत (Rectangle)</td><td>लंबाई×चौड़ाई</td><td>2×(लंबाई+चौड़ाई)</td></tr><tr><td>त्रिभुज (सामान्य)</td><td>½×आधार×ऊँचाई</td><td>a+b+c</td></tr><tr><td>त्रिभुज (हीरोन)</td><td>√[s(s−a)(s−b)(s−c)]</td><td>a+b+c</td></tr><tr><td>समबाहु त्रिभुज</td><td>(√3/4)×भुजा²</td><td>3×भुजा</td></tr><tr><td>समांतर चतुर्भुज</td><td>आधार×ऊँचाई</td><td>2×(भुजा₁+भुजा₂)</td></tr><tr><td>समचतुर्भुज (Rhombus)</td><td>½×d₁×d₂</td><td>4×भुजा</td></tr><tr><td>वृत्त</td><td>πR²</td><td>2πR</td></tr><tr><td>अर्धवृत्त</td><td>πR²/2</td><td>πR+2R</td></tr><tr><td>समलंब चतुर्भुज</td><td>½×(a+b)×h</td><td>a+b+c+d</td></tr></tbody></table></div>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">🟢 त्रिभुज के क्षेत्रफल की विधियाँ</div><ul class="ch-list"><li>आधार व ऊँचाई ज्ञात हों: ½×आधार×ऊँचाई</li><li>तीनों भुजाएं ज्ञात हों: हीरोन सूत्र प्रयोग करें</li><li>दो भुजा व बीच का कोण ज्ञात हो: ½×ab×sinθ</li><li>समबाहु त्रिभुज में केवल भुजा चाहिए: (√3/4)a²</li></ul></div><div class="twocol-col"><div class="twocol-head">🔴 चतुर्भुज के क्षेत्रफल की विधियाँ</div><ul class="ch-list"><li>लंबाई-चौड़ाई ज्ञात हों (आयत): लंबाई×चौड़ाई</li><li>दोनों विकर्ण ज्ञात हों (रोम्बस): ½×d₁×d₂</li><li>एक विकर्ण व दो लंब ज्ञात हों: ½×d×(p₁+p₂)</li><li>समांतर भुजाएं व ऊँचाई ज्ञात हों (समलंब): ½×(a+b)×h</li></ul></div></div>
+<div class="warn-box"><p><strong>⚠️  आम गलतियाँ (Common Mistakes)</strong></p><p>❌ अर्धवृत्त के परिमाप में सिर्फ आधी परिधि (πR) लेना, व्यास (2R) जोड़ना भूल जाना ❌ हीरोन सूत्र में s की गणना गलत करना — s हमेशा (a+b+c)/2 होता है, (a+b+c) नहीं ❌ त्रिज्यखंड (Sector) और अर्धवृत्त (Semicircle) को एक जैसा मान लेना, जबकि सेक्टर किसी भी कोण पर बन सकता है ❌ समचतुर्भुज (Rhombus) और वर्ग को एक ही सूत्र से हल करने की कोशिश करना ❌ संकेंद्रीय वृत्तों के बीच क्षेत्रफल में π(R₁−R₂)² लिखना, जबकि सही सूत्र π(R₁²−R₂²) है ❌ त्रिभुज के मध्यबिंदुओं से बनी आकृति का क्षेत्रफल मूल त्रिभुज के बराबर मान लेना — यह हमेशा मूल त्रिभुज का ¼ होता है ❌ परिमाप और क्षेत्रफल की इकाई (units) में गड़बड़ करना — परिमाप रैखिक (cm) होता है, क्षेत्रफल वर्ग (cm²) में</p></div>
+<p>महत्वपूर्ण: त्रिभुज के तीनों भुजाओं के मध्यबिंदुओं को मिलाने से बनने वाला त्रिभुज हमेशा मूल त्रिभुज के क्षेत्रफल का ठीक ¼ भाग होता है — यह तथ्य कई प्रश्नों में शॉर्टकट का काम करता है। साथ ही, समान परिमाप वाली आकृतियों में वृत्त का क्षेत्रफल सबसे अधिक होता है, और वर्ग का क्षेत्रफल किसी भी आयत से अधिक होता है (उसी परिमाप के लिए)।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>📝  अभ्यास प्रश्न (Practice Questions)</th></tr></thead><tbody><tr><td>Q1. किसी आयताकार क्षेत्र की लंबाई तथा चौड़ाई का अनुपात 3:2 है। यदि परिमाप 80 मीटर हो, तो चौड़ाई ज्ञात करें। Q2. एक समबाहु त्रिभुज का क्षेत्रफल 400√3 वर्ग मीटर है। उसका परिमाप ज्ञात करें। Q3. यदि किसी वृत्त की त्रिज्या को 1 सेमी बढ़ाया जाए तो उसका क्षेत्रफल 22 वर्ग सेमी बढ़ जाता है (π=22/7)। वृत्त की मूल त्रिज्या ज्ञात करें। Q4. किसी कमरे की लंबाई उसकी चौड़ाई से 3 मीटर अधिक है। यदि फर्श का क्षेत्रफल 70 वर्ग मीटर है, तो फर्श का परिमाप ज्ञात करें। Q5. किसी वृत्ताकार दौड़ पथ की बाहरी परिधि 528 मीटर है, तथा पथ हर जगह 14 मीटर चौड़ा है। ₹10 प्रति वर्ग मीटर की दर से पथ समतल करने की लागत ज्ञात करें।</td></tr><tr><td>🔑 उत्तर कुंजी (Answer Key): Q1. 16 मीटर  |  Q2. 120 मीटर  |  Q3. 3 सेमी  |  Q4. 34 मीटर  |  Q5. ₹67,760</td></tr></tbody></table></div>
+<h3 class="ch-h3">★  याद रखने योग्य फॉर्मूले एवं तथ्य  ★</h3><p>1. वर्ग: क्षेत्रफल=(भुजा)²; परिमाप=4×भुजा 2. आयत: क्षेत्रफल=ल×चौ; परिमाप=2(ल+चौ) 3. त्रिभुज: क्षेत्रफल=½×आधार×ऊँचाई 4. हीरोन सूत्र: √[s(s−a)(s−b)(s−c)], s=(a+b+c)/2 5. समबाहु त्रिभुज: क्षेत्रफल=(√3/4)a² 6. समांतर चतुर्भुज: क्षेत्रफल=आधार×ऊँचाई 7. समचतुर्भुज: क्षेत्रफल=½×d₁×d₂ 8. वृत्त: क्षेत्रफल=πR²; परिधि=2πR 9. अर्धवृत्त: क्षेत्रफल=πR²/2; परिमाप=πR+2R 10. त्रिज्यखंड: क्षेत्रफल=(πR²θ)/360=½×चाप×R 11. चाप की लंबाई=(2πRθ)/360 12. संकेंद्रीय वृत्त: वलय क्षेत्रफल=π(R₁²−R₂²) 13. समलंब चतुर्भुज: क्षेत्रफल=½×(a+b)×h 14. सामान्य चतुर्भुज (विकर्ण+2लंब): क्षेत्रफल=½×d×(p₁+p₂) 15. नियमित षट्भुज: क्षेत्रफल=(3√3/2)a² 16. त्रिभुज के मध्यबिंदु त्रिभुज का क्षेत्रफल = मूल त्रिभुज का ¼ 17. समान परिमाप में वृत्त &gt; वर्ग &gt; आयत (क्षेत्रफल के हिसाब से) 18. समरूप त्रिभुजों के क्षेत्रफलों का अनुपात = संगत भुजाओं के वर्गों का अनुपात 19. दो वृत्तों के क्षेत्रफलों का अनुपात = त्रिज्याओं के वर्गों का अनुपात 20. 4 दीवारों का क्षेत्रफल (कमरा) = 2×(लंबाई+चौड़ाई)×ऊँचाई</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (Pre MCQ)  📝</h3><p>Q1. किसी त्रिभुज की भुजाएं 3 cm, 4 cm तथा 5 cm हैं। इस त्रिभुज की भुजाओं के मध्यबिंदुओं को मिलाने से बने त्रिभुज का क्षेत्रफल ज्ञात करें। (a) 6  (b) 3  (c) 3/2  (d) 3/4 Q2. एक समकोण त्रिभुज की भुजाएं तीन क्रमागत पूर्णांक (सेमी में) हैं। इसका क्षेत्रफल ज्ञात करें। (a) 9  (b) 8  (c) 5  (d) 6 Q3. एक समकोणीय समद्विबाहु त्रिभुज का विकर्ण (कर्ण) 16√2 सेमी है। क्षेत्रफल ज्ञात करें। (a) 144 cm²  (b) 128 cm²  (c) 112 cm²  (d) 110 cm² Q4. एक पहिये का व्यास 98 सेमी है। 1540 मीटर दूरी तय करने में पहिये द्वारा पूरे किए गए चक्करों की संख्या ज्ञात करें। (a) 500  (b) 600  (c) 700  (d) 800 Q5. किसी वृत्त की परिधि तथा क्षेत्रफल का अंकिक मान समान है। क्षेत्रफल ज्ञात करें। (a) 6 वर्ग इकाई  (b) 4π वर्ग इकाई  (c) 8 वर्ग इकाई  (d) 12 वर्ग इकाई Q6. किसी वर्ग की एक भुजा में 30% वृद्धि होती है। क्षेत्रफल को समान रखने के लिए, दूसरी भुजा में कितने % कमी करनी होगी? (a) 23 1/13%  (b) 76 12/13%  (c) 30%  (d) 15% Q7. दो वृत्तों के व्यासों का योग 35 मीटर है तथा इनकी परिधियों का अंतर 22 मीटर है। छोटे वृत्त की त्रिज्या ज्ञात करें। (a) 3.5 मीटर  (b) 7 मीटर  (c) 10.5 मीटर  (d) 14 मीटर</p>
+<p>🔑 उत्तर कुंजी (Answer Key): Q1.(c) 3/2 | Q2.(d) 6 | Q3.(b) 128cm² | Q4.(a) 500 | Q5.(b) 4π वर्ग इकाई | Q6.(a) 23 1/13% | Q7.(b) 7 मीटर</p>
+<p>📘 संपूर्ण अभ्यास सेट — 18 प्रश्न सह हल (Complete Practice Set)</p><p>इस अंतिम अभ्यास सेट में त्रिभुज, चतुर्भुज, वृत्त, त्रिज्यखंड एवं बहुभुज से जुड़े सभी प्रकार के प्रश्न शामिल हैं — पहले स्वयं हल करने की कोशिश करें, फिर नीचे दिया गया हल देखें।</p>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-1 — किसी त्रिभुज का परिमाप 54 मीटर है तथा भुजाएं 5:6:7 के अनुपात में हैं। त्रिभुज का क्षेत्रफल ज्ञात करें। (a) 18 m²  (b) 54√6 m²  (c) 27√2 m²  (d) 25 m²</div><p>चरण 1: भुजाएं: 54×5/18=15, 54×6/18=18, 54×7/18=21 चरण 2: s=54/2=27 चरण 3: क्षेत्रफल=√[27×(27−15)×(27−18)×(27−21)]=√(27×12×9×6) चरण 4: =√17496=54√6 m² ✅ उत्तर (Answer): (b) 54√6 m² ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-2 — किसी समबाहु त्रिभुज की ऊँचाई तथा क्षेत्रफल का अंकिक मान समान है। त्रिभुज की भुजा ज्ञात करें। (a) 2 units  (b) 4 units  (c) 5 units  (d) 8 units</div><p>चरण 1: ऊँचाई=(√3/2)a; क्षेत्रफल=(√3/4)a² चरण 2: शर्त: (√3/2)a = (√3/4)a² चरण 3: 2 = a (दोनों तरफ a व √3/4 से भाग देने पर) चरण 4: a=2 units ✅ उत्तर (Answer): (a) 2 units ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-3 — 8 मीटर लंबे तथा 6 मीटर चौड़े कमरे के फर्श को ढकने के लिए 4 डेसीमीटर भुजा वाली कितनी वर्गाकार टाइल्स चाहिए? (a) 200  (b) 260  (c) 280  (d) 300</div><p>चरण 1: 1 डेसीमीटर=0.1 मीटर, तो टाइल भुजा=0.4 मीटर चरण 2: टाइल क्षेत्रफल=0.4×0.4=0.16 वर्ग मीटर चरण 3: फर्श क्षेत्रफल=8×6=48 वर्ग मीटर चरण 4: टाइलों की संख्या=48/0.16=300 ✅ उत्तर (Answer): (d) 300 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-4 — किसी वृत्त की त्रिज्या किसी वर्ग की भुजा के बराबर है। वृत्त तथा वर्ग के क्षेत्रफलों का अनुपात ज्ञात करें। (a) 1:π  (b) π:1  (c) π:2  (d) 2:π</div><p>चरण 1: माना त्रिज्या=भुजा=a चरण 2: वृत्त का क्षेत्रफल=πa²; वर्ग का क्षेत्रफल=a² चरण 3: अनुपात=πa²:a²=π:1 ✅ उत्तर (Answer): (b) π:1 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-5 — यदि किसी वर्ग तथा आयत का परिमाप समान हो, तो उनके क्षेत्रफलों P (वर्ग) तथा Q (आयत) के बीच संबंध क्या होगा? (a) P&lt;Q  (b) P=Q  (c) P&gt;Q  (d) कुछ नहीं कहा जा सकता</div><p>चरण 1: समान परिमाप के लिए, सभी चतुर्भुजों में वर्ग का क्षेत्रफल सबसे अधिक होता है चरण 2: उदाहरण: परिमाप=20; वर्ग भुजा=5,क्षेत्रफल=25; आयत 6×4,क्षेत्रफल=24 चरण 3: अतः वर्ग का क्षेत्रफल हमेशा ≥ आयत के क्षेत्रफल के ✅ उत्तर (Answer): (c) P&gt;Q ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-6 — 9 cm, 10 cm तथा 11 cm भुजा वाले त्रिभुज का क्षेत्रफल ज्ञात करें। (a) 30 cm²  (b) 60 cm²  (c) 30√2 cm²  (d) 60√2 cm²</div><p>चरण 1: s=(9+10+11)/2=15 चरण 2: क्षेत्रफल=√[15×(15−9)×(15−10)×(15−11)]=√(15×6×5×4) चरण 3: =√1800=30√2 cm² ✅ उत्तर (Answer): (c) 30√2 cm² ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-7 — किसी त्रिभुज की भुजाओं का अनुपात 3:4:5 है। यदि त्रिभुज का क्षेत्रफल 72 वर्ग इकाई है, तो सबसे छोटी भुजा ज्ञात करें। (a) 4√3 unit  (b) 5√3 unit  (c) 6√3 unit  (d) 3√3 unit</div><p>चरण 1: भुजाएं 3k,4k,5k मानें (3:4:5 समकोण त्रिभुज है) चरण 2: क्षेत्रफल=½×3k×4k=6k²=72 ⇒ k²=12 ⇒ k=2√3 चरण 3: सबसे छोटी भुजा=3k=3×2√3=6√3 ✅ उत्तर (Answer): (c) 6√3 unit ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-8 — किसी त्रिभुज की तीन मध्यिकाओं (medians) की लंबाई 9 cm, 12 cm तथा 15 cm हैं। त्रिभुज का क्षेत्रफल ज्ञात करें। (a) 24  (b) 72  (c) 48  (d) 144</div><p>चरण 1: नियम: मध्यिकाओं से बने त्रिभुज का क्षेत्रफल × 4/3 = मूल त्रिभुज का क्षेत्रफल चरण 2: मध्यिका-त्रिभुज (9,12,15 समकोण त्रिभुज): क्षेत्रफल=½×9×12=54 चरण 3: मूल त्रिभुज का क्षेत्रफल=54×4/3=72 ✅ उत्तर (Answer): (b) 72 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-9 — यदि किसी समबाहु त्रिभुज के परिमाप का अंकिक मान उसके क्षेत्रफल के √3 गुना है, तो त्रिभुज की भुजा ज्ञात करें। (a) 2 units  (b) 3 units  (c) 4 units  (d) 6 units</div><p>चरण 1: परिमाप=3a; क्षेत्रफल=(√3/4)a² चरण 2: शर्त: 3a=√3×(√3/4)a²=(3/4)a² चरण 3: 3=(3/4)a ⇒ a=4 units ✅ उत्तर (Answer): (c) 4 units ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-10 — दो संकेंद्रीय वृत्तों के क्षेत्रफल क्रमशः 154 वर्ग सेमी और 616 वर्ग सेमी हैं। इन दोनों वृत्तों के बीच के वृत्ताकार पथ की चौड़ाई ज्ञात करें (π=22/7)। (a) 3.5 cm  (b) 7 cm  (c) 10.5 cm  (d) 14 cm</div><p>चरण 1: छोटे वृत्त: πr₁²=154 ⇒ r₁²=154×7/22=49 ⇒ r₁=7 cm चरण 2: बड़े वृत्त: πr₂²=616 ⇒ r₂²=616×7/22=196 ⇒ r₂=14 cm चरण 3: चौड़ाई=r₂−r₁=14−7=7 cm ✅ उत्तर (Answer): (b) 7 cm ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-11 — एक पहिया 440 मीटर चलने में 1000 चक्कर पूरे करता है। पहिये का व्यास ज्ञात करें (π=22/7)। (a) 0.44 m  (b) 0.14 m  (c) 0.24 m  (d) 0.34 m</div><p>चरण 1: कुल दूरी=1000×परिधि ⇒ परिधि=440/1000 मीटर=0.44 मीटर=44 सेमी चरण 2: परिधि=πd ⇒ 44=(22/7)×d चरण 3: d=44×7/22=14 सेमी=0.14 मीटर ✅ उत्तर (Answer): (b) 0.14 m ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-12 — 352 सेमी परिधि वाली एक वृत्ताकार चादर में से दो बड़ी से बड़ी बराबर वृत्ताकार प्लेटें काटी जाती हैं। प्रत्येक प्लेट की परिधि ज्ञात करें (π=22/7)। (a) 176 cm  (b) 150 cm  (c) 165 cm  (d) 180 cm</div><p>चरण 1: चादर की त्रिज्या R: 2πR=352 ⇒ R=352×7/44=56 cm चरण 2: दो बराबर प्लेटें (एक-दूसरे से सटी) काटने पर हर प्लेट की त्रिज्या=R/2=28 cm चरण 3: प्रत्येक प्लेट की परिधि=2π×28=2×(22/7)×28=176 cm ✅ उत्तर (Answer): (a) 176 cm ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-13 — किसी समलंब चतुर्भुज की समांतर भुजाओं का अनुपात 2:3 है तथा उनके बीच की दूरी 12 cm है। यदि क्षेत्रफल 480 वर्ग सेमी है, तो बड़ी समांतर भुजा की लंबाई ज्ञात करें। (a) 56 cm  (b) 36 cm  (c) 42 cm  (d) 48 cm</div><p>चरण 1: भुजाएं 2k,3k मानें चरण 2: क्षेत्रफल=½×(2k+3k)×12=30k=480 ⇒ k=16 चरण 3: बड़ी भुजा=3k=3×16=48 cm ✅ उत्तर (Answer): (d) 48 cm ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-14 — किसी वर्ग के प्रत्येक कोने पर 4 सेमी त्रिज्या वाले 4 बराबर वृत्त बने हैं, जो आपस में बाह्य रूप से स्पर्श करते हैं। वर्ग तथा वृत्तों के त्रिज्यखंडों के बीच के भाग का क्षेत्रफल ज्ञात करें (π का प्रयोग करें)। (a) 9(π−4)  (b) 16(4−π)  (c) 99(π−4)  (d) 169(π−4)</div><p>चरण 1: चूंकि वृत्त एक-दूसरे को स्पर्श करते हैं, वर्ग की भुजा=2×त्रिज्या=2×4=8 सेमी चरण 2: वर्ग का क्षेत्रफल=8×8=64 वर्ग सेमी चरण 3: 4 चतुर्थांश वृत्त (कुल 1 पूरा वृत्त के बराबर)=π×4²=16π चरण 4: शेष क्षेत्रफल=64−16π=16(4−π) ✅ उत्तर (Answer): (b) 16(4−π) ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-15 — चार समान वृत्त, प्रत्येक की त्रिज्या a इकाई है, एक-दूसरे को स्पर्श करते हैं। उनके द्वारा घिरे क्षेत्रफल (π=22/7) ज्ञात करें। (a) 3a²  (b) 6a²/7  (c) 41a²/7  (d) a²/7</div><p>चरण 1: 4 वृत्त एक-दूसरे को स्पर्श करते हुए वर्ग बनाते हैं जिसकी भुजा=2a चरण 2: वर्ग का क्षेत्रफल=(2a)²=4a² चरण 3: 4 चतुर्थांश वृत्त (=1 पूरा वृत्त)=πa²=(22/7)a² चरण 4: घिरा क्षेत्रफल=4a²−(22/7)a²=a²×(28−22)/7=6a²/7 ✅ उत्तर (Answer): (b) 6a²/7 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-16 — यदि किसी समद्विबाहु त्रिभुज की प्रत्येक बराबर भुजा a इकाई तथा तीसरी भुजा b इकाई है, तो उसका क्षेत्रफल किस सूत्र से मिलेगा? (a) (a/4)√(4a²−a²)  (b) (b/4)√(4a²−b²)  (c) (a/2)√(2a²−b²)  (d) (b/2)√(a²−2b²)</div><p>चरण 1: आधार b पर लंब ऊँचाई h=√[a²−(b/2)²]=√(4a²−b²)/2 चरण 2: क्षेत्रफल=½×b×h=½×b×√(4a²−b²)/2 चरण 3: क्षेत्रफल=(b/4)×√(4a²−b²) ✅ उत्तर (Answer): (b) (b/4)√(4a²−b²) ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-17 — किसी समद्विबाहु त्रिभुज की दोनों बराबर भुजाएं 10 सेमी हैं तथा उनके बीच का कोण 45° है। त्रिभुज का क्षेत्रफल ज्ञात करें। (a) 25 cm²  (b) 25√2 cm²  (c) 12.5 cm²  (d) 50 cm²</div><p>चरण 1: सूत्र: क्षेत्रफल=½×a×b×sinθ (दो भुजा व बीच का कोण) चरण 2: =½×10×10×sin45° चरण 3: =50×(√2/2)=25√2 cm² ✅ उत्तर (Answer): (b) 25√2 cm² ✓</p></div>
+<p>📐 सूत्र पुनरावृत्ति तालिका (Formula Revision Table)</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टॉपिक</th><th>सूत्र (Formula)</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>वर्ग</td><td>क्षेत्रफल=(भुजा)²; परिमाप=4×भुजा</td><td>सभी भुजाएं बराबर हों</td></tr><tr><td>आयत</td><td>क्षेत्रफल=ल×चौ; परिमाप=2(ल+चौ)</td><td>लंबाई-चौड़ाई ज्ञात हों</td></tr><tr><td>त्रिभुज (आधार-ऊँचाई)</td><td>½×आधार×ऊँचाई</td><td>आधार व ऊँचाई ज्ञात हों</td></tr><tr><td>त्रिभुज (हीरोन)</td><td>√[s(s−a)(s−b)(s−c)]</td><td>केवल तीनों भुजाएं ज्ञात हों</td></tr><tr><td>समबाहु त्रिभुज</td><td>(√3/4)×भुजा²</td><td>सभी भुजाएं बराबर हों</td></tr><tr><td>समांतर चतुर्भुज</td><td>आधार×ऊँचाई</td><td>आधार व ऊँचाई ज्ञात हों</td></tr><tr><td>समचतुर्भुज</td><td>½×d₁×d₂</td><td>दोनों विकर्ण ज्ञात हों</td></tr><tr><td>वृत्त</td><td>πR²; परिधि=2πR</td><td>त्रिज्या ज्ञात हो</td></tr><tr><td>अर्धवृत्त</td><td>πR²/2; परिमाप=πR+2R</td><td>आधा वृत्त हो</td></tr><tr><td>त्रिज्यखंड (Sector)</td><td>(πR²θ)/360 या ½×चाप×R</td><td>केंद्रीय कोण/चाप ज्ञात हो</td></tr><tr><td>संकेंद्रीय वृत्त</td><td>π(R₁²−R₂²)</td><td>दो वृत्तों के बीच वलय चाहिए</td></tr><tr><td>समलंब चतुर्भुज</td><td>½×(a+b)×h</td><td>एक जोड़ी भुजाएं समांतर हों</td></tr><tr><td>चतुर्भुज (विकर्ण+लंब)</td><td>½×d×(p₁+p₂)</td><td>विकर्ण व दो लंब ज्ञात हों</td></tr><tr><td>नियमित षट्भुज</td><td>(3√3/2)×भुजा²</td><td>6 बराबर भुजाओं वाला बहुभुज हो</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="ras-pre-math-reasoning-ch10-byaj-si-ci.html" class="ch-nav-btn">← अध्याय 10: साधारण एवं चक्रवृद्धि ब्याज</a>
+  <a href="ras-pre-math-reasoning-ch12-aankada-vishleshan.html" class="ch-nav-btn ch-nav-next">अध्याय 12: आंकड़ा विश्लेषण →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="ras-pre-math-reasoning.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 3: संख्या/अक्षर श्रृंखला एवं कोडिंग-डिकोडिंग — RAS Pre — गणित एवं तर्कशक्ति | Omkar Sir</title>
+<meta name="description" content="संख्या/अक्षर श्रृंखला एवं कोडिंग-डिकोडिंग (Number/Letter Series &amp; Coding-Decoding) — RAS Pre+Mains के लिए RAS Pre — गणित एवं तर्कशक्ति का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🔢 अध्याय 3/14 — RAS Pre — गणित एवं तर्कशक्ति</div>
+  <h1>संख्या/अक्षर श्रृंखला एवं कोडिंग-डिकोडिंग</h1>
+  <div class="ch-sub">Number/Letter Series &amp; Coding-Decoding | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>संख्या श्रृंखला (Number Series)</li><li>अक्षर श्रृंखला (Letter Series)</li><li>कोडिंग-डिकोडिंग (Coding-Decoding)</li></ol></div>
+<p>🎬 एक कहानी से शुरुआत करते हैं...</p><p>सेना में एक गुप्त संदेश भेजा गया — "DOG को अगर WLT लिखा जाता है, तो CAT को क्या लिखेंगे?" नए भर्ती हुए सिपाही को यह देखकर घबराहट हुई, लेकिन सीनियर अधिकारी मुस्कुराए — "बेटा, यह कोई जादू नहीं, सिर्फ एक पैटर्न है। हर अक्षर की जगह अंग्रेजी वर्णमाला में उससे उल्टी गिनती वाला अक्षर लिख दिया गया है — D की जगह W, O की जगह L, G की जगह T... यही कोडिंग-डिकोडिंग है!" ठीक उसी तरह, जब कोई परीक्षा में पूछे "2, 6, 12, 20, 30, ?" तो घबराने की बजाय बस यह देखना है कि हर पद में क्या जोड़ा जा रहा है — यही संख्या श्रृंखला (Number Series) है।</p><p>RAS Pre में हर साल संख्या श्रृंखला, अक्षर श्रृंखला व कोडिंग-डिकोडिंग से मिलाकर प्रश्न पक्के आते हैं — और अच्छी बात यह है कि एक बार पैटर्न पहचानने की आदत बन जाए, तो ये प्रश्न सबसे तेज़ हल होने वाले बन जाते हैं। चलिए शुरू करते हैं!</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">संख्या श्रृंखला (Number Series)</span></h2>
+<p>संख्या श्रृंखला में संख्याओं का एक क्रम दिया जाता है, जिसमें एक निश्चित नियम (pattern) छुपा होता है — और हमें अगला पद (या लुप्त पद) ज्ञात करना होता है। यह पैटर्न तीन तरह का हो सकता है: समान अंतर वाला (Arithmetic — जैसे हर बार 3 जोड़ना), समान अनुपात वाला (Geometric — जैसे हर बार 2 से गुणा करना), या मिश्रित (Mixed — जैसे बारी-बारी से गुणा और जोड़ना, या वर्ग/घन आधारित पैटर्न)। कभी-कभी पूरी श्रृंखला में से एक संख्या "गलत" (odd one out) भी पूछी जाती है, जो पैटर्न को तोड़ती है।</p>
+<div class="formula-box"><div class="formula-title">📐  संख्या श्रृंखला — पहचान के नियम — सूत्र (Formula)</div><p>समांतर श्रेढ़ी (Arithmetic): क्रमागत पदों में समान अंतर (d) — पद = पहला पद + (n-1)×d गुणोत्तर श्रेढ़ी (Geometric): क्रमागत पदों में समान अनुपात (r) — पद = पहला पद × r^(n-1) मिश्रित श्रृंखला: बारी-बारी से दो संक्रियाएं (जैसे ×2 फिर +1), या वर्ग/घन आधारित पैटर्न "गलत संख्या" प्रश्नों में: पहले पैटर्न पहचानें, फिर जांचें कौनसी संख्या उस पैटर्न को तोड़ती है</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 1 (आसान) — श्रृंखला में अगला पद ज्ञात करें: 5, 11, 17, 23, 29, ?</div><p>चरण 1: क्रमागत पदों का अंतर देखें: 11−5=6, 17−11=6, 23−17=6, 29−23=6 चरण 2: यह एक समांतर श्रेढ़ी (Arithmetic) है जिसमें हर बार 6 जोड़ा जा रहा है चरण 3: अगला पद = 29 + 6 ✅ उत्तर (Answer): 35</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 2 (मध्यम) — श्रृंखला में अगला पद ज्ञात करें: 2, 5, 11, 23, 47, ?</div><p>चरण 1: पैटर्न जांचें: 2×2+1=5, 5×2+1=11, 11×2+1=23, 23×2+1=47 चरण 2: यह एक मिश्रित श्रृंखला है, जिसमें नियम है — पिछली संख्या को 2 से गुणा करके 1 जोड़ना चरण 3: अगला पद = 47×2+1 = 94+1 ✅ उत्तर (Answer): 95</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 3 (कठिन) — निम्न श्रृंखला में गलत संख्या पहचानें: 225, 289, 338, 374, 397, 415, 424</div><p>चरण 1: क्रमागत पदों का अंतर निकालें: 289−225=64, 338−289=49, 374−338=36, 397−374=23, 415−397=18, 424−415=9 चरण 2: अंतरों को देखें: 64, 49, 36, 23, 18, 9 — यह वर्ग संख्याओं (8²,7²,6²,5²,4²,3²) घटते क्रम में होना चाहिए: 64,49,36,25,16,9 चरण 3: चौथा अंतर 25 होना चाहिए था, पर दिया गया है 23 — अर्थात 374 के बाद वाली संख्या 374+25=399 होनी चाहिए, न कि 397 चरण 4: अतः गलत संख्या 397 है (सही संख्या 399 होनी चाहिए) ✅ उत्तर (Answer): 397 गलत है (सही मान: 399)</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): संख्या श्रृंखला की स्पीड ट्रिक</div><p>हमेशा पहले लगातार पदों के बीच "अंतर" (difference) निकालें — अगर अंतर स्थिर (constant) है तो यह समांतर श्रेढ़ी है। अगर अंतर भी बढ़ता/घटता दिखे, तो "अंतरों के अंतर" (second difference) या अनुपात (ratio) जांचें। "गलत संख्या" प्रश्नों में विषम स्थान (1st,3rd,5th...) व सम स्थान (2nd,4th,6th...) की संख्याओं को अलग-अलग जांचना भी उपयोगी होता है, क्योंकि कई श्रृंखलाओं में दो पैटर्न आपस में मिश्रित (interleaved) होते हैं।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">अक्षर श्रृंखला (Letter Series)</span></h2>
+<p>अक्षर श्रृंखला में अंग्रेजी वर्णमाला के अक्षरों का एक क्रम दिया जाता है, जिसमें पैटर्न अक्षरों की वर्णमाला में स्थिति (Position) पर आधारित होता है — जैसे A=1, B=2, ... Z=26। यहाँ भी अंतर (arithmetic), अनुपात, या मिश्रित पैटर्न हो सकता है, परन्तु मुख्य कुंजी है — अक्षरों को उनकी संख्यात्मक स्थिति में बदलना, पैटर्न पहचानना, फिर वापस अक्षर में बदलना। एक विशेष बात ध्यान रखें — यदि स्थिति संख्या 26 से आगे बढ़ जाए, तो 26 घटाकर फिर से A से गिनती शुरू करें (wrap-around)।</p>
+<div class="formula-box"><div class="formula-title">📐  अक्षर श्रृंखला — पहचान के नियम — सूत्र (Formula)</div><p>वर्णमाला स्थिति: A=1, B=2, C=3, ... Z=26 (हमेशा इसी क्रम में बदलें) अंतर/अनुपात पैटर्न ठीक संख्या श्रृंखला जैसे ही लागू करें, बस अक्षर↔संख्या रूपांतरण जोड़ें यदि स्थिति संख्या 26 से अधिक हो जाए ⇒ 26 घटाएं (wrap-around): जैसे 31 ⇒ 31−26=5 ⇒ E जोड़ी/समूह वाली श्रृंखलाओं (जैसे "AC, FH, KM") में शुरुआती अक्षरों का पैटर्न अलग से जांचें</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 4 (आसान) — श्रृंखला में अगला पद ज्ञात करें: A, E, I, M, Q, ?</div><p>चरण 1: अक्षरों को स्थिति में बदलें: A=1, E=5, I=9, M=13, Q=17 चरण 2: अंतर देखें: 5−1=4, 9−5=4, 13−9=4, 17−13=4 — स्थिर अंतर (+4) चरण 3: अगला पद = 17+4 = 21 चरण 4: स्थिति 21 वापस अक्षर में बदलें ⇒ U ✅ उत्तर (Answer): U</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 5 (मध्यम) — श्रृंखला में अगला पद ज्ञात करें: D, F, I, M, R, X, ?</div><p>चरण 1: अक्षरों को स्थिति में बदलें: D=4, F=6, I=9, M=13, R=18, X=24 चरण 2: अंतर देखें: 6−4=2, 9−6=3, 13−9=4, 18−13=5, 24−18=6 — अंतर हर बार 1 से बढ़ रहा है चरण 3: अगला अंतर = 7, अगला पद = 24+7 = 31 चरण 4: चूंकि 31, 26 से अधिक है ⇒ wrap-around: 31−26=5 ⇒ स्थिति 5 = E ✅ उत्तर (Answer): E</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 6 (कठिन) — निम्न श्रृंखला में गलत पद पहचानें: AC, FH, KM, RP</div><p>चरण 1: हर जोड़ी के पहले अक्षर की स्थिति देखें: A=1, F=6, K=11, R=18 चरण 2: अंतर होना चाहिए: 6−1=5, 11−6=5, अगला 11+5=16 (जो P होना चाहिए), परन्तु दिया गया R=18 है — पैटर्न टूटता है चरण 3: हर जोड़ी के भीतर दोनों अक्षरों का अंतर भी जांचें: AC(1,3 अंतर2), FH(6,8 अंतर2), KM(11,13 अंतर2), RP(18,16 अंतर−2) — यह भी असंगत है चरण 4: अतः "RP" गलत पद है (सही पद "PR" होना चाहिए था, जहाँ P=16,R=18) ✅ उत्तर (Answer): RP गलत है (सही पद: PR)</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): अक्षर श्रृंखला की स्पीड ट्रिक</div><p>हर अक्षर के नीचे उसकी वर्णमाला स्थिति संख्या लिख लें — इससे पूरी समस्या एक साधारण संख्या श्रृंखला बन जाती है। जोड़ी/समूह वाली श्रृंखलाओं में पहले "शुरुआती अक्षर" का पैटर्न देखें, फिर हर समूह के "भीतरी अक्षरों के बीच अंतर" को अलग से जांचें — दोनों पैटर्न एक साथ मेल खाने चाहिए।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">कोडिंग-डिकोडिंग (Coding-Decoding)</span></h2>
+<p>कोडिंग-डिकोडिंग में किसी शब्द/वाक्य को एक निश्चित नियम के अनुसार बदलकर एक कूट (Code) बना दिया जाता है, और हमें उस नियम को पहचानकर किसी अन्य शब्द का कूट बनाना या किसी कूट को वापस डिकोड करना होता है। इसके मुख्य प्रकार हैं — अक्षर शिफ्टिंग (Letter Shifting: हर अक्षर को कुछ स्थान आगे/पीछे खिसकाना), संख्या कोडिंग (Number Coding: अक्षरों की स्थिति के आधार पर संख्या देना, या स्थिति का योग निकालना), प्रतिस्थापन कोडिंग (Substitution Coding: पूरे शब्दों को कूट-शब्दों से बदलना, वाक्यों की तुलना करके), तथा मैट्रिक्स कोडिंग (Matrix Coding: अक्षरों को ग्रिड में रखकर पंक्ति-स्तंभ संख्या से कोड बनाना)।</p>
+<div class="formula-box"><div class="formula-title">📐  कोडिंग-डिकोडिंग — पहचान के नियम — सूत्र (Formula)</div><p>अक्षर शिफ्टिंग: हर अक्षर को निश्चित संख्या में आगे/पीछे खिसकाएं (जैसे +1, −2) संख्या कोडिंग (योग आधारित): कूट = शब्द के सभी अक्षरों की वर्णमाला स्थिति का योग प्रतिस्थापन कोडिंग: कई कूट-वाक्यों की तुलना करके उभयनिष्ठ (common) शब्द व कूट का मिलान करें मैट्रिक्स कोडिंग: अक्षर को ग्रिड में पंक्ति व स्तंभ संख्या के जोड़े से दर्शाया जाता है</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 7 (आसान) — यदि किसी कूट भाषा में CAT को DBU लिखा जाता है, तो उसी कूट भाषा में DOG को क्या लिखा जाएगा?</div><p>चरण 1: पैटर्न जांचें: C→D (+1), A→B (+1), T→U (+1) — हर अक्षर को वर्णमाला में एक स्थान आगे खिसकाया गया है चरण 2: यही नियम DOG पर लागू करें: D→E (+1), O→P (+1), G→H (+1) चरण 3: अतः कूट होगा EPH ✅ उत्तर (Answer): EPH</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 8 (मध्यम) — यदि C=3 है और GHI=24 है, तो उसी कूट भाषा में KLST का कूट क्या होगा?</div><p>चरण 1: जांचें: C की वर्णमाला स्थिति = 3, जो दिए गए मान से मेल खाती है — अतः कूट = अक्षरों की स्थिति का योग चरण 2: सत्यापन: G=7,H=8,I=9, योग = 7+8+9 = 24 ✓ (दिए गए मान से मेल खाता है) चरण 3: अब KLST के लिए: K=11, L=12, S=19, T=20 चरण 4: योग = 11+12+19+20 = 62 ✅ उत्तर (Answer): 62</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 9 (कठिन) — यदि किसी कूट भाषा में E=5 है और AMENDMENT=89 है, तो उसी कूट भाषा में SECREATRY का कूट क्या होगा?</div><p>चरण 1: सत्यापन: A=1,M=13,E=5,N=14,D=4,M=13,E=5,N=14,T=20 — योग = 1+13+5+14+4+13+5+14+20 = 89 ✓ (नियम की पुष्टि: कूट = अक्षरों की स्थिति का योग) चरण 2: अब SECREATRY के लिए स्थिति ज्ञात करें: S=19,E=5,C=3,R=18,E=5,A=1,T=20,R=18,Y=25 चरण 3: योग = 19+5+3+18+5+1+20+18+25 चरण 4: चरणबद्ध जोड़: 19+5=24, +3=27, +18=45, +5=50, +1=51, +20=71, +18=89, +25=114 ✅ उत्तर (Answer): 114</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): कोडिंग-डिकोडिंग की स्पीड ट्रिक</div><p>सबसे पहले दिए गए उदाहरण से नियम को "सत्यापित" (verify) करें — बिना नियम की पुष्टि किए सीधे नए शब्द पर लागू न करें। संख्या-कोडिंग में हमेशा जांचें कि कूट "स्थिति का योग" है, "स्थिति का दोगुना" है, या "स्थिति में से कुछ घटाया/जोड़ा" गया है — यह पहले उदाहरण से गणना करके पक्का करें, फिर दूसरे शब्द पर लागू करें।</p></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रकार</th><th>पहचान बिंदु</th><th>उदाहरण</th></tr></thead><tbody><tr><td>समांतर श्रेढ़ी (Arithmetic)</td><td>क्रमागत पदों में स्थिर अंतर (+d/−d)</td><td>5,11,17,23,29 (+6 प्रत्येक)</td></tr><tr><td>गुणोत्तर श्रेढ़ी (Geometric)</td><td>क्रमागत पदों में स्थिर अनुपात (×r)</td><td>3,6,12,24 (×2 प्रत्येक)</td></tr><tr><td>मिश्रित श्रृंखला</td><td>बारी-बारी से दो संक्रियाएं या बदलता पैटर्न</td><td>2,5,11,23,47 (×2+1 प्रत्येक)</td></tr><tr><td>अक्षर शिफ्टिंग कोडिंग</td><td>हर अक्षर निश्चित स्थान आगे/पीछे खिसकता है</td><td>CAT→DBU (+1 प्रत्येक)</td></tr><tr><td>संख्या कोडिंग (योग)</td><td>कूट = अक्षरों की स्थिति का योग</td><td>GHI=7+8+9=24</td></tr></tbody></table></div>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">🟢 संख्या श्रृंखला (Number Series)</div><ul class="ch-list"><li>संख्याओं के बीच सीधे गणितीय पैटर्न (अंतर/अनुपात) होता है</li><li>पैटर्न: +d, ×r, या मिश्रित संक्रियाएं</li><li>हल विधि: लगातार पदों के बीच अंतर/अनुपात निकालें</li></ul></div><div class="twocol-col"><div class="twocol-head">🔴 अक्षर श्रृंखला (Letter Series)</div><ul class="ch-list"><li>अक्षरों को पहले वर्णमाला स्थिति (A=1...Z=26) में बदलना पड़ता है</li><li>फिर वही अंतर/अनुपात पैटर्न लागू होता है</li><li>हल विधि: 26 से अधिक होने पर wrap-around का ध्यान रखें</li></ul></div></div>
+<div class="warn-box"><p><strong>⚠️  आम गलतियाँ (Common Mistakes)</strong></p><p>❌ संख्या श्रृंखला में सिर्फ पहला अंतर देखकर निष्कर्ष निकाल लेना, बिना पूरी श्रृंखला जांचे — कम से कम 3-4 पदों पर पैटर्न जांचें ❌ अक्षर श्रृंखला में वर्णमाला स्थिति गलत गिनना (जैसे J=10 की जगह J=9 मान लेना) ❌ 26 से अधिक स्थिति संख्या आने पर wrap-around (26 घटाना) करना भूल जाना ❌ "गलत संख्या/अक्षर" प्रश्नों में पूरी श्रृंखला में एक साथ पैटर्न खोजने की बजाय, विषम व सम स्थानों को अलग-अलग न जांचना ❌ कोडिंग-डिकोडिंग में बिना नियम सत्यापित किए सीधे नए शब्द पर मान लिया हुआ नियम लागू कर देना ❌ जोड़ी/समूह वाली अक्षर श्रृंखलाओं में सिर्फ पहले अक्षर का पैटर्न देखना, भीतरी अक्षरों के बीच के अंतर की जांच न करना ❌ मिश्रित श्रृंखला में सिर्फ जोड़/घटाव खोजना, गुणा/भाग या वर्ग/घन आधारित पैटर्न की संभावना नज़रअंदाज़ कर देना</p></div>
+<p>महत्वपूर्ण: अक्षर श्रृंखला हल करते समय हमेशा A=1 से Z=26 तक की स्थिति तालिका दिमाग में स्पष्ट रखें (या रफ में लिख लें) — यही आधार है। साथ ही कोडिंग-डिकोडिंग में जब भी दो या अधिक उदाहरण दिए हों, हमेशा दोनों से नियम की पुष्टि करें, क्योंकि एक ही उदाहरण से कभी-कभी एक से अधिक नियम फिट बैठ सकते हैं।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>📝  अभ्यास प्रश्न (Practice Questions)</th></tr></thead><tbody><tr><td>Q1. श्रृंखला में अगला पद ज्ञात करें: 7, 14, 28, 56, ? Q2. श्रृंखला में अगला पद ज्ञात करें: B, D, G, K, ? Q3. निम्न श्रृंखला में गलत संख्या पहचानें: 1, 4, 9, 15, 25, 36 Q4. यदि किसी कूट भाषा में BOOK को CPPL लिखा जाता है, तो PEN को क्या लिखा जाएगा? Q5. यदि Z=26 है और NET=39 है, तो उसी कूट भाषा में NUT का मान क्या होगा?</td></tr><tr><td>🔑 उत्तर कुंजी (Answer Key): Q1. 112 (×2 प्रत्येक)  |  Q2. P (अंतर +2,+3,+4,+5)  |  Q3. 15 (यह वर्ग संख्याओं की श्रृंखला है: 1,4,9,16,25,36 — सही मान 16 होना चाहिए)  |  Q4. QFO (+1 प्रत्येक)  |  Q5. 55 (स्थिति का योग: N=14,U=21,T=20)</td></tr></tbody></table></div>
+<h3 class="ch-h3">★  याद रखने योग्य फॉर्मूले एवं तथ्य  ★</h3><p>1. समांतर श्रेढ़ी में क्रमागत पदों का अंतर स्थिर होता है 2. गुणोत्तर श्रेढ़ी में क्रमागत पदों का अनुपात स्थिर होता है 3. मिश्रित श्रृंखला में दो संक्रियाएं बारी-बारी से या वर्ग/घन पैटर्न होता है 4. वर्णमाला स्थिति: A=1, B=2, C=3, ... Z=26 5. स्थिति संख्या 26 से अधिक होने पर 26 घटाकर wrap-around करें 6. "गलत पद" प्रश्नों में विषम व सम स्थानों को अलग-अलग जांचें 7. जोड़ी/समूह श्रृंखलाओं में शुरुआती अक्षर व भीतरी अंतर दोनों जांचें 8. अक्षर शिफ्टिंग कोडिंग में हर अक्षर एक निश्चित संख्या आगे/पीछे खिसकता है 9. संख्या कोडिंग में कूट अक्सर अक्षरों की स्थिति का योग, दोगुना, या घटाव/जोड़ होता है 10. प्रतिस्थापन कोडिंग में कई वाक्यों की तुलना कर उभयनिष्ठ शब्द-कूट मिलाएं 11. मैट्रिक्स कोडिंग में अक्षर को पंक्ति-स्तंभ संख्या के जोड़े से कोड किया जाता है 12. कोडिंग नियम को हमेशा दिए गए उदाहरण से पहले सत्यापित करें, फिर नए शब्द पर लागू करें 13. श्रृंखला प्रश्नों में कम से कम 3-4 पदों पर पैटर्न जांचकर पुष्टि करें 14. दो उदाहरण दिए हों तो दोनों से एक ही नियम फिट होना चाहिए, तभी नियम सही है 15. अभाज्य संख्याओं (2,3,5,7,11,13,17,19,23...) की पहचान गलत-संख्या प्रश्नों में उपयोगी होती है</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (Pre MCQ)  📝</h3><p>Q1. श्रृंखला में अगला पद ज्ञात करें: D, F, I, M, R, X, ? (a) B (b) C (c) D (d) E Q2. श्रृंखला में अगला पद ज्ञात करें: BC, DE, HI, PQ, ? (a) FG (b) EG (c) GH (d) DF Q3. श्रृंखला में अगला पद ज्ञात करें: Q, O, M, K, I, ?, ? (a) EG (b) FG (c) GE (d) GF Q4. श्रृंखला में अगला पद ज्ञात करें: Y, X, V, S, O, ? (a) I (b) J (c) K (d) L Q5. यदि किसी कूट भाषा में LONDON को 24-30-28-8-30-28 लिखा जाता है, तो उसी कूट भाषा में FRANCE कैसे लिखा जाएगा? (a) 12-36-2-38-8-12 (b) 14-34-2-28-8-10 (c) 12-36-2-28-8-10 (d) 12-36-2-28-6-10 Q6. यदि अंग्रेजी वर्णमाला के प्रत्येक अक्षर को A=1, B=3 इत्यादि (विषम संख्यात्मक मान) दिया गया हो, तो NOMINAL शब्द के अक्षरों का कुल मान क्या होगा? (a) 151 (b) 149 (c) 147 (d) 148 Q7. निम्न श्रृंखला में गलत पद पहचानें: CBCB, HEFG, LIJK, PMNO, TQRS (a) LIJK (b) PMNO (c) CBCB (d) TQRS</p>
+<p>🔑 उत्तर कुंजी (Answer Key): Q1.(d) E | Q2.(a) FG | Q3.(c) GE | Q4.(b) J | Q5.(d) 12-36-2-28-6-10 | Q6.(b) 149 | Q7.(c) CBCB</p>
+<p>📘 संपूर्ण अभ्यास सेट — 18 प्रश्न सह हल (Complete Practice Set)</p><p>इस अंतिम अभ्यास सेट में संख्या श्रृंखला (प्रश्न 1-6), अक्षर श्रृंखला (प्रश्न 7-12) तथा कोडिंग-डिकोडिंग (प्रश्न 13-18) से जुड़े सभी प्रकार के प्रश्न शामिल हैं — पहले स्वयं हल करने की कोशिश करें, फिर नीचे दिया गया हल देखें।</p>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-1 — श्रृंखला में अगला पद ज्ञात करें: 4, 9, 16, 25, 36, ? (a) 42 (b) 45 (c) 49 (d) 48</div><p>चरण 1: पैटर्न जांचें: 4=2², 9=3², 16=4², 25=5², 36=6² चरण 2: यह क्रमागत संख्याओं के वर्ग (squares) की श्रृंखला है चरण 3: अगला पद = 7² = 49 ✅ उत्तर (Answer): (c) 49 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-2 — श्रृंखला में अगला पद ज्ञात करें: 1, 2, 6, 24, 120, ? (a) 240 (b) 480 (c) 600 (d) 720</div><p>चरण 1: पैटर्न जांचें: 1×2=2, 2×3=6, 6×4=24, 24×5=120 चरण 2: यह फैक्टोरियल श्रृंखला (n!) है: 1!,2!,3!,4!,5! चरण 3: अगला पद = 120×6 = 720 ✅ उत्तर (Answer): (d) 720 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-3 — निम्न श्रृंखला में गलत संख्या पहचानें: 2, 5, 10, 17, 27, 37 (a) 5 (b) 10 (c) 27 (d) 37</div><p>चरण 1: क्रमागत अंतर निकालें: 5−2=3, 10−5=5, 17−10=7, 27−17=10, 37−27=10 चरण 2: अंतरों का पैटर्न होना चाहिए: 3,5,7,9,11 (विषम संख्याएं बढ़ते क्रम में) चरण 3: चौथा अंतर 9 होना चाहिए था (17 के बाद 26 आना चाहिए), पर दिया गया 27 है — अतः 27 गलत है ✅ उत्तर (Answer): (c) 27 गलत है (सही मान: 26) ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-4 — श्रृंखला में अगला पद ज्ञात करें: 3, 6, 9, 22.5, 67.5, 236.25, ? (a) 945 (b) 900 (c) 850 (d) 1000</div><p>चरण 1: पैटर्न जांचें: 3×2=6, 6×1.5=9, 9×2.5=22.5, 22.5×3=67.5, 67.5×3.5=236.25 चरण 2: गुणक बढ़ रहे हैं: 2, 1.5, 2.5, 3, 3.5 — अगला गुणक = 4 चरण 3: अगला पद = 236.25×4 = 945 ✅ उत्तर (Answer): (a) 945 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-5 — श्रृंखला में लुप्त पद ज्ञात करें: 103, 112, 122, ?, 145, 158 (a) 132 (b) 133 (c) 138 (d) 140</div><p>चरण 1: क्रमागत अंतर निकालें: 112−103=9, 122−112=10 चरण 2: पैटर्न: अंतर हर बार 1 से बढ़ रहा है (9,10,11,12,13) चरण 3: लुप्त पद = 122+11 = 133; फिर 133+12=145 ✓, 145+13=158 ✓ (पुष्टि हो गई) ✅ उत्तर (Answer): (b) 133 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-6 — श्रृंखला में अगला पद ज्ञात करें: 29, 36, 43, 50, 57, ? (a) 55 (b) 57 (c) 60 (d) 64</div><p>चरण 1: क्रमागत अंतर: 36−29=7, 43−36=7, 50−43=7, 57−50=7 — स्थिर अंतर +7 चरण 2: अगला पद = 57+7 ✅ उत्तर (Answer): (d) 64 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-7 — श्रृंखला में अगला पद ज्ञात करें: B, E, H, K, N, ? (a) P (b) Q (c) R (d) S</div><p>चरण 1: स्थिति में बदलें: B=2, E=5, H=8, K=11, N=14 चरण 2: अंतर स्थिर है: +3 प्रत्येक बार चरण 3: अगला पद = 14+3=17 ⇒ स्थिति 17 = Q ✅ उत्तर (Answer): (b) Q ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-8 — श्रृंखला में अगला पद ज्ञात करें: Z, W, T, Q, N, ? (a) J (b) K (c) L (d) M</div><p>चरण 1: स्थिति में बदलें: Z=26, W=23, T=20, Q=17, N=14 चरण 2: अंतर स्थिर है: −3 प्रत्येक बार चरण 3: अगला पद = 14−3=11 ⇒ स्थिति 11 = K ✅ उत्तर (Answer): (b) K ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-9 — श्रृंखला में अगला पद ज्ञात करें: AZ, BY, CX, DW, ? (a) EV (b) EU (c) FV (d) FU</div><p>चरण 1: पहला अक्षर: A,B,C,D — स्थिति बढ़ रही है (+1): अगला E चरण 2: दूसरा अक्षर: Z,Y,X,W — स्थिति घट रही है (−1): अगला V चरण 3: अतः अगला पद = EV ✅ उत्तर (Answer): (a) EV ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-10 — निम्न श्रृंखला में गलत पद पहचानें: CE, GI, KM, OS, SU (a) GI (b) KM (c) OS (d) SU</div><p>चरण 1: हर जोड़ी के पहले अक्षर की स्थिति देखें: C=3, G=7, K=11, O=15, S=19 — सभी में स्थिर अंतर +4, यह पैटर्न ठीक है चरण 2: अब हर जोड़ी के भीतर दोनों अक्षरों का अंतर जांचें: CE(3,5)अंतर2, GI(7,9)अंतर2, KM(11,13)अंतर2, OS(15,19)अंतर4, SU(19,21)अंतर2 चरण 3: OS का भीतरी अंतर (4) शेष सभी जोड़ियों (2) से अलग है — यही पैटर्न तोड़ता है, अतः OS गलत पद है (सही पद OQ होना चाहिए, जहाँ O=15,Q=17) ✅ उत्तर (Answer): (c) OS गलत है (सही पद: OQ होना चाहिए) ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-11 — श्रृंखला में लुप्त पद ज्ञात करें: MN, PQ, ST, ?, YZ (a) UV (b) VW (c) WX (d) TU</div><p>चरण 1: पहला अक्षर: M(13),P(16),S(19) — अंतर +3 हर बार चरण 2: अगला पहला अक्षर = 19+3=22 = V, दूसरा अक्षर = W (V के ठीक बाद) चरण 3: अतः लुप्त पद = VW; अगला W(23)+3=... फिर Y(25) — पुष्टि: अगला पद के बाद Y,Z आता है ✓ ✅ उत्तर (Answer): (b) VW ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-12 — श्रृंखला में अगला पद ज्ञात करें: AB, DE, HI, MN, ? (a) ST (b) RS (c) SR (d) TS</div><p>चरण 1: पहला अक्षर: A(1),D(4),H(8),M(13) — अंतर: 3,4,5,6 (हर बार 1 से बढ़ रहा) चरण 2: अगला अंतर = 7, अगला पहला अक्षर = 13+7=20 = S चरण 3: दूसरा अक्षर हमेशा पहले के ठीक बाद ⇒ T; अतः पद = ST ✅ उत्तर (Answer): (a) ST ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-13 — यदि किसी कूट भाषा में TABLE को UBCMF लिखा जाता है, तो CHAIR को क्या लिखा जाएगा?</div><p>चरण 1: पैटर्न जांचें: T→U(+1), A→B(+1), B→C(+1), L→M(+1), E→F(+1) चरण 2: हर अक्षर को वर्णमाला में 1 स्थान आगे खिसकाया गया है चरण 3: CHAIR पर लागू करें: C→D, H→I, A→B, I→J, R→S ✅ उत्तर (Answer): DIBJS</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-14 — यदि GECA का अर्थ 8642 हो, तो HFBD का कूट क्या होगा?</div><p>चरण 1: सत्यापन: G=7→8(+1), E=5→6(+1), C=3→4(+1), A=1→2(+1) — नियम है: प्रत्येक अक्षर की स्थिति में 1 जोड़ना चरण 2: HFBD पर लागू करें: H=8→9, F=6→7, B=2→3, D=4→5 ✅ उत्तर (Answer): 9735</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-15 — यदि किसी सांकेतिक कूट भाषा में FAN को 21-26-13 लिखा जाता है, तो उसी भाषा में DEAS को कैसे लिखा जाएगा?</div><p>चरण 1: सत्यापन: F=6, A=1, N=14 — नियम जांचें: कूट = 27 − स्थिति चरण 2: 27−6=21 ✓, 27−1=26 ✓, 27−14=13 ✓ (नियम पूरी तरह पुष्टि हो गया: कूट = 27 − वर्णमाला स्थिति) चरण 3: DEAS पर लागू करें: D=4→27−4=23, E=5→27−5=22, A=1→27−1=26, S=19→27−19=8 ✅ उत्तर (Answer): 23-22-26-8</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-16 — यदि किसी कूट भाषा में CAB को 6 तथा BED को 40 कोडित किया जाता है (कूट = अक्षरों की स्थिति का गुणनफल), तो HAD का कूट क्या होगा?</div><p>चरण 1: सत्यापन: C=3,A=1,B=2 — गुणनफल = 3×1×2 = 6 ✓ चरण 2: B=2,E=5,D=4 — गुणनफल = 2×5×4 = 40 ✓ (नियम की पुष्टि: कूट = अक्षरों की स्थिति का गुणनफल) चरण 3: HAD पर लागू करें: H=8,A=1,D=4 — गुणनफल = 8×1×4 = 32 ✅ उत्तर (Answer): 32</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-17 — दिया गया है: "read book carefully" को "pa ta da" लिखा जाता है, "book is old" को "da ja ma" लिखा जाता है, तथा "carefully read again" को "pa ka ta" लिखा जाता है। "book" का कूट ज्ञात करें।</div><p>चरण 1: वाक्य 1 व 2 में उभयनिष्ठ शब्द "book" है, तथा उभयनिष्ठ कूट-शब्द "da" है (pa,ta,da में से da ही da,ja,ma में भी है) चरण 2: अतः "book" = "da" चरण 3: (सत्यापन हेतु: वाक्य 1 व 3 में उभयनिष्ठ शब्द "read" व "carefully" हैं, उभयनिष्ठ कूट "pa" व "ta" हैं — शेष "ka" वाक्य 3 के "again" का कूट है) ✅ उत्तर (Answer): "book" का कूट है "da"</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-18 — यदि किसी कूट भाषा में SSC को 19-19-3 लिखा जाता है (कूट = अक्षर की वर्णमाला स्थिति), तो BANK को कैसे लिखा जाएगा?</div><p>चरण 1: सत्यापन: S=19, S=19, C=3 — नियम है कूट = सीधे वर्णमाला स्थिति चरण 2: BANK पर लागू करें: B=2, A=1, N=14, K=11 ✅ उत्तर (Answer): 2-1-14-11</p></div>
+<p>📐 पहचान बिंदु पुनरावृत्ति तालिका (Revision Table)</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टॉपिक</th><th>पहचान बिंदु</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>समांतर श्रेढ़ी</td><td>क्रमागत पदों में स्थिर अंतर</td><td>संख्याओं में हर बार समान जोड़/घटाव दिखे</td></tr><tr><td>गुणोत्तर श्रेढ़ी</td><td>क्रमागत पदों में स्थिर अनुपात</td><td>संख्याओं में हर बार समान गुणा/भाग दिखे</td></tr><tr><td>मिश्रित श्रृंखला</td><td>दो संक्रियाएं बारी-बारी से, या वर्ग/घन पैटर्न</td><td>साधारण अंतर/अनुपात फिट न हो</td></tr><tr><td>वर्णमाला स्थिति</td><td>A=1,B=2,...Z=26; 26 से अधिक पर wrap-around</td><td>किसी भी अक्षर श्रृंखला/कोडिंग प्रश्न में</td></tr><tr><td>अक्षर शिफ्टिंग कोडिंग</td><td>हर अक्षर निश्चित स्थान आगे/पीछे खिसकता है</td><td>शब्द से कोड-शब्द बनाना हो</td></tr><tr><td>संख्या कोडिंग (योग/गुणनफल)</td><td>कूट = स्थिति का योग या गुणनफल</td><td>उदाहरण से नियम सत्यापित करना हो</td></tr><tr><td>प्रतिस्थापन कोडिंग</td><td>वाक्यों की तुलना कर उभयनिष्ठ शब्द-कूट मिलाएं</td><td>शब्द-वाक्य आधारित कोडिंग प्रश्न में</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="ras-pre-math-reasoning-ch02-kathan-nishkarsh.html" class="ch-nav-btn">← अध्याय 2: कथन-निष्कर्ष, कार्यवाही के तरीके एवं विश्लेषणात्मक तर्कशक्ति</a>
+  <a href="ras-pre-math-reasoning-ch04-rakt-sambandh-disha.html" class="ch-nav-btn ch-nav-next">अध्याय 4: रक्त संबंध एवं दिशा ज्ञान परीक्षण →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="ras-pre-math-reasoning.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

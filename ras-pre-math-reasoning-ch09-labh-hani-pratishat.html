@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 9: लाभ-हानि एवं प्रतिशत — RAS Pre — गणित एवं तर्कशक्ति | Omkar Sir</title>
+<meta name="description" content="लाभ-हानि एवं प्रतिशत (Profit-Loss &amp; Percentage) — RAS Pre+Mains के लिए RAS Pre — गणित एवं तर्कशक्ति का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">💰 अध्याय 9/14 — RAS Pre — गणित एवं तर्कशक्ति</div>
+  <h1>लाभ-हानि एवं प्रतिशत</h1>
+  <div class="ch-sub">Profit-Loss &amp; Percentage | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>प्रतिशत (Percentage)</li><li>लाभ-हानि (Profit &amp; Loss)</li><li>छूट (Discount)</li></ol></div>
+<p>🎬 एक कहानी से शुरुआत करते हैं...</p><p>जयपुर के बापू बाज़ार में एक दुकानदार रमेश भाई हर दिवाली पर एक जैसा खेल खेलते हैं — पहले किसी कपड़े का दाम 25% बढ़ाकर "मार्क्ड प्राइस" लिखते हैं, फिर बड़े-बड़े अक्षरों में "20% छूट" का बोर्ड लगा देते हैं। ग्राहक खुश होकर सोचते हैं कि उन्हें असली कीमत से सस्ता मिल रहा है — जबकि असलियत में रमेश भाई को उसी सौदे पर अच्छा-खासा मुनाफा हो चुका होता है। यह गणित का वही खेल है जो हर दुकान, हर सेल, हर ऑनलाइन ऑफर में चलता है — और RAS Pre परीक्षा में हर साल लाभ-हानि, प्रतिशत और छूट से जुड़े  प्रश्न पक्के तौर पर पूछे जाते हैं।</p><p>सबसे रोचक बात यह है कि प्रतिशत, लाभ-हानि और छूट — ये तीनों एक ही सिक्के के तीन पहलू हैं। एक बार सूत्र समझ आ जाए, तो दुकानदार का हर खेल आपको 10 सेकंड में समझ आ जाएगा। चलिए शुरू करते हैं — पहले प्रतिशत की नींव मजबूत करेंगे, फिर लाभ-हानि, और अंत में छूट (Discount) के गणित तक पहुँचेंगे — और रमेश भाई का 25% वृद्धि + 20% छूट वाला खेल भी बीच में हल करेंगे!</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">प्रतिशत (Percentage)</span></h2>
+<p>प्रतिशत का शाब्दिक अर्थ है "प्रति सैकड़ा" — यानी किसी संख्या को 100 के आधार पर व्यक्त करना। जब हम कहते हैं x%, तो इसका मतलब है x/100। कोई भी भिन्न (fraction) या दशमलव (decimal) को 100 से गुणा करके प्रतिशत में बदला जा सकता है, और प्रतिशत को 100 से भाग देकर वापस भिन्न में। RAS Pre में प्रतिशत के तीन बड़े प्रकार के प्रश्न आते हैं — सीधे रूपांतरण (fraction ↔ percentage), किसी राशि में वृद्धि/कमी ज्ञात करना, और दो या अधिक क्रमागत प्रतिशत परिवर्तनों (successive % change) का संयुक्त प्रभाव निकालना। यही तीसरा प्रकार सबसे ज्यादा गलतियों का कारण बनता है, क्योंकि विद्यार्थी अक्सर दो प्रतिशतों को सीधे जोड़ या घटा देते हैं, जबकि सही तरीका गुणा करना है।</p>
+<div class="formula-box"><div class="formula-title">📐  प्रतिशत (Percentage) — सूत्र (Formula)</div><p>x% = x/100  (भिन्न ↔ प्रतिशत रूपांतरण) मूल्य p में x% वृद्धि होने पर नया मूल्य = (100+x)% of p मूल्य p में x% कमी होने पर नया मूल्य = (100−x)% of p क्रमागत परिवर्तन (a% फिर b%): शुद्ध परिवर्तन = [a + b + (ab/100)]%  (कमी हो तो ऋणात्मक चिह्न लगाएं)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 1 (आसान) — किसी संख्या के 25% का मान 2.125 है। वह संख्या ज्ञात करें।</div><p>चरण 1: माना संख्या x है — तो 25% of x = 2.125 चरण 2: (25/100) × x = 2.125 चरण 3: x = 2.125 × 4 = 8.5 ✅ उत्तर (Answer): 8.5</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 2 (मध्यम) — किसी संख्या के 31% और 13% का अंतर 576 है। उस संख्या का 17% ज्ञात करें।</div><p>चरण 1: माना संख्या x है — तो 31% of x − 13% of x = 576 चरण 2: (31−13)% of x = 576  ⇒  18% of x = 576 चरण 3: (18/100) × x = 576  ⇒  x = 576×100/18 = 3200 चरण 4: 17% of x = (17/100) × 3200 = 544 ✅ उत्तर (Answer): 544</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 3 (कठिन) — किसी व्यक्ति की मासिक आय ₹13,500 और मासिक खर्च ₹9,000 है। अगले वर्ष उसकी आय 14% और खर्च 7% बढ़ जाता है। बचत में प्रतिशत वृद्धि ज्ञात करें।</div><p>चरण 1: नई आय = 114% of 13500 = ₹15,390 चरण 2: नया खर्च = 107% of 9000 = ₹9,630 चरण 3: मूल बचत = 13500−9000 = ₹4,500; नई बचत = 15390−9630 = ₹5,760 चरण 4: बचत में वृद्धि = 5760−4500 = ₹1,260 चरण 5: वृद्धि% = (1260/4500)×100 = 28% ✅ उत्तर (Answer): 28%</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): क्रमागत प्रतिशत परिवर्तन की ट्रिक</div><p>जब कोई राशि पहले a% बढ़े फिर b% घटे (या इसका उल्टा), तो कभी भी (a−b)% मत लिखें — यह सबसे बड़ी गलती है। सही सूत्र है: शुद्ध परिवर्तन% = a + b + (ab/100), जहाँ कमी को ऋणात्मक (negative) मानकर रखें। उदाहरण: 20% वृद्धि फिर 20% कमी = 20 + (−20) + (20×−20)/100 = −4%, यानी 4% शुद्ध कमी — कभी भी "0% बदलाव" मत मान लें!</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">लाभ-हानि (Profit &amp; Loss)</span></h2>
+<p>जब कोई वस्तु खरीदी जाती है तो उसकी कीमत "क्रय मूल्य (Cost Price, CP)" कहलाती है, और जब वह बेची जाती है तो उसकी कीमत "विक्रय मूल्य (Selling Price, SP)" कहलाती है। यदि SP, CP से अधिक हो तो लाभ होता है, और यदि CP, SP से अधिक हो तो हानि होती है — और सबसे जरूरी नियम यह है कि लाभ% या हानि% हमेशा CP पर ही निकाला जाता है, SP पर नहीं। RAS Pre में एक बहुत लोकप्रिय प्रश्न-प्रकार है जहाँ वस्तुओं की "संख्या" के आधार पर लाभ-हानि पूछी जाती है (जैसे "X वस्तुएं बेचने पर Y वस्तुओं के बराबर लाभ हुआ") — इसे हल करने की सबसे तेज़ तरकीब है प्रत्येक वस्तु का CP = ₹1 मान लेना।</p>
+<div class="formula-box"><div class="formula-title">📐  लाभ-हानि (Profit &amp; Loss) — सूत्र (Formula)</div><p>लाभ (Gain) = SP − CP  |  हानि (Loss) = CP − SP लाभ% = (लाभ/CP) × 100  |  हानि% = (हानि/CP) × 100 SP = [(100 + लाभ%)/100] × CP  |  SP = [(100 − हानि%)/100] × CP CP = [100/(100 + लाभ%)] × SP  |  CP = [100/(100 − हानि%)] × SP</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 4 (आसान) — मानसी ने एक कार ₹2,50,000 में खरीदी और ₹3,48,000 में बेच दी। उसे कितने प्रतिशत लाभ हुआ?</div><p>चरण 1: CP = ₹2,50,000, SP = ₹3,48,000 चरण 2: लाभ = SP − CP = 348000 − 250000 = ₹98,000 चरण 3: लाभ% = (98000/250000) × 100 = 39.2% ✅ उत्तर (Answer): 39.2%</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 5 (मध्यम) — 30 वस्तुओं का विक्रय मूल्य, 25 वस्तुओं के क्रय मूल्य के बराबर है। लाभ या हानि प्रतिशत ज्ञात करें।</div><p>चरण 1: माना प्रत्येक वस्तु का CP = ₹1 चरण 2: 30 वस्तुओं का CP = ₹30; दिया है कि 30 वस्तुओं का SP = 25 वस्तुओं का CP = ₹25 चरण 3: हानि = CP − SP = 30 − 25 = ₹5 चरण 4: हानि% = (5/30) × 100 = 16⅔% ✅ उत्तर (Answer): 16⅔% हानि (loss)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 6 (कठिन) — एक बेईमान दुकानदार क्रय मूल्य पर 6¼% हानि पर बेचने का दावा करता है, लेकिन असल वजन 12½% कम रखता है। उसका वास्तविक लाभ या हानि प्रतिशत ज्ञात करें।</div><p>चरण 1: माना 1 kg वस्तु का CP = ₹1 चरण 2: दुकानदार 1 kg की कीमत पर असल में सिर्फ (100−12.5)% = 87.5% यानी 875 ग्राम देता है चरण 3: 875 ग्राम की SP = (100−6.25)% of ₹1 = ₹0.9375 चरण 4: 1000 ग्राम (1 kg) की SP = 0.9375 × (1000/875) = ₹15/14 चरण 5: लाभ% = (15/14 − 1) × 100 = (1/14) × 100 = 7 1/7% ✅ उत्तर (Answer): 7 1/7% लाभ (profit)</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): संख्या-आधारित लाभ-हानि की ट्रिक</div><p>जब भी प्रश्न में "X वस्तुओं का CP = Y वस्तुओं का SP" जैसा रूप दिखे, तो तुरंत प्रत्येक वस्तु का CP = ₹1 मान लें — इससे पूरी समस्या साधारण घटाव-भाग में बदल जाती है। बेईमान दुकानदार वाले प्रश्नों में हमेशा 1 kg = ₹1 (या 100 यूनिट) मानकर चलें, इससे प्रतिशत सीधे निकल आता है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">छूट (Discount)</span></h2>
+<p>दुकानदार अक्सर वस्तु पर एक "अंकित मूल्य (Marked Price, MP)" लिखते हैं, जो असली क्रय मूल्य से जानबूझकर ज्यादा रखा जाता है, ताकि उस पर छूट (Discount) देकर भी मुनाफा कमाया जा सके। छूट हमेशा अंकित मूल्य (MP) पर दी जाती है, क्रय मूल्य (CP) पर नहीं — यही सबसे ज्यादा भ्रम पैदा करने वाला बिंदु है। जब एक साथ दो या अधिक छूट दी जाएं (जैसे "25% छूट + अतिरिक्त 10% छूट"), तो इसे कभी सीधे जोड़कर 35% मत मानें — यह हमेशा क्रमागत गुणा से निकलता है, ठीक वैसे ही जैसे क्रमागत प्रतिशत परिवर्तन में होता है। रमेश भाई वाली हमारी कहानी — 25% दाम बढ़ाकर फिर 20% छूट — भी इसी सिद्धांत पर काम करती है।</p>
+<div class="formula-box"><div class="formula-title">📐  छूट (Discount) — सूत्र (Formula)</div><p>SP = MP − छूट  |  SP = [(100 − छूट%)/100] × MP छूट% = (छूट/MP) × 100 दो क्रमागत छूट a% और b% का शुद्ध प्रभाव (single equivalent discount) = [a + b − (ab/100)]% MP = CP से X% अधिक और छूट Y% हो, तो लाभ%/हानि% के लिए: SP = MP×(100−Y)/100, फिर लाभ% = [(SP−CP)/CP]×100</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 7 (आसान) — एक वस्तु का अंकित मूल्य ₹500 है। दुकानदार 10% छूट देता है। विक्रय मूल्य ज्ञात करें।</div><p>चरण 1: MP = ₹500, छूट% = 10% चरण 2: SP = (100−10)% of MP = 90% of 500 चरण 3: SP = 500 × 0.90 = ₹450 ✅ उत्तर (Answer): ₹450</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 8 (मध्यम) — किसी वस्तु के अंकित मूल्य ₹1,000 पर क्रमशः 20% और 10% की दो छूट दी जाती हैं। अंतिम विक्रय मूल्य तथा तुल्य (equivalent) एकल छूट प्रतिशत ज्ञात करें।</div><p>चरण 1: पहली छूट के बाद कीमत = 1000 × (100−20)/100 = ₹800 चरण 2: दूसरी छूट के बाद कीमत = 800 × (100−10)/100 = ₹720 चरण 3: तुल्य छूट% सूत्र से: 20 + 10 − (20×10)/100 = 30 − 2 = 28% चरण 4: जांच: 1000 × (100−28)/100 = 1000×0.72 = ₹720 ✓ ✅ उत्तर (Answer): SP = ₹720, तुल्य छूट = 28%</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 9 (कठिन) — रमेश भाई किसी वस्तु का अंकित मूल्य क्रय मूल्य से 40% अधिक रखते हैं, और उस पर 10% की छूट देते हैं। उनका वास्तविक लाभ प्रतिशत ज्ञात करें।</div><p>चरण 1: माना CP = ₹100। तो MP = 140% of 100 = ₹140 चरण 2: छूट 10% देने के बाद SP = 90% of 140 = ₹126 चरण 3: लाभ = SP − CP = 126 − 100 = ₹26 चरण 4: लाभ% = (26/100) × 100 = 26% ✅ उत्तर (Answer): 26% लाभ — यानी रमेश भाई "20% छूट" के बोर्ड के बावजूद अच्छा मुनाफा कमा रहे हैं!</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): छूट की स्पीड ट्रिक</div><p>दो क्रमागत छूट a% और b% को कभी (a+b)% मत मानें। सही ट्रिक: तुल्य छूट% = a+b−(ab/100) — याद रखने के लिए इसे क्रमागत प्रतिशत वृद्धि वाले सूत्र जैसा ही समझें, बस चिह्न बदल जाता है। जब MP, CP से X% ज्यादा हो और छूट Y% मिले, तो अंतिम लाभ/हानि% के लिए हमेशा CP=100 मानकर MP और SP निकालें — इससे गलती की गुंजाइश खत्म हो जाती है।</p></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>अवधारणा</th><th>सूत्र</th><th>प्रमुख बिंदु</th></tr></thead><tbody><tr><td>प्रतिशत वृद्धि</td><td>नया मूल्य = (100+x)% of मूल</td><td>x% बढ़ने पर सीधे 100+x लगाएं</td></tr><tr><td>प्रतिशत कमी</td><td>नया मूल्य = (100−x)% of मूल</td><td>x% घटने पर 100−x लगाएं</td></tr><tr><td>क्रमागत % परिवर्तन</td><td>a+b+(ab/100)%</td><td>कमी को ऋणात्मक मानें</td></tr><tr><td>लाभ%</td><td>(SP−CP)/CP × 100</td><td>हमेशा CP पर आधारित</td></tr><tr><td>हानि%</td><td>(CP−SP)/CP × 100</td><td>हमेशा CP पर आधारित</td></tr><tr><td>एकल छूट%</td><td>(MP−SP)/MP × 100</td><td>हमेशा MP पर आधारित</td></tr><tr><td>दो क्रमागत छूट</td><td>a+b−(ab/100)%</td><td>कभी सीधे नहीं जोड़ें</td></tr><tr><td>MP से लाभ ज्ञात करना</td><td>SP=MP(100−छूट)/100, फिर लाभ%=(SP−CP)/CP</td><td>CP अलग से पता होना जरूरी</td></tr></tbody></table></div>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">🟢 एकल प्रतिशत परिवर्तन (Single % Change)</div><ul class="ch-list"><li>एक ही बार वृद्धि या कमी होती है</li><li>सूत्र: नया मूल्य = (100±x)% of मूल</li><li>उदाहरण: वेतन में सीधे 15% वृद्धि</li><li>गणना सरल — सीधा गुणा काफी है</li></ul></div><div class="twocol-col"><div class="twocol-head">🔴 क्रमागत प्रतिशत परिवर्तन (Successive % Change)</div><ul class="ch-list"><li>दो या अधिक बार वृद्धि/कमी होती है</li><li>सूत्र: शुद्ध% = a+b+(ab/100)</li><li>उदाहरण: पहले 20% वृद्धि, फिर 10% कमी</li><li>सीधे जोड़ना सबसे बड़ी भूल — हमेशा गुणा करें</li></ul></div></div>
+<div class="warn-box"><p><strong>⚠️  आम गलतियाँ (Common Mistakes)</strong></p><p>❌ दो क्रमागत प्रतिशत परिवर्तनों (वृद्धि/कमी/छूट) को सीधे जोड़ या घटा देना — हमेशा a+b+(ab/100) सूत्र लगाएं ❌ लाभ% या हानि% को SP पर आधारित निकालना, जबकि यह हमेशा CP पर आधारित होता है ❌ छूट% को CP पर आधारित मान लेना, जबकि छूट हमेशा MP (अंकित मूल्य) पर दी जाती है ❌ "X वस्तुओं का CP = Y वस्तुओं का SP" जैसे प्रश्नों में सीधे प्रतिशत निकालने की कोशिश करना, बिना CP=₹1 मान के ❌ बेईमान दुकानदार (false weight) वाले प्रश्नों में वजन और कीमत के प्रतिशत को आपस में मिला देना ❌ MP, CP और SP तीनों को एक ही आधार (जैसे 100) पर न रखकर अलग-अलग मान लेना, जिससे तुलना गलत हो जाती है ❌ चुनाव/जनसंख्या जैसे बहु-चरणीय प्रतिशत प्रश्नों में एक चरण भूल जाना (जैसे "अमान्य मत" या "मतदान न करने वाले" को नज़रअंदाज़ करना)</p></div>
+<p>महत्वपूर्ण: लाभ-हानि प्रतिशत हमेशा क्रय मूल्य (CP) पर आधारित होता है, जबकि छूट प्रतिशत हमेशा अंकित मूल्य (MP) पर आधारित होता है — इन दोनों को कभी मिलाएं नहीं। जब भी दो प्रतिशत परिवर्तन (चाहे वृद्धि हो, कमी हो, या छूट) एक साथ हों, तो शुद्ध प्रभाव के लिए हमेशा a+b+(ab/100) सूत्र का प्रयोग करें, कभी सीधा जोड़-घटाव न करें।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>📝  अभ्यास प्रश्न (Practice Questions)</th></tr></thead><tbody><tr><td>Q1. 17 गेंदों को ₹720 में बेचने पर 5 गेंदों के क्रय मूल्य के बराबर हानि होती है। एक गेंद का क्रय मूल्य ज्ञात करें। Q2. जब किसी वस्तु को ₹800 में बेचा जाता है, तो उससे मिलने वाला लाभ, उसी वस्तु को ₹275 में बेचने पर होने वाली हानि का 20 गुना है। 20% लाभ पाने के लिए वस्तु किस कीमत पर बेचनी चाहिए? Q3. दूध और पानी के 40 लीटर मिश्रण में पानी की मात्रा 10% है। कितना पानी मिलाने पर नये मिश्रण में पानी की मात्रा 20% होगी? Q4. 2 वर्ष पहले किसी कस्बे की जनसंख्या 62,500 थी। बड़े नगरों में पलायन के कारण जनसंख्या में 4% वार्षिक की दर से कमी होती है। कस्बे की वर्तमान जनसंख्या ज्ञात करें। Q5. एक नगर में जनसंख्या 15,000 है। यदि पुरुषों की संख्या में 8% और स्त्रियों की संख्या में 10% की वृद्धि हो जाए, तो जनसंख्या बढ़कर 16,300 हो जाती है। उस नगर में स्त्रियों की संख्या ज्ञात करें।</td></tr><tr><td>🔑 उत्तर कुंजी (Answer Key): Q1. ₹60  |  Q2. ₹360  |  Q3. 5 लीटर  |  Q4. 57,600  |  Q5. 5,000</td></tr></tbody></table></div>
+<h3 class="ch-h3">★  याद रखने योग्य फॉर्मूले एवं तथ्य  ★</h3><p>1. x% = x/100; भिन्न को 100 से गुणा करने पर प्रतिशत मिलता है 2. मूल्य में x% वृद्धि पर नया मूल्य = (100+x)% of मूल 3. मूल्य में x% कमी पर नया मूल्य = (100−x)% of मूल 4. क्रमागत % परिवर्तन: शुद्ध% = a+b+(ab/100) (कमी ऋणात्मक) 5. लाभ = SP−CP; हानि = CP−SP 6. लाभ% = (लाभ/CP)×100; हानि% = (हानि/CP)×100 7. SP = [(100+लाभ%)/100]×CP; SP = [(100−हानि%)/100]×CP 8. CP = [100/(100+लाभ%)]×SP; CP = [100/(100−हानि%)]×SP 9. "X वस्तुओं का CP=Y वस्तुओं का SP" में प्रत्येक वस्तु CP=₹1 मानें 10. छूट = MP−SP; छूट% = (छूट/MP)×100 11. दो क्रमागत छूट a%,b% का तुल्य प्रभाव = a+b−(ab/100)% 12. लाभ-हानि% सदैव CP पर; छूट% सदैव MP पर आधारित 13. बेईमान दुकानदार: लाभ% = [त्रुटि/(वास्तविक मूल्य−त्रुटि)]×100 14. A, B से R% अधिक हो तो B, A से कम = [R/(100+R)]×100% 15. A, B से R% कम हो तो B, A से अधिक = [R/(100−R)]×100% 16. जनसंख्या n वर्ष बाद = P(1+R/100)ⁿ; n वर्ष पहले = P/(1+R/100)ⁿ 17. मूल्यह्रास (depreciation): n वर्ष बाद मूल्य = P(1−R/100)ⁿ 18. दो वस्तुएं समान % लाभ-हानि पर बेचने पर हमेशा हानि होती है = (x/10)% 19. व्यय अपरिवर्तित रखने हेतु खपत में कमी% = [R/(100+R)]×100 (कीमत R% बढ़ने पर) 20. चुनाव प्रश्नों में क्रम से हल करें: कुल मतदाता → मतदान% → वैध मत% → उम्मीदवार का मत%</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (Pre MCQ)  📝</h3><p>Q1. एक टेप-रिकॉर्डर को ₹300 में बेचने पर 16⅔% हानि होती है। उसे ₹400 में बेचने पर कितने प्रतिशत लाभ होगा? (a) 9 1/11%  (b) 16⅔%  (c) 11 1/9%  (d) 10% Q2. 66 वस्तुएं बेचने पर एक व्यक्ति को 22 वस्तुओं के विक्रय मूल्य के बराबर लाभ होता है। लाभ का प्रतिशत ज्ञात करें। (a) 70%  (b) 60%  (c) 80%  (d) 50% Q3. जब किसी वस्तु को ₹355 में बेचा जाता है तो 29% की हानि होती है। 21% लाभ प्राप्त करने के लिए उसी वस्तु को कितने रुपये में बेचा जाना चाहिए? (a) 605  (b) 629.20  (c) 635  (d) 580.80 Q4. एक चुनाव में 75% मतदाताओं ने अपने मत डाले, जिनमें से 2% मत अवैध घोषित कर दिए गए। एक प्रत्याशी ने 9,261 मत प्राप्त किए, जो वैध मतों का 75% थे। इस चुनाव में पंजीकृत मतदाताओं की कुल संख्या ज्ञात करें। (a) 16,800  (b) 15,500  (c) 27,500  (d) 25,800 Q5. एक चुनाव में दो उम्मीदवार थे। मतदाता सूची के 10% मतदाताओं ने मत नहीं डाला तथा डाले गए मतों में से 10% अवैध घोषित हुए। विजयी उम्मीदवार को वैध मतों का 54% मिला और वह 1,620 मतों से जीता। मतदाता सूची में कुल कितने मतदाता थे? (a) 25,000  (b) 33,000  (c) 35,000  (d) 40,000 Q6. एक व्यक्ति अपनी आय का 75% खर्च करता है। अगले वर्ष उसकी आय 20% बढ़ जाती है और खर्च 15% बढ़ जाता है। उसकी बचत में कितने प्रतिशत वृद्धि होगी? (a) 33%  (b) 33⅓%  (c) 35%  (d) 40% Q7. किसी वस्तु के अंकित मूल्य ₹2,000 पर क्रमशः 10% और 5% की दो क्रमागत छूट दी जाती हैं। अंतिम विक्रय मूल्य तथा तुल्य एकल छूट प्रतिशत ज्ञात करें। (a) ₹1,710, 14.5%  (b) ₹1,700, 15%  (c) ₹1,800, 10%  (d) ₹1,690, 15.5%</p>
+<p>🔑 उत्तर कुंजी (Answer Key): Q1.(c) 11 1/9% | Q2.(d) 50% | Q3.(a) ₹605 | Q4.(a) 16,800 | Q5.(a) 25,000 | Q6.(c) 35% | Q7.(a) ₹1,710, 14.5%</p>
+<p>📘 संपूर्ण अभ्यास सेट — 18 प्रश्न सह हल (Complete Practice Set)</p><p>इस अंतिम अभ्यास सेट में प्रतिशत, लाभ-हानि एवं छूट के सभी प्रकार के प्रश्न शामिल हैं — पहले स्वयं हल करने की कोशिश करें, फिर नीचे दिया गया हल देखें।</p>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-1 — 15 वस्तुओं का क्रय मूल्य, 10 वस्तुओं के विक्रय मूल्य के बराबर है। लाभ का प्रतिशत ज्ञात करें। (a) 46%  (b) 47%  (c) 50%  (d) 52%</div><p>चरण 1: माना प्रत्येक वस्तु का CP=₹1 चरण 2: 15 वस्तुओं का CP=₹15 = 10 वस्तुओं का SP चरण 3: अतः 10 वस्तुओं का SP=15 ⇒ 1 वस्तु का SP=1.5 चरण 4: लाभ%=(1.5−1)/1×100=50% ✅ उत्तर (Answer): (c) 50% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-2 — यदि ₹69 में बेचने पर जितना लाभ होता है, उससे दुगुना लाभ ₹78 में बेचने पर होता है। वस्तु का क्रय मूल्य ज्ञात करें। (a) 70  (b) 65  (c) 68  (d) 60</div><p>चरण 1: माना CP=x चरण 2: लाभ पर SP69 से: 69−x; SP78 से: 78−x चरण 3: शर्त: 2(69−x)=78−x चरण 4: 138−2x=78−x ⇒ x=60 ✅ उत्तर (Answer): (d) 60 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-3 — कोई वस्तु 10% हानि पर बेची जाती है। यदि वह ₹9 अधिक में बेची गई होती, तो 12½% का लाभ होता। वस्तु का क्रय मूल्य ज्ञात करें। (a) 35  (b) 50  (c) 45  (d) 40</div><p>चरण 1: माना CP=x चरण 2: SP1=90% of x=0.9x चरण 3: SP2=SP1+9=1.125x (चूंकि 12.5% लाभ पर SP=1.125x) चरण 4: 0.9x+9=1.125x ⇒ 9=0.225x ⇒ x=40 ✅ उत्तर (Answer): (d) 40 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-4 — एक विक्रेता 12% लाभ पर 12 कुर्सियाँ और 3% हानि पर 4 कुर्सियाँ बेचता है। यदि उसका कुल लाभ ₹1,650 है, तो प्रत्येक कुर्सी का क्रय मूल्य ज्ञात करें। (a) 1490  (b) 1250  (c) 1100  (d) 1380</div><p>चरण 1: माना प्रत्येक कुर्सी का CP=x चरण 2: 12 कुर्सियों से लाभ=12×0.12x=1.44x; 4 कुर्सियों से हानि=4×0.03x=0.12x चरण 3: शुद्ध लाभ=1.44x−0.12x=1.32x=1650 चरण 4: x=1650/1.32=1250 ✅ उत्तर (Answer): (b) 1250 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-5 — एक व्यक्ति ₹1,750 में दो वस्तुएं खरीदता है। वह एक वस्तु को 10% हानि पर और दूसरी को 15% लाभ पर बेचता है। अंत में न लाभ न हानि होती है। प्रत्येक वस्तु का क्रय मूल्य ज्ञात करें। (a) 600, 1150  (b) 900, 850  (c) 1000, 750  (d) 1050, 700</div><p>चरण 1: माना पहली वस्तु का CP=a, दूसरी का CP=b; a+b=1750 चरण 2: शर्त: −10%a + 15%b = 0 ⇒ −0.10a+0.15b=0 चरण 3: हल करने पर a=1050, b=700 ✅ उत्तर (Answer): (d) 1050, 700 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-6 — दो वस्तुओं में प्रत्येक का विक्रय मूल्य ₹960 है। एक वस्तु को 20% लाभ पर तथा दूसरी को 20% हानि पर बेचा जाता है। कुल लाभ या हानि ज्ञात करें। (a) ₹98 लाभ  (b) ₹88 हानि  (c) ₹80 हानि  (d) ₹80 लाभ</div><p>चरण 1: लाभ वाली वस्तु का CP = 960/1.20 = ₹800 चरण 2: हानि वाली वस्तु का CP = 960/0.80 = ₹1200 चरण 3: कुल CP=800+1200=2000; कुल SP=960+960=1920 चरण 4: अंतर=1920−2000=−80 (हानि) ✅ उत्तर (Answer): (c) ₹80 हानि ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-7 — एक व्यक्ति के पास 5 गायें हैं, सबका क्रय मूल्य बराबर है। वह पहली गाय 2% लाभ पर, दूसरी 3% हानि पर, तीसरी 10% लाभ पर, चौथी 4% लाभ पर बेचता है। पाँचवीं गाय किस % लाभ पर बेचे कि कुल 6% लाभ हो? (a) 15%  (b) 17%  (c) 20%  (d) 22%</div><p>चरण 1: कुल औसत लाभ 6% होने के लिए: (2−3+10+4+p)/5 = 6 चरण 2: 13+p=30 ⇒ p=17 ✅ उत्तर (Answer): (b) 17% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-8 — एक कॉलेज में लड़के तथा लड़कियों की संख्या का अनुपात 3:2 है। यदि 20% लड़के तथा 25% लड़कियाँ वयस्क हैं, तो कितने प्रतिशत छात्र वयस्क नहीं हैं? (a) 58%  (b) 67.5%  (c) 78%  (d) 82.5%</div><p>चरण 1: लड़के:लड़कियां=3:2 इकाई मानें, कुल=5 चरण 2: वयस्क=3×20%+2×25%=0.6+0.5=1.1 इकाई चरण 3: अवयस्क%=(5−1.1)/5×100=78% ✅ उत्तर (Answer): (c) 78% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-9 — नए बजट में केरोसीन तेल का मूल्य 25% बढ़ जाता है। खर्च अपरिवर्तित रखने हेतु खपत में कितने % की कमी करनी होगी? (a) 20%  (b) 25%  (c) 50%  (d) 40%</div><p>चरण 1: सूत्र: कमी% = [R/(100+R)]×100, यहाँ R=25 चरण 2: कमी% = [25/125]×100 = 20% ✅ उत्तर (Answer): (a) 20% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-10 — एक बड़े बगीचे में 60% पेड़ नारियल के हैं। नारियल के पेड़ों के 25% पेड़ आम के हैं और आम के पेड़ों के 20% पेड़ सेब के हैं। यदि सेब के पेड़ 1,440 हैं, तो बगीचे में कुल पेड़ ज्ञात करें। (a) 48,000  (b) 50,000  (c) 51,000  (d) 45,000</div><p>चरण 1: माना कुल पेड़=T चरण 2: नारियल=0.60T; आम=25% of नारियल=0.15T; सेब=20% of आम=0.03T चरण 3: 0.03T=1440 ⇒ T=48000 ✅ उत्तर (Answer): (a) 48,000 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-11 — एक परीक्षा में A को B से 25% अंक अधिक मिले, B को C से 10% कम अंक मिले और C को D से 25% अंक अधिक मिले। यदि D को 500 में से 320 अंक मिले, तो A को कितने अंक मिले? (a) 405  (b) 450  (c) 360  (d) 400</div><p>चरण 1: D=320 चरण 2: C=125% of D=125% of 320=400 चरण 3: B=90% of C=90% of 400=360 चरण 4: A=125% of B=125% of 360=450 ✅ उत्तर (Answer): (b) 450 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-12 — किसी संख्या के 75% में 75 जोड़ने पर परिणाम वही संख्या बन जाता है। उस संख्या का 40% ज्ञात करें। (a) 100  (b) 80  (c) 120  (d) 160</div><p>चरण 1: माना संख्या=x चरण 2: 75% of x + 75 = x ⇒ 0.75x+75=x ⇒ 75=0.25x ⇒ x=300 चरण 3: 40% of 300 = 120 ✅ उत्तर (Answer): (c) 120 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-13 — किसी वस्तु की कीमत में लगातार दो बार 10% की वृद्धि की गई। मूल कीमत पर वापस लाने के लिए बढ़ी हुई कीमत में कितने % की कमी करनी होगी? (a) 15%  (b) 17.36%  (c) 17%  (d) 16.36%</div><p>चरण 1: माना मूल कीमत=100 चरण 2: दो बार 10% वृद्धि के बाद कीमत=100×1.1×1.1=121 चरण 3: कमी% = (121−100)/121×100 = 2100/121 ≈ 17.36% ✅ उत्तर (Answer): (b) 17.36% ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-14 — एक परीक्षा में पास होने के लिए 35% अंक चाहिए। एक छात्र को 200 अंक मिले और वह 10 अंकों से फेल हो गया। अधिकतम अंक ज्ञात करें। (a) 500  (b) 550  (c) 600  (d) 650</div><p>चरण 1: पास होने के लिए आवश्यक अंक = 200+10 = 210 चरण 2: 35% of अधिकतम अंक = 210 चरण 3: अधिकतम अंक = 210×100/35 = 600 ✅ उत्तर (Answer): (c) 600 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-15 — एक चुनाव में जीतने वाले उम्मीदवार को कुल मतदान का 60% मिला और वह 14,000 मतों के बहुमत से जीता। जीतने वाले उम्मीदवार को कितने मत मिले? (a) 28,000  (b) 32,000  (c) 42,000  (d) 46,000</div><p>चरण 1: बहुमत = (60%−40%) of कुल मत = 20% of कुल मत = 14000 चरण 2: कुल मत = 14000×100/20 = 70000 चरण 3: जीतने वाले के मत = 60% of 70000 = 42000 ✅ उत्तर (Answer): (c) 42,000 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-16 — किसी वस्तु का अंकित मूल्य क्रय मूल्य से 25% अधिक रखा गया। दुकानदार 20% की छूट देता है। लाभ या हानि प्रतिशत ज्ञात करें। (a) 5% लाभ  (b) कोई लाभ-हानि नहीं  (c) 5% हानि  (d) 10% लाभ</div><p>चरण 1: माना CP=₹100। MP=125% of 100=₹125 चरण 2: SP=80% of MP=80% of 125=₹100 चरण 3: SP=CP=100 ⇒ न लाभ न हानि ✅ उत्तर (Answer): (b) कोई लाभ-हानि नहीं ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-17 — किसी वस्तु के अंकित मूल्य ₹800 पर क्रमशः 25% और 20% की दो क्रमागत छूट दी जाती हैं। अंतिम विक्रय मूल्य तथा तुल्य एकल छूट प्रतिशत ज्ञात करें। (a) ₹480, 40%  (b) ₹500, 37.5%  (c) ₹460, 42.5%  (d) ₹440, 45%</div><p>चरण 1: पहली छूट के बाद: 800×0.75=₹600 चरण 2: दूसरी छूट के बाद: 600×0.80=₹480 चरण 3: तुल्य छूट%=25+20−(25×20)/100=45−5=40% ✅ उत्तर (Answer): (a) ₹480, 40% ✓</p></div>
+<p>📐 सूत्र पुनरावृत्ति तालिका (Formula Revision Table)</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टॉपिक</th><th>सूत्र (Formula)</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>प्रतिशत रूपांतरण</td><td>x% = x/100</td><td>भिन्न को प्रतिशत में बदलना हो</td></tr><tr><td>मूल्य में वृद्धि</td><td>नया मूल्य = (100+x)% of मूल</td><td>किसी राशि में x% वृद्धि हो</td></tr><tr><td>मूल्य में कमी</td><td>नया मूल्य = (100−x)% of मूल</td><td>किसी राशि में x% कमी हो</td></tr><tr><td>क्रमागत % परिवर्तन</td><td>a+b+(ab/100)%</td><td>दो या अधिक % परिवर्तन एक साथ हों</td></tr><tr><td>लाभ%</td><td>(SP−CP)/CP × 100</td><td>SP, CP से अधिक हो</td></tr><tr><td>हानि%</td><td>(CP−SP)/CP × 100</td><td>CP, SP से अधिक हो</td></tr><tr><td>SP ज्ञात करना</td><td>[(100±लाभ/हानि%)/100]×CP</td><td>CP और %दिया हो, SP चाहिए</td></tr><tr><td>CP ज्ञात करना</td><td>[100/(100±लाभ/हानि%)]×SP</td><td>SP और %दिया हो, CP चाहिए</td></tr><tr><td>संख्या-आधारित लाभ-हानि</td><td>प्रत्येक वस्तु का CP=₹1 मानें</td><td>"X का CP=Y का SP" जैसे प्रश्न</td></tr><tr><td>छूट%</td><td>(MP−SP)/MP × 100</td><td>MP पर छूट दी गई हो</td></tr><tr><td>दो क्रमागत छूट</td><td>a+b−(ab/100)%</td><td>दो छूट एक साथ दी जाएं</td></tr><tr><td>बेईमान दुकानदार</td><td>[त्रुटि/(वास्तविक−त्रुटि)]×100</td><td>झूठे बाट/माप का प्रयोग हो</td></tr><tr><td>जनसंख्या वृद्धि/कमी</td><td>P(1±R/100)ⁿ</td><td>n वर्ष बाद/पहले जनसंख्या चाहिए</td></tr><tr><td>समान %लाभ-हानि पर बिक्री</td><td>हानि% = (x/10)²</td><td>दो वस्तुएं समान x% लाभ-हानि पर बिकें</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="ras-pre-math-reasoning-ch08-anupat-samanupat.html" class="ch-nav-btn">← अध्याय 8: अनुपात, समानुपात एवं साझेदारी</a>
+  <a href="ras-pre-math-reasoning-ch10-byaj-si-ci.html" class="ch-nav-btn ch-nav-next">अध्याय 10: साधारण एवं चक्रवृद्धि ब्याज →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="ras-pre-math-reasoning.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

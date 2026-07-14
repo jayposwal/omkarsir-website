@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 14: क्रमचय-संचय एवं प्रायिकता — RAS Pre — गणित एवं तर्कशक्ति | Omkar Sir</title>
+<meta name="description" content="क्रमचय-संचय एवं प्रायिकता (Permutation-Combination &amp; Probability) — RAS Pre+Mains के लिए RAS Pre — गणित एवं तर्कशक्ति का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🎲 अध्याय 14/14 — RAS Pre — गणित एवं तर्कशक्ति</div>
+  <h1>क्रमचय-संचय एवं प्रायिकता</h1>
+  <div class="ch-sub">Permutation-Combination &amp; Probability | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>गुणन का मौलिक सिद्धांत एवं क्रमचय (Fundamental Principle &amp; Permutation)</li><li>संचय (Combination)</li><li>प्रायिकता (Probability)</li></ol></div>
+<p>🎬 एक कहानी से शुरुआत करते हैं...</p><p>जयपुर के एक स्कूल में वार्षिक समारोह की तैयारी हो रही थी। प्रिंसिपल साहब को 5 बच्चों में से 3 बच्चों को मंच-संचालन के लिए चुनना था — उन्होंने पूछा "कितने तरीकों से चुन सकते हैं?" गणित टीचर बोले "सर, अगर सिर्फ चुनना है (क्रम मायने नहीं रखता) तो यह संचय (Combination) है, लेकिन अगर तीनों को अलग-अलग भूमिका (एंकर, स्वागत, धन्यवाद) देनी है तो क्रम भी मायने रखेगा — यह क्रमचय (Permutation) कहलाएगा!" उसी दिन शाम को जब सब लॉटरी का टिकट खरीद रहे थे, तो एक बच्चे ने पूछा "सर, मेरा टिकट जीतने का Chance कितना है?" — यही प्रायिकता (Probability) है, यानी किसी घटना के घटित होने की संभावना को संख्या में मापना।</p><p>RAS Pre में यह टॉपिक 3-5 प्रश्नों का पक्का स्कोर देता है — शब्दों के अक्षरों को व्यवस्थित करना, समितियां (committee) बनाना, पासे-सिक्कों व ताश के पत्तों से जुड़ी प्रायिकता के प्रश्न हर बार दोहराए जाते हैं। एक बार पैटर्न समझ आ जाए तो यह सबसे तेज़ हल होने वाला टॉपिक बन जाता है — चलिए शुरू करते हैं!</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">गुणन का मौलिक सिद्धांत एवं क्रमचय (Fundamental Principle &amp; Permutation)</span></h2>
+<p>गुणन का मौलिक सिद्धांत (Fundamental Principle of Counting) कहता है — यदि एक कार्य m तरीकों से तथा दूसरा कार्य n तरीकों से हो सकता है, तो दोनों कार्य मिलाकर (m×n) तरीकों से हो सकते हैं। क्रमचय (Permutation) किसी दी गई वस्तुओं में से कुछ या सभी को एक निश्चित क्रम में व्यवस्थित करने का तरीका है — यहाँ क्रम (order) मायने रखता है। उदाहरण के लिए A,B,C से 2 अक्षर लेकर बनाए गए क्रमचय हैं: AB,BA,AC,CA,BC,CB — यानी AB और BA अलग-अलग क्रमचय माने जाते हैं। जब किसी शब्द में अक्षर दोहराए (repeat) जाते हों, तो सूत्र में उन दोहराव को divide करना जरूरी होता है।</p>
+<div class="formula-box"><div class="formula-title">📐  गुणन सिद्धांत एवं क्रमचय — सूत्र (Formula)</div><p>n का फैक्टोरियल: n! = n×(n−1)×(n−2)×...×2×1, तथा 0! = 1 n वस्तुओं में से r को क्रमचय (nPr) = n! / (n−r)! n भिन्न वस्तुओं को सभी को एक साथ व्यवस्थित करने के तरीके = n! यदि n वस्तुओं में p1, p2, p3... वस्तुएं समान हैं ⇒ व्यवस्थाएं = n! / (p1!×p2!×p3!...)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 1 (आसान) — शब्द "FIGHT" के अक्षरों से कितने विभिन्न शब्द (व्यवस्थाएं) बनाई जा सकती हैं?</div><p>चरण 1: "FIGHT" में 5 भिन्न-भिन्न अक्षर हैं (कोई दोहराव नहीं) चरण 2: व्यवस्थाएं = 5! = 5×4×3×2×1 चरण 3: व्यवस्थाएं = 120 ✅ उत्तर (Answer): 120</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 2 (मध्यम) — शब्द "PRESENT" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं?</div><p>चरण 1: "PRESENT" में 7 अक्षर हैं, जिनमें से E दो बार आता है, शेष 5 भिन्न हैं चरण 2: व्यवस्थाएं = 7! / 2! = 5040 / 2 चरण 3: व्यवस्थाएं = 2520 ✅ उत्तर (Answer): 2520</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 3 (कठिन) — शब्द "DAUGHTER" के अक्षरों को इस प्रकार व्यवस्थित करें कि सभी स्वर (vowels) सदैव साथ रहें।</div><p>चरण 1: "DAUGHTER" में 8 भिन्न अक्षर हैं — स्वर A,U,E तथा व्यंजन D,G,H,T,R चरण 2: तीनों स्वरों (A,U,E) को एक इकाई मानें ⇒ अब कुल 6 इकाइयाँ हैं: D,G,H,T,R,(AUE) चरण 3: इन 6 इकाइयों की व्यवस्थाएं = 6! = 720 चरण 4: स्वर (AUE) अपने अंदर स्वयं व्यवस्थित हो सकते हैं = 3! = 6 तरीकों से चरण 5: कुल व्यवस्थाएं = 720 × 6 = 4320 ✅ उत्तर (Answer): 4320</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): क्रमचय की स्पीड ट्रिक</div><p>"शब्द के सभी अक्षरों की व्यवस्थाएं" पूछे जाने पर सबसे पहले दोहराए गए अक्षर (repeated letters) गिनें — हर दोहराव के लिए उसकी संख्या के factorial से भाग दें। "एक साथ (together)" वाली शर्त में दिए गए अक्षरों के समूह को एक इकाई मानकर बाकी के साथ व्यवस्थित करें, फिर उस समूह के अंदर की व्यवस्थाओं से गुणा करें — यह दो-चरण विधि हर "together/साथ" प्रश्न में काम आती है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">संचय (Combination)</span></h2>
+<p>संचय (Combination) किसी दी गई वस्तुओं में से कुछ वस्तुओं का चयन (selection) करने का तरीका है, जहाँ क्रम (order) मायने नहीं रखता — सिर्फ यह मायने रखता है कि कौन-कौन सी वस्तुएं चुनी गईं। उदाहरण के लिए A,B,C में से 2 का संचय: AB,BC,CA — यहाँ AB और BA एक ही संचय माने जाते हैं (जबकि क्रमचय में अलग-अलग गिने जाते)। समिति (committee) बनाने, टीम चुनने, गेंद/पत्ते चुनने जैसे प्रश्नों में जहाँ सिर्फ "चुनना" होता है, वहाँ संचय (nCr) का प्रयोग होता है।</p>
+<div class="formula-box"><div class="formula-title">📐  संचय (Combination) — सूत्र (Formula)</div><p>n वस्तुओं में से r को संचय (nCr) = n! / [r!×(n−r)!] nCn = 1  तथा  nC0 = 1 nCr = nC(n−r)  (पूरक गुण — Complementary Property) nPr = nCr × r!  (क्रमचय व संचय में संबंध)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 4 (आसान) — 10 वस्तुओं में से 3 वस्तुओं को कितने तरीकों से चुना जा सकता है? (10C3 ज्ञात करें)</div><p>चरण 1: सूत्र: nCr = n!/[r!(n−r)!] चरण 2: 10C3 = 10!/(3!×7!) = (10×9×8)/(3×2×1) चरण 3: = 720/6 चरण 4: = 120 ✅ उत्तर (Answer): 120</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 5 (मध्यम) — 7 पुरुषों तथा 5 महिलाओं में से 4 पुरुष व 2 महिलाओं की एक समिति कितने तरीकों से बनाई जा सकती है?</div><p>चरण 1: 7 में से 4 पुरुष चुनने के तरीके = 7C4 = 7!/(4!×3!) = 35 चरण 2: 5 में से 2 महिलाएं चुनने के तरीके = 5C2 = 5!/(2!×3!) = 10 चरण 3: कुल तरीके = 7C4 × 5C2 = 35 × 10 चरण 4: = 350 ✅ उत्तर (Answer): 350</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 6 (कठिन) — 14 खिलाड़ियों में से क्रिकेट की एक ग्यारह (XI) की टीम कितने तरीकों से चुनी जा सकती है?</div><p>चरण 1: यहाँ nCr का प्रयोग होगा, जहाँ n=14, r=11 चरण 2: 14C11 = 14C(14−11) = 14C3  [पूरक गुण से] चरण 3: 14C3 = (14×13×12)/(3×2×1) = 2184/6 चरण 4: = 364 ✅ उत्तर (Answer): 364</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): संचय की स्पीड ट्रिक</div><p>nCr हमेशा nC(n−r) के बराबर होता है — अगर r, n के आधे से बड़ा है (जैसे 14C11), तो इसे nC(n−r) में बदल दें (14C3), गणना बहुत आसान हो जाएगी। "कम से कम एक" (at least one) वाले प्रश्नों में हमेशा विपरीत घटना (जैसे "कोई भी नहीं") के तरीके निकालकर कुल में से घटाएं — सीधे गिनने से ज्यादा तेज़ और सुरक्षित तरीका है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">प्रायिकता (Probability)</span></h2>
+<p>प्रायिकता (Probability) किसी घटना (event) के घटित होने की संभावना को 0 से 1 के बीच की संख्या में मापती है — 0 का अर्थ है घटना कभी नहीं होगी, तथा 1 का अर्थ है घटना निश्चित रूप से होगी। किसी प्रयोग (experiment) के सभी संभावित परिणामों के समुच्चय को प्रतिदर्श समष्टि (Sample Space, S) कहते हैं, और जिस घटना की प्रायिकता ज्ञात करनी है उसे E कहते हैं। पासा फेंकना, सिक्का उछालना, ताश का पत्ता निकालना — ये सभी यादृच्छिक प्रयोग (random experiments) हैं जिनसे RAS Pre में सबसे ज्यादा प्रश्न बनते हैं।</p>
+<div class="formula-box"><div class="formula-title">📐  प्रायिकता (Probability) — सूत्र (Formula)</div><p>प्रायिकता P(E) = n(E) / n(S)   [अनुकूल परिणाम / कुल परिणाम] 0 ≤ P(E) ≤ 1  तथा  P(निश्चित घटना) = 1,  P(असंभव घटना) = 0 पूरक घटना (Not-E): P(E̅) = 1 − P(E) योग नियम: P(A∪B) = P(A) + P(B) − P(A∩B)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 7 (आसान) — यदि अंकों 1,2,3,4,5,6,7,8,9 में से एक अंक यादृच्छया चुना जाए, तो एक विषम अंक (odd number) प्राप्त होने की प्रायिकता ज्ञात करें।</div><p>चरण 1: कुल परिणाम n(S) = 9 (अंक 1 से 9) चरण 2: विषम अंक: 1,3,5,7,9 ⇒ n(E) = 5 चरण 3: P(E) = n(E)/n(S) = 5/9 ✅ उत्तर (Answer): 5/9</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 8 (मध्यम) — दो पासे एक साथ फेंके जाते हैं। दोनों अंकों का योग 7 से अधिक आने की प्रायिकता ज्ञात करें।</div><p>चरण 1: दो पासों में कुल परिणाम n(S) = 6×6 = 36 चरण 2: योग 7 से अधिक (यानी 8,9,10,11,12) वाले जोड़े गिनें: कुल 15 जोड़े मिलते हैं चरण 3: P(E) = n(E)/n(S) = 15/36 चरण 4: सरलतम रूप में = 5/12 ✅ उत्तर (Answer): 5/12</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 9 (कठिन) — 52 पत्तों की गड्डी में से 2 पत्ते यादृच्छया निकाले जाते हैं। दोनों पत्तों के काले (black) होने या दोनों के बेगम (queen) होने की प्रायिकता ज्ञात करें।</div><p>चरण 1: कुल परिणाम n(S) = 52C2 = 1326 चरण 2: A = दोनों काले पत्ते: n(A) = 26C2 = 325, P(A) = 325/1326 चरण 3: B = दोनों बेगम: n(B) = 4C2 = 6, P(B) = 6/1326 चरण 4: A∩B = दोनों काली बेगम: n(A∩B) = 2C2 = 1, P(A∩B) = 1/1326 चरण 5: P(A∪B) = P(A)+P(B)−P(A∩B) = (325+6−1)/1326 = 330/1326 चरण 6: सरलतम रूप में = 55/221 ✅ उत्तर (Answer): 55/221</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): प्रायिकता की स्पीड ट्रिक</div><p>"कम से कम" (at least) वाले प्रायिकता प्रश्नों में P(कम से कम एक) = 1 − P(कोई नहीं) फॉर्मूला लगाएं — यह सीधे गिनने से बहुत तेज़ है। दो पासों के प्रश्नों में हमेशा n(S)=36 याद रखें, और ताश के पत्तों में n(S)=52 (एक पत्ता) या 52C2=1326 (दो पत्ते) — ये आधार मान रटकर रखने से समय बचता है।</p></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>अवधारणा</th><th>सूत्र</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>क्रमचय (Permutation)</td><td>nPr = n!/(n−r)!</td><td>जब क्रम (order) मायने रखता हो</td></tr><tr><td>संचय (Combination)</td><td>nCr = n!/[r!(n−r)!]</td><td>जब सिर्फ चयन (selection) करना हो</td></tr><tr><td>दोहराव सहित व्यवस्था</td><td>n!/(p1!p2!...)</td><td>शब्द में अक्षर दोहराए गए हों</td></tr><tr><td>प्रायिकता</td><td>P(E) = n(E)/n(S)</td><td>किसी घटना की संभावना मापनी हो</td></tr><tr><td>पूरक घटना</td><td>P(E̅) = 1−P(E)</td><td>"कम से कम" वाले प्रश्न</td></tr></tbody></table></div>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">🟢 क्रमचय (Permutation)</div><ul class="ch-list"><li>क्रम (order) मायने रखता है</li><li>उदाहरण: दौड़ में 1st, 2nd, 3rd स्थान तय करना</li><li>AB और BA अलग-अलग गिने जाते हैं</li><li>सूत्र: nPr = n!/(n−r)!</li></ul></div><div class="twocol-col"><div class="twocol-head">🔴 संचय (Combination)</div><ul class="ch-list"><li>क्रम (order) मायने नहीं रखता</li><li>उदाहरण: कमेटी/टीम के सदस्य चुनना</li><li>AB और BA एक ही संचय माने जाते हैं</li><li>सूत्र: nCr = n!/[r!(n−r)!]</li></ul></div></div>
+<div class="warn-box"><p><strong>⚠️  आम गलतियाँ (Common Mistakes)</strong></p><p>❌ क्रमचय (nPr) और संचय (nCr) के सूत्रों को आपस में बदल देना — पहले तय करें कि क्रम मायने रखता है या नहीं ❌ शब्द में दोहराए गए अक्षरों को नज़रअंदाज़ कर सीधे n! लगा देना, जबकि दोहराव के factorial से भाग देना जरूरी है ❌ "एक साथ (together)" की शर्त में समूह के अंदर की व्यवस्था (जैसे 3! स्वरों की) गिनना भूल जाना ❌ 0! = 1 भूल जाना, जिससे nCn या nC0 वाले प्रश्नों में गलती होती है ❌ प्रायिकता में n(S) गलत गिनना — जैसे दो पासों में n(S)=36 की जगह 12 या 6 मान लेना ❌ "कम से कम एक" वाले प्रश्नों में पूरक विधि (1−P(कोई नहीं)) का प्रयोग न कर सीधे सभी case गिनने की कोशिश करना, जिससे समय बर्बाद होता है और गलती की संभावना बढ़ती है ❌ nCr = nC(n−r) के गुण का प्रयोग न करना, जिससे बड़ी संख्याओं (जैसे 14C11) की गणना जटिल हो जाती है</p></div>
+<p>महत्वपूर्ण: किसी भी प्रायिकता का मान सदैव 0 और 1 के बीच होता है — यदि गणना में उत्तर 1 से अधिक या ऋणात्मक (negative) आए, तो निश्चित रूप से गणना में त्रुटि है। साथ ही nCr = nC(n−r) का गुण याद रखें — इससे 20C18 जैसी बड़ी संख्या तुरंत 20C2 में बदल जाती है।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>📝  अभ्यास प्रश्न (Practice Questions)</th></tr></thead><tbody><tr><td>Q1. शब्द "SMART" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? Q2. (75P2 − 75C2) का मान ज्ञात करें। Q3. दो सिक्के उछाले जाते हैं। कम से कम एक चित (head) आने की प्रायिकता ज्ञात करें। Q4. 10 वस्तुओं में से 3 वस्तुएं चुनने के तरीके (10C3) ज्ञात करें। Q5. 1 से 20 तक की संख्याओं में से यादृच्छया चुनी गई संख्या के 3 का गुणज होने की प्रायिकता ज्ञात करें।</td></tr><tr><td>🔑 उत्तर कुंजी (Answer Key): Q1. 120  |  Q2. 2775  |  Q3. 3/4  |  Q4. 120  |  Q5. 3/10</td></tr></tbody></table></div>
+<h3 class="ch-h3">★  याद रखने योग्य फॉर्मूले एवं तथ्य  ★</h3><p>1. n! = n×(n−1)×(n−2)×...×2×1, तथा 0! = 1 2. nPr = n!/(n−r)! 3. n भिन्न वस्तुओं की सभी व्यवस्थाएं = n! 4. दोहराव सहित व्यवस्थाएं = n!/(p1!p2!p3!...) 5. nCr = n!/[r!(n−r)!] 6. nCn = 1, nC0 = 1 7. nCr = nC(n−r) 8. nPr = nCr × r! 9. "साथ/together" प्रश्नों में समूह को 1 इकाई मानें, फिर अंदर की व्यवस्था से गुणा करें 10. प्रायिकता P(E) = n(E)/n(S) 11. 0 ≤ P(E) ≤ 1 12. P(E̅) = 1 − P(E)  (पूरक घटना) 13. P(A∪B) = P(A)+P(B)−P(A∩B) 14. दो पासों में n(S) = 36, दो सिक्कों में n(S) = 4, तीन सिक्कों में n(S) = 8 15. ताश की गड्डी में कुल पत्ते = 52 (13 प्रत्येक सूट के, 4 सूट) 16. फेस कार्ड (Ace+King+Queen+Jack) = 16 (RS Aggarwal परिपाटी अनुसार) 17. "कम से कम एक" प्रश्नों में पूरक विधि (1−P(कोई नहीं)) प्रयोग करें 18. "ठीक r" चयन में nCr, "क्रमबद्ध व्यवस्था" में nPr प्रयोग करें</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (Pre MCQ)  📝</h3><p>Q1. शब्द "DISPLAY" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 720  (b) 1440  (c) 2520  (d) 5040 Q2. शब्द "TOTAL" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 45  (b) 60  (c) 72  (d) 120 Q3. शब्द "BANANA" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 60  (b) 120  (c) 360  (d) 720 Q4. दो सिक्के उछाले जाते हैं। कम से कम एक चित (head) आने की प्रायिकता ज्ञात करें। (a) 1/2  (b) 1/3  (c) 2/3  (d) 3/4 Q5. दो पासों के एक साथ फेंकने पर योग 7 आने की प्रायिकता ज्ञात करें। (a) 1/6  (b) 1/4  (c) 2/3  (d) 1/36 Q6. दो पासों के एक साथ फेंकने पर डबलेट (doublet) आने की प्रायिकता ज्ञात करें। (a) 1/6  (b) 1/4  (c) 2/3  (d) 3/7 Q7. 52 पत्तों की गड्डी में से एक पत्ता निकाला जाता है। उसके फेस कार्ड (face card) होने की प्रायिकता ज्ञात करें। (a) 1/13  (b) 4/13  (c) 1/4  (d) 9/52</p>
+<p>🔑 उत्तर कुंजी (Answer Key): Q1.(d) 5040 | Q2.(b) 60 | Q3.(a) 60 | Q4.(d) 3/4 | Q5.(a) 1/6 | Q6.(a) 1/6 | Q7.(b) 4/13</p>
+<p>📘 संपूर्ण अभ्यास सेट — 18 प्रश्न सह हल (Complete Practice Set)</p><p>इस अंतिम अभ्यास सेट में क्रमचय, संचय तथा प्रायिकता से जुड़े सभी प्रकार के प्रश्न शामिल हैं — पहले स्वयं हल करने की कोशिश करें, फिर नीचे दिया गया हल देखें। (प्रश्न 1-9 क्रमचय-संचय पर तथा प्रश्न 10-18 प्रायिकता पर आधारित हैं।)</p>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-1 — शब्द "OFFICES" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 2520  (b) 5040  (c) 1850  (d) 1680</div><p>चरण 1: "OFFICES" में 7 अक्षर हैं, जिनमें F दो बार आता है चरण 2: व्यवस्थाएं = 7!/2! = 5040/2 चरण 3: = 2520 ✅ उत्तर (Answer): (a) 2520 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-2 — शब्द "WEDDING" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 2500  (b) 2520  (c) 5000  (d) 5040</div><p>चरण 1: "WEDDING" में 7 अक्षर हैं, जिनमें D दो बार आता है चरण 2: व्यवस्थाएं = 7!/2! = 5040/2 चरण 3: = 2520 ✅ उत्तर (Answer): (b) 2520 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-3 — शब्द "INCREASE" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 40320  (b) 10080  (c) 20160  (d) 64</div><p>चरण 1: "INCREASE" में 8 अक्षर हैं, जिनमें E दो बार आता है चरण 2: व्यवस्थाएं = 8!/2! = 40320/2 चरण 3: = 20160 ✅ उत्तर (Answer): (c) 20160 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-4 — शब्द "ABSENTEE" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 512  (b) 6720  (c) 9740  (d) 40320</div><p>चरण 1: "ABSENTEE" में 8 अक्षर हैं, जिनमें E तीन बार आता है चरण 2: व्यवस्थाएं = 8!/3! = 40320/6 चरण 3: = 6720 ✅ उत्तर (Answer): (b) 6720 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-5 — शब्द "RUMOUR" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 30  (b) 90  (c) 180  (d) 720</div><p>चरण 1: "RUMOUR" में 6 अक्षर हैं, जिनमें R दो बार व U दो बार आता है चरण 2: व्यवस्थाएं = 6!/(2!×2!) = 720/4 चरण 3: = 180 ✅ उत्तर (Answer): (c) 180 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-6 — शब्द "OPERATE" के अक्षरों से कितने विभिन्न शब्द बनाए जा सकते हैं? (a) 360  (b) 720  (c) 5040  (d) 2520</div><p>चरण 1: "OPERATE" में 7 अक्षर हैं, जिनमें E दो बार आता है चरण 2: व्यवस्थाएं = 7!/2! = 5040/2 चरण 3: = 2520 ✅ उत्तर (Answer): (d) 2520 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-7 — 5 पुरुषों तथा 3 महिलाओं में से 1 महिला व 2 पुरुषों की एक समिति कितने तरीकों से बनाई जा सकती है? (a) 10  (b) 20  (c) 23  (d) 30</div><p>चरण 1: 1 महिला चुनने के तरीके = 3C1 = 3 चरण 2: 2 पुरुष चुनने के तरीके = 5C2 = 10 चरण 3: कुल तरीके = 3C1×5C2 = 3×10 चरण 4: = 30 ✅ उत्तर (Answer): (d) 30 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-8 — 5 महिलाओं तथा 4 पुरुषों में से 3 सदस्यों की एक समिति इस प्रकार बनानी है कि कम से कम 1 सदस्य महिला हो। कितने तरीके संभव हैं? (a) 76  (b) 80  (c) 84  (d) 96</div><p>चरण 1: कुल 9 में से 3 चुनने के तरीके = 9C3 = 84 चरण 2: सभी पुरुष (कोई महिला नहीं) चुनने के तरीके = 4C3 = 4 चरण 3: कम से कम 1 महिला = कुल − सभी पुरुष = 84−4 चरण 4: = 80 ✅ उत्तर (Answer): (b) 80 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-9 — (75P2 − 75C2) का मान ज्ञात करें। (a) 0  (b) 75  (c) 150  (d) 2775</div><p>चरण 1: 75P2 = 75×74 = 5550 चरण 2: 75C2 = (75×74)/(2×1) = 2775 चरण 3: 75P2−75C2 = 5550−2775 चरण 4: = 2775 ✅ उत्तर (Answer): (d) 2775 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-10 — तीन सिक्के उछाले जाते हैं। कम से कम 2 चित (heads) आने की प्रायिकता ज्ञात करें। (a) 1/4  (b) 1/2  (c) 1/3  (d) 1/8</div><p>चरण 1: n(S) = 2³ = 8: {HHH,HHT,HTH,THH,HTT,THT,TTH,TTT} चरण 2: कम से कम 2 चित: {HHH,HHT,HTH,THH} ⇒ n(E)=4 चरण 3: P(E) = 4/8 ✅ उत्तर (Answer): (b) 1/2 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-11 — एक पासा फेंका जाता है। 4 से बड़ी संख्या आने की प्रायिकता ज्ञात करें। (a) 1/2  (b) 1/3  (c) 2/3  (d) 1/4</div><p>चरण 1: n(S) = 6: {1,2,3,4,5,6} चरण 2: 4 से बड़ी संख्याएं: {5,6} ⇒ n(E)=2 चरण 3: P(E) = 2/6 ✅ उत्तर (Answer): (b) 1/3 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-12 — दो पासों के एक साथ फेंकने पर योग 9 आने की प्रायिकता ज्ञात करें। (a) 1/6  (b) 1/8  (c) 1/9  (d) 1/12</div><p>चरण 1: n(S) = 36 चरण 2: योग 9 वाले जोड़े: (3,6),(4,5),(5,4),(6,3) ⇒ n(E)=4 चरण 3: P(E) = 4/36 ✅ उत्तर (Answer): (c) 1/9 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-13 — दो पासों के एक साथ फेंकने पर योग 10 या 11 आने की प्रायिकता ज्ञात करें। (a) 1/4  (b) 1/6  (c) 7/12  (d) 5/36</div><p>चरण 1: योग 10: (4,6),(5,5),(6,4) ⇒ 3 जोड़े चरण 2: योग 11: (5,6),(6,5) ⇒ 2 जोड़े चरण 3: कुल n(E)=5, P(E) = 5/36 ✅ उत्तर (Answer): (d) 5/36 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-14 — 52 पत्तों की गड्डी में से एक पत्ता निकाला जाता है। उसके "दहला (ten)" या "हुकुम (spade)" होने की प्रायिकता ज्ञात करें। (a) 4/13  (b) 1/4  (c) 1/13  (d) 1/26</div><p>चरण 1: दहले (ten) = 4, हुकुम (spade) = 13, दोनों में उभयनिष्ठ (दहले का हुकुम) = 1 चरण 2: n(E) = 4+13−1 = 16 चरण 3: P(E) = 16/52 = 4/13 ✅ उत्तर (Answer): (a) 4/13 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-15 — 52 पत्तों की गड्डी में से एक पत्ता निकाला जाता है। "हीरा (diamond)" या "बेगम (king)" होने की प्रायिकता ज्ञात करें। (a) 2/13  (b) 4/13  (c) 1/13  (d) 1/52</div><p>चरण 1: हीरा (diamond) = 13, बेगम (king) = 4, उभयनिष्ठ (हीरे का बेगम) = 1 चरण 2: n(E) = 13+4−1 = 16 चरण 3: P(E) = 16/52 = 4/13 ✅ उत्तर (Answer): (b) 4/13 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-16 — 52 पत्तों की गड्डी में से 2 पत्ते साथ में निकाले जाते हैं। दोनों के बेगम (king) होने की प्रायिकता ज्ञात करें। (a) 1/15  (b) 25/57  (c) 35/256  (d) 1/221</div><p>चरण 1: n(S) = 52C2 = 1326 चरण 2: n(E) = 4C2 = 6 (4 बेगमों में से 2 चुनना) चरण 3: P(E) = 6/1326 = 1/221 ✅ उत्तर (Answer): (d) 1/221 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-17 — 52 पत्तों की गड्डी में से 2 पत्ते साथ में निकाले जाते हैं। एक हुकुम (spade) व एक पान (heart) होने की प्रायिकता ज्ञात करें। (a) 3/20  (b) 29/34  (c) 47/100  (d) 13/102</div><p>चरण 1: n(S) = 52C2 = 1326 चरण 2: n(E) = 13C1×13C1 = 13×13 = 169 चरण 3: P(E) = 169/1326 = 13/102 ✅ उत्तर (Answer): (d) 13/102 ✓</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-18 — 52 पत्तों की गड्डी में से 2 पत्ते साथ में निकाले जाते हैं। दोनों लाल (red) होने या दोनों बेगम (king) होने की प्रायिकता ज्ञात करें। (a) 7/13  (b) 3/26  (c) 63/221  (d) 55/221</div><p>चरण 1: n(S) = 52C2 = 1326 चरण 2: दोनों लाल: 26C2 = 325; दोनों बेगम: 4C2 = 6; दोनों लाल बेगम: 2C2 = 1 चरण 3: n(E) = 325+6−1 = 330 चरण 4: P(E) = 330/1326 = 55/221 ✅ उत्तर (Answer): (d) 55/221 ✓</p></div>
+<p>📐 सूत्र पुनरावृत्ति तालिका (Formula Revision Table)</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टॉपिक</th><th>सूत्र (Formula)</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>फैक्टोरियल</td><td>n! = n×(n−1)×...×1, 0!=1</td><td>व्यवस्थाओं की गिनती में</td></tr><tr><td>क्रमचय (nPr)</td><td>n!/(n−r)!</td><td>क्रम मायने रखता हो</td></tr><tr><td>n वस्तुओं की सभी व्यवस्थाएं</td><td>n!</td><td>सभी वस्तुएं एक साथ व्यवस्थित करनी हों</td></tr><tr><td>दोहराव सहित व्यवस्था</td><td>n!/(p1!p2!...)</td><td>शब्द में अक्षर दोहराए गए हों</td></tr><tr><td>संचय (nCr)</td><td>n!/[r!(n−r)!]</td><td>सिर्फ चयन (order मायने न रखे)</td></tr><tr><td>nCr का पूरक गुण</td><td>nCr = nC(n−r)</td><td>r, n के आधे से बड़ा हो</td></tr><tr><td>क्रमचय-संचय संबंध</td><td>nPr = nCr×r!</td><td>दोनों में परिवर्तन करना हो</td></tr><tr><td>प्रायिकता</td><td>P(E) = n(E)/n(S)</td><td>किसी घटना की संभावना चाहिए</td></tr><tr><td>पूरक घटना</td><td>P(E̅) = 1−P(E)</td><td>"कम से कम एक" वाले प्रश्न</td></tr><tr><td>योग नियम</td><td>P(A∪B)=P(A)+P(B)−P(A∩B)</td><td>दो घटनाओं में से कम से कम एक की प्रायिकता</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="ras-pre-math-reasoning-ch13-madhya-madhyika.html" class="ch-nav-btn">← अध्याय 13: माध्य, माध्यिका एवं बहुलक</a>
+  <a href="ras-pre-math-reasoning.html" class="ch-nav-btn ch-nav-next">मुख्य पृष्ठ पर वापस →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="ras-pre-math-reasoning.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

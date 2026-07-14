@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 7: आकृतियाँ एवं उनके उप-भाग — RAS Pre — गणित एवं तर्कशक्ति | Omkar Sir</title>
+<meta name="description" content="आकृतियाँ एवं उनके उप-भाग (Shapes and their Sub-sections) — RAS Pre+Mains के लिए RAS Pre — गणित एवं तर्कशक्ति का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🔷 अध्याय 7/14 — RAS Pre — गणित एवं तर्कशक्ति</div>
+  <h1>आकृतियाँ एवं उनके उप-भाग</h1>
+  <div class="ch-sub">Shapes and their Sub-sections | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>दर्पण प्रतिबिंब एवं जल प्रतिबिंब (Mirror &amp; Water Image)</li><li>कागज़ मोड़ना एवं छेदना (Paper Folding &amp; Punching)</li><li>आकृति श्रृंखला एवं एम्बेडेड/गिनती आकृतियाँ (Figure Series &amp; Counting Figures)</li></ol></div>
+<p>🎬 एक कहानी से शुरुआत करते हैं...</p><p>एक बच्चा शीशे के सामने खड़ा होकर अपनी घड़ी दिखाते हुए बोला — "पापा, शीशे में घड़ी उल्टी क्यों दिख रही है?" पापा मुस्कुराए — "यह उल्टी नहीं, यह दर्पण प्रतिबिंब (Mirror Image) है — और मजे की बात यह है कि इसका भी एक पक्का गणितीय सूत्र है!" उसी शाम बच्चे ने एक कागज़ को दो बार मोड़कर एक कोने में छेद किया, फिर खोलकर देखा तो एक की जगह चार छेद बन गए थे — "यह तो जादू है!" वह चिल्लाया। पापा बोले — "जादू नहीं, यह भी logic है — हर मोड़ (fold) पर छेद अपनी संख्या दोगुनी कर लेता है!"</p><p>इस अध्याय में हम सीखेंगे — दर्पण व जल प्रतिबिंब (Mirror &amp; Water Image), कागज़ मोड़ना व छेदना (Paper Folding &amp; Punching), आकृति श्रृंखला (Figure Series), तथा एम्बेडेड/गिनती वाली आकृतियाँ (Embedded &amp; Counting Figures)। ये सभी टॉपिक विशुद्ध रूप से चित्र-आधारित (visual) हैं, इसलिए हर concept को वास्तविक चित्रों के साथ समझाया गया है।</p>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">दर्पण प्रतिबिंब एवं जल प्रतिबिंब (Mirror &amp; Water Image)</span></h2>
+<p>दर्पण प्रतिबिंब (Mirror Image) में किसी वस्तु/अक्षर/घड़ी को एक ऊर्ध्वाधर (vertical) दर्पण के सामने रखने पर जो प्रतिबिंब बनता है, वह दायें-बायें उल्टा (left-right flip) हो जाता है। जल प्रतिबिंब (Water Image) में वस्तु को पानी की सतह पर (क्षैतिज दर्पण) रखने पर जो प्रतिबिंब बनता है, वह ऊपर-नीचे उल्टा (top-bottom flip) हो जाता है।</p>
+<div class="formula-box"><div class="formula-title">📐  घड़ी के दर्पण/जल प्रतिबिंब — सूत्र — सूत्र (Formula)</div><p>दर्पण प्रतिबिंब समय = 11:60 − वास्तविक समय (घंटा-मिनट को अलग-अलग घटाएं, जरूरत पड़ने पर उधार लें) जल प्रतिबिंब समय = 6:00 − वास्तविक समय (यदि ऋणात्मक आए तो 12:00 जोड़ दें) अक्षर: जिनमें ऊर्ध्वाधर सममिति (vertical symmetry) हो, वे मिरर इमेज में वही दिखते हैं अक्षर: जिनमें क्षैतिज सममिति (horizontal symmetry) हो, वे वाटर इमेज में वही दिखते हैं</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 1 (आसान) — यदि घड़ी में वास्तविक समय 3:00 बजे है, तो दर्पण में यह समय कैसा दिखेगा?</div><p>चरण 1: सूत्र: दर्पण समय = 11:60 − वास्तविक समय चरण 2: मान रखें: 11:60 − 3:00 चरण 3: गणना करें: घंटा = 11−3 = 8, मिनट = 60−0 = 60 (जो अगले घंटे में जुड़ जाएगा) ⇒ 8+1=9 घंटा, 0 मिनट ✅ उत्तर (Answer): दर्पण में समय 9:00 दिखेगा</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 2 (मध्यम) — यदि घड़ी में वास्तविक समय 4:20 बजे है, तो दर्पण में यह समय कैसा दिखेगा?</div><p>चरण 1: सूत्र: दर्पण समय = 11:60 − वास्तविक समय चरण 2: मान रखें: 11:60 − 4:20 चरण 3: मिनट घटाएं: 60 − 20 = 40 चरण 4: घंटा घटाएं: 11 − 4 = 7 ✅ उत्तर (Answer): दर्पण में समय 7:40 दिखेगा</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 3 (कठिन) — यदि घड़ी में वास्तविक समय 8:15 बजे है, तो जल प्रतिबिंब (Water Image) में यह समय कैसा दिखेगा?</div><p>चरण 1: सूत्र: जल प्रतिबिंब समय = 6:00 − वास्तविक समय चरण 2: मान रखें: 6:00 − 8:15 (यह ऋणात्मक आएगा, इसलिए पहले 12:00 जोड़ेंगे) चरण 3: 6:00 + 12:00 = 18:00, फिर 18:00 − 8:15 चरण 4: मिनट घटाएं: 60−15=45, घंटा घटाएं: 17−8=9 (चूंकि मिनट उधार लिया) ✅ उत्तर (Answer): जल प्रतिबिंब में समय 9:45 दिखेगा</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): दर्पण/जल प्रतिबिंब की स्पीड ट्रिक</div><p>घड़ी के दर्पण प्रतिबिंब के लिए हमेशा "11:60 में से घटाओ" याद रखें — यह हर बार काम करेगा। जल प्रतिबिंब के लिए "6:00 में से घटाओ, ऋणात्मक आने पर 12:00 जोड़ो"। अक्षरों में A,H,I,M,O,T,U,V,W,X,Y का दर्पण प्रतिबिंब वही रहता है (ऊर्ध्वाधर सममिति), जबकि B,C,D,E,H,I,K,O,X का जल प्रतिबिंब वही रहता है (क्षैतिज सममिति) — H,I,O,X दोनों में समान रहते हैं।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">कागज़ मोड़ना एवं छेदना (Paper Folding &amp; Punching)</span></h2>
+<p>इस टॉपिक में एक कागज़ को एक या अधिक बार मोड़ा जाता है, फिर मुड़े हुए कागज़ में एक छेद (punch) किया जाता है। हमें बताना होता है कि कागज़ को वापस खोलने (unfold) पर कितने छेद तथा किन स्थानों पर दिखेंगे। मूल नियम यह है — हर तह (fold) रेखा, एक दर्पण रेखा की तरह काम करती है, और छेद उस रेखा के दोनों ओर सममित (symmetric) रूप से बनते हैं।</p>
+<div class="formula-box"><div class="formula-title">📐  कागज़ मोड़ना — मुख्य नियम — सूत्र (Formula)</div><p>प्रत्येक तह (fold) रेखा एक दर्पण की तरह कार्य करती है — छेद उस रेखा के आर-पार सममित रूप से बनता है यदि कागज़ को n बार मोड़ा जाए (और छेद तह-रेखा पर न हो), तो खोलने पर कुल छेद = 2ⁿ यदि छेद ठीक किसी तह-रेखा पर हो, तो उस तह के लिए छेद की संख्या दोगुनी नहीं होती (वह अपने ऊपर ही प्रतिबिंबित होता है) हमेशा अंतिम मोड़ से शुरू करके पीछे की ओर (last fold to first fold) खोलें</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 4 (आसान) — एक वर्गाकार कागज़ को ऊर्ध्वाधर रेखा पर आधा मोड़ा गया, फिर मुड़े हुए भाग में एक छेद किया गया (तह-रेखा से दूर)। कागज़ खोलने पर कितने छेद तथा कहाँ दिखेंगे?</div><p>चरण 1: 1 बार मोड़ा गया है (n=1), और छेद तह-रेखा पर नहीं है चरण 2: सूत्र: कुल छेद = 2ⁿ = 2¹ = 2 चरण 3: तह-रेखा एक दर्पण की तरह काम करती है — छेद उसके आर-पार सममित स्थान पर भी दिखेगा चरण 4: दोनों छेद तह-रेखा से समान दूरी पर, उसके विपरीत ओर होंगे ✅ उत्तर (Answer): कुल 2 छेद, तह-रेखा के दोनों ओर सममित रूप से</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 5 (मध्यम) — एक वर्गाकार कागज़ को पहले ऊर्ध्वाधर, फिर क्षैतिज रेखा पर मोड़ा गया (कुल 2 बार, कागज़ 1/4 आकार का हो गया), फिर एक कोने के पास छेद किया गया। कागज़ खोलने पर कितने छेद दिखेंगे?</div><p>चरण 1: 2 बार मोड़ा गया है (n=2), और छेद किसी तह-रेखा पर नहीं है चरण 2: सूत्र: कुल छेद = 2ⁿ = 2² = 4 चरण 3: पहले अंतिम मोड़ (क्षैतिज) खोलें — छेद अपनी संख्या दोगुनी करके 2 हो जाएगा चरण 4: फिर पहला मोड़ (ऊर्ध्वाधर) खोलें — फिर से संख्या दोगुनी होकर 4 हो जाएगी चरण 5: चारों छेद दोनों तह-रेखाओं के प्रतिच्छेद बिंदु के चारों ओर सममित रूप से (चारों चतुर्थांशों में एक-एक) होंगे ✅ उत्तर (Answer): कुल 4 छेद, केंद्र बिंदु के चारों ओर सममित रूप से (हर चतुर्थांश में एक)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 6 (कठिन) — एक वर्गाकार कागज़ को ऊर्ध्वाधर रेखा पर आधा मोड़ा गया, तथा छेद ठीक उसी तह-रेखा पर किया गया (न कि उससे दूर)। कागज़ खोलने पर कितने छेद दिखेंगे?</div><p>चरण 1: सामान्यतः 1 मोड़ (n=1) पर छेद संख्या 2ⁿ=2 होनी चाहिए चरण 2: परंतु यहां विशेष स्थिति है — छेद स्वयं तह-रेखा के ठीक ऊपर है चरण 3: चूंकि तह-रेखा स्वयं दर्पण-अक्ष है, इस पर स्थित बिंदु का प्रतिबिंब स्वयं उसी बिंदु पर बनता है (जैसे किसी संख्या का अपना ही मिरर इमेज दिखना) चरण 4: अतः यह छेद दोगुना नहीं होगा — खोलने पर भी वह एक ही स्थान पर रहेगा ✅ उत्तर (Answer): कुल केवल 1 छेद, ठीक केंद्र-रेखा पर (सामान्य नियम का अपवाद)</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): कागज़ मोड़ने की स्पीड ट्रिक</div><p>सबसे पहले जांचें — छेद किसी तह-रेखा पर तो नहीं है? यदि हां, तो उस तह के लिए संख्या दोगुनी नहीं होगी (यह सबसे बड़ा ट्रैप है)। सामान्य स्थिति में सूत्र 2ⁿ (n = मोड़ों की संख्या) याद रखें। हमेशा अंतिम मोड़ को पहले खोलें, फिर पीछे की ओर बढ़ें — इससे सममिति सही तरीके से बनती है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">आकृति श्रृंखला एवं एम्बेडेड/गिनती आकृतियाँ (Figure Series &amp; Counting Figures)</span></h2>
+<p>आकृति श्रृंखला (Figure Series) में कुछ आकृतियाँ एक निश्चित पैटर्न (जैसे घूर्णन/rotation, रेखाएं बढ़ना, आकार बदलना) के अनुसार बदलती जाती हैं, और हमें अगली आकृति पहचाननी होती है। एम्बेडेड/गिनती आकृतियों (Embedded/Counting Figures) में एक जटिल आकृति में छिपे हुए त्रिभुज, वर्ग, आयत आदि गिनने होते हैं — इसके लिए व्यवस्थित (systematic) गिनती और कुछ सीधे सूत्र उपयोगी हैं।</p>
+<div class="formula-box"><div class="formula-title">📐  आकृति श्रृंखला एवं गिनती — मुख्य नियम — सूत्र (Formula)</div><p>आकृति श्रृंखला में सबसे पहले घूर्णन कोण (rotation angle) तथा दिशा (clockwise/anticlockwise) पहचानें त्रिभुज गिनने का सूत्र: यदि शीर्ष से खींची गई रेखाएं आधार को k बराबर/असमान भागों में बांटें, तो कुल त्रिभुज = k(k+1)/2 आयत/वर्ग गिनने का सूत्र: यदि कुल क्षैतिज रेखाएं H तथा ऊर्ध्वाधर रेखाएं V हों (सीमा रेखाओं सहित), तो कुल आयत = C(H,2) × C(V,2) गिनती में हमेशा सबसे छोटी (elementary) आकृतियों से शुरू करें, फिर उनके संयोजन (combinations) गिनें</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 7 (आसान) — दिए गए चित्र में एक तीर (arrow) हर आकृति में 45° anticlockwise घूम रहा है (Fig 1 से Fig 4 तक)। पांचवीं आकृति (Fig 5) कैसी होगी?</div><p>चरण 1: Fig 1: तीर की दिशा 0° (दायें/पूर्व की ओर) चरण 2: Fig 2: तीर 45° anticlockwise घूमकर ऊपर-दायें हो गया चरण 3: Fig 3: तीर और 45° घूमकर सीधा ऊपर (90°) हो गया चरण 4: Fig 4: तीर और 45° घूमकर ऊपर-बायें (135°) हो गया चरण 5: पैटर्न: हर बार +45° anticlockwise ⇒ Fig 5 = 135°+45° = 180° (सीधा बायें की ओर) ✅ उत्तर (Answer): Fig 5 में तीर सीधा बायीं ओर (180°) इंगित करेगा — विकल्प (a)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 8 (मध्यम) — दिए गए त्रिभुज ABC में शीर्ष A से आधार BC पर दो बिंदु D तथा E तक रेखाएं खींची गई हैं (क्रम में B, D, E, C)। चित्र में कुल कितने त्रिभुज बनेंगे?</div><p>चरण 1: आधार BC, तीन भागों में बंटा है: BD, DE, EC ⇒ k = 3 प्राथमिक (elementary) त्रिभुज चरण 2: प्राथमिक त्रिभुज: △ABD, △ADE, △AEC — ये 3 त्रिभुज चरण 3: दो-दो प्राथमिक त्रिभुजों को जोड़ने पर: △ABE (=ABD+ADE), △ADC (=ADE+AEC) — ये 2 त्रिभुज चरण 4: सभी तीनों को जोड़ने पर: △ABC (पूरा त्रिभुज) — यह 1 त्रिभुज चरण 5: सूत्र से सत्यापन: कुल त्रिभुज = k(k+1)/2 = 3×4/2 = 6 ✅ उत्तर (Answer): चित्र में कुल 6 त्रिभुज बनते हैं</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण 9 (कठिन) — एक बड़े वर्ग को 1 क्षैतिज रेखा तथा 1 ऊर्ध्वाधर रेखा से बांटकर 2×2 का ग्रिड बनाया गया है (चित्र देखें)। चित्र में कुल कितने आयत (वर्ग सहित) बनेंगे?</div><p>चरण 1: कुल क्षैतिज रेखाएं (ऊपर, नीचे, तथा 1 आंतरिक रेखा) = H = 3 चरण 2: कुल ऊर्ध्वाधर रेखाएं (बाएं, दायें, तथा 1 आंतरिक रेखा) = V = 3 चरण 3: सूत्र: कुल आयत = C(H,2) × C(V,2) = C(3,2) × C(3,2) चरण 4: गणना करें: C(3,2) = 3, अतः कुल = 3 × 3 = 9 चरण 5: सत्यापन: 4 छोटे वर्ग + 4 (दो-दो जोड़े गए आयत: 2 क्षैतिज जोड़े + 2 ऊर्ध्वाधर जोड़े) + 1 (पूरा बड़ा वर्ग) = 4+4+1 = 9 ✓ ✅ उत्तर (Answer): चित्र में कुल 9 आयत/वर्ग बनते हैं</p></div>
+<div class="trick-box"><div class="trick-title">⚡  स्पीड ट्रिक (Speed Trick): आकृति श्रृंखला व गिनती की स्पीड ट्रिक</div><p>आकृति श्रृंखला में हमेशा एक ही विशेषता पर ध्यान केंद्रित करें (घूर्णन कोण, रेखाओं की संख्या, या रंग/छायांकन) — एक साथ कई बदलाव देखने की कोशिश न करें। गिनती वाली आकृतियों में हमेशा प्राथमिक (elementary) आकृतियों को पहले नंबर दें, फिर व्यवस्थित रूप से 2-2, 3-3 के संयोजन गिनें — इससे कोई आकृति छूटने की संभावना नहीं रहती।</p></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>श्रेणी</th><th>अक्षर/उदाहरण</th><th>विशेषता</th></tr></thead><tbody><tr><td>केवल दर्पण प्रतिबिंब में समान</td><td>A, H, I, M, O, T, U, V, W, X, Y</td><td>ऊर्ध्वाधर सममिति (Vertical Symmetry)</td></tr><tr><td>केवल जल प्रतिबिंब में समान</td><td>B, C, D, E, H, I, K, O, X</td><td>क्षैतिज सममिति (Horizontal Symmetry)</td></tr><tr><td>दोनों में समान</td><td>H, I, O, X</td><td>ऊर्ध्वाधर एवं क्षैतिज दोनों सममिति</td></tr></tbody></table></div>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">🟢 दर्पण प्रतिबिंब (Mirror Image)</div><ul class="ch-list"><li>ऊर्ध्वाधर दर्पण-रेखा (Vertical axis) के आर-पार फ्लिप</li><li>दायां भाग बायां हो जाता है, और बायां भाग दायां</li><li>घड़ी सूत्र: 11:60 − वास्तविक समय</li><li>ऊपर-नीचे की स्थिति नहीं बदलती</li></ul></div><div class="twocol-col"><div class="twocol-head">🔴 जल प्रतिबिंब (Water Image)</div><ul class="ch-list"><li>क्षैतिज दर्पण-रेखा (Horizontal axis) के आर-पार फ्लिप</li><li>ऊपरी भाग नीचे हो जाता है, और निचला भाग ऊपर</li><li>घड़ी सूत्र: 6:00 − वास्तविक समय (ऋणात्मक हो तो 12:00 जोड़ें)</li><li>दायें-बायें की स्थिति नहीं बदलती</li></ul></div></div>
+<div class="warn-box"><p><strong>⚠️  आम गलतियाँ (Common Mistakes)</strong></p><p>❌ दर्पण व जल प्रतिबिंब को आपस में गड्डमगड्ड कर देना — दर्पण = दायें-बायें फ्लिप, जल = ऊपर-नीचे फ्लिप ❌ घड़ी के दर्पण प्रतिबिंब में "11:60 में से घटाना" भूलकर सीधे "12:00 में से घटा देना" (जो मिनट के लिए गलत उधार देता है) ❌ कागज़ मोड़ने में यह भूल जाना कि छेद तह-रेखा पर हो तो संख्या दोगुनी नहीं होती ❌ कागज़ खोलते समय गलत क्रम में मोड़ खोलना (हमेशा अंतिम मोड़ पहले खोलें) ❌ आकृति श्रृंखला में एक साथ कई विशेषताएं (रंग, आकार, घूर्णन) बदलने पर उलझ जाना — एक समय में एक ही विशेषता ट्रैक करें ❌ त्रिभुज/आयत गिनते समय बड़ी (संयुक्त) आकृतियों को भूल जाना — केवल प्राथमिक आकृतियां गिनकर रुक जाना</p></div>
+<p>महत्वपूर्ण: अंकों (numbers) के मामले में भी दर्पण/जल प्रतिबिंब का नियम लागू होता है — जैसे अंक 0, 1, 8 का दर्पण प्रतिबिंब स्वयं जैसा ही दिखता है (ऊर्ध्वाधर सममिति), जबकि पूरी संख्या (जैसे 123) का दर्पण प्रतिबिंब बनाते समय अंकों का क्रम भी उल्टा (321 की तर्ज पर, प्रत्येक अंक स्वयं भी दर्पण-रूप में) होगा। हमेशा प्रश्न में यह ध्यान दें कि दर्पण किस तरफ (दायें/बायें/ऊपर/नीचे) रखा गया है, क्योंकि इससे उत्तर बदल सकता है।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>📝  अभ्यास प्रश्न (Practice Questions)</th></tr></thead><tbody><tr><td>Q1. यदि वास्तविक समय 6:40 है, तो इसका दर्पण प्रतिबिंब क्या होगा? Q2. यदि वास्तविक समय 2:50 है, तो इसका जल प्रतिबिंब क्या होगा? Q3. एक कागज़ को 3 बार मोड़ा गया (छेद किसी तह-रेखा पर नहीं है)। खोलने पर कुल कितने छेद दिखेंगे? Q4. निम्न में से किस अक्षर का जल प्रतिबिंब स्वयं जैसा ही दिखेगा — P, C, या F? Q5. एक त्रिभुज में शीर्ष से आधार तक 3 रेखाएं खींची गई हैं (आधार 4 बराबर भागों में बंटा है)। कुल कितने त्रिभुज बनेंगे?</td></tr><tr><td>🔑 उत्तर कुंजी (Answer Key): Q1. 5:20 (11:60−6:40)  |  Q2. 3:10 (6:00−2:50=3:10, चूंकि 6:00 से सीधे घटाया जा सकता है)  |  Q3. 8 छेद (2³)  |  Q4. C (क्षैतिज सममिति है)  |  Q5. 10 त्रिभुज (k=4, k(k+1)/2=4×5/2=10)</td></tr></tbody></table></div>
+<h3 class="ch-h3">★  याद रखने योग्य फॉर्मूले एवं तथ्य  ★</h3><p>1. दर्पण प्रतिबिंब = ऊर्ध्वाधर अक्ष पर दायें-बायें फ्लिप 2. जल प्रतिबिंब = क्षैतिज अक्ष पर ऊपर-नीचे फ्लिप 3. घड़ी दर्पण सूत्र: 11:60 − वास्तविक समय 4. घड़ी जल-प्रतिबिंब सूत्र: 6:00 − वास्तविक समय (ऋणात्मक होने पर 12:00 जोड़ें) 5. A,H,I,M,O,T,U,V,W,X,Y — दर्पण में समान (ऊर्ध्वाधर सममिति) 6. B,C,D,E,H,I,K,O,X — जल प्रतिबिंब में समान (क्षैतिज सममिति) 7. H,I,O,X — दोनों प्रतिबिंबों में समान 8. कागज़ मोड़ना: सामान्यतः कुल छेद = 2ⁿ (n = मोड़ों की संख्या) 9. यदि छेद तह-रेखा पर हो, तो उस मोड़ के लिए संख्या दोगुनी नहीं होती 10. कागज़ खोलते समय अंतिम मोड़ को सबसे पहले खोलें 11. त्रिभुज गिनने का सूत्र: k(k+1)/2, जहां k = आधार के प्राथमिक भाग 12. आयत/वर्ग गिनने का सूत्र: C(H,2)×C(V,2), जहां H,V सीमा सहित कुल रेखाएं 13. आकृति श्रृंखला में एक बार में केवल एक विशेषता (घूर्णन/आकार/रंग) ट्रैक करें 14. गिनती में हमेशा प्राथमिक आकृतियों से शुरू करके संयोजन (combinations) की ओर बढ़ें 15. अंकों 0,1,8 का दर्पण प्रतिबिंब स्वयं जैसा ही दिखता है</p>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (Pre MCQ)  📝</h3><p>Q1. यदि वास्तविक समय 5:10 है, तो इसका दर्पण प्रतिबिंब क्या होगा? (a) 6:50 (b) 7:50 (c) 6:40 (d) 5:50 Q2. यदि वास्तविक समय 7:35 है, तो इसका जल प्रतिबिंब क्या होगा? (a) 10:25 (b) 4:25 (c) 10:35 (d) 5:25 Q3. एक वर्गाकार कागज़ को 2 बार मोड़ा गया (छेद तह-रेखा पर नहीं है)। खोलने पर कुल कितने छेद बनेंगे? (a) 2 (b) 3 (c) 4 (d) 6 Q4. एक त्रिभुज में शीर्ष से आधार तक खींची गई रेखाओं द्वारा आधार 2 भागों में बंटा है। कुल कितने त्रिभुज बनेंगे? (a) 2 (b) 3 (c) 4 (d) 5 Q5. एक वर्ग को 1 क्षैतिज तथा 2 ऊर्ध्वाधर रेखाओं से बांटा गया है। कुल कितने आयत बनेंगे? (a) 9 (b) 12 (c) 18 (d) 6 Q6. निम्न में से किस अक्षर का दर्पण तथा जल दोनों प्रतिबिंब स्वयं जैसे ही दिखेंगे? (a) M (b) X (c) B (d) T Q7. एक कागज़ को ऊर्ध्वाधर रेखा पर मोड़कर छेद ठीक तह-रेखा पर किया गया। खोलने पर कितने छेद दिखेंगे? (a) 1 (b) 2 (c) 4 (d) 0</p>
+<p>🔑 उत्तर कुंजी (Answer Key): Q1.(b) 7:50 (11:60−5:10) | Q2.(a) 10:25 (6:00−7:35 ऋणात्मक होने पर 18:00−7:35=10:25) | Q3.(c) 4 (2²) | Q4.(b) 3 (k=2, k(k+1)/2=3) | Q5.(c) 18 (H=3,V=4, C(3,2)×C(4,2)=3×6=18) | Q6.(b) X | Q7.(a) 1</p>
+<p>📘 संपूर्ण अभ्यास सेट — 18 प्रश्न सह हल (Complete Practice Set)</p><p>इस अंतिम अभ्यास सेट में दर्पण/जल प्रतिबिंब (प्रश्न 1-6), कागज़ मोड़ना (प्रश्न 7-12) तथा आकृति श्रृंखला/गिनती (प्रश्न 13-18) से जुड़े सभी प्रकार शामिल हैं — पहले स्वयं हल करने की कोशिश करें, फिर नीचे दिया गया हल देखें।</p>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-1 — यदि वास्तविक समय 2:15 है, तो इसका दर्पण प्रतिबिंब क्या होगा?</div><p>चरण 1: सूत्र: दर्पण समय = 11:60 − वास्तविक समय चरण 2: मिनट: 60−15=45 चरण 3: घंटा: 11−2=9 ✅ उत्तर (Answer): दर्पण प्रतिबिंब = 9:45</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-2 — यदि वास्तविक समय 10:30 है, तो इसका दर्पण प्रतिबिंब क्या होगा?</div><p>चरण 1: सूत्र: दर्पण समय = 11:60 − वास्तविक समय चरण 2: मिनट: 60−30=30 चरण 3: घंटा: 11−10=1 ✅ उत्तर (Answer): दर्पण प्रतिबिंब = 1:30</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-3 — यदि वास्तविक समय 5:00 है, तो इसका जल प्रतिबिंब क्या होगा?</div><p>चरण 1: सूत्र: जल प्रतिबिंब = 6:00 − वास्तविक समय चरण 2: 6:00 − 5:00 = 1:00 (सीधे घटाया जा सकता है, ऋणात्मक नहीं आया) ✅ उत्तर (Answer): जल प्रतिबिंब = 1:00</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-4 — यदि वास्तविक समय 9:20 है, तो इसका जल प्रतिबिंब क्या होगा?</div><p>चरण 1: सूत्र: जल प्रतिबिंब = 6:00 − वास्तविक समय चरण 2: 6:00 − 9:20 ऋणात्मक आएगा, इसलिए 12:00 जोड़ें: 18:00 − 9:20 चरण 3: मिनट: 60−20=40 (उधार लिया), घंटा: 17−9=8 ✅ उत्तर (Answer): जल प्रतिबिंब = 8:40</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-5 — निम्न शब्द "MODE" में से किस अक्षर का दर्पण प्रतिबिंब स्वयं जैसा ही दिखेगा?</div><p>चरण 1: M — ऊर्ध्वाधर सममिति है ⇒ दर्पण में समान चरण 2: O — ऊर्ध्वाधर सममिति है ⇒ दर्पण में समान चरण 3: D — केवल क्षैतिज सममिति है (दर्पण में समान नहीं) चरण 4: E — केवल क्षैतिज सममिति है (दर्पण में समान नहीं) ✅ उत्तर (Answer): M तथा O — दोनों का दर्पण प्रतिबिंब स्वयं जैसा दिखेगा</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-6 — निम्न शब्द "BOX" में से किस अक्षर का जल प्रतिबिंब स्वयं जैसा ही दिखेगा?</div><p>चरण 1: B — क्षैतिज सममिति है ⇒ जल प्रतिबिंब में समान चरण 2: O — दोनों सममिति है ⇒ जल प्रतिबिंब में समान चरण 3: X — दोनों सममिति है ⇒ जल प्रतिबिंब में समान ✅ उत्तर (Answer): तीनों अक्षर B, O, X — सभी का जल प्रतिबिंब स्वयं जैसा दिखेगा</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-7 — एक वर्गाकार कागज़ को क्षैतिज रेखा पर आधा मोड़ा गया, फिर मुड़े हुए भाग में एक छेद किया गया (तह-रेखा से दूर)। कागज़ खोलने पर कितने छेद दिखेंगे?</div><p>चरण 1: 1 मोड़ (n=1), छेद तह-रेखा पर नहीं है चरण 2: सूत्र: कुल छेद = 2ⁿ = 2¹ = 2 ✅ उत्तर (Answer): कुल 2 छेद, तह-रेखा के ऊपर-नीचे सममित रूप से</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-8 — एक वर्गाकार कागज़ को 3 बार मोड़ा गया (हर बार आधा, छेद किसी तह-रेखा पर नहीं है)। कागज़ खोलने पर कितने छेद दिखेंगे?</div><p>चरण 1: 3 मोड़ (n=3), छेद किसी तह-रेखा पर नहीं है चरण 2: सूत्र: कुल छेद = 2ⁿ = 2³ = 8 ✅ उत्तर (Answer): कुल 8 छेद</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-9 — एक कागज़ को ऊर्ध्वाधर रेखा पर मोड़कर 2 छेद किए गए (दोनों तह-रेखा से दूर, अलग-अलग स्थानों पर)। खोलने पर कुल कितने छेद दिखेंगे?</div><p>चरण 1: 1 मोड़ है, परंतु 2 अलग-अलग छेद किए गए हैं चरण 2: प्रत्येक छेद अपनी तह-रेखा के आर-पार 1-1 अतिरिक्त छेद बनाएगा चरण 3: कुल = 2 छेद × 2 (प्रत्येक का प्रतिबिंब) = 4 ✅ उत्तर (Answer): कुल 4 छेद (2 जोड़े, तह-रेखा के दोनों ओर सममित)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-10 — एक वर्गाकार कागज़ को 2 बार मोड़ा गया (1/4 आकार), और छेद एक तह-रेखा पर है परंतु दूसरी तह-रेखा पर नहीं। खोलने पर कुल कितने छेद दिखेंगे?</div><p>चरण 1: सामान्यतः 2 मोड़ से 4 छेद बनते (2²=4) चरण 2: परंतु छेद एक तह-रेखा पर होने से, उस मोड़ के लिए संख्या दोगुनी नहीं होगी चरण 3: केवल दूसरी तह-रेखा (जिस पर छेद नहीं है) के लिए संख्या दोगुनी होगी: 1×2=2 ✅ उत्तर (Answer): कुल 2 छेद (केवल एक तह-रेखा के सापेक्ष सममित)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-11 — एक कागज़ को तिरछे (diagonally) आधा मोड़ा गया, फिर एक छेद किया गया (तह-रेखा से दूर)। खोलने पर कुल कितने छेद दिखेंगे?</div><p>चरण 1: यह भी एक ही मोड़ है (n=1), भले ही मोड़ तिरछा हो चरण 2: सूत्र: कुल छेद = 2ⁿ = 2¹ = 2 चरण 3: दोनों छेद तिरछी तह-रेखा के आर-पार सममित होंगे ✅ उत्तर (Answer): कुल 2 छेद, तिरछी तह-रेखा के दोनों ओर सममित रूप से</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-12 — एक वर्गाकार कागज़ को 2 बार मोड़ा गया (1/4 आकार), और छेद ठीक केंद्र बिंदु पर (दोनों तह-रेखाओं के प्रतिच्छेदन पर) किया गया। खोलने पर कुल कितने छेद दिखेंगे?</div><p>चरण 1: छेद दोनों तह-रेखाओं के प्रतिच्छेदन बिंदु पर है — यह विशेष स्थिति है चरण 2: चूंकि यह बिंदु दोनों दर्पण-रेखाओं पर स्थित है, इसका प्रतिबिंब स्वयं उसी बिंदु पर बनता है चरण 3: अतः न तो पहली और न ही दूसरी तह के लिए संख्या दोगुनी होगी ✅ उत्तर (Answer): कुल केवल 1 छेद, ठीक केंद्र बिंदु पर</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-13 — एक आकृति श्रृंखला में एक वर्ग की भुजाओं की संख्या हर बार 1 बढ़ती जाती है (वर्ग → पंचभुज → षट्भुज ...)। यदि प्रथम आकृति वर्ग (4 भुजा) है, तो पांचवीं आकृति में कितनी भुजाएं होंगी?</div><p>चरण 1: पैटर्न: भुजा संख्या = 4, 5, 6, 7, 8 (हर बार +1) चरण 2: 5वीं आकृति = 4 + (5−1) = 4+4 = 8 भुजाएं ✅ उत्तर (Answer): पांचवीं आकृति में 8 भुजाएं होंगी (अष्टभुज)</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-14 — एक आकृति श्रृंखला में एक तीर 90° clockwise घूमता है हर बार। यदि प्रारंभिक दिशा उत्तर (ऊपर) है, तो चौथी आकृति में तीर किस दिशा में होगा?</div><p>चरण 1: Fig1: उत्तर (0°) चरण 2: Fig2: 90° clockwise ⇒ पूर्व चरण 3: Fig3: फिर 90° clockwise ⇒ दक्षिण चरण 4: Fig4: फिर 90° clockwise ⇒ पश्चिम ✅ उत्तर (Answer): चौथी आकृति में तीर पश्चिम दिशा में होगा</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-15 — एक आकृति में वृत्त के अंदर रेखाओं की संख्या हर बार दोगुनी होती जाती है (1, 2, 4, ...)। पांचवीं आकृति में कितनी रेखाएं होंगी?</div><p>चरण 1: पैटर्न: 1, 2, 4, 8, 16 (हर बार ×2) चरण 2: 5वीं आकृति = 1×2⁴ = 16 ✅ उत्तर (Answer): पांचवीं आकृति में 16 रेखाएं होंगी</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-16 — एक त्रिभुज में शीर्ष से आधार तक 4 रेखाएं खींची गई हैं (आधार 5 बराबर भागों में बंटा है)। कुल कितने त्रिभुज बनेंगे?</div><p>चरण 1: आधार 5 भागों में बंटा है ⇒ k=5 प्राथमिक त्रिभुज चरण 2: सूत्र: कुल त्रिभुज = k(k+1)/2 = 5×6/2 = 15 ✅ उत्तर (Answer): कुल 15 त्रिभुज बनेंगे</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-17 — एक वर्ग को 2 क्षैतिज तथा 2 ऊर्ध्वाधर रेखाओं से बांटा गया है (कुल 3×3=9 छोटे खंड बनते हैं)। कुल कितने आयत/वर्ग बनेंगे?</div><p>चरण 1: कुल क्षैतिज रेखाएं (सीमा सहित) H = 2+2 = 4 चरण 2: कुल ऊर्ध्वाधर रेखाएं (सीमा सहित) V = 2+2 = 4 चरण 3: सूत्र: कुल आयत = C(H,2)×C(V,2) = C(4,2)×C(4,2) = 6×6 = 36 ✅ उत्तर (Answer): कुल 36 आयत/वर्ग बनेंगे</p></div>
+<div class="example-box"><div class="example-title">✍️  हल किया गया उदाहरण टेस्ट-18 — एक आकृति में 2 त्रिभुज एक-दूसरे को काटकर एक तारे (star) जैसी आकृति बनाते हैं (जैसे षट्कोणीय तारा)। ऐसी आकृति में सामान्यतः कुल कितने त्रिभुज गिने जाते हैं (2 बड़े मूल त्रिभुज + छोटे प्रतिच्छेदन वाले)?</div><p>चरण 1: 2 बड़े मूल त्रिभुज (जो तारा बनाते हैं) — यह 2 त्रिभुज चरण 2: प्रतिच्छेदन से बने 6 छोटे त्रिभुज (तारे की हर नोक पर एक) — यह 6 त्रिभुज चरण 3: कुल = 2 + 6 = 8 ✅ उत्तर (Answer): ऐसी षट्कोणीय तारा आकृति में सामान्यतः कुल 8 त्रिभुज गिने जाते हैं</p></div>
+<p>📐 पहचान बिंदु पुनरावृत्ति तालिका (Revision Table)</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टॉपिक</th><th>सूत्र/पहचान बिंदु</th><th>कब उपयोग करें</th></tr></thead><tbody><tr><td>दर्पण प्रतिबिंब (घड़ी)</td><td>11:60 − वास्तविक समय</td><td>दायें-बायें फ्लिप (vertical mirror)</td></tr><tr><td>जल प्रतिबिंब (घड़ी)</td><td>6:00 − वास्तविक समय (ऋणात्मक हो तो +12:00)</td><td>ऊपर-नीचे फ्लिप (horizontal mirror)</td></tr><tr><td>कागज़ मोड़ना</td><td>कुल छेद = 2ⁿ (n=मोड़ों की संख्या)</td><td>छेद किसी तह-रेखा पर न हो</td></tr><tr><td>कागज़ मोड़ना (अपवाद)</td><td>संख्या दोगुनी नहीं होती</td><td>छेद ठीक तह-रेखा पर हो</td></tr><tr><td>त्रिभुज गिनना</td><td>k(k+1)/2, जहां k=आधार के भाग</td><td>शीर्ष से कई रेखाएं आधार तक खींची हों</td></tr><tr><td>आयत/वर्ग गिनना</td><td>C(H,2)×C(V,2)</td><td>ग्रिड में क्षैतिज/ऊर्ध्वाधर रेखाएं हों</td></tr><tr><td>आकृति श्रृंखला</td><td>एक विशेषता (कोण/संख्या/रंग) ट्रैक करें</td><td>अगली आकृति पहचाननी हो</td></tr></tbody></table></div><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="ras-pre-math-reasoning-ch06-baithak-vyavastha.html" class="ch-nav-btn">← अध्याय 6: क्रम निर्धारण एवं बैठक व्यवस्था</a>
+  <a href="ras-pre-math-reasoning-ch08-anupat-samanupat.html" class="ch-nav-btn ch-nav-next">अध्याय 8: अनुपात, समानुपात एवं साझेदारी →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="ras-pre-math-reasoning.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>
