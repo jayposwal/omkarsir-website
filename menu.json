@@ -56,9 +56,26 @@
       "url": "/courses.html"
     },
     {
-      "label": "📝 सभी Notes",
-      "type": "link",
-      "url": "/all-notes.html"
+      "label": "🎯 RAS Exam",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "📜 RAS Syllabus",
+          "url": "/ras-syllabus.html"
+        },
+        {
+          "label": "🗂️ RAS PYQ",
+          "url": "/previous-year-papers.html#block-ras"
+        },
+        {
+          "label": "1️⃣ RAS Pre",
+          "url": "/ras-pre-syllabus.html"
+        },
+        {
+          "label": "2️⃣ RAS Mains",
+          "url": "/ras-mains-syllabus.html"
+        }
+      ]
     },
     {
       "label": "📚 Books",
