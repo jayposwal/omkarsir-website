@@ -16,10 +16,17 @@
       + '.nied-top-link{display:block;color:#fff;text-decoration:none;padding:11px 14px;border-radius:8px;font-weight:600;font-size:.92rem;cursor:pointer;}'
       + '.nied-top-link:hover{background:#FF6B00;}'
       + '.nied-caret{font-size:.7em;}'
-      + '.nied-dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:230px;list-style:none;margin:6px 0 0;padding:6px;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.2);z-index:100;}'
-      + '.nied-has-dropdown.open .nied-dropdown{display:block;}'
-      + '.nied-dropdown li a{display:block;padding:9px 12px;color:#1B2A6B;text-decoration:none;border-radius:7px;font-size:.9rem;font-weight:500;}'
+      + '.nied-dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:220px;list-style:none;margin:6px 0 0;padding:6px;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.2);z-index:100;}'
+      + '.nied-has-dropdown.open > .nied-dropdown{display:block;}'
+      + '.nied-dropdown li a{display:block;padding:8px 11px;color:#1B2A6B;text-decoration:none;border-radius:7px;font-size:.82rem;font-weight:500;}'
       + '.nied-dropdown li a:hover{background:#FFF1E6;color:#FF6B00;}'
+      + '.nied-dropdown li.nied-has-submenu{position:relative;}'
+      + '.nied-sub-link{display:flex !important;align-items:center;justify-content:space-between;gap:6px;cursor:pointer;}'
+      + '.nied-subcaret{font-size:.75em;color:#999;}'
+      + '.nied-submenu{display:none;position:absolute;top:-6px;left:100%;margin-left:4px;background:#fff;min-width:220px;list-style:none;padding:6px;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.2);z-index:110;}'
+      + '.nied-has-submenu.open > .nied-submenu, .nied-has-submenu:hover > .nied-submenu{display:block;}'
+      + '.nied-submenu li a{display:block;padding:8px 11px;color:#1B2A6B;text-decoration:none;border-radius:7px;font-size:.8rem;font-weight:500;white-space:nowrap;}'
+      + '.nied-submenu li a:hover{background:#FFF1E6;color:#FF6B00;}'
       + '.nied-search-wrap{position:relative;margin-left:10px;}'
       + '.nied-search-btn{background:none;border:none;color:#fff;font-size:1.15rem;cursor:pointer;padding:6px 10px;line-height:1;}'
       + '.nied-search-btn:hover{color:#FFD0A0;}'
@@ -42,6 +49,13 @@
       + '.nied-dropdown{position:static;box-shadow:none;background:#24398f;margin:0 0 0 12px;width:calc(100% - 12px);border-radius:8px;}'
       + '.nied-dropdown li a{color:#fff;}'
       + '.nied-dropdown li a:hover{background:#FF6B00;color:#fff;}'
+      + '.nied-submenu{position:static;box-shadow:none;background:#2c4099;margin:2px 0 0 10px;width:calc(100% - 10px);border-radius:8px;display:none;}'
+      + '.nied-has-submenu.open > .nied-submenu{display:block;}'
+      + '.nied-has-submenu:hover > .nied-submenu{display:none;}'
+      + '.nied-has-submenu.open:hover > .nied-submenu{display:block;}'
+      + '.nied-submenu li a{color:#fff;}'
+      + '.nied-submenu li a:hover{background:#FF6B00;color:#fff;}'
+      + '.nied-subcaret{color:#cdd4ee;}'
       + '.nied-search-panel{right:auto;left:0;width:280px;}'
       + '}';
     var style = document.createElement('style');
@@ -56,12 +70,23 @@
     var html = '<div class="nied-nav-inner"><a class="nied-logo" href="' + esc(logo.url) + '">' + esc(logo.text) + '</a>'
       + '<button class="nied-burger" id="niedBurger" aria-label="Menu">&#9776;</button>'
       + '<ul class="nied-menu" id="niedMenuList">';
+    function renderChildren(children){
+      var out = '';
+      (children || []).forEach(function(ch){
+        if(ch.type === 'submenu'){
+          out += '<li class="nied-has-submenu"><a class="nied-sub-link">' + esc(ch.label) + ' <span class="nied-subcaret">&#9656;</span></a><ul class="nied-submenu">';
+          out += renderChildren(ch.children);
+          out += '</ul></li>';
+        } else {
+          out += '<li><a href="' + esc(ch.url) + '">' + esc(ch.label) + '</a></li>';
+        }
+      });
+      return out;
+    }
     (menu.items || []).forEach(function(item){
       if(item.type === 'dropdown'){
         html += '<li class="nied-has-dropdown"><a class="nied-top-link">' + esc(item.label) + ' <span class="nied-caret">&#9662;</span></a><ul class="nied-dropdown">';
-        (item.children || []).forEach(function(ch){
-          html += '<li><a href="' + esc(ch.url) + '">' + esc(ch.label) + '</a></li>';
-        });
+        html += renderChildren(item.children);
         html += '</ul></li>';
       } else {
         html += '<li><a class="nied-top-link" href="' + esc(item.url) + '">' + esc(item.label) + '</a></li>';
@@ -85,15 +110,31 @@
     mount.querySelectorAll('.nied-has-dropdown > a.nied-top-link').forEach(function(a){
       a.addEventListener('click', function(e){
         e.preventDefault();
+        e.stopPropagation();
         var parent = a.parentElement;
         var wasOpen = parent.classList.contains('open');
-        mount.querySelectorAll('.nied-has-dropdown.open').forEach(function(li){ li.classList.remove('open'); });
+        mount.querySelectorAll('.nied-has-dropdown.open').forEach(function(li){
+          li.classList.remove('open');
+          li.querySelectorAll('.nied-has-submenu.open').forEach(function(s){ s.classList.remove('open'); });
+        });
+        if(!wasOpen) parent.classList.add('open');
+      });
+    });
+    mount.querySelectorAll('.nied-has-submenu > a.nied-sub-link').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = a.parentElement;
+        var wasOpen = parent.classList.contains('open');
+        var siblingGroup = parent.parentElement;
+        siblingGroup.querySelectorAll(':scope > .nied-has-submenu.open').forEach(function(li){ li.classList.remove('open'); });
         if(!wasOpen) parent.classList.add('open');
       });
     });
     document.addEventListener('click', function(e){
       if(!mount.contains(e.target)){
         mount.querySelectorAll('.nied-has-dropdown.open').forEach(function(li){ li.classList.remove('open'); });
+        mount.querySelectorAll('.nied-has-submenu.open').forEach(function(li){ li.classList.remove('open'); });
       }
     });
 
