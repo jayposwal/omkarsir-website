@@ -122,6 +122,67 @@
       ]
     },
     {
+      "label": "🎯 सभी Rajasthan Exams",
+      "type": "link",
+      "url": "/rajasthan-exams.html"
+    },
+    {
+      "label": "👮 Police व प्रशासनिक Exams",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "👮 Police SI (Sub Inspector)",
+          "url": "/rajasthan-si-exam.html"
+        },
+        {
+          "label": "🚓 Police Constable",
+          "url": "/rajasthan-police-constable-exam.html"
+        },
+        {
+          "label": "📜 Patwari",
+          "url": "/rajasthan-patwari-exam.html"
+        },
+        {
+          "label": "🗂️ LDC (Lower Division Clerk)",
+          "url": "/rajasthan-ldc-exam.html"
+        },
+        {
+          "label": "🏡 VDO (ग्राम विकास अधिकारी)",
+          "url": "/rajasthan-vdo-exam.html"
+        }
+      ]
+    },
+    {
+      "label": "🎓 Teaching व Technical Exams",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🍎 REET",
+          "url": "/reet-exam.html"
+        },
+        {
+          "label": "🛠️ JEN (Junior Engineer)",
+          "url": "/rajasthan-jen-exam.html"
+        },
+        {
+          "label": "🏗️ AEN (Assistant Engineer)",
+          "url": "/rajasthan-aen-exam.html"
+        },
+        {
+          "label": "🐄 Pashu Paricharak",
+          "url": "/rajasthan-pashu-paricharak-exam.html"
+        },
+        {
+          "label": "📄 CET — 12th Level",
+          "url": "/rajasthan-cet-12th-level.html"
+        },
+        {
+          "label": "🎓 CET — Graduation Level",
+          "url": "/rajasthan-cet-graduate-level.html"
+        }
+      ]
+    },
+    {
       "label": "📚 Books",
       "type": "dropdown",
       "children": [
