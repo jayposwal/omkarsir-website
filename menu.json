@@ -63,6 +63,18 @@
         {
           "label": "🌍 विश्व भूगोल (7 अध्याय)",
           "url": "/vishwa-bhugol.html"
+        },
+        {
+          "label": "💰 अर्थव्यवस्था (9 अध्याय)",
+          "url": "/arthavyavastha.html"
+        },
+        {
+          "label": "📘 प्रबंधन (5 अध्याय)",
+          "url": "/prabandh.html"
+        },
+        {
+          "label": "🌐 आधुनिक विश्व इतिहास (11 अध्याय)",
+          "url": "/vishwa-itihas.html"
         }
       ]
     },
