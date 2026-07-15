@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 7: कमज़ोर वर्गों की समस्याएँ — राजस्थान विशेष — समाजशास्त्र | Omkar Sir</title>
+<meta name="description" content="कमज़ोर वर्गों की समस्याएँ — राजस्थान विशेष (Problems of Weaker Sections — Rajasthan Special) — RAS Pre+Mains के लिए समाजशास्त्र का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+.topic-divider{text-align:center;margin:36px 0 20px;position:relative}
+.topic-divider span{background:#1B2A6B;color:#fff;padding:8px 24px;border-radius:30px;font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif;display:inline-block}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🤝 अध्याय 7/7 — समाजशास्त्र</div>
+  <h1>कमज़ोर वर्गों की समस्याएँ — राजस्थान विशेष</h1>
+  <div class="ch-sub">Problems of Weaker Sections — Rajasthan Special | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>कमज़ोर वर्ग — परिचय और वर्गीकरण</li><li>महिला सशक्तिकरण — संवैधानिक और कानूनी प्रावधान</li><li>महिला कल्याण — केंद्रीय योजनाएँ</li><li>महिला कल्याण — राजस्थान विशेष योजनाएँ</li><li>हाशिए के समूह (Marginalized Groups)</li><li>अनुसूचित जाति (SC) — संवैधानिक और कानूनी सुरक्षा</li><li>अनुसूचित जाति — कल्याण योजनाएँ</li><li>ST कल्याण — संवैधानिक अधिकार और योजनाएँ</li><li>RAS Mains — PYQs + One-Line Revision + Keywords</li></ol></div>
+<p>CHAPTER 06 - ✦  भारतीय समाज के कमज़ोर वर्गों की समस्याएँ  ✦</p><p>Problems of Weaker Sections of Indian Society — Women, Marginalised, Dalits, SC &amp; ST</p>
+<h3 class="ch-h3">📚  RAS Mains Sociology  |  Paper-I , UNIT - 3  |  Chapter 06  |  Special Reference to Rajasthan  |  All Welfare Schemes</h3>
+<div class="twocol-box"><div class="twocol-col"><p>01.  कमज़ोर वर्ग — परिचय और वर्गीकरण 02.  महिलाएँ — स्थिति, समस्याएँ, सिद्धांत 03.  महिला सशक्तिकरण — संवैधानिक प्रावधान 04.  महिला कल्याण — केंद्रीय योजनाएँ 05.  महिला कल्याण — राजस्थान योजनाएँ 06.  हाशिए के समूह — Marginalized Groups</p></div><div class="twocol-col"><p>07.  दलित — जाति, अस्पृश्यता, आंदोलन 08.  SC — संवैधानिक + कानूनी सुरक्षा 09.  SC कल्याण योजनाएँ 10.  अनुसूचित जनजाति (ST) — राजस्थान विशेष 11.  ST कल्याण योजनाएँ + अधिकार 12.  PYQs + One-Line Revision + Keywords</p></div></div>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">कमज़ोर वर्ग — परिचय और वर्गीकरण</span></h2>
+<p>'कमज़ोर वर्ग' (Weaker Sections) वे समूह हैं जो ऐतिहासिक, सामाजिक, आर्थिक या सांस्कृतिक कारणों से समाज की मुख्यधारा से वंचित और हाशिए पर हैं।</p>
+<p>संविधान में उल्लेख: Article 46 (DPSP) — राज्य कमज़ोर वर्गों (विशेषकर SC/ST) के शैक्षणिक और आर्थिक हितों की रक्षा करेगा।</p><p>Article 15(4): राज्य SC/ST और पिछड़े वर्गों के लिए विशेष प्रावधान कर सकता है।</p><p>Article 16(4): सरकारी नौकरियों में SC/ST/OBC के लिए आरक्षण।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>वर्ग</th><th>प्रतिशत (Census 2011)</th><th>मुख्य समस्याएँ</th></tr></thead><tbody><tr><td>अनुसूचित जाति (SC)</td><td>16.6% (20.14 करोड़)</td><td>जाति भेदभाव, अस्पृश्यता, आर्थिक शोषण।</td></tr><tr><td>अनुसूचित जनजाति (ST)</td><td>8.6% (10.43 करोड़)</td><td>विस्थापन, वन-अधिकार, शिक्षा-स्वास्थ्य की कमी।</td></tr><tr><td>महिलाएँ (Women)</td><td>48.5% (जनसंख्या)</td><td>लैंगिक असमानता, हिंसा, संपत्ति-अधिकार।</td></tr><tr><td>OBC/अन्य पिछड़े</td><td>~40-50%</td><td>सामाजिक-शैक्षणिक पिछड़ापन।</td></tr><tr><td>विकलांग/दिव्यांग</td><td>2.21%</td><td>Accessibility, Stigma।</td></tr><tr><td>बंधुआ मजदूर</td><td>—</td><td>आर्थिक दासता।</td></tr></tbody></table></div>
+<p>👩  महिलाएँ — स्थिति, समस्याएँ और समाजशास्त्रीय विश्लेषण भारत GII (Gender Inequality Index) 2023: Rank 108/166 | NFHS-5 | Sex Ratio 940/1000</p>
+<h3 class="ch-h3">📊  महिलाओं की वर्तमान स्थिति — आँकड़े</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>940 Sex Ratio(Census 2011)</th><th>66.0% महिला साक्षरता(Census 2011)</th><th>28% Female LFPR(2023-24)</th><th>108 GII Rank(2023)</th></tr></thead><tbody></tbody></table></div>
+<h3 class="ch-h3">⚠️  महिलाओं की प्रमुख समस्याएँ</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>समस्या</th><th>विवरण</th><th>आँकड़े/उदाहरण</th></tr></thead><tbody><tr><td>👶  कन्या भ्रूण हत्या(Female Foeticide)</td><td>लड़कियों को 'बोझ' मानकर जन्म से पहले ही मार देना।</td><td>हरियाणा में Child Sex Ratio 834 | Rajasthan में 899।</td></tr><tr><td>💍  बाल विवाह(Child Marriage)</td><td>18 वर्ष से कम आयु में विवाह — शिक्षा, स्वास्थ्य बाधित।</td><td>Rajasthan: आखातीज पर सामूहिक बाल विवाह।</td></tr><tr><td>💔  घरेलू हिंसा(Domestic Violence)</td><td>पति/ससुराल द्वारा शारीरिक, मानसिक, आर्थिक उत्पीड़न।</td><td>NCRB 2022: ~4.45 लाख crime against women।</td></tr><tr><td>💰  दहेज उत्पीड़न(Dowry Harassment)</td><td>विवाह में संपत्ति की माँग → हत्या तक।</td><td>NCRB 2022: 6000+ Dowry Deaths।</td></tr><tr><td>⚔️  यौन उत्पीड़न(Sexual Harassment)</td><td>Workplace + Public + Cyber space में।</td><td>POSH Act 2013 | Nirbhaya Case 2012।</td></tr><tr><td>👰  महिला तस्करी(Human Trafficking)</td><td>श्रम, यौन शोषण के लिए खरीद-फरोख्त।</td><td>India में 6000+ trafficking cases/year।</td></tr><tr><td>🏢  कार्यस्थल भेदभाव</td><td>समान काम-असमान वेतन (Gender Pay Gap)।</td><td>महिलाएँ पुरुषों से औसत 20% कम वेतन।</td></tr><tr><td>🏋️  Unpaid Care Work</td><td>घरेलू काम की अदृश्य मेहनत — अर्थव्यवस्था में शामिल नहीं।</td><td>महिलाएँ प्रतिदिन 5x अधिक unpaid work।</td></tr><tr><td>🏥  स्वास्थ्य समस्याएँ</td><td>MMR (Maternal Mortality Rate) | Malnutrition | Anemia।</td><td>MMR: 97/1,00,000 (2018-20) — घटाव जारी।</td></tr><tr><td>📜  संपत्ति-अधिकार</td><td>Hindu Succession Act 2005 के बावजूद व्यवहार में वंचना।</td><td>विरासत में लड़कियों को कम हिस्सा।</td></tr></tbody></table></div>
+<h3 class="ch-h3">📚  महिलाओं की समस्याओं के सिद्धांत</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>सिद्धांत</th><th>प्रतिपादक</th><th>मुख्य विचार</th></tr></thead><tbody><tr><td>Patriarchy Theory(पितृसत्ता सिद्धांत)</td><td>—</td><td>समाज में पुरुष प्रभुत्व की संरचना — महिलाओं का आर्थिक, राजनीतिक और यौन शोषण।</td></tr><tr><td>Marxist Feminist Theory</td><td>Engles, Beauvoir</td><td>वर्ग व्यवस्था + Capitalism = महिलाओं का 'Unpaid Labour'।</td></tr><tr><td>Radical Feminist Theory</td><td>—</td><td>पितृसत्ता ही प्राथमिक उत्पीड़न — सभी समस्याओं की जड़।</td></tr><tr><td>Liberal Feminist Theory</td><td>—</td><td>कानूनी सुधार और शिक्षा से समानता। Voting rights, Equal Pay।</td></tr><tr><td>Capability Approach</td><td>Amartya Sen, Martha Nussbaum</td><td>महिला विकास = 10 Central Capabilities की प्राप्ति।</td></tr><tr><td>Gender and Development(GAD)</td><td>—</td><td>WID (Women in Development) से GAD की ओर — Gender relations बदलो।</td></tr><tr><td>Intersectionality</td><td>Kimberlé Crenshaw</td><td>जाति + वर्ग + लिंग + धर्म — एक साथ कई उत्पीड़न।</td></tr></tbody></table></div>
+<h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">महिला सशक्तिकरण — संवैधानिक और कानूनी प्रावधान</span></h2>
+<h3 class="ch-h3">📜  संवैधानिक प्रावधान</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>अनुच्छेद</th><th>प्रावधान</th></tr></thead><tbody><tr><td>Article 14</td><td>विधि के समक्ष समानता — पुरुष और महिला दोनों को।</td></tr><tr><td>Article 15(1)</td><td>लिंग के आधार पर भेदभाव का निषेध।</td></tr><tr><td>Article 15(3)</td><td>राज्य महिलाओं और बच्चों के लिए विशेष प्रावधान कर सकता है।</td></tr><tr><td>Article 16</td><td>सरकारी नौकरियों में समान अवसर।</td></tr><tr><td>Article 21</td><td>जीवन और गरिमा का अधिकार — PWDVA, Rape Laws।</td></tr><tr><td>Article 21A</td><td>6-14 वर्ष के बच्चों को निःशुल्क शिक्षा — लड़कियों को विशेष लाभ।</td></tr><tr><td>Article 39(a)</td><td>पुरुष-महिला दोनों को आजीविका का समान अधिकार।</td></tr><tr><td>Article 39(d)</td><td>समान काम के लिए समान वेतन।</td></tr><tr><td>Article 42</td><td>मातृत्व अवकाश और उचित काम की दशाएँ।</td></tr><tr><td>Article 44 (DPSP)</td><td>Uniform Civil Code — सभी के लिए समान कानून।</td></tr><tr><td>Article 51A(e)</td><td>महिलाओं की गरिमा के विरुद्ध प्रथाओं का त्याग — Fundamental Duty।</td></tr><tr><td>Article 243D</td><td>पंचायती राज में महिलाओं के लिए 1/3 आरक्षण।</td></tr><tr><td>Article 243T</td><td>शहरी निकायों में 1/3 आरक्षण।</td></tr></tbody></table></div>
+<h3 class="ch-h3">⚖️  महिला सुरक्षा — प्रमुख कानून</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>कानून</th><th>वर्ष</th><th>मुख्य प्रावधान</th></tr></thead><tbody><tr><td>Hindu Succession Act (Amendment)</td><td>1956/2005</td><td>बेटियों को पिता की संपत्ति में बराबर का हक।</td></tr><tr><td>Maternity Benefit Act</td><td>1961/2017</td><td>26 हफ्ते maternity leave (10+ कर्मचारी)।</td></tr><tr><td>Equal Remuneration Act</td><td>1976</td><td>समान काम-समान वेतन।</td></tr><tr><td>Domestic Violence Act (PWDVA)</td><td>2005</td><td>Physical, Emotional, Economic violence से सुरक्षा।</td></tr><tr><td>POSH Act</td><td>2013</td><td>Workplace Sexual Harassment रोकथाम।</td></tr><tr><td>POCSO Act</td><td>2012</td><td>18 वर्ष से कम बच्चों के विरुद्ध यौन अपराध।</td></tr><tr><td>Nirbhaya Act / Criminal Law Amendment</td><td>2013</td><td>Rape के लिए कठोर सजा | Fast-track courts।</td></tr><tr><td>Muslim Women Protection Act</td><td>2019</td><td>Triple Talaq = 3 वर्ष कारावास।</td></tr><tr><td>BNS 2023 Section 64-76</td><td>2023</td><td>Rape, Sexual Assault, Trafficking — कठोर प्रावधान।</td></tr><tr><td>Surrogacy Regulation Act</td><td>2021</td><td>Commercial surrogacy पर प्रतिबंध।</td></tr><tr><td>Prohibition of Child Marriage Act</td><td>2006</td><td>लड़की 18, लड़का 21 वर्ष से कम विवाह निषेध।</td></tr></tbody></table></div>
+<h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">महिला कल्याण — केंद्रीय योजनाएँ</span></h2>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>योजना</th><th>वर्ष</th><th>लाभ</th></tr></thead><tbody><tr><td>Beti Bachao Beti Padhao (BBBP)</td><td>2015</td><td>लिंगानुपात सुधार | लड़कियों की शिक्षा को बढ़ावा | 100 जिलों में शुरू।</td></tr><tr><td>Sukanya Samriddhi Yojana</td><td>2015</td><td>लड़कियों के लिए बचत खाता — 7.6% ब्याज | 1.5 लाख Tax-free।</td></tr><tr><td>PM Matru Vandana Yojana (PMMVY)</td><td>2017</td><td>पहले जीवित बच्चे के लिए ₹5000 सीधे खाते में।</td></tr><tr><td>Mission Shakti</td><td>2021</td><td>Mission Vatsalya + Mission Shakti मिलाए — Women Safety, Empowerment।</td></tr><tr><td>One Stop Centre (OSC)</td><td>2015</td><td>हिंसा पीड़ित महिलाओं को एक ही जगह — कानूनी, चिकित्सा, आश्रय।</td></tr><tr><td>Women Helpline (181)</td><td>—</td><td>24×7 Emergency helpline।</td></tr><tr><td>Swadhar Greh</td><td>—</td><td>बेसहारा/पीड़ित महिलाओं को आश्रय और पुनर्वास।</td></tr><tr><td>Working Women Hostels</td><td>—</td><td>कामकाजी महिलाओं के लिए सुरक्षित आवास।</td></tr><tr><td>National Creche Scheme</td><td>—</td><td>0-6 वर्ष बच्चों की देखभाल — Working mothers के लिए।</td></tr><tr><td>PM Ujjwala Yojana</td><td>2016</td><td>BPL परिवारों को Free LPG connection — महिलाओं के स्वास्थ्य के लिए।</td></tr><tr><td>Nari Shakti Puraskar</td><td>—</td><td>असाधारण महिलाओं को राष्ट्रीय पुरस्कार।</td></tr><tr><td>Mahila E-Haat</td><td>—</td><td>महिला उद्यमियों का online platform।</td></tr><tr><td>SHG-DAY-NRLM</td><td>—</td><td>Self Help Groups — Micro-finance, livelihood।</td></tr><tr><td>STEP (Support Training &amp; Employment)</td><td>—</td><td>Marginalised महिलाओं को कौशल और रोजगार।</td></tr><tr><td>Nirbhaya Fund</td><td>2013</td><td>महिला सुरक्षा परियोजनाओं की फंडिंग।</td></tr></tbody></table></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">4</span><span class="ch-h2-text">महिला कल्याण — राजस्थान विशेष योजनाएँ</span></h2>
+<h3 class="ch-h3">📊  राजस्थान में महिलाओं की स्थिति</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>928 Sex RatioRajasthan (2011)</th><th>52.1% महिला साक्षरता(Rajasthan 2011)</th><th>33% Women ReservationPanchayati Raj</th><th>1/3 Women in ULBsRajasthan</th></tr></thead><tbody></tbody></table></div>
+<h3 class="ch-h3">✅  राजस्थान की प्रमुख महिला कल्याण योजनाएँ</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>योजना</th><th>विवरण</th></tr></thead><tbody><tr><td>Mukhyamantri Rajshri Yojana (2016)</td><td>लड़की के जन्म से 12वीं तक ₹50,000 (6 किस्तों में)। उद्देश्य: लिंगानुपात सुधार + शिक्षा।</td></tr><tr><td>Palanhar Yojana</td><td>अनाथ/पीड़ित बच्चों के लिए आर्थिक सहायता — Palanhar (पालन-पोषण करने वाले) को।</td></tr><tr><td>Rajasthan Women Policy 2021</td><td>महिला सशक्तिकरण के लिए व्यापक नीति।</td></tr><tr><td>Indira Mahila Shakti Nidhi</td><td>महिला SHGs को ₹1 लाख तक ऋण — उद्यमिता को बढ़ावा।</td></tr><tr><td>Indira Gandhi Matritva Poshan Yojana</td><td>Rajasthan — दूसरी संतान के लिए ₹6000 (5 किस्तों में)।</td></tr><tr><td>Mukhyamantri Vivah Shagun Yojana</td><td>BPL परिवारों की बेटियों की शादी में आर्थिक सहायता।</td></tr><tr><td>Annapurna Rasoi Yojana</td><td>सस्ते भोजन — ₹8 में थाली (महिलाओं और गरीबों के लिए)।</td></tr><tr><td>Rajasthan Mahila Kisan Sashaktikaran Pariyojana</td><td>महिला किसानों का कृषि में सशक्तिकरण।</td></tr><tr><td>Domestic Violence Protection</td><td>Rajasthan में Protection Officers नियुक्त — DV Act 2005 implementation।</td></tr><tr><td>Women Helpline 181 (Rajasthan)</td><td>24x7 हेल्पलाइन।</td></tr><tr><td>Tejaswini Project</td><td>राजस्थान में ग्रामीण महिला सशक्तिकरण — World Bank funded।</td></tr><tr><td>One Stop Centre (Sakhi Centre)</td><td>Rajasthan में बहुउद्देशीय सहायता केंद्र।</td></tr><tr><td>Rajasthan Anti-Human Trafficking Unit</td><td>महिला तस्करी रोकने के लिए विशेष इकाई।</td></tr></tbody></table></div>
+<h2 class="ch-h2"><span class="ch-h2-num">5</span><span class="ch-h2-text">हाशिए के समूह (Marginalized Groups)</span></h2>
+<h3 class="ch-h3">📖  परिभाषा और वर्गीकरण</h3>
+<p>Marginalized Groups = वे समूह जो समाज की मुख्यधारा से व्यवस्थित रूप से बाहर रखे जाते हैं — Social Exclusion Theory (Max Weber → Frank Parkin)।</p>
+<p>Social Exclusion: वह प्रक्रिया जिसमें व्यक्तियों/समूहों को समाज के अधिकारों, संसाधनों और अवसरों से व्यवस्थित रूप से वंचित किया जाता है।</p><p>Intersectionality (Kimberlé Crenshaw): जाति + वर्ग + लिंग + धर्म — एक साथ कई स्तरों पर उत्पीड़न।</p>
+<h3 class="ch-h3">📋  भारत में हाशिए के प्रमुख समूह</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>समूह</th><th>मुख्य समस्याएँ</th><th>महत्वपूर्ण तथ्य</th></tr></thead><tbody><tr><td>दलित / SC(Scheduled Castes)</td><td>जाति-आधारित भेदभाव, अस्पृश्यता, मैनुअल स्कैवेंजिंग।</td><td>20.14 करोड़ (16.6%)।</td></tr><tr><td>आदिवासी / ST(Scheduled Tribes)</td><td>भूमि विस्थापन, वन-अधिकार की कमी, शिक्षा।</td><td>10.43 करोड़ (8.6%)।</td></tr><tr><td>महिलाएँ(Women)</td><td>पितृसत्ता, घरेलू हिंसा, लैंगिक वेतन अंतर।</td><td>48.5% जनसंख्या।</td></tr><tr><td>दिव्यांगजन(PwD)</td><td>Physical barriers, Stigma, Employment।</td><td>2.68 करोड़ (2.21%)।</td></tr><tr><td>LGBTQIA+</td><td>Section 377 (2018 में SC ने decriminalise किया), Social rejection।</td><td>—</td></tr><tr><td>प्रवासी मजदूर(Migrant Labour)</td><td>कोई सामाजिक सुरक्षा नहीं, exploitation।</td><td>COVID में 1 करोड़+ पैदल घर लौटे।</td></tr><tr><td>बेघर (Homeless)</td><td>Urban poverty, mental illness।</td><td>11 लाख+ शहरी बेघर।</td></tr><tr><td>बंधुआ मजदूर(Bonded Labour)</td><td>Forced Labour, Debt Bondage।</td><td>Bonded Labour Abolition Act 1976।</td></tr><tr><td>वरिष्ठ नागरिक(Senior Citizens)</td><td>Neglect, Financial insecurity।</td><td>10 करोड़+ बुजुर्ग।</td></tr><tr><td>विमुक्त जनजातियाँ(DNT - Denotified Tribes)</td><td>Criminal Tribes Act 1871 की विरासत।</td><td>Renke Commission 2008।</td></tr></tbody></table></div>
+<p>✊  दलित — जाति, अस्पृश्यता और सामाजिक आंदोलन वर्ण व्यवस्था के बाहर — पंचम वर्ण | छुआछूत | Ambedkar का योगदान</p>
+<h3 class="ch-h3">📖  दलित — परिभाषा और ऐतिहासिक पृष्ठभूमि</h3>
+<p>'दलित' शब्द: संस्कृत 'दल' से = कुचला हुआ/दबाया गया। ज्योतिबा फुले ने सर्वप्रथम प्रयोग किया।</p><p>वर्ण व्यवस्था में स्थान: 'पंचम वर्ण' या 'अतिशूद्र' — चार वर्णों के बाहर — सबसे अधिक शोषित।</p><p>अस्पृश्यता (Untouchability): 'उच्च जाति' के लोगों का 'दलितों' को अपवित्र मानना — छुआछूत। Article 17 द्वारा निषेध।</p><p>Manual Scavenging: हाथ से मल सफाई — Prohibition of Manual Scavenging Act 2013। अभी भी जारी।</p>
+<h3 class="ch-h3">⚠️  दलितों की प्रमुख समस्याएँ</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>समस्या</th><th>विवरण</th></tr></thead><tbody><tr><td>भूमि का अभाव</td><td>Landless labourers — SC परिवारों का 73% भूमिहीन।</td></tr><tr><td>शिक्षा में पिछड़ापन</td><td>Drop-out rate अधिक | Discrimination in schools।</td></tr><tr><td>आर्थिक शोषण</td><td>मजदूरी में भेदभाव | Bonded Labour।</td></tr><tr><td>सामाजिक भेदभाव</td><td>मंदिरों में प्रवेश निषेध | अलग घड़े | अलग बैठना।</td></tr><tr><td>Manual Scavenging</td><td>Sewage cleaning manually — inhuman practice।</td></tr><tr><td>Atrocities (अत्याचार)</td><td>SC/ST Atrocity Act मामलों की संख्या — NCRB 2022: 50,000+।</td></tr><tr><td>राजनीतिक वंचना</td><td>Rights पर real participation कम।</td></tr><tr><td>Dalits women — Double Discrimination</td><td>जाति + लिंग दोनों स्तर पर उत्पीड़न।</td></tr></tbody></table></div>
+<h3 class="ch-h3">✊  दलित आंदोलन और प्रमुख विचारक</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>विचारक</th><th>योगदान</th><th>मुख्य रचना</th></tr></thead><tbody><tr><td>Dr. B.R. Ambedkar</td><td>जाति व्यवस्था का उन्मूलन | दलित राजनीतिक जागरण | संविधान निर्माता।</td><td>Annihilation of Caste (1936) | Who Were the Shudras? | Buddha and His Dhamma।</td></tr><tr><td>Mahatma Jyotiba Phule</td><td>'दलित' शब्द | Satyashodhak Samaj (1873) | महिला और शूद्र अधिकार।</td><td>Gulamgiri (1873)।</td></tr><tr><td>Periyar E.V. Ramasamy</td><td>Self-Respect Movement (1925) | Dravidian identity।</td><td>Tamil Nadu में जाति-विरोधी आंदोलन।</td></tr><tr><td>Sant Ravidas</td><td>Bhakti Movement के माध्यम से समानता का संदेश।</td><td>—</td></tr><tr><td>Kanshi Ram</td><td>Bahujan Samaj Party (BSP) | Political empowerment।</td><td>—</td></tr><tr><td>Mahatma Gandhi</td><td>'हरिजन' शब्द | अस्पृश्यता विरोध।</td><td>Harijan movement।</td></tr><tr><td>M.N. Srinivas</td><td>'Dominant Caste' की अवधारणा। जाति और आधुनिकता।</td><td>Caste in Modern India।</td></tr></tbody></table></div>
+<h2 class="ch-h2"><span class="ch-h2-num">6</span><span class="ch-h2-text">अनुसूचित जाति (SC) — संवैधानिक और कानूनी सुरक्षा</span></h2>
+<h3 class="ch-h3">📜  संवैधानिक प्रावधान — SC के लिए</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>अनुच्छेद</th><th>प्रावधान</th></tr></thead><tbody><tr><td>Article 15(4)</td><td>SC/ST के लिए विशेष शैक्षणिक और सामाजिक प्रावधान।</td></tr><tr><td>Article 16(4) &amp; 16(4A)</td><td>सरकारी नौकरियों में SC/ST के लिए आरक्षण (16-4A: Promotions में भी)।</td></tr><tr><td>Article 17</td><td>अस्पृश्यता का पूर्ण निषेध — किसी भी रूप में।</td></tr><tr><td>Article 46</td><td>SC/ST के शैक्षणिक और आर्थिक हितों की रक्षा (DPSP)।</td></tr><tr><td>Article 338</td><td>National Commission for Scheduled Castes (NCSC)।</td></tr><tr><td>Article 341</td><td>Scheduled Castes की सूची — राष्ट्रपति द्वारा निर्धारित।</td></tr><tr><td>Article 330 &amp; 332</td><td>Lok Sabha और State Assemblies में SC/ST के लिए Seats Reservation।</td></tr><tr><td>Article 335</td><td>SC/ST की 'पर्याप्त प्रतिनिधित्व' सुनिश्चित करना।</td></tr></tbody></table></div>
+<h3 class="ch-h3">⚖️  SC के लिए प्रमुख कानून</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>कानून</th><th>वर्ष</th><th>मुख्य प्रावधान</th></tr></thead><tbody><tr><td>Protection of Civil Rights Act(PCR Act — पूर्व Untouchability Offences Act)</td><td>1955</td><td>अस्पृश्यता का अभ्यास = दंडनीय अपराध।</td></tr><tr><td>SC/ST (Prevention of Atrocities) Act</td><td>1989(Amendment 2015, 2018)</td><td>SC/ST के विरुद्ध अत्याचार को cognizable, non-bailable। SC/ST Courts। Victims को compensation।</td></tr><tr><td>Bonded Labour System Abolition Act</td><td>1976</td><td>बंधुआ मजदूरी का उन्मूलन।</td></tr><tr><td>Prohibition of Manual Scavenging Act</td><td>2013</td><td>हाथ से मल सफाई का निषेध।</td></tr><tr><td>Forest Rights Act (FRA)</td><td>2006</td><td>SC/ST को वन में रहने और उपयोग का अधिकार।</td></tr></tbody></table></div>
+<p>SC/ST Act Amendment 2018: FIR तुरंत दर्ज — Preliminary Investigation की जरूरत नहीं | Anticipatory Bail नहीं | SC ने 2018 में दिए फैसले को संसद ने override किया।</p>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">7</span><span class="ch-h2-text">अनुसूचित जाति — कल्याण योजनाएँ</span></h2>
+<h3 class="ch-h3">✅  केंद्रीय कल्याण योजनाएँ — SC के लिए</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>योजना</th><th>लाभ</th></tr></thead><tbody><tr><td>Scheduled Caste Sub Plan(SCSP / DA Component)</td><td>SC को proportional budget allocation।</td></tr><tr><td>Pre-Matric Scholarship (SC)</td><td>9th-10th कक्षा के SC छात्रों को छात्रवृत्ति।</td></tr><tr><td>Post-Matric Scholarship (SC)</td><td>11th से PhD तक SC छात्रों को।</td></tr><tr><td>Top Class Education Scheme</td><td>SC छात्रों को प्रतिष्ठित संस्थानों में शिक्षा हेतु support।</td></tr><tr><td>National Overseas Scholarship</td><td>SC छात्रों को विदेश में उच्च शिक्षा।</td></tr><tr><td>Pradhan Mantri Adarsh Gram Yojana</td><td>SC बहुल गाँवों का आदर्श विकास।</td></tr><tr><td>National Scheduled Castes Finance Dev. Corp. (NSCFDC)</td><td>SC उद्यमियों को कम ब्याज ऋण।</td></tr><tr><td>Dr. Ambedkar Scheme for Social Integration</td><td>Inter-caste marriages को ₹2.5 लाख।</td></tr><tr><td>Ambedkar Hastkala Vikas Yojana</td><td>SC कारीगरों को skill development।</td></tr><tr><td>Free Coaching Scheme</td><td>IAS, IIT, IIM जैसी परीक्षाओं की तैयारी।</td></tr><tr><td>Venture Capital Fund for SCs</td><td>SC उद्यमियों के लिए startup funding।</td></tr></tbody></table></div>
+<h3 class="ch-h3">🗺️  राजस्थान — SC कल्याण योजनाएँ</h3>
+<p>Rajasthan SC/ST Finance Dev. Corp.: दलित उद्यमियों को कम ब्याज ऋण।</p><p>Ambedkar Awas Yojana: SC परिवारों को आवास सहायता।</p><p>Inter-Caste Marriage Scheme: अंतर्जातीय विवाह को ₹5 लाख प्रोत्साहन (राजस्थान)।</p><p>SC Hostels: दूरस्थ क्षेत्रों के SC छात्रों के लिए छात्रावास।</p><p>Manual Scavenging Rehabilitation: Manual Scavengers के पुनर्वास हेतु कौशल + ऋण।</p><p>Dr. Ambedkar Jayanti: 14 अप्रैल — राजकीय उत्सव।</p>
+<p>🌿  अनुसूचित जनजाति (ST) — राजस्थान विशेष Rajasthan में 12 लाख Bhils | Meenas | Garasia | Census 2011: ST 13.5% (Rajasthan)</p>
+<h3 class="ch-h3">📊  भारत और राजस्थान में ST की स्थिति</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>10.43 करोड़ ST जनसंख्या(India, 2011)</th><th>8.6% कुल जनसंख्या(India)</th><th>13.5% Rajasthan ST(Census 2011)</th><th>700+ ST CommunitiesIn India</th></tr></thead><tbody></tbody></table></div>
+<h3 class="ch-h3">📋  राजस्थान की प्रमुख जनजातियाँ</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>जनजाति</th><th>मुख्य क्षेत्र</th><th>विशेषता</th></tr></thead><tbody><tr><td>भील (Bhil)</td><td>Banswara, Dungarpur, Udaipur, Chittorgarh, Pratapgarh</td><td>सर्वाधिक संख्या में। कृषि + वन। Holi = Bhagoria Puja।</td></tr><tr><td>मीणा (Meena)</td><td>Jaipur, Dausa, Sawai Madhopur, Alwar, Bharatpur</td><td>दूसरी सबसे बड़ी। Service sector में अच्छी भागीदारी।</td></tr><tr><td>गरासिया (Garasia)</td><td>Sirohi, Udaipur</td><td>Bhil से अलग। पर्वतीय क्षेत्र।</td></tr><tr><td>सहरिया (Sahariya)</td><td>Baran (Shahabad-Kishanganj)</td><td>अत्यंत पिछड़ी — 'Particularly Vulnerable Tribal Group' (PVTG)।</td></tr><tr><td>कथोड़ी/मावची</td><td>Pali, Rajsamand</td><td>PVTG — सर्वाधिक वंचित।</td></tr><tr><td>डामोर (Damor)</td><td>Dungarpur, Banswara</td><td>कृषक जनजाति।</td></tr><tr><td>सांसी (Sansi)</td><td>Bharatpur, Jaipur</td><td>DNT (Denotified Tribe)।</td></tr></tbody></table></div>
+<h3 class="ch-h3">⚠️  ST की प्रमुख समस्याएँ</h3>
+<p>भूमि विस्थापन (Land Displacement): बाँध, खदान, संरक्षित वन क्षेत्र — 'Development Refugees'।</p><p>वन-अधिकार से वंचना: FRA 2006 के बावजूद अधिकार नहीं मिले।</p><p>शिक्षा की कमी: ST की साक्षरता दर अभी भी राष्ट्रीय औसत से कम।</p><p>स्वास्थ्य समस्याएँ: MMR, IMR अधिक | कुपोषण | Sickle Cell Anaemia।</p><p>आर्थिक शोषण: बिचौलियों द्वारा वन उपज में कम कीमत। Bonded Labour।</p><p>सांस्कृतिक अतिक्रमण: बाहरी संस्कृति का दबाव — परंपरागत ज्ञान खो रहा है।</p><p>PVTG (Particularly Vulnerable Tribal Groups): 75 PVTG भारत में — Sahariya (Rajasthan में), Kathodi विशेष रूप से कमज़ोर।</p>
+<h2 class="ch-h2"><span class="ch-h2-num">8</span><span class="ch-h2-text">ST कल्याण — संवैधानिक अधिकार और योजनाएँ</span></h2>
+<h3 class="ch-h3">📜  ST के लिए संवैधानिक प्रावधान</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>अनुच्छेद</th><th>प्रावधान</th></tr></thead><tbody><tr><td>Article 15(4)</td><td>ST के लिए विशेष शैक्षणिक प्रावधान।</td></tr><tr><td>Article 16(4)</td><td>ST के लिए सरकारी नौकरियों में आरक्षण।</td></tr><tr><td>Article 19(5)</td><td>ST के हितों के लिए संचलन और निवास की स्वतंत्रता पर उचित प्रतिबंध।</td></tr><tr><td>Article 46</td><td>ST के शैक्षणिक और आर्थिक हितों की रक्षा।</td></tr><tr><td>Article 164</td><td>Tribal Welfare Minister अनिवार्य — MP, Odisha, Jharkhand में।</td></tr><tr><td>Article 244</td><td>Scheduled Areas (5th Schedule) और Tribal Areas (6th Schedule)।</td></tr><tr><td>Article 338A</td><td>National Commission for Scheduled Tribes (NCST)।</td></tr><tr><td>5th Schedule</td><td>Tribal Areas administration — Rajasthan में लागू।</td></tr><tr><td>6th Schedule</td><td>Autonomous District Councils — Northeast India में।</td></tr><tr><td>PESA Act 1996</td><td>Panchayats Extension to Scheduled Areas — जनजाति पंचायतों को विशेष अधिकार।</td></tr></tbody></table></div>
+<h3 class="ch-h3">⚖️  ST के लिए प्रमुख कानून</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>कानून</th><th>वर्ष</th><th>मुख्य प्रावधान</th></tr></thead><tbody><tr><td>Forest Rights Act (FRA)</td><td>2006</td><td>जनजातियों को वन भूमि पर स्वामित्व + वन उपज का उपयोग अधिकार।</td></tr><tr><td>PESA Act</td><td>1996</td><td>5th Schedule क्षेत्रों में ग्राम सभा को ज़मीन, पानी, वन पर नियंत्रण।</td></tr><tr><td>SC/ST Atrocities Act</td><td>1989/2015</td><td>जनजातियों पर अत्याचार के लिए कठोर दंड।</td></tr><tr><td>Land Acquisition Act (RFCTLARR)</td><td>2013</td><td>जनजातीय भूमि अधिग्रहण पर ग्राम सभा की मंजूरी अनिवार्य।</td></tr><tr><td>Tribal Sub Plan (TSP)</td><td>—</td><td>ST के लिए बजट में proportional allocation।</td></tr></tbody></table></div>
+<h3 class="ch-h3">✅  ST केंद्रीय कल्याण योजनाएँ</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>योजना</th><th>लाभ</th></tr></thead><tbody><tr><td>Eklavya Model Residential Schools (EMRS)</td><td>ST बच्चों के लिए आवासीय उत्कृष्ट विद्यालय — 6th से 12th।</td></tr><tr><td>Tribal Sub Plan (TSP) / DA Component</td><td>ST क्षेत्रों में development fund।</td></tr><tr><td>Pre/Post-Matric Scholarship (ST)</td><td>छात्रवृत्ति।</td></tr><tr><td>PM Adi Adarsh Gram Yojana</td><td>ST बहुल गाँवों का आदर्श विकास।</td></tr><tr><td>PVTG Development Mission</td><td>75 PVTG के लिए विशेष — Housing, Roads, Connectivity।</td></tr><tr><td>National ST Finance &amp; Dev. Corp. (NSTFDC)</td><td>कम ब्याज ऋण।</td></tr><tr><td>Van Dhan Vikas Kendra (VDVK)</td><td>TRIFED — वन उपज का मूल्यवर्धन और बिक्री।</td></tr><tr><td>Pradhan Mantri Janjati Adivasi Nyaya Maha Abhiyan (PM-JANMAN)</td><td>PVTG के लिए ₹24,000 करोड़ — Housing, Education, Health।</td></tr><tr><td>Janjeevan Mission</td><td>Rural Connectivity, Housing।</td></tr><tr><td>TRIFED</td><td>Tribal Cooperative Marketing Federation — fair price।</td></tr></tbody></table></div>
+<h3 class="ch-h3">🗺️  राजस्थान — ST कल्याण योजनाएँ</h3>
+<p>Rajasthan Tribes Area Development Department (TAD): जनजाति क्षेत्र — Banswara, Dungarpur, Udaipur, Pratapgarh में विशेष development।</p><p>Eklavya Schools in Rajasthan: ST बच्चों के लिए 24 EMRS — free quality education।</p><p>Ashram Schools (आश्रम विद्यालय): जनजाति बाहुल्य क्षेत्रों में आवासीय विद्यालय।</p><p>ST Hostels: बालक और बालिका छात्रावास — शिक्षा को बढ़ावा।</p><p>Sahariya Special Scheme: Baran जिले में PVTG Sahariya के लिए Food Security + Livelihood।</p><p>Tribal Area Development Scheme: Rajasthan में 5th Schedule लागू। PESA के तहत ग्राम सभा को अधिकार।</p><p>Van Dhan Kendras (Rajasthan): TRIFED के माध्यम से वन उपज का market linkage।</p>
+<h2 class="ch-h2"><span class="ch-h2-num">9</span><span class="ch-h2-text">RAS Mains — PYQs + One-Line Revision + Keywords</span></h2>
+<p>▶  📌  2 Marks Questions</p>
+<p>Q1. अनुसूचित जाति (SC) की परिभाषा और भारत में उनकी जनसंख्या बताइए। ✅ उत्तर: Article 341 — राष्ट्रपति SC की सूची तय करते हैं। Census 2011: 20.14 करोड़ (16.6% जनसंख्या)। मुख्य समस्याएँ: अस्पृश्यता, आर्थिक शोषण, शिक्षा में पिछड़ापन।  [RAS Mains]</p>
+<p>Q2. Beti Bachao Beti Padhao योजना क्या है? ✅ उत्तर: 2015 में शुरू — उद्देश्य: लिंगानुपात सुधार + लड़कियों की शिक्षा। 100 CSR districts में। Ministry of WCD + Health + Education की संयुक्त योजना।  [RAS Mains]</p>
+<p>Q3. PESA Act 1996 क्या है? ✅ उत्तर: Panchayats Extension to Scheduled Areas Act — 5th Schedule जनजाति क्षेत्रों में ग्राम सभा को भूमि, जल, वन पर स्वायत्तता। खनन, शराब, बाजार पर नियंत्रण।  [RAS Mains]</p>
+<p>Q4. Forest Rights Act 2006 के प्रमुख प्रावधान क्या हैं? ✅ उत्तर: ST को 3 अधिकार: (1) Individual Forest Rights — कृषि भूमि, (2) Community Forest Rights — NTFP, (3) Community Forest Management Rights। ग्राम सभा FRC की जाँच करती है।  [RAS Mains]</p>
+<p>Q5. Social Exclusion (सामाजिक बहिष्करण) क्या है? ✅ उत्तर: Max Weber → Frank Parkin की अवधारणा। वह प्रक्रिया जिसमें व्यक्तियों/समूहों को समाज के अधिकारों, संसाधनों और अवसरों से व्यवस्थित रूप से वंचित किया जाता है। SC/ST/Women प्रमुख शिकार।  [RAS Mains]</p>
+<p>Q6. Dr. Ambedkar के जाति-विरोधी विचारों का संक्षेप में वर्णन करें। ✅ उत्तर: 'Annihilation of Caste' (1936) — जाति व्यवस्था को नष्ट किए बिना सामाजिक न्याय असंभव। Inter-caste Marriage + Buddhist Conversion (14 अक्टूबर 1956)। Article 17 — अस्पृश्यता उन्मूलन।  [RAS Mains]</p>
+<p>Q7. Rajasthan में ST की प्रमुख जनजातियाँ और उनके क्षेत्र बताइए। ✅ उत्तर: (1) भील — Banswara, Dungarpur (सर्वाधिक) (2) मीणा — Jaipur, Dausa (3) गरासिया — Sirohi (4) सहरिया — Baran (PVTG) (5) कठोड़ी — Pali (PVTG)।  [RAS Mains]</p>
+<p>Q8. Mukhyamantri Rajshri Yojana क्या है? ✅ उत्तर: Rajasthan 2016 — लड़की के जन्म से 12वीं तक ₹50,000 (6 किस्तों में)। उद्देश्य: लिंगानुपात सुधार + लड़कियों की शिक्षा + बाल विवाह रोकना।  [RAS Mains]</p>
+<p>Q9. SC/ST Atrocities Act 1989 की मुख्य विशेषताएँ। ✅ उत्तर: SC/ST के विरुद्ध अत्याचार = Cognizable, Non-Bailable, Non-Compoundable। Special SC/ST Courts। Victims को Compensation + Rehabilitation। 2015 व 2018 Amendments से और मजबूत।  [RAS Mains]</p>
+<p>Q10. पंचायती राज में महिलाओं के लिए संवैधानिक प्रावधान क्या हैं? ✅ उत्तर: Article 243D — Panchayats में कम से कम 1/3 सीटें महिलाओं के लिए। Rajasthan में 50% आरक्षण (2009 से)। Article 243T — Urban Local Bodies में।  [RAS Mains]</p>
+<p>▶  📌  Answer Writing Theme Lines</p>
+<blockquote class="ch-quote">"भारत का संविधान कमज़ोर वर्गों के लिए Protective Discrimination का सिद्धांत अपनाता है — केवल समानता का अधिकार देना पर्याप्त नहीं, बल्कि ऐतिहासिक अन्याय की भरपाई के लिए विशेष प्रावधान आवश्यक हैं।"</blockquote><blockquote class="ch-quote">"Ambedkar का मत था: 'Caste is not a physical object but a notion in the mind.' — जाति व्यवस्था का उन्मूलन शिक्षा, अंतर्जातीय विवाह और धार्मिक सुधार से ही संभव है।"</blockquote><blockquote class="ch-quote">"महिला सशक्तिकरण = केवल कानून नहीं, बल्कि सामाजिक मानसिकता में परिवर्तन। 'जब तक महिला शिक्षित नहीं होगी, परिवार शिक्षित नहीं होगा।' — Savitribai Phule।"</blockquote>
+<h3 class="ch-h3">⚡  One-Line Revision Points</h3>
+<p>Article 17: अस्पृश्यता का पूर्ण निषेध।</p><p>Article 338: National Commission for SC (NCSC)।</p><p>Article 338A: National Commission for ST (NCST)।</p><p>Article 341: Scheduled Castes — President द्वारा सूची।</p><p>Article 342: Scheduled Tribes — President द्वारा सूची।</p><p>Article 243D: Panchayats में 1/3 महिला आरक्षण।</p><p>PCR Act 1955: Untouchability का अभ्यास = दंडनीय।</p><p>SC/ST Atrocities Act 1989: Cognizable, Non-Bailable।</p><p>PESA Act 1996: 5th Schedule क्षेत्रों में ग्राम सभा को अधिकार।</p><p>Forest Rights Act 2006: 3 अधिकार: Individual + Community + Forest Management।</p><p>Census 2011 — SC: 20.14 करोड़ (16.6%)।</p><p>Census 2011 — ST: 10.43 करोड़ (8.6%)।</p><p>Rajasthan ST: 13.5% — Bhil (सर्वाधिक), Meena (दूसरी)।</p><p>Sahariya (Rajasthan): PVTG — Baran जिले में।</p><p>Beti Bachao Beti Padhao: 2015 | Ministry of WCD।</p><p>Mukhyamantri Rajshri Yojana: Rajasthan 2016 | ₹50,000 (6 किस्तें)।</p><p>Ambedkar — Annihilation of Caste: 1936 — जाति विनाश के बिना सामाजिक न्याय असंभव।</p><p>Intersectionality — Kimberlé Crenshaw: जाति + लिंग + वर्ग = Multiple Discrimination।</p><p>Social Exclusion: Max Weber → Frank Parkin।</p><p>Rajasthan Panchayat: 50% Women Reservation (2009) — राष्ट्रीय 33% से अधिक।</p>
+<p>🔑  Keyword Summary — कीवर्ड सारांश</p>
+<p>✦  इन Keywords को पक्का याद करें — उत्तर लेखन में सबसे काम आएंगे  ✦</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>👩  Patriarchy</th><th>🧬  Intersectionality</th><th>📊  Social Exclusion</th></tr></thead><tbody><tr><td>⚖️  Article 14-15-16</td><td>📜  Article 17</td><td>🏛️  Article 243D</td></tr><tr><td>💍  BBBP Scheme</td><td>💰  Sukanya Samriddhi</td><td>🌹  Rajshri Yojana</td></tr><tr><td>✊  Dr. Ambedkar</td><td>📖  Annihilation of Caste</td><td>🔵  BSP/Kanshi Ram</td></tr><tr><td>📜  PCR Act 1955</td><td>⚖️  SC/ST Act 1989</td><td>🔒  Non-Bailable</td></tr><tr><td>🌿  Forest Rights Act</td><td>🏘️  PESA Act 1996</td><td>📜  5th Schedule</td></tr><tr><td>🌾  EMRS (ST Schools)</td><td>🌳  Van Dhan Kendra</td><td>💊  PM-JANMAN</td></tr><tr><td>👥  Bhil (Rajasthan)</td><td>🎯  Meena (Rajasthan)</td><td>🏔️  Sahariya (PVTG)</td></tr><tr><td>📊  Census SC 16.6%</td><td>📊  Census ST 8.6%</td><td>📊  RJ ST 13.5%</td></tr><tr><td>🔺  Kimberlé Crenshaw</td><td>🏛️  NCSC (Art.338)</td><td>🏛️  NCST (Art.338A)</td></tr><tr><td>💼  NSCFDC</td><td>💼  NSTFDC</td><td>🌿  TRIFED</td></tr><tr><td>⚕️  Manual Scavenging</td><td>⚖️  Bonded Labour Act</td><td>👩‍⚕️  PWDVA 2005</td></tr></tbody></table></div>
+<p>✦  Best of Luck  |  शुभकामनाएँ — RAS Mains 2026  ✦</p><p>New India Education by Omkar Sir  |  @thenewindiaeducation  |</p><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="samajshastra-ch06-chunautiyan.html" class="ch-nav-btn">← अध्याय 6: भारतीय समाज की चुनौतियाँ</a>
+  <a href="samajshastra.html" class="ch-nav-btn ch-nav-next">मुख्य पृष्ठ पर वापस →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="samajshastra.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>
