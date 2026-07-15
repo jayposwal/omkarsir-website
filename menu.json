@@ -72,6 +72,10 @@
       "type": "dropdown",
       "children": [
         {
+          "label": "🆕 RAS Exam 2026 (Full Details)",
+          "url": "/ras-exam-2026.html"
+        },
+        {
           "label": "📜 RAS Syllabus",
           "url": "/ras-syllabus.html"
         },
