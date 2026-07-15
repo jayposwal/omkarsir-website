@@ -5,16 +5,12 @@
   },
   "items": [
     {
-      "label": "📚 विषय",
+      "label": "🗺️ राजस्थान GK",
       "type": "dropdown",
       "children": [
         {
           "label": "🗺️ राजस्थान भूगोल",
           "url": "/rajasthan-bhugol.html"
-        },
-        {
-          "label": "🏛️ प्राचीन भारत इतिहास (10 अध्याय)",
-          "url": "/prachin-bharat-itihas.html"
         },
         {
           "label": "⚖️ राजस्थान राज्यव्यवस्था (12 अध्याय)",
@@ -27,13 +23,53 @@
         {
           "label": "📜 राजस्थान का इतिहास (16 अध्याय)",
           "url": "/rajasthan-itihas-series.html"
+        }
+      ]
+    },
+    {
+      "label": "🇮🇳 भारत GK",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🏛️ प्राचीन भारत इतिहास (10 अध्याय)",
+          "url": "/prachin-bharat-itihas.html"
+        },
+        {
+          "label": "🏰 आधुनिक भारत का इतिहास (15 अध्याय)",
+          "url": "/adhunik-bharat-itihas.html"
         },
         {
           "label": "🖼️ भारतीय कला एवं संस्कृति (10 अध्याय)",
           "url": "/bharatiya-kala-sanskriti.html"
         },
         {
-          "label": "🔢 RAS Pre — गणित एवं तर्कशक्ति (14 अध्याय)",
+          "label": "📋 संविधान",
+          "url": "/samvidhan.html"
+        },
+        {
+          "label": "💰 अर्थव्यवस्था (9 अध्याय)",
+          "url": "/arthavyavastha.html"
+        },
+        {
+          "label": "💻 विज्ञान एवं प्रौद्योगिकी (10 अध्याय)",
+          "url": "/vigyan-praudyogiki.html"
+        },
+        {
+          "label": "🌍 विश्व भूगोल (7 अध्याय)",
+          "url": "/vishwa-bhugol.html"
+        },
+        {
+          "label": "🌐 आधुनिक विश्व इतिहास (11 अध्याय)",
+          "url": "/vishwa-itihas.html"
+        }
+      ]
+    },
+    {
+      "label": "🎯 RAS Mains Special",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🔢 गणित एवं तर्कशक्ति (14 अध्याय)",
           "url": "/ras-pre-math-reasoning.html"
         },
         {
@@ -45,36 +81,12 @@
           "url": "/vyavhar.html"
         },
         {
-          "label": "📋 संविधान",
-          "url": "/samvidhan.html"
-        },
-        {
-          "label": "💻 विज्ञान एवं प्रौद्योगिकी (10 अध्याय)",
-          "url": "/vigyan-praudyogiki.html"
-        },
-        {
-          "label": "🏰 आधुनिक भारत का इतिहास (15 अध्याय)",
-          "url": "/adhunik-bharat-itihas.html"
-        },
-        {
           "label": "⚖️ विधि - Law (9 अध्याय)",
           "url": "/vidhi.html"
         },
         {
-          "label": "🌍 विश्व भूगोल (7 अध्याय)",
-          "url": "/vishwa-bhugol.html"
-        },
-        {
-          "label": "💰 अर्थव्यवस्था (9 अध्याय)",
-          "url": "/arthavyavastha.html"
-        },
-        {
           "label": "📘 प्रबंधन (5 अध्याय)",
           "url": "/prabandh.html"
-        },
-        {
-          "label": "🌐 आधुनिक विश्व इतिहास (11 अध्याय)",
-          "url": "/vishwa-itihas.html"
         }
       ]
     },
