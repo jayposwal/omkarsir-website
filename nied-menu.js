@@ -92,3 +92,66 @@
     init();
   }
 })();
+
+/* ============================================================
+   Content Protection — NIEd
+   Deters casual copy-paste of paid/free notes. This raises the
+   bar for casual copying; it is not a substitute for legal
+   copyright (see /privacy.html) which is the real protection.
+   ============================================================ */
+(function(){
+  function toast(msg){
+    var existing = document.getElementById('nied-toast');
+    if(existing) existing.remove();
+    var t = document.createElement('div');
+    t.id = 'nied-toast';
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;left:50%;bottom:28px;transform:translateX(-50%);'
+      + 'background:#1B2A6B;color:#fff;padding:11px 20px;border-radius:50px;'
+      + 'font-family:Arial,sans-serif;font-size:13px;font-weight:600;z-index:99999;'
+      + 'box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:88vw;text-align:center;'
+      + 'opacity:0;transition:opacity .25s ease;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function(){ t.style.opacity = '1'; });
+    setTimeout(function(){
+      t.style.opacity = '0';
+      setTimeout(function(){ t.remove(); }, 300);
+    }, 1800);
+  }
+
+  // Block right-click context menu (Save As / Inspect shortcuts)
+  document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+    toast('🔒 यह Content Omkar Sir / New India Education की संपत्ति है — कृपया Copy न करें');
+  });
+
+  // Block copy — allow inside actual form fields (search boxes etc.)
+  document.addEventListener('copy', function(e){
+    var tag = (e.target && e.target.tagName) || '';
+    if(tag === 'INPUT' || tag === 'TEXTAREA') return;
+    e.preventDefault();
+    toast('🔒 Copy Disabled — यह Content पिछले 8 सालों की मेहनत से बना है, कृपया केवल App/Website पर ही पढ़ें');
+  });
+
+  // Block common devtools / view-source / save-page shortcuts
+  document.addEventListener('keydown', function(e){
+    var k = e.key ? e.key.toLowerCase() : '';
+    var blockCombo = (e.ctrlKey || e.metaKey) && ['u','s','c'].indexOf(k) !== -1;
+    var blockDevtools = e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i','j','c'].indexOf(k) !== -1);
+    if(blockCombo || blockDevtools){
+      e.preventDefault();
+      toast('🔒 यह Action इस Website पर उपलब्ध नहीं है');
+    }
+  });
+
+  // Make images harder to drag-save
+  document.addEventListener('dragstart', function(e){
+    if(e.target && e.target.tagName === 'IMG') e.preventDefault();
+  });
+
+  // Light text-selection deterrent — skip form fields & anything marked selectable
+  var css = '.nied-protect-off, input, textarea, select { -webkit-user-select: text !important; user-select: text !important; }';
+  var style = document.createElement('style');
+  style.textContent = 'body:not(.nied-protect-off){-webkit-user-select:none;-ms-user-select:none;user-select:none;}' + css;
+  document.head.appendChild(style);
+})();
