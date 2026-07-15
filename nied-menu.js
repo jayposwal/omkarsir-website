@@ -29,6 +29,20 @@
       + '.nied-dropdown{position:static;box-shadow:none;background:#24398f;margin:0 0 0 12px;width:calc(100% - 12px);border-radius:8px;}'
       + '.nied-dropdown li a{color:#fff;}'
       + '.nied-dropdown li a:hover{background:#FF6B00;color:#fff;}'
+      + '.nied-search-wrap{position:relative;margin-left:10px;}'
+      + '.nied-search-btn{background:none;border:none;color:#fff;font-size:1.15rem;cursor:pointer;padding:6px 10px;line-height:1;}'
+      + '.nied-search-btn:hover{color:#FFD0A0;}'
+      + '.nied-search-panel{display:none;position:absolute;top:100%;right:0;margin-top:8px;background:#fff;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.25);width:320px;max-width:88vw;padding:12px;z-index:200;}'
+      + '.nied-search-panel.open{display:block;}'
+      + '.nied-search-input{width:100%;box-sizing:border-box;padding:10px 12px;border:2px solid #E8EAF0;border-radius:8px;font-size:14px;font-family:inherit;outline:none;}'
+      + '.nied-search-input:focus{border-color:#FF6B00;}'
+      + '.nied-search-results{max-height:340px;overflow-y:auto;margin-top:8px;}'
+      + '.nied-search-item{display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:#1A1A2E;}'
+      + '.nied-search-item:hover{background:#FFF3E8;}'
+      + '.nied-search-item .nsr-title{font-size:13px;font-weight:700;color:#1B2A6B;display:block;}'
+      + '.nied-search-item .nsr-desc{font-size:11.5px;color:#888;display:block;margin-top:2px;line-height:1.4;}'
+      + '.nied-search-empty{font-size:12.5px;color:#999;padding:10px;text-align:center;}'
+      + '@media (max-width:880px){.nied-search-panel{right:auto;left:0;width:280px;}}'
       + '}';
     var style = document.createElement('style');
     style.id = 'nied-menu-style';
@@ -53,7 +67,14 @@
         html += '<li><a class="nied-top-link" href="' + esc(item.url) + '">' + esc(item.label) + '</a></li>';
       }
     });
-    html += '</ul></div>';
+    html += '</ul>'
+      + '<div class="nied-search-wrap">'
+      + '<button class="nied-search-btn" id="niedSearchBtn" aria-label="Search">&#128269;</button>'
+      + '<div class="nied-search-panel" id="niedSearchPanel">'
+      + '<input type="text" class="nied-search-input" id="niedSearchInput" placeholder="Subject/Chapter खोजें..." autocomplete="off">'
+      + '<div class="nied-search-results" id="niedSearchResults"></div>'
+      + '</div></div>'
+      + '</div>';
     mount.innerHTML = html;
 
     var burger = mount.querySelector('#niedBurger');
@@ -74,6 +95,68 @@
       if(!mount.contains(e.target)){
         mount.querySelectorAll('.nied-has-dropdown.open').forEach(function(li){ li.classList.remove('open'); });
       }
+    });
+
+    setupSearch(mount);
+  }
+
+  var searchIndexCache = null;
+  function loadSearchIndex(cb){
+    if(searchIndexCache){ cb(searchIndexCache); return; }
+    fetch('/search-index.json', {cache:'force-cache'})
+      .then(function(r){ return r.json(); })
+      .then(function(data){ searchIndexCache = data; cb(data); })
+      .catch(function(err){ console.error('NIEd search index load error:', err); cb([]); });
+  }
+
+  function setupSearch(mount){
+    var btn = mount.querySelector('#niedSearchBtn');
+    var panel = mount.querySelector('#niedSearchPanel');
+    var input = mount.querySelector('#niedSearchInput');
+    var results = mount.querySelector('#niedSearchResults');
+    if(!btn || !panel || !input || !results) return;
+
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      panel.classList.toggle('open');
+      if(panel.classList.contains('open')){
+        input.focus();
+        loadSearchIndex(function(){});
+      }
+    });
+
+    document.addEventListener('click', function(e){
+      if(!panel.contains(e.target) && e.target !== btn){
+        panel.classList.remove('open');
+      }
+    });
+
+    function renderResults(items){
+      if(!items.length){
+        results.innerHTML = '<div class="nied-search-empty">कोई परिणाम नहीं मिला</div>';
+        return;
+      }
+      results.innerHTML = items.slice(0, 15).map(function(it){
+        return '<a class="nied-search-item" href="' + esc(it.url) + '">'
+          + '<span class="nsr-title">' + esc(it.title) + '</span>'
+          + (it.desc ? '<span class="nsr-desc">' + esc(it.desc) + '</span>' : '')
+          + '</a>';
+      }).join('');
+    }
+
+    var debounceTimer = null;
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function(){
+        if(!q){ results.innerHTML = ''; return; }
+        loadSearchIndex(function(data){
+          var matches = data.filter(function(it){
+            return it.title.toLowerCase().indexOf(q) !== -1 || (it.desc && it.desc.toLowerCase().indexOf(q) !== -1);
+          });
+          renderResults(matches);
+        });
+      }, 150);
     });
   }
 
