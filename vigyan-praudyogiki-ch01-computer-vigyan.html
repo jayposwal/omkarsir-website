@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 1: कंप्यूटर विज्ञान की मूल बातें — विज्ञान एवं प्रौद्योगिकी | Omkar Sir</title>
+<meta name="description" content="कंप्यूटर विज्ञान की मूल बातें (Basic Computer Science) — RAS Pre+Mains के लिए विज्ञान एवं प्रौद्योगिकी का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+.topic-divider{text-align:center;margin:36px 0 20px;position:relative}
+.topic-divider span{background:#1B2A6B;color:#fff;padding:8px 24px;border-radius:30px;font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif;display:inline-block}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">💻 अध्याय 1/10 — विज्ञान एवं प्रौद्योगिकी</div>
+  <h1>कंप्यूटर विज्ञान की मूल बातें</h1>
+  <div class="ch-sub">Basic Computer Science | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>कंप्यूटर क्या है, इतिहास एवं पीढ़ियाँ (Definition, History &amp; Generations)</li><li>हार्डवेयर बनाम सॉफ्टवेयर तथा इनपुट-आउटपुट उपकरण (Hardware, Software &amp; I/O Devices)</li><li>मेमोरी: RAM, ROM, कैश एवं सेकेंडरी स्टोरेज (Computer Memory &amp; Storage)</li><li>ऑपरेटिंग सिस्टम (Operating System): प्रकार एवं कार्य</li></ol></div>
+<div class="angle-box"><div class="angle-title">🌟  क्या आप जानते हैं?</div><p>कल्पना कीजिए — साल है 1946, अमेरिका की एक बड़ी प्रयोगशाला में एक मशीन खड़ी है जो पूरे एक कमरे जितनी बड़ी है, जिसका वज़न लगभग 30 टन है और जिसमें 18,000 से अधिक वैक्यूम ट्यूब (Vacuum Tube) लगे हैं। इस मशीन का नाम था — ENIAC। यह इतनी बिजली खींचती थी कि कहा जाता है, इसे चालू करते ही आस-पास के इलाके की लाइट्स कभी-कभी धीमी पड़ जाती थीं, और इसमें लगे हज़ारों ट्यूबों में से कोई एक भी हर दिन खराब हो जाता तो पूरी मशीन बंद करनी पड़ती थी। आज, लगभग 80 साल बाद, आपकी जेब में रखा एक छोटा-सा स्मार्टफोन उस विशालकाय मशीन से लाखों गुना तेज़, हज़ारों गुना छोटा और अरबों गुना सस्ता है। यही है कंप्यूटर विज्ञान की सबसे रोमांचक कहानी — कमरे जितनी बड़ी मशीनों से लेकर आपकी हथेली तक पहुंचने का सफर। आइए, इस अध्याय में समझते हैं कि यह क्रांति कैसे हुई, कंप्यूटर के अंदर वास्तव में काम कैसे होता है, और इसकी मूल तकनीकी बुनियाद क्या है — ताकि आगे के सभी तकनीकी अध्याय (नेटवर्किंग, इंटरनेट, AI, साइबर सुरक्षा) आपको आसानी से समझ आएं।</p></div>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">कंप्यूटर क्या है, इतिहास एवं पीढ़ियाँ (Definition, History &amp; Generations)</span></h2>
+<h3 class="ch-h3">1.1 कंप्यूटर की परिभाषा (Definition of Computer)</h3>
+<p>शब्द 'कंप्यूटर' लैटिन भाषा के 'Computare' से बना है, जिसका अर्थ है 'गणना करना'। सरल शब्दों में, कंप्यूटर एक इलेक्ट्रॉनिक उपकरण (Electronic Device) है जो उपयोगकर्ता से डेटा (Data) को इनपुट के रूप में प्राप्त करता है, पूर्व-निर्धारित निर्देशों (Instructions/Program) के अनुसार उस पर प्रोसेसिंग करता है, और परिणाम को सूचना (Information) के रूप में आउटपुट देता है। इस पूरी प्रक्रिया को 'IPO साइकल' कहा जाता है।</p>
+<ul class="ch-list"><li>इनपुट (Input) → डेटा को कंप्यूटर में डालना, जैसे कीबोर्ड से टाइप करना।</li><li>प्रोसेस (Process) → CPU द्वारा डेटा पर गणना/प्रसंस्करण करना।</li><li>आउटपुट (Output) → संसाधित परिणाम को स्क्रीन/प्रिंटर पर दिखाना।</li><li>स्टोरेज (Storage) → भविष्य में उपयोग हेतु डेटा को सुरक्षित रखना।</li></ul>
+<p>► इस प्रकार पूरा चक्र बनता है: Input → Process → Output → Storage (आवश्यकतानुसार Feedback भी वापस Input में जाता है)।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>1. इनपुट Input — डेटा प्राप्त करना</th><th>➜</th><th>2. प्रोसेस Process — CPU प्रोसेसिंग</th><th>➜</th><th>3. आउटपुट Output — परिणाम प्रदर्शन</th></tr></thead><tbody></tbody></table></div>
+<p>चित्र: IPO साइकल (Input-Process-Output Cycle) — हर कंप्यूटर इसी सिद्धांत पर कार्य करता है</p>
+<h3 class="ch-h3">1.2 कंप्यूटर की मुख्य विशेषताएं (Key Characteristics)</h3>
+<h3 class="ch-h3">1. गति (Speed) — कंप्यूटर करोड़ों गणनाएं प्रति सेकंड (आधुनिक CPU गीगाहर्ट्ज़/GHz तथा गीगाफ्लॉप्स/GFLOPS में मापे जाते हैं) कर सकता है।</h3>
+<h3 class="ch-h3">2. शुद्धता (Accuracy) — कंप्यूटर में गणना की त्रुटि लगभग शून्य होती है, यदि इनपुट सही हो (Garbage In, Garbage Out सिद्धांत)।</h3>
+<h3 class="ch-h3">3. स्वचालन (Automation) — एक बार प्रोग्राम दे देने पर बिना मानवीय हस्तक्षेप के कार्य पूर्ण करता है।</h3>
+<h3 class="ch-h3">4. विश्वसनीयता (Reliability) — बार-बार एक जैसा परिणाम देना।</h3>
+<h3 class="ch-h3">5. बहुमुखी प्रतिभा (Versatility) — गणना से लेकर वीडियो एडिटिंग, गेमिंग, AI तक अनेक कार्य।</h3>
+<h3 class="ch-h3">6. संग्रहण क्षमता (Storage Capacity) — विशाल मात्रा में डेटा को स्थायी रूप से रखने की क्षमता।</h3>
+<h3 class="ch-h3">7. थकान-रहित कार्य (Diligence) — बिना थके, बिना बोर हुए लगातार काम करने की क्षमता — परन्तु इसमें 'बुद्धि/समझ (IQ)' नहीं होती, यह केवल दिए गए निर्देशों का पालन करता है।</h3>
+<h3 class="ch-h3">1.3 कंप्यूटर से पहले के गणना यंत्र (Pre-Computing Devices)</h3>
+<p>कंप्यूटर अचानक नहीं बना — यह हज़ारों वर्षों की गणना-यंत्र विकास यात्रा का परिणाम है। नीचे दी गई तालिका में प्रमुख पूर्व-कंप्यूटर यंत्रों का कालक्रम (Timeline) दिया गया है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>यंत्र (Device)</th><th>आविष्कारक/काल</th><th>विशेषता</th></tr></thead><tbody><tr><td>अबेकस (Abacus)</td><td>लगभग 2400 ईसा पूर्व (चीन/बेबीलोन)</td><td>विश्व का सबसे पुराना गणना यंत्र; मनकों (Beads) की सहायता से जोड़-घटाव किया जाता था</td></tr><tr><td>नेपियर बोन्स (Napier's Bones)</td><td>जॉन नेपियर, 1617 ई.</td><td>हड्डी/लकड़ी की छड़ों की सहायता से गुणा-भाग को आसान बनाया</td></tr><tr><td>पास्कलाइन (Pascaline)</td><td>ब्लेज़ पास्कल, 1642 ई.</td><td>पहला यांत्रिक (Mechanical) कैलकुलेटर; गियर पद्धति पर आधारित जोड़-घटाव यंत्र</td></tr><tr><td>स्टेप्ड रेकनर (Stepped Reckoner)</td><td>गॉटफ्रीड लाइबनिट्ज़, 1673 ई.</td><td>जोड़, घटाव, गुणा व भाग — चारों संक्रियाएं करने में सक्षम पहला यंत्र</td></tr><tr><td>जेकार्ड लूम (Jacquard Loom)</td><td>जोसेफ मैरी जेकार्ड, 1801 ई.</td><td>पंच कार्ड (Punched Card) के माध्यम से बुनाई पैटर्न नियंत्रित करने वाला पहला यंत्र — आधुनिक प्रोग्रामिंग अवधारणा की नींव</td></tr><tr><td>डिफरेंस इंजन व एनालिटिकल इंजन</td><td>चार्ल्स बैबेज, 1822 व 1837 ई.</td><td>प्रोग्राम-नियंत्रित स्वचालित गणना की अवधारणा प्रस्तुत की — मेमोरी, प्रोसेसर व आउटपुट यूनिट जैसी संरचना</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  चार्ल्स बैबेज एवं एडा लवलेस — कंप्यूटर के 'माता-पिता'</div><p>चार्ल्स बैबेज को उनके 'एनालिटिकल इंजन' (1837) के डिज़ाइन के कारण 'आधुनिक कंप्यूटर का जनक (Father of Computer)' कहा जाता है। यह मशीन आज के कंप्यूटर की तरह ही तीन मुख्य भागों — मिल (Mill, आज का CPU), स्टोर (Store, आज की मेमोरी) और आउटपुट यूनिट — पर आधारित थी, हालांकि उस समय की तकनीकी सीमाओं के कारण यह पूरी तरह नहीं बन पाई। गणितज्ञ एडा लवलेस (Ada Lovelace) ने इस इंजन के लिए एक विस्तृत एल्गोरिद्म लिखा, जिसे विश्व का पहला कंप्यूटर प्रोग्राम माना जाता है — इसीलिए उन्हें 'विश्व की पहली प्रोग्रामर' कहा जाता है। रोचक तथ्य: अमेरिकी रक्षा मंत्रालय ने एक कंप्यूटर प्रोग्रामिंग भाषा का नाम भी उनके सम्मान में 'Ada' रखा।</p></div>
+<h3 class="ch-h3">1.4 कंप्यूटर की पीढ़ियाँ (Generations of Computers)</h3>
+<p>आधुनिक इलेक्ट्रॉनिक कंप्यूटर के विकास को उपयोग की गई मुख्य तकनीक (Technology) के आधार पर पाँच पीढ़ियों (Generations) में बांटा गया है। हर पीढ़ी में आकार छोटा, गति तेज़, लागत कम और विश्वसनीयता अधिक होती गई:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>पीढ़ी</th><th>काल (Period)</th><th>मुख्य तकनीक</th><th>प्रमुख उदाहरण</th></tr></thead><tbody><tr><td>प्रथम (I)</td><td>1940-1956</td><td>वैक्यूम ट्यूब (Vacuum Tube); मशीन भाषा (Machine Language); विशाल आकार, अत्यधिक गर्मी व बिजली खपत</td><td>ENIAC, EDVAC, UNIVAC</td></tr><tr><td>द्वितीय (II)</td><td>1956-1964</td><td>ट्रांजिस्टर (Transistor, 1947 में बेल लैब्स में आविष्कृत); चुंबकीय क्रोड मेमोरी (Magnetic Core Memory); असेंबली भाषा</td><td>IBM 1401, IBM 7090</td></tr><tr><td>तृतीय (III)</td><td>1964-1971</td><td>इंटीग्रेटेड सर्किट (IC — Integrated Circuit); उच्चस्तरीय भाषाएं (FORTRAN, COBOL); पहली बार ऑपरेटिंग सिस्टम की शुरुआत</td><td>IBM 360, PDP-8</td></tr><tr><td>चतुर्थ (IV)</td><td>1971-वर्तमान</td><td>माइक्रोप्रोसेसर व VLSI (Very Large Scale Integration); GUI, माउस, पर्सनल कंप्यूटर</td><td>IBM PC (1981), Apple Macintosh (1984)</td></tr><tr><td>पंचम (V)</td><td>वर्तमान-भविष्य</td><td>कृत्रिम बुद्धिमत्ता (AI), मशीन लर्निंग, समांतर प्रोसेसिंग (Parallel Processing), क्वांटम कंप्यूटिंग</td><td>PARAM Rudra सुपरकंप्यूटर, AI-आधारित सिस्टम</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th></th><th>पंचम पीढ़ी — AI व क्वांटम कंप्यूटिंग (वर्तमान-भविष्य)</th><th></th></tr></thead><tbody><tr><td></td><td>चतुर्थ पीढ़ी — माइक्रोप्रोसेसर, पर्सनल कंप्यूटर (1971-अब)</td><td></td></tr><tr><td></td><td>तृतीय पीढ़ी — इंटीग्रेटेड सर्किट (1964-1971)</td><td></td></tr><tr><td></td><td>द्वितीय पीढ़ी — ट्रांजिस्टर (1956-1964)</td><td></td></tr><tr><td></td><td>प्रथम पीढ़ी — वैक्यूम ट्यूब (1940-1956)</td><td></td></tr></tbody></table></div>
+<p>चित्र: कंप्यूटर पीढ़ियों का विकास-क्रम — नीचे से ऊपर की ओर समय एवं तकनीक का विस्तार</p>
+<p>मूर का नियम (Moore's Law): 1965 में इंटेल के सह-संस्थापक गॉर्डन मूर ने भविष्यवाणी की थी कि एक माइक्रोचिप पर लगे ट्रांजिस्टरों की संख्या लगभग हर दो वर्ष में दोगुनी हो जाएगी, जिससे कंप्यूटर की प्रोसेसिंग क्षमता बढ़ती जाएगी और लागत घटती जाएगी। पिछले 50+ वर्षों से यह सिद्धांत काफी हद तक सही साबित हुआ है और आज की स्मार्टफोन-क्रांति की एक बड़ी वजह यही है।</p>
+<h3 class="ch-h3">🚀  PARAM रुद्र सुपरकंप्यूटर स्वदेशी सुपरकंप्यूटिंग सिस्टम (राष्ट्रीय सुपरकंप्यूटिंग मिशन) | 2025-26</h3><ul class="ch-list"><li>C-DAC (Centre for Development of Advanced Computing) द्वारा पूर्णतः भारत में डिज़ाइन एवं निर्मित — Make in India का उदाहरण</li><li>IIT मद्रास में 3.1 पेटाफ्लॉप (Petaflop) क्षमता वाली 'परम शक्ति' सुविधा जनवरी 2026 में शुरू; मई 2025 से परिचालन में, 80% से अधिक उपयोग दर</li><li>IIT पटना में दिसंबर 2025 में 838 टेराफ्लॉप (Teraflop) क्षमता की प्रणाली स्थापित — यह बिहार की पहली सुपरकंप्यूटर सुविधा है</li><li>दिसंबर 2025 तक राष्ट्रीय सुपरकंप्यूटिंग मिशन (National Supercomputing Mission - NSM) के तहत देशभर में 37 सुपरकंप्यूटर, कुल 39 पेटाफ्लॉप क्षमता स्थापित — 12,000 से अधिक शोधकर्ताओं को लाभ</li><li>AlmaLinux तथा C-DAC के स्वदेशी सिस्टम सॉफ्टवेयर स्टैक पर आधारित — ओपन-सोर्स तकनीक का उपयोग</li><li>IndiaAI मिशन का लक्ष्य: राष्ट्रीय सुपरकंप्यूटिंग क्षमता को आने वाले वर्षों में 200+ पेटाफ्लॉप तक बढ़ाना</li></ul>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">हार्डवेयर बनाम सॉफ्टवेयर तथा इनपुट-आउटपुट उपकरण (Hardware, Software &amp; I/O Devices)</span></h2>
+<h3 class="ch-h3">2.1 हार्डवेयर (Hardware)</h3>
+<p>हार्डवेयर कंप्यूटर के वे सभी भौतिक (Physical) अंग हैं जिन्हें हम देख और छू सकते हैं — जैसे कीबोर्ड, माउस, मॉनिटर, CPU आदि। हार्डवेयर स्वयं कुछ नहीं कर सकता, इसे कार्य करने के लिए सॉफ्टवेयर के निर्देशों की आवश्यकता होती है।</p>
+<h3 class="ch-h3">2.2 सॉफ्टवेयर (Software)</h3>
+<p>सॉफ्टवेयर निर्देशों (Instructions/Programs) का वह समूह है जो हार्डवेयर को बताता है कि उसे क्या और कैसे करना है। सॉफ्टवेयर को छुआ नहीं जा सकता, केवल देखा व उपयोग किया जा सकता है। यह मुख्यतः दो प्रकार का होता है:</p>
+<ul class="ch-list"><li>सिस्टम सॉफ्टवेयर (System Software) — कंप्यूटर हार्डवेयर का प्रबंधन करता है; जैसे ऑपरेटिंग सिस्टम (Windows, Linux), डिवाइस ड्राइवर, यूटिलिटी प्रोग्राम।</li><li>एप्लीकेशन सॉफ्टवेयर (Application Software) — उपयोगकर्ता के विशिष्ट कार्यों हेतु बनाया गया; जैसे MS Word, Google Chrome, गेम्स, बैंकिंग ऐप।</li></ul>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">हार्डवेयर (Hardware)</div><ul class="ch-list"><li>भौतिक/छूने योग्य भाग (Tangible)</li><li>उदाहरण: CPU, RAM, कीबोर्ड, मॉनिटर, मदरबोर्ड</li><li>बिना सॉफ्टवेयर के निष्क्रिय (Dead) रहता है</li><li>समय के साथ भौतिक घिसाव (Wear &amp; Tear) होता है</li></ul></div><div class="twocol-col"><div class="twocol-head">सॉफ्टवेयर (Software)</div><ul class="ch-list"><li>अभौतिक निर्देशों का समूह (Intangible)</li><li>उदाहरण: Windows, MS Word, Chrome, Android ऐप्स</li><li>हार्डवेयर को कार्य करने हेतु निर्देश देता है</li><li>समय के साथ अपडेट व सुधार होता रहता है</li></ul></div></div>
+<h3 class="ch-h3">2.3 CPU की संरचना (Structure of CPU — Central Processing Unit)</h3>
+<p>CPU को कंप्यूटर का 'मस्तिष्क (Brain)' कहा जाता है। यह मुख्यतः निम्न भागों से मिलकर बनता है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>भाग</th><th>पूरा नाम</th><th>कार्य</th></tr></thead><tbody><tr><td>CU</td><td>कंट्रोल यूनिट (Control Unit)</td><td>निर्देशों को डिकोड करना तथा कंप्यूटर के अन्य सभी भागों (मेमोरी, ALU, I/O) को नियंत्रित एवं समन्वित करना</td></tr><tr><td>ALU</td><td>अरिथमेटिक लॉजिक यूनिट (Arithmetic Logic Unit)</td><td>गणितीय संक्रियाएं (जोड़, घटाव, गुणा, भाग) व तार्किक संक्रियाएं (AND, OR, NOT, तुलना) करना</td></tr><tr><td>Registers</td><td>रजिस्टर</td><td>डेटा व निर्देशों को अस्थायी रूप से स्टोर करना — कंप्यूटर की सबसे तेज़ मेमोरी</td></tr><tr><td>Bus</td><td>बस (Data/Address/Control Bus)</td><td>CPU, मेमोरी व I/O उपकरणों के बीच डेटा व सिग्नल स्थानांतरण का मार्ग</td></tr></tbody></table></div>
+<h3 class="ch-h3">2.4 इनपुट एवं आउटपुट उपकरण (Input &amp; Output Devices)</h3>
+<p>इनपुट डिवाइस वे उपकरण हैं जिनसे डेटा कंप्यूटर के अंदर भेजा जाता है, जबकि आउटपुट डिवाइस वे हैं जिनसे प्रोसेस किया गया परिणाम बाहर प्रदर्शित होता है। कुछ उपकरण दोनों कार्य एक साथ करते हैं (जैसे टचस्क्रीन)।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>उपकरण (Device)</th><th>प्रकार</th><th>कार्य/उपयोग</th></tr></thead><tbody><tr><td>कीबोर्ड (Keyboard)</td><td>इनपुट</td><td>टेक्स्ट व कमांड टाइप करना</td></tr><tr><td>माउस (Mouse)</td><td>इनपुट</td><td>पॉइंटिंग, क्लिक व चयन (Selection) करना</td></tr><tr><td>स्कैनर (Scanner)</td><td>इनपुट</td><td>कागज़ी दस्तावेज़/फोटो को डिजिटल रूप में बदलना</td></tr><tr><td>बायोमेट्रिक डिवाइस</td><td>इनपुट</td><td>फिंगरप्रिंट/आइरिस स्कैन द्वारा पहचान (आधार, बैंकिंग, डिजी यात्रा)</td></tr><tr><td>OMR/OCR उपकरण</td><td>इनपुट</td><td>परीक्षा उत्तर-पत्रक स्कैनिंग व मुद्रित टेक्स्ट की पहचान</td></tr><tr><td>माइक्रोफोन/वेबकैम</td><td>इनपुट</td><td>आवाज़ व वीडियो रिकॉर्डिंग</td></tr><tr><td>मॉनिटर (Monitor)</td><td>आउटपुट</td><td>दृश्य परिणाम प्रदर्शन (LED/LCD/OLED स्क्रीन)</td></tr><tr><td>प्रिंटर (Printer)</td><td>आउटपुट</td><td>कागज़ पर प्रिंट — इंकजेट, लेज़र, 3D प्रिंटर आदि प्रकार</td></tr><tr><td>स्पीकर (Speaker)</td><td>आउटपुट</td><td>ध्वनि आउटपुट</td></tr><tr><td>प्रोजेक्टर व प्लॉटर</td><td>आउटपुट</td><td>बड़ी स्क्रीन प्रदर्शन व बड़े नक़्शे/चित्र प्रिंट</td></tr><tr><td>टचस्क्रीन (Touchscreen)</td><td>इनपुट + आउटपुट</td><td>स्पर्श से इनपुट देना तथा साथ ही परिणाम प्रदर्शित करना</td></tr><tr><td>मॉडेम (Modem)</td><td>इनपुट + आउटपुट</td><td>नेटवर्क के माध्यम से डेटा भेजना व प्राप्त करना</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  बायोमेट्रिक इनपुट — आपके आधार कार्ड की कहानी</div><p>आधार कार्ड बनवाते समय आपकी फिंगरप्रिंट और आइरिस (आँख की पुतली) स्कैन बायोमेट्रिक इनपुट डिवाइस द्वारा ली जाती है। चूंकि यह डेटा किसी भी दो व्यक्तियों में एक जैसा नहीं होता, इसलिए इसे पहचान का सबसे सुरक्षित तरीका माना जाता है। यही तकनीक बैंकों, हवाई अड्डों (जैसे 'डिजी यात्रा' सुविधा) और स्मार्टफोन अनलॉक करने में भी उपयोग होती है।</p></div>
+<p>स्पर्श तकनीक (Touchscreen Technology): टचस्क्रीन दो प्रमुख प्रकार की होती हैं — रेज़िस्टिव (Resistive, दबाव पर आधारित, पुराने फीचर फोन में) और कैपेसिटिव (Capacitive, विद्युत संकेत पर आधारित, आज के स्मार्टफोन/टैबलेट में)। कैपेसिटिव टचस्क्रीन अधिक संवेदनशील (Sensitive) होती है और मल्टी-टच (एक साथ कई उंगलियों से इशारा) को सपोर्ट करती है।</p>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">मेमोरी: RAM, ROM, कैश एवं सेकेंडरी स्टोरेज (Computer Memory &amp; Storage)</span></h2>
+<h3 class="ch-h3">3.1 मेमोरी पदानुक्रम (Memory Hierarchy)</h3>
+<p>कंप्यूटर में मेमोरी को गति (Speed), क्षमता (Capacity) व लागत (Cost) के आधार पर एक पिरामिड-रूपी संरचना में व्यवस्थित किया जाता है — जितना ऊपर जाएं, गति उतनी तेज़ पर क्षमता व आकार उतना ही कम; जितना नीचे जाएं, क्षमता उतनी अधिक पर गति उतनी धीमी:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th></th><th>रजिस्टर (Registers) — सबसे तेज़, CPU के अंदर, न्यूनतम क्षमता</th><th></th></tr></thead><tbody><tr><td></td><td>कैश मेमोरी (Cache — L1/L2/L3) — बहुत तेज़, छोटी क्षमता</td><td></td></tr><tr><td></td><td>RAM (Primary Memory) — तेज़, अस्थायी (Volatile)</td><td></td></tr><tr><td></td><td>सेकेंडरी स्टोरेज (HDD/SSD) — धीमी पर स्थायी (Non-Volatile), सबसे बड़ी क्षमता</td><td></td></tr></tbody></table></div>
+<p>चित्र: मेमोरी पदानुक्रम पिरामिड (Memory Hierarchy) — ऊपर तेज़/छोटी, नीचे धीमी/बड़ी</p>
+<h3 class="ch-h3">3.2 RAM (Random Access Memory)</h3>
+<p>RAM कंप्यूटर की मुख्य (Primary) कार्यशील मेमोरी है, जो CPU द्वारा तुरंत उपयोग किए जाने वाले डेटा व प्रोग्राम को अस्थायी रूप से स्टोर करती है। यह 'वोलेटाइल (Volatile)' मेमोरी है — यानी कंप्यूटर बंद होते ही इसमें रखा डेटा मिट जाता है।</p>
+<ul class="ch-list"><li>SRAM (Static RAM) — तेज़, महंगी, कैश मेमोरी में उपयोग होती है।</li><li>DRAM (Dynamic RAM) — धीमी, सस्ती, कंप्यूटर की मुख्य RAM के रूप में उपयोग होती है, इसे बार-बार रिफ्रेश करना पड़ता है।</li><li>आज के कंप्यूटर/लैपटॉप में DDR5 (Double Data Rate 5) पीढ़ी की RAM उपयोग हो रही है, जो पुरानी DDR4 की तुलना में लगभग दोगुनी गति व कम बिजली खपत देती है।</li></ul>
+<h3 class="ch-h3">3.3 ROM (Read Only Memory)</h3>
+<p>ROM एक 'नॉन-वोलेटाइल (Non-Volatile)' मेमोरी है, जिसमें डेटा स्थायी रूप से स्टोर रहता है और बिजली बंद होने पर भी मिटता नहीं। इसमें कंप्यूटर को चालू (Boot) करने के लिए आवश्यक बुनियादी निर्देश (Firmware/BIOS) संग्रहीत रहते हैं।</p>
+<ul class="ch-list"><li>PROM (Programmable ROM) — एक बार प्रोग्राम की जा सकती है।</li><li>EPROM (Erasable Programmable ROM) — पराबैंगनी (UV) प्रकाश से मिटाई व दोबारा प्रोग्राम की जा सकती है।</li><li>EEPROM (Electrically Erasable Programmable ROM) — विद्युत संकेत से मिटाई व दोबारा प्रोग्राम की जा सकती है — आज के BIOS चिप्स में उपयोग।</li></ul>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">RAM — अस्थायी मेमोरी</div><ul class="ch-list"><li>वोलेटाइल (Volatile) — बिजली बंद होने पर डेटा मिट जाता है</li><li>CPU द्वारा तुरंत पढ़ी व लिखी (Read/Write) जा सकती है</li><li>कंप्यूटर की गति (Multitasking) निर्धारित करती है</li><li>उदाहरण: DDR4, DDR5 RAM मॉड्यूल</li></ul></div><div class="twocol-col"><div class="twocol-head">ROM — स्थायी मेमोरी</div><ul class="ch-list"><li>नॉन-वोलेटाइल (Non-Volatile) — बिजली बंद होने पर भी डेटा सुरक्षित रहता है</li><li>सामान्यतः केवल पढ़ी (Read-Only) जा सकती है</li><li>कंप्यूटर को चालू करने हेतु आवश्यक (BIOS/Firmware)</li><li>उदाहरण: PROM, EPROM, EEPROM</li></ul></div></div>
+<h3 class="ch-h3">3.4 कैश मेमोरी (Cache Memory)</h3>
+<p>कैश मेमोरी CPU व RAM के बीच स्थित एक बहुत तेज़, छोटी क्षमता वाली मेमोरी है, जो CPU द्वारा बार-बार उपयोग किए जाने वाले डेटा/निर्देशों को अस्थायी रूप से रखती है, ताकि CPU को हर बार धीमी RAM तक न जाना पड़े। इसके तीन स्तर होते हैं:</p>
+<h3 class="ch-h3">1. L1 कैश — CPU के सबसे नज़दीक, सबसे तेज़, सबसे छोटी क्षमता (कुछ KB)।</h3>
+<h3 class="ch-h3">2. L2 कैश — L1 से थोड़ी बड़ी व थोड़ी धीमी (कुछ सौ KB से कुछ MB)।</h3>
+<h3 class="ch-h3">3. L3 कैश — सबसे बड़ी व अपेक्षाकृत धीमी, कई कोर (Core) के बीच साझा होती है (कुछ MB)।</h3>
+<h3 class="ch-h3">3.5 सेकेंडरी स्टोरेज (Secondary Storage)</h3>
+<p>सेकेंडरी स्टोरेज वह मेमोरी है जिसमें डेटा दीर्घकाल तक स्थायी रूप से (Non-Volatile) रखा जाता है — जैसे दस्तावेज़, फोटो, वीडियो व सॉफ्टवेयर फाइलें। CPU इस डेटा को सीधे प्रोसेस नहीं करता, पहले उसे RAM में लाया जाता है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>डिवाइस</th><th>अनुमानित क्षमता (2026)</th><th>विशेषता</th></tr></thead><tbody><tr><td>हार्ड डिस्क (HDD)</td><td>500 GB - 20 TB</td><td>घूमने वाली चुंबकीय डिस्क (Magnetic Disk); सस्ती परंतु अपेक्षाकृत धीमी</td></tr><tr><td>SSD (NVMe/SATA)</td><td>128 GB - 8 TB+</td><td>कोई गतिशील पुर्ज़ा नहीं (No Moving Parts); HDD की तुलना में 5-10 गुना तेज़ रीड-राइट स्पीड</td></tr><tr><td>पेन ड्राइव (USB Drive)</td><td>8 GB - 1 TB</td><td>पोर्टेबल, USB पोर्ट से जुड़ने वाली फ्लैश मेमोरी</td></tr><tr><td>मेमोरी कार्ड (microSD)</td><td>16 GB - 1 TB+</td><td>मोबाइल फोन व कैमरा में उपयोग होने वाली छोटी फ्लैश मेमोरी</td></tr><tr><td>ऑप्टिकल डिस्क (CD/DVD/Blu-ray)</td><td>700 MB - 100 GB</td><td>लेज़र तकनीक पर आधारित; आज लगभग अप्रचलित (Obsolete)</td></tr><tr><td>क्लाउड स्टोरेज (Cloud Storage)</td><td>व्यावहारिक रूप से असीमित</td><td>इंटरनेट के माध्यम से दूरस्थ सर्वर पर डेटा स्टोर — जैसे Google Drive, iCloud, OneDrive</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  DDR5 RAM और NVMe SSD — आपका कंप्यूटर पहले से कितना तेज़ हुआ</div><p>2026 में आने वाले नए लैपटॉप/कंप्यूटर DDR5 रैम के साथ आते हैं, जो DDR4 की तुलना में लगभग दोगुनी गति और कम बिजली खपत देती है। वहीं NVMe SSD, पुरानी हार्ड डिस्क (HDD) की तुलना में 5-10 गुना तेज़ डेटा रीड-राइट स्पीड देती है — जिससे आज का कंप्यूटर मात्र कुछ सेकंड में ही बूट (Boot) हो जाता है, जबकि पहले यह प्रक्रिया कई मिनट लेती थी।</p></div>
+<h3 class="ch-h3">3.6 मेमोरी की इकाइयाँ (Memory Units)</h3>
+<p>कंप्यूटर मेमोरी को निम्नलिखित इकाइयों में मापा जाता है, जहां हर बड़ी इकाई अपनी छोटी इकाई से 1024 गुना बड़ी होती है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>इकाई (Unit)</th><th>बराबर (Equal to)</th></tr></thead><tbody><tr><td>1 बाइट (Byte)</td><td>8 बिट्स (Bits)</td></tr><tr><td>1 किलोबाइट (KB)</td><td>1024 बाइट्स</td></tr><tr><td>1 मेगाबाइट (MB)</td><td>1024 KB</td></tr><tr><td>1 गीगाबाइट (GB)</td><td>1024 MB</td></tr><tr><td>1 टेराबाइट (TB)</td><td>1024 GB</td></tr><tr><td>1 पेटाबाइट (PB)</td><td>1024 TB</td></tr></tbody></table></div>
+<p>कैश मेमोरी बनाम RAM — गति में अंतर क्यों?: कैश मेमोरी, SRAM (Static RAM) तकनीक पर आधारित होती है जिसे बार-बार रिफ्रेश करने की ज़रूरत नहीं पड़ती, इसलिए यह RAM (जो DRAM तकनीक पर आधारित है) से कई गुना तेज़ होती है। यही कारण है कि CPU पहले कैश में डेटा खोजता है, न मिलने पर ही RAM की ओर जाता है — इसे 'कैश हिट/मिस' कहा जाता है।</p>
+<h2 class="ch-h2"><span class="ch-h2-num">4</span><span class="ch-h2-text">ऑपरेटिंग सिस्टम (Operating System): प्रकार एवं कार्य</span></h2>
+<h3 class="ch-h3">4.1 ऑपरेटिंग सिस्टम क्या है?</h3>
+<p>ऑपरेटिंग सिस्टम (OS) एक विशेष प्रकार का सिस्टम सॉफ्टवेयर है, जो उपयोगकर्ता (User) और कंप्यूटर हार्डवेयर के बीच एक सेतु (Interface) का कार्य करता है। बिना OS के कोई भी कंप्यूटर, स्मार्टफोन या टैबलेट कार्य नहीं कर सकता — यह हार्डवेयर के सभी संसाधनों (CPU, मेमोरी, स्टोरेज, I/O डिवाइस) का प्रबंधन करता है तथा एप्लीकेशन सॉफ्टवेयर को चलाने के लिए आवश्यक वातावरण प्रदान करता है।</p>
+<h3 class="ch-h3">4.2 ऑपरेटिंग सिस्टम के प्रमुख कार्य (Functions)</h3>
+<ul class="ch-list"><li>प्रोसेस प्रबंधन (Process Management) — कई कार्यों (Processes) के बीच CPU समय व संसाधनों का बंटवारा तथा उन्हें बनाना, चलाना व समाप्त करना।</li><li>मेमोरी प्रबंधन (Memory Management) — प्रत्येक प्रोग्राम को आवश्यक मेमोरी आवंटित करना, उपयोग समाप्त होने पर मुक्त करना तथा वर्चुअल मेमोरी (डिस्क को अतिरिक्त RAM की तरह उपयोग) की व्यवस्था करना।</li><li>फाइल प्रबंधन (File Management) — फाइलों व फोल्डरों का निर्माण, संपादन, विलोपन (Deletion) व व्यवस्थित भंडारण।</li><li>डिवाइस प्रबंधन (Device Management) — प्रिंटर, स्कैनर, कीबोर्ड जैसे बाह्य उपकरणों को नियंत्रित करना (डिवाइस ड्राइवर के माध्यम से)।</li><li>सुरक्षा एवं अभिगम नियंत्रण (Security &amp; Access Control) — पासवर्ड, यूज़र अकाउंट व फायरवॉल के माध्यम से अनधिकृत उपयोग रोकना।</li><li>यूज़र इंटरफेस (User Interface) — उपयोगकर्ता को कंप्यूटर से संवाद करने का माध्यम (GUI अथवा CLI) प्रदान करना।</li></ul>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>उपयोगकर्ता User</th><th>➜</th><th>ऑपरेटिंग सिस्टम Interface</th><th>➜</th><th>हार्डवेयर CPU, RAM, Storage</th></tr></thead><tbody></tbody></table></div>
+<p>चित्र: ऑपरेटिंग सिस्टम — उपयोगकर्ता और हार्डवेयर के बीच सेतु (Interface)</p>
+<h3 class="ch-h3">4.3 ऑपरेटिंग सिस्टम के प्रकार (Types of OS)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रकार (Type)</th><th>विशेषता</th><th>उदाहरण</th></tr></thead><tbody><tr><td>बैच OS (Batch)</td><td>कार्यों को समूह (Batch) में एकत्र कर बिना यूज़र इंटरैक्शन के क्रमवार प्रोसेस करना</td><td>प्रारंभिक मेनफ्रेम सिस्टम</td></tr><tr><td>टाइम-शेयरिंग OS</td><td>एक साथ कई उपयोगकर्ताओं को बारी-बारी CPU समय देकर सेवा प्रदान करना</td><td>Unix</td></tr><tr><td>रियल-टाइम OS (RTOS)</td><td>तयशुदा समय-सीमा के भीतर तुरंत प्रतिक्रिया देना — देरी अस्वीकार्य</td><td>विमान नियंत्रण प्रणाली, मेडिकल उपकरण, ISRO के मिशन-नियंत्रण सॉफ्टवेयर</td></tr><tr><td>डिस्ट्रिब्यूटेड OS</td><td>नेटवर्क से जुड़े कई कंप्यूटरों को एक इकाई की तरह संचालित करना</td><td>बड़े सर्वर नेटवर्क सिस्टम</td></tr><tr><td>मोबाइल OS</td><td>स्मार्टफोन व टैबलेट के लिए विशेष रूप से बना, टच-आधारित</td><td>Android, iOS</td></tr></tbody></table></div>
+<h3 class="ch-h3">4.4 प्रमुख ऑपरेटिंग सिस्टम एवं नवीनतम संस्करण (2026 के अनुसार नवीनतम आंकड़े)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>ऑपरेटिंग सिस्टम</th><th>नवीनतम स्थिति (जुलाई 2026)</th><th>डेवलपर</th></tr></thead><tbody><tr><td>Windows</td><td>Windows 11 वर्तमान में सक्रिय; Windows 12 (कोडनेम 'Hudson Valley Next') 2026 में AI-केंद्रित नई पीढ़ी के रूप में अपेक्षित</td><td>Microsoft</td></tr><tr><td>macOS</td><td>Apple का नवीनतम macOS संस्करण — Apple Silicon (M-सीरीज़ चिप) पर आधारित</td><td>Apple</td></tr><tr><td>Linux</td><td>ओपन-सोर्स; अनेक डिस्ट्रीब्यूशन (Ubuntu, Fedora, Red Hat आदि) — सर्वर व सुपरकंप्यूटर में व्यापक उपयोग</td><td>Open Source समुदाय</td></tr><tr><td>Android</td><td>Android 17 — जून 2026 में जारी किया गया नवीनतम संस्करण</td><td>Google</td></tr><tr><td>iOS</td><td>Apple के iPhone उपकरणों हेतु नवीनतम iOS संस्करण</td><td>Apple</td></tr></tbody></table></div>
+<h3 class="ch-h3">4.5 GUI बनाम CLI</h3>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">GUI (Graphical User Interface)</div><ul class="ch-list"><li>चित्र/आइकन आधारित दृश्य इंटरफेस</li><li>माउस से संचालन — सीखना व उपयोग करना आसान</li><li>नए उपयोगकर्ताओं के लिए सर्वाधिक उपयुक्त</li><li>उदाहरण: Windows, macOS, Android होम स्क्रीन</li></ul></div><div class="twocol-col"><div class="twocol-head">CLI (Command Line Interface)</div><ul class="ch-list"><li>टेक्स्ट कमांड टाइप कर संचालन</li><li>तकनीकी जानकारी व कमांड याद रखना आवश्यक</li><li>तेज़ व कम सिस्टम संसाधन खपत करता है</li><li>उदाहरण: MS-DOS, Linux Terminal</li></ul></div></div>
+<div class="tip-box"><div class="tip-title">💡  आपके स्मार्टफोन में चल रहा ऑपरेटिंग सिस्टम</div><p>जब आप स्मार्टफोन पर एक साथ WhatsApp पर चैट करते हैं, गाना सुनते हैं और नोटिफिकेशन देखते हैं — यह सब Android या iOS ऑपरेटिंग सिस्टम की 'मल्टीटास्किंग' क्षमता के कारण संभव होता है। OS ही तय करता है कि किस ऐप को कितनी मेमोरी व बैटरी मिले, ताकि फोन धीमा न पड़े। जून 2026 में जारी Android 17, बैटरी प्रबंधन व AI-आधारित फीचर्स में और सुधार लेकर आया है।</p></div>
+<p>AI-एकीकृत ऑपरेटिंग सिस्टम — Windows 12: 2026 में लॉन्च होने जा रहा Windows 12 (कोडनेम 'Hudson Valley Next') कृत्रिम बुद्धिमत्ता (AI) को कोई अतिरिक्त फीचर नहीं, बल्कि सिस्टम का मूल हिस्सा (Core Part) बना रहा है — Copilot अब एक वैकल्पिक सहायक की बजाय केंद्रीय नियंत्रण इकाई की तरह कार्य करेगा। इसके लिए कम-से-कम 40 TOPS क्षमता वाली NPU (Neural Processing Unit) चिप आवश्यक होगी। यह दर्शाता है कि भविष्य के ऑपरेटिंग सिस्टम पारंपरिक कार्यों के साथ-साथ AI को भी मूल रूप से सँभालेंगे।</p>
+<h3 class="ch-h3">🏛️  डिजिटल एवं तकनीकी अवसंरचना — भारत की प्रमुख पहलें</h3><ul class="ch-list"><li>प्रधानमंत्री ग्रामीण डिजिटल साक्षरता अभियान (PMGDISHA) — ग्रामीण भारत के 6 करोड़ लोगों को डिजिटल साक्षर बनाने का लक्ष्य; अब तक 7.35 करोड़ पंजीकृत, 6.39 करोड़ प्रशिक्षित तथा 4.78 करोड़ प्रमाणित — कंप्यूटर व डिजिटल डिवाइस का बुनियादी उपयोग सिखाने वाला भारत का सबसे बड़ा कार्यक्रम</li><li>राष्ट्रीय सुपरकंप्यूटिंग मिशन (National Supercomputing Mission - NSM) — इलेक्ट्रॉनिकी एवं सूचना प्रौद्योगिकी मंत्रालय (MeitY) व विज्ञान-प्रौद्योगिकी विभाग (DST) की संयुक्त पहल; C-DAC एवं IISc बेंगलुरु द्वारा क्रियान्वित; PARAM Rudra श्रृंखला के अंतर्गत स्वदेशी सुपरकंप्यूटर निर्माण</li><li>भारत सेमीकंडक्टर मिशन (India Semiconductor Mission - ISM) — ₹1.64 लाख करोड़ के 12 चिप-निर्माण प्रोजेक्ट स्वीकृत; टाटा इलेक्ट्रॉनिक्स व ASML (नीदरलैंड) का गुजरात के धोलेरा में फैब्रिकेशन प्लांट समझौता (मई 2026); पहला स्वदेशी सिलिकॉन उत्पादन दिसंबर 2026 तक लक्षित; ISM 2.0 में ₹1.25 लाख करोड़ का अतिरिक्त आवंटन स्वीकृत</li></ul>
+<h3 class="ch-h3">4.6 राजस्थान में कंप्यूटर शिक्षा — RKCL एवं RS-CIT</h3>
+<p>राजस्थान नॉलेज कॉर्पोरेशन लिमिटेड (Rajasthan Knowledge Corporation Limited - RKCL) राज्य सरकार व उद्योग जगत की संयुक्त पहल (Public-Private Partnership) है, जिसकी स्थापना राजस्थान के हर नागरिक तक बुनियादी कंप्यूटर शिक्षा पहुंचाने के उद्देश्य से की गई थी। इसके अंतर्गत चलाया जाने वाला 'RS-CIT (Rajasthan State Certificate in Information Technology)' कोर्स राज्य का सबसे लोकप्रिय बुनियादी कंप्यूटर साक्षरता कार्यक्रम है, जो अब तक लाखों युवाओं व सरकारी कर्मचारियों को कंप्यूटर के मूल सिद्धांत (हार्डवेयर, सॉफ्टवेयर, ऑपरेटिंग सिस्टम, इंटरनेट) सिखा चुका है — कई राजस्थान सरकार की भर्तियों (जैसे पटवारी, LDC) में RS-CIT प्रमाण-पत्र अनिवार्य योग्यता के रूप में मांगा जाता है।</p>
+<div class="angle-box"><div class="angle-title">🎯  कंप्यूटर विज्ञान की मूल बातें — RAS Mains उत्तर लेखन कोण 5-अंक: 60-70 शब्द  |  10-अंक: ~120 शब्द</div><ul class="ch-list"><li>कंप्यूटर की पीढ़ियों (Generations) पर प्रश्न में हमेशा तकनीक + काल + उदाहरण — तीनों को साथ जोड़कर उत्तर दें, केवल सूची न दें।</li><li>हार्डवेयर-सॉफ्टवेयर व इनपुट-आउटपुट से जुड़े प्रश्नों में वास्तविक जीवन के उदाहरण (जैसे आधार बायोमेट्रिक, डिजी यात्रा) जोड़ने से उत्तर प्रभावी व विशिष्ट बनता है।</li><li>मेमोरी संबंधी प्रश्नों में सदैव Volatile बनाम Non-Volatile का स्पष्ट अंतर एक तालिका या दो-स्तंभ में प्रस्तुत करें।</li><li>ऑपरेटिंग सिस्टम से जुड़े प्रश्नों में भारत के डिजिटल इंडिया, राष्ट्रीय सुपरकंप्यूटिंग मिशन जैसे करेंट अफेयर्स जोड़ने से उत्तर में गहराई व अद्यतनता झलकती है।</li><li>यदि प्रश्न "भारत में कंप्यूटर तकनीक के विकास" पर केंद्रित हो, तो PARAM Rudra सुपरकंप्यूटर, भारत सेमीकंडक्टर मिशन तथा PMGDISHA का उल्लेख अवश्य करें — यह उत्तर को राष्ट्रीय संदर्भ (Rajasthan/India Context) से जोड़ता है।</li></ul></div>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (PYQs)  📝</h3><p>Q1. कंप्यूटर की पीढ़ियों (Generations) को उनकी विशेषताओं व उदाहरणों सहित समझाइए। Q2. "आधुनिक कंप्यूटर के जनक" किसे कहा जाता है और क्यों? एडा लवलेस का इसमें क्या योगदान था? Q3. RAM व ROM में अंतर स्पष्ट कीजिए। Q4. कोई चार इनपुट व चार आउटपुट उपकरणों के नाम बताते हुए उनके कार्य लिखिए। Q5. ऑपरेटिंग सिस्टम के प्रमुख कार्य (Functions) कौन-कौन से हैं? संक्षेप में समझाइए। Q6. कैश मेमोरी क्या है? यह RAM से किस प्रकार भिन्न है? Q7. GUI तथा CLI में अंतर बताइए। Q8. भारत के राष्ट्रीय सुपरकंप्यूटिंग मिशन (NSM) एवं PARAM Rudra पर संक्षिप्त टिप्पणी लिखिए।</p>
+<h3 class="ch-h3">📌  अध्याय सारांश (Chapter Summary)</h3><ul class="ch-list"><li>कंप्यूटर एक इलेक्ट्रॉनिक उपकरण है जो इनपुट को प्रोसेस कर आउटपुट देता है (IPO साइकल); अबेकस से लेकर चार्ल्स बैबेज के एनालिटिकल इंजन तक की यात्रा ही आधुनिक कंप्यूटर की नींव है।</li><li>कंप्यूटर की पाँच पीढ़ियाँ वैक्यूम ट्यूब से शुरू होकर आज कृत्रिम बुद्धिमत्ता (AI) व क्वांटम कंप्यूटिंग तक पहुंच चुकी हैं — हर पीढ़ी ने आकार घटाया और गति-क्षमता बढ़ाई।</li><li>हार्डवेयर (भौतिक भाग) व सॉफ्टवेयर (निर्देशों का समूह) एक-दूसरे के पूरक हैं; इनपुट-आउटपुट उपकरण इनके बीच सेतु का कार्य करते हैं।</li><li>मेमोरी पदानुक्रम (Registers → कैश → RAM → सेकेंडरी स्टोरेज) में जितना ऊपर जाएं, गति उतनी तेज़ पर क्षमता उतनी कम होती है — RAM अस्थायी (Volatile) है जबकि ROM व सेकेंडरी स्टोरेज स्थायी (Non-Volatile)।</li><li>ऑपरेटिंग सिस्टम उपयोगकर्ता व हार्डवेयर के बीच सेतु है; यह प्रोसेस, मेमोरी, फाइल व डिवाइस प्रबंधन जैसे कार्य करता है तथा GUI/CLI इंटरफेस प्रदान करता है।</li><li>भारत PARAM Rudra सुपरकंप्यूटर, भारत सेमीकंडक्टर मिशन तथा PMGDISHA जैसी पहलों के माध्यम से कंप्यूटिंग क्षेत्र में आत्मनिर्भरता की दिशा में तेज़ी से आगे बढ़ रहा है।</li><li>यह अध्याय आगे आने वाले नेटवर्किंग, इंटरनेट, ICT व AI जैसे अध्यायों की आधारशिला है — यहां समझी गई मेमोरी, हार्डवेयर-सॉफ्टवेयर व OS की अवधारणाएं आगे बार-बार उपयोग होंगी।</li></ul><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="vigyan-praudyogiki.html" class="ch-nav-btn">← मुख्य पृष्ठ पर वापस</a>
+  <a href="vigyan-praudyogiki-ch02-networking.html" class="ch-nav-btn ch-nav-next">अध्याय 2: नेटवर्किंग, दूरसंचार एवं मोबाइल टेलीफोनी →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="vigyan-praudyogiki.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 2: नेटवर्किंग, दूरसंचार एवं मोबाइल टेलीफोनी — विज्ञान एवं प्रौद्योगिकी | Omkar Sir</title>
+<meta name="description" content="नेटवर्किंग, दूरसंचार एवं मोबाइल टेलीफोनी (Networking, Telecommunication &amp; Mobile Telephony) — RAS Pre+Mains के लिए विज्ञान एवं प्रौद्योगिकी का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+.topic-divider{text-align:center;margin:36px 0 20px;position:relative}
+.topic-divider span{background:#1B2A6B;color:#fff;padding:8px 24px;border-radius:30px;font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif;display:inline-block}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">📡 अध्याय 2/10 — विज्ञान एवं प्रौद्योगिकी</div>
+  <h1>नेटवर्किंग, दूरसंचार एवं मोबाइल टेलीफोनी</h1>
+  <div class="ch-sub">Networking, Telecommunication &amp; Mobile Telephony | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>नेटवर्किंग: प्रकार, टोपोलॉजी एवं उपकरण (Networking: Types, Topology &amp; Devices)</li><li>एनालॉग एवं डिजिटल दूरसंचार (Analog vs Digital Telecommunication)</li><li>आवृत्ति स्पेक्ट्रम (Frequency Spectrum): 4G/5G बैंड</li><li>मोबाइल टेलीफोनी: 1G से 5G तथा भविष्य के 6G तक का विकास</li></ol></div>
+<div class="angle-box"><div class="angle-title">🌟  क्या आप जानते हैं?</div><p>साल 1876 — अलेक्जेंडर ग्राहम बेल ने अपने सहायक को कमरे के दूसरे कोने से आवाज़ दी: "Mr. Watson, come here, I want to see you" — यह इतिहास का पहला टेलीफोन कॉल था, जो तार के सहारे मुश्किल से कुछ मीटर दूर तक पहुंचा था। आज, राजस्थान के किसी दूरदराज़ गांव में बैठा एक किसान अपने स्मार्टफोन से अमेरिका में पढ़ रहे अपने बेटे को बिना किसी तार के, बिना किसी रुकावट के हाई-डेफिनिशन वीडियो कॉल कर लेता है — और आवाज़/वीडियो मिलीसेकंड में हज़ारों किलोमीटर की यात्रा तय कर लेते हैं। यह चमत्कार कैसे संभव हुआ? इसके पीछे है नेटवर्किंग (Networking) और दूरसंचार (Telecommunication) की वह तकनीकी क्रांति, जिसने एनालॉग तारों से डिजिटल 5G तरंगों तक का सफर तय किया है। आइए, इस अध्याय में समझते हैं कि कंप्यूटर व मोबाइल आपस में कैसे जुड़ते हैं, सिग्नल कैसे यात्रा करता है, और भारत आज इस दूरसंचार क्रांति में विश्व में कहां खड़ा है।</p></div>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">नेटवर्किंग: प्रकार, टोपोलॉजी एवं उपकरण (Networking: Types, Topology &amp; Devices)</span></h2>
+<h3 class="ch-h3">1.1 नेटवर्क क्या है? (What is a Network?)</h3>
+<p>नेटवर्क दो या दो से अधिक कंप्यूटरों/उपकरणों का ऐसा समूह है, जो आपस में किसी माध्यम (तार अथवा वायरलेस) से जुड़े होते हैं ताकि वे डेटा, संसाधन (जैसे प्रिंटर) और सूचना का आदान-प्रदान कर सकें। नेटवर्किंग का मुख्य उद्देश्य है — संसाधन साझाकरण (Resource Sharing), संचार (Communication) की सुविधा, तथा डेटा को केंद्रीकृत रूप से प्रबंधित करना।</p>
+<h3 class="ch-h3">1.2 नेटवर्क के प्रकार — आकार के आधार पर (Types of Network by Size)</h3>
+<p>भौगोलिक विस्तार (Geographical Coverage) के आधार पर नेटवर्क को मुख्यतः चार श्रेणियों में बांटा जाता है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रकार</th><th>पूरा नाम</th><th>सीमा (Range)</th><th>उदाहरण</th></tr></thead><tbody><tr><td>PAN</td><td>पर्सनल एरिया नेटवर्क (Personal Area Network)</td><td>कुछ मीटर तक (~10 मी.)</td><td>ब्लूटूथ हेडफोन, स्मार्टवॉच व मोबाइल के बीच कनेक्शन</td></tr><tr><td>LAN</td><td>लोकल एरिया नेटवर्क (Local Area Network)</td><td>एक भवन/परिसर (कुछ किमी तक)</td><td>स्कूल/ऑफिस का इंटरनल नेटवर्क, साइबर कैफे</td></tr><tr><td>MAN</td><td>मेट्रोपॉलिटन एरिया नेटवर्क (Metropolitan Area Network)</td><td>एक शहर (5-50 किमी)</td><td>केबल TV नेटवर्क, नगर निगम का सरकारी नेटवर्क</td></tr><tr><td>WAN</td><td>वाइड एरिया नेटवर्क (Wide Area Network)</td><td>देश/महाद्वीप/संपूर्ण विश्व</td><td>इंटरनेट, बैंकों का राष्ट्रव्यापी ATM नेटवर्क</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th></th><th>WAN — वाइड एरिया नेटवर्क (देश/विश्व स्तर, जैसे इंटरनेट)</th><th></th></tr></thead><tbody><tr><td></td><td>MAN — मेट्रोपॉलिटन एरिया नेटवर्क (एक शहर)</td><td></td></tr><tr><td></td><td>LAN — लोकल एरिया नेटवर्क (एक भवन/परिसर)</td><td></td></tr><tr><td></td><td>PAN — पर्सनल एरिया नेटवर्क (कुछ मीटर)</td><td></td></tr></tbody></table></div>
+<p>चित्र: नेटवर्क के प्रकार — आकार व सीमा के अनुसार (नीचे से ऊपर बढ़ता दायरा)</p>
+<h3 class="ch-h3">1.3 नेटवर्क टोपोलॉजी (Network Topology)</h3>
+<p>टोपोलॉजी वह भौतिक अथवा तार्किक व्यवस्था (Layout) है, जिसमें नेटवर्क के विभिन्न उपकरण (नोड्स) आपस में जुड़े होते हैं। सही टोपोलॉजी का चुनाव नेटवर्क की गति, विश्वसनीयता व लागत तय करता है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>टोपोलॉजी</th><th>संरचना</th><th>मुख्य लाभ</th><th>मुख्य हानि</th></tr></thead><tbody><tr><td>बस (Bus)</td><td>सभी उपकरण एक ही केंद्रीय केबल (Backbone) से जुड़े</td><td>सस्ती व स्थापित करना आसान</td><td>मुख्य केबल टूटने पर पूरा नेटवर्क ठप</td></tr><tr><td>स्टार (Star)</td><td>सभी उपकरण एक केंद्रीय हब/स्विच से जुड़े</td><td>एक नोड खराब होने पर बाकी नेटवर्क सुरक्षित; सबसे लोकप्रिय LAN संरचना</td><td>केंद्रीय हब खराब होने पर पूरा नेटवर्क ठप</td></tr><tr><td>रिंग (Ring)</td><td>हर उपकरण अपने अगल-बगल के दो उपकरणों से जुड़ा — गोलाकार लूप</td><td>डेटा प्रवाह व्यवस्थित; टकराव (Collision) कम</td><td>एक कड़ी टूटने पर पूरा लूप प्रभावित (जब तक डुअल-रिंग न हो)</td></tr><tr><td>मेश (Mesh)</td><td>हर उपकरण सीधे हर दूसरे उपकरण से जुड़ा</td><td>अत्यधिक विश्वसनीय व फॉल्ट-टॉलरेंट; सैन्य नेटवर्क में उपयोग</td><td>महंगी व जटिल — केबल/कनेक्शन बहुत अधिक चाहिए</td></tr><tr><td>ट्री (Tree)</td><td>स्टार व बस का संयोजन — पदानुक्रमिक (Hierarchical) संरचना</td><td>अत्यधिक स्केलेबल; बड़े WAN के लिए उपयुक्त</td><td>मुख्य शाखा (Root) खराब होने पर उससे जुड़े सभी हिस्से प्रभावित</td></tr><tr><td>हाइब्रिड (Hybrid)</td><td>दो या अधिक टोपोलॉजी का मिश्रण</td><td>लचीली — हर हिस्से के लिए सर्वोत्तम टोपोलॉजी चुनी जा सकती है</td><td>डिज़ाइन व प्रबंधन जटिल</td></tr></tbody></table></div>
+<h3 class="ch-h3">1.4 नेटवर्क उपकरण (Networking Devices)</h3>
+<p>नेटवर्क को स्थापित करने व उसका प्रबंधन करने के लिए कुछ विशेष हार्डवेयर उपकरणों की आवश्यकता होती है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>उपकरण</th><th>कार्य</th></tr></thead><tbody><tr><td>हब (Hub)</td><td>प्राप्त डेटा को बिना किसी बुद्धिमत्ता के सभी जुड़े उपकरणों को भेज देता है (Broadcast) — पुरानी व धीमी तकनीक</td></tr><tr><td>स्विच (Switch)</td><td>डेटा को केवल सही गंतव्य (Destination) उपकरण तक भेजता है — हब से अधिक बुद्धिमान व तेज़</td></tr><tr><td>राउटर (Router)</td><td>दो अलग-अलग नेटवर्कों के बीच डेटा पैकेट को सही रास्ता (Route) दिखाकर भेजता है — घर/ऑफिस को इंटरनेट से जोड़ता है</td></tr><tr><td>मॉडेम (Modem)</td><td>डिजिटल सिग्नल को एनालॉग में (Modulation) व एनालॉग को डिजिटल में (Demodulation) बदलता है</td></tr><tr><td>गेटवे (Gateway)</td><td>दो भिन्न प्रोटोकॉल/संरचना वाले नेटवर्कों के बीच अनुवादक (Translator) का कार्य करता है</td></tr><tr><td>रिपीटर (Repeater)</td><td>कमज़ोर हो चुके सिग्नल को पुनः बढ़ाकर (Amplify) आगे भेजता है ताकि लंबी दूरी तय हो सके</td></tr><tr><td>ब्रिज (Bridge)</td><td>एक बड़े नेटवर्क को दो छोटे भागों में बांटकर ट्रैफिक नियंत्रित करता है</td></tr><tr><td>एक्सेस प्वाइंट (Access Point)</td><td>वायर्ड नेटवर्क से वायरलेस (Wi-Fi) उपकरणों को जोड़ता है</td></tr></tbody></table></div>
+<h3 class="ch-h3">1.5 ट्रांसमिशन माध्यम (Transmission Media)</h3>
+<p>डेटा एक उपकरण से दूसरे उपकरण तक जिस माध्यम से यात्रा करता है, उसे ट्रांसमिशन मीडिया कहते हैं — यह दो प्रकार का होता है:</p>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">वायर्ड (Guided/Wired Media)</div><ul class="ch-list"><li>ट्विस्टेड पेयर केबल (Twisted Pair) — टेलीफोन/LAN में सामान्य उपयोग</li><li>कोएक्सियल केबल (Coaxial) — केबल TV में उपयोग</li><li>फाइबर ऑप्टिक केबल — प्रकाश संकेतों से डेटा भेजती है, सबसे तेज़ व सुरक्षित</li><li>BharatNet जैसी योजनाओं में फाइबर ऑप्टिक ही रीढ़ (Backbone) है</li></ul></div><div class="twocol-col"><div class="twocol-head">वायरलेस (Unguided/Wireless Media)</div><ul class="ch-list"><li>रेडियो तरंगें (Radio Waves) — मोबाइल नेटवर्क, FM रेडियो</li><li>माइक्रोवेव (Microwave) — टावर-टू-टावर लंबी दूरी संचार</li><li>उपग्रह संचार (Satellite) — दूरस्थ/पर्वतीय क्षेत्रों तक कवरेज</li><li>इन्फ्रारेड व ब्लूटूथ/वाई-फाई — अल्प दूरी वायरलेस संचार</li></ul></div></div>
+<div class="tip-box"><div class="tip-title">💡  राउटर बनाम मॉडेम — घर में इंटरनेट कैसे आता है?</div><p>जब आप घर में इंटरनेट कनेक्शन लगवाते हैं, तो सबसे पहले मॉडेम इंटरनेट सेवा प्रदाता (ISP) से आ रहे एनालॉग/ऑप्टिकल सिग्नल को डिजिटल डेटा में बदलता है। इसके बाद राउटर इस डिजिटल डेटा को Wi-Fi के माध्यम से आपके फोन, लैपटॉप व स्मार्ट TV जैसे कई उपकरणों तक एक साथ पहुंचाता है। आज के अधिकांश घरेलू उपकरण 'मॉडेम-राउटर' दोनों के कार्य एक ही बॉक्स में करते हैं।</p></div>
+<p>फाइबर ऑप्टिक — भारत की डिजिटल रीढ़: फाइबर ऑप्टिक केबल में डेटा प्रकाश की गति से यात्रा करता है, जिससे यह तांबे के तार (Copper Wire) से हज़ारों गुना तेज़ है। भारत सरकार की BharatNet परियोजना के तहत जनवरी 2026 तक लगभग 7 लाख किलोमीटर ऑप्टिकल फाइबर बिछाई जा चुकी है और 2.15 लाख से अधिक ग्राम पंचायतों को इंटरनेट से जोड़ा जा चुका है — मई 2026 में शुरू हुए BharatNet फेज़-III का लक्ष्य 2028 तक शेष सभी ग्राम पंचायतों व लगभग 6.25 लाख गांवों को हाई-स्पीड ब्रॉडबैंड से जोड़ना है।</p>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">एनालॉग एवं डिजिटल दूरसंचार (Analog vs Digital Telecommunication)</span></h2>
+<h3 class="ch-h3">2.1 दूरसंचार (Telecommunication) का अर्थ</h3>
+<p>दूरसंचार का अर्थ है — किसी भी माध्यम (तार, रेडियो तरंग, प्रकाश) से लंबी दूरी तक सूचना (आवाज़, टेक्स्ट, चित्र, वीडियो) का आदान-प्रदान करना। यह सूचना दो रूपों में यात्रा कर सकती है — एनालॉग (Analog) अथवा डिजिटल (Digital)।</p>
+<h3 class="ch-h3">2.2 एनालॉग सिग्नल (Analog Signal)</h3>
+<p>एनालॉग सिग्नल एक निरंतर (Continuous) तरंग होती है, जो समय के साथ लगातार बदलती रहती है — जैसे हमारी आवाज़ की प्राकृतिक ध्वनि तरंग। पुराने लैंडलाइन टेलीफोन व रेडियो प्रसारण एनालॉग सिग्नल पर आधारित थे। एनालॉग सिग्नल में दूरी बढ़ने के साथ 'शोर (Noise)' व सिग्नल की गुणवत्ता में गिरावट (Signal Degradation) की समस्या अधिक होती है।</p>
+<h3 class="ch-h3">2.3 डिजिटल सिग्नल (Digital Signal)</h3>
+<p>डिजिटल सिग्नल असंतत (Discrete) होता है, जिसे केवल दो अवस्थाओं — 0 और 1 (बाइनरी) में दर्शाया जाता है। आधुनिक मोबाइल नेटवर्क, इंटरनेट व कंप्यूटर संचार डिजिटल सिग्नल पर आधारित हैं। डिजिटल सिग्नल की गुणवत्ता लंबी दूरी तक भी लगभग समान बनी रहती है, इसे एन्क्रिप्ट (सुरक्षित) करना आसान है, और यह कम बिजली खपत करता है।</p>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">एनालॉग सिग्नल (Analog)</div><ul class="ch-list"><li>निरंतर तरंग (Continuous Wave)</li><li>शोर (Noise) की समस्या अधिक</li><li>दूरी बढ़ने पर गुणवत्ता घटती है</li><li>उदाहरण: पुराना लैंडलाइन फोन, 1G मोबाइल नेटवर्क</li></ul></div><div class="twocol-col"><div class="twocol-head">डिजिटल सिग्नल (Digital)</div><ul class="ch-list"><li>असंतत — केवल 0 और 1 (Binary)</li><li>शोर-रोधी (Noise Resistant), सुरक्षित</li><li>लंबी दूरी पर भी गुणवत्ता स्थिर</li><li>उदाहरण: 4G/5G मोबाइल नेटवर्क, इंटरनेट</li></ul></div></div>
+<h3 class="ch-h3">2.4 मॉड्यूलेशन — एनालॉग व डिजिटल के बीच सेतु</h3>
+<p>चूंकि लंबी दूरी के तार व वायरलेस माध्यम मूल रूप से एनालॉग तरंगों को बेहतर ढंग से ले जाते हैं, इसलिए डिजिटल डेटा (0/1) को भेजने से पहले उसे एक एनालॉग वाहक तरंग (Carrier Wave) पर आरोपित किया जाता है — इस प्रक्रिया को 'मॉड्यूलेशन (Modulation)' कहते हैं, और प्राप्तकर्ता छोर पर इसे वापस डिजिटल डेटा में बदलने की प्रक्रिया को 'डीमॉड्यूलेशन (Demodulation)' कहते हैं। यही कारण है कि इस उपकरण को 'मॉडेम (MOdulator + DEModulator = MODEM)' कहा जाता है।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>डिजिटल डेटा भेजने वाला (Sender)</th><th>➜</th><th>मॉडुलेशन Modem — Digital→Analog</th><th>➜</th><th>ट्रांसमिशन तार/वायरलेस माध्यम</th><th>➜</th><th>डीमॉडुलेशन Modem — Analog→Digital</th></tr></thead><tbody></tbody></table></div>
+<p>चित्र: मॉड्यूलेशन-डीमॉड्यूलेशन प्रक्रिया — डिजिटल डेटा का दूरसंचार माध्यम से सफर</p>
+<h3 class="ch-h3">2.5 भारत में दूरसंचार का ऐतिहासिक विकास</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>वर्ष</th><th>घटना</th></tr></thead><tbody><tr><td>1851</td><td>भारत में पहली टेलीग्राफ लाइन कोलकाता-डायमंड हार्बर के बीच शुरू</td></tr><tr><td>1881-82</td><td>कोलकाता में भारत की पहली टेलीफोन एक्सचेंज सेवा शुरू</td></tr><tr><td>1986</td><td>MTNL व VSNL की स्थापना — शहरी व अंतरराष्ट्रीय दूरसंचार सेवाओं हेतु</td></tr><tr><td>1994</td><td>राष्ट्रीय दूरसंचार नीति (National Telecom Policy - NTP) लागू — निजी क्षेत्र के लिए दरवाज़े खुले</td></tr><tr><td>1997</td><td>भारतीय दूरसंचार नियामक प्राधिकरण (TRAI) की स्थापना</td></tr><tr><td>2000</td><td>भारत संचार निगम लिमिटेड (BSNL) की स्थापना</td></tr><tr><td>2016</td><td>रिलायंस जियो का शुभारंभ — मुफ्त डेटा व वॉइस कॉल से भारत में डेटा-क्रांति (Data Revolution)</td></tr><tr><td>2022</td><td>भारत में 5G सेवाओं का आधिकारिक शुभारंभ (1 अक्टूबर, इंडिया मोबाइल कांग्रेस)</td></tr><tr><td>2026</td><td>₹23.1 बिलियन डॉलर मूल्य की नई स्पेक्ट्रम नीलामी प्रस्तावित — 5G विस्तार व 6G की नींव हेतु</td></tr></tbody></table></div>
+<div class="tip-box"><div class="tip-title">💡  क्यों बदली गई एनालॉग से डिजिटल तकनीक?</div><p>1990 के दशक तक भारत में टेलीफोन कॉल में अक्सर 'क्रॉस-टॉकिंग' (दूसरी लाइन की आवाज़ मिल जाना) व शोर की समस्या आम थी — यह एनालॉग सिग्नल की सीमा थी। 2G की डिजिटल तकनीक आने के बाद कॉल की गुणवत्ता बेहतर हुई, कॉल करना सस्ता हुआ और SMS जैसी नई सुविधा भी संभव हुई — यही कारण है कि आज विश्व की हर आधुनिक दूरसंचार प्रणाली डिजिटल तकनीक पर आधारित है।</p></div>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">आवृत्ति स्पेक्ट्रम (Frequency Spectrum): 4G/5G बैंड</span></h2>
+<h3 class="ch-h3">3.1 आवृत्ति स्पेक्ट्रम क्या है? (What is Frequency Spectrum?)</h3>
+<p>प्रत्येक वायरलेस संचार (मोबाइल कॉल, Wi-Fi, रेडियो, TV प्रसारण) विद्युत-चुंबकीय तरंगों (Electromagnetic Waves) की एक विशेष 'आवृत्ति (Frequency)' पर यात्रा करता है। आवृत्ति को हर्ट्ज़ (Hz) में मापा जाता है — यानी तरंग प्रति सेकंड कितनी बार दोलन (Oscillate) करती है। चूंकि स्पेक्ट्रम एक सीमित व मूल्यवान प्राकृतिक संसाधन है, इसलिए सरकार इसे लाइसेंस/नीलामी के माध्यम से दूरसंचार कंपनियों को आवंटित करती है।</p>
+<ul class="ch-list"><li>1 किलोहर्ट्ज़ (kHz) = 1,000 Hz</li><li>1 मेगाहर्ट्ज़ (MHz) = 10 लाख Hz</li><li>1 गीगाहर्ट्ज़ (GHz) = 100 करोड़ Hz</li></ul>
+<h3 class="ch-h3">3.2 स्पेक्ट्रम की श्रेणियाँ (Low, Mid &amp; High Band)</h3>
+<p>मोबाइल नेटवर्क के लिए उपयोग होने वाले स्पेक्ट्रम को उसकी आवृत्ति सीमा के आधार पर तीन श्रेणियों में बांटा जाता है — प्रत्येक श्रेणी की गति व कवरेज दूरी में उलटा संबंध (Trade-off) होता है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>श्रेणी (Band)</th><th>आवृत्ति रेंज</th><th>विशेषता</th></tr></thead><tbody><tr><td>लो बैंड (Low Band)</td><td>1 GHz से कम (जैसे 700 MHz)</td><td>लंबी दूरी तय करती है, दीवारों को आसानी से भेदती है (बेहतर इनडोर कवरेज), परंतु गति अपेक्षाकृत कम</td></tr><tr><td>मिड बैंड (Mid Band)</td><td>1 GHz - 6 GHz (जैसे 3300-3670 MHz)</td><td>गति व दूरी के बीच सबसे अच्छा संतुलन — 5G का मुख्य/प्राथमिक बैंड</td></tr><tr><td>हाई बैंड / mmWave</td><td>24 GHz - 40 GHz (जैसे 26 GHz)</td><td>बहुत अधिक गति (कई Gbps तक), परंतु दूरी बहुत कम — घने शहरी क्षेत्रों (स्टेडियम, हवाई अड्डे) हेतु उपयुक्त</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th></th><th>हाई बैंड / mmWave (24-40 GHz) — अत्यंत तेज़, बहुत कम दूरी</th><th></th></tr></thead><tbody><tr><td></td><td>मिड बैंड (1-6 GHz) — संतुलित गति व दूरी, 5G का मुख्य बैंड</td><td></td></tr><tr><td></td><td>लो बैंड (1 GHz से कम) — कम गति, बहुत लंबी दूरी व बेहतर इनडोर कवरेज</td><td></td></tr></tbody></table></div>
+<p>चित्र: स्पेक्ट्रम बैंड की तुलना — नीचे लो बैंड (अधिक कवरेज), ऊपर हाई बैंड (अधिक गति)</p>
+<h3 class="ch-h3">3.3 भारत में 4G एवं 5G स्पेक्ट्रम बैंड</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>जनरेशन</th><th>भारत में उपयोग होने वाले प्रमुख बैंड</th></tr></thead><tbody><tr><td>4G/LTE</td><td>700 MHz, 850 MHz, 900 MHz, 1800 MHz, 2100 MHz, 2300 MHz, 2500 MHz</td></tr><tr><td>5G</td><td>700 MHz (लो बैंड), 3300-3670 MHz (मिड/C-बैंड — मुख्य बैंड), 26 GHz (हाई बैंड/mmWave)</td></tr><tr><td>प्रस्तावित (2026 नीलामी)</td><td>600 MHz, 800 MHz, 900 MHz, 1800 MHz, 2100 MHz, 2300 MHz, 2500 MHz, 3300 MHz, 26 GHz — संपूर्ण उपलब्ध स्पेक्ट्रम की नीलामी प्रस्तावित</td></tr></tbody></table></div>
+<h3 class="ch-h3">3.4 स्पेक्ट्रम नीलामी — नियामक ढांचा (Regulatory Framework)</h3>
+<ul class="ch-list"><li>दूरसंचार विभाग (DoT — Department of Telecommunications) स्पेक्ट्रम आवंटन व नीलामी की अंतिम ज़िम्मेदार संस्था है।</li><li>भारतीय दूरसंचार नियामक प्राधिकरण (TRAI) स्पेक्ट्रम की आरक्षित कीमत (Reserve Price) व नियम अनुशंसित करता है।</li><li>TRAI ने 2026 की प्रस्तावित नीलामी में लगभग 23.1 बिलियन डॉलर मूल्य के स्पेक्ट्रम, कम-से-कम 20 वर्ष की वैधता तथा सभी बैंड में 35% स्पेक्ट्रम-सीमा (Cap) की अनुशंसा की है।</li><li>अपर 6 GHz बैंड (6425-7125 MHz) को मोबाइल सेवाओं (IMT) हेतु आरक्षित रखा गया है, परंतु उपग्रह स्टेशनों से हस्तक्षेप (Interference) की जांच पूरी होने तक इसकी नीलामी टाली गई है।</li></ul>
+<p>स्पेक्ट्रम इतना महंगा क्यों है?: स्पेक्ट्रम एक सीमित प्राकृतिक संसाधन है — किसी भी देश में हवा में उपलब्ध कुल उपयोगी आवृत्तियां तय हैं, इन्हें बढ़ाया नहीं जा सकता। इसलिए सरकार इन्हें नीलामी (Auction) के माध्यम से बेचती है, जिससे दूरसंचार कंपनियों के बीच स्वस्थ प्रतिस्पर्धा बनी रहे और सरकार को राजस्व भी मिले — यही कारण है कि हर नई पीढ़ी (4G→5G→6G) की शुरुआत से पहले बड़ी स्पेक्ट्रम नीलामी होती है।</p>
+<h3 class="ch-h3">3.5 भविष्य की तैयारी — 6G की ओर भारत के कदम</h3>
+<p>भारत केवल 5G तक सीमित नहीं रहना चाहता, बल्कि अगली पीढ़ी 6G तकनीक में वैश्विक अगुआ (Global Leader) बनने का लक्ष्य रखता है — इसी दिशा में 'भारत 6G विज़न (Bharat 6G Vision)' दस्तावेज़ लाया गया है, जिसका लक्ष्य 2030 तक भारत को 6G के क्षेत्र में अग्रणी बनाना है।</p>
+<h3 class="ch-h3">🚀  भारत 6G विज़न (Bharat 6G Vision) राष्ट्रीय 6G अनुसंधान एवं मानकीकरण पहल | 2023-2030 (लक्ष्य)</h3><ul class="ch-list"><li>मार्च 2026 तक सरकार द्वारा 6G से जुड़ी 104 शोध एवं विकास (R&amp;D) परियोजनाओं को स्वीकृति</li><li>भारत 6G एलायंस (Bharat 6G Alliance) में मार्च 2026 तक 85 सदस्य — दूरसंचार कंपनियां, उपकरण निर्माता, स्टार्टअप्स व शोध संस्थान शामिल</li><li>6G टेराहर्ट्ज़ (THz) टेस्टबेड तथा एडवांस्ड ऑप्टिकल कम्युनिकेशन टेस्टबेड जैसी स्वदेशी अनुसंधान अवसंरचना स्थापित की जा रही है</li><li>मई 2026 में नई दिल्ली में चौथा 'भारत 6G' अंतरराष्ट्रीय सम्मेलन आयोजित; मार्च 2026 में 6G मानकीकरण पर अंतरराष्ट्रीय कार्यशाला</li><li>अमेरिका के NextG Alliance, यूरोप के 6G-IA, फिनलैंड के 6G Flagship, दक्षिण कोरिया, जापान (XGMF) सहित वैश्विक 6G शोध संस्थाओं से समझौता (MoU)</li><li>लक्ष्य: किफायती (Affordable), टिकाऊ (Sustainable) व सार्वभौमिक (Universal) कनेक्टिविटी सुनिश्चित करना</li></ul>
+<h2 class="ch-h2"><span class="ch-h2-num">4</span><span class="ch-h2-text">मोबाइल टेलीफोनी: 1G से 5G तथा भविष्य के 6G तक का विकास</span></h2>
+<h3 class="ch-h3">4.1 मोबाइल पीढ़ियों का परिचय</h3>
+<p>पिछले चार दशकों में मोबाइल संचार तकनीक ने हर 8-10 वर्षों में एक नई 'पीढ़ी (Generation)' के रूप में क्रांतिकारी छलांग लगाई है — हर पीढ़ी ने अपनी पिछली पीढ़ी की सीमाओं को दूर करते हुए गति, गुणवत्ता व नई सुविधाओं का विस्तार किया:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>पीढ़ी</th><th>काल</th><th>तकनीक</th><th>अधिकतम गति</th><th>मुख्य सुविधा</th></tr></thead><tbody><tr><td>1G</td><td>1980 का दशक</td><td>एनालॉग (Analog)</td><td>~2.4 kbps</td><td>केवल वॉइस कॉल — गुणवत्ता खराब, कोई सुरक्षा (Encryption) नहीं</td></tr><tr><td>2G</td><td>1990 का दशक</td><td>डिजिटल — GSM/CDMA</td><td>~64 kbps</td><td>वॉइस कॉल की बेहतर गुणवत्ता, SMS की शुरुआत, सीमित मोबाइल इंटरनेट</td></tr><tr><td>3G</td><td>2000 का दशक</td><td>CDMA2000/UMTS</td><td>~2 Mbps</td><td>मोबाइल इंटरनेट, वीडियो कॉल, स्मार्टफोन युग की शुरुआत</td></tr><tr><td>4G/LTE</td><td>2009 से</td><td>LTE (Long-Term Evolution)</td><td>~100 Mbps-1 Gbps</td><td>HD वीडियो स्ट्रीमिंग, VoLTE (इंटरनेट पर वॉइस कॉल), पूर्ण IP-आधारित नेटवर्क</td></tr><tr><td>5G</td><td>2019 से (भारत: 2022)</td><td>5G NR (New Radio)</td><td>~1-20 Gbps</td><td>अल्ट्रा-लो लेटेंसी, IoT, स्वचालित वाहन, स्मार्ट सिटी, AR/VR</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>1G 1980s — एनालॉग</th><th>➜</th><th>2G 1990s — डिजिटल/SMS</th><th>➜</th><th>3G 2000s — इंटरनेट</th><th>➜</th><th>4G 2009+ — ब्रॉडबैंड</th><th>➜</th><th>5G 2019+ — अल्ट्रा स्पीड</th><th>➜</th><th>6G 2030 लक्ष्य — भविष्य</th></tr></thead><tbody></tbody></table></div>
+<p>चित्र: मोबाइल टेलीफोनी पीढ़ियों का विकास-क्रम (1G से 6G तक)</p>
+<div class="tip-box"><div class="tip-title">💡  हर पीढ़ी ने कौन-सी नई समस्या हल की?</div><p>1G में कॉल की गुणवत्ता खराब थी और कोई भी इसे सुन सकता था (कोई एन्क्रिप्शन नहीं) — 2G ने डिजिटल तकनीक से इसे सुरक्षित व स्पष्ट बनाया तथा SMS जोड़ा। 3G ने धीमी इंटरनेट स्पीड को हल कर मोबाइल पर वेबसाइट व वीडियो देखना संभव बनाया। 4G ने बफरिंग (Buffering) की समस्या को लगभग समाप्त कर दिया और HD स्ट्रीमिंग को सामान्य बना दिया। 5G अब लेटेंसी (Latency — डेटा भेजने व प्रतिक्रिया मिलने के बीच का समय) को इतना कम कर देता है कि स्वचालित (Self-Driving) कारें व रिमोट सर्जरी जैसी तकनीकें संभव हो पा रही हैं।</p></div>
+<h3 class="ch-h3">4.2 भारत में मोबाइल टेलीफोनी की क्रांति</h3>
+<p>भारत में मोबाइल टेलीफोनी के विकास को सबसे अधिक गति सितंबर 2016 में मिली, जब रिलायंस जियो (Reliance Jio) ने मुफ्त वॉइस कॉल व अत्यंत सस्ते डेटा प्लान के साथ बाज़ार में प्रवेश किया — इसने भारत को विश्व में सबसे सस्ती मोबाइल डेटा दरों वाले देशों में शामिल कर दिया तथा प्रति व्यक्ति डेटा खपत में भारी वृद्धि हुई। 1 अक्टूबर 2022 को भारत में आधिकारिक रूप से 5G सेवाओं का शुभारंभ हुआ, और आज देश तेज़ी से 5G विस्तार व 6G की तैयारी में जुटा है।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>ऑपरेटर</th><th>मार्केट शेयर</th><th>कुल सब्सक्राइबर (मिलियन)</th></tr></thead><tbody><tr><td>रिलायंस जियो (Reliance Jio)</td><td>39.27%</td><td>501.44</td></tr><tr><td>भारती एयरटेल (Airtel)</td><td>37.89%</td><td>483.81</td></tr><tr><td>वोडाफोन आइडिया (VI)</td><td>15.56%</td><td>198.66</td></tr><tr><td>BSNL</td><td>7.28%</td><td>92.91</td></tr></tbody></table></div>
+<p>चित्र: भारत के प्रमुख मोबाइल ऑपरेटर व बाज़ार हिस्सेदारी (TRAI डेटा, मई 2026) — कुल वायरलेस सब्सक्राइबर लगभग 1,294.46 मिलियन</p>
+<p>BSNL का 4G से 5G की ओर सफर: सार्वजनिक क्षेत्र की कंपनी BSNL का 4G नेटवर्क, C-DOT, टेजस नेटवर्क्स व TCS द्वारा संयुक्त रूप से विकसित पूर्णतः स्वदेशी तकनीक पर आधारित है — यह भारत की आत्मनिर्भरता (Atmanirbhar Bharat) की दिशा में एक बड़ी उपलब्धि है। 2026 में BSNL का 4G नेटवर्क लगभग 98,000 साइट्स तक विस्तृत हो चुका है (मध्य-2024 में मात्र 9,000 साइट्स से), और लगभग ₹20,000 करोड़ के निवेश से 50,000-60,000 अतिरिक्त टावर लगाए जा रहे हैं। सरकार की योजना है कि 4G नेटवर्क स्थिर होते ही मौजूदा साइट्स को सॉफ्टवेयर अपग्रेड के ज़रिए सीधे 5G में बदला जाए।</p>
+<h3 class="ch-h3">🏛️  दूरसंचार क्षेत्र की प्रमुख भारतीय पहलें</h3><ul class="ch-list"><li>BharatNet परियोजना — ग्राम पंचायतों को हाई-स्पीड ऑप्टिकल फाइबर ब्रॉडबैंड से जोड़ने का राष्ट्रीय मिशन; जनवरी 2026 तक ~7 लाख किमी फाइबर बिछाई गई, 2.15 लाख+ ग्राम पंचायतें जुड़ीं; मई 2026 में शुरू हुए फेज़-III का लक्ष्य 2028 तक शेष सभी पंचायतें व ~6.25 लाख गांव जोड़ना (₹1.5 लाख करोड़ निवेश)</li><li>PM-WANI (प्रधानमंत्री वाई-फाई एक्सेस नेटवर्क इंटरफेस) — सार्वजनिक स्थानों पर सस्ता व सुलभ वाई-फाई उपलब्ध कराने की योजना; फरवरी 2026 तक 4,09,111 सार्वजनिक वाई-फाई हॉटस्पॉट स्थापित</li><li>डिजिटल भारत निधि (Digital Bharat Nidhi — पूर्व नाम USOF) — दूरदराज़ व ग्रामीण क्षेत्रों में दूरसंचार अवसंरचना विस्तार हेतु वित्त पोषण की योजना, दूरसंचार अधिनियम 2023 के तहत पुनर्गठित</li><li>भारत 6G विज़न — 2030 तक भारत को 6G तकनीक में वैश्विक अग्रणी बनाने की राष्ट्रीय रणनीति</li></ul>
+<h3 class="ch-h3">4.3 राजस्थान में दूरसंचार अवसंरचना</h3>
+<p>राजस्थान, अपने विशाल भौगोलिक क्षेत्रफल (देश में सबसे बड़ा राज्य) व विरल जनसंख्या घनत्व के कारण, दूरसंचार अवसंरचना विस्तार की दृष्टि से एक चुनौतीपूर्ण परंतु प्राथमिकता वाला राज्य है। राज्य सरकार की RajNet परियोजना — राज्य के सभी सरकारी कार्यालयों (जिला मुख्यालय से पंचायत स्तर तक) को हाई-स्पीड डेटा नेटवर्क से जोड़ती है, जो e-Mitra, RajSSO जैसी डिजिटल सेवाओं की रीढ़ है (अध्याय 9 में विस्तार से देखें)। BharatNet परियोजना के तहत राजस्थान की हज़ारों ग्राम पंचायतों को ऑप्टिकल फाइबर से जोड़ा जा चुका है, जिससे थार मरुस्थल के दूरदराज़ गांवों तक भी इंटरनेट व मोबाइल कनेक्टिविटी पहुंच रही है — यही अवसंरचना आगे चलकर राज्य के डिजिटल शासन (Digital Governance) व AI-ML नीति 2026 (अध्याय 9 देखें) को व्यावहारिक रूप देने का आधार बनती है।</p>
+<div class="angle-box"><div class="angle-title">🎯  नेटवर्किंग, दूरसंचार एवं मोबाइल टेलीफोनी — RAS Mains उत्तर लेखन कोण 5-अंक: 60-70 शब्द  |  10-अंक: ~120 शब्द</div><ul class="ch-list"><li>नेटवर्क टोपोलॉजी पर प्रश्न में हमेशा संरचना + लाभ + हानि — तीनों बताते हुए तुलनात्मक उत्तर दें, चित्र बनाकर स्पष्ट करना बेहतर रहता है।</li><li>एनालॉग बनाम डिजिटल के प्रश्नों में सदैव मॉड्यूलेशन की अवधारणा (मॉडेम की भूमिका) जोड़ें ताकि उत्तर तकनीकी रूप से पूर्ण दिखे।</li><li>स्पेक्ट्रम/4G-5G बैंड से जुड़े प्रश्नों में TRAI व DoT की भूमिका तथा नवीनतम स्पेक्ट्रम नीलामी (2026) के आंकड़े अवश्य जोड़ें।</li><li>मोबाइल पीढ़ियों (1G-5G) पर उत्तर में "हर पीढ़ी ने कौन-सी समस्या हल की" — यह एंगल जोड़ने से उत्तर विश्लेषणात्मक (Analytical) बनता है।</li><li>भारत के दूरसंचार विकास पर प्रश्न में जियो क्रांति (2016), BharatNet, भारत 6G विज़न व नवीनतम TRAI सब्सक्राइबर डेटा का उल्लेख करें — यह उत्तर को करेंट अफेयर्स से जोड़ता है।</li></ul></div>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (PYQs)  📝</h3><p>Q1. LAN, MAN व WAN में अंतर स्पष्ट कीजिए। Q2. स्टार टोपोलॉजी, बस टोपोलॉजी से किस प्रकार बेहतर है? उदाहरण सहित समझाइए। Q3. राउटर व मॉडेम में क्या अंतर है? Q4. एनालॉग व डिजिटल सिग्नल में अंतर स्पष्ट करते हुए मॉडेम की भूमिका बताइए। Q5. भारत में स्पेक्ट्रम आवंटन व नीलामी की प्रक्रिया में TRAI तथा DoT की भूमिका बताइए। Q6. 5G की मिड बैंड व हाई बैंड (mmWave) स्पेक्ट्रम में क्या अंतर है? Q7. मोबाइल टेलीफोनी की पीढ़ियों (1G से 5G) का विकास-क्रम उनकी मुख्य विशेषताओं सहित समझाइए। Q8. भारत के "भारत 6G विज़न" पर एक संक्षिप्त टिप्पणी लिखिए।</p>
+<h3 class="ch-h3">📌  अध्याय सारांश (Chapter Summary)</h3><ul class="ch-list"><li>नेटवर्क कंप्यूटरों/उपकरणों का समूह है जो संसाधन साझाकरण व संचार हेतु आपस में जुड़े होते हैं; आकार अनुसार PAN &lt; LAN &lt; MAN &lt; WAN में वर्गीकृत किया जाता है।</li><li>टोपोलॉजी (Bus, Star, Ring, Mesh, Tree, Hybrid) नेटवर्क की भौतिक संरचना तय करती है — Star टोपोलॉजी सबसे लोकप्रिय है क्योंकि एक नोड खराब होने पर भी बाकी नेटवर्क सुरक्षित रहता है।</li><li>दूरसंचार में डेटा एनालॉग (निरंतर तरंग) अथवा डिजिटल (0/1) रूप में यात्रा करता है; मॉडेम इन दोनों के बीच अनुवाद (Modulation-Demodulation) करता है — आधुनिक नेटवर्क डिजिटल तकनीक पर आधारित हैं।</li><li>आवृत्ति स्पेक्ट्रम एक सीमित संसाधन है जिसे लो, मिड व हाई (mmWave) बैंड में बांटा जाता है — भारत में TRAI व DoT इसकी नीलामी व नियमन करते हैं; 2026 में नई बड़ी नीलामी प्रस्तावित है।</li><li>मोबाइल टेलीफोनी 1G (केवल वॉइस) से 5G (अल्ट्रा-लो लेटेंसी, IoT) तक विकसित हो चुकी है; भारत अब 6G में वैश्विक अग्रणी बनने हेतु "भारत 6G विज़न" के तहत तेज़ी से अनुसंधान कर रहा है।</li><li>भारत में 2016 की जियो क्रांति ने डेटा को सस्ता बनाया, और BharatNet जैसी योजनाएं गांव-गांव तक फाइबर इंटरनेट पहुंचा रही हैं — जिससे डिजिटल विभाजन (Digital Divide) तेज़ी से घट रहा है।</li><li>यह अध्याय अगले अध्याय "इंटरनेट एवं ICT" की नींव है — यहां समझी गई नेटवर्किंग व स्पेक्ट्रम की अवधारणाएं आगे इंटरनेट, ई-गवर्नेंस व ICT विकास को समझने में सीधे उपयोग होंगी।</li></ul><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="vigyan-praudyogiki-ch01-computer-vigyan.html" class="ch-nav-btn">← अध्याय 1: कंप्यूटर विज्ञान की मूल बातें</a>
+  <a href="vigyan-praudyogiki-ch03-internet-ict.html" class="ch-nav-btn ch-nav-next">अध्याय 3: इंटरनेट एवं सूचना-संचार प्रौद्योगिकी (ICT) →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="vigyan-praudyogiki.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>

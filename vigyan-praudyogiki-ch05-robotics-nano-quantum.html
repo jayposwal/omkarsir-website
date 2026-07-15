@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय 5: रोबोटिक्स, नैनोटेक्नोलॉजी एवं क्वांटम कंप्यूटिंग — विज्ञान एवं प्रौद्योगिकी | Omkar Sir</title>
+<meta name="description" content="रोबोटिक्स, नैनोटेक्नोलॉजी एवं क्वांटम कंप्यूटिंग (Robotics, Nanotechnology &amp; Quantum Computing) — RAS Pre+Mains के लिए विज्ञान एवं प्रौद्योगिकी का विस्तृत अध्ययन। पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.ch-hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:38px 6% 30px;border-bottom:1px solid #FFE0C0;text-align:center}
+.ch-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.ch-hero h1{font-size:clamp(22px,3.6vw,32px);font-weight:800;margin-bottom:6px}
+.ch-hero .ch-sub{color:#888;font-size:13.5px}
+.ch-wrap{max-width:820px;margin:0 auto;padding:34px 6% 20px}
+.toc-box{background:#fff;border:2px solid #FFE0C0;border-radius:14px;padding:18px 22px;margin-bottom:30px}
+.toc-title{font-family:'Poppins',sans-serif;font-weight:800;color:#FF6B00;font-size:15px;margin-bottom:10px}
+.toc-list{padding-left:20px;font-size:13.5px;color:#444}
+.toc-list li{margin-bottom:6px}
+.ch-h2{font-size:19px;font-weight:800;margin:30px 0 12px;color:#1A1A2E;display:flex;align-items:center;gap:10px;border-bottom:2px solid #FFE0C0;padding-bottom:8px}
+.ch-h2-num{background:#FF6B00;color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ch-h3{font-size:15.5px;font-weight:700;margin:18px 0 8px;color:#1B2A6B}
+p{font-size:14.5px;color:#333;margin-bottom:12px}
+.ch-list{margin:0 0 14px 0;padding-left:20px}
+.ch-list li{font-size:14.5px;color:#333;margin-bottom:6px}
+.ch-lettered{font-size:14.5px;color:#333;margin-bottom:10px;padding-left:8px;border-left:3px solid #FFD0A0}
+.ch-attrib{font-size:13px;color:#999;text-align:right;font-style:italic;margin-top:-6px}
+.ch-quote{background:#FFF3E8;border-left:4px solid #FF6B00;padding:14px 18px;margin:14px 0;font-size:14px;color:#555;font-style:italic;border-radius:0 10px 10px 0}
+.profile-box{background:#F3F5FF;border:1.5px solid #DCE1FF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-box{background:#FFF8F2;border:1.5px solid #FFD9B3;border-radius:12px;padding:14px 18px;margin:14px 0}
+.site-title{font-weight:800;color:#B45300;font-size:14px;margin-bottom:6px}
+.profile-title{font-weight:800;color:#1B2A6B;font-size:14px;margin-bottom:6px}
+.tip-box{background:#FFFBEA;border:1.5px solid #FFE58F;border-radius:12px;padding:14px 18px;margin:14px 0}
+.tip-title{font-weight:800;color:#AD8B00;font-size:14px;margin-bottom:6px}
+.angle-box{background:#E8F5E9;border:1.5px solid #A5D6A7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.angle-title{font-weight:800;color:#2E7D32;font-size:14px;margin-bottom:6px}
+.warn-box{background:#FFF0F0;border:1.5px solid #FFB3B3;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:13.5px;color:#B71C1C}
+.formula-box{background:#EEF2FF;border:1.5px solid #C7D2FE;border-radius:12px;padding:14px 18px;margin:14px 0}
+.formula-title{font-weight:800;color:#3730A3;font-size:14px;margin-bottom:6px}
+.example-box{background:#F0FBF6;border:1.5px solid #A7E8C8;border-radius:12px;padding:14px 18px;margin:14px 0}
+.example-title{font-weight:800;color:#0F7B4E;font-size:14px;margin-bottom:6px}
+.trick-box{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:12px;padding:14px 18px;margin:14px 0}
+.trick-title{font-weight:800;color:#C2410C;font-size:14px;margin-bottom:6px}
+.twocol-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.twocol-col{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 16px}
+.twocol-head{font-weight:800;color:#1B2A6B;font-size:13.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1.5px dashed #DCE1FF}
+.twocol-col p{margin-bottom:0;font-size:13.5px}
+.twocol-col .ch-list{margin-bottom:0}
+.twocol-col .ch-list li{font-size:13px;margin-bottom:5px}
+@media (max-width:640px){.twocol-box{grid-template-columns:1fr}}
+.ruler-card{background:#FFF8F2;border:1.5px solid #FFD9B3;border-left:4px solid #FF6B00;border-radius:10px;padding:10px 16px;margin:14px 0 0}
+.ruler-name{font-weight:800;color:#B45300;font-size:14.5px}
+.ruler-role{color:#666;font-size:13px;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0}
+.ch-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch-table th{background:#1B2A6B;color:#fff;padding:9px 12px;text-align:left;font-weight:700}
+.ch-table td{padding:9px 12px;border-bottom:1px solid #F0F0F0}
+.ch-table tr:nth-child(even) td{background:#FAFAFC}
+.ch-nav{display:flex;justify-content:space-between;gap:12px;max-width:820px;margin:20px auto 40px;padding:0 6%;flex-wrap:wrap}
+.ch-nav-btn{flex:1;min-width:200px;text-align:center;padding:13px 18px;background:#fff;border:2px solid #E8EAF0;border-radius:12px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:13.5px;transition:all .2s}
+.ch-nav-btn:hover{border-color:#FF6B00;color:#FF6B00}
+.ch-nav-next{text-align:right}
+.topic-divider{text-align:center;margin:36px 0 20px;position:relative}
+.topic-divider span{background:#1B2A6B;color:#fff;padding:8px 24px;border-radius:30px;font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif;display:inline-block}
+footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
+.footer-logo span{color:#FF6B00}
+footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.ch-ad-wrap{margin:34px 0}
+.ch-ad-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;text-align:center}
+.c-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:all .25s ease;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #E8EAF0;position:relative;cursor:default;max-width:480px;margin:0 auto}
+.c-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+.c-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;z-index:2}
+.c-badge-hot{background:linear-gradient(135deg,#ff6f00,#ffca28);color:white}
+.c-card-head{padding:22px 18px 14px;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:white;min-height:82px;display:flex;align-items:center;gap:10px}
+.c-card-head.head-ras{background:linear-gradient(135deg,#4a148c,#6a1b9a)}
+.c-card-head.head-gk{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.c-icon{font-size:1.6rem;flex-shrink:0}
+.c-title{font-size:.92rem;font-weight:700;color:white;margin:0;line-height:1.35;font-family:'Poppins',sans-serif}
+.c-body{padding:10px 18px 0}
+.c-tags{display:flex;flex-wrap:wrap;gap:5px}
+.c-tag{background:#f0f2f8;color:#555;padding:3px 9px;border-radius:20px;font-size:.68rem;font-weight:600}
+.c-foot{padding:12px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.c-price-wrap{display:flex;flex-direction:column}
+.c-price{font-size:1.05rem;font-weight:800;color:#e53935}
+.c-orig{font-size:.72rem;color:#aaa;text-decoration:line-through}
+.c-arrow{font-size:.72rem;font-weight:700;color:#fff;background:#FF6B00;padding:7px 14px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.c-arrow:hover{background:#E05500}
+.kw-box{background:#F8F9FC;border:1.5px dashed #DCE1FF;border-radius:12px;padding:12px 16px;margin:14px 0}
+.kw-title{font-weight:800;color:#1B2A6B;font-size:13px;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{background:#FFF3E8;color:#B45300;border:1px solid #FFD9B3;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+
+</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+<div class="tri"></div>
+
+<section class="ch-hero">
+  <div class="ch-badge">🦾 अध्याय 5/10 — विज्ञान एवं प्रौद्योगिकी</div>
+  <h1>रोबोटिक्स, नैनोटेक्नोलॉजी एवं क्वांटम कंप्यूटिंग</h1>
+  <div class="ch-sub">Robotics, Nanotechnology &amp; Quantum Computing | RAS Pre + Mains</div>
+</section>
+
+<div class="ch-wrap">
+<div class="toc-box"><div class="toc-title">📋 इस अध्याय में</div><ol class="toc-list"><li>रोबोटिक्स (Robotics)</li><li>नैनोटेक्नोलॉजी (Nanotechnology)</li><li>क्वांटम कंप्यूटिंग (Quantum Computing)</li></ol></div>
+<div class="angle-box"><div class="angle-title">🌟  क्या आप जानते हैं?</div><p>1920 में चेक लेखक कारेल चापेक (Karel Čapek) ने एक नाटक लिखा — "R.U.R. (Rossum's Universal Robots)" — जिसमें कारखाने में इंसानों जैसे दिखने वाले कृत्रिम मज़दूर काम करते थे। इन्हें उन्होंने चेक भाषा के शब्द "robota" (यानी "जबरन मज़दूरी") से "रोबोट" नाम दिया। उसी दशक में, 1959 में, वैज्ञानिक रिचर्ड फाइनमैन ने एक व्याख्यान दिया — "There's Plenty of Room at the Bottom" — जिसमें उन्होंने कल्पना की कि एक दिन इंसान परमाणुओं के स्तर पर पदार्थ को नियंत्रित कर पाएगा; यहीं से नैनोटेक्नोलॉजी की नींव पड़ी। और अब, 21वीं सदी में, वैज्ञानिक कंप्यूटर की एक बिल्कुल नई पीढ़ी बना रहे हैं, जो 0 और 1 के बजाय क्वांटम भौतिकी के अनोखे नियमों पर काम करती है — जो एक साथ कई अवस्थाओं में रह सकती है। यह तीनों — रोबोटिक्स, नैनोटेक्नोलॉजी व क्वांटम कंप्यूटिंग — विज्ञान की वे तीन सीमाएं हैं, जहां आज सबसे रोमांचक शोध हो रहा है, और भारत भी अब इस दौड़ में एक गंभीर खिलाड़ी बनकर उभर रहा है। आइए इस अध्याय में इन तीनों दुनियाओं की सैर करें।</p></div>
+<h2 class="ch-h2"><span class="ch-h2-num">1</span><span class="ch-h2-text">रोबोटिक्स (Robotics)</span></h2>
+<h3 class="ch-h3">1.1 परिचय — 'रोबोट' शब्द की कहानी</h3>
+<p>जैसा कि हमने ऊपर हुक-स्टोरी में पढ़ा, "रोबोट" शब्द चेक भाषा के "robota" से आया है, जिसका अर्थ है "जबरन मज़दूरी"। दिलचस्प यह है कि पहले काल्पनिक रोबोट कहानियों में इंसानों की जगह काम करने वाले मज़दूर के रूप में कल्पित थे — और आज, सौ साल बाद, यह कल्पना काफी हद तक सच हो चुकी है, जहां रोबोट फैक्ट्री से लेकर अंतरिक्ष तक इंसानों के साथ कंधे से कंधा मिलाकर काम कर रहे हैं।</p>
+<h3 class="ch-h3">1.2 रोबोट क्या है? (What is a Robot?)</h3>
+<p>रोबोट एक ऐसी प्रोग्राम करने योग्य मशीन है, जो अपने परिवेश से जानकारी ग्रहण कर (सेंसर से), उस पर निर्णय लेकर (नियंत्रक/प्रोसेसर से) तथा भौतिक क्रिया करके (एक्चुएटर से) कोई कार्य स्वचालित या अर्ध-स्वचालित रूप से पूरा करती है। ध्यान दें — हर स्वचालित मशीन 'रोबोट' नहीं होती; रोबोट में तीनों तत्व — अनुभूति (Sense), सोच (Think) व क्रिया (Act) — का चक्र होना ज़रूरी है।</p>
+<h3 class="ch-h3">1.3 रोबोट के प्रमुख घटक (Components)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>घटक</th><th>कार्य</th></tr></thead><tbody><tr><td>सेंसर (Sensors)</td><td>परिवेश की जानकारी ग्रहण करना — कैमरा (देखना), माइक्रोफोन (सुनना), टच सेंसर (स्पर्श)</td></tr><tr><td>नियंत्रक/प्रोसेसर (Controller)</td><td>सेंसर से मिली जानकारी का विश्लेषण कर अगला कदम तय करना — रोबोट का 'मस्तिष्क'</td></tr><tr><td>एक्चुएटर (Actuators)</td><td>नियंत्रक के निर्णय अनुसार भौतिक गति करना — मोटर, हाइड्रोलिक/न्यूमेटिक पिस्टन</td></tr><tr><td>एंड इफेक्टर (End Effector)</td><td>रोबोट का वह हिस्सा जो वास्तविक कार्य करता है — जैसे पकड़ने वाला 'हाथ' (Gripper), वेल्डिंग टूल</td></tr><tr><td>पावर स्रोत (Power Source)</td><td>बैटरी या बिजली आपूर्ति — रोबोट को ऊर्जा देना</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>1. अनुभूति Sense — सेंसर से डेटा</th><th>➜</th><th>2. सोच Think — नियंत्रक निर्णय</th><th>➜</th><th>3. क्रिया Act — एक्चुएटर से गति</th></tr></thead><tbody></tbody></table></div>
+<p>चित्र: रोबोट कार्यचक्र — Sense-Think-Act साइकिल, हर रोबोट इसी सिद्धांत पर कार्य करता है</p>
+<h3 class="ch-h3">1.4 रोबोट के प्रकार (Types of Robots)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रकार</th><th>विवरण</th><th>उदाहरण</th></tr></thead><tbody><tr><td>औद्योगिक रोबोट (Industrial)</td><td>कारखानों में दोहराव वाले कार्य — वेल्डिंग, पेंटिंग, असेंबली</td><td>कार निर्माण लाइन के रोबोटिक भुजा (Robotic Arm)</td></tr><tr><td>सर्विस रोबोट (Service)</td><td>घरेलू/व्यावसायिक सेवा कार्य</td><td>रोबोट वैक्यूम क्लीनर, होटल में सामान पहुंचाने वाले रोबोट</td></tr><tr><td>मेडिकल रोबोट (Medical)</td><td>सर्जरी व स्वास्थ्य सेवा में सहायता</td><td>दा विंची सर्जिकल रोबोट (Da Vinci) — सटीक रोबोटिक सर्जरी</td></tr><tr><td>सैन्य/रक्षा रोबोट (Military)</td><td>बम निष्क्रियकरण, निगरानी, टोही</td><td>DRDO के बम-निष्क्रियकरण रोबोट</td></tr><tr><td>ह्यूमनॉइड रोबोट (Humanoid)</td><td>मानव-आकृति व व्यवहार वाले रोबोट</td><td>ISRO का व्योममित्र (Vyommitra), जापान का ASIMO</td></tr><tr><td>स्वार्म रोबोट (Swarm)</td><td>कई छोटे रोबोट मिलकर समूह में कार्य करना</td><td>ड्रोन स्वार्म शो, कृषि निगरानी हेतु मिनी-रोबोट समूह</td></tr></tbody></table></div>
+<h3 class="ch-h3">1.5 रोबोटिक्स के अनुप्रयोग (Applications)</h3>
+<ul class="ch-list"><li>विनिर्माण (Manufacturing) — कार, इलेक्ट्रॉनिक्स फैक्ट्रियों में सटीक व तेज़ असेंबली।</li><li>स्वास्थ्य सेवा — रोबोटिक सर्जरी से कम चीरा, कम रक्तस्राव व तेज़ रिकवरी।</li><li>कृषि — फसल कटाई रोबोट, खरपतवार पहचान व स्वचालित छिड़काव।</li><li>अंतरिक्ष अन्वेषण — चंद्रयान-3 का प्रज्ञान रोवर, मंगल पर घूमने वाले रोवर।</li><li>आपदा प्रबंधन — भूकंप के मलबे में फंसे लोगों को खोजने वाले सर्च-एंड-रेस्क्यू रोबोट।</li><li>आतिथ्य क्षेत्र (Hospitality) — रेस्टोरेंट में खाना परोसने वाले रोबोट, एयरपोर्ट में जानकारी देने वाले रोबोट।</li></ul>
+<div class="tip-box"><div class="tip-title">💡  दा विंची सर्जिकल रोबोट — डॉक्टर के हाथों का विस्तार</div><p>दा विंची सर्जिकल सिस्टम में डॉक्टर एक कंसोल पर बैठकर जॉयस्टिक जैसे नियंत्रण से रोबोटिक भुजाओं को निर्देशित करते हैं, जो मरीज़ के शरीर के अंदर बेहद सटीकता से सर्जरी करती हैं — इंसानी हाथ से कहीं अधिक स्थिर व सूक्ष्म गति के साथ। इससे बड़ा चीरा लगाने की ज़रूरत नहीं पड़ती, मरीज़ जल्दी ठीक होता है, और डॉक्टर थकान के बावजूद स्थिर हाथों से काम कर पाते हैं।</p></div>
+<h3 class="ch-h3">1.6 भारत में रोबोटिक्स — ISRO का व्योममित्र (Vyommitra)</h3>
+<p>भारत के मानव अंतरिक्ष मिशन 'गगनयान' से पहले, ISRO एक महिला-रूप वाला ह्यूमनॉइड रोबोट 'व्योममित्र' (संस्कृत में 'अंतरिक्ष मित्र') भेज रहा है, जो अंतरिक्ष यान के अंदर मानव शरीर पर पड़ने वाले प्रभावों का परीक्षण करेगा।</p>
+<h3 class="ch-h3">🚀  व्योममित्र (Vyommitra) — भारत का अंतरिक्ष ह्यूमनॉइड ISRO का मानव-सदृश रोबोट (गगनयान मिशन-पूर्व परीक्षण) | 2025-2026</h3><ul class="ch-list"><li>व्योममित्र स्विच संचालित करना, प्रश्नों के उत्तर देना व मानव-सदृश शारीरिक प्रतिक्रियाओं (जैसे श्वास दर) की नकल करने में सक्षम</li><li>28 अप्रैल 2026 को ISRO ने गगनयान-1 उड़ान से पहले व्योममित्र की 'प्री-फ्लाइट इंटीग्रेशन' प्रक्रिया शुरू की</li><li>व्योममित्र की खोपड़ी उच्च-शक्ति एल्यूमिनियम मिश्र धातु से बनी है, जो अंतरिक्ष में उच्च दबाव व कंपन झेलने में सक्षम है</li><li>बिना चालक दल (Uncrewed) की पहली उड़ान के बाद दो और मानव-रहित मिशन होंगे, इसके बाद 2027 की शुरुआत में असली अंतरिक्ष यात्रियों को भेजा जाएगा</li></ul>
+<h3 class="ch-h3">1.7 भारत के अन्य रोबोट व DRDO की पहल</h3>
+<p>व्योममित्र के अलावा भारत में कई और उल्लेखनीय स्वदेशी रोबोट विकसित हुए हैं — मानव (Manav, भारत का पहला स्वदेशी ह्यूमनॉइड, शिक्षा-प्रदर्शन हेतु), शालू (Shalu, 47 भाषाएं बोलने वाला शिक्षक-रोबोट) व KP-Bot (ग्राहक सेवा हेतु)। रक्षा क्षेत्र में DRDO बम-निष्क्रियकरण, निगरानी व बचाव कार्यों हेतु ह्यूमनॉइड व अन्य रोबोट को और एकीकृत कर रहा है, ताकि जोखिम भरे कार्यों में सैनिकों की जान बचाई जा सके।</p>
+<h3 class="ch-h3">1.8 राजस्थान में रोबोटिक्स शिक्षा एवं नवाचार</h3>
+<p>राजस्थान अब रोबोटिक्स शिक्षा व अनुसंधान का एक उभरता केंद्र बनता जा रहा है, जहां निजी विश्वविद्यालयों से लेकर सरकारी स्कूलों तक इस तकनीक को बढ़ावा मिल रहा है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>संस्थान/पहल</th><th>विवरण</th></tr></thead><tbody><tr><td>MICARC, NIMS यूनिवर्सिटी जयपुर</td><td>1 अप्रैल 2025 को स्थापित 'मारिक इंस्टीट्यूट ऑफ कंप्यूटिंग, AI, रोबोटिक्स एंड साइबरनेटिक्स' — राजस्थान सरकार व NIMS यूनिवर्सिटी के बीच 'राइजिंग राजस्थान' योजना के तहत समझौता</td></tr><tr><td>मणिपाल यूनिवर्सिटी जयपुर</td><td>B.Tech (Robotics &amp; Artificial Intelligence) कोर्स — ड्रोन तकनीक, IoT सिस्टम व डेटा एनालिटिक्स में माइनर विशेषज्ञता सहित</td></tr><tr><td>भारतीय स्किल डेवलपमेंट यूनिवर्सिटी (BSDU), जयपुर</td><td>भारत की पहली कौशल-केंद्रित यूनिवर्सिटी — AI व रोबोटिक्स में B.Tech प्रोग्राम</td></tr><tr><td>राजस्थान इनोवेशन एंड टेक्नोलॉजी सेंटर</td><td>जयपुर, जोधपुर व उदयपुर में स्थापित — डेटा एनालिटिक्स, AI, ML व IoT अनुसंधान हेतु</td></tr><tr><td>अटल टिंकरिंग लैब (ATL)</td><td>राज्य के सरकारी स्कूलों में 1,500 लैब — छात्रों को रोबोटिक्स, AI व ड्रोन में व्यावहारिक प्रशिक्षण</td></tr><tr><td>IIT जोधपुर</td><td>'एडवांसेज इन रोबोटिक्स (AIR)' नामक वार्षिक राष्ट्रीय रोबोटिक्स सम्मेलन का आयोजन — शोधकर्ताओं व उद्योग को जोड़ने वाला मंच</td></tr></tbody></table></div>
+<h3 class="ch-h3">1.9 रोबोटिक्स की चुनौतियां एवं नैतिक मुद्दे</h3>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">रोबोटिक्स के लाभ</div><ul class="ch-list"><li>खतरनाक/दोहराव वाले कार्यों में मानव जोखिम कम</li><li>गति व सटीकता में भारी सुधार</li><li>24×7 बिना थके काम करने की क्षमता</li><li>दुर्गम स्थानों (अंतरिक्ष, समुद्र तल) में कार्य क्षमता</li></ul></div><div class="twocol-col"><div class="twocol-head">चुनौतियां एवं नैतिक मुद्दे</div><ul class="ch-list"><li>रोज़गार पर असर — दोहराव वाले कार्यों में स्वचालन से नौकरियां प्रभावित</li><li>उच्च प्रारंभिक लागत — छोटे उद्योगों के लिए महंगा</li><li>स्वायत्त हथियार (Autonomous Weapons) पर नैतिक सवाल — बिना मानव-निर्णय के हथियार चलाना कितना उचित?</li><li>सुरक्षा जोखिम — हैक किया गया रोबोट नुकसान पहुंचा सकता है</li></ul></div></div>
+<h3 class="ch-h3">1.10 रोबोटिक्स का भविष्य</h3>
+<p>आने वाले वर्षों में ह्यूमनॉइड रोबोट प्रयोगशाला से निकलकर घरों व कार्यस्थलों में आम होंगे — दुनिया भर की कंपनियां (जैसे टेस्ला का 'ऑप्टिमस' प्रोजेक्ट) इस दिशा में तेज़ी से काम कर रही हैं। रोबोटिक्स व AI का गहरा मेल रोबोट को न केवल पूर्व-निर्धारित कार्य करने, बल्कि नई परिस्थितियों में खुद सीखकर निर्णय लेने में सक्षम बनाएगा। भारत के लिए 2027 का गगनयान मानव मिशन एक बड़ा पड़ाव होगा, जहां व्योममित्र की सफलता आगे के मानव अंतरिक्ष मिशनों की नींव रखेगी।</p>
+<h3 class="ch-h3">📌  रोबोटिक्स — याद रखने योग्य बिंदु</h3><p>1. 'रोबोट' शब्द चेक भाषा के 'robota' (जबरन मज़दूरी) से बना है; रोबोट Sense-Think-Act चक्र पर काम करता है। 2. रोबोट के मुख्य घटक — सेंसर, नियंत्रक, एक्चुएटर, एंड इफेक्टर व पावर स्रोत हैं; प्रकार — औद्योगिक, सर्विस, मेडिकल, सैन्य, ह्यूमनॉइड व स्वार्म। 3. ISRO का व्योममित्र गगनयान मिशन-पूर्व परीक्षण हेतु महत्वपूर्ण ह्यूमनॉइड रोबोट है — अप्रैल 2026 में प्री-फ्लाइट इंटीग्रेशन शुरू हुई। 4. राजस्थान में MICARC (NIMS), मणिपाल यूनिवर्सिटी, BSDU व 1,500 अटल टिंकरिंग लैब रोबोटिक्स शिक्षा को गति दे रहे हैं; IIT जोधपुर 'AIR' सम्मेलन आयोजित करता है। 5. सबसे बड़ी चुनौतियां — रोज़गार पर असर व स्वायत्त हथियारों के नैतिक सवाल हैं; भविष्य ह्यूमनॉइड व AI-एकीकृत रोबोट का है।</p>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">2</span><span class="ch-h2-text">नैनोटेक्नोलॉजी (Nanotechnology)</span></h2>
+<h3 class="ch-h3">2.1 परिचय एवं इतिहास — मुलर से लेकर इजिमा तक</h3>
+<p>29 दिसंबर 1959 को वैज्ञानिक रिचर्ड फाइनमैन ने कैलिफोर्निया इंस्टीट्यूट ऑफ टेक्नोलॉजी में एक ऐतिहासिक व्याख्यान दिया — "There's Plenty of Room at the Bottom" ("तल पर बहुत जगह है") — जिसमें उन्होंने कल्पना की कि भविष्य में इंसान परमाणुओं व अणुओं को एक-एक करके व्यवस्थित कर बिल्कुल नई सामग्री व मशीनें बना सकेगा। उस समय यह विज्ञान-कथा जैसा लगा, परंतु आज नैनोटेक्नोलॉजी हमारे मोबाइल फोन की चिप से लेकर कैंसर के इलाज तक में मौजूद है। फाइनमैन से पहले व बाद में भी कई वैज्ञानिकों के योगदान ने मिलकर आज की नैनोटेक्नोलॉजी को आकार दिया:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>वर्ष</th><th>वैज्ञानिक/घटना</th><th>योगदान</th></tr></thead><tbody><tr><td>1936</td><td>इरविन मुलर (Erwin Muller)</td><td>फील्ड एमिशन माइक्रोस्कोप (FEM) का आविष्कार — परमाणु स्तर देखने की पहली झलक</td></tr><tr><td>1959</td><td>रिचर्ड फाइनमैन</td><td>"There's Plenty of Room at the Bottom" व्याख्यान — नैनोटेक्नोलॉजी की वैचारिक नींव</td></tr><tr><td>1974</td><td>नोरियो तानिगुची (Norio Taniguchi)</td><td>"नैनोटेक्नोलॉजी" शब्द पहली बार गढ़ा गया</td></tr><tr><td>1981</td><td>गर्ड बिनिग व हाइनरिष रोहरर</td><td>स्कैनिंग टनलिंग माइक्रोस्कोप (STM) का आविष्कार — नोबेल पुरस्कार (1986)</td></tr><tr><td>1985</td><td>राइस विश्वविद्यालय के वैज्ञानिक</td><td>बकमिन्स्टर फुलरीन (C-60) की खोज</td></tr><tr><td>1986</td><td>के. एरिक ड्रेक्सलर</td><td>"Engines of Creation" पुस्तक — "नैनोटेक्नोलॉजी" शब्द को लोकप्रिय बनाया; "Gray Goo" अवधारणा प्रस्तुत की</td></tr><tr><td>1991</td><td>सुमियो इजिमा (Sumio Iijima)</td><td>कार्बन नैनोट्यूब (CNT) की खोज</td></tr><tr><td>1992</td><td>—</td><td>MCM-48 (मेसोपोरस उत्प्रेरक सामग्री) की खोज</td></tr></tbody></table></div>
+<p>परीक्षा उपयोगी बिंदु: उपरोक्त समयरेखा में घटनाओं को सही कालानुक्रम (Chronological Order) में जोड़ने के प्रश्न परीक्षाओं में पूछे जाते हैं — याद रखें: मुलर (1936) → फाइनमैन (1959) → तानिगुची (1974) → बिनिग-रोहरर (1981) → फुलरीन (1985) → ड्रेक्सलर (1986) → इजिमा (1991) → MCM-48 (1992)।</p>
+<h3 class="ch-h3">2.2 नैनोटेक्नोलॉजी क्या है?</h3>
+<p>नैनोटेक्नोलॉजी, पदार्थ को अत्यंत सूक्ष्म स्तर — 1 से 100 नैनोमीटर (nm) के बीच — नियंत्रित व उपयोग करने का विज्ञान है। एक नैनोमीटर, एक मीटर का 100 करोड़वां हिस्सा होता है — इतना छोटा कि मानव बाल की मोटाई भी लगभग 80,000-1,00,000 नैनोमीटर होती है! इस सूक्ष्म स्तर पर पदार्थ के भौतिक, रासायनिक व जैविक गुण सामान्य आकार से बिल्कुल अलग व्यवहार करने लगते हैं — यही नैनोटेक्नोलॉजी की सबसे रोचक खासियत है।</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th></th><th>मीटर (Meter) — 1 मी. — मानव कद के बराबर</th><th></th></tr></thead><tbody><tr><td></td><td>मिलीमीटर (mm) — 1/1000 मी. — चींटी का आकार</td><td></td></tr><tr><td></td><td>माइक्रोमीटर (µm) — बैक्टीरिया का आकार</td><td></td></tr><tr><td></td><td>नैनोमीटर (nm) — 1-100 nm — परमाणु/अणु स्तर</td><td></td></tr></tbody></table></div>
+<p>चित्र: मापन का पैमाना — मीटर से नैनोमीटर तक, हर स्तर पर आकार लगभग 1000 गुना छोटा होता जाता है</p>
+<h3 class="ch-h3">2.3 दृष्टिकोण — टॉप-डाउन बनाम बॉटम-अप (Top-Down vs Bottom-Up)</h3>
+<p>नैनोसंरचनाएं बनाने के दो मूल दृष्टिकोण हैं। कल्पना कीजिए एक मूर्तिकार बड़े पत्थर को तराश-तराशकर छोटी मूर्ति बनाता है — यही 'टॉप-डाउन' दृष्टिकोण है, जहां बड़े पदार्थ को तोड़कर/काटकर नैनो आकार में लाया जाता है (जैसे लिथोग्राफी, एचिंग)। इसके विपरीत, जैसे ईंट-दर-ईंट जोड़कर भवन बनाया जाता है, 'बॉटम-अप' दृष्टिकोण में परमाणुओं व अणुओं को एक-एक कर जोड़कर नैनोसंरचना बनाई जाती है (जैसे सेल्फ-असेंबली, केमिकल वेपर डिपोज़िशन)।</p>
+<h3 class="ch-h3">2.4 नैनोटेक्नोलॉजी की चार पीढ़ियां (Four Generations)</h3>
+<p>नैनोटेक्नोलॉजी के विकास को समय के साथ चार पीढ़ियों में वर्गीकृत किया जाता है — यह RAS परीक्षा में बार-बार पूछा जाने वाला बिंदु है, विशेषकर इनके सही क्रम को लेकर:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>पीढ़ी</th><th>वर्ष (लगभग)</th><th>विशेषता</th></tr></thead><tbody><tr><td>प्रथम पीढ़ी (1st Gen)</td><td>2000</td><td>निष्क्रिय नैनोसंरचनाएं (Passive Nanostructures) — जैसे कोटिंग, स्थिर गुणों वाले नैनोकण</td></tr><tr><td>द्वितीय पीढ़ी (2nd Gen)</td><td>2005</td><td>सक्रिय नैनोसंरचनाएं (Active Nanostructures) — जैसे लक्ष्य-आधारित दवा वितरण, ट्रांजिस्टर</td></tr><tr><td>तृतीय पीढ़ी (3rd Gen)</td><td>2010</td><td>नैनोसिस्टम की प्रणाली (Systems of Nanosystems) — 3D नेटवर्किंग व नैनोरोबोट्स</td></tr><tr><td>चतुर्थ पीढ़ी (4th Gen)</td><td>2015</td><td>आणविक नैनोसिस्टम (Molecular Nanosystems) — आणविक स्तर पर निर्माण (Molecular Manufacturing)</td></tr></tbody></table></div>
+<p>RAS-2016 PYQ ध्यान बिंदु: RAS परीक्षा 2016 में इन चारों पीढ़ियों को सही कालानुक्रम में जोड़ने का प्रश्न पूछा गया था। क्रम याद रखें: 1st (निष्क्रिय, 2000) → 2nd (सक्रिय, 2005) → 3rd (नैनोसिस्टम, 2010) → 4th (आणविक, 2015)।</p>
+<h3 class="ch-h3">2.5 नैनोमटेरियल्स के प्रकार (Types of Nanomaterials)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>नैनोमटेरियल</th><th>विवरण</th><th>उपयोग</th></tr></thead><tbody><tr><td>नैनोकण (Nanoparticles)</td><td>1-100 nm आकार के अत्यंत सूक्ष्म कण, सतह क्षेत्र अधिक होने से अधिक प्रतिक्रियाशील</td><td>दवा वितरण, सनस्क्रीन, उत्प्रेरक (Catalyst)</td></tr><tr><td>कार्बन नैनोट्यूब (Carbon Nanotubes)</td><td>कार्बन परमाणुओं की बेलनाकार संरचना — स्टील से 100 गुना मज़बूत परंतु बहुत हल्की</td><td>हल्के व मज़बूत मिश्रित पदार्थ, इलेक्ट्रॉनिक्स</td></tr><tr><td>ग्रैफीन (Graphene)</td><td>कार्बन परमाणुओं की एकल परत — अत्यंत पतली, मज़बूत व बिजली की बेहतरीन संवाहक</td><td>लचीली स्क्रीन, तेज़ बैटरी, वाटर फिल्टर</td></tr><tr><td>क्वांटम डॉट्स (Quantum Dots)</td><td>अर्धचालक (Semiconductor) के अत्यंत छोटे कण, आकार अनुसार अलग रंग की रोशनी छोड़ते हैं</td><td>QLED टीवी स्क्रीन, मेडिकल इमेजिंग</td></tr><tr><td>नैनोवायर (Nanowires)</td><td>नैनोमीटर मोटाई के अत्यंत पतले तार</td><td>अगली पीढ़ी की सौर सेल व सेंसर</td></tr></tbody></table></div>
+<p>नैनोमटेरियल्स को उनके आयाम (Dimension) के आधार पर भी वर्गीकृत किया जाता है — यह भी परीक्षा में पूछा जाने वाला बिंदु है:</p>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>आयाम</th><th>विवरण</th><th>उदाहरण</th></tr></thead><tbody><tr><td>0D (शून्य-आयामी)</td><td>तीनों दिशाओं में नैनो-स्तर (सभी दिशाओं में 1-100 nm)</td><td>क्वांटम डॉट्स, नैनोकण</td></tr><tr><td>1D (एक-आयामी)</td><td>एक दिशा में बड़ा, शेष दो दिशाएं नैनो-स्तर पर</td><td>कार्बन नैनोट्यूब, नैनोवायर</td></tr><tr><td>2D (द्वि-आयामी)</td><td>दो दिशाओं में बड़ा, एक दिशा नैनो-स्तर पर (पतली परत)</td><td>ग्रैफीन, नैनोफिल्म</td></tr><tr><td>3D (त्रि-आयामी)</td><td>कोई भी दिशा नैनो-स्तर तक सीमित नहीं (बल्क नैनोमटेरियल)</td><td>नैनोक्रिस्टल का समूह, बल्क पाउडर</td></tr></tbody></table></div>
+<h3 class="ch-h3">2.6 महत्वपूर्ण नैनो शब्दावली (Nano Terminology)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>शब्द</th><th>विवरण</th></tr></thead><tbody><tr><td>फुलरीन (Fullerene, C-60)</td><td>कार्बन के 60 परमाणुओं से बनी फुटबॉल-आकार संरचना — "बकीबॉल" भी कहते हैं</td></tr><tr><td>डेंड्रीमर (Dendrimer)</td><td>शाखाओं जैसी संरचना वाले कृत्रिम पॉलिमर अणु — दवा वितरण में उपयोगी</td></tr><tr><td>कार्बन नैनो फ्लोरेट्स</td><td>IIT बॉम्बे द्वारा विकसित — फूल जैसी कार्बन नैनोसंरचना — 87% सौर ऊर्जा दक्षता व आर्सेनिक/मरकरी हटाने में सक्षम</td></tr><tr><td>स्वर्ण नैनोकण (AuNP)</td><td>सोने के नैनोकण — कैंसर डायग्नोसिस व इमेजिंग में उपयोग</td></tr><tr><td>नैनोमाइसेल (Nanomicelles)</td><td>गोलाकार नैनोसंरचना — जल में अघुलनशील दवाओं को घुलनशील बनाकर वितरित करने हेतु</td></tr><tr><td>नैनो ईयर (Nano Ear)</td><td>अत्यंत सूक्ष्म ध्वनि तरंगों (-60dB तक) को पकड़ने वाला सूक्ष्म सेंसर</td></tr></tbody></table></div>
+<h3 class="ch-h3">2.7 चिकित्सा में नैनोटेक्नोलॉजी (Nanomedicine)</h3>
+<p>नैनोमेडिसिन में नैनोकणों का उपयोग दवा को शरीर में सीधे बीमार कोशिकाओं (जैसे कैंसर ट्यूमर) तक पहुंचाने के लिए किया जाता है — जिसे 'टार्गेटेड ड्रग डिलीवरी (Targeted Drug Delivery)' कहते हैं। इससे दवा का प्रभाव सीधे रोगग्रस्त हिस्से पर पड़ता है, स्वस्थ कोशिकाओं को नुकसान कम होता है, तथा कीमोथेरेपी जैसे इलाजों के दुष्प्रभाव भी घटते हैं। इसके अलावा नैनो-आधारित डायग्नोस्टिक टूल बीमारियों को बहुत प्रारंभिक अवस्था में ही पहचानने में मदद करते हैं।</p>
+<div class="tip-box"><div class="tip-title">💡  कैंसर के खिलाफ नैनो-हथियार</div><p>कल्पना कीजिए एक दवा का कण इतना छोटा हो कि वह सीधे कैंसर की कोशिका के अंदर घुसकर ही अपना असर दिखाए, आस-पास की स्वस्थ कोशिकाओं को छुए बिना — यही नैनोमेडिसिन की सबसे बड़ी उपलब्धि है। वैज्ञानिक अब ऐसे नैनोकण बना रहे हैं जो शरीर में घूमते हुए केवल ट्यूमर की विशेष पहचान (Biomarker) को पहचानकर वहीं दवा छोड़ते हैं — जैसे कोई GPS-गाइडेड मिसाइल, सिर्फ लक्ष्य पर वार करने वाली।</p></div>
+<h3 class="ch-h3">2.8 वस्त्र उद्योग में नैनोटेक्नोलॉजी (Nano-Textiles)</h3>
+<p>नैनोटेक्नोलॉजी ने कपड़ा उद्योग में भी क्रांति ला दी है — कपड़ों के रेशों पर नैनो-कोटिंग चढ़ाकर उन्हें विशेष गुण दिए जाते हैं:</p>
+<ul class="ch-list"><li>जल एवं दाग-प्रतिरोधी कपड़े (Water &amp; Stain Resistant) — पानी व दाग कपड़े की सतह पर टिकते ही नहीं, फिसल जाते हैं।</li><li>UV-सुरक्षा वस्त्र — सूर्य की हानिकारक पराबैंगनी किरणों से त्वचा की सुरक्षा।</li><li>एंटी-बैक्टीरियल कपड़े — चांदी के नैनोकणों से बैक्टीरिया व दुर्गंध को रोकना — खेल-वस्त्रों में लोकप्रिय।</li><li>तापमान-नियंत्रित वस्त्र — कुछ नैनो-फाइबर शरीर के तापमान अनुसार गर्मी/ठंडक बनाए रखते हैं।</li></ul>
+<h3 class="ch-h3">2.9 अन्य क्षेत्रों में नैनोटेक्नोलॉजी के अनुप्रयोग</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>क्षेत्र</th><th>उपयोग</th></tr></thead><tbody><tr><td>इलेक्ट्रॉनिक्स/IT</td><td>कंप्यूटर चिप्स में नैनोमीटर स्तर के ट्रांजिस्टर; MRAM (मैग्नेटिक RAM); Indian Nanoelectronics User Program — MeitY द्वारा वित्त पोषित, केवल IISc बेंगलुरु व IIT बॉम्बे में उपलब्ध</td></tr><tr><td>ऊर्जा</td><td>कार्बन नैनो फ्लोरेट्स (IIT बॉम्बे) से 87% सौर ऊर्जा दक्षता; हल्की, तेज़ चार्ज होने वाली बैटरी</td></tr><tr><td>कृषि</td><td>नैनो-उर्वरक (Nano Urea) — दुनिया का पहला नैनो यूरिया संयंत्र इफको (IFFCO) द्वारा कलोल, गुजरात में स्थापित; कम मात्रा में अधिक प्रभावी, पर्यावरण को कम नुकसान</td></tr><tr><td>जल शुद्धिकरण</td><td>नैनो-फिल्ट्रेशन तकनीक (जैसे फ्रांस में विकसित, 10 एंगस्ट्रॉम तक छोटे छिद्र आकार) से प्रदूषक व बैक्टीरिया अत्यंत सूक्ष्म स्तर पर छानना</td></tr><tr><td>सौंदर्य प्रसाधन (Cosmetics)</td><td>सनस्क्रीन में टाइटेनियम डाइऑक्साइड/जिंक ऑक्साइड नैनो-कण त्वचा पर बेहतर व पारदर्शी तरीके से फैलते हैं</td></tr></tbody></table></div>
+<p>परीक्षा-भ्रम बिंदु: Indian Nanoelectronics User Program, MeitY (इलेक्ट्रॉनिक्स एवं सूचना प्रौद्योगिकी मंत्रालय) द्वारा वित्त पोषित है, DST द्वारा नहीं — यह एक सामान्य परीक्षा-भ्रम बिंदु है, तथा यह सुविधा केवल IISc बेंगलुरु व IIT बॉम्बे में ही उपलब्ध है।</p>
+<h3 class="ch-h3">2.10 भारत में नैनोटेक्नोलॉजी पहल — Nano Mission</h3>
+<p>भारत सरकार ने विज्ञान एवं प्रौद्योगिकी विभाग (DST) के अंतर्गत प्रारंभ में 2001-2006 के दौरान एक प्रारंभिक कार्यक्रम चलाया, तत्पश्चात मई 2007 में औपचारिक रूप से 'राष्ट्रीय नैनो विज्ञान एवं प्रौद्योगिकी मिशन (Nano Mission)' शुरू किया गया, जो 31 मार्च 2017 को औपचारिक रूप से पूर्ण होकर अब 'राष्ट्रीय नैनो विज्ञान एवं प्रौद्योगिकी कार्यक्रम' के रूप में जारी है।</p>
+<h3 class="ch-h3">🚀  भारत का Nano Mission (नैनो मिशन) DST की प्रमुख नैनो प्रौद्योगिकी योजना | मई 2007 से</h3><ul class="ch-list"><li>प्रो. सी.एन.आर. राव (CNR Rao) — भारत में नैनोटेक्नोलॉजी के जनक व मिशन के प्रथम अध्यक्ष माने जाते हैं</li><li>चरण-I (Phase-I) — ₹1,000 करोड़ का परिव्यय; बुनियादी ढांचा व मानव संसाधन निर्माण पर केंद्रित</li><li>चरण-II (Phase-II) — ₹650 करोड़ का परिव्यय; अनुप्रयोग-आधारित शोध व उद्योग-सहभागिता पर बल</li><li>अंतरराष्ट्रीय सहयोग — जर्मनी, रूस, जापान व इटली के साथ संयुक्त शोध कार्यक्रम</li><li>2016 के बाद से भारत नैनो विज्ञान शोध-पत्रों (Research Papers) की संख्या में विश्व में तीसरे स्थान पर है (अमेरिका व चीन के बाद)</li><li>नैनो विज्ञान एवं प्रौद्योगिकी संस्थान (INST), मोहाली — मिशन के अंतर्गत स्थापित समर्पित संस्थान</li></ul>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>प्रमुख नैनो अनुसंधान केंद्र</th><th>स्थान</th></tr></thead><tbody><tr><td>IIT मद्रास, IIT बॉम्बे, IIT कानपुर</td><td>विभिन्न राज्य</td></tr><tr><td>IISc बेंगलुरु</td><td>कर्नाटक</td></tr><tr><td>TIFR मुंबई</td><td>महाराष्ट्र</td></tr><tr><td>S.N. Bose Centre</td><td>कोलकाता, पश्चिम बंगाल</td></tr><tr><td>अमृता विश्वविद्यालय</td><td>कोच्चि, केरल</td></tr><tr><td>नैनो एवं सॉफ्ट मैटर साइंसेज केंद्र (CeNS)</td><td>बेंगलुरु, कर्नाटक</td></tr><tr><td>INST</td><td>मोहाली, पंजाब</td></tr></tbody></table></div>
+<h3 class="ch-h3">2.11 राजस्थान में नैनोटेक्नोलॉजी अनुसंधान</h3>
+<p>राजस्थान में मालवीय राष्ट्रीय प्रौद्योगिकी संस्थान (MNIT), जयपुर जैसे संस्थान सामग्री विज्ञान (Material Science) व नैनो-अनुसंधान से जुड़े क्षेत्रों में सक्रिय हैं। राज्य के 'राजस्थान इनोवेशन एंड टेक्नोलॉजी सेंटर' (जयपुर, जोधपुर, उदयपुर) भी उन्नत सामग्री व AI-एकीकृत अनुसंधान को बढ़ावा दे रहे हैं, जिससे भविष्य में नैनो-आधारित स्टार्टअप्स के लिए भी राज्य में बेहतर पारिस्थितिकी तंत्र तैयार हो रहा है।</p>
+<h3 class="ch-h3">2.12 नैनोटेक्नोलॉजी की चुनौतियां</h3>
+<p>नैनोकणों का अत्यंत सूक्ष्म आकार ही इनकी सबसे बड़ी चुनौती भी है — यह इतने छोटे होते हैं कि शरीर की कोशिकाओं व पर्यावरण में आसानी से प्रवेश कर सकते हैं, जिनके दीर्घकालिक स्वास्थ्य व पर्यावरणीय प्रभावों पर अभी पूरी तरह शोध नहीं हुआ है।</p>
+<ul class="ch-list"><li>Gray Goo (ग्रे गू) — के. एरिक ड्रेक्सलर द्वारा प्रस्तुत काल्पनिक परिदृश्य, जिसमें स्व-प्रतिकृति (Self-Replicating) नैनोरोबोट अनियंत्रित होकर पूरे पदार्थ को नष्ट कर सकते हैं।</li><li>नैनो प्रदूषण (Nano Pollution) — पर्यावरण में नैनोकणों के अनियंत्रित प्रवेश से जल, वायु व मृदा पर अज्ञात दीर्घकालिक प्रभाव।</li><li>नैनो हथियार (Nano Weapons) — सैन्य उपयोग हेतु नैनोतकनीक के दुरुपयोग की आशंका।</li><li>मानव संसाधन की कमी — विशेषज्ञ वैज्ञानिकों व तकनीशियनों का अभाव तथा नैनोमटेरियल उत्पादन की उच्च लागत व स्पष्ट वैश्विक नियमन (Regulation) की कमी।</li></ul>
+<h3 class="ch-h3">2.13 नैनोटेक्नोलॉजी का भविष्य</h3>
+<p>भविष्य में 'नैनोरोबोटिक्स (Nanorobotics)' — अणु के आकार के सूक्ष्म रोबोट, जो रक्त-प्रवाह में घूमकर बीमारी की सीधी मरम्मत कर सकें — चिकित्सा जगत में सबसे बड़ी क्रांति ला सकते हैं। इसके अलावा 'आणविक निर्माण (Molecular Manufacturing)' — जहां वस्तुएं परमाणु-दर-परमाणु जोड़कर बनाई जाएं — पर भी वैश्विक शोध जारी है, हालांकि यह अभी शुरुआती प्रायोगिक चरण में है।</p>
+<h3 class="ch-h3">📌  नैनोटेक्नोलॉजी — याद रखने योग्य बिंदु</h3><p>1. नैनोटेक्नोलॉजी 1-100 नैनोमीटर स्तर पर पदार्थ को नियंत्रित करने का विज्ञान है; इतिहास — मुलर (1936) → फाइनमैन (1959) → तानिगुची (1974, नाम गढ़ा) → बिनिग-रोहरर (1981, STM) → फुलरीन (1985) → ड्रेक्सलर (1986, Gray Goo) → इजिमा (1991, CNT)। 2. टॉप-डाउन (बड़े से छोटा) व बॉटम-अप (परमाणु जोड़कर) — दो मूल दृष्टिकोण; 4 पीढ़ियां (निष्क्रिय 2000 → सक्रिय 2005 → नैनोसिस्टम 2010 → आणविक 2015) RAS-2016 का प्रमुख PYQ बिंदु है। 3. नैनोमटेरियल — नैनोकण, CNT, ग्रैफीन, क्वांटम डॉट्स, फुलरीन, डेंड्रीमर; आयाम अनुसार 0D/1D/2D/3D वर्गीकरण। 4. नैनोमेडिसिन टार्गेटेड ड्रग डिलीवरी से कैंसर इलाज में क्रांति ला रही है; कृषि में IFFCO का Nano Urea (कलोल, गुजरात) विश्व का पहला नैनो यूरिया संयंत्र है। 5. भारत का Nano Mission (मई 2007, DST) — CNR Rao जनक, Phase-I ₹1,000cr व Phase-II ₹650cr; INST मोहाली प्रमुख संस्थान; MeitY का Indian Nanoelectronics Program केवल IISc व IIT बॉम्बे में उपलब्ध (DST से भ्रमित न करें)। 6. राजस्थान में MNIT जयपुर व राज्य के इनोवेशन सेंटर उन्नत सामग्री अनुसंधान को बढ़ावा दे रहे हैं; Gray Goo व नैनो प्रदूषण प्रमुख चुनौतियां हैं।</p>
+<div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="gk">
+    <div class="c-card-head head-gk"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div><h2 class="ch-h2"><span class="ch-h2-num">3</span><span class="ch-h2-text">क्वांटम कंप्यूटिंग (Quantum Computing)</span></h2>
+<h3 class="ch-h3">3.1 परिचय — बिट vs क्यूबिट की कहानी</h3>
+<p>कल्पना कीजिए एक सिक्का — जब वह मेज़ पर पड़ा है, तो या तो हेड (Head) है या टेल (Tail), दोनों में से एक। यही आज के सामान्य कंप्यूटर का सिद्धांत है — हर 'बिट (Bit)' या तो 0 है या 1। परंतु अब उसी सिक्के को हवा में घुमाते हुए कल्पना करें — जब तक वह घूम रहा है, वह न पूरी तरह हेड है न पूरी तरह टेल, बल्कि दोनों की एक साथ संभावना (Probability) में है। क्वांटम कंप्यूटिंग की 'क्यूबिट (Qubit)' ठीक ऐसे ही व्यवहार करती है — जब तक उसे 'देखा' (मापा) नहीं जाता, वह 0 और 1 दोनों अवस्थाओं में एक साथ रह सकती है। यही अनोखा गुण क्वांटम कंप्यूटर को कुछ कार्यों में सामान्य कंप्यूटर से लाखों गुना तेज़ बना सकता है।</p>
+<h3 class="ch-h3">3.2 क्वांटम कंप्यूटिंग के मूल सिद्धांत (Foundational Principles)</h3>
+<h3 class="ch-h3">1. सुपरपोज़िशन (Superposition) — एक क्यूबिट एक साथ 0 और 1 दोनों अवस्थाओं में रह सकती है, जब तक उसे मापा न जाए। इससे क्वांटम कंप्यूटर एक साथ कई संभावनाओं की गणना कर सकता है।</h3>
+<h3 class="ch-h3">2. एंटेंगलमेंट (Entanglement) — दो क्यूबिट इस तरह जुड़ जाती हैं कि एक की अवस्था बदलते ही दूसरी की अवस्था तुरंत बदल जाती है, चाहे वे कितनी भी दूरी पर हों। आइंस्टीन ने इसे 'भूतिया दूर-क्रिया (Spooky Action at a Distance)' कहा था।</h3>
+<h3 class="ch-h3">3. क्वांटम इंटरफेरेंस (Quantum Interference) — विभिन्न संभावनाओं की तरंगों को इस तरह संयोजित करना कि सही उत्तर की संभावना बढ़े और गलत उत्तर की घटे — इसी से क्वांटम एल्गोरिदम काम करते हैं।</h3>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">क्लासिकल बिट (Classical Bit)</div><ul class="ch-list"><li>किसी भी क्षण या तो 0 या 1</li><li>एक समय में एक ही अवस्था की गणना</li><li>सामान्य कंप्यूटर, मोबाइल, लैपटॉप में उपयोग</li></ul></div><div class="twocol-col"><div class="twocol-head">क्वांटम क्यूबिट (Qubit)</div><ul class="ch-list"><li>एक साथ 0 और 1 दोनों (सुपरपोज़िशन)</li><li>एक समय में कई संभावनाओं की समानांतर गणना</li><li>क्वांटम कंप्यूटर — अभी शोध व प्रारंभिक व्यावसायिक चरण में</li></ul></div></div>
+<p>चित्र: क्लासिकल बिट बनाम क्वांटम क्यूबिट — यही अंतर क्वांटम कंप्यूटिंग को असाधारण शक्ति देता है</p>
+<h3 class="ch-h3">3.3 शास्त्रीय बनाम क्वांटम कंप्यूटिंग — तुलनात्मक तालिका</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>आधार</th><th>शास्त्रीय कंप्यूटिंग (Classical)</th><th>क्वांटम कंप्यूटिंग (Quantum)</th></tr></thead><tbody><tr><td>मूल इकाई</td><td>बिट (0 अथवा 1)</td><td>क्यूबिट (0 और 1 दोनों एक साथ)</td></tr><tr><td>गणना पद्धति</td><td>क्रमिक (Sequential) — एक के बाद एक</td><td>समानांतर (Parallel) — कई संभावनाएं एक साथ</td></tr><tr><td>उपयुक्त कार्य</td><td>दैनिक कंप्यूटिंग, इंटरनेट ब्राउज़िंग, दस्तावेज़</td><td>जटिल अनुकूलन, क्रिप्टोग्राफी, दवा-खोज, मौसम मॉडलिंग</td></tr><tr><td>त्रुटि दर</td><td>बहुत कम, स्थिर</td><td>अधिक — डीकोहेरेंस (Decoherence) से क्यूबिट अस्थिर</td></tr><tr><td>तापमान आवश्यकता</td><td>सामान्य कक्ष तापमान</td><td>अत्यंत निम्न तापमान (परम शून्य के निकट)</td></tr></tbody></table></div>
+<h3 class="ch-h3">3.4 क्वांटम कंप्यूटर की कार्यप्रणाली</h3>
+<p>क्वांटम कंप्यूटर क्यूबिट को नियंत्रित करने के लिए सुपर-कंडक्टिंग सर्किट, ट्रैप्ड आयन (Trapped Ions) या फोटॉन (Photons) जैसी तकनीकों का उपयोग करते हैं। चूंकि क्यूबिट बेहद संवेदनशील होती हैं — हल्का सा तापमान परिवर्तन, कंपन या विद्युत-चुंबकीय हस्तक्षेप भी उनकी क्वांटम अवस्था को बिगाड़ सकता है (जिसे 'डीकोहेरेंस' कहते हैं) — इसलिए क्वांटम कंप्यूटर को परम शून्य (Absolute Zero, -273.15°C) के बेहद निकट तापमान पर, विशेष रूप से परिरक्षित (Shielded) वातावरण में रखा जाता है।</p>
+<h3 class="ch-h3">3.5 क्वांटम कंप्यूटिंग के अनुप्रयोग (Applications)</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>क्षेत्र</th><th>अनुप्रयोग</th></tr></thead><tbody><tr><td>क्रिप्टोग्राफी (Cryptography)</td><td>अत्यंत सुरक्षित क्वांटम-एन्क्रिप्शन (QKD) — साथ ही मौजूदा एन्क्रिप्शन को तोड़ने की क्षमता भी (चुनौती)</td></tr><tr><td>दवा खोज (Drug Discovery)</td><td>अणुओं की जटिल संरचना का तेज़ अनुकरण (Simulation) — नई दवाओं की खोज में वर्षों की जगह महीनों में परिणाम</td></tr><tr><td>मौसम एवं जलवायु मॉडलिंग</td><td>अत्यंत जटिल मौसम प्रणालियों का सटीक व तेज़ पूर्वानुमान</td></tr><tr><td>अनुकूलन समस्याएं (Optimization)</td><td>यातायात प्रबंधन, आपूर्ति श्रृंखला (Supply Chain), वित्तीय पोर्टफोलियो अनुकूलन</td></tr><tr><td>कृत्रिम बुद्धिमत्ता</td><td>मशीन लर्निंग मॉडल का प्रशिक्षण तेज़ करना</td></tr></tbody></table></div>
+<h3 class="ch-h3">3.6 क्वांटम कम्युनिकेशन एवं क्वांटम क्रिप्टोग्राफी</h3>
+<p>क्वांटम कम्युनिकेशन में एंटेंगलमेंट के सिद्धांत का उपयोग कर सूचना को इतने सुरक्षित तरीके से भेजा जाता है कि कोई भी बीच में जासूसी (Eavesdropping) करे तो क्वांटम अवस्था तुरंत बदल जाती है — जिससे छेड़छाड़ का तुरंत पता चल जाता है। भारत ने अप्रैल 2026 में एक बड़ी उपलब्धि हासिल की — QNu Labs की मदद से भारत का पहला 1,000 किलोमीटर लंबा क्वांटम-सुरक्षित संचार नेटवर्क स्थापित किया गया, जो बैंकिंग व रक्षा जैसे संवेदनशील क्षेत्रों के डेटा को क्वांटम-स्तर की सुरक्षा प्रदान करता है।</p>
+<div class="tip-box"><div class="tip-title">💡  क्वांटम कुंजी वितरण (Quantum Key Distribution) — अटूट ताला</div><p>सामान्य इंटरनेट सुरक्षा में डेटा को गणितीय कुंजी (Key) से लॉक किया जाता है, जिसे शक्तिशाली कंप्यूटर समय के साथ तोड़ सकते हैं। परंतु क्वांटम क्रिप्टोग्राफी में कुंजी को क्वांटम कणों (फोटॉन) के रूप में भेजा जाता है — यदि कोई बीच में इसे पढ़ने की कोशिश करे, तो क्वांटम भौतिकी के नियमानुसार कण की अवस्था तुरंत बदल जाती है और दोनों तरफ के लोगों को छेड़छाड़ का पता चल जाता है। यह एक ऐसा ताला है, जिसे चुपके से खोला ही नहीं जा सकता।</p></div>
+<h3 class="ch-h3">3.7 भारत का राष्ट्रीय क्वांटम मिशन (National Quantum Mission)</h3>
+<h3 class="ch-h3">🚀  राष्ट्रीय क्वांटम मिशन (National Quantum Mission) भारत सरकार की प्रमुख क्वांटम तकनीक योजना | 2023-24 से 2030-31</h3><ul class="ch-list"><li>कुल परिव्यय ₹6,003.65 करोड़ — क्वांटम कंप्यूटिंग, संचार, सेंसिंग व सामग्री विज्ञान में अनुसंधान हेतु</li><li>लक्ष्य — 2030-31 तक 50-1000 भौतिक क्यूबिट क्षमता के क्वांटम कंप्यूटर विकसित करना</li><li>QpiAI जैसी भारतीय कंपनियों ने 'Indus' व 'Kaveri' नामक स्वदेशी क्वांटम प्रोसेसर चिप विकसित किए हैं</li><li>आंध्र प्रदेश के अमरावती में 'क्वांटम वैली' विकसित की जा रही है — क्वांटम स्टार्टअप्स व अनुसंधान का केंद्र</li><li>चार थीमैटिक हब (T-Hub) स्थापित — क्वांटम कंप्यूटिंग, संचार, सेंसिंग-मेट्रोलॉजी व सामग्री-उपकरण पर केंद्रित</li></ul>
+<h3 class="ch-h3">3.8 वैश्विक स्थिति — क्वांटम कंप्यूटिंग की दौड़</h3>
+<div class="tbl-wrap"><table class="ch-table"><thead><tr><th>देश/कंपनी</th><th>उपलब्धि</th></tr></thead><tbody><tr><td>गूगल (Google)</td><td>'विलो (Willow)' नामक उन्नत क्वांटम चिप — जो एक कार्य कुछ ही मिनटों में हल करती है, जिसे सामान्य सुपर कंप्यूटर करोड़ों वर्ष लेंगे</td></tr><tr><td>IBM</td><td>'नाइटहॉक (Nighthawk)' व 'कॉन्डोर (Condor)' जैसी उच्च क्यूबिट क्षमता वाली क्वांटम चिप्स विकसित की हैं</td></tr><tr><td>वैश्विक निवेश</td><td>वर्ष 2026 में क्वांटम तकनीक में वैश्विक निवेश लगभग $17.3 बिलियन डॉलर आंका गया है</td></tr><tr><td>भारत</td><td>National Quantum Mission व QpiAI के इंडस/कावेरी चिप्स से स्वदेशी क्षमता निर्माण में जुटा</td></tr></tbody></table></div>
+<h3 class="ch-h3">3.9 राजस्थान में क्वांटम टेक्नोलॉजी — MNIT जयपुर की पहल</h3>
+<p>राजस्थान भी अब क्वांटम प्रौद्योगिकी अनुसंधान में कदम बढ़ा रहा है — मालवीय राष्ट्रीय प्रौद्योगिकी संस्थान (MNIT), जयपुर में इलेक्ट्रॉनिक्स एवं सूचना प्रौद्योगिकी मंत्रालय (MeitY) की परियोजना के अंतर्गत एक समर्पित 'क्वांटम कंप्यूटिंग एवं AI लैब' स्थापित की गई है।</p>
+<h3 class="ch-h3">🚀  MNIT जयपुर — क्वांटम कंप्यूटिंग एवं AI लैब MeitY परियोजना अंतर्गत स्थापित | 2025-26</h3><ul class="ch-list"><li>यह लैब क्वांटम एल्गोरिदम, क्वांटम मशीन लर्निंग व AI के अंतर्संबंध पर केंद्रित शोध करती है</li><li>छात्रों व शोधकर्ताओं को क्वांटम कंप्यूटिंग के व्यावहारिक अनुभव व प्रशिक्षण का अवसर मिलता है</li><li>राजस्थान के इंजीनियरिंग शिक्षा तंत्र को अत्याधुनिक तकनीकों से जोड़ने की दिशा में एक महत्वपूर्ण कदम</li></ul>
+<h3 class="ch-h3">3.10 क्वांटम कंप्यूटिंग की चुनौतियां एवं भविष्य</h3>
+<div class="twocol-box"><div class="twocol-col"><div class="twocol-head">संभावनाएं</div><ul class="ch-list"><li>जटिल समस्याओं का असाधारण तेज़ समाधान</li><li>दवा खोज व सामग्री विज्ञान में क्रांति</li><li>अभेद्य क्वांटम-सुरक्षित संचार</li></ul></div><div class="twocol-col"><div class="twocol-head">चुनौतियां</div><ul class="ch-list"><li>डीकोहेरेंस — क्यूबिट अत्यंत अस्थिर व त्रुटि-प्रवण</li><li>अत्यंत निम्न तापमान व महंगा हार्डवेयर</li><li>'क्वांटम सर्वोच्चता (Quantum Supremacy)' पर अभी वैज्ञानिक बहस जारी</li></ul></div></div>
+<p>विशेषज्ञों का मानना है कि अगले दशक में क्वांटम कंप्यूटर, सामान्य कंप्यूटर की जगह नहीं लेंगे, बल्कि विशेष जटिल समस्याओं के लिए 'सह-प्रोसेसर' के रूप में काम करेंगे — जैसे आज GPU ग्राफिक्स के लिए विशेष भूमिका निभाता है। भारत के लिए राष्ट्रीय क्वांटम मिशन इस वैश्विक दौड़ में आत्मनिर्भर बनने की दिशा में एक महत्वपूर्ण कदम है।</p>
+<h3 class="ch-h3">📌  क्वांटम कंप्यूटिंग — याद रखने योग्य बिंदु</h3><p>1. क्यूबिट सुपरपोज़िशन के कारण एक साथ 0 और 1 दोनों अवस्थाओं में रह सकती है; एंटेंगलमेंट में दो क्यूबिट दूरी के बावजूद जुड़ी रहती हैं। 2. क्वांटम कंप्यूटिंग क्रिप्टोग्राफी, दवा-खोज, मौसम मॉडलिंग व अनुकूलन समस्याओं में सबसे उपयोगी है। 3. भारत ने अप्रैल 2026 में QNu Labs की मदद से 1,000 km का क्वांटम-सुरक्षित संचार नेटवर्क स्थापित किया। 4. National Quantum Mission (₹6,003.65 करोड़, 2023-31) के तहत QpiAI के Indus/Kaveri चिप व अमरावती क्वांटम वैली प्रमुख उपलब्धियां हैं। 5. राजस्थान में MNIT जयपुर की क्वांटम कंप्यूटिंग व AI लैब राज्य को इस क्षेत्र में आगे ले जा रही है; डीकोहेरेंस अभी सबसे बड़ी तकनीकी चुनौती है।</p>
+<div class="angle-box"><div class="angle-title">🎯  रोबोटिक्स, नैनोटेक्नोलॉजी एवं क्वांटम कंप्यूटिंग — RAS Mains उत्तर लेखन कोण 5-अंक: 60-70 शब्द  |  10-अंक: ~120 शब्द</div><ul class="ch-list"><li>रोबोटिक्स के भारत में सामरिक व नागरिक अनुप्रयोगों की विवेचना कीजिए। (ISRO का व्योममित्र, DRDO के रोबोट व राजस्थान में रोबोटिक्स शिक्षा का उल्लेख करें।)</li><li>नैनोटेक्नोलॉजी की चिकित्सा एवं वस्त्र उद्योग में भूमिका स्पष्ट कीजिए। (टार्गेटेड ड्रग डिलीवरी व नैनो-टेक्सटाइल के उदाहरण दें।)</li><li>क्वांटम कंप्यूटिंग क्लासिकल कंप्यूटिंग से किस प्रकार भिन्न है? भारत के राष्ट्रीय क्वांटम मिशन की उपलब्धियों की चर्चा कीजिए।</li><li>उभरती प्रौद्योगिकियों (रोबोटिक्स, नैनोटेक्नोलॉजी, क्वांटम कंप्यूटिंग) के नैतिक एवं सुरक्षा संबंधी मुद्दों का मूल्यांकन कीजिए।</li><li>राजस्थान में उभरती तकनीकों (रोबोटिक्स, नैनोटेक्नोलॉजी, क्वांटम) के क्षेत्र में हो रहे शैक्षणिक एवं अनुसंधान प्रयासों का वर्णन कीजिए।</li><li>नैनोटेक्नोलॉजी की चार पीढ़ियों (Four Generations) की विवेचना कीजिए।</li><li>भारत के Nano Mission की उपलब्धियों एवं इसमें CNR Rao की भूमिका का मूल्यांकन कीजिए।</li><li>नैनोटेक्नोलॉजी के कृषि क्षेत्र में अनुप्रयोग (Nano Urea सहित) की विवेचना कीजिए।</li></ul></div>
+<h3 class="ch-h3">📝  पिछले वर्षों के प्रश्न (PYQs)  📝</h3><p>Q1. 'रोबोट' शब्द की उत्पत्ति किस भाषा से हुई तथा इसका मूल अर्थ क्या है? Q2. ISRO के व्योममित्र (Vyommitra) के बारे में संक्षेप में लिखिए। यह गगनयान मिशन से किस प्रकार जुड़ा है? Q3. नैनोटेक्नोलॉजी में प्रयुक्त प्रमुख नैनोमटेरियल्स (ग्रैफीन, कार्बन नैनोट्यूब, क्वांटम डॉट्स) की विशेषताएं बताइए। Q4. भारत के Nano Mission का संक्षिप्त परिचय दीजिए। इसके जनक कौन माने जाते हैं? Q5. नैनोटेक्नोलॉजी की चार पीढ़ियों को सही कालानुक्रम में लिखिए। Q6. टॉप-डाउन व बॉटम-अप दृष्टिकोण में क्या अंतर है? Q7. Gray Goo अवधारणा किसने प्रस्तुत की तथा इसका क्या अर्थ है? Q8. विश्व का पहला नैनो यूरिया संयंत्र कहां स्थापित है? Q9. 0D, 1D, 2D व 3D नैनोमटेरियल में अंतर स्पष्ट कीजिए, उदाहरण सहित। Q10. Indian Nanoelectronics User Program किस मंत्रालय द्वारा वित्त पोषित है तथा यह कहां उपलब्ध है? Q11. क्वांटम कंप्यूटिंग में 'सुपरपोज़िशन' व 'एंटेंगलमेंट' की अवधारणा को स्पष्ट कीजिए। Q12. भारत के राष्ट्रीय क्वांटम मिशन (National Quantum Mission) का परिव्यय, अवधि व प्रमुख लक्ष्य बताइए। Q13. MNIT जयपुर व अन्य राजस्थान संस्थानों की रोबोटिक्स/क्वांटम शिक्षा में भूमिका पर टिप्पणी कीजिए। Q14. क्लासिकल बिट व क्वांटम क्यूबिट में मूल अंतर स्पष्ट कीजिए।</p>
+<h3 class="ch-h3">📌  अध्याय सारांश (Chapter Summary)</h3><ul class="ch-list"><li>रोबोटिक्स — Sense-Think-Act चक्र पर आधारित मशीनें, जिनका दायरा औद्योगिक असेंबली से लेकर अंतरिक्ष (व्योममित्र) तक फैला है।</li><li>नैनोटेक्नोलॉजी — मुलर (1936) से इजिमा (1991) तक की समृद्ध इतिहास-यात्रा, 4 पीढ़ियां (2000-2015) व टॉप-डाउन/बॉटम-अप दृष्टिकोण के साथ 1-100 नैनोमीटर स्तर पर पदार्थ नियंत्रण; चिकित्सा, वस्त्र, ऊर्जा व कृषि (Nano Urea) में क्रांति ला रही है; भारत का Nano Mission (CNR Rao) आत्मनिर्भरता की मिसाल है।</li><li>क्वांटम कंप्यूटिंग — सुपरपोज़िशन व एंटेंगलमेंट पर आधारित अगली पीढ़ी की कंप्यूटिंग, जो क्रिप्टोग्राफी व दवा-खोज में असाधारण संभावनाएं रखती है।</li><li>भारत का National Quantum Mission (₹6,003.65 करोड़) व स्वदेशी क्वांटम चिप्स (Indus, Kaveri) आत्मनिर्भरता की दिशा में महत्वपूर्ण कदम हैं।</li><li>राजस्थान — MICARC (NIMS), मणिपाल यूनिवर्सिटी, BSDU, IIT जोधपुर व MNIT जयपुर की क्वांटम लैब — राज्य को इन उभरती तकनीकों में अग्रणी बना रहे हैं।</li><li>तीनों तकनीकों की सबसे बड़ी साझा चुनौती — नैतिक उपयोग, सुरक्षा जोखिम व उच्च लागत — के बावजूद भविष्य इन्हीं तकनीकों के एकीकरण का है।</li></ul><div class="ch-ad-wrap">
+  <div class="ch-ad-label">📢 विज्ञापन</div>
+  <div class="c-card" data-category="ras">
+    <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
+    <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
+    <div class="c-body"><div class="c-tags"><span class="c-tag">Multiple Validity</span><span class="c-tag">Tests</span></div></div>
+    <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+  </div>
+</div>
+</div>
+
+<div class="ch-nav">
+  <a href="vigyan-praudyogiki-ch04-ict-recent.html" class="ch-nav-btn">← अध्याय 4: ICT में हालिया विकास (AI-ML, Big Data, IoT, Blockchain, VR/AR, साइबर सुरक्षा)</a>
+  <a href="vigyan-praudyogiki-ch06-jaiv-praudyogiki.html" class="ch-nav-btn ch-nav-next">अध्याय 6: जैव प्रौद्योगिकी एवं आनुवंशिक अभियांत्रिकी →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Omkar Sir<span>.</span></div>
+  <div style="font-size:12.5px;margin-bottom:8px">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+  <div><a href="vigyan-praudyogiki.html">📚 सभी अध्याय</a> <a href="courses.html">Courses</a> <a href="index.html">Home</a></div>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>
