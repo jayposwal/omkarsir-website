@@ -47,6 +47,10 @@
         {
           "label": "📋 संविधान",
           "url": "/samvidhan.html"
+        },
+        {
+          "label": "💻 विज्ञान एवं प्रौद्योगिकी (10 अध्याय)",
+          "url": "/vigyan-praudyogiki.html"
         }
       ]
     },
