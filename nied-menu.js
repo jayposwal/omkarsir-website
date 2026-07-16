@@ -8,8 +8,20 @@
   function injectStyles(){
     if(document.getElementById('nied-menu-style')) return;
     var css = '#nied-navbar{font-family:"Noto Sans Devanagari",Arial,sans-serif;position:sticky;top:0;z-index:9999;}'
+      + '.nied-ticker{background:#111a3d;color:#fff;display:flex;align-items:center;overflow:hidden;padding:0;font-size:.78rem;height:34px;}'
+      + '.nied-ticker-live{flex-shrink:0;display:flex;align-items:center;gap:6px;background:#FF6B00;color:#fff;font-weight:800;padding:0 14px;height:100%;letter-spacing:.4px;font-size:.72rem;}'
+      + '.nied-ticker-dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:niedPulse 1.2s infinite;}'
+      + '@keyframes niedPulse{0%,100%{opacity:1;}50%{opacity:.3;}}'
+      + '.nied-ticker-track-wrap{flex:1;overflow:hidden;white-space:nowrap;position:relative;height:100%;display:flex;align-items:center;}'
+      + '.nied-ticker-track{display:inline-flex;align-items:center;white-space:nowrap;animation:niedTicker 32s linear infinite;padding-left:100%;}'
+      + '.nied-ticker-track span{margin-right:46px;color:#dfe3f5;}'
+      + '.nied-ticker-track span::before{content:"\2022";color:#FF6B00;margin-right:10px;font-weight:800;}'
+      + '@keyframes niedTicker{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}'
+      + '.nied-logo-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#FF6B00,#ffb27a);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;box-shadow:0 3px 8px rgba(255,107,0,.35);}'
+      + '.nied-logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}'
       + '.nied-nav-inner{background:#1B2A6B;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,.18);position:relative;}'
-      + '.nied-logo{color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;display:flex;flex-direction:column;line-height:1.25;}'
+      + '.nied-logo{color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;}'
+      + '.nied-logo-text{display:flex;flex-direction:column;line-height:1.25;}'
       + '.nied-logo-sub{font-weight:600;font-size:.68rem;color:#cdd4ee;}'
       + '.nied-burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 8px;}'
       + '.nied-menu{list-style:none;display:flex;gap:4px;margin:0;padding:0;align-items:center;}'
@@ -42,6 +54,11 @@
       + '.nied-search-item .nsr-desc{font-size:11.5px;color:#888;display:block;margin-top:2px;line-height:1.4;}'
       + '.nied-search-empty{font-size:12.5px;color:#999;padding:10px;text-align:center;}'
       + '@media (max-width:880px){'
+      + '.nied-ticker{font-size:.68rem;height:30px;}'
+      + '.nied-ticker-live{padding:0 8px;font-size:.62rem;}'
+      + '.nied-ticker-track span{margin-right:30px;}'
+      + '.nied-logo-icon{width:28px;height:28px;font-size:14px;}'
+      + '.nied-logo{font-size:.92rem;}'
       + '.nied-burger{display:block;}'
       + '.nied-menu{display:none;flex-direction:column;width:100%;align-items:stretch;background:#1B2A6B;position:absolute;left:0;top:100%;padding:8px 14px 14px;box-shadow:0 10px 24px rgba(0,0,0,.25);max-height:80vh;overflow-y:auto;}'
       + '.nied-menu.open{display:flex;}'
@@ -68,8 +85,19 @@
   function render(mount, menu){
     injectStyles();
     var logo = menu.logo || {text:'New India Education', url:'/'};
-    var logoInner = esc(logo.text) + (logo.subtitle ? '<span class="nied-logo-sub">' + esc(logo.subtitle) + '</span>' : '');
-    var html = '<div class="nied-nav-inner"><a class="nied-logo" href="' + esc(logo.url) + '">' + logoInner + '</a>'
+    var ticker = menu.ticker || [];
+    var tickerItems = ticker.map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('');
+    var tickerHtml = '';
+    if(ticker.length){
+      tickerHtml = '<div class="nied-ticker">'
+        + '<div class="nied-ticker-live"><span class="nied-ticker-dot"></span>LIVE</div>'
+        + '<div class="nied-ticker-track-wrap"><div class="nied-ticker-track">' + tickerItems + tickerItems + '</div></div>'
+        + '</div>';
+    }
+    var logoTextInner = esc(logo.text) + (logo.subtitle ? '<span class="nied-logo-sub">' + esc(logo.subtitle) + '</span>' : '');
+    var logoInner = '<span class="nied-logo-icon">🎓</span><span class="nied-logo-text">' + logoTextInner + '</span>';
+    var html = tickerHtml
+      + '<div class="nied-nav-inner"><a class="nied-logo nied-logo-wrap" href="' + esc(logo.url) + '">' + logoInner + '</a>'
       + '<button class="nied-burger" id="niedBurger" aria-label="Menu">&#9776;</button>'
       + '<ul class="nied-menu" id="niedMenuList">';
     function renderChildren(children){
