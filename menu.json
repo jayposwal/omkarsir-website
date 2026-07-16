@@ -1,6 +1,7 @@
 {
   "logo": {
-    "text": "🎓 Omkar Sir. New India Education",
+    "text": "🎓 Omkar Sir",
+    "subtitle": "New India Education",
     "url": "/"
   },
   "items": [
@@ -106,13 +107,61 @@
     },
     {
       "label": "📄 सभी Courses",
-      "type": "link",
-      "url": "/courses.html"
-    },
-    {
-      "label": "🎯 RAS Prelims Super 60",
-      "type": "link",
-      "url": "/ras-prelims-super60.html"
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🎯 RAS Prelims Super 60 (Free Schedule)",
+          "url": "/ras-prelims-super60.html"
+        },
+        {
+          "label": "🚀 RAS Pre 2026 BEST Test Series — FREE",
+          "url": "/courses.html#course-test-series"
+        },
+        {
+          "label": "📘 RAS Foundation Course 2026",
+          "url": "/courses.html#course-ras-foundation"
+        },
+        {
+          "label": "🎯 RAS Prelims 2026 SUPER 60 Course (App)",
+          "url": "/courses.html#course-super60"
+        },
+        {
+          "label": "🕉️ भारत भूगोल OMASTRA GK सीरीज",
+          "url": "/courses.html#course-bharat-bhugol"
+        },
+        {
+          "label": "📜 India History — भारत का सम्पूर्ण इतिहास",
+          "url": "/courses.html#course-india-history"
+        },
+        {
+          "label": "🌍 World Geography — विश्व भूगोल",
+          "url": "/courses.html#course-world-geography"
+        },
+        {
+          "label": "🔢 Mathematics & Reasoning Complete Course",
+          "url": "/courses.html#course-math-reasoning"
+        },
+        {
+          "label": "🧬 जीव विज्ञान (Biology) — OMASTRA GK Series",
+          "url": "/courses.html#course-biology"
+        },
+        {
+          "label": "📦 ALL IN ONE Subscription",
+          "url": "/courses.html#course-all-in-one"
+        },
+        {
+          "label": "⚖️ Polity OMASTRA Course",
+          "url": "/courses.html#course-polity"
+        },
+        {
+          "label": "📝 10 हजार अति महत्वपूर्ण प्रश्न",
+          "url": "/courses.html#course-10k-questions"
+        },
+        {
+          "label": "📚 सभी Courses देखें (Full Page)",
+          "url": "/courses.html"
+        }
+      ]
     },
     {
       "label": "🎯 Exams",

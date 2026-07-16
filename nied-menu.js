@@ -9,7 +9,8 @@
     if(document.getElementById('nied-menu-style')) return;
     var css = '#nied-navbar{font-family:"Noto Sans Devanagari",Arial,sans-serif;position:sticky;top:0;z-index:9999;}'
       + '.nied-nav-inner{background:#1B2A6B;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,.18);position:relative;}'
-      + '.nied-logo{color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;}'
+      + '.nied-logo{color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;display:flex;flex-direction:column;line-height:1.25;}'
+      + '.nied-logo-sub{font-weight:600;font-size:.68rem;color:#cdd4ee;}'
       + '.nied-burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 8px;}'
       + '.nied-menu{list-style:none;display:flex;gap:4px;margin:0;padding:0;align-items:center;}'
       + '.nied-menu li{position:relative;}'
@@ -67,7 +68,8 @@
   function render(mount, menu){
     injectStyles();
     var logo = menu.logo || {text:'New India Education', url:'/'};
-    var html = '<div class="nied-nav-inner"><a class="nied-logo" href="' + esc(logo.url) + '">' + esc(logo.text) + '</a>'
+    var logoInner = esc(logo.text) + (logo.subtitle ? '<span class="nied-logo-sub">' + esc(logo.subtitle) + '</span>' : '');
+    var html = '<div class="nied-nav-inner"><a class="nied-logo" href="' + esc(logo.url) + '">' + logoInner + '</a>'
       + '<button class="nied-burger" id="niedBurger" aria-label="Menu">&#9776;</button>'
       + '<ul class="nied-menu" id="niedMenuList">';
     function renderChildren(children){
