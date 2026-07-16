@@ -110,6 +110,11 @@
       "url": "/courses.html"
     },
     {
+      "label": "🎯 RAS Prelims Super 60",
+      "type": "link",
+      "url": "/ras-prelims-super60.html"
+    },
+    {
       "label": "🎯 Exams",
       "type": "dropdown",
       "children": [
