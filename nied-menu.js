@@ -13,7 +13,7 @@
       + '.nied-ticker-dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:niedPulse 1.2s infinite;}'
       + '@keyframes niedPulse{0%,100%{opacity:1;}50%{opacity:.3;}}'
       + '.nied-ticker-track-wrap{flex:1;overflow:hidden;white-space:nowrap;position:relative;height:100%;display:flex;align-items:center;}'
-      + '.nied-ticker-track{display:inline-flex;align-items:center;white-space:nowrap;animation:niedTicker 70s linear infinite;padding-left:100%;}'
+      + '.nied-ticker-track{display:inline-flex;align-items:center;white-space:nowrap;animation:niedTicker 150s linear infinite;padding-left:100%;}'
       + '.nied-ticker-track span{margin-right:46px;color:#dfe3f5;}'
       + '.nied-ticker-track span::before{content:"\2022";color:#FF6B00;margin-right:10px;font-weight:800;}'
       + '@keyframes niedTicker{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}'
