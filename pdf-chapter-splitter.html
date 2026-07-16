@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>PDF Chapter Splitter — New India Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+  :root{
+    --navy:#1B2A6B;
+    --navy-deep:#111d4d;
+    --saffron:#FF6B00;
+    --saffron-soft:#ffb27a;
+    --paper:#F7F5F0;
+    --ink:#20233A;
+    --line:#e2ddd0;
+    --ok:#1f8a4c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans Devanagari','Space Mono',sans-serif;
+    min-height:100vh;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px;}
+  header{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;
+    border-radius:16px;
+    padding:26px 28px;
+    margin-bottom:24px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(27,42,107,0.18);
+  }
+  header::after{
+    content:"";
+    position:absolute;right:-40px;top:-40px;width:160px;height:160px;
+    background:var(--saffron);opacity:0.18;border-radius:50%;
+  }
+  header .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--saffron-soft);margin-bottom:6px;
+  }
+  header h1{
+    font-family:'Noto Serif Devanagari',serif;
+    font-weight:700;font-size:28px;margin:0 0 6px;
+  }
+  header p{margin:0;opacity:0.85;font-size:14.5px;max-width:560px;line-height:1.6;}
+
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:18px;
+  }
+  .step-label{
+    display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  }
+  .step-num{
+    width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;
+    font-size:13px;font-weight:700;flex-shrink:0;
+  }
+  .step-label h2{font-size:16px;margin:0;font-weight:700;}
+
+  #dropzone{
+    border:2px dashed #c9c2ac;
+    border-radius:12px;
+    padding:36px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:border-color .2s, background .2s;
+  }
+  #dropzone.drag{border-color:var(--saffron);background:#fff6ee;}
+  #dropzone .icon{font-size:34px;display:block;margin-bottom:8px;}
+  #dropzone .sub{font-size:12.5px;color:#8a8577;margin-top:6px;}
+  #fileInput{display:none;}
+
+  .file-info{
+    display:flex;align-items:center;justify-content:space-between;
+    background:#fbf9f4;border:1px solid var(--line);border-radius:10px;
+    padding:12px 16px;font-size:14px;
+  }
+  .file-info b{color:var(--navy);}
+  .file-info .pages-badge{
+    background:var(--navy);color:#fff;font-family:'Space Mono',monospace;
+    font-size:12px;padding:3px 10px;border-radius:20px;
+  }
+  .remove-file{background:none;border:none;color:#b3452c;cursor:pointer;font-size:13px;text-decoration:underline;}
+
+  .hidden{display:none !important;}
+
+  .quick-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+  .quick-row button{
+    background:#fff;border:1px solid var(--line);color:var(--navy);
+    padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;font-weight:600;
+    transition:border-color .15s;
+  }
+  .quick-row button:hover{border-color:var(--navy);}
+
+  .part-form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .field label{display:block;font-size:12px;color:#726d5c;margin-bottom:5px;font-weight:600;}
+  .field input{
+    width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;
+    font-family:'Noto Sans Devanagari',sans-serif;font-size:14px;background:#fff;
+  }
+  .field input:focus{outline:2px solid var(--saffron);outline-offset:1px;border-color:transparent;}
+  .add-btn{
+    background:var(--saffron);color:#fff;border:none;border-radius:8px;
+    padding:10px 18px;font-weight:700;cursor:pointer;font-size:14px;white-space:nowrap;
+    transition:filter .15s;
+  }
+  .add-btn:hover{filter:brightness(1.06);}
+  .add-btn:disabled{background:#d8d2c2;cursor:not-allowed;}
+
+  #partsList{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+  .part-row{
+    display:flex;align-items:center;justify-content:space-between;
+    background:#fbf9f4;border:1px solid var(--line);border-left:4px solid var(--saffron);
+    border-radius:8px;padding:10px 14px;font-size:14px;
+  }
+  .part-row .meta{color:#726d5c;font-family:'Space Mono',monospace;font-size:12px;}
+  .part-row .del{background:none;border:none;color:#b3452c;cursor:pointer;font-size:16px;line-height:1;}
+  .empty-note{color:#928d7c;font-size:13.5px;padding:6px 2px;}
+
+  .action-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;}
+  .primary-btn{
+    background:var(--navy);color:#fff;border:none;border-radius:10px;
+    padding:13px 24px;font-weight:700;font-size:15px;cursor:pointer;
+    display:flex;align-items:center;gap:8px;transition:filter .15s;
+  }
+  .primary-btn:hover{filter:brightness(1.15);}
+  .primary-btn:disabled{background:#c9c4b6;cursor:not-allowed;}
+
+  #status{font-size:13.5px;color:#726d5c;margin-top:10px;min-height:18px;}
+  #status.ok{color:var(--ok);font-weight:600;}
+  #status.err{color:#b3452c;font-weight:600;}
+
+  .result-list{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+  .result-row{
+    display:flex;align-items:center;justify-content:space-between;
+    background:#f2f8f4;border:1px solid #cfe6d8;border-radius:8px;padding:10px 14px;font-size:14px;
+  }
+  .result-row a{color:var(--navy);font-weight:700;text-decoration:none;}
+  .result-row a:hover{text-decoration:underline;}
+
+  footer{text-align:center;font-size:12px;color:#a29c8b;margin-top:26px;}
+
+  .link-btn{
+    background:none;border:none;color:var(--navy);font-weight:700;font-size:12.5px;
+    cursor:pointer;text-decoration:underline;padding:0;
+  }
+
+  .workspace{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:18px;
+    align-items:start;
+    margin-bottom:18px;
+  }
+  .preview-col{
+    position:sticky;
+    top:16px;
+  }
+  .chapters-col{
+    max-height:calc(100vh - 32px);
+    overflow-y:auto;
+  }
+  .mini-hint{
+    background:var(--navy);color:#fff;font-family:'Space Mono',monospace;
+    font-size:11.5px;padding:3px 10px;border-radius:20px;
+  }
+  @media(max-width:860px){
+    .workspace{grid-template-columns:1fr;}
+    .preview-col{position:static;}
+    .chapters-col{max-height:none;overflow-y:visible;}
+  }
+
+  .pdf-viewer-wrap{position:relative;}
+  .page-indicator{
+    position:absolute;
+    top:10px;left:50%;transform:translateX(-50%);
+    background:var(--navy);color:#fff;
+    font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;
+    padding:5px 14px;border-radius:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.18);
+    z-index:10;pointer-events:none;
+    white-space:nowrap;
+  }
+  .pdf-scroll{
+    width:100%;
+    height:72vh;
+    min-height:420px;
+    overflow-y:auto;
+    background:#c9c4b3;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:44px 10px 16px;
+  }
+  .pdf-page-wrap{
+    position:relative;
+    margin:0 auto 14px;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pdf-page-wrap canvas{display:block;}
+  .textLayer{
+    position:absolute;top:0;left:0;
+    overflow:hidden;
+    line-height:1;
+    text-size-adjust:none;
+    transform-origin:0 0;
+    z-index:1;
+    opacity:1;
+  }
+  .textLayer span, .textLayer br{
+    color:transparent;
+    position:absolute;
+    white-space:pre;
+    cursor:text;
+    transform-origin:0% 0%;
+  }
+  .textLayer ::selection{background:rgba(255,107,0,0.35);}
+  .page-num-tag{
+    position:absolute;top:6px;left:6px;
+    background:var(--saffron);color:#fff;
+    font-family:'Space Mono',monospace;font-size:11px;font-weight:700;
+    padding:2px 8px;border-radius:6px;
+    z-index:3;
+    pointer-events:none;
+  }
+  .copy-hint{
+    text-align:center;color:#726d5c;font-size:12px;padding:8px 0 0;
+  }
+  .pdf-loading-note{
+    text-align:center;color:#726d5c;font-size:13px;padding:20px;
+  }
+</style>
+</head>
+<body>
+<div id="pwGate" style="position:fixed;inset:0;background:#1B2A6B;color:#fff;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;">
+  <div style="background:#fff;color:#1B2A6B;padding:32px 28px;border-radius:16px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3)">
+    <div style="font-size:32px;margin-bottom:10px">🔒</div>
+    <h2 style="margin:0 0 6px;font-size:18px;font-family:Arial,sans-serif">Protected Page</h2>
+    <p style="font-size:13px;color:#666;margin:0 0 16px">आगे बढ़ने के लिए Password डालें</p>
+    <input id="pwInput" type="password" placeholder="Password" style="width:100%;box-sizing:border-box;padding:10px 12px;border:2px solid #E8EAF0;border-radius:8px;font-size:14px;margin-bottom:10px;outline:none">
+    <button id="pwSubmit" style="width:100%;padding:11px;background:#FF6B00;color:#fff;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer">Unlock →</button>
+    <div id="pwError" style="color:#e53935;font-size:12px;margin-top:10px;display:none">❌ गलत Password, दोबारा कोशिश करें</div>
+  </div>
+</div>
+<script>
+(function(){
+  var CORRECT = "OMkar@9413";
+  var gate = document.getElementById('pwGate');
+  var input = document.getElementById('pwInput');
+  var btn = document.getElementById('pwSubmit');
+  var err = document.getElementById('pwError');
+  if(sessionStorage.getItem('niedPwOk') === '1'){ gate.style.display='none'; }
+  function tryUnlock(){
+    if(input.value === CORRECT){
+      sessionStorage.setItem('niedPwOk','1');
+      gate.style.display = 'none';
+    } else {
+      err.style.display = 'block';
+    }
+  }
+  btn.addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryUnlock(); });
+  input.focus();
+})();
+</script>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">New India Education • Tool</div>
+    <h1>📄 PDF Chapter Splitter</h1>
+    <p>PDF upload करें, Page-range के हिसाब से अध्याय/भाग बनाएं और अलग-अलग PDF डाउनलोड करें — सब कुछ आपके browser में ही, कहीं upload नहीं होता।</p>
+  </header>
+
+  <div class="card">
+    <div class="step-label"><div class="step-num">1</div><h2>PDF अपलोड करें</h2></div>
+    <div id="dropzone">
+      <span class="icon">📎</span>
+      <div><b>यहाँ क्लिक करें</b> या PDF को drag करके छोड़ें</div>
+      <div class="sub">केवल .pdf फ़ाइलें • फ़ाइल आपके डिवाइस पर ही रहती है</div>
+    </div>
+    <input type="file" id="fileInput" accept="application/pdf">
+    <div class="file-info hidden" id="fileInfo">
+      <div>📘 <b id="fileName"></b></div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="pages-badge" id="pageCount"></span>
+        <button class="remove-file" id="removeFile">हटाएं</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="workspace hidden" id="workspaceGrid">
+    <div class="card preview-col" id="previewCard">
+      <div class="step-label">
+        <div class="step-num">👁</div>
+        <h2 style="flex:1;">PDF देखें</h2>
+        <span class="mini-hint" id="pageCountMini"></span>
+      </div>
+      <div class="sub" style="margin:-6px 0 10px;color:#8a8577;font-size:12px;">Scroll करके page number नोट करें, फिर दाईं तरफ भाग जोड़ें।</div>
+      <div class="pdf-viewer-wrap">
+        <div class="page-indicator" id="pageIndicator">Page — / —</div>
+        <div class="pdf-scroll" id="pdfScroll"></div>
+      </div>
+      <div class="copy-hint">✍️ अब PDF के अंदर के text को select करके copy (Ctrl+C) कर सकते हैं — जैसे अध्याय के नाम</div>
+    </div>
+
+    <div class="card chapters-col" id="step2Card">
+      <div class="step-label"><div class="step-num">2</div><h2>भाग / अध्याय बनाएं</h2></div>
+
+      <div class="quick-row">
+        <button id="quickHalf" type="button">2 बराबर भाग</button>
+        <button id="quickEvery10" type="button">हर 10 पेज</button>
+        <button id="quickEvery20" type="button">हर 20 पेज</button>
+      </div>
+
+      <div class="part-form">
+        <div class="field">
+          <label for="partName">भाग / अध्याय का नाम</label>
+          <input type="text" id="partName" placeholder="जैसे: अध्याय 1 - भूगोल">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="startPage">से Page</label>
+            <input type="number" id="startPage" min="1">
+          </div>
+          <div class="field">
+            <label for="endPage">तक Page</label>
+            <input type="number" id="endPage" min="1">
+          </div>
+        </div>
+        <button class="add-btn" id="addPart" type="button">+ भाग जोड़ें</button>
+      </div>
+
+      <div id="partsList"></div>
+      <div class="empty-note" id="emptyNote">अभी तक कोई भाग नहीं जोड़ा गया — ऊपर से जोड़ें, या Quick बटन इस्तेमाल करें।</div>
+    </div>
+  </div>
+
+  <div class="card hidden" id="step3Card">
+    <div class="step-label"><div class="step-num">3</div><h2>Split करें और डाउनलोड करें</h2></div>
+    <div class="action-row">
+      <button class="primary-btn" id="generateBtn">⚙️ सभी भाग बनाएं</button>
+    </div>
+    <div id="status"></div>
+    <div class="result-list" id="resultList"></div>
+    <div class="action-row hidden" id="zipRow">
+      <button class="primary-btn" id="zipBtn" style="background:var(--saffron);">📦 सबको ZIP में डाउनलोड करें</button>
+    </div>
+  </div>
+
+  <footer>Client-side tool • बना हुआ New India Education के लिए • Browser के बाहर कोई डेटा नहीं जाता</footer>
+</div>
+
+<script>
+const { PDFDocument } = PDFLib;
+let originalBytes = null;
+let totalPages = 0;
+let parts = []; // {name, start, end}
+let generatedFiles = []; // {name, blob}
+
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const fileInfo = document.getElementById('fileInfo');
+const fileName = document.getElementById('fileName');
+const pageCountBadge = document.getElementById('pageCount');
+const removeFileBtn = document.getElementById('removeFile');
+const step2Card = document.getElementById('step2Card');
+const step3Card = document.getElementById('step3Card');
+const previewCard = document.getElementById('previewCard');
+const workspaceGrid = document.getElementById('workspaceGrid');
+const pdfScroll = document.getElementById('pdfScroll');
+const pageIndicator = document.getElementById('pageIndicator');
+const pageCountMini = document.getElementById('pageCountMini');
+let pageEls = [];
+let pdfjsDoc = null;
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const partsList = document.getElementById('partsList');
+const emptyNote = document.getElementById('emptyNote');
+const statusEl = document.getElementById('status');
+const resultList = document.getElementById('resultList');
+const zipRow = document.getElementById('zipRow');
+
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
+dropzone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropzone.classList.remove('drag');
+  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => {
+  if (e.target.files.length) handleFile(e.target.files[0]);
+});
+removeFileBtn.addEventListener('click', resetTool);
+
+async function handleFile(file) {
+  if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+    alert('कृपया केवल PDF फ़ाइल चुनें।');
+    return;
+  }
+  statusEl.textContent = '';
+  statusEl.className = '';
+  const arrayBuf = await file.arrayBuffer();
+  originalBytes = arrayBuf;
+  try {
+    const doc = await PDFDocument.load(arrayBuf);
+    totalPages = doc.getPageCount();
+  } catch (err) {
+    alert('यह PDF पढ़ी नहीं जा सकी — फ़ाइल खराब हो सकती है।');
+    return;
+  }
+  fileName.textContent = file.name;
+  pageCountBadge.textContent = totalPages + ' Pages';
+  pageCountMini.textContent = totalPages + ' Pages';
+  fileInfo.classList.remove('hidden');
+  dropzone.classList.add('hidden');
+  workspaceGrid.classList.remove('hidden');
+  step3Card.classList.remove('hidden');
+
+  renderPdfPreview(arrayBuf.slice(0));
+  document.getElementById('startPage').max = totalPages;
+  document.getElementById('endPage').max = totalPages;
+  parts = [];
+  generatedFiles = [];
+  renderParts();
+  resultList.innerHTML = '';
+  zipRow.classList.add('hidden');
+}
+
+function resetTool() {
+  originalBytes = null;
+  totalPages = 0;
+  parts = [];
+  generatedFiles = [];
+  fileInput.value = '';
+  fileInfo.classList.add('hidden');
+  dropzone.classList.remove('hidden');
+  workspaceGrid.classList.add('hidden');
+  step3Card.classList.add('hidden');
+  partsList.innerHTML = '';
+  resultList.innerHTML = '';
+  statusEl.textContent = '';
+  zipRow.classList.add('hidden');
+  pdfScroll.innerHTML = '';
+  pageEls = [];
+  pdfjsDoc = null;
+  pageIndicator.textContent = 'Page — / —';
+}
+
+async function renderPdfPreview(bytesForPreview) {
+  pdfScroll.innerHTML = '<div class="pdf-loading-note">⏳ PDF लोड हो रही है...</div>';
+  pageEls = [];
+  try {
+    pdfjsDoc = await pdfjsLib.getDocument({ data: bytesForPreview }).promise;
+  } catch (err) {
+    pdfScroll.innerHTML = '<div class="pdf-loading-note">⚠️ Preview लोड नहीं हो सकी, लेकिन split अब भी काम करेगा।</div>';
+    return;
+  }
+  pdfScroll.innerHTML = '';
+  const containerWidth = pdfScroll.clientWidth - 20;
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageWrap = document.createElement('div');
+    pageWrap.className = 'pdf-page-wrap';
+    pageWrap.dataset.pageNum = i;
+
+    const tag = document.createElement('div');
+    tag.className = 'page-num-tag';
+    tag.textContent = 'Page ' + i;
+    pageWrap.appendChild(tag);
+
+    // placeholder height set after first getting the page's natural viewport ratio
+    pdfScroll.appendChild(pageWrap);
+    pageEls.push(pageWrap);
+  }
+
+  // Set placeholder sizes + observe for lazy render
+  const firstPage = await pdfjsDoc.getPage(1);
+  const baseViewport = firstPage.getViewport({ scale: 1 });
+  const scale = containerWidth / baseViewport.width;
+
+  pageEls.forEach(el => {
+    el.style.width = (baseViewport.width * scale) + 'px';
+    el.style.height = (baseViewport.height * scale) + 'px';
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        if (!el.dataset.rendered) {
+          el.dataset.rendered = '1';
+          renderSinglePage(parseInt(el.dataset.pageNum, 10), el, scale);
+        }
+      }
+    });
+  }, { root: pdfScroll, rootMargin: '400px 0px' });
+
+  pageEls.forEach(el => observer.observe(el));
+
+  pdfScroll.addEventListener('scroll', updateCurrentPageIndicator);
+  updateCurrentPageIndicator();
+}
+
+async function renderSinglePage(pageNum, wrapEl, scale) {
+  try {
+    const page = await pdfjsDoc.getPage(pageNum);
+    const viewport = page.getViewport({ scale });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    canvas.style.width = viewport.width + 'px';
+    canvas.style.height = viewport.height + 'px';
+    const ctx = canvas.getContext('2d');
+    wrapEl.appendChild(canvas);
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    const textLayerDiv = document.createElement('div');
+    textLayerDiv.className = 'textLayer';
+    textLayerDiv.style.width = viewport.width + 'px';
+    textLayerDiv.style.height = viewport.height + 'px';
+    wrapEl.appendChild(textLayerDiv);
+
+    const textContent = await page.getTextContent();
+    await pdfjsLib.renderTextLayer({
+      textContentSource: textContent,
+      container: textLayerDiv,
+      viewport: viewport,
+      textDivs: []
+    }).promise;
+  } catch (err) {
+    // page failed to render — leave placeholder blank
+  }
+}
+
+let indicatorRaf = null;
+function updateCurrentPageIndicator() {
+  if (indicatorRaf) return;
+  indicatorRaf = requestAnimationFrame(() => {
+    indicatorRaf = null;
+    if (pageEls.length === 0) return;
+    const scrollTop = pdfScroll.scrollTop + 20;
+    let current = 1;
+    for (let i = 0; i < pageEls.length; i++) {
+      if (pageEls[i].offsetTop <= scrollTop) current = i + 1;
+      else break;
+    }
+    pageIndicator.textContent = 'Page ' + current + ' / ' + totalPages;
+  });
+}
+
+document.getElementById('addPart').addEventListener('click', () => {
+  const name = document.getElementById('partName').value.trim();
+  const start = parseInt(document.getElementById('startPage').value, 10);
+  const end = parseInt(document.getElementById('endPage').value, 10);
+
+  if (!name) { alert('भाग का नाम लिखें।'); return; }
+  if (!start || !end || start < 1 || end > totalPages || start > end) {
+    alert('Page range सही नहीं है। PDF में कुल ' + totalPages + ' pages हैं।');
+    return;
+  }
+  parts.push({ name, start, end });
+  document.getElementById('partName').value = '';
+  document.getElementById('startPage').value = '';
+  document.getElementById('endPage').value = '';
+  renderParts();
+});
+
+document.getElementById('quickHalf').addEventListener('click', () => {
+  if (!totalPages) return;
+  const mid = Math.ceil(totalPages / 2);
+  parts = [
+    { name: 'भाग 1', start: 1, end: mid },
+    { name: 'भाग 2', start: mid + 1, end: totalPages }
+  ];
+  renderParts();
+});
+document.getElementById('quickEvery10').addEventListener('click', () => quickEvery(10));
+document.getElementById('quickEvery20').addEventListener('click', () => quickEvery(20));
+
+function quickEvery(n) {
+  if (!totalPages) return;
+  parts = [];
+  let i = 1, idx = 1;
+  while (i <= totalPages) {
+    const end = Math.min(i + n - 1, totalPages);
+    parts.push({ name: 'भाग ' + idx, start: i, end });
+    i = end + 1;
+    idx++;
+  }
+  renderParts();
+}
+
+function renderParts() {
+  partsList.innerHTML = '';
+  emptyNote.classList.toggle('hidden', parts.length > 0);
+  parts.forEach((p, i) => {
+    const row = document.createElement('div');
+    row.className = 'part-row';
+    row.innerHTML = `<div><b>${escapeHtml(p.name)}</b> <span class="meta">(Page ${p.start}–${p.end}, ${p.end - p.start + 1} pages)</span></div>
+      <button class="del" data-idx="${i}" title="हटाएं">✕</button>`;
+    partsList.appendChild(row);
+  });
+  partsList.querySelectorAll('.del').forEach(btn => {
+    btn.addEventListener('click', e => {
+      parts.splice(parseInt(e.target.dataset.idx, 10), 1);
+      renderParts();
+    });
+  });
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+document.getElementById('generateBtn').addEventListener('click', async () => {
+  if (!originalBytes) { alert('पहले PDF अपलोड करें।'); return; }
+  if (parts.length === 0) { alert('कम से कम एक भाग जोड़ें।'); return; }
+
+  statusEl.className = '';
+  statusEl.textContent = '⏳ Split किया जा रहा है...';
+  resultList.innerHTML = '';
+  generatedFiles = [];
+
+  try {
+    for (const p of parts) {
+      const srcDoc = await PDFDocument.load(originalBytes);
+      const newDoc = await PDFDocument.create();
+      const indices = [];
+      for (let pg = p.start; pg <= p.end; pg++) indices.push(pg - 1);
+      const copiedPages = await newDoc.copyPages(srcDoc, indices);
+      copiedPages.forEach(pg => newDoc.addPage(pg));
+      const bytes = await newDoc.save();
+      const blob = new Blob([bytes], { type: 'application/pdf' });
+      const safeName = p.name.replace(/[\\/:*?"<>|]/g, '').trim() || ('part-' + p.start);
+      generatedFiles.push({ name: safeName + '.pdf', blob });
+    }
+    statusEl.className = 'ok';
+    statusEl.textContent = '✅ ' + generatedFiles.length + ' भाग तैयार — नीचे से डाउनलोड करें।';
+    renderResults();
+    zipRow.classList.remove('hidden');
+  } catch (err) {
+    statusEl.className = 'err';
+    statusEl.textContent = '❌ कुछ गलत हुआ: ' + err.message;
+  }
+});
+
+function renderResults() {
+  resultList.innerHTML = '';
+  generatedFiles.forEach(f => {
+    const url = URL.createObjectURL(f.blob);
+    const row = document.createElement('div');
+    row.className = 'result-row';
+    row.innerHTML = `<span>📄 ${escapeHtml(f.name)}</span>`;
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = f.name;
+    a.textContent = 'डाउनलोड ↓';
+    row.appendChild(a);
+    resultList.appendChild(row);
+  });
+}
+
+document.getElementById('zipBtn').addEventListener('click', async () => {
+  if (generatedFiles.length === 0) return;
+  statusEl.className = '';
+  statusEl.textContent = '⏳ ZIP बनाया जा रहा है...';
+  const zip = new JSZip();
+  generatedFiles.forEach(f => zip.file(f.name, f.blob));
+  const zipBlob = await zip.generateAsync({ type: 'blob' });
+  const url = URL.createObjectURL(zipBlob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'pdf-split-parts.zip';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  statusEl.className = 'ok';
+  statusEl.textContent = '✅ ZIP डाउनलोड हो गई।';
+});
+</script>
+</body>
+</html>
