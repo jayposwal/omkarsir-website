@@ -191,66 +191,16 @@
     .chapters-col{max-height:none;overflow-y:visible;}
   }
 
-  .pdf-viewer-wrap{position:relative;}
-  .page-indicator{
-    position:absolute;
-    top:10px;left:50%;transform:translateX(-50%);
-    background:var(--navy);color:#fff;
-    font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;
-    padding:5px 14px;border-radius:20px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.18);
-    z-index:10;pointer-events:none;
-    white-space:nowrap;
-  }
-  .pdf-scroll{
+  #pdfPreview{
     width:100%;
     height:72vh;
     min-height:420px;
-    overflow-y:auto;
-    background:#c9c4b3;
     border:1px solid var(--line);
     border-radius:10px;
-    padding:44px 10px 16px;
+    background:#e9e6dc;
+    display:block;
   }
-  .pdf-page-wrap{
-    position:relative;
-    margin:0 auto 14px;
-    background:#fff;
-    box-shadow:0 2px 8px rgba(0,0,0,0.15);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .pdf-page-wrap canvas{display:block;}
-  .textLayer{
-    position:absolute;top:0;left:0;
-    overflow:hidden;
-    line-height:1;
-    text-size-adjust:none;
-    transform-origin:0 0;
-    z-index:1;
-    opacity:1;
-  }
-  .textLayer span, .textLayer br{
-    color:transparent;
-    position:absolute;
-    white-space:pre;
-    cursor:text;
-    transform-origin:0% 0%;
-  }
-  .textLayer ::selection{background:rgba(255,107,0,0.35);}
-  .page-num-tag{
-    position:absolute;top:6px;left:6px;
-    background:var(--saffron);color:#fff;
-    font-family:'Space Mono',monospace;font-size:11px;font-weight:700;
-    padding:2px 8px;border-radius:6px;
-    z-index:3;
-    pointer-events:none;
-  }
-  .copy-hint{
-    text-align:center;color:#726d5c;font-size:12px;padding:8px 0 0;
-  }
-  .pdf-loading-note{
-    text-align:center;color:#726d5c;font-size:13px;padding:20px;
-  }
+  #pdfPreview.collapsed{display:none;}
 </style>
 </head>
 <body>
@@ -319,11 +269,7 @@
         <span class="mini-hint" id="pageCountMini"></span>
       </div>
       <div class="sub" style="margin:-6px 0 10px;color:#8a8577;font-size:12px;">Scroll करके page number नोट करें, फिर दाईं तरफ भाग जोड़ें।</div>
-      <div class="pdf-viewer-wrap">
-        <div class="page-indicator" id="pageIndicator">Page — / —</div>
-        <div class="pdf-scroll" id="pdfScroll"></div>
-      </div>
-      <div class="copy-hint">✍️ अब PDF के अंदर के text को select करके copy (Ctrl+C) कर सकते हैं — जैसे अध्याय के नाम</div>
+      <iframe id="pdfPreview" title="PDF Preview"></iframe>
     </div>
 
     <div class="card chapters-col" id="step2Card">
@@ -390,13 +336,9 @@ const step2Card = document.getElementById('step2Card');
 const step3Card = document.getElementById('step3Card');
 const previewCard = document.getElementById('previewCard');
 const workspaceGrid = document.getElementById('workspaceGrid');
-const pdfScroll = document.getElementById('pdfScroll');
-const pageIndicator = document.getElementById('pageIndicator');
+const pdfPreview = document.getElementById('pdfPreview');
 const pageCountMini = document.getElementById('pageCountMini');
-let pageEls = [];
-let pdfjsDoc = null;
-
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+let currentPdfUrl = null;
 const partsList = document.getElementById('partsList');
 const emptyNote = document.getElementById('emptyNote');
 const statusEl = document.getElementById('status');
@@ -440,7 +382,9 @@ async function handleFile(file) {
   workspaceGrid.classList.remove('hidden');
   step3Card.classList.remove('hidden');
 
-  renderPdfPreview(arrayBuf.slice(0));
+  if (currentPdfUrl) URL.revokeObjectURL(currentPdfUrl);
+  currentPdfUrl = URL.createObjectURL(new Blob([arrayBuf], { type: 'application/pdf' }));
+  pdfPreview.src = currentPdfUrl + '#toolbar=1&navpanes=0&view=FitH';
   document.getElementById('startPage').max = totalPages;
   document.getElementById('endPage').max = totalPages;
   parts = [];
@@ -464,113 +408,8 @@ function resetTool() {
   resultList.innerHTML = '';
   statusEl.textContent = '';
   zipRow.classList.add('hidden');
-  pdfScroll.innerHTML = '';
-  pageEls = [];
-  pdfjsDoc = null;
-  pageIndicator.textContent = 'Page — / —';
-}
-
-async function renderPdfPreview(bytesForPreview) {
-  pdfScroll.innerHTML = '<div class="pdf-loading-note">⏳ PDF लोड हो रही है...</div>';
-  pageEls = [];
-  try {
-    pdfjsDoc = await pdfjsLib.getDocument({ data: bytesForPreview }).promise;
-  } catch (err) {
-    pdfScroll.innerHTML = '<div class="pdf-loading-note">⚠️ Preview लोड नहीं हो सकी, लेकिन split अब भी काम करेगा।</div>';
-    return;
-  }
-  pdfScroll.innerHTML = '';
-  const containerWidth = pdfScroll.clientWidth - 20;
-
-  for (let i = 1; i <= totalPages; i++) {
-    const pageWrap = document.createElement('div');
-    pageWrap.className = 'pdf-page-wrap';
-    pageWrap.dataset.pageNum = i;
-
-    const tag = document.createElement('div');
-    tag.className = 'page-num-tag';
-    tag.textContent = 'Page ' + i;
-    pageWrap.appendChild(tag);
-
-    // placeholder height set after first getting the page's natural viewport ratio
-    pdfScroll.appendChild(pageWrap);
-    pageEls.push(pageWrap);
-  }
-
-  // Set placeholder sizes + observe for lazy render
-  const firstPage = await pdfjsDoc.getPage(1);
-  const baseViewport = firstPage.getViewport({ scale: 1 });
-  const scale = containerWidth / baseViewport.width;
-
-  pageEls.forEach(el => {
-    el.style.width = (baseViewport.width * scale) + 'px';
-    el.style.height = (baseViewport.height * scale) + 'px';
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        if (!el.dataset.rendered) {
-          el.dataset.rendered = '1';
-          renderSinglePage(parseInt(el.dataset.pageNum, 10), el, scale);
-        }
-      }
-    });
-  }, { root: pdfScroll, rootMargin: '400px 0px' });
-
-  pageEls.forEach(el => observer.observe(el));
-
-  pdfScroll.addEventListener('scroll', updateCurrentPageIndicator);
-  updateCurrentPageIndicator();
-}
-
-async function renderSinglePage(pageNum, wrapEl, scale) {
-  try {
-    const page = await pdfjsDoc.getPage(pageNum);
-    const viewport = page.getViewport({ scale });
-
-    const canvas = document.createElement('canvas');
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    canvas.style.width = viewport.width + 'px';
-    canvas.style.height = viewport.height + 'px';
-    const ctx = canvas.getContext('2d');
-    wrapEl.appendChild(canvas);
-    await page.render({ canvasContext: ctx, viewport }).promise;
-
-    const textLayerDiv = document.createElement('div');
-    textLayerDiv.className = 'textLayer';
-    textLayerDiv.style.width = viewport.width + 'px';
-    textLayerDiv.style.height = viewport.height + 'px';
-    wrapEl.appendChild(textLayerDiv);
-
-    const textContent = await page.getTextContent();
-    await pdfjsLib.renderTextLayer({
-      textContentSource: textContent,
-      container: textLayerDiv,
-      viewport: viewport,
-      textDivs: []
-    }).promise;
-  } catch (err) {
-    // page failed to render — leave placeholder blank
-  }
-}
-
-let indicatorRaf = null;
-function updateCurrentPageIndicator() {
-  if (indicatorRaf) return;
-  indicatorRaf = requestAnimationFrame(() => {
-    indicatorRaf = null;
-    if (pageEls.length === 0) return;
-    const scrollTop = pdfScroll.scrollTop + 20;
-    let current = 1;
-    for (let i = 0; i < pageEls.length; i++) {
-      if (pageEls[i].offsetTop <= scrollTop) current = i + 1;
-      else break;
-    }
-    pageIndicator.textContent = 'Page ' + current + ' / ' + totalPages;
-  });
+  if (currentPdfUrl) { URL.revokeObjectURL(currentPdfUrl); currentPdfUrl = null; }
+  pdfPreview.src = '';
 }
 
 document.getElementById('addPart').addEventListener('click', () => {
