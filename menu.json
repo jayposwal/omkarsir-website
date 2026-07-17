@@ -260,6 +260,10 @@
    "url": "/current-affairs.html"
   },
   {
+   "label": "💼 Latest Vacancy",
+   "url": "/vacancy.html"
+  },
+  {
    "label": "📚 Books",
    "type": "dropdown",
    "children": [
