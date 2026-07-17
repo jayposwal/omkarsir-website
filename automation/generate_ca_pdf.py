@@ -3,8 +3,10 @@
 Generates a branded, printable PDF from a New India Education daily
 Current Affairs HTML page (current-affairs/YYYY-MM-DD.html), for automated
 distribution (e.g. Telegram). Uses WeasyPrint (Pango/HarfBuzz) for correct
-Devanagari shaping, with a cover+index page, running header/footer,
-page numbers and a diagonal watermark via CSS Paged Media.
+Devanagari shaping, with a compact half-page cover+index (content starts
+on the same first page), numbered pointwise items, running header/footer,
+page numbers and a diagonal watermark via CSS Paged Media. Every mention of
+"New India Education" links to the app.
 
 Usage: python3 generate_ca_pdf.py <path-to-dated-html> <output-pdf-path> \
            --hindi-date "18 जुलाई 2026" --eng-date "18 July 2026" \
@@ -14,6 +16,8 @@ import argparse
 import re
 from bs4 import BeautifulSoup
 from weasyprint import HTML
+
+APP_LINK = "https://play.google.com/store/apps/details?id=co.april2019.techa"
 
 EMOJI_RE = re.compile(
     "["
@@ -31,6 +35,7 @@ EMOJI_RE = re.compile(
 
 def strip_emoji(text):
     return EMOJI_RE.sub("", text).strip()
+
 
 SECTION_META = [
     ("national", "राष्ट्रीय", "National", "#1B2A6B"),
@@ -53,7 +58,6 @@ def extract_sections(html_path):
             continue
         items = []
         for item in block.select(".ca-item p"):
-            # Keep <b> tags, strip everything else (drop nested tags' other attrs)
             inner = "".join(str(c) for c in item.children)
             inner = re.sub(r"</?p[^>]*>", "", inner)
             items.append(strip_emoji(inner))
@@ -76,7 +80,13 @@ def build_html(sections, hindi_date, eng_date, font_regular, font_bold, site_url
     )
     section_html = ""
     for s in sections:
-        items_html = "".join(f'<div class="item">{it}</div>' for it in s["items"])
+        items_html = "".join(
+            f'''<div class="item">
+                  <span class="num" style="background:{s["color"]}">{i}</span>
+                  <span class="item-text">{it}</span>
+                </div>'''
+            for i, it in enumerate(s["items"], start=1)
+        )
         kw_html = f'<div class="kw">{s["kw"]}</div>' if s["kw"] else ""
         section_html += f'''
         <div class="section">
@@ -93,42 +103,27 @@ def build_html(sections, hindi_date, eng_date, font_regular, font_bold, site_url
 @font-face {{ font-family:'Noto'; src:url('{font_regular}'); font-weight:400; }}
 @font-face {{ font-family:'Noto'; src:url('{font_bold}'); font-weight:700; }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
-body {{ font-family:'Noto', sans-serif; color:#222; font-size:11.5px; }}
+body {{ font-family:'Noto', sans-serif; color:#222; font-size:13px; }}
 b {{ font-weight:700; color:#1B2A6B; }}
+a {{ color:inherit; text-decoration:none; }}
 
 @page {{
   size: A4;
   margin: 24mm 14mm 18mm 14mm;
-  @top-left {{ content: "omkarsir.com  |  New India Education"; font-size:8px; color:#8a8a94; font-family:'Noto'; }}
-  @top-right {{ content: "{eng_date}"; font-size:8px; color:#8a8a94; font-family:'Noto'; }}
-  @bottom-left {{ content: "omkarsir.com"; font-size:8px; color:#8a8a94; font-family:'Noto'; }}
-  @bottom-center {{ content: "Page " counter(page) " of " counter(pages); font-size:8px; color:#8a8a94; font-family:'Noto'; }}
-  @bottom-right {{ content: "New India Education"; font-size:8px; color:#8a8a94; font-family:'Noto'; }}
+  @top-left {{ content: "omkarsir.com"; font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
+  @top-right {{ content: "{eng_date}"; font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
+  @bottom-left {{ content: "omkarsir.com"; font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
+  @bottom-center {{ content: "Page " counter(page) " of " counter(pages); font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
 }}
-@page cover {{ margin:0; }}
 
-.cover {{
-  page: cover; height:297mm; display:flex; flex-direction:column;
-  align-items:center; justify-content:center; text-align:center;
-  page-break-after: always;
+.footer-brand {{
+  position: fixed;
+  bottom: 8mm;
+  right: 14mm;
+  font-size: 8.5px;
+  color: #8a8a94;
 }}
-.cover .brand {{ font-size:28px; font-weight:700; color:#1B2A6B; }}
-.cover .sub {{ font-size:12px; color:#777; margin-top:4px; }}
-.cover .bar {{ width:70px; height:4px; background:linear-gradient(90deg,#FF6B00,#00A651); margin:22px auto; border-radius:4px; }}
-.cover h1 {{ font-size:24px; color:#1B2A6B; font-weight:700; margin-top:6px; line-height:1.5; }}
-.cover .cred {{ margin-top:16px; font-size:11.5px; font-weight:700; color:#FF6B00; max-width:480px; }}
-.idx-box {{ margin-top:44px; text-align:left; width:400px; border:2px solid #E8EAF0; border-radius:12px; padding:20px 26px; }}
-.idx-title {{ font-weight:700; color:#1B2A6B; font-size:14px; border-bottom:2px solid #eee; padding-bottom:9px; margin-bottom:10px; }}
-.idx-row {{ font-size:12.5px; line-height:2.1; }}
-.dot {{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:8px; }}
-.cover .footnote {{ margin-top:40px; font-size:9.5px; color:#aaa; max-width:420px; }}
-
-.section {{ margin-bottom:14px; page-break-inside:avoid; }}
-.section h2 {{ font-size:14.5px; color:#1B2A6B; font-weight:700; border-left:4px solid; padding-left:10px; margin-bottom:8px; }}
-.section h2 .eng {{ font-size:11px; color:#888; font-weight:400; }}
-.item {{ font-size:11px; line-height:1.65; text-align:justify; margin-bottom:8px; padding-bottom:8px; border-bottom:1px dashed #eee; }}
-.item:last-of-type {{ border-bottom:none; }}
-.kw {{ background:#FFF3E8; border:1px solid #FFD0A0; border-radius:8px; padding:8px 12px; font-size:9.5px; color:#663c00; margin-top:6px; }}
+.footer-brand a {{ text-decoration:underline; }}
 
 .wm {{
   position: fixed;
@@ -141,12 +136,42 @@ b {{ font-weight:700; color:#1B2A6B; }}
   z-index: -1;
   white-space: nowrap;
 }}
+
+.cover {{
+  min-height: 125mm;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  border-bottom: 2px solid #E8EAF0;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}}
+.cover .brand {{ font-size:24px; font-weight:700; color:#1B2A6B; }}
+.cover .brand a {{ border-bottom: 1px dotted #1B2A6B; }}
+.cover .sub {{ font-size:12px; color:#777; margin-top:3px; }}
+.cover .bar {{ width:64px; height:4px; background:linear-gradient(90deg,#FF6B00,#00A651); margin:14px auto; border-radius:4px; }}
+.cover h1 {{ font-size:20px; color:#1B2A6B; font-weight:700; margin-top:4px; line-height:1.45; }}
+.cover .cred {{ margin-top:12px; font-size:11.5px; font-weight:700; color:#FF6B00; max-width:480px; }}
+.idx-box {{ margin-top:20px; text-align:left; width:420px; border:2px solid #E8EAF0; border-radius:12px; padding:14px 22px; }}
+.idx-title {{ font-weight:700; color:#1B2A6B; font-size:13.5px; border-bottom:2px solid #eee; padding-bottom:7px; margin-bottom:7px; }}
+.idx-row {{ font-size:12px; line-height:1.85; }}
+.dot {{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:8px; }}
+
+.section {{ margin-bottom:16px; }}
+.section h2 {{ font-size:16px; color:#1B2A6B; font-weight:700; border-left:4px solid; padding-left:10px; margin-bottom:10px; }}
+.section h2 .eng {{ font-size:12px; color:#888; font-weight:400; }}
+.item {{ display:flex; gap:9px; font-size:12.5px; line-height:1.7; text-align:justify; margin-bottom:10px; padding-bottom:10px; border-bottom:1px dashed #eee; page-break-inside:avoid; }}
+.item:last-of-type {{ border-bottom:none; }}
+.num {{ flex:0 0 auto; width:17px; height:17px; border-radius:50%; color:#fff; font-size:10px; font-weight:700; text-align:center; line-height:17px; }}
+.item-text {{ flex:1; }}
+.kw {{ background:#FFF3E8; border:1px solid #FFD0A0; border-radius:8px; padding:9px 13px; font-size:10.5px; color:#663c00; margin-top:4px; }}
 </style>
 </head>
 <body>
 <div class="wm">NEW INDIA EDUCATION</div>
+<div class="footer-brand"><a href="{APP_LINK}">New India Education</a></div>
+
 <div class="cover">
-  <div class="brand">New India Education<span style="color:#FF6B00">.</span></div>
+  <div class="brand"><a href="{APP_LINK}">New India Education</a><span style="color:#FF6B00">.</span></div>
   <div class="sub">{site_url} &nbsp;|&nbsp; NIEd</div>
   <div class="bar"></div>
   <h1>{hindi_date}<br>Daily Current Affairs</h1>
@@ -155,7 +180,6 @@ b {{ font-weight:700; color:#1B2A6B; }}
     <div class="idx-title">Index — इस PDF में शामिल विषय</div>
     {index_rows}
   </div>
-  <div class="footnote">&copy; New India Education — {site_url} — कृपया इस PDF को शेयर करते समय source क्रेडिट बनाए रखें।</div>
 </div>
 {section_html}
 </body>
