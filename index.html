@@ -59,6 +59,22 @@ h1,h2,h3{font-family:'Poppins',sans-serif}
 .free-banner-text p{font-size:12.5px;color:rgba(255,255,255,.9)}
 .free-banner-btn{background:white;color:#00A651;padding:11px 24px;border-radius:50px;text-decoration:none;font-weight:800;font-size:13.5px;white-space:nowrap}
 
+/* ===== CTA BAND GRID (2-col) ===== */
+.cta-band-sec{max-width:1100px;margin:20px auto 36px;padding:0 6%}
+.cta-band-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cta-band{border-radius:18px;padding:22px 22px;color:#fff;display:flex;flex-direction:column;gap:8px}
+.cta-band-wide{grid-column:1 / -1}
+.cb-tag{font-size:11px;font-weight:700;display:inline-block;padding:4px 12px;border-radius:50px;width:fit-content}
+.cb-title{font-family:'Poppins',sans-serif;font-size:16.5px;font-weight:800;margin:2px 0 0;line-height:1.35}
+.cb-desc{font-size:12.5px;margin:0;line-height:1.5}
+.cb-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.cb-btn{text-decoration:none;font-weight:700;padding:9px 18px;border-radius:50px;font-size:12.5px;white-space:nowrap}
+.cb-btn-white{background:#fff;color:#00A651}
+.cb-btn-orange{background:#FF6B00;color:#fff}
+.cb-btn-navy{background:#1B2A6B;color:#fff}
+.cb-btn-outline{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
+@media(max-width:700px){.cta-band-grid{grid-template-columns:1fr}}
+
 /* ===== STATS ===== */
 .stats{background:white;border-bottom:1px solid #E8EAF0;margin-top:36px}
 .stats-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
@@ -229,66 +245,52 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   </div>
 </section>
 
-<div class="free-banner">
-  <div class="free-banner-inner">
-    <div class="free-banner-text">
-      <span class="tag">🎁 सीमित समय के लिए FREE</span>
-      <h3>🚀 RAS Pre 2026 BEST Test Series — 18 Tests</h3>
-      <p>RPSC New Syllabus के अनुसार। अभी बिल्कुल मुफ़्त जुड़ें!</p>
+<section class="cta-band-sec">
+  <div class="cta-band-grid">
+    <div class="cta-band" style="background:linear-gradient(135deg,#00A651,#00c96b)">
+      <div class="cb-tag" style="background:rgba(255,255,255,.25)">🎁 सीमित समय के लिए FREE</div>
+      <h2 class="cb-title">🚀 RAS Pre 2026 BEST Test Series — 18 Tests</h2>
+      <p class="cb-desc" style="color:rgba(255,255,255,.9)">RPSC New Syllabus के अनुसार। अभी बिल्कुल मुफ़्त जुड़ें!</p>
+      <div class="cb-btns">
+        <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="cb-btn cb-btn-white">FREE जुड़ें →</a>
+      </div>
     </div>
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="free-banner-btn">FREE जुड़ें →</a>
-  </div>
-</div>
 
-<section style="max-width:1100px;margin:20px auto 0;padding:0 6%">
-  <div style="background:linear-gradient(135deg,#6C3CE9,#8B5CF6);border-radius:18px;padding:26px 30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:#fff">
-    <div>
-      <div style="font-size:12px;font-weight:700;background:rgba(255,255,255,.2);display:inline-block;padding:4px 12px;border-radius:50px;margin-bottom:8px">🗓 60-Day Roadmap</div>
-      <h2 style="font-family:'Poppins',sans-serif;font-size:20px;margin-bottom:6px">RAS Prelims Super 60 Course</h2>
-      <p style="font-size:13.5px;color:#f0eaff;margin:0">60 दिनों में पूरा RAS Prelims Syllabus — Day-wise Video+PDF+PPT+Quiz, साथ में 18 Tests।</p>
+    <div class="cta-band" style="background:linear-gradient(135deg,#6C3CE9,#8B5CF6)">
+      <div class="cb-tag" style="background:rgba(255,255,255,.2)">🗓 60-Day Roadmap</div>
+      <h2 class="cb-title">RAS Prelims Super 60 Course</h2>
+      <p class="cb-desc" style="color:#f0eaff">60 दिनों में पूरा RAS Prelims Syllabus — Day-wise Video+PDF+PPT+Quiz, साथ में 18 Tests।</p>
+      <div class="cb-btns">
+        <a href="/ras-prelims-super60.html" class="cb-btn cb-btn-orange">पूरा Schedule देखें →</a>
+      </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a href="/ras-prelims-super60.html" style="background:#FF6B00;color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:50px;font-size:13.5px;white-space:nowrap">पूरा Schedule देखें →</a>
-    </div>
-  </div>
-</section>
 
-<section style="max-width:1100px;margin:36px auto;padding:0 6%">
-  <div style="background:linear-gradient(135deg,#1B2A6B,#2b3f9e);border-radius:18px;padding:26px 30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:#fff">
-    <div>
-      <div style="font-size:12px;font-weight:700;background:rgba(255,255,255,.15);display:inline-block;padding:4px 12px;border-radius:50px;margin-bottom:8px">🎯 New Pattern 2026</div>
-      <h2 style="font-family:'Poppins',sans-serif;font-size:20px;margin-bottom:6px">RAS Exam 2026 — पूरा Syllabus &amp; Exam Pattern</h2>
-      <p style="font-size:13.5px;color:#dfe3f5;margin:0">RAS Exam 2026 का Official RPSC Syllabus (Pre + Mains), Hindi और English दोनों में — PDF Download के साथ।</p>
+    <div class="cta-band" style="background:linear-gradient(135deg,#1B2A6B,#2b3f9e)">
+      <div class="cb-tag" style="background:rgba(255,255,255,.15)">🎯 New Pattern 2026</div>
+      <h2 class="cb-title">RAS Exam 2026 — पूरा Syllabus &amp; Exam Pattern</h2>
+      <p class="cb-desc" style="color:#dfe3f5">RAS Exam 2026 का Official RPSC Syllabus (Pre + Mains), Hindi और English दोनों में — PDF Download के साथ।</p>
+      <div class="cb-btns">
+        <a href="/ras-exam-2026.html" class="cb-btn cb-btn-orange">RAS Exam 2026 पूरी जानकारी →</a>
+        <a href="/ras-syllabus.html" class="cb-btn cb-btn-outline">Syllabus देखें</a>
+      </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a href="/ras-exam-2026.html" style="background:#FF6B00;color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:50px;font-size:13.5px;white-space:nowrap">RAS Exam 2026 पूरी जानकारी →</a>
-      <a href="/ras-syllabus.html" style="background:rgba(255,255,255,.15);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:50px;font-size:13.5px;white-space:nowrap;border:1px solid rgba(255,255,255,.3)">Syllabus देखें</a>
-    </div>
-  </div>
-</section>
 
-<section style="max-width:1100px;margin:20px auto;padding:0 6%">
-  <div style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0;border-radius:18px;padding:24px 28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-    <div>
-      <div style="font-size:12px;font-weight:700;background:#FF6B00;color:#fff;display:inline-block;padding:4px 12px;border-radius:50px;margin-bottom:8px">📰 रोज़ अपडेट</div>
-      <h2 style="font-family:'Poppins',sans-serif;font-size:20px;margin-bottom:6px;color:#1B2A6B">Daily Current Affairs</h2>
-      <p style="font-size:13.5px;color:#666;margin:0">National, International, Rajasthan, Sujas, Economy, Science-Defence-Tech, Sports-Awards — रोज़ाना अपडेट, RAS/UPSC Exam के लिए।</p>
+    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
+      <div class="cb-tag" style="background:#FF6B00;color:#fff">📰 रोज़ अपडेट</div>
+      <h2 class="cb-title" style="color:#1B2A6B">Daily Current Affairs</h2>
+      <p class="cb-desc" style="color:#666">National, International, Rajasthan, Sujas, Economy, Science-Defence-Tech, Sports-Awards — रोज़ाना अपडेट, RAS/UPSC Exam के लिए।</p>
+      <div class="cb-btns">
+        <a href="/current-affairs.html" class="cb-btn cb-btn-navy">आज का Current Affairs →</a>
+      </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a href="/current-affairs.html" style="background:#1B2A6B;color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:50px;font-size:13.5px;white-space:nowrap">आज का Current Affairs →</a>
-    </div>
-  </div>
-</section>
 
-<section style="max-width:1100px;margin:20px auto 36px;padding:0 6%">
-  <div style="background:linear-gradient(135deg,#FF6B00,#ff8f3f);border-radius:18px;padding:26px 30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:#fff">
-    <div>
-      <div style="font-size:12px;font-weight:700;background:rgba(255,255,255,.2);display:inline-block;padding:4px 12px;border-radius:50px;margin-bottom:8px">🎯 Rajasthan के सभी Exams</div>
-      <h2 style="font-family:'Poppins',sans-serif;font-size:20px;margin-bottom:6px">RAS, SI, Patwari, REET, VDO, Constable, LDC, CET, JEN, AEN</h2>
-      <p style="font-size:13.5px;color:#fff3e8;margin:0">हर Rajasthan Exam की Eligibility, Syllabus, Salary एवं Selection Process — एक ही जगह।</p>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a href="/rajasthan-exams.html" style="background:#1B2A6B;color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:50px;font-size:13.5px;white-space:nowrap">सभी Exams देखें →</a>
+    <div class="cta-band cta-band-wide" style="background:linear-gradient(135deg,#FF6B00,#ff8f3f)">
+      <div class="cb-tag" style="background:rgba(255,255,255,.2)">🎯 Rajasthan के सभी Exams</div>
+      <h2 class="cb-title">RAS, SI, Patwari, REET, VDO, Constable, LDC, CET, JEN, AEN</h2>
+      <p class="cb-desc" style="color:#fff3e8">हर Rajasthan Exam की Eligibility, Syllabus, Salary एवं Selection Process — एक ही जगह।</p>
+      <div class="cb-btns">
+        <a href="/rajasthan-exams.html" class="cb-btn cb-btn-navy">सभी Exams देखें →</a>
+      </div>
     </div>
   </div>
 </section>
