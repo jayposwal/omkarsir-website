@@ -316,28 +316,48 @@
    ============================================================ */
 (function(){
   function init(){
-    if(document.querySelector('.wa-float')) return; // page already has its own (e.g. course landing pages)
     var css = '.wa-float{position:fixed;bottom:24px;right:20px;background:#25d366;color:#fff;'
       + 'border-radius:50px;padding:13px 20px;text-decoration:none;font-weight:700;font-size:14px;'
       + 'box-shadow:0 4px 18px rgba(37,211,102,.5);z-index:9998;display:flex;align-items:center;'
       + 'gap:8px;transition:transform .2s;font-family:Arial,sans-serif;}'
       + '.wa-float:hover{transform:scale(1.05);}'
       + '.wa-float svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}'
-      + '@media (max-width:480px){.wa-float{padding:12px 16px;font-size:13px;bottom:16px;right:14px;}'
-      + '.wa-float span{display:none;}.wa-float svg{width:24px;height:24px;}}';
+      + '.app-float{position:fixed;bottom:80px;right:20px;background:#FF6B00;color:#fff;'
+      + 'border-radius:50px;padding:13px 20px;text-decoration:none;font-weight:700;font-size:14px;'
+      + 'box-shadow:0 4px 18px rgba(255,107,0,.5);z-index:9998;display:flex;align-items:center;'
+      + 'gap:8px;transition:transform .2s;font-family:Arial,sans-serif;}'
+      + '.app-float:hover{transform:scale(1.05);}'
+      + '@media (max-width:480px){'
+      + '.wa-float{padding:12px 16px;font-size:13px;bottom:16px;right:14px;}'
+      + '.wa-float span{display:none;}.wa-float svg{width:24px;height:24px;}'
+      + '.app-float{padding:12px 16px;font-size:13px;bottom:68px;right:14px;}'
+      + '.app-float span{display:none;}'
+      + '}';
     var style = document.createElement('style');
-    style.id = 'nied-wa-float-style';
+    style.id = 'nied-float-style';
     style.textContent = css;
     document.head.appendChild(style);
 
-    var msg = encodeURIComponent('नमस्ते Omkar Sir, मुझे किसी Course के बारे में जानकारी चाहिए।');
-    var a = document.createElement('a');
-    a.href = 'https://wa.me/917023166962?text=' + msg;
-    a.className = 'wa-float';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span>';
-    document.body.appendChild(a);
+    if(!document.querySelector('.wa-float')){
+      var msg = encodeURIComponent('नमस्ते Omkar Sir, मुझे किसी Course के बारे में जानकारी चाहिए।');
+      var wa = document.createElement('a');
+      wa.href = 'https://wa.me/917023166962?text=' + msg;
+      wa.className = 'wa-float';
+      wa.target = '_blank';
+      wa.rel = 'noopener';
+      wa.innerHTML = '<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span>';
+      document.body.appendChild(wa);
+    }
+
+    if(!document.querySelector('.app-float')){
+      var app = document.createElement('a');
+      app.href = 'https://play.google.com/store/apps/details?id=co.april2019.techa';
+      app.className = 'app-float';
+      app.target = '_blank';
+      app.rel = 'noopener';
+      app.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M3 20.5v-17c0-.59.34-1.1.83-1.34L13.69 12l-9.86 9.84c-.49-.24-.83-.75-.83-1.34m13.81-8.5l2.35-2.35 3.13 1.81c.88.51.88 1.76 0 2.27l-3.13 1.81L16.81 12M14.5 12L4.7 2.2 15.19 8.24 14.5 12z"/></svg><span>App Download</span>';
+      document.body.appendChild(app);
+    }
   }
 
   if(document.readyState === 'loading'){
