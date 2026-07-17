@@ -1,0 +1,38 @@
+name: Post daily Current Affairs PDF to Telegram
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "current-affairs/*.html"
+  workflow_dispatch: {}
+
+jobs:
+  post-to-telegram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system libraries for WeasyPrint (Pango/Cairo/HarfBuzz)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 \
+            libcairo2 libharfbuzz0b fonts-dejavu-core
+
+      - name: Install Python dependencies
+        run: |
+          pip install weasyprint beautifulsoup4 requests fonttools
+
+      - name: Generate PDF and post to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: "@omkarsirofficial"
+        run: |
+          python3 automation/post_daily_ca_to_telegram.py
