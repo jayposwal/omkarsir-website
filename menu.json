@@ -1,305 +1,309 @@
 {
-  "logo": {
-    "text": "🎓 Omkar Sir",
-    "subtitle": "New India Education",
-    "url": "/"
-  },
-  "items": [
+ "logo": {
+  "text": "🎓 Omkar Sir",
+  "subtitle": "New India Education",
+  "url": "/"
+ },
+ "items": [
+  {
+   "label": "📚 विषय",
+   "type": "dropdown",
+   "children": [
     {
-      "label": "📚 विषय",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🗺️ राजस्थान GK",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "🗺️ राजस्थान भूगोल",
-              "url": "/rajasthan-bhugol.html"
-            },
-            {
-              "label": "⚖️ राजस्थान राज्यव्यवस्था (12 अध्याय)",
-              "url": "/rajasthan-rajyavyavastha.html"
-            },
-            {
-              "label": "🎨 राजस्थान कला एवं संस्कृति (13 अध्याय)",
-              "url": "/rajasthan-kala-sanskriti.html"
-            },
-            {
-              "label": "📜 राजस्थान का इतिहास (16 अध्याय)",
-              "url": "/rajasthan-itihas-series.html"
-            }
-          ]
-        },
-        {
-          "label": "🇮🇳 भारत GK",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "🏛️ प्राचीन भारत इतिहास (10 अध्याय)",
-              "url": "/prachin-bharat-itihas.html"
-            },
-            {
-              "label": "🏰 आधुनिक भारत का इतिहास (15 अध्याय)",
-              "url": "/adhunik-bharat-itihas.html"
-            },
-            {
-              "label": "🖼️ भारतीय कला एवं संस्कृति (10 अध्याय)",
-              "url": "/bharatiya-kala-sanskriti.html"
-            },
-            {
-              "label": "📋 संविधान",
-              "url": "/samvidhan.html"
-            },
-            {
-              "label": "💰 अर्थव्यवस्था (9 अध्याय)",
-              "url": "/arthavyavastha.html"
-            },
-            {
-              "label": "💻 विज्ञान एवं प्रौद्योगिकी (10 अध्याय)",
-              "url": "/vigyan-praudyogiki.html"
-            },
-            {
-              "label": "🌍 विश्व भूगोल (7 अध्याय)",
-              "url": "/vishwa-bhugol.html"
-            },
-            {
-              "label": "🌐 आधुनिक विश्व इतिहास (11 अध्याय)",
-              "url": "/vishwa-itihas.html"
-            }
-          ]
-        },
-        {
-          "label": "🎯 RAS Mains Special",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "🔢 गणित एवं तर्कशक्ति (14 अध्याय)",
-              "url": "/ras-pre-math-reasoning.html"
-            },
-            {
-              "label": "🏛️ लोक प्रशासन (11 अध्याय)",
-              "url": "/lok-prashasan.html"
-            },
-            {
-              "label": "🧭 व्यवहार (Behavior) (5 अध्याय)",
-              "url": "/vyavhar.html"
-            },
-            {
-              "label": "⚖️ विधि - Law (9 अध्याय)",
-              "url": "/vidhi.html"
-            },
-            {
-              "label": "📘 प्रबंधन (5 अध्याय)",
-              "url": "/prabandh.html"
-            },
-            {
-              "label": "⚖️ प्रशासनिक नैतिकता (9 अध्याय)",
-              "url": "/prashasanik-naitikta.html"
-            },
-            {
-              "label": "🏛️ समाजशास्त्र (7 अध्याय)",
-              "url": "/samajshastra.html"
-            }
-          ]
-        }
-      ]
+     "label": "🗺️ राजस्थान GK",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🗺️ राजस्थान भूगोल",
+       "url": "/rajasthan-bhugol.html"
+      },
+      {
+       "label": "⚖️ राजस्थान राज्यव्यवस्था (12 अध्याय)",
+       "url": "/rajasthan-rajyavyavastha.html"
+      },
+      {
+       "label": "🎨 राजस्थान कला एवं संस्कृति (13 अध्याय)",
+       "url": "/rajasthan-kala-sanskriti.html"
+      },
+      {
+       "label": "📜 राजस्थान का इतिहास (16 अध्याय)",
+       "url": "/rajasthan-itihas-series.html"
+      }
+     ]
     },
     {
-      "label": "📄 सभी Courses",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🎯 RAS Prelims Super 60 (Free Schedule)",
-          "url": "/ras-prelims-super60.html"
-        },
-        {
-          "label": "🚀 RAS Pre 2026 BEST Test Series — FREE",
-          "url": "/courses.html#course-test-series"
-        },
-        {
-          "label": "📘 RAS Foundation Course 2026",
-          "url": "/courses.html#course-ras-foundation"
-        },
-        {
-          "label": "🎯 RAS Prelims 2026 SUPER 60 Course (App)",
-          "url": "/courses.html#course-super60"
-        },
-        {
-          "label": "🕉️ भारत भूगोल OMASTRA GK सीरीज",
-          "url": "/courses.html#course-bharat-bhugol"
-        },
-        {
-          "label": "📜 India History — भारत का सम्पूर्ण इतिहास",
-          "url": "/courses.html#course-india-history"
-        },
-        {
-          "label": "🌍 World Geography — विश्व भूगोल",
-          "url": "/courses.html#course-world-geography"
-        },
-        {
-          "label": "🔢 Mathematics & Reasoning Complete Course",
-          "url": "/courses.html#course-math-reasoning"
-        },
-        {
-          "label": "🧬 जीव विज्ञान (Biology) — OMASTRA GK Series",
-          "url": "/courses.html#course-biology"
-        },
-        {
-          "label": "📦 ALL IN ONE Subscription",
-          "url": "/courses.html#course-all-in-one"
-        },
-        {
-          "label": "⚖️ Polity OMASTRA Course",
-          "url": "/courses.html#course-polity"
-        },
-        {
-          "label": "📝 10 हजार अति महत्वपूर्ण प्रश्न",
-          "url": "/courses.html#course-10k-questions"
-        },
-        {
-          "label": "📚 सभी Courses देखें (Full Page)",
-          "url": "/courses.html"
-        }
-      ]
+     "label": "🇮🇳 भारत GK",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🏛️ प्राचीन भारत इतिहास (10 अध्याय)",
+       "url": "/prachin-bharat-itihas.html"
+      },
+      {
+       "label": "🏰 आधुनिक भारत का इतिहास (15 अध्याय)",
+       "url": "/adhunik-bharat-itihas.html"
+      },
+      {
+       "label": "🖼️ भारतीय कला एवं संस्कृति (10 अध्याय)",
+       "url": "/bharatiya-kala-sanskriti.html"
+      },
+      {
+       "label": "📋 संविधान",
+       "url": "/samvidhan.html"
+      },
+      {
+       "label": "💰 अर्थव्यवस्था (9 अध्याय)",
+       "url": "/arthavyavastha.html"
+      },
+      {
+       "label": "💻 विज्ञान एवं प्रौद्योगिकी (10 अध्याय)",
+       "url": "/vigyan-praudyogiki.html"
+      },
+      {
+       "label": "🌍 विश्व भूगोल (7 अध्याय)",
+       "url": "/vishwa-bhugol.html"
+      },
+      {
+       "label": "🌐 आधुनिक विश्व इतिहास (11 अध्याय)",
+       "url": "/vishwa-itihas.html"
+      }
+     ]
     },
     {
-      "label": "🎯 Exams",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🎯 सभी Rajasthan Exams",
-          "url": "/rajasthan-exams.html"
-        },
-        {
-          "label": "🆕 RAS Exam",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "🆕 RAS Exam 2026 (Full Details)",
-              "url": "/ras-exam-2026.html"
-            },
-            {
-              "label": "📜 RAS Syllabus",
-              "url": "/ras-syllabus.html"
-            },
-            {
-              "label": "🗂️ RAS PYQ",
-              "url": "/previous-year-papers.html#block-ras"
-            },
-            {
-              "label": "1️⃣ RAS Pre",
-              "url": "/ras-pre-syllabus.html"
-            },
-            {
-              "label": "2️⃣ RAS Mains",
-              "url": "/ras-mains-syllabus.html"
-            }
-          ]
-        },
-        {
-          "label": "👮 Police व प्रशासनिक",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "👮 Police SI (Sub Inspector)",
-              "url": "/rajasthan-si-exam.html"
-            },
-            {
-              "label": "🚓 Police Constable",
-              "url": "/rajasthan-police-constable-exam.html"
-            },
-            {
-              "label": "📜 Patwari",
-              "url": "/rajasthan-patwari-exam.html"
-            },
-            {
-              "label": "🗂️ LDC (Lower Division Clerk)",
-              "url": "/rajasthan-ldc-exam.html"
-            },
-            {
-              "label": "🏡 VDO (ग्राम विकास अधिकारी)",
-              "url": "/rajasthan-vdo-exam.html"
-            }
-          ]
-        },
-        {
-          "label": "🎓 Teaching व Technical",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "🍎 REET",
-              "url": "/reet-exam.html"
-            },
-            {
-              "label": "🛠️ JEN (Junior Engineer)",
-              "url": "/rajasthan-jen-exam.html"
-            },
-            {
-              "label": "🏗️ AEN (Assistant Engineer)",
-              "url": "/rajasthan-aen-exam.html"
-            },
-            {
-              "label": "🐄 Pashu Paricharak",
-              "url": "/rajasthan-pashu-paricharak-exam.html"
-            },
-            {
-              "label": "📄 CET — 12th Level",
-              "url": "/rajasthan-cet-12th-level.html"
-            },
-            {
-              "label": "🎓 CET — Graduation Level",
-              "url": "/rajasthan-cet-graduate-level.html"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "📚 Books",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🕉️ NCERT Books",
-          "url": "/books.html#block-ncert"
-        },
-        {
-          "label": "🏛️ RBSE Books",
-          "url": "/books.html#block-rbse"
-        }
-      ]
-    },
-    {
-      "label": "📝 PYQ Papers",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🎯 RAS PYQ (Pre + Mains)",
-          "url": "/previous-year-papers.html#block-ras"
-        },
-        {
-          "label": "👮 Rajasthan SI PYQ",
-          "url": "/previous-year-papers.html#block-si"
-        }
-      ]
-    },
-    {
-      "label": "ℹ️ हमारे बारे में",
-      "type": "link",
-      "url": "/about.html"
-    },
-    {
-      "label": "📱 App Download",
-      "type": "link",
-      "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
+     "label": "🎯 RAS Mains Special",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🔢 गणित एवं तर्कशक्ति (14 अध्याय)",
+       "url": "/ras-pre-math-reasoning.html"
+      },
+      {
+       "label": "🏛️ लोक प्रशासन (11 अध्याय)",
+       "url": "/lok-prashasan.html"
+      },
+      {
+       "label": "🧭 व्यवहार (Behavior) (5 अध्याय)",
+       "url": "/vyavhar.html"
+      },
+      {
+       "label": "⚖️ विधि - Law (9 अध्याय)",
+       "url": "/vidhi.html"
+      },
+      {
+       "label": "📘 प्रबंधन (5 अध्याय)",
+       "url": "/prabandh.html"
+      },
+      {
+       "label": "⚖️ प्रशासनिक नैतिकता (9 अध्याय)",
+       "url": "/prashasanik-naitikta.html"
+      },
+      {
+       "label": "🏛️ समाजशास्त्र (7 अध्याय)",
+       "url": "/samajshastra.html"
+      }
+     ]
     }
-  ],
-  "ticker": [
-    "🎯 RAS Prelims Super 60 Course अभी Join करें — 60 दिन में पूरा Syllabus",
-    "🚀 RAS Pre 2026 BEST Test Series — 18 Tests बिल्कुल FREE",
-    "📅 RAS Prelims Exam Date: 06 दिसंबर 2026",
-    "🆕 11 नए Rajasthan Exams (SI, Patwari, REET, VDO, Constable, LDC, CET...) की पूरी जानकारी अब उपलब्ध",
-    "🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students",
-    "📚 500+ Notes अब एक ही जगह — विषय-वार पढ़ाई शुरू करें"
-  ]
+   ]
+  },
+  {
+   "label": "📄 सभी Courses",
+   "type": "dropdown",
+   "children": [
+    {
+     "label": "🎯 RAS Prelims Super 60 (Free Schedule)",
+     "url": "/ras-prelims-super60.html"
+    },
+    {
+     "label": "🚀 RAS Pre 2026 BEST Test Series — FREE",
+     "url": "/courses.html#course-test-series"
+    },
+    {
+     "label": "📘 RAS Foundation Course 2026",
+     "url": "/courses.html#course-ras-foundation"
+    },
+    {
+     "label": "🎯 RAS Prelims 2026 SUPER 60 Course (App)",
+     "url": "/courses.html#course-super60"
+    },
+    {
+     "label": "🕉️ भारत भूगोल OMASTRA GK सीरीज",
+     "url": "/courses.html#course-bharat-bhugol"
+    },
+    {
+     "label": "📜 India History — भारत का सम्पूर्ण इतिहास",
+     "url": "/courses.html#course-india-history"
+    },
+    {
+     "label": "🌍 World Geography — विश्व भूगोल",
+     "url": "/courses.html#course-world-geography"
+    },
+    {
+     "label": "🔢 Mathematics & Reasoning Complete Course",
+     "url": "/courses.html#course-math-reasoning"
+    },
+    {
+     "label": "🧬 जीव विज्ञान (Biology) — OMASTRA GK Series",
+     "url": "/courses.html#course-biology"
+    },
+    {
+     "label": "📦 ALL IN ONE Subscription",
+     "url": "/courses.html#course-all-in-one"
+    },
+    {
+     "label": "⚖️ Polity OMASTRA Course",
+     "url": "/courses.html#course-polity"
+    },
+    {
+     "label": "📝 10 हजार अति महत्वपूर्ण प्रश्न",
+     "url": "/courses.html#course-10k-questions"
+    },
+    {
+     "label": "📚 सभी Courses देखें (Full Page)",
+     "url": "/courses.html"
+    }
+   ]
+  },
+  {
+   "label": "🎯 Exams",
+   "type": "dropdown",
+   "children": [
+    {
+     "label": "🎯 सभी Rajasthan Exams",
+     "url": "/rajasthan-exams.html"
+    },
+    {
+     "label": "🆕 RAS Exam",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🆕 RAS Exam 2026 (Full Details)",
+       "url": "/ras-exam-2026.html"
+      },
+      {
+       "label": "📜 RAS Syllabus",
+       "url": "/ras-syllabus.html"
+      },
+      {
+       "label": "🗂️ RAS PYQ",
+       "url": "/previous-year-papers.html#block-ras"
+      },
+      {
+       "label": "1️⃣ RAS Pre",
+       "url": "/ras-pre-syllabus.html"
+      },
+      {
+       "label": "2️⃣ RAS Mains",
+       "url": "/ras-mains-syllabus.html"
+      }
+     ]
+    },
+    {
+     "label": "👮 Police व प्रशासनिक",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "👮 Police SI (Sub Inspector)",
+       "url": "/rajasthan-si-exam.html"
+      },
+      {
+       "label": "🚓 Police Constable",
+       "url": "/rajasthan-police-constable-exam.html"
+      },
+      {
+       "label": "📜 Patwari",
+       "url": "/rajasthan-patwari-exam.html"
+      },
+      {
+       "label": "🗂️ LDC (Lower Division Clerk)",
+       "url": "/rajasthan-ldc-exam.html"
+      },
+      {
+       "label": "🏡 VDO (ग्राम विकास अधिकारी)",
+       "url": "/rajasthan-vdo-exam.html"
+      }
+     ]
+    },
+    {
+     "label": "🎓 Teaching व Technical",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🍎 REET",
+       "url": "/reet-exam.html"
+      },
+      {
+       "label": "🛠️ JEN (Junior Engineer)",
+       "url": "/rajasthan-jen-exam.html"
+      },
+      {
+       "label": "🏗️ AEN (Assistant Engineer)",
+       "url": "/rajasthan-aen-exam.html"
+      },
+      {
+       "label": "🐄 Pashu Paricharak",
+       "url": "/rajasthan-pashu-paricharak-exam.html"
+      },
+      {
+       "label": "📄 CET — 12th Level",
+       "url": "/rajasthan-cet-12th-level.html"
+      },
+      {
+       "label": "🎓 CET — Graduation Level",
+       "url": "/rajasthan-cet-graduate-level.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "📰 Current Affairs",
+   "url": "/current-affairs.html"
+  },
+  {
+   "label": "📚 Books",
+   "type": "dropdown",
+   "children": [
+    {
+     "label": "🕉️ NCERT Books",
+     "url": "/books.html#block-ncert"
+    },
+    {
+     "label": "🏛️ RBSE Books",
+     "url": "/books.html#block-rbse"
+    }
+   ]
+  },
+  {
+   "label": "📝 PYQ Papers",
+   "type": "dropdown",
+   "children": [
+    {
+     "label": "🎯 RAS PYQ (Pre + Mains)",
+     "url": "/previous-year-papers.html#block-ras"
+    },
+    {
+     "label": "👮 Rajasthan SI PYQ",
+     "url": "/previous-year-papers.html#block-si"
+    }
+   ]
+  },
+  {
+   "label": "ℹ️ हमारे बारे में",
+   "type": "link",
+   "url": "/about.html"
+  },
+  {
+   "label": "📱 App Download",
+   "type": "link",
+   "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
+  }
+ ],
+ "ticker": [
+  "🎯 RAS Prelims Super 60 Course अभी Join करें — 60 दिन में पूरा Syllabus",
+  "🚀 RAS Pre 2026 BEST Test Series — 18 Tests बिल्कुल FREE",
+  "📅 RAS Prelims Exam Date: 06 दिसंबर 2026",
+  "🆕 11 नए Rajasthan Exams (SI, Patwari, REET, VDO, Constable, LDC, CET...) की पूरी जानकारी अब उपलब्ध",
+  "🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students",
+  "📚 500+ Notes अब एक ही जगह — विषय-वार पढ़ाई शुरू करें"
+ ]
 }
