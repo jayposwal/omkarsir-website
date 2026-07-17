@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Posts the day's 15 Current Affairs MCQs to the Telegram channel as native
-Telegram Quiz Polls (sendPoll, type=quiz) — one poll per question, sent in
-quick succession, each with a short (<=200 char) explanation shown after
-answering. The full detailed explanation lives only on the website's quiz
-page (quiz/YYYY-MM-DD.html), which is linked in an intro message first.
+Posts the first TG_POLL_COUNT (5) of the day's 15 Current Affairs MCQs to
+the Telegram channel as native Telegram Quiz Polls (sendPoll, type=quiz) —
+one poll per question, sent in quick succession, each with a short
+(<=200 char) explanation shown after answering. After the polls, a closing
+message points members to the website's quiz page (quiz/YYYY-MM-DD.html)
+to solve the full 15-question quiz with detailed explanations and a score.
 
 Runs inside GitHub Actions (normal internet access) — NOT the Cowork
 sandbox, which blocks api.telegram.org via its network allowlist.
@@ -27,6 +28,7 @@ SITE_URL = "https://omkarsir.com"
 TG_QUESTION_MAX = 300
 TG_OPTION_MAX = 100
 TG_EXPLANATION_MAX = 200
+TG_POLL_COUNT = 5  # only first N questions go to Telegram as polls; full 15 live on the website quiz page
 
 
 def find_latest_quiz_json():
@@ -61,13 +63,12 @@ def main():
     print(f"Loaded {len(questions)} questions for {hindi_date} from {path}")
 
     quiz_page_url = f"{SITE_URL}/quiz/{date_str}.html"
+    poll_questions = questions[:TG_POLL_COUNT]
 
-    # Intro message with link to the full website quiz (full explanations live there)
+    # Intro message — sets expectation that only a preview (5) is here, full 15 on website
     intro = (
-        f"📝 {hindi_date} — Daily Current Affairs Quiz ({len(questions)} प्रश्न)\n\n"
-        f"नीचे एक-एक करके सभी प्रश्न आ रहे हैं — जवाब देकर तुरंत सही उत्तर देखें।\n"
-        f"विस्तृत व्याख्या (detailed explanation) व स्कोर के लिए वेबसाइट पर क्विज़ दें:\n"
-        f"🔗 {quiz_page_url}"
+        f"📝 {hindi_date} — Daily Current Affairs Quiz\n\n"
+        f"यहाँ शुरू के {len(poll_questions)} प्रश्न — जवाब देकर तुरंत सही उत्तर देखें।"
     )
     resp = requests.post(
         f"https://api.telegram.org/bot{bot_token}/sendMessage",
@@ -80,9 +81,9 @@ def main():
     time.sleep(1.5)
 
     sent = 0
-    for i, q in enumerate(questions, start=1):
+    for i, q in enumerate(poll_questions, start=1):
         diff_emoji = {"easy": "🟢", "medium": "🟠", "hard": "🔴"}.get(q["difficulty"], "")
-        prefix = f"Q{i}/{len(questions)} {diff_emoji} "
+        prefix = f"Q{i}/{len(poll_questions)} {diff_emoji} "
         question_text = clip(prefix + q["question"], TG_QUESTION_MAX)
         options = [clip(opt, TG_OPTION_MAX) for opt in q["options"]]
         explanation = clip(q.get("explanation_short", ""), TG_EXPLANATION_MAX)
@@ -110,7 +111,20 @@ def main():
         sent += 1
         time.sleep(1.5)  # stay safely under per-chat rate limits
 
-    print(f"Posted {sent}/{len(questions)} quiz polls successfully to {chat_id}")
+    # Closing message — points to the website for the full 15-question quiz
+    closing = (
+        f"🎯 आज के Current Affairs पर आधारित {len(questions)} सवालों की Quiz Solve करें:\n"
+        f"🔗 {quiz_page_url}"
+    )
+    r = requests.post(
+        f"https://api.telegram.org/bot{bot_token}/sendMessage",
+        data={"chat_id": chat_id, "text": closing},
+        timeout=30,
+    )
+    print("Closing message status:", r.status_code, r.text[:300])
+    r.raise_for_status()
+
+    print(f"Posted {sent}/{len(poll_questions)} quiz polls (of {len(questions)} total questions) successfully to {chat_id}")
 
 
 if __name__ == "__main__":
