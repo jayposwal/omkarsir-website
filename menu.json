@@ -257,29 +257,35 @@
   },
   {
    "label": "📰 Current Affairs",
-   "url": "/current-affairs.html"
-  },
-  {
-   "label": "📝 Daily Quiz",
-   "url": "/quiz.html"
+   "type": "dropdown",
+   "children": [
+    {
+     "label": "📰 Current Affairs",
+     "url": "/current-affairs.html"
+    },
+    {
+     "label": "📝 Daily Quiz",
+     "url": "/quiz.html"
+    },
+    {
+     "label": "📚 Books",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🕉️ NCERT Books",
+       "url": "/books.html#block-ncert"
+      },
+      {
+       "label": "🏛️ RBSE Books",
+       "url": "/books.html#block-rbse"
+      }
+     ]
+    }
+   ]
   },
   {
    "label": "💼 Latest Vacancy",
    "url": "/vacancy.html"
-  },
-  {
-   "label": "📚 Books",
-   "type": "dropdown",
-   "children": [
-    {
-     "label": "🕉️ NCERT Books",
-     "url": "/books.html#block-ncert"
-    },
-    {
-     "label": "🏛️ RBSE Books",
-     "url": "/books.html#block-rbse"
-    }
-   ]
   },
   {
    "label": "📝 PYQ Papers",
@@ -311,7 +317,7 @@
   "🚀 RAS Pre 2026 BEST Test Series — 18 Tests बिल्कुल FREE",
   "📅 RAS Prelims Exam Date: 06 दिसंबर 2026",
   "🆕 11 नए Rajasthan Exams (SI, Patwari, REET, VDO, Constable, LDC, CET...) की पूरी जानकारी अब उपलब्ध",
-  "🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students",
+  "🏆 NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार — विश्वसनीय एवं बेहतरीन Content",
   "📚 500+ Notes अब एक ही जगह — विषय-वार पढ़ाई शुरू करें"
  ]
 }
