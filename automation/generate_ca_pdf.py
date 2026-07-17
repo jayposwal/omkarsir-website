@@ -103,24 +103,24 @@ def build_html(sections, hindi_date, eng_date, font_regular, font_bold, site_url
 @font-face {{ font-family:'Noto'; src:url('{font_regular}'); font-weight:400; }}
 @font-face {{ font-family:'Noto'; src:url('{font_bold}'); font-weight:700; }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
-body {{ font-family:'Noto', sans-serif; color:#222; font-size:13px; }}
+body {{ font-family:'Noto', sans-serif; color:#222; font-size:16px; }}
 b {{ font-weight:700; color:#1B2A6B; }}
 a {{ color:inherit; text-decoration:none; }}
 
 @page {{
   size: A4;
-  margin: 24mm 14mm 18mm 14mm;
-  @top-left {{ content: "omkarsir.com"; font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
-  @top-right {{ content: "{eng_date}"; font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
-  @bottom-left {{ content: "omkarsir.com"; font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
-  @bottom-center {{ content: "Page " counter(page) " of " counter(pages); font-size:8.5px; color:#8a8a94; font-family:'Noto'; }}
+  margin: 22mm 9mm 16mm 9mm;
+  @top-left {{ content: "omkarsir.com"; font-size:9.5px; color:#8a8a94; font-family:'Noto'; }}
+  @top-right {{ content: "{eng_date}"; font-size:9.5px; color:#8a8a94; font-family:'Noto'; }}
+  @bottom-left {{ content: "omkarsir.com"; font-size:9.5px; color:#8a8a94; font-family:'Noto'; }}
+  @bottom-center {{ content: "Page " counter(page) " of " counter(pages); font-size:9.5px; color:#8a8a94; font-family:'Noto'; }}
 }}
 
 .footer-brand {{
   position: fixed;
-  bottom: 8mm;
-  right: 14mm;
-  font-size: 8.5px;
+  bottom: 7mm;
+  right: 9mm;
+  font-size: 9.5px;
   color: #8a8a94;
 }}
 .footer-brand a {{ text-decoration:underline; }}
@@ -145,25 +145,25 @@ a {{ color:inherit; text-decoration:none; }}
   padding-bottom: 14px;
   margin-bottom: 16px;
 }}
-.cover .brand {{ font-size:24px; font-weight:700; color:#1B2A6B; }}
+.cover .brand {{ font-size:28px; font-weight:700; color:#1B2A6B; }}
 .cover .brand a {{ border-bottom: 1px dotted #1B2A6B; }}
-.cover .sub {{ font-size:12px; color:#777; margin-top:3px; }}
+.cover .sub {{ font-size:14px; color:#777; margin-top:3px; }}
 .cover .bar {{ width:64px; height:4px; background:linear-gradient(90deg,#FF6B00,#00A651); margin:14px auto; border-radius:4px; }}
-.cover h1 {{ font-size:20px; color:#1B2A6B; font-weight:700; margin-top:4px; line-height:1.45; }}
-.cover .cred {{ margin-top:12px; font-size:11.5px; font-weight:700; color:#FF6B00; max-width:480px; }}
+.cover h1 {{ font-size:24px; color:#1B2A6B; font-weight:700; margin-top:6px; line-height:1.45; }}
+.cover .cred {{ margin-top:12px; font-size:14px; font-weight:700; color:#FF6B00; max-width:500px; }}
 .idx-box {{ margin-top:20px; text-align:left; width:420px; border:2px solid #E8EAF0; border-radius:12px; padding:14px 22px; }}
-.idx-title {{ font-weight:700; color:#1B2A6B; font-size:13.5px; border-bottom:2px solid #eee; padding-bottom:7px; margin-bottom:7px; }}
-.idx-row {{ font-size:12px; line-height:1.85; }}
+.idx-title {{ font-weight:700; color:#1B2A6B; font-size:16px; border-bottom:2px solid #eee; padding-bottom:8px; margin-bottom:8px; }}
+.idx-row {{ font-size:15px; line-height:2.05; }}
 .dot {{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:8px; }}
 
 .section {{ margin-bottom:16px; }}
-.section h2 {{ font-size:16px; color:#1B2A6B; font-weight:700; border-left:4px solid; padding-left:10px; margin-bottom:10px; }}
-.section h2 .eng {{ font-size:12px; color:#888; font-weight:400; }}
-.item {{ display:flex; gap:9px; font-size:12.5px; line-height:1.7; text-align:justify; margin-bottom:10px; padding-bottom:10px; border-bottom:1px dashed #eee; page-break-inside:avoid; }}
+.section h2 {{ font-size:19px; color:#1B2A6B; font-weight:700; border-left:4px solid; padding-left:10px; margin-bottom:12px; }}
+.section h2 .eng {{ font-size:14px; color:#888; font-weight:400; }}
+.item {{ display:flex; gap:10px; font-size:15.5px; line-height:1.85; text-align:justify; margin-bottom:14px; padding-bottom:14px; border-bottom:1px dashed #eee; page-break-inside:avoid; }}
 .item:last-of-type {{ border-bottom:none; }}
-.num {{ flex:0 0 auto; width:17px; height:17px; border-radius:50%; color:#fff; font-size:10px; font-weight:700; text-align:center; line-height:17px; }}
+.num {{ flex:0 0 auto; width:22px; height:22px; border-radius:50%; color:#fff; font-size:12.5px; font-weight:700; text-align:center; line-height:22px; margin-top:1px; }}
 .item-text {{ flex:1; }}
-.kw {{ background:#FFF3E8; border:1px solid #FFD0A0; border-radius:8px; padding:9px 13px; font-size:10.5px; color:#663c00; margin-top:4px; }}
+.kw {{ background:#FFF3E8; border:1px solid #FFD0A0; border-radius:9px; padding:12px 15px; font-size:13px; line-height:1.7; color:#663c00; margin-top:6px; }}
 </style>
 </head>
 <body>
