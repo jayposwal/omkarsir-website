@@ -109,6 +109,15 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
 .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
 .footer-logo span{color:#FF6B00}
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.subj-card{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:all .2s}
+.subj-card:hover{border-color:#FF6B00;transform:translateY(-2px)}
+.subj-card.disabled{opacity:.6;cursor:default}
+.subj-card h4{font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif}
+.subj-tag{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:50px;align-self:flex-start}
+.subj-tag.live{background:#E6F9EE;color:#0F8A43}
+.subj-tag.soon{background:#FFF3E8;color:#FF6B00}
 </style>
 </head>
 <body>
@@ -132,6 +141,7 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   <a href="#age">Age Limit</a>
   <a href="#selection">Selection Process</a>
   <a href="#pattern">Exam Pattern</a>
+  <a href="#syllabus">Syllabus</a>
   <a href="#fee">Fee</a>
   <a href="#cutoff">Cut Off</a>
   <a href="#pyq">PYQ</a>
@@ -218,6 +228,32 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
     <a href="/ras-pre-syllabus.html" class="cta-card"><h4>📘 RAS Pre 2026 — पूरा Syllabus</h4><p>11 Sections, Hindi + English, PDF Download</p></a>
     <a href="/ras-mains-syllabus.html" class="cta-card"><h4>📗 RAS Mains 2026 — पूरा Syllabus</h4><p>Paper I-IV, Hindi + English, PDF Download</p></a>
     <a href="/rajasthan-exams.html" class="cta-card"><h4>🎯 सभी Rajasthan Exams देखें</h4><p>SI, Patwari, REET, VDO, Constable, LDC, CET, JEN, AEN</p></a>
+  </div>
+</div>
+
+<div class="sec-block" id="syllabus">
+  <h2>📚 <span>Syllabus</span> — विषय-वार पूरा FREE Study Material</h2>
+  <p style="margin-bottom:14px;color:#666;font-size:13px">नीचे हर विषय पर क्लिक करके Free Chapter-wise Series पढ़ें — RAS Pre + Mains दोनों के लिए उपयोगी।</p>
+  <div class="subject-grid">
+    <a href="/prachin-bharat-itihas.html" class="subj-card"><h4>🏛️ प्राचीन एवं मध्यकालीन भारत का इतिहास</h4><span class="subj-tag live">10 अध्याय</span></a>
+    <a href="/adhunik-bharat-itihas.html" class="subj-card"><h4>🏰 आधुनिक भारत का इतिहास</h4><span class="subj-tag live">15 अध्याय</span></a>
+    <a href="/rajasthan-itihas-series.html" class="subj-card"><h4>📜 राजस्थान का इतिहास</h4><span class="subj-tag live">16 अध्याय</span></a>
+    <a href="/rajasthan-kala-sanskriti.html" class="subj-card"><h4>🎨 राजस्थान कला-संस्कृति</h4><span class="subj-tag live">13 अध्याय</span></a>
+    <a href="/bharatiya-kala-sanskriti.html" class="subj-card"><h4>🖼️ भारतीय कला-संस्कृति</h4><span class="subj-tag live">10 अध्याय</span></a>
+    <a href="/bharat-bhugol.html" class="subj-card"><h4>🌏 भारत का भूगोल</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/rajasthan-bhugol.html" class="subj-card"><h4>🗺️ राजस्थान का भूगोल</h4><span class="subj-tag live">14 अध्याय</span></a>
+    <a href="/bharatiya-rajvyavastha.html" class="subj-card"><h4>⚖️ भारतीय राजव्यवस्था</h4><span class="subj-tag live">26 अध्याय</span></a>
+    <a href="/rajasthan-rajyavyavastha.html" class="subj-card"><h4>🏛️ राजस्थान राज्यव्यवस्था</h4><span class="subj-tag live">12 अध्याय</span></a>
+    <a href="/samvidhan.html" class="subj-card"><h4>📋 भारतीय संविधान</h4><span class="subj-tag live">Complete</span></a>
+    <a href="/arthavyavastha.html" class="subj-card"><h4>💰 अर्थव्यवस्था (भारतीय+राजस्थान)</h4><span class="subj-tag live">9 अध्याय</span></a>
+    <a href="/vigyan-praudyogiki.html" class="subj-card"><h4>🔬 विज्ञान एवं प्रौद्योगिकी</h4><span class="subj-tag live">10 अध्याय</span></a>
+    <a href="/ras-pre-math-reasoning.html" class="subj-card"><h4>🧠 रीजनिंग एवं गणित</h4><span class="subj-tag live">14 अध्याय</span></a>
+    <a href="/lok-prashasan.html" class="subj-card"><h4>🏛️ लोक प्रशासन (Mains Optional)</h4><span class="subj-tag live">11 अध्याय</span></a>
+    <a href="/vidhi.html" class="subj-card"><h4>⚖️ विधि (Mains Optional)</h4><span class="subj-tag live">9 अध्याय</span></a>
+    <a href="/vyavhar.html" class="subj-card"><h4>🧭 व्यवहार (Mains Optional)</h4><span class="subj-tag live">5 अध्याय</span></a>
+    <a href="/samanya-angrezi.html" class="subj-card"><h4>🔤 सामान्य अंग्रेजी</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/samanya-hindi.html" class="subj-card"><h4>✍️ सामान्य हिंदी</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/current-affairs.html" class="subj-card"><h4>📰 करेंट अफेयर्स</h4><span class="subj-tag live">तैयारी Strategy</span></a>
   </div>
 </div>
 

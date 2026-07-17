@@ -109,6 +109,15 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
 .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
 .footer-logo span{color:#FF6B00}
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.subj-card{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:all .2s}
+.subj-card:hover{border-color:#FF6B00;transform:translateY(-2px)}
+.subj-card.disabled{opacity:.6;cursor:default}
+.subj-card h4{font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif}
+.subj-tag{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:50px;align-self:flex-start}
+.subj-tag.live{background:#E6F9EE;color:#0F8A43}
+.subj-tag.soon{background:#FFF3E8;color:#FF6B00}
 </style>
 </head>
 <body>
@@ -189,15 +198,18 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <div class="sec-block" id="syllabus">
   <h2>📚 <span>Syllabus</span></h2>
-  <ul>
-    <li>Language Knowledge — Hindi एवं English</li>
-    <li>Mathematics (गणित)</li>
-    <li>General Knowledge एवं General Science</li>
-    <li>Geography &amp; Natural Resources</li>
-    <li>Rajasthan के Agricultural &amp; Economic Resources</li>
-    <li>राजस्थान का इतिहास एवं संस्कृति</li>
-    <li>Basic Computer Knowledge</li>
-  </ul>
+  <p style="margin-bottom:14px;color:#666;font-size:13px">नीचे हर विषय पर क्लिक करके Free Chapter-wise Series पढ़ें।</p>
+  <div class="subject-grid">
+    <a href="/samanya-hindi.html" class="subj-card"><h4>✍️ सामान्य हिंदी</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/samanya-angrezi.html" class="subj-card"><h4>🔤 सामान्य अंग्रेजी</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/ras-pre-math-reasoning.html" class="subj-card"><h4>🧠 गणित एवं रीजनिंग</h4><span class="subj-tag live">14 अध्याय</span></a>
+    <a href="/vigyan-praudyogiki.html" class="subj-card"><h4>🔬 सामान्य विज्ञान</h4><span class="subj-tag live">10 अध्याय</span></a>
+    <a href="/rajasthan-bhugol.html" class="subj-card"><h4>🗺️ राजस्थान का भूगोल</h4><span class="subj-tag live">14 अध्याय</span></a>
+    <a href="/arthavyavastha.html" class="subj-card"><h4>💰 अर्थव्यवस्था (राजस्थान)</h4><span class="subj-tag live">9 अध्याय</span></a>
+    <a href="/rajasthan-itihas-series.html" class="subj-card"><h4>📜 राजस्थान का इतिहास</h4><span class="subj-tag live">16 अध्याय</span></a>
+    <a href="/rajasthan-kala-sanskriti.html" class="subj-card"><h4>🎨 राजस्थान कला-संस्कृति</h4><span class="subj-tag live">13 अध्याय</span></a>
+    <a href="/computer-gyan.html" class="subj-card"><h4>💻 कंप्यूटर ज्ञान</h4><span class="subj-tag live">5 अध्याय</span></a>
+  </div>
   <div class="cta-row">
     <a href="/rajasthan-exams.html" class="cta-card"><h4>🎯 सभी Rajasthan Exams देखें</h4><p>एक ही जगह — सभी Exam की जानकारी</p></a>
     <a href="/all-notes.html" class="cta-card"><h4>📖 Rajasthan GK Notes पढ़ें</h4><p>भूगोल, इतिहास, राज्यव्यवस्था, कला-संस्कृति</p></a>

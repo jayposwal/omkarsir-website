@@ -109,6 +109,15 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
 .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
 .footer-logo span{color:#FF6B00}
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.subj-card{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:all .2s}
+.subj-card:hover{border-color:#FF6B00;transform:translateY(-2px)}
+.subj-card.disabled{opacity:.6;cursor:default}
+.subj-card h4{font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif}
+.subj-tag{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:50px;align-self:flex-start}
+.subj-tag.live{background:#E6F9EE;color:#0F8A43}
+.subj-tag.soon{background:#FFF3E8;color:#FF6B00}
 </style>
 </head>
 <body>
@@ -193,8 +202,17 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <div class="sec-block" id="syllabus">
   <h2>📚 <span>Syllabus</span></h2>
-  <p><strong>Level 1:</strong> Child Development &amp; Pedagogy, Language-I, Language-II, Mathematics, Environmental Studies</p>
-  <p><strong>Level 2:</strong> Child Development &amp; Pedagogy, Language-I, Language-II, विषय विशेष (Mathematics-Science अथवा Social Studies)</p>
+  <p style="margin-bottom:14px;color:#666;font-size:13px">नीचे हर विषय पर क्लिक करके Free Chapter-wise Series पढ़ें।</p>
+  <div class="subject-grid">
+    <div class="subj-card disabled"><h4>🧒 Child Development & Pedagogy</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+    <a href="/samanya-hindi.html" class="subj-card"><h4>✍️ Language — सामान्य हिंदी</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/samanya-angrezi.html" class="subj-card"><h4>🔤 Language — सामान्य अंग्रेजी</h4><span class="subj-tag live">6 अध्याय</span></a>
+    <a href="/ras-pre-math-reasoning.html" class="subj-card"><h4>🧠 Mathematics</h4><span class="subj-tag live">14 अध्याय</span></a>
+    <div class="subj-card disabled"><h4>🌱 Environmental Studies (EVS)</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+    <a href="/vigyan-praudyogiki.html" class="subj-card"><h4>🔬 Science (Level 2 विषय विशेष)</h4><span class="subj-tag live">10 अध्याय</span></a>
+    <div class="subj-card disabled"><h4>🌍 Social Studies (Level 2 विषय विशेष)</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+  </div>
+  <div class="note-box">ℹ️ Child Development & Pedagogy, EVS एवं Social Studies — ये Teaching-विशेष विषय हैं, इन पर अलग से Content जल्द तैयार किया जाएगा।</div>
   <div class="cta-row">
     <a href="/rajasthan-exams.html" class="cta-card"><h4>🎯 सभी Rajasthan Exams देखें</h4><p>एक ही जगह — सभी Exam की जानकारी</p></a>
     <a href="/all-notes.html" class="cta-card"><h4>📖 Rajasthan GK Notes पढ़ें</h4><p>भूगोल, इतिहास, राज्यव्यवस्था, कला-संस्कृति</p></a>
