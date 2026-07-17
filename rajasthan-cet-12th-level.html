@@ -52,7 +52,7 @@
   "mainEntity": [
     {"@type":"Question","name":"CET 12th Level किन भर्तियों के लिए जरूरी है?","acceptedAnswer":{"@type":"Answer","text":"Rajasthan Police Constable, VDO जैसी 12वीं योग्यता वाली सभी RSMSSB भर्तियों के लिए।"}},
     {"@type":"Question","name":"CET 12th Level Exam 2026 कब है?","acceptedAnswer":{"@type":"Answer","text":"23 से 25 अक्टूबर 2026।"}},
-    {"@type":"Question","name":"CET में Negative Marking है क्या?","acceptedAnswer":{"@type":"Answer","text":"12th Level में कोई Negative Marking नहीं है।"}},
+    {"@type":"Question","name":"CET में Negative Marking है क्या?","acceptedAnswer":{"@type":"Answer","text":"हाँ, 12th Level में अब 1/3 अंक की Negative Marking लागू है (हाल ही में लागू हुई है) — फॉर्म भरने से पहले नवीनतम Notification जरूर देखें।"}},
     {"@type":"Question","name":"CET Score की Validity कितनी होती है?","acceptedAnswer":{"@type":"Answer","text":"सामान्यतः 1 वर्ष तक मान्य रहता है।"}}
   ]
 }
@@ -109,6 +109,15 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
 .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
 .footer-logo span{color:#FF6B00}
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.subj-card{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:all .2s}
+.subj-card:hover{border-color:#FF6B00;transform:translateY(-2px)}
+.subj-card.disabled{opacity:.6;cursor:default}
+.subj-card h4{font-size:13.5px;font-weight:700;font-family:'Poppins',sans-serif}
+.subj-tag{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:50px;align-self:flex-start}
+.subj-tag.live{background:#E6F9EE;color:#0F8A43}
+.subj-tag.soon{background:#FFF3E8;color:#FF6B00}
 </style>
 </head>
 <body>
@@ -131,6 +140,7 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   <a href="#eligibility">Eligibility</a>
   <a href="#age">Age Limit</a>
   <a href="#selection">Selection Process</a>
+  <a href="#mains">मुख्य परीक्षाएं</a>
   <a href="#pattern">Exam Pattern</a>
   <a href="#syllabus">Syllabus</a>
   <a href="#salary">Salary</a>
@@ -142,10 +152,10 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 <div class="quick-facts">
   <div class="qf-box"><div class="qf-label">Qualification</div><div class="qf-val">12वीं उत्तीर्ण</div></div>
   <div class="qf-box"><div class="qf-label">Exam Date</div><div class="qf-val">23-25 अक्टूबर 2026</div></div>
-  <div class="qf-box"><div class="qf-label">प्रश्न</div><div class="qf-val">150 MCQ</div></div>
-  <div class="qf-box"><div class="qf-label">कुल अंक</div><div class="qf-val">300</div></div>
+  <div class="qf-box"><div class="qf-label">प्रश्न</div><div class="qf-val">120 MCQ</div></div>
+  <div class="qf-box"><div class="qf-label">कुल अंक</div><div class="qf-val">240</div></div>
   <div class="qf-box"><div class="qf-label">समय</div><div class="qf-val">2 घंटे 30 मिनट</div></div>
-  <div class="qf-box"><div class="qf-label">Negative Marking</div><div class="qf-val">नहीं है</div></div>
+  <div class="qf-box"><div class="qf-label">Negative Marking</div><div class="qf-val">1/3</div></div>
 </div>
 
 <div class="sec-block" id="overview">
@@ -180,23 +190,44 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   <div class="table-scroll">
   <table class="pattern-table">
     <tr><th>प्रश्न संख्या</th><th>कुल अंक</th><th>समय</th><th>Negative Marking</th></tr>
-    <tr><td>150 MCQ</td><td>300 (प्रति प्रश्न 2 अंक)</td><td>2 घंटे 30 मिनट</td><td>नहीं है</td></tr>
+    <tr><td>120 MCQ</td><td>240 (प्रति प्रश्न 2 अंक)</td><td>2 घंटे 30 मिनट</td><td>1/3 (गलत उत्तर पर)</td></tr>
   </table>
   </div>
 </div>
 
 <div class="sec-block" id="syllabus">
-  <h2>📚 <span>Syllabus</span></h2>
-  <ul>
-    <li>Rajasthan GK — इतिहास, भूगोल, कला-संस्कृति</li>
-    <li>भारतीय इतिहास एवं भारतीय संविधान</li>
-    <li>General Science एवं Mathematics</li>
-    <li>Reasoning, Hindi, English</li>
-    <li>Computer Knowledge एवं Current Affairs</li>
-  </ul>
+  <h2>📚 <span>Syllabus</span> — विषय-वार पूरा FREE Study Material</h2>
+  <p>नीचे हर विषय पर क्लिक करके उसकी Free Chapter-wise Series पढ़ें। जो विषय अभी तैयार हो रहे हैं, वो जल्द जोड़े जाएंगे।</p>
+  <div class="subject-grid">
+    <a href="/adhunik-bharat-itihas.html" class="subj-card"><h4>🏛️ भारत का इतिहास (राष्ट्रीय आंदोलन सहित)</h4><span class="subj-tag live">15 अध्याय उपलब्ध</span></a>
+    <a href="/rajasthan-itihas-series.html" class="subj-card"><h4>📜 राजस्थान का इतिहास</h4><span class="subj-tag live">16 अध्याय उपलब्ध</span></a>
+    <a href="/rajasthan-kala-sanskriti.html" class="subj-card"><h4>🎨 राजस्थान कला, संस्कृति एवं विरासत</h4><span class="subj-tag live">13 अध्याय उपलब्ध</span></a>
+    <div class="subj-card disabled"><h4>🌏 भारत का भूगोल</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+    <a href="/rajasthan-bhugol.html" class="subj-card"><h4>🗺️ राजस्थान का भूगोल</h4><span class="subj-tag live">14 अध्याय उपलब्ध</span></a>
+    <a href="/bharatiya-rajvyavastha.html" class="subj-card"><h4>⚖️ भारतीय राजव्यवस्था</h4><span class="subj-tag live">26 अध्याय उपलब्ध</span></a>
+    <a href="/rajasthan-rajyavyavastha.html" class="subj-card"><h4>🏛️ राजस्थान राज्यव्यवस्था</h4><span class="subj-tag live">12 अध्याय उपलब्ध</span></a>
+    <a href="/samvidhan.html" class="subj-card"><h4>📋 भारतीय संविधान</h4><span class="subj-tag live">Complete उपलब्ध</span></a>
+    <a href="/arthavyavastha.html" class="subj-card"><h4>💰 अर्थव्यवस्था (भारतीय + राजस्थान)</h4><span class="subj-tag live">9 अध्याय उपलब्ध</span></a>
+    <a href="/vigyan-praudyogiki.html" class="subj-card"><h4>🔬 विज्ञान एवं प्रौद्योगिकी</h4><span class="subj-tag live">10 अध्याय उपलब्ध</span></a>
+    <a href="/ras-pre-math-reasoning.html" class="subj-card"><h4>🧠 रीजनिंग एवं मानसिक क्षमता</h4><span class="subj-tag live">14 अध्याय उपलब्ध</span></a>
+    <div class="subj-card disabled"><h4>💻 कंप्यूटर ज्ञान (Basic)</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+    <div class="subj-card disabled"><h4>📰 करेंट अफेयर्स</h4><span class="subj-tag soon">Monthly अपडेट जल्द</span></div>
+    <div class="subj-card disabled"><h4>🔤 सामान्य अंग्रेजी</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+    <div class="subj-card disabled"><h4>✍️ सामान्य हिंदी</h4><span class="subj-tag soon">जल्द उपलब्ध</span></div>
+  </div>
   <div class="cta-row">
     <a href="/rajasthan-exams.html" class="cta-card"><h4>🎯 सभी Rajasthan Exams देखें</h4><p>एक ही जगह — सभी Exam की जानकारी</p></a>
-    <a href="/all-notes.html" class="cta-card"><h4>📖 Rajasthan GK Notes पढ़ें</h4><p>भूगोल, इतिहास, राज्यव्यवस्था, कला-संस्कृति</p></a>
+    <a href="/all-notes.html" class="cta-card"><h4>📖 पूरे Rajasthan GK Notes पढ़ें</h4><p>भूगोल, इतिहास, राज्यव्यवस्था, कला-संस्कृति</p></a>
+  </div>
+</div>
+
+<div class="sec-block" id="mains">
+  <h2>🎯 <span>आगे की मुख्य परीक्षाएं</span> — CET Score से कौनसी भर्ती?</h2>
+  <p>CET 12th Level क्लियर करने के बाद, आप इन प्रमुख 12वीं-स्तरीय भर्तियों की Specific परीक्षा (मुख्य परीक्षा) के लिए पात्र होते हैं:</p>
+  <div class="cta-row">
+    <a href="/rajasthan-police-constable-exam.html" class="cta-card"><h4>👮 Police Constable</h4><p>Exam की पूरी जानकारी देखें</p></a>
+    <a href="/rajasthan-vdo-exam.html" class="cta-card"><h4>🏘️ VDO (ग्राम विकास अधिकारी)</h4><p>Exam की पूरी जानकारी देखें</p></a>
+    <a href="/rajasthan-patwari-exam.html" class="cta-card"><h4>📋 Patwari</h4><p>ध्यान दें: Patwari हेतु CET Graduate Level चाहिए</p></a>
   </div>
 </div>
 
@@ -209,7 +240,7 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   <h2>❓ <span>FAQ</span></h2>
   <p><strong>CET 12th Level किन भर्तियों के लिए जरूरी है?</strong><br>Rajasthan Police Constable, VDO जैसी 12वीं योग्यता वाली सभी RSMSSB भर्तियों के लिए।</p>
   <p><strong>CET 12th Level Exam 2026 कब है?</strong><br>23 से 25 अक्टूबर 2026।</p>
-  <p><strong>CET में Negative Marking है क्या?</strong><br>12th Level में कोई Negative Marking नहीं है।</p>
+  <p><strong>CET में Negative Marking है क्या?</strong><br>हाँ, 12th Level में अब 1/3 अंक की Negative Marking लागू है (हाल ही में लागू हुई है) — फॉर्म भरने से पहले नवीनतम Notification जरूर देखें।</p>
   <p><strong>CET Score की Validity कितनी होती है?</strong><br>सामान्यतः 1 वर्ष तक मान्य रहता है।</p>
 </div>
 
