@@ -58,6 +58,7 @@
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
 h1,h2,h3{font-family:'Poppins',sans-serif}
 .tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
@@ -75,9 +76,8 @@ h1,h2,h3{font-family:'Poppins',sans-serif}
 .lang-bar button.lf-active{background:#FF6B00;border-color:transparent;color:white;box-shadow:0 4px 15px rgba(255,107,0,.3)}
 
 .paper-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:16px 20px 20px;background:rgba(248,249,252,.97);border-bottom:1px solid #e0e4ef;position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
-.paper-bar button{padding:9px 20px;border:2px solid #e0e4ef;background:white;border-radius:50px;font-size:.85rem;font-weight:700;color:#555;cursor:pointer;transition:all .2s ease;font-family:inherit}
-.paper-bar button:hover{border-color:#1B2A6B;color:#1B2A6B}
-.paper-bar button.pf-active{background:#1B2A6B;border-color:transparent;color:white;box-shadow:0 4px 15px rgba(27,42,107,.3)}
+.paper-bar a{padding:9px 20px;border:2px solid #e0e4ef;background:white;border-radius:50px;font-size:.85rem;font-weight:700;color:#555;cursor:pointer;transition:all .2s ease;font-family:inherit;text-decoration:none;display:inline-block}
+.paper-bar a:hover{border-color:#1B2A6B;color:#1B2A6B}
 
 .wrap{max-width:960px;margin:0 auto;padding:36px 6% 20px}
 .dl-box{background:linear-gradient(135deg,#1B2A6B,#2b3f9e);border-radius:16px;padding:24px 26px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:#fff;margin-bottom:30px}
@@ -103,8 +103,8 @@ h1,h2,h3{font-family:'Poppins',sans-serif}
 .unit-card h5.syl-head{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#FF6B00;margin:14px 0 6px}
 .unit-card h5.syl-head:first-of-type{margin-top:8px}
 
-.paper-view{display:none}
-.paper-view.active{display:block}
+.paper-view{display:block;scroll-margin-top:140px}
+.paper-view + .paper-view{margin-top:38px;padding-top:30px;border-top:2px dashed #E8EAF0}
 .lang-block{display:none}
 .lang-block.active{display:block}
 
@@ -156,12 +156,13 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 </div>
 
 <div class="paper-bar">
-  <button class="pf-active" data-paper="overview">🧾 Overview</button>
-  <button data-paper="p1">Paper I</button>
-  <button data-paper="p2">Paper II</button>
-  <button data-paper="p3">Paper III</button>
-  <button data-paper="p4">Paper IV</button>
+  <a href="#paper-overview">🧾 Overview</a>
+  <a href="#paper-p1">Paper I</a>
+  <a href="#paper-p2">Paper II</a>
+  <a href="#paper-p3">Paper III</a>
+  <a href="#paper-p4">Paper IV</a>
 </div>
+<div class="note-box" style="max-width:960px;margin:14px auto 0;text-align:center">💡 सभी Papers नीचे एक ही पेज पर क्रम से दिए गए हैं — ऊपर के बटन सिर्फ उस Paper पर सीधे jump करने के लिए हैं।</div>
 
 <div class="wrap">
 
@@ -229,6 +230,7 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <!-- ============ OVERVIEW ============ -->
 <div class="paper-view active" id="paper-overview">
+  <h2 class="sec-title">🧾 <span>Overview</span> — परीक्षा योजना</h2>
 
   <div class="lang-block active" id="ov-hi">
     <table class="pattern-table">
@@ -1008,16 +1010,6 @@ document.querySelectorAll('.lang-bar button').forEach(function(btn){
     document.querySelectorAll('.lang-block[id$="-' + lang + '"]').forEach(function(el){
       el.classList.add('active');
     });
-  });
-});
-document.querySelectorAll('.paper-bar button').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.paper-bar button').forEach(function(b){b.classList.remove('pf-active')});
-    btn.classList.add('pf-active');
-    var p = btn.getAttribute('data-paper');
-    document.querySelectorAll('.paper-view').forEach(function(b){b.classList.remove('active')});
-    document.getElementById('paper-' + p).classList.add('active');
-    window.scrollTo({top: document.querySelector('.paper-bar').offsetTop - 10, behavior:'smooth'});
   });
 });
 </script>
