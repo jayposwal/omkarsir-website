@@ -259,23 +259,29 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 function downloadCAPDF(){
-  var el = document.getElementById('ca-content');
-  var opt = {
-    margin: [10,8,10,8],
-    filename: 'Current-Affairs-17-July-2026-OmkarSir.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['avoid-all','css','legacy'] }
-  };
   var btn = document.querySelector('.pdf-box button');
   var originalText = btn.innerHTML;
   btn.innerHTML = '⏳ PDF बन रहा है...';
-  html2pdf().set(opt).from(el).save().then(function(){
-    btn.innerHTML = originalText;
-  }).catch(function(){
-    btn.innerHTML = originalText;
-  });
+  // Fix: html2canvas captures a blank offset equal to current scroll position
+  // on long pages (button sits below the fold). Reset scroll to top first,
+  // and pass explicit scrollX/scrollY so the canvas isn't shifted.
+  window.scrollTo(0, 0);
+  setTimeout(function(){
+    var el = document.getElementById('ca-content');
+    var opt = {
+      margin: [10,8,10,8],
+      filename: 'Current-Affairs-17-July-2026-OmkarSir.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, windowWidth: document.documentElement.scrollWidth },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all','css','legacy'] }
+    };
+    html2pdf().set(opt).from(el).save().then(function(){
+      btn.innerHTML = originalText;
+    }).catch(function(){
+      btn.innerHTML = originalText;
+    });
+  }, 150);
 }
 </script>
 </body>
