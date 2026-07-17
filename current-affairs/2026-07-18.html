@@ -121,6 +121,29 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <div id="ca-content">
 
+<div id="pdf-cover" style="display:none;page-break-after:always;break-after:page;">
+  <div style="min-height:960px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;">
+    <div style="font-family:'Poppins',sans-serif;font-size:30px;font-weight:800;color:#1B2A6B;">New India Education<span style="color:#FF6B00">.</span></div>
+    <div style="font-size:13px;color:#666;margin-top:4px;letter-spacing:.5px;">omkarsir.com &nbsp;|&nbsp; NIEd</div>
+    <div style="width:70px;height:4px;background:linear-gradient(90deg,#FF6B00,#00A651);margin:22px auto;border-radius:4px;"></div>
+    <h1 style="font-family:'Noto Serif Devanagari',serif;font-size:26px;color:#1B2A6B;margin-top:6px;line-height:1.5;">📰 18 जुलाई 2026<br>Daily Current Affairs</h1>
+    <div class="credibility-line" style="margin-top:18px;">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</div>
+    <div style="margin-top:46px;text-align:left;width:100%;max-width:420px;background:#fff;border:2px solid #E8EAF0;border-radius:16px;padding:22px 26px;">
+      <div style="font-family:'Poppins',sans-serif;font-size:15.5px;font-weight:800;color:#1B2A6B;margin-bottom:14px;border-bottom:2px solid #E8EAF0;padding-bottom:10px;">📑 Index — इस PDF में शामिल विषय</div>
+      <div style="font-size:13.5px;color:#333;line-height:2.3;text-align:left;">
+        <div>🇮🇳&nbsp; राष्ट्रीय (National)</div>
+        <div>🌍&nbsp; अंतर्राष्ट्रीय (International)</div>
+        <div>🗺️&nbsp; राजस्थान (Rajasthan)</div>
+        <div>📘&nbsp; सुजस (Sujas)</div>
+        <div>💰&nbsp; आर्थिक (Economic)</div>
+        <div>🔬&nbsp; विज्ञान-रक्षा-तकनीक (Science-Defence-Tech)</div>
+        <div>🏆&nbsp; खेल-पुरस्कार-व्यक्तित्व (Sports-Awards)</div>
+      </div>
+    </div>
+    <div style="margin-top:50px;font-size:10.5px;color:#999;max-width:420px;">© New India Education — omkarsir.com — कृपया इस PDF को शेयर करते समय source क्रेडिट बनाए रखें।</div>
+  </div>
+</div>
+
 <div class="sec-block" id="national">
   <h2><span>🇮🇳</span> राष्ट्रीय (National)</h2>
   <div class="ca-item">
@@ -269,25 +292,58 @@ function downloadCAPDF(){
   var btn = document.querySelector('.pdf-box button');
   var originalText = btn.innerHTML;
   btn.innerHTML = '⏳ PDF बन रहा है...';
+  var cover = document.getElementById('pdf-cover');
   // Fix: html2canvas captures a blank offset equal to current scroll position
   // on long pages (button sits below the fold). Reset scroll to top first,
   // and pass explicit scrollX/scrollY so the canvas isn't shifted.
   window.scrollTo(0, 0);
+  cover.style.display = 'flex';
   setTimeout(function(){
     var el = document.getElementById('ca-content');
+    var pdfDateEnglish = '18 July 2026';
     var opt = {
-      margin: [10,8,10,8],
+      margin: [22,8,16,8],
       filename: 'Current-Affairs-18-July-2026-OmkarSir.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, windowWidth: document.documentElement.scrollWidth },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all','css','legacy'] }
+      pagebreak: { mode: ['avoid-all','css','legacy'], before: ['#national'] }
     };
-    html2pdf().set(opt).from(el).save().then(function(){
+    function resetUI(){
+      cover.style.display = 'none';
       btn.innerHTML = originalText;
-    }).catch(function(){
-      btn.innerHTML = originalText;
-    });
+    }
+    html2pdf().set(opt).from(el).toPdf().get('pdf').then(function(pdf){
+      var totalPages = pdf.internal.getNumberOfPages();
+      var pageWidth = pdf.internal.pageSize.getWidth();
+      var pageHeight = pdf.internal.pageSize.getHeight();
+      for (var i = 1; i <= totalPages; i++){
+        pdf.setPage(i);
+        // Skip watermark/header/footer on the cover page (page 1) — it already has its own branding.
+        if (i === 1) continue;
+        // Diagonal brand watermark
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(42);
+        pdf.setTextColor(233, 234, 240);
+        pdf.text('NEW INDIA EDUCATION', pageWidth / 2, pageHeight / 2, { angle: 45, align: 'center' });
+        // Header band
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(8);
+        pdf.setTextColor(130, 130, 140);
+        pdf.text('omkarsir.com  |  New India Education', 8, 10);
+        pdf.text(pdfDateEnglish, pageWidth - 8, 10, { align: 'right' });
+        pdf.setDrawColor(225, 225, 232);
+        pdf.line(8, 13, pageWidth - 8, 13);
+        // Footer band
+        pdf.setDrawColor(225, 225, 232);
+        pdf.line(8, pageHeight - 12, pageWidth - 8, pageHeight - 12);
+        pdf.setFontSize(8);
+        pdf.setTextColor(130, 130, 140);
+        pdf.text('omkarsir.com', 8, pageHeight - 7);
+        pdf.text('Page ' + i + ' of ' + totalPages, pageWidth / 2, pageHeight - 7, { align: 'center' });
+        pdf.text('New India Education', pageWidth - 8, pageHeight - 7, { align: 'right' });
+      }
+    }).save().then(resetUI).catch(resetUI);
   }, 150);
 }
 </script>
