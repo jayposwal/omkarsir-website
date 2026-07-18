@@ -6,6 +6,9 @@ one poll per question, sent in quick succession, each with a short
 (<=200 char) explanation shown after answering. After the polls, a closing
 message points members to the website's quiz page (quiz/YYYY-MM-DD.html)
 to solve the full 15-question quiz with detailed explanations and a score.
+Finally, a branded PDF of all 15 questions (with answers + explanations)
+is generated and sent as a downloadable Telegram document, so students can
+save/print the full quiz.
 
 Runs inside GitHub Actions (normal internet access) — NOT the Cowork
 sandbox, which blocks api.telegram.org via its network allowlist.
@@ -14,10 +17,12 @@ Env vars required:
   TELEGRAM_BOT_TOKEN   - bot token from @BotFather
   TELEGRAM_CHAT_ID     - e.g. "@omkarsirofficial"
 """
+import datetime
 import glob
 import json
 import os
 import re
+import sys
 import time
 import requests
 
@@ -29,6 +34,16 @@ TG_QUESTION_MAX = 300
 TG_OPTION_MAX = 100
 TG_EXPLANATION_MAX = 200
 TG_POLL_COUNT = 5  # only first N questions go to Telegram as polls; full 15 live on the website quiz page
+
+HINDI_MONTHS = {
+    1: "जनवरी", 2: "फरवरी", 3: "मार्च", 4: "अप्रैल", 5: "मई", 6: "जून",
+    7: "जुलाई", 8: "अगस्त", 9: "सितंबर", 10: "अक्टूबर", 11: "नवंबर", 12: "दिसंबर",
+}
+
+
+def eng_date_string(date_str):
+    y, m, d = (int(x) for x in date_str.split("-"))
+    return datetime.date(y, m, d).strftime("%d %B %Y").lstrip("0")
 
 
 def find_latest_quiz_json():
@@ -125,6 +140,39 @@ def main():
     r.raise_for_status()
 
     print(f"Posted {sent}/{len(poll_questions)} quiz polls (of {len(questions)} total questions) successfully to {chat_id}")
+
+    # --- Downloadable PDF of the full 15-question quiz (with answers + explanations) ---
+    time.sleep(1.5)
+    pdf_path = os.path.join(REPO_ROOT, f"Quiz-{date_str}.pdf")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import generate_quiz_pdf  # noqa: E402
+
+    font_regular = os.path.join(REPO_ROOT, "automation", "fonts", "NotoMerged-Regular.ttf")
+    font_bold = os.path.join(REPO_ROOT, "automation", "fonts", "NotoMerged-Bold.ttf")
+    html_str = generate_quiz_pdf.build_html(
+        data, hindi_date, eng_date_string(date_str),
+        font_regular, font_bold, SITE_URL.replace("https://", ""), quiz_page_url,
+    )
+    from weasyprint import HTML
+    HTML(string=html_str, base_url=".").write_pdf(pdf_path)
+    print("Generated quiz PDF:", pdf_path)
+
+    pdf_caption = (
+        f"📥 {hindi_date} — आज के {len(questions)} सवालों की Quiz PDF डाउनलोड करें\n"
+        f"उत्तर व विस्तृत व्याख्या सहित — पढ़ो, Practice करो, Save रखो 📚"
+    )
+    with open(pdf_path, "rb") as f:
+        r = requests.post(
+            f"https://api.telegram.org/bot{bot_token}/sendDocument",
+            data={"chat_id": chat_id, "caption": pdf_caption},
+            files={"document": (os.path.basename(pdf_path), f, "application/pdf")},
+            timeout=60,
+        )
+    print("PDF document status:", r.status_code, r.text[:300])
+    r.raise_for_status()
+    if not r.json().get("ok"):
+        raise SystemExit(f"Telegram sendDocument failed for quiz PDF: {r.text}")
+    print("Posted quiz PDF successfully to", chat_id)
 
 
 if __name__ == "__main__":
