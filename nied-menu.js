@@ -42,7 +42,7 @@
       + '.nied-burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 8px;}'
       + '.nied-menu{list-style:none;display:flex;gap:1px;margin:0;padding:0;align-items:center;}'
       + '.nied-menu li{position:relative;}'
-      + '.nied-top-link{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-decoration:none;padding:8px 9px;border-radius:8px;font-weight:600;font-size:.82rem;cursor:pointer;text-align:center;line-height:1.2;}'
+      + '.nied-top-link{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-decoration:none;padding:9px 11px;border-radius:8px;font-weight:600;font-size:.92rem;cursor:pointer;text-align:center;line-height:1.2;}'
       + '.nied-top-link:hover{background:#FF6B00;}'
       + '.nied-tl-line2{font-size:.86em;font-weight:500;opacity:.88;}'
       + '.nied-caret{font-size:.7em;}'
