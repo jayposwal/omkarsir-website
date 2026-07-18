@@ -5,6 +5,22 @@
     return d.innerHTML;
   }
 
+  // Splits a top-nav label like "\ud83d\udcc4 \u0938\u092d\u0940 Courses" into two stacked lines
+  // ("\ud83d\udcc4 \u0938\u092d\u0940" / "Courses") to save horizontal space, matching the
+  // logo's title/subtitle stacking style. Single-word labels stay on one line.
+  function formatTopLabel(label, caretHtml){
+    caretHtml = caretHtml || '';
+    var parts = String(label).split(' ').filter(function(p){ return p.length; });
+    if(parts.length < 3){
+      return '<span class="nied-tl-line1">' + esc(label) + caretHtml + '</span>';
+    }
+    var emoji = parts[0];
+    var words = parts.slice(1);
+    var line1 = emoji + ' ' + words[0];
+    var line2 = words.slice(1).join(' ');
+    return '<span class="nied-tl-line1">' + esc(line1) + '</span><span class="nied-tl-line2">' + esc(line2) + caretHtml + '</span>';
+  }
+
   function injectStyles(){
     if(document.getElementById('nied-menu-style')) return;
     var css = '#nied-navbar{font-family:"Noto Sans Devanagari",Arial,sans-serif;position:sticky;top:0;z-index:9999;}'
@@ -24,10 +40,11 @@
       + '.nied-logo-text{display:flex;flex-direction:column;line-height:1.25;}'
       + '.nied-logo-sub{font-weight:600;font-size:.68rem;color:#cdd4ee;}'
       + '.nied-burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 8px;}'
-      + '.nied-menu{list-style:none;display:flex;gap:4px;margin:0;padding:0;align-items:center;}'
+      + '.nied-menu{list-style:none;display:flex;gap:1px;margin:0;padding:0;align-items:center;}'
       + '.nied-menu li{position:relative;}'
-      + '.nied-top-link{display:block;color:#fff;text-decoration:none;padding:11px 14px;border-radius:8px;font-weight:600;font-size:.92rem;cursor:pointer;}'
+      + '.nied-top-link{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-decoration:none;padding:8px 9px;border-radius:8px;font-weight:600;font-size:.82rem;cursor:pointer;text-align:center;line-height:1.2;}'
       + '.nied-top-link:hover{background:#FF6B00;}'
+      + '.nied-tl-line2{font-size:.86em;font-weight:500;opacity:.88;}'
       + '.nied-caret{font-size:.7em;}'
       + '.nied-dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:220px;list-style:none;margin:6px 0 0;padding:6px;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.2);z-index:100;}'
       + '.nied-has-dropdown.open > .nied-dropdown{display:block;}'
@@ -63,7 +80,8 @@
       + '.nied-menu{display:none;flex-direction:column;width:100%;align-items:stretch;background:#1B2A6B;position:absolute;left:0;top:100%;padding:8px 14px 14px;box-shadow:0 10px 24px rgba(0,0,0,.25);max-height:80vh;overflow-y:auto;}'
       + '.nied-menu.open{display:flex;}'
       + '.nied-menu > li{width:100%;}'
-      + '.nied-top-link{padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.12);}'
+      + '.nied-top-link{flex-direction:row;justify-content:flex-start;text-align:left;padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.12);font-size:.92rem;}'
+      + '.nied-tl-line2{margin-left:.3em;}'
       + '.nied-dropdown{position:static;box-shadow:none;background:#24398f;margin:0 0 0 12px;width:calc(100% - 12px);border-radius:8px;}'
       + '.nied-dropdown li a{color:#fff;}'
       + '.nied-dropdown li a:hover{background:#FF6B00;color:#fff;}'
@@ -115,11 +133,11 @@
     }
     (menu.items || []).forEach(function(item){
       if(item.type === 'dropdown'){
-        html += '<li class="nied-has-dropdown"><a class="nied-top-link">' + esc(item.label) + ' <span class="nied-caret">&#9662;</span></a><ul class="nied-dropdown">';
+        html += '<li class="nied-has-dropdown"><a class="nied-top-link">' + formatTopLabel(item.label, ' <span class="nied-caret">&#9662;</span>') + '</a><ul class="nied-dropdown">';
         html += renderChildren(item.children);
         html += '</ul></li>';
       } else {
-        html += '<li><a class="nied-top-link" href="' + esc(item.url) + '">' + esc(item.label) + '</a></li>';
+        html += '<li><a class="nied-top-link" href="' + esc(item.url) + '">' + formatTopLabel(item.label) + '</a></li>';
       }
     });
     html += '</ul>'
