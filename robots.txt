@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /show/
 
 # AI crawlers / answer engines — explicitly allowed so RAS/Rajasthan exam
 # content can be cited in AI answers (ChatGPT, Claude, Perplexity, Gemini, etc.)
