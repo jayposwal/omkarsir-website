@@ -485,13 +485,13 @@
     var pid = pageId();
     var html = '';
     html += '<div class="cmt-sec-title">💬 Comments <span style="color:#999;font-weight:600;font-size:14px">(' + comments.length + ')</span></div>';
-    html += '<div class="cmt-sec-sub">अपना सवाल या विचार यहाँ लिखें — Approve होने के बाद सबको दिखेगा</div>';
+    html += '<div class="cmt-sec-sub">अपना सवाल या विचार यहाँ लिखें — तुरंत सबको दिखेगा</div>';
 
     html += '<div class="cmt-form">';
     html += '<div class="cmt-msg" id="cmtMsg"></div>';
     html += '<input type="text" id="cmtName" maxlength="40" placeholder="आपका नाम *" required>';
     html += '<textarea id="cmtText" maxlength="500" placeholder="अपना Comment लिखें... *" required></textarea>';
-    html += '<div class="cmt-form-row"><span class="cmt-note">🏆 Comment भेजने के बाद Admin approval के बाद Live होगा</span><button class="cmt-submit-btn" id="cmtSubmitBtn">Comment भेजें →</button></div>';
+    html += '<div class="cmt-form-row"><span class="cmt-note">🏆 आपका Comment तुरंत live हो जाएगा</span><button class="cmt-submit-btn" id="cmtSubmitBtn">Comment भेजें →</button></div>';
     html += '</div>';
 
     html += '<div class="cmt-list" id="cmtList">';
@@ -534,13 +534,13 @@
         pageId: pid,
         name: name,
         text: text,
-        status: 'pending',
+        status: 'approved',
         reactions: { like: 0, heart: 0, fire: 0 },
         createdAt: firestore.serverTimestamp()
       }).then(function(){
         nameEl.value = '';
         textEl.value = '';
-        msgEl.textContent = '✅ धन्यवाद! आपका Comment Admin Approval के बाद यहाँ दिखेगा।';
+        msgEl.textContent = '✅ धन्यवाद! आपका Comment Live हो गया है।';
         msgEl.className = 'cmt-msg ok show';
         btn.disabled = false;
         btn.textContent = 'Comment भेजें →';
