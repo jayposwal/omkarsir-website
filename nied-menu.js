@@ -384,3 +384,253 @@
     init();
   }
 })();
+
+/* ============================================================
+   Site-wide Comment Section — NIEd
+   हर page के नीचे comments + 👍❤️🔥 reactions।
+   Backend: Firebase Firestore (public read approved-only,
+   public create as "pending", admin approves via /admin-comments.html)
+   ============================================================ */
+(function(){
+  var FIREBASE_CONFIG = {
+    apiKey: "AIzaSyBalM_wgEhegoReyANDLiSHRvwi7n4zIUk",
+    authDomain: "omkarsir-comments.firebaseapp.com",
+    projectId: "omkarsir-comments",
+    storageBucket: "omkarsir-comments.firebasestorage.app",
+    messagingSenderId: "514558519516",
+    appId: "1:514558519516:web:04b3847f97002ef2b46c19"
+  };
+  var SDK_VERSION = "10.12.2";
+
+  function loadScript(src){
+    return new Promise(function(resolve, reject){
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  function esc(t){
+    return String(t == null ? "" : t)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  function timeAgo(ts){
+    if(!ts) return "";
+    var d = ts.toDate ? ts.toDate() : new Date(ts);
+    var diffSec = Math.floor((Date.now() - d.getTime()) / 1000);
+    if(diffSec < 60) return "अभी अभी";
+    var diffMin = Math.floor(diffSec / 60);
+    if(diffMin < 60) return diffMin + " मिनट पहले";
+    var diffHr = Math.floor(diffMin / 60);
+    if(diffHr < 24) return diffHr + " घंटे पहले";
+    var diffDay = Math.floor(diffHr / 24);
+    if(diffDay < 30) return diffDay + " दिन पहले";
+    return d.toLocaleDateString('hi-IN');
+  }
+
+  function injectStyle(){
+    if(document.getElementById('nied-cmt-style')) return;
+    var css = ''
+      + '.cmt-sec{max-width:820px;margin:0 auto;padding:34px 6% 50px;font-family:"Hind",sans-serif}'
+      + '.cmt-sec-title{font-family:"Poppins",sans-serif;font-size:19px;font-weight:800;color:#1B2A6B;margin-bottom:4px;display:flex;align-items:center;gap:8px}'
+      + '.cmt-sec-sub{font-size:13px;color:#888;margin-bottom:20px}'
+      + '.cmt-form{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:18px 20px;margin-bottom:26px}'
+      + '.cmt-form input, .cmt-form textarea{width:100%;border:1.5px solid #E8EAF0;border-radius:10px;padding:10px 14px;font-family:"Hind",sans-serif;font-size:14px;margin-bottom:10px;background:#F8F9FA;color:#1A1A2E}'
+      + '.cmt-form input:focus, .cmt-form textarea:focus{outline:none;border-color:#FF6B00;background:#fff}'
+      + '.cmt-form textarea{min-height:80px;resize:vertical}'
+      + '.cmt-form-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}'
+      + '.cmt-submit-btn{background:#FF6B00;color:#fff;border:none;padding:10px 22px;border-radius:30px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:"Hind",sans-serif;transition:background .2s}'
+      + '.cmt-submit-btn:hover{background:#E05500}'
+      + '.cmt-submit-btn:disabled{background:#ccc;cursor:not-allowed}'
+      + '.cmt-note{font-size:12px;color:#999}'
+      + '.cmt-msg{font-size:13px;font-weight:600;padding:10px 14px;border-radius:10px;margin-bottom:14px;display:none}'
+      + '.cmt-msg.show{display:block}'
+      + '.cmt-msg.ok{background:#E8F5E9;color:#2E7D32;border:1.5px solid #A5D6A7}'
+      + '.cmt-msg.err{background:#FFF0F0;color:#B71C1C;border:1.5px solid #FFB3B3}'
+      + '.cmt-list{display:flex;flex-direction:column;gap:14px}'
+      + '.cmt-card{background:#fff;border:1.5px solid #E8EAF0;border-radius:12px;padding:14px 18px}'
+      + '.cmt-card-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}'
+      + '.cmt-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#1B2A6B,#2b3f9e);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}'
+      + '.cmt-name{font-weight:700;font-size:13.5px;color:#1B2A6B}'
+      + '.cmt-time{font-size:11.5px;color:#aaa;margin-left:auto;white-space:nowrap}'
+      + '.cmt-text{font-size:14px;color:#333;line-height:1.6;margin:6px 0 10px;word-break:break-word}'
+      + '.cmt-reactions{display:flex;gap:8px}'
+      + '.cmt-react-btn{background:#F8F9FC;border:1.5px solid #E8EAF0;border-radius:20px;padding:4px 12px;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s;font-family:"Hind",sans-serif;color:#555}'
+      + '.cmt-react-btn:hover{border-color:#FF6B00}'
+      + '.cmt-react-btn.reacted{background:#FFF3E8;border-color:#FFD0A0;color:#B45300;font-weight:700}'
+      + '.cmt-react-btn:disabled{cursor:default;opacity:.85}'
+      + '.cmt-empty{font-size:13.5px;color:#999;text-align:center;padding:20px 0}'
+      + '.cmt-loading{font-size:13.5px;color:#999;text-align:center;padding:20px 0}'
+      + '@media(max-width:640px){.cmt-form-row{flex-direction:column;align-items:stretch}.cmt-submit-btn{width:100%}}';
+    var style = document.createElement('style');
+    style.id = 'nied-cmt-style';
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  function pageId(){
+    var p = location.pathname.split('/').pop();
+    if(!p) p = 'index.html';
+    return p;
+  }
+
+  function reactedKey(id, emoji){
+    return 'nied_cmt_react_' + id + '_' + emoji;
+  }
+
+  function render(container, db, firestore, comments){
+    var pid = pageId();
+    var html = '';
+    html += '<div class="cmt-sec-title">💬 Comments <span style="color:#999;font-weight:600;font-size:14px">(' + comments.length + ')</span></div>';
+    html += '<div class="cmt-sec-sub">अपना सवाल या विचार यहाँ लिखें — Approve होने के बाद सबको दिखेगा</div>';
+
+    html += '<div class="cmt-form">';
+    html += '<div class="cmt-msg" id="cmtMsg"></div>';
+    html += '<input type="text" id="cmtName" maxlength="40" placeholder="आपका नाम *" required>';
+    html += '<textarea id="cmtText" maxlength="500" placeholder="अपना Comment लिखें... *" required></textarea>';
+    html += '<div class="cmt-form-row"><span class="cmt-note">🏆 Comment भेजने के बाद Admin approval के बाद Live होगा</span><button class="cmt-submit-btn" id="cmtSubmitBtn">Comment भेजें →</button></div>';
+    html += '</div>';
+
+    html += '<div class="cmt-list" id="cmtList">';
+    if(comments.length === 0){
+      html += '<div class="cmt-empty">अभी तक कोई Comment नहीं — सबसे पहले आप लिखिए! 🎉</div>';
+    } else {
+      comments.forEach(function(c){
+        var r = c.reactions || {like:0, heart:0, fire:0};
+        var initial = (c.name || '?').trim().charAt(0).toUpperCase();
+        html += '<div class="cmt-card" data-id="' + c.id + '">';
+        html += '<div class="cmt-card-head"><div class="cmt-avatar">' + esc(initial) + '</div><div class="cmt-name">' + esc(c.name) + '</div><div class="cmt-time">' + timeAgo(c.createdAt) + '</div></div>';
+        html += '<div class="cmt-text">' + esc(c.text) + '</div>';
+        html += '<div class="cmt-reactions">';
+        ['like','heart','fire'].forEach(function(emo){
+          var symbol = emo === 'like' ? '👍' : (emo === 'heart' ? '❤️' : '🔥');
+          var already = !!localStorage.getItem(reactedKey(c.id, emo));
+          html += '<button class="cmt-react-btn' + (already ? ' reacted' : '') + '" data-emoji="' + emo + '" data-id="' + c.id + '"' + (already ? ' disabled' : '') + '>' + symbol + ' <span>' + (r[emo] || 0) + '</span></button>';
+        });
+        html += '</div></div>';
+      });
+    }
+    html += '</div>';
+
+    container.innerHTML = html;
+
+    var msgEl = container.querySelector('#cmtMsg');
+    var btn = container.querySelector('#cmtSubmitBtn');
+    btn.addEventListener('click', function(){
+      var nameEl = container.querySelector('#cmtName');
+      var textEl = container.querySelector('#cmtText');
+      var name = nameEl.value.trim();
+      var text = textEl.value.trim();
+      msgEl.className = 'cmt-msg';
+      if(!name){ msgEl.textContent = '⚠️ कृपया अपना नाम लिखें।'; msgEl.className = 'cmt-msg err show'; return; }
+      if(!text){ msgEl.textContent = '⚠️ कृपया अपना Comment लिखें।'; msgEl.className = 'cmt-msg err show'; return; }
+      if(name.length > 40 || text.length > 500){ msgEl.textContent = '⚠️ Name/Comment बहुत लंबा है।'; msgEl.className = 'cmt-msg err show'; return; }
+      btn.disabled = true;
+      btn.textContent = 'भेजा जा रहा है...';
+      firestore.addDoc(firestore.collection(db, 'comments'), {
+        pageId: pid,
+        name: name,
+        text: text,
+        status: 'pending',
+        reactions: { like: 0, heart: 0, fire: 0 },
+        createdAt: firestore.serverTimestamp()
+      }).then(function(){
+        nameEl.value = '';
+        textEl.value = '';
+        msgEl.textContent = '✅ धन्यवाद! आपका Comment Admin Approval के बाद यहाँ दिखेगा।';
+        msgEl.className = 'cmt-msg ok show';
+        btn.disabled = false;
+        btn.textContent = 'Comment भेजें →';
+      }).catch(function(err){
+        msgEl.textContent = '❌ कुछ गलत हो गया, दोबारा प्रयास करें।';
+        msgEl.className = 'cmt-msg err show';
+        btn.disabled = false;
+        btn.textContent = 'Comment भेजें →';
+        console.error(err);
+      });
+    });
+
+    container.querySelectorAll('.cmt-react-btn').forEach(function(rb){
+      rb.addEventListener('click', function(){
+        if(rb.disabled) return;
+        var id = rb.getAttribute('data-id');
+        var emo = rb.getAttribute('data-emoji');
+        rb.disabled = true;
+        rb.classList.add('reacted');
+        var span = rb.querySelector('span');
+        span.textContent = (parseInt(span.textContent, 10) || 0) + 1;
+        localStorage.setItem(reactedKey(id, emo), '1');
+        var field = 'reactions.' + emo;
+        var update = {};
+        update[field] = firestore.increment(1);
+        firestore.updateDoc(firestore.doc(db, 'comments', id), update).catch(function(err){
+          console.error(err);
+        });
+      });
+    });
+  }
+
+  function init(){
+    injectStyle();
+    var footer = document.querySelector('footer');
+    if(!footer) return;
+    var section = document.createElement('section');
+    section.className = 'cmt-sec';
+    section.innerHTML = '<div class="cmt-loading">Comments लोड हो रहे हैं...</div>';
+    footer.parentNode.insertBefore(section, footer);
+
+    Promise.all([
+      loadScript('https://www.gstatic.com/firebasejs/' + SDK_VERSION + '/firebase-app-compat.js'),
+      loadScript('https://www.gstatic.com/firebasejs/' + SDK_VERSION + '/firebase-firestore-compat.js')
+    ]).then(function(){
+      var app = firebase.initializeApp(FIREBASE_CONFIG);
+      var dbRef = firebase.firestore();
+
+      var firestore = {
+        collection: function(_, name){ return dbRef.collection(name); },
+        addDoc: function(colRef, data){ return colRef.add(data); },
+        doc: function(_, colName, id){ return dbRef.collection(colName).doc(id); },
+        updateDoc: function(docRef, data){ return docRef.update(data); },
+        increment: firebase.firestore.FieldValue.increment,
+        serverTimestamp: firebase.firestore.FieldValue.serverTimestamp
+      };
+
+      dbRef.collection('comments')
+        .where('pageId', '==', pageId())
+        .where('status', '==', 'approved')
+        .orderBy('createdAt', 'desc')
+        .limit(100)
+        .get()
+        .then(function(snap){
+          var comments = [];
+          snap.forEach(function(docSnap){
+            var d = docSnap.data();
+            comments.push({
+              id: docSnap.id,
+              name: d.name,
+              text: d.text,
+              reactions: d.reactions,
+              createdAt: d.createdAt
+            });
+          });
+          render(section, dbRef, firestore, comments);
+        })
+        .catch(function(err){
+          console.error(err);
+          render(section, dbRef, firestore, []);
+        });
+    }).catch(function(err){
+      console.error('Firebase SDK load failed', err);
+      section.innerHTML = '';
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

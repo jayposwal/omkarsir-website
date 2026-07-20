@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment Approval — Admin | Omkar Sir</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.wrap{max-width:820px;margin:0 auto;padding:34px 6% 60px}
+h1{font-size:22px;font-weight:800;margin-bottom:4px;color:#1B2A6B}
+.sub{font-size:13px;color:#888;margin-bottom:24px}
+.login-box{background:#fff;border:2px solid #E8EAF0;border-radius:14px;padding:24px;max-width:380px;margin:60px auto}
+.login-box input{width:100%;border:1.5px solid #E8EAF0;border-radius:10px;padding:11px 14px;font-size:14px;margin-bottom:12px;font-family:'Hind',sans-serif}
+.login-box button{width:100%;background:#FF6B00;color:#fff;border:none;padding:12px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer}
+.login-box button:hover{background:#E05500}
+.login-err{color:#B71C1C;font-size:13px;margin-bottom:10px;display:none}
+.login-err.show{display:block}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.signout-btn{background:none;border:1.5px solid #E8EAF0;padding:7px 16px;border-radius:20px;font-size:12.5px;cursor:pointer;color:#666}
+.refresh-btn{background:#1B2A6B;color:#fff;border:none;padding:8px 18px;border-radius:20px;font-size:12.5px;cursor:pointer;font-weight:600}
+.pending-card{background:#fff;border:1.5px solid #E8EAF0;border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.pc-page{font-size:11.5px;color:#FF6B00;font-weight:700;margin-bottom:6px}
+.pc-name{font-weight:700;font-size:14px;color:#1B2A6B}
+.pc-time{font-size:11.5px;color:#aaa;margin-left:8px}
+.pc-text{font-size:14px;color:#333;margin:8px 0 12px;line-height:1.6}
+.pc-actions{display:flex;gap:10px}
+.pc-approve{background:#2E7D32;color:#fff;border:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer}
+.pc-reject{background:#B71C1C;color:#fff;border:none;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer}
+.empty{text-align:center;color:#999;padding:40px 0;font-size:14px}
+.loading{text-align:center;color:#999;padding:40px 0;font-size:14px}
+</style>
+</head>
+<body>
+<div class="tri"></div>
+<div class="wrap">
+  <h1>💬 Comment Approval — Admin Panel</h1>
+  <div class="sub">यहाँ से आप सभी pages पर आए हुए comments को approve/reject कर सकते हैं</div>
+
+  <div id="loginSection" class="login-box">
+    <div class="login-err" id="loginErr"></div>
+    <input type="email" id="loginEmail" placeholder="Admin Email">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <div id="panelSection" style="display:none">
+    <div class="topbar">
+      <button class="refresh-btn" id="refreshBtn">🔄 Refresh</button>
+      <button class="signout-btn" id="signoutBtn">Sign Out</button>
+    </div>
+    <div id="pendingList"><div class="loading">Loading...</div></div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+var FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBalM_wgEhegoReyANDLiSHRvwi7n4zIUk",
+  authDomain: "omkarsir-comments.firebaseapp.com",
+  projectId: "omkarsir-comments",
+  storageBucket: "omkarsir-comments.firebasestorage.app",
+  messagingSenderId: "514558519516",
+  appId: "1:514558519516:web:04b3847f97002ef2b46c19"
+};
+firebase.initializeApp(FIREBASE_CONFIG);
+var auth = firebase.auth();
+var db = firebase.firestore();
+
+function esc(t){
+  return String(t == null ? "" : t)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function timeAgo(ts){
+  if(!ts) return "";
+  var d = ts.toDate ? ts.toDate() : new Date(ts);
+  return d.toLocaleString('hi-IN');
+}
+
+document.getElementById('loginBtn').addEventListener('click', function(){
+  var email = document.getElementById('loginEmail').value.trim();
+  var pass = document.getElementById('loginPass').value;
+  var errEl = document.getElementById('loginErr');
+  errEl.className = 'login-err';
+  auth.signInWithEmailAndPassword(email, pass).catch(function(err){
+    errEl.textContent = '❌ Login गलत है — email/password दोबारा जांचें।';
+    errEl.className = 'login-err show';
+    console.error(err);
+  });
+});
+
+document.getElementById('signoutBtn').addEventListener('click', function(){
+  auth.signOut();
+});
+
+document.getElementById('refreshBtn').addEventListener('click', loadPending);
+
+function loadPending(){
+  var listEl = document.getElementById('pendingList');
+  listEl.innerHTML = '<div class="loading">Loading...</div>';
+  db.collection('comments').where('status', '==', 'pending').orderBy('createdAt', 'desc').limit(200).get()
+    .then(function(snap){
+      if(snap.empty){
+        listEl.innerHTML = '<div class="empty">🎉 कोई Pending Comment नहीं है — सब कुछ Clear है!</div>';
+        return;
+      }
+      var html = '';
+      snap.forEach(function(docSnap){
+        var d = docSnap.data();
+        html += '<div class="pending-card" data-id="' + docSnap.id + '">';
+        html += '<div class="pc-page">📄 ' + esc(d.pageId) + '</div>';
+        html += '<div><span class="pc-name">' + esc(d.name) + '</span><span class="pc-time">' + timeAgo(d.createdAt) + '</span></div>';
+        html += '<div class="pc-text">' + esc(d.text) + '</div>';
+        html += '<div class="pc-actions"><button class="pc-approve" data-action="approve" data-id="' + docSnap.id + '">✅ Approve</button><button class="pc-reject" data-action="reject" data-id="' + docSnap.id + '">🗑️ Reject</button></div>';
+        html += '</div>';
+      });
+      listEl.innerHTML = html;
+      listEl.querySelectorAll('button[data-action]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var id = btn.getAttribute('data-id');
+          var action = btn.getAttribute('data-action');
+          var card = listEl.querySelector('.pending-card[data-id="' + id + '"]');
+          if(action === 'approve'){
+            db.collection('comments').doc(id).update({status:'approved'}).then(function(){
+              if(card) card.remove();
+            });
+          } else {
+            db.collection('comments').doc(id).delete().then(function(){
+              if(card) card.remove();
+            });
+          }
+        });
+      });
+    })
+    .catch(function(err){
+      listEl.innerHTML = '<div class="empty">⚠️ Load नहीं हो पाया — शायद यह account admin नहीं है।</div>';
+      console.error(err);
+    });
+}
+
+auth.onAuthStateChanged(function(user){
+  if(user){
+    document.getElementById('loginSection').style.display = 'none';
+    document.getElementById('panelSection').style.display = 'block';
+    loadPending();
+  } else {
+    document.getElementById('loginSection').style.display = 'block';
+    document.getElementById('panelSection').style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
