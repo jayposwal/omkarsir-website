@@ -176,6 +176,10 @@
    "type": "dropdown",
    "children": [
     {
+     "label": "🆕 सभी 49 Exams — Master List",
+     "url": "/all-exams.html"
+    },
+    {
      "label": "🎯 सभी Rajasthan Exams",
      "url": "/rajasthan-exams.html"
     },
@@ -258,6 +262,86 @@
       {
        "label": "🎓 CET — Graduation Level",
        "url": "/rajasthan-cet-graduate-level.html"
+      }
+     ]
+    },
+    {
+     "label": "🌐 National + Hindi Teaching",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🪖 Army Agniveer GD/Clerk/TA",
+       "url": "/army-gd-td-exam.html"
+      },
+      {
+       "label": "🚨 Railway RPF Constable",
+       "url": "/railway-rpf-constable-exam.html"
+      },
+      {
+       "label": "🛤️ Railway Group-D / NTPC",
+       "url": "/railway-group-d-exam.html"
+      },
+      {
+       "label": "🛡️ SSC-GD Constable",
+       "url": "/ssc-gd-constable-exam.html"
+      },
+      {
+       "label": "🚔 Delhi Police Constable",
+       "url": "/delhi-police-constable-exam.html"
+      },
+      {
+       "label": "👮 UP Police Constable",
+       "url": "/up-police-constable-exam.html"
+      },
+      {
+       "label": "📖 NET-JRF हिन्दी",
+       "url": "/net-jrf-hindi-exam.html"
+      },
+      {
+       "label": "📗 UP TGT-PGT हिन्दी",
+       "url": "/up-tgt-pgt-hindi-exam.html"
+      },
+      {
+       "label": "🌐 सभी National/Hindi Exams",
+       "url": "/all-exams.html"
+      }
+     ]
+    },
+    {
+     "label": "🌲 Forest, Agri, Library व अन्य",
+     "type": "submenu",
+     "children": [
+      {
+       "label": "🌲 वनरक्षक (Forest Guard)",
+       "url": "/rajasthan-vanrakshak-exam.html"
+      },
+      {
+       "label": "🌳 वनपाल (Forester)",
+       "url": "/rajasthan-vanpal-exam.html"
+      },
+      {
+       "label": "🌾 कृषि पर्यवेक्षक",
+       "url": "/rajasthan-krishi-paryavekshak-exam.html"
+      },
+      {
+       "label": "🐐 LSA / पशुधन सहायक",
+       "url": "/rajasthan-lsa-pashudhan-sahayak-exam.html"
+      },
+      {
+       "label": "📘 BSTC (Pre D.El.Ed)",
+       "url": "/bstc-exam.html"
+      },
+      {
+       "label": "🍎 2nd Grade Teacher",
+       "url": "/rpsc-2nd-grade-teacher-exam.html"
+      },
+      {
+       "label": "🎓 1st Grade Teacher",
+       "url": "/rpsc-1st-grade-teacher-exam.html"
+      },
+      {
+       "label": "📗 Library Grade-II/III",
+       "url": "/rajasthan-library-grade2-exam.html"
       }
      ]
     }
