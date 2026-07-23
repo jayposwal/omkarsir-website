@@ -2,8 +2,8 @@ name: Post daily quiz to Telegram
 
 on:
   schedule:
-    # 04:30 UTC every day = 10:00 AM IST
-    - cron: "30 4 * * *"
+    # 03:30 UTC every day = 09:00 AM IST
+    - cron: "30 3 * * *"
   workflow_dispatch: {}
 
 jobs:

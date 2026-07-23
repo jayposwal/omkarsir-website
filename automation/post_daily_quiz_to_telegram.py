@@ -71,6 +71,19 @@ def main():
         raise SystemExit("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID env vars are required")
 
     date_str, path = find_latest_quiz_json()
+
+    # Guard: only post if the latest quiz-data file is actually dated TODAY (IST).
+    # Without this, if the upstream daily-quiz generation task ever fails/gets
+    # disabled, this workflow would silently keep re-posting the same stale
+    # quiz day after day instead of failing loudly.
+    ist_today = (datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)).date().isoformat()
+    if date_str != ist_today:
+        raise SystemExit(
+            f"Latest quiz-data file is dated {date_str}, but today (IST) is {ist_today} — "
+            f"refusing to repost a stale quiz. The daily quiz-generation task likely failed "
+            f"or is disabled; check the omkarsir-daily-quiz scheduled task."
+        )
+
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     questions = data["questions"]
