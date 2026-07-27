@@ -48,6 +48,14 @@ h1{font-size:22px;font-weight:800;margin-bottom:4px;color:#1B2A6B}
     <input type="email" id="loginEmail" placeholder="Admin Email">
     <input type="password" id="loginPass" placeholder="Password">
     <button id="loginBtn">Login</button>
+    <div style="text-align:center;margin-top:12px">
+      <a href="#" id="forgotLink" style="font-size:12.5px;color:#1B2A6B;font-weight:700;text-decoration:none;border-bottom:1.5px dashed #FFD0A0">पासवर्ड भूल गए?</a>
+    </div>
+    <div id="resetBox" style="display:none;margin-top:14px;padding-top:14px;border-top:1.5px dashed #E8EAF0">
+      <input type="email" id="resetEmail" placeholder="अपना Admin Email डालें">
+      <button id="resetBtn" style="background:#1B2A6B">Reset Link भेजें</button>
+      <div id="resetMsg" style="font-size:12.5px;margin-top:8px;text-align:center"></div>
+    </div>
   </div>
 
   <div id="panelSection" style="display:none">
@@ -93,6 +101,31 @@ document.getElementById('loginBtn').addEventListener('click', function(){
   auth.signInWithEmailAndPassword(email, pass).catch(function(err){
     errEl.textContent = '❌ Login गलत है — email/password दोबारा जांचें।';
     errEl.className = 'login-err show';
+    console.error(err);
+  });
+});
+
+document.getElementById('forgotLink').addEventListener('click', function(e){
+  e.preventDefault();
+  var box = document.getElementById('resetBox');
+  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+});
+
+document.getElementById('resetBtn').addEventListener('click', function(){
+  var email = document.getElementById('resetEmail').value.trim();
+  var msgEl = document.getElementById('resetMsg');
+  if(!email){
+    msgEl.style.color = '#B71C1C';
+    msgEl.textContent = 'पहले Email डालें।';
+    return;
+  }
+  auth.sendPasswordResetEmail(email).then(function(){
+    msgEl.style.color = '#2E7D32';
+    msgEl.textContent = '✅ अगर यह email registered है, तो उस पर Password Reset Link भेज दिया गया है — Inbox (और Spam folder भी) चेक करें।';
+  }).catch(function(err){
+    msgEl.style.color = '#2E7D32';
+    // Firebase intentionally can return errors that reveal whether an email exists; show a generic safe message either way
+    msgEl.textContent = '✅ अगर यह email registered है, तो उस पर Password Reset Link भेज दिया गया है — Inbox (और Spam folder भी) चेक करें।';
     console.error(err);
   });
 });
