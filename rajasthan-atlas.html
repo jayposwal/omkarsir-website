@@ -121,14 +121,28 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
 .footer-logo span{color:#FF6B00}
 @media(max-width:580px){.modal-stats{grid-template-columns:repeat(2,1fr)}}
 
+
 .map-wrap{background:#fff;border:2px solid #E8EAF0;border-radius:16px;padding:16px;margin-bottom:16px}
 .map-note{font-size:12px;color:#999;text-align:center;margin-top:10px;line-height:1.6}
-.map-legend{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:14px}
+.map-legend{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:12px}
 .ml-item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:#555;font-weight:600}
 .ml-item i{width:11px;height:11px;border-radius:50%;display:inline-block}
-.rj-node .rj-circle{transition:all .15s}
-.rj-node:hover .rj-circle, .rj-node:focus .rj-circle{fill-opacity:0.4;stroke-width:3}
-.rj-node:hover text, .rj-node:focus text{font-weight:800;fill:#FF6B00}
+.map-stage{position:relative;background:#F5F7FB;border-radius:14px;overflow:hidden;touch-action:none}
+.map-stage svg{width:100%;height:auto;display:block;cursor:grab}
+.map-stage svg.dragging{cursor:grabbing}
+.rj-poly{cursor:pointer;transition:fill-opacity .15s}
+.rj-poly:hover, .rj-poly:focus, .rj-poly.hl{fill-opacity:0.72;stroke-width:2.2}
+.map-zoom-ctrl{position:absolute;right:10px;bottom:10px;display:flex;flex-direction:column;gap:6px;z-index:5}
+.map-zoom-ctrl button{width:34px;height:34px;border-radius:8px;border:2px solid #E8EAF0;background:#fff;font-size:16px;font-weight:800;color:#1B2A6B;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.map-zoom-ctrl button:hover{border-color:#FF6B00;color:#FF6B00}
+.map-tooltip{position:absolute;pointer-events:none;background:#1A1A2E;color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:8px;display:none;white-space:nowrap;z-index:6;transform:translate(-50%,-130%)}
+.chooser-overlay{display:none;position:fixed;inset:0;background:rgba(20,20,35,.6);z-index:600;align-items:center;justify-content:center;padding:20px}
+.chooser-overlay.on{display:flex}
+.chooser-box{background:#fff;border-radius:16px;padding:22px;max-width:340px;width:100%;text-align:center}
+.chooser-box h4{font-family:'Poppins',sans-serif;font-size:15px;color:#1A1A2E;margin-bottom:14px}
+.chooser-box button{display:block;width:100%;background:#FFF3E8;border:2px solid #FF6B00;color:#B85400;font-weight:700;font-size:13.5px;padding:11px;border-radius:10px;margin-bottom:9px;cursor:pointer}
+.chooser-box button:hover{background:#FF6B00;color:#fff}
+.chooser-close{background:none!important;border:none!important;color:#999!important;font-size:12px!important;margin-top:2px}
 </style>
 </head>
 <body>
@@ -163,55 +177,63 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
   </div>
 
 
+  
   <div class="tab-panel" id="panelMap">
     <div class="map-wrap">
       <div class="map-legend"><span class="ml-item"><i style="background:#FF6B00"></i>अजमेर संभाग</span><span class="ml-item"><i style="background:#00A651"></i>भरतपुर संभाग</span><span class="ml-item"><i style="background:#2563EB"></i>बीकानेर संभाग</span><span class="ml-item"><i style="background:#DC2626"></i>जयपुर संभाग</span><span class="ml-item"><i style="background:#7C3AED"></i>जोधपुर संभाग</span><span class="ml-item"><i style="background:#0D9488"></i>कोटा संभाग</span><span class="ml-item"><i style="background:#B45309"></i>उदयपुर संभाग</span></div>
-      <svg id="rjMapSvg" width="760" height="640" viewBox="0 0 760 640" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-height:640px;background:#F5F7FB;border-radius:16px" preserveAspectRatio="xMidYMid meet">
-<g class="rj-node" data-id="sri-ganganagar" data-name="श्रीगंगानगर" tabindex="0" onclick="openModal('sri-ganganagar')" style="cursor:pointer"><circle cx="330.2" cy="46.0" r="22" fill="#2563EB" fill-opacity="0.16" stroke="#2563EB" stroke-width="2" class="rj-circle"></circle><circle cx="330.2" cy="46.0" r="4" fill="#2563EB"></circle><text x="330.2" y="79.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">श्रीगंगानगर</text></g>
-<g class="rj-node" data-id="hanumangarh" data-name="हनुमानगढ़" tabindex="0" onclick="openModal('hanumangarh')" style="cursor:pointer"><circle cx="372.3" cy="75.2" r="22" fill="#2563EB" fill-opacity="0.16" stroke="#2563EB" stroke-width="2" class="rj-circle"></circle><circle cx="372.3" cy="75.2" r="4" fill="#2563EB"></circle><text x="372.3" y="108.2" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">हनुमानगढ़</text></g>
-<g class="rj-node" data-id="churu" data-name="चूरू" tabindex="0" onclick="openModal('churu')" style="cursor:pointer"><circle cx="431.6" cy="184.3" r="22" fill="#2563EB" fill-opacity="0.16" stroke="#2563EB" stroke-width="2" class="rj-circle"></circle><circle cx="431.6" cy="184.3" r="4" fill="#2563EB"></circle><text x="431.6" y="217.3" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">चूरू</text></g>
-<g class="rj-node" data-id="jhunjhunu" data-name="झुंझुनू" tabindex="0" onclick="openModal('jhunjhunu')" style="cursor:pointer"><circle cx="478.7" cy="201.0" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="478.7" cy="201.0" r="4" fill="#DC2626"></circle><text x="478.7" y="234.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">झुंझुनू</text></g>
-<g class="rj-node" data-id="bikaner" data-name="बीकानेर" tabindex="0" onclick="openModal('bikaner')" style="cursor:pointer"><circle cx="275.7" cy="209.5" r="22" fill="#2563EB" fill-opacity="0.16" stroke="#2563EB" stroke-width="2" class="rj-circle"></circle><circle cx="275.7" cy="209.5" r="4" fill="#2563EB"></circle><text x="275.7" y="242.5" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">बीकानेर</text></g>
-<g class="rj-node" data-id="khairthal-tijara" data-name="खैरथल-तिजारा" tabindex="0" onclick="openModal('khairthal-tijara')" style="cursor:pointer"><circle cx="592.7" cy="211.3" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="592.7" cy="211.3" r="4" fill="#DC2626"></circle><text x="592.7" y="244.3" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">खैरथल-तिजारा</text></g>
-<g class="rj-node" data-id="kotputli-behror" data-name="कोटपूतली-बहरोड़" tabindex="0" onclick="openModal('kotputli-behror')" style="cursor:pointer"><circle cx="549.6" cy="236.7" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="549.6" cy="236.7" r="4" fill="#DC2626"></circle><text x="549.6" y="269.7" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">कोटपूतली-बहरोड़</text></g>
-<g class="rj-node" data-id="sikar" data-name="सीकर" tabindex="0" onclick="openModal('sikar')" style="cursor:pointer"><circle cx="450.8" cy="243.9" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="450.8" cy="243.9" r="4" fill="#DC2626"></circle><text x="450.8" y="276.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">सीकर</text></g>
-<g class="rj-node" data-id="deeg" data-name="डीग" tabindex="0" onclick="openModal('deeg')" style="cursor:pointer"><circle cx="653.0" cy="246.4" r="22" fill="#00A651" fill-opacity="0.16" stroke="#00A651" stroke-width="2" class="rj-circle"></circle><circle cx="653.0" cy="246.4" r="4" fill="#00A651"></circle><text x="653.0" y="279.4" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">डीग</text></g>
-<g class="rj-node" data-id="didwana-kuchaman" data-name="डीडवाना-कुचामन" tabindex="0" onclick="openModal('didwana-kuchaman')" style="cursor:pointer"><circle cx="396.3" cy="262.8" r="22" fill="#FF6B00" fill-opacity="0.16" stroke="#FF6B00" stroke-width="2" class="rj-circle"></circle><circle cx="396.3" cy="262.8" r="4" fill="#FF6B00"></circle><text x="396.3" y="295.8" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">डीडवाना-कुचामन</text></g>
-<g class="rj-node" data-id="alwar" data-name="अलवर" tabindex="0" onclick="openModal('alwar')" style="cursor:pointer"><circle cx="593.0" cy="262.9" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="593.0" cy="262.9" r="4" fill="#DC2626"></circle><text x="593.0" y="295.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">अलवर</text></g>
-<g class="rj-node" data-id="nagaur" data-name="नागौर" tabindex="0" onclick="openModal('nagaur')" style="cursor:pointer"><circle cx="316.8" cy="280.0" r="22" fill="#FF6B00" fill-opacity="0.16" stroke="#FF6B00" stroke-width="2" class="rj-circle"></circle><circle cx="316.8" cy="280.0" r="4" fill="#FF6B00"></circle><text x="316.8" y="313.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">नागौर</text></g>
-<g class="rj-node" data-id="phalodi" data-name="फलौदी" tabindex="0" onclick="openModal('phalodi')" style="cursor:pointer"><circle cx="184.8" cy="286.0" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="184.8" cy="286.0" r="4" fill="#7C3AED"></circle><text x="184.8" y="319.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">फलौदी</text></g>
-<g class="rj-node" data-id="bharatpur" data-name="भरतपुर" tabindex="0" onclick="openModal('bharatpur')" style="cursor:pointer"><circle cx="681.8" cy="287.2" r="22" fill="#00A651" fill-opacity="0.16" stroke="#00A651" stroke-width="2" class="rj-circle"></circle><circle cx="681.8" cy="287.2" r="4" fill="#00A651"></circle><text x="681.8" y="320.2" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">भरतपुर</text></g>
-<g class="rj-node" data-id="jaisalmer" data-name="जैसलमेर" tabindex="0" onclick="openModal('jaisalmer')" style="cursor:pointer"><circle cx="46.0" cy="304.1" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="46.0" cy="304.1" r="4" fill="#7C3AED"></circle><text x="46.0" y="337.1" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">जैसलमेर</text></g>
-<g class="rj-node" data-id="jaipur" data-name="जयपुर" tabindex="0" onclick="openModal('jaipur')" style="cursor:pointer"><circle cx="513.0" cy="304.9" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="513.0" cy="304.9" r="4" fill="#DC2626"></circle><text x="513.0" y="337.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">जयपुर</text></g>
-<g class="rj-node" data-id="dausa" data-name="दौसा" tabindex="0" onclick="openModal('dausa')" style="cursor:pointer"><circle cx="565.7" cy="306.7" r="22" fill="#DC2626" fill-opacity="0.16" stroke="#DC2626" stroke-width="2" class="rj-circle"></circle><circle cx="565.7" cy="306.7" r="4" fill="#DC2626"></circle><text x="565.7" y="339.7" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">दौसा</text></g>
-<g class="rj-node" data-id="dholpur" data-name="धौलपुर" tabindex="0" onclick="openModal('dholpur')" style="cursor:pointer"><circle cx="715.3" cy="324.4" r="22" fill="#00A651" fill-opacity="0.16" stroke="#00A651" stroke-width="2" class="rj-circle"></circle><circle cx="715.3" cy="324.4" r="4" fill="#00A651"></circle><text x="715.3" y="357.4" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">धौलपुर</text></g>
-<g class="rj-node" data-id="karauli" data-name="करौली" tabindex="0" onclick="openModal('karauli')" style="cursor:pointer"><circle cx="630.7" cy="340.2" r="22" fill="#00A651" fill-opacity="0.16" stroke="#00A651" stroke-width="2" class="rj-circle"></circle><circle cx="630.7" cy="340.2" r="4" fill="#00A651"></circle><text x="630.7" y="373.2" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">करौली</text></g>
-<g class="rj-node" data-id="ajmer" data-name="अजमेर" tabindex="0" onclick="openModal('ajmer')" style="cursor:pointer"><circle cx="405.5" cy="342.0" r="22" fill="#FF6B00" fill-opacity="0.16" stroke="#FF6B00" stroke-width="2" class="rj-circle"></circle><circle cx="405.5" cy="342.0" r="4" fill="#FF6B00"></circle><text x="405.5" y="375.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">अजमेर</text></g>
-<g class="rj-node" data-id="jodhpur" data-name="जोधपुर" tabindex="0" onclick="openModal('jodhpur')" style="cursor:pointer"><circle cx="247.9" cy="358.3" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="247.9" cy="358.3" r="4" fill="#7C3AED"></circle><text x="247.9" y="391.3" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">जोधपुर</text></g>
-<g class="rj-node" data-id="tonk" data-name="टोंक" tabindex="0" onclick="openModal('tonk')" style="cursor:pointer"><circle cx="513.0" cy="368.6" r="22" fill="#FF6B00" fill-opacity="0.16" stroke="#FF6B00" stroke-width="2" class="rj-circle"></circle><circle cx="513.0" cy="368.6" r="4" fill="#FF6B00"></circle><text x="513.0" y="401.6" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">टोंक</text></g>
-<g class="rj-node" data-id="beawar" data-name="ब्यावर" tabindex="0" onclick="openModal('beawar')" style="cursor:pointer"><circle cx="369.8" cy="377.1" r="22" fill="#FF6B00" fill-opacity="0.16" stroke="#FF6B00" stroke-width="2" class="rj-circle"></circle><circle cx="369.8" cy="377.1" r="4" fill="#FF6B00"></circle><text x="369.8" y="410.1" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">ब्यावर</text></g>
-<g class="rj-node" data-id="sawai-madhopur" data-name="सवाई माधोपुर" tabindex="0" onclick="openModal('sawai-madhopur')" style="cursor:pointer"><circle cx="567.6" cy="381.5" r="22" fill="#00A651" fill-opacity="0.16" stroke="#00A651" stroke-width="2" class="rj-circle"></circle><circle cx="567.6" cy="381.5" r="4" fill="#00A651"></circle><text x="567.6" y="414.5" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">सवाई माधोपुर</text></g>
-<g class="rj-node" data-id="balotra" data-name="बालोतरा" tabindex="0" onclick="openModal('balotra')" style="cursor:pointer"><circle cx="173.3" cy="397.9" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="173.3" cy="397.9" r="4" fill="#7C3AED"></circle><text x="173.3" y="430.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">बालोतरा</text></g>
-<g class="rj-node" data-id="pali" data-name="पाली" tabindex="0" onclick="openModal('pali')" style="cursor:pointer"><circle cx="276.6" cy="403.0" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="276.6" cy="403.0" r="4" fill="#7C3AED"></circle><text x="276.6" y="436.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">पाली</text></g>
-<g class="rj-node" data-id="barmer" data-name="बाड़मेर" tabindex="0" onclick="openModal('barmer')" style="cursor:pointer"><circle cx="91.0" cy="404.7" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="91.0" cy="404.7" r="4" fill="#7C3AED"></circle><text x="91.0" y="437.7" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">बाड़मेर</text></g>
-<g class="rj-node" data-id="bundi" data-name="बूंदी" tabindex="0" onclick="openModal('bundi')" style="cursor:pointer"><circle cx="491.0" cy="424.2" r="22" fill="#0D9488" fill-opacity="0.16" stroke="#0D9488" stroke-width="2" class="rj-circle"></circle><circle cx="491.0" cy="424.2" r="4" fill="#0D9488"></circle><text x="491.0" y="457.2" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">बूंदी</text></g>
-<g class="rj-node" data-id="bhilwara" data-name="भीलवाड़ा" tabindex="0" onclick="openModal('bhilwara')" style="cursor:pointer"><circle cx="402.0" cy="433.9" r="22" fill="#FF6B00" fill-opacity="0.16" stroke="#FF6B00" stroke-width="2" class="rj-circle"></circle><circle cx="402.0" cy="433.9" r="4" fill="#FF6B00"></circle><text x="402.0" y="466.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">भीलवाड़ा</text></g>
-<g class="rj-node" data-id="jalore" data-name="जालौर" tabindex="0" onclick="openModal('jalore')" style="cursor:pointer"><circle cx="208.6" cy="437.3" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="208.6" cy="437.3" r="4" fill="#7C3AED"></circle><text x="208.6" y="470.3" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">जालौर</text></g>
-<g class="rj-node" data-id="kota" data-name="कोटा" tabindex="0" onclick="openModal('kota')" style="cursor:pointer"><circle cx="527.4" cy="458.4" r="22" fill="#0D9488" fill-opacity="0.16" stroke="#0D9488" stroke-width="2" class="rj-circle"></circle><circle cx="527.4" cy="458.4" r="4" fill="#0D9488"></circle><text x="527.4" y="491.4" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">कोटा</text></g>
-<g class="rj-node" data-id="baran" data-name="बारां" tabindex="0" onclick="openModal('baran')" style="cursor:pointer"><circle cx="581.9" cy="460.7" r="22" fill="#0D9488" fill-opacity="0.16" stroke="#0D9488" stroke-width="2" class="rj-circle"></circle><circle cx="581.9" cy="460.7" r="4" fill="#0D9488"></circle><text x="581.9" y="493.7" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">बारां</text></g>
-<g class="rj-node" data-id="rajsamand" data-name="राजसमंद" tabindex="0" onclick="openModal('rajsamand')" style="cursor:pointer"><circle cx="331.0" cy="461.6" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="331.0" cy="461.6" r="4" fill="#B45309"></circle><text x="331.0" y="494.6" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">राजसमंद</text></g>
-<g class="rj-node" data-id="sirohi" data-name="सिरोही" tabindex="0" onclick="openModal('sirohi')" style="cursor:pointer"><circle cx="233.7" cy="480.6" r="22" fill="#7C3AED" fill-opacity="0.16" stroke="#7C3AED" stroke-width="2" class="rj-circle"></circle><circle cx="233.7" cy="480.6" r="4" fill="#7C3AED"></circle><text x="233.7" y="513.6" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">सिरोही</text></g>
-<g class="rj-node" data-id="chittorgarh" data-name="चित्तौड़गढ़" tabindex="0" onclick="openModal('chittorgarh')" style="cursor:pointer"><circle cx="402.0" cy="483.9" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="402.0" cy="483.9" r="4" fill="#B45309"></circle><text x="402.0" y="516.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">चित्तौड़गढ़</text></g>
-<g class="rj-node" data-id="jhalawar" data-name="झालावाड़" tabindex="0" onclick="openModal('jhalawar')" style="cursor:pointer"><circle cx="548.5" cy="503.7" r="22" fill="#0D9488" fill-opacity="0.16" stroke="#0D9488" stroke-width="2" class="rj-circle"></circle><circle cx="548.5" cy="503.7" r="4" fill="#0D9488"></circle><text x="548.5" y="536.7" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">झालावाड़</text></g>
-<g class="rj-node" data-id="udaipur" data-name="उदयपुर" tabindex="0" onclick="openModal('udaipur')" style="cursor:pointer"><circle cx="310.3" cy="507.1" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="310.3" cy="507.1" r="4" fill="#B45309"></circle><text x="310.3" y="540.1" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">उदयपुर</text></g>
-<g class="rj-node" data-id="salumbar" data-name="सलूंबर" tabindex="0" onclick="openModal('salumbar')" style="cursor:pointer"><circle cx="351.4" cy="541.9" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="351.4" cy="541.9" r="4" fill="#B45309"></circle><text x="351.4" y="574.9" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">सलूंबर</text></g>
-<g class="rj-node" data-id="pratapgarh" data-name="प्रतापगढ़" tabindex="0" onclick="openModal('pratapgarh')" style="cursor:pointer"><circle cx="416.4" cy="552.7" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="416.4" cy="552.7" r="4" fill="#B45309"></circle><text x="416.4" y="585.7" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">प्रतापगढ़</text></g>
-<g class="rj-node" data-id="dungarpur" data-name="डूंगरपुर" tabindex="0" onclick="openModal('dungarpur')" style="cursor:pointer"><circle cx="310.9" cy="571.2" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="310.9" cy="571.2" r="4" fill="#B45309"></circle><text x="310.9" y="604.2" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">डूंगरपुर</text></g>
-<g class="rj-node" data-id="banswara" data-name="बांसवाड़ा" tabindex="0" onclick="openModal('banswara')" style="cursor:pointer"><circle cx="383.8" cy="594.0" r="22" fill="#B45309" fill-opacity="0.16" stroke="#B45309" stroke-width="2" class="rj-circle"></circle><circle cx="383.8" cy="594.0" r="4" fill="#B45309"></circle><text x="383.8" y="627.0" text-anchor="middle" font-size="9.3" font-family="Hind,sans-serif" font-weight="600" fill="#1A1A2E">बांसवाड़ा</text></g>
-</svg>
-      <p class="map-note">📍 यह मानचित्र प्रत्येक जिले की सापेक्षिक भौगोलिक स्थिति (relative position) दर्शाने वाला Interactive Node-Map है — सटीक सीमा-रेखा (exact boundary) के लिए जिलेवार Atlas टैब में जिला-कार्ड देखें। किसी भी जिले पर क्लिक करके पूरी profile खोलें।</p>
+      <div class="map-stage" id="mapStage">
+        <svg id="rjMapSvg" width="776" height="623" viewBox="10 36 776 623" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <g id="mapG">
+          <path class="rj-poly" data-ids="churu" data-name="चूरू" tabindex="0" d="M538.1,141.3L551.9,174.3L542.8,189L521,182.3L505.5,198.4L482.1,211.7L474.2,230.8L474.4,245.2L453.4,250.2L427.5,264.7L402.7,265.5L400.8,239.5L420.9,238.9L436,208.8L415.9,192.7L424.4,154.2L441.8,147.6L475.7,149.8L496.6,142.7L518.4,144.9L526,140.2L538.1,141.3Z" fill="#2563EB" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="jhunjhunu" data-name="झुंझुनू" tabindex="0" d="M499.2,203.9L509.9,195.8L517.3,183.3L525.8,189.7L541.4,191.3L549.2,182.5L565.3,182.2L572.6,188L581.2,193.8L591.6,208.7L583.5,210.8L584.3,216.3L583,218.1L582,224.4L575.7,229.5L554.3,248.2L541.5,248L525.3,247.6L516.9,231.8L506.3,217L501.6,206.8L499.2,203.9Z" fill="#DC2626" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="jaisalmer" data-name="जैसलमेर" tabindex="0" d="M227.2,228.8L231.6,230.8L250.6,238.6L256.6,250.7L258.9,262.1L251.4,265L228.6,262.1L230,292.3L240.8,313.5L242.6,328.4L243.8,364.1L220.5,365.5L204.1,352.7L177.7,356.7L157.2,368.9L153.2,384.5L126.5,376.2L89.7,380.9L78.7,368.9L20,324.7L96.8,220.4L208.7,231.9L227.2,228.8Z" fill="#7C3AED" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="sikar" data-name="सीकर" tabindex="0" d="M472.6,249.2L481.4,238.6L479.2,230.5L478.5,214.3L499.2,203.9L508.1,209.6L513.7,228.6L524.9,246.5L543.8,246.3L559.3,243.4L578.1,228.5L590,235.1L581.7,251.3L582.2,265L567.4,273.2L550.6,281L531,283.7L521.6,297.4L504.5,286.8L500.1,277.2L486.2,272.3L476.5,259L472.6,249.2Z" fill="#DC2626" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="alwar,khairthal-tijara" data-name="अलवर / खैरथल-तिजारा" tabindex="0" d="M603.1,235.8L604.2,217.1L611.3,208.5L619.9,209.1L625.9,216.8L640.4,213.6L659.1,203.6L664.5,236.1L665.1,249.6L665.3,259.5L675.2,262.3L664.6,265.6L666.8,271.6L686.9,276.7L677,292.3L660.9,287.8L653.6,300.9L631.4,293L607.8,302.3L594.8,291L605.2,269.7L605,250L603.1,235.8Z" fill="#DC2626" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="jaipur,kotputli-behror" data-name="जयपुर / कोटपूतली-बहरोड़" tabindex="0" d="M524.4,295.4L545.8,278.5L566,275.4L579.5,259.2L590.2,238.4L596.9,237L605.9,241.9L603.8,262.6L596.5,281L600.6,298L605.7,305.4L604.3,321.3L601.7,332L592.3,347.8L563.8,347.4L546.5,353.2L518.8,347.2L510,351L494.3,335.4L489.6,321.9L514.5,307.2L526.3,296.4L524.4,295.4Z" fill="#DC2626" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="jodhpur,phalodi" data-name="जोधपुर / फलौदी" tabindex="0" d="M243.2,364.1L241.5,326L239.8,303.1L226.9,265.7L251.1,266.6L271.1,260.3L300.5,260.3L314.4,268.9L335.6,281.3L338.8,313.7L361.5,317.7L382.8,328.9L398,354L392.1,374.1L378.4,381.8L358,380.6L346.1,389.7L328.5,393.1L310.1,405.9L291.2,396.6L282.7,369.5L251.5,368.4L243.2,364.1Z M258.6,265.7L258.6,263.8L258.9,262.1L259.9,261L260.8,260.5L261.6,260.1L262.8,260.5L261.5,263.1L258.9,263.5L258.6,265.7Z" fill="#7C3AED" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="bharatpur,deeg" data-name="भरतपुर / डीग" tabindex="0" d="M666.3,295.5L676.7,287.7L682,277.3L665.2,269.2L667.2,266.7L675.2,262.3L666.6,260.8L668.2,251.3L679.5,239.9L687.6,236.7L696.4,246.4L704.8,266.7L721.9,282.2L727,293.2L715.6,300.6L725.6,305.7L736.1,307.3L712.5,316.5L709.4,330.1L695.4,326.9L673.5,315.8L669,300.1L666.3,295.5Z" fill="#00A651" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="nagaur,didwana-kuchaman" data-name="नागौर / डीडवाना-कुचामन" tabindex="0" d="M399.8,261.4L428.2,271.4L442.7,248.8L471.2,249.2L473.9,265.2L488.4,280.6L505.7,286.8L522.8,295.8L525.6,299.9L494.9,317.3L477.1,320.9L466.5,343L437.8,355L416,357.6L394.7,350.7L380.9,324.5L359.6,317.7L334.6,312.9L340.3,280.7L354.6,285.9L371.2,265L399.8,261.4Z" fill="#FF6B00" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="dausa" data-name="दौसा" tabindex="0" d="M607.8,302.3L622.9,301.3L637,296.9L652.1,295.8L655,293.8L660.9,287.8L669.4,298.3L668.6,304.6L675.2,315.3L665.9,318.9L649.8,315.8L629.9,326.7L618.4,345.4L618.4,361.5L598.7,352.3L598.1,332.3L599.7,330.2L605,324.1L603.7,312.6L606.1,305.1L607.8,302.3Z" fill="#DC2626" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="karauli" data-name="करौली" tabindex="0" d="M678.5,319.8L692.2,323.4L700.1,332.8L704.2,339.7L691,352.7L698.2,356.8L702.1,361.7L693.5,371.3L680.4,375.8L661.5,386.4L653.7,388.3L640.3,378.5L632.7,369.8L642.1,361.1L658.7,350.3L664.6,344.1L662.8,335.2L647.1,345L634.3,338.2L632.8,327.7L652.4,309.2L668.8,320.2L678.5,319.8Z" fill="#00A651" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="dholpur" data-name="धौलपुर" tabindex="0" d="M700.1,332.8L712.1,329.6L715.5,323.5L731.2,318.5L743.6,315.4L755.5,317.4L760.4,319.1L765.4,315L766.3,313L776,312.6L773.8,318.4L771.3,323.4L766.2,325.9L761.4,335.2L741.3,346.8L716.6,358.8L701,361.7L696.9,356.5L689.8,348.6L704.2,339.7L700.1,332.8Z" fill="#00A651" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="barmer,balotra" data-name="बाड़मेर / बालोतरा" tabindex="0" d="M76.8,380.9L101.3,377.7L146,391.8L146.7,373.2L169.5,356.1L200.7,350.6L219.2,364.4L245.2,365.6L270,374.9L292.4,374.5L296.3,399.1L309.9,409.9L300.4,413.8L291.8,427.9L276.7,441.2L246.8,444.5L228.5,460.5L214,478.6L186.9,483.5L175.7,495.9L141.4,468L98.1,422.6L76.8,380.9Z" fill="#7C3AED" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="sawai-madhopur" data-name="सवाई माधोपुर" tabindex="0" d="M598.7,352.3L621.8,356L622.7,334.8L641.5,341.7L658.8,336.5L664.6,344.1L655.1,353.1L642,363.9L635.8,373.2L646.2,381L657.2,391.6L649.1,399.5L639.1,402.3L625,410.3L611.4,413.5L605.2,407.6L598.5,395.6L591.2,390.5L591.1,385.7L586,384.9L592.2,373.5L594.8,362.2L598.7,352.3Z" fill="#00A651" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="tonk" data-name="टोंक" tabindex="0" d="M511.6,354.3L528.7,352.1L552.9,356.1L565.9,346.7L590.8,349.2L596.6,358.7L585.8,372.5L589.1,383.1L592.7,389.1L595,397.2L605.2,407.6L606.7,411.2L587.5,410.6L570.2,406.7L551.3,419.8L543.1,419.1L529.2,415.1L518.1,402.3L520.6,382.7L506.7,369.4L511.6,354.3Z" fill="#FF6B00" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="pali" data-name="पाली" tabindex="0" d="M309.8,406.2L326.2,398.4L346.4,388.3L356.5,382.5L373.7,383.3L391.8,380.3L399.8,357.3L424.4,358.9L437,372.6L436.6,382.8L424.6,400.8L405.8,411.3L385.4,447.9L367.2,470.2L352.6,489L338.9,499.2L335.3,475.2L320.5,464.1L318.6,449.7L329.3,443.6L318.2,421.6L311.1,408.3L309.8,406.2Z" fill="#7C3AED" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="bhilwara" data-name="भीलवाड़ा" tabindex="0" d="M524.5,414.5L534.7,424.1L519.7,444.9L532,472L513.7,478L499.1,469.2L479.8,467.8L472.2,463.2L450.7,466.6L438.7,470.1L426.9,475.9L419.8,460L414.5,454.9L414,446.4L414.2,437.7L417.8,420L427.3,407.1L444.1,397.6L458,405L488.5,404.6L504.7,418.3L520.9,418.3L524.5,414.5Z" fill="#FF6B00" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="jalore" data-name="जालौर" tabindex="0" d="M167.3,511.1L177.5,490.5L193.4,480.4L217.4,474.5L228.9,459.7L246.8,444.5L274.2,442.9L288.6,428.2L303.3,418.2L305.5,411.7L321.6,426.8L328.3,445.3L321.9,448.8L318.5,460L305.1,461.6L295,476.9L279.9,497.5L265.3,513.9L248.4,512.1L230.3,511.2L212.3,510.1L183.7,513.2L167.3,511.1Z" fill="#7C3AED" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="bundi" data-name="बूंदी" tabindex="0" d="M610.7,410.4L612.7,420.1L608.6,430.6L603.9,437L597.1,444.8L596.7,451.1L586.5,456.7L566.5,460.1L559,469.7L554.5,478L543.8,477.6L536.2,463.4L520.1,446L528.4,439.2L533.5,421.3L541.7,416L547.8,419.8L556.9,415L567,411.2L577.1,409.3L592.7,411.2L601.7,408.6L610.7,410.4Z" fill="#0D9488" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="kota" data-name="कोटा" tabindex="0" d="M614.4,416.8L630.8,408.3L625.1,421.7L631.7,441.7L621.8,445.6L605,464.9L613.7,482L627.1,489.8L619.8,494.8L606.5,497.3L595.7,500.5L589.9,517.9L575.5,520.1L570.4,510L567.3,492.1L547.3,476.6L560.8,470.9L578,456L596.7,451.1L599.6,437.7L609.1,429.7L614.4,416.8Z" fill="#0D9488" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="sirohi" data-name="सिरोही" tabindex="0" d="M318.5,460L320.4,465.1L324.1,472.2L335.3,475.2L327.5,490.6L338.7,497L331.7,512.8L324.1,525.5L319.8,532.9L320.6,536.1L311.1,535.2L284.2,522.4L277.2,531.5L266.2,518.1L261.5,514.8L267.6,513L272.2,500.3L279,492L292.8,479.5L299.2,471.6L305.1,461.6L314,459.4L318.5,460Z" fill="#7C3AED" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="baran" data-name="बारां" tabindex="0" d="M621.8,495.5L625.5,489.4L613.7,482L603.9,465L617,446.9L635.2,445.6L664,454.7L677.3,451.8L690.3,448.1L701.8,449.7L707,464.6L697,474L677.5,476.1L660.6,487.8L652.8,496L666.3,501.8L676,519.1L668.1,527.5L654.9,521L639.2,531.6L625.8,511.2L621.8,495.5Z" fill="#0D9488" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="udaipur,salumbar" data-name="उदयपुर / सलूंबर" tabindex="0" d="M336.7,502.6L354,481.8L370.1,479.9L382.2,500.8L389.9,505.6L396.6,488.9L422.9,491.1L426.4,510.6L434.3,521L433.8,526L440.3,536.9L444.9,550.3L431.4,569.1L414.3,569.1L379.4,571.9L355.9,583.4L360.4,573.3L345.1,567.2L331.9,546.8L330.7,533.1L328.3,520.6L336.7,502.6Z" fill="#B45309" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="jhalawar" data-name="झालावाड़" tabindex="0" d="M576.7,520.4L592.2,507.6L596.7,502.9L608.4,495.2L621.8,495.5L633.2,527.2L656,532L662.8,551.1L644.3,546.5L633.5,552L611.4,546.1L597.8,540.8L594.4,553.7L578.2,576.3L563.2,578.1L556.8,589.2L540.8,577.1L552.4,567.5L563.1,566.5L562,554.9L560.1,534.7L575.9,524.8L576.7,520.4Z" fill="#0D9488" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="dungarpur" data-name="डूंगरपुर" tabindex="0" d="M355.9,583.4L365.8,578.6L375.4,570.6L384,571L398.2,572.9L418.9,568.1L429.5,575.4L434.1,571.7L441.7,575.9L434.1,581.9L422.7,587.3L422.2,598.2L412.3,610L404.9,624.5L399.9,621.9L385.1,615.8L380.9,610L377.3,597.4L368,593.1L359.8,586.5L355.9,583.4Z" fill="#B45309" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="banswara" data-name="बांसवाड़ा" tabindex="0" d="M407.1,620.9L416.6,602L422.3,590.2L430.8,583.5L441.7,575.9L452.5,574L457.6,584.1L455.4,598.9L469,596L477.8,603.1L477.4,606.9L469.5,611.7L462.4,616.8L455.1,626.5L469.1,630.2L475.3,634.5L457.7,644.4L438.2,648.2L426.2,640.7L422.6,630.8L408.5,622.1L407.1,620.9Z" fill="#B45309" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="ajmer,beawar" data-name="अजमेर / ब्यावर" tabindex="0" d="M402.7,421.6L402.5,416.8L404,412.4L406.1,408.7L407.8,408.8L414,408.4L415.2,409.1L418.3,412.5L414.7,415.7L411.3,416.7L411.6,419.8L411.6,420.2L409.9,421.6L409.4,423.2L405.7,424.6L402.7,421.6Z M494.9,317.3L497.8,329.2L498.8,336.9L509.7,353.4L508.2,359.8L513.3,380.6L527.4,393.4L527.3,408.9L515.2,421L497.8,410.9L471.8,401.2L456.7,404.4L438.4,393.3L432.7,405.7L424.7,400.8L431.7,389.7L443,376.2L435.4,358.7L450.6,352.2L470.5,338.4L482,314.1L494.9,317.3Z" fill="#FF6B00" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="rajsamand" data-name="राजसमंद" tabindex="0" d="M415.2,409.1L429,411L421,428.3L412.9,440.8L411.6,447.3L412.5,453.5L419.8,460L426.9,473.2L434.7,475.7L427.4,484.8L415.3,488.8L393,492.7L394,502.8L384,502.7L381.6,495.1L367.9,483.1L366.6,471.3L379.3,453.8L398.8,424.6L411.6,420.2L415.2,409.1Z M430.2,407.9L429,406.9L427.3,407.1L429.5,403.6L430,403.5L432.7,405.7L430.2,407.9Z M444.1,397.6L439,399.8L440.6,401.3L438,404.2L435.9,403.9L433.5,405.3L433.6,400.1L435.5,402L435,397.7L438.4,393.3L441.2,392.7L444.1,397.5L444.1,397.6Z" fill="#B45309" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="chittorgarh" data-name="चित्तौड़गढ़" tabindex="0" d="M527.5,479.2L535.6,478.8L543.5,479.6L553.2,482.8L567.3,492.1L565.6,500.5L556.2,504.7L551.3,508.3L544.6,506.5L520,505.3L514.2,503.1L518.6,495.6L524,498.1L533.7,491.7L523.8,493.3L519.5,484.2L524.2,490.8L524.2,482.6L524.8,480.1L527.5,479.2Z M433.4,475.2L445,464.6L467.5,465.1L479.4,467.7L499.1,469.2L510.3,478.1L502.3,492.7L482.7,484.4L486.7,498.4L497.2,508L480.1,503.8L475.9,521.1L463.8,523.6L451.1,548.5L442.4,541.4L438.3,525.4L427.7,528.7L429.2,516.2L424,508.1L422.9,491.1L436,477.6L433.4,475.2Z" fill="#B45309" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="sri-ganganagar" data-name="श्रीगंगानगर" tabindex="0" d="M414.1,134.1L400.1,140.1L390.8,130.6L365.8,134.4L344.3,142L340,147.9L330.2,156.4L306.2,153.6L296.1,144.6L375.7,46.8L436.3,52.3L430.7,65L420.9,72.9L407,74.2L398.3,80.8L407.2,84.1L407.7,93L401.7,102.6L422.7,109.4L429.3,113.9L422.2,127.8L414.1,134.1Z" fill="#2563EB" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="hanumangarh" data-name="हनुमानगढ़" tabindex="0" d="M538.1,141.3L526,140.1L516.3,147.1L492,144.2L472.9,147.8L432.6,152.3L422.5,152.5L414.1,134.1L429.3,113.9L412.3,106.5L407.3,91.3L400.3,83.9L408.8,72.7L428.6,68.2L456.2,53.3L461.4,68.5L460.6,101.3L492.6,108.8L517.8,112.4L531.4,116.1L536.2,131.5L538.4,140.5L538.1,141.3Z" fill="#2563EB" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="bikaner" data-name="बीकानेर" tabindex="0" d="M424.4,154.2L413,188.8L440.1,207.1L425.7,239.1L403.9,240.2L399.6,261.4L369.1,267.8L352.6,291.8L335.7,281.1L309,267.4L291,256.6L258.5,266.7L256.1,249.2L243.4,227.4L226.4,229.7L296.2,148L324.9,158.7L342.4,146.3L364.1,134.6L393.1,134.5L412.8,135.4L415.5,154.2L424.4,154.2Z" fill="#2563EB" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+<path class="rj-poly" data-ids="pratapgarh" data-name="प्रतापगढ़" tabindex="0" d="M434,571.8L433.4,556.5L443.3,552.5L450.9,548.4L456.6,536.3L464.1,523.6L473.5,525.1L484.3,529L480.4,534.4L485.6,546.3L488.7,557.9L494.1,566.8L488.7,585.2L490.2,591.6L488.7,599.8L477.3,607L477.6,602.9L468.1,595.4L457.2,595.6L458,582.2L452.1,573.8L438,572.5L434,571.8Z" fill="#B45309" fill-opacity="0.38" stroke="#fff" stroke-width="1.3"></path>
+          </g>
+        </svg>
+        <div class="map-zoom-ctrl">
+          <button onclick="mapZoom(1.35)" aria-label="Zoom in">+</button>
+          <button onclick="mapZoom(1/1.35)" aria-label="Zoom out">&minus;</button>
+          <button onclick="mapZoomReset()" aria-label="Reset">&#8635;</button>
+        </div>
+        <div class="map-tooltip" id="mapTooltip"></div>
+      </div>
+      <p class="map-note">🧭 यह मानचित्र वास्तविक जिला-सीमाओं (real district boundaries) पर आधारित है। ज़ूम इन/आउट बटन या माउस स्क्रॉल से ज़ूम करें, ड्रैग करके घुमाएं। किसी भी जिले पर क्लिक करके पूरी profile खोलें — जो क्षेत्र अब 2 जिलों में बंटे हैं (जैसे जयपुर/कोटपूतली-बहरोड़), वहां क्लिक पर विकल्प दिखेगा।</p>
     </div>
   </div>
+
+  <div class="chooser-overlay" id="chooserOverlay" onclick="if(event.target===this)closeChooser()">
+    <div class="chooser-box" id="chooserBox"></div>
+  </div>
+
 
   <div class="tab-panel" id="panelTopic">
     <div class="topic-subtabs" id="topicSubtabs"></div>
@@ -352,6 +374,118 @@ renderDistricts();
 renderTopicSubtabs();
 renderTopicList();
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+</script>
+
+<script>
+
+(function(){
+  var svg = document.getElementById('rjMapSvg');
+  var g = document.getElementById('mapG');
+  var stage = document.getElementById('mapStage');
+  var tooltip = document.getElementById('mapTooltip');
+  var baseVB = [10,36,776,623];
+  var vb = baseVB.slice();
+  var scaleLevel = 1;
+  var isDragging = false, dragStart = null, vbStart = null;
+
+  function applyVB(){ svg.setAttribute('viewBox', vb.join(' ')); }
+
+  window.mapZoom = function(factor){
+    var newW = vb[2] / factor, newH = vb[3] / factor;
+    var minW = baseVB[2] / 5, maxW = baseVB[2];
+    if (newW < minW) newW = minW;
+    if (newW > maxW) newW = maxW;
+    newH = newW * (baseVB[3]/baseVB[2]);
+    var cx = vb[0] + vb[2]/2, cy = vb[1] + vb[3]/2;
+    vb = [cx - newW/2, cy - newH/2, newW, newH];
+    clampVB();
+    applyVB();
+  };
+  window.mapZoomReset = function(){ vb = baseVB.slice(); applyVB(); };
+
+  function clampVB(){
+    if (vb[2] > baseVB[2]) vb[2] = baseVB[2];
+    if (vb[3] > baseVB[3]) vb[3] = baseVB[3];
+    var maxX = baseVB[0] + baseVB[2] - vb[2];
+    var maxY = baseVB[1] + baseVB[3] - vb[3];
+    if (vb[0] < baseVB[0]) vb[0] = baseVB[0];
+    if (vb[0] > maxX) vb[0] = maxX;
+    if (vb[1] < baseVB[1]) vb[1] = baseVB[1];
+    if (vb[1] > maxY) vb[1] = maxY;
+  }
+
+  svg.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var factor = e.deltaY < 0 ? 1.15 : 1/1.15;
+    window.mapZoom(factor);
+  }, {passive:false});
+
+  svg.addEventListener('pointerdown', function(e){
+    isDragging = true;
+    svg.classList.add('dragging');
+    dragStart = {x:e.clientX, y:e.clientY};
+    vbStart = vb.slice();
+    svg.setPointerCapture(e.pointerId);
+  });
+  svg.addEventListener('pointermove', function(e){
+    if(!isDragging){
+      handleHover(e);
+      return;
+    }
+    var rect = svg.getBoundingClientRect();
+    var scaleX = vb[2] / rect.width, scaleY = vb[3] / rect.height;
+    var dx = (e.clientX - dragStart.x) * scaleX;
+    var dy = (e.clientY - dragStart.y) * scaleY;
+    vb = [vbStart[0]-dx, vbStart[1]-dy, vbStart[2], vbStart[3]];
+    clampVB();
+    applyVB();
+  });
+  function endDrag(e){
+    if(isDragging){ isDragging=false; svg.classList.remove('dragging'); }
+  }
+  svg.addEventListener('pointerup', endDrag);
+  svg.addEventListener('pointerleave', function(e){ endDrag(e); tooltip.style.display='none'; });
+
+  function handleHover(e){
+    var target = e.target.closest('.rj-poly');
+    if(target){
+      var rect = stage.getBoundingClientRect();
+      tooltip.textContent = target.getAttribute('data-name');
+      tooltip.style.left = (e.clientX - rect.left) + 'px';
+      tooltip.style.top = (e.clientY - rect.top) + 'px';
+      tooltip.style.display = 'block';
+    } else {
+      tooltip.style.display = 'none';
+    }
+  }
+
+  document.querySelectorAll('.rj-poly').forEach(function(p){
+    p.addEventListener('click', function(e){
+      if (Math.abs(e.clientX - (dragStart?dragStart.x:e.clientX)) > 4) return;
+      var ids = p.getAttribute('data-ids').split(',');
+      if (ids.length === 1){
+        openModal(ids[0]);
+      } else {
+        openChooser(ids, p.getAttribute('data-name'));
+      }
+    });
+  });
+
+  window.openChooser = function(ids, label){
+    var html = '<h4>📍 ' + label + '<br><span style="font-size:11.5px;color:#999;font-weight:600">इस क्षेत्र में वर्तमान में ' + ids.length + ' जिले हैं — देखने के लिए चुनें</span></h4>';
+    ids.forEach(function(id){
+      var d = RJ_DATA.districts.filter(function(x){return x.id===id;})[0];
+      if(d) html += '<button onclick="closeChooser();openModal(\''+id+'\')">' + d.hi + '</button>';
+    });
+    html += '<button class="chooser-close" onclick="closeChooser()">बंद करें</button>';
+    document.getElementById('chooserBox').innerHTML = html;
+    document.getElementById('chooserOverlay').classList.add('on');
+  };
+  window.closeChooser = function(){
+    document.getElementById('chooserOverlay').classList.remove('on');
+  };
+})();
+
 </script>
 </body>
 </html>
