@@ -1,0 +1,45 @@
+name: Auto-add Quiz Light/Dark Toggle
+
+# Runs whenever new quiz pages are pushed (e.g. by the quiz-generation
+# automation) and makes sure every dark-themed quiz page has the
+# Light/Dark theme toggle button. Safe to re-run — already-patched
+# files are left untouched.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "quizzes/**.html"
+      - "ES*.html"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  add-theme-toggle:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Inject theme toggle into any new quiz pages
+        run: python3 automation/inject_theme_toggle.py
+
+      - name: Commit and push if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "niedu-bot"
+          git config user.email "email2omkara@gmail.com"
+          git add quizzes/*.html ES*.html 2>/dev/null || true
+          git commit -m "Auto: add Light/Dark toggle to new quiz page(s) [skip ci]"
+          git push
