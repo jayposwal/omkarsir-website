@@ -98,6 +98,11 @@ h1,h2,h3{font-family:'Poppins',sans-serif}
 footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size:13px}
 .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
 .footer-logo span{color:#FF6B00}
+.sec-page-link{color:#1B2A6B;font-weight:700;text-decoration:none;font-size:12px;white-space:nowrap}
+.sec-page-link:hover{text-decoration:underline}
+.subj-chips{display:flex;flex-wrap:wrap;gap:10px}
+.subj-chips a{background:#fff;border:2px solid #E8EAF0;border-radius:12px;padding:10px 16px;font-size:13px;font-weight:700;color:#1A1A2E;text-decoration:none;transition:all .2s}
+.subj-chips a:hover{border-color:#FF6B00;color:#FF6B00;transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -172,12 +177,24 @@ function renderGridSection(s){
         </div>
         <span class="quiz-arrow">→</span>
       </a>`).join('');
+  const pageLink = s.subjectPageUrl ? `<a href="${esc(s.subjectPageUrl)}" class="sec-page-link">📖 पूरा Subject Page →</a>` : '';
   return `
   <div class="qsec" id="${esc(s.id)}">
     <div class="qsec-head"><h2>${s.icon} ${esc(s.name)}</h2><span class="qsec-count">${s.quizzes.length} Quiz</span></div>
-    <p class="qsec-sub">${esc(s.description)}</p>
+    <p class="qsec-sub">${esc(s.description)} ${pageLink}</p>
     <div class="quiz-grid">${cards}
     </div>
+  </div>`;
+}
+
+function renderSubjectPagesSection(pages){
+  if (!pages || !pages.length) return '';
+  const chips = pages.map(p => `<a href="${esc(p.url)}" class="subj-chip">${p.icon} ${esc(p.title)}</a>`).join('');
+  return `
+  <div class="qsec" id="subject-pages">
+    <div class="qsec-head"><h2>📚 RAS Pre — Subject-wise Quiz Pages</h2><span class="qsec-count">${pages.length} Subjects</span></div>
+    <p class="qsec-sub">हर Subject का अपना अलग Quiz Page — जैसे-जैसे नए Chapter Quiz Publish होंगे, यहीं जुड़ते जाएंगे</p>
+    <div class="subj-chips">${chips}</div>
   </div>`;
 }
 
@@ -201,7 +218,8 @@ fetch('/quizzes-data.json')
     ).join('');
 
     const html = subjects.map(s => s.type === 'archive' ? renderArchiveSection(s) : renderGridSection(s)).join('');
-    document.getElementById('quizWrap').innerHTML = html + '<div class="back-link"><a href="index.html">← Home पर वापस जाएं</a></div>';
+    const subjectPagesHtml = renderSubjectPagesSection(data.subjectPages);
+    document.getElementById('quizWrap').innerHTML = html + subjectPagesHtml + '<div class="back-link"><a href="index.html">← Home पर वापस जाएं</a></div>';
   })
   .catch(err => {
     document.getElementById('quizWrap').innerHTML = '<div class="load-msg">Quiz list लोड नहीं हो पाई। कृपया page reload करें।</div>';

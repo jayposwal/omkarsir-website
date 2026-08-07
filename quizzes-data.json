@@ -408,7 +408,8 @@
           "date": "2026-08-04",
           "url": "/quizzes/niEd-quiz-2026-08-04-w6yz.html"
         }
-      ]
+      ],
+      "subjectPageUrl": "/rajasthan-geography-quiz.html"
     },
     {
       "id": "arthavyavastha",
@@ -497,7 +498,8 @@
           "date": "2026-06-24",
           "url": "/ES07mcq.html"
         }
-      ]
+      ],
+      "subjectPageUrl": "/economy-quiz.html"
     },
     {
       "id": "rajniti-vigyan",
@@ -538,7 +540,8 @@
           "date": "2026-07-31",
           "url": "/quizzes/raj-polity-sub-inspector-pyqs-2026-07-31-4bfu.html"
         }
-      ]
+      ],
+      "subjectPageUrl": "/polity-quiz.html"
     },
     {
       "id": "mixed-gk",
@@ -556,6 +559,68 @@
           "url": "/quizzes/check-15-sawal-2026-08-04-r3p4.html"
         }
       ]
+    }
+  ],
+  "subjectPages": [
+    {
+      "icon": "🗺️",
+      "title": "भारत भूगोल",
+      "url": "/india-geography-quiz.html"
+    },
+    {
+      "icon": "💰",
+      "title": "अर्थव्यवस्था",
+      "url": "/economy-quiz.html"
+    },
+    {
+      "icon": "🏛️",
+      "title": "प्राचीन इतिहास",
+      "url": "/ancient-history-quiz.html"
+    },
+    {
+      "icon": "🏰",
+      "title": "मध्यकालीन इतिहास",
+      "url": "/medieval-history-quiz.html"
+    },
+    {
+      "icon": "📜",
+      "title": "आधुनिक इतिहास",
+      "url": "/modern-history-quiz.html"
+    },
+    {
+      "icon": "🗺️",
+      "title": "राजस्थान भूगोल",
+      "url": "/rajasthan-geography-quiz.html"
+    },
+    {
+      "icon": "⚛️",
+      "title": "भौतिक विज्ञान",
+      "url": "/physics-quiz.html"
+    },
+    {
+      "icon": "🧪",
+      "title": "रसायन विज्ञान",
+      "url": "/chemistry-quiz.html"
+    },
+    {
+      "icon": "🧬",
+      "title": "जीव विज्ञान",
+      "url": "/biology-quiz.html"
+    },
+    {
+      "icon": "💻",
+      "title": "कंप्यूटर",
+      "url": "/computer-quiz.html"
+    },
+    {
+      "icon": "🏛️",
+      "title": "राजनीति विज्ञान",
+      "url": "/polity-quiz.html"
+    },
+    {
+      "icon": "🌍",
+      "title": "विश्व भूगोल",
+      "url": "/world-geography-quiz.html"
     }
   ]
 }
