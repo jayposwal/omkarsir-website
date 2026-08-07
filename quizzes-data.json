@@ -1,0 +1,561 @@
+{
+  "subjects": [
+    {
+      "id": "daily-ca",
+      "icon": "📅",
+      "name": "Daily Current Affairs Quiz",
+      "type": "archive",
+      "description": "रोज़ाना 15 MCQ — Current Affairs — तुरंत परिणाम व विस्तृत व्याख्या के साथ",
+      "archiveTitle": "Daily Current Affairs Quiz — पूरा Archive",
+      "archiveDesc": "सभी Daily Quiz यहाँ उपलब्ध हैं",
+      "archiveUrl": "/quiz.html",
+      "dates": [
+        {
+          "date": "2026-07-18",
+          "url": "/quiz/2026-07-18.html"
+        },
+        {
+          "date": "2026-07-19",
+          "url": "/quiz/2026-07-19.html"
+        },
+        {
+          "date": "2026-07-20",
+          "url": "/quiz/2026-07-20.html"
+        },
+        {
+          "date": "2026-07-23",
+          "url": "/quiz/2026-07-23.html"
+        },
+        {
+          "date": "2026-07-27",
+          "url": "/quiz/2026-07-27.html"
+        },
+        {
+          "date": "2026-07-28",
+          "url": "/quiz/2026-07-28.html"
+        },
+        {
+          "date": "2026-07-29",
+          "url": "/quiz/2026-07-29.html"
+        }
+      ]
+    },
+    {
+      "id": "ras-prelims-mock",
+      "icon": "📖",
+      "name": "RAS Prelims Mock Test — GK & GS Paper",
+      "type": "grid",
+      "description": "RAS Prelims पैटर्न पर आधारित Mixed Subject Mock Test — Full Length व Short Mock, कई Sets में उपलब्ध",
+      "quizzes": [
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — 35 Q Mock",
+          "questions": 35,
+          "duration": "35m",
+          "date": "2026-08-05",
+          "url": "/quizzes/ras-prelims-exam-2026-08-05-2ktz.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — 15 Q Mock",
+          "questions": 15,
+          "duration": "15m",
+          "date": "2026-08-04",
+          "url": "/quizzes/ras-prelims-exam-2026-08-04-1tsu.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — 55 Q Mock",
+          "questions": 55,
+          "duration": "82m",
+          "date": "2026-08-04",
+          "url": "/quizzes/ras-prelims-exam-2026-08-04-7n4c.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — 35 Q Mock",
+          "questions": 35,
+          "duration": "35m",
+          "date": "2026-08-04",
+          "url": "/quizzes/ras-prelims-exam-2026-08-04-fvro.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — 15 Q Mock",
+          "questions": 15,
+          "duration": "15m",
+          "date": "2026-08-04",
+          "url": "/quizzes/ras-prelims-exam-2026-08-04-qdk2.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims — Full Paper (v3)",
+          "questions": 150,
+          "duration": "225m",
+          "date": "2026-08-04",
+          "url": "/quizzes/ras-prlelims-full-paper-2026-08-04-t37s.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — Short Mock",
+          "questions": 35,
+          "duration": "52m",
+          "date": "2026-07-12",
+          "url": "/quizzes/ras-prelims-exam-2026-07-12-cl2o.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam — Full Mock (v2)",
+          "questions": 150,
+          "duration": "225m",
+          "date": "2026-07-12",
+          "url": "/quizzes/ras-prelims-exam-2026-07-12-v7u9.html"
+        }
+      ]
+    },
+    {
+      "id": "rajasthan-bhugol",
+      "icon": "🗺️",
+      "name": "राजस्थान भूगोल (Rajasthan Geography)",
+      "type": "grid",
+      "description": "कृषि, अपवाह तंत्र, जलवायु, खनिज, वन्यजीव, जनसंख्या, परिवहन व PYQs — Topic-wise Practice Test",
+      "quizzes": [
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान पर्यटन",
+          "questions": 20,
+          "duration": "20m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-q1mv.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "सूखा - अकाल - बंजर भूमि  -निर्धनता - बेरोजगारी",
+          "questions": 30,
+          "duration": "30m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-38vq.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान ऊर्जा संसाधन",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-jwhe.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान जनसंख्या",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-l9t5.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान शैक्षिक साक्षरता",
+          "questions": 30,
+          "duration": "30m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-ocif.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान परिवहन",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-y3ng.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान सिचाई परियोजनाएँ",
+          "questions": 52,
+          "duration": "52m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-3ly7.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान मृदा",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-776q.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान पशु संपदा",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-7fic.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान आर्थिक विकास संस्थाएँ",
+          "questions": 44,
+          "duration": "44m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-7v61.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान ख़ान खनिज",
+          "questions": 70,
+          "duration": "70m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-9pbn.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान वन वनस्पति",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-doxb.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान जनसंख्या",
+          "questions": 44,
+          "duration": "44m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-drxx.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान वन्यजीव",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-fxs6.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान जनसंख्या",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-g0bk.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान कृषि संपदा",
+          "questions": 70,
+          "duration": "70m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-howg.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान कृषि फसल ( राजस्थान भूगोल)",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-ifo6.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान जनसंख्या",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-lckq.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान आर्थिक विकास संस्थाएँ",
+          "questions": 44,
+          "duration": "44m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-w6xy.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान कृषि संपदा",
+          "questions": 70,
+          "duration": "70m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-wanj.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान सिचाई परियोजनाएँ",
+          "questions": 52,
+          "duration": "52m",
+          "date": "2026-08-06",
+          "url": "/quizzes/niEd-quiz-2026-08-06-y8x5.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान पर्वत पठार दर्रा PYQs",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-2026-08-06-02k7.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान भौगोलिक विभाजन PYQs",
+          "questions": 166,
+          "duration": "166m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-2026-08-06-eheh.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान झीलें PYQs",
+          "questions": 30,
+          "duration": "30m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-2026-08-06-n65v.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान भूगोल स्थिति विस्तार PYQs",
+          "questions": 100,
+          "duration": "100m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-2026-08-06-pom1.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान  जलवायु PYQs",
+          "questions": 60,
+          "duration": "60m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-2026-08-06-xk9v.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान बांध PYQs FINAL",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-final-2026-08-06-a22p.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान अपवाह तंत्र एवं झीलें PYQs MCqs",
+          "questions": 80,
+          "duration": "80m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-mcqs-2026-08-06-8ozj.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान  मृदा PYQs MCQs",
+          "questions": 35,
+          "duration": "35m",
+          "date": "2026-08-06",
+          "url": "/quizzes/pyqs-mcqs-2026-08-06-tzgj.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान का अपवाह तंत्र",
+          "questions": 60,
+          "duration": "60m",
+          "date": "2026-08-05",
+          "url": "/quizzes/niEd-quiz-2026-08-05-6od4.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान भौगोलिक विभाजन",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-05",
+          "url": "/quizzes/niEd-quiz-2026-08-05-752t.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान जलवायु",
+          "questions": 35,
+          "duration": "35m",
+          "date": "2026-08-05",
+          "url": "/quizzes/niEd-quiz-2026-08-05-7rho.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान विधानसभा",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-05",
+          "url": "/quizzes/niEd-quiz-2026-08-05-auyu.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान प्राकृतिक वनस्पति  वन्यजीव",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-05",
+          "url": "/quizzes/niEd-quiz-2026-08-05-vjea.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान की कृषि एवं आर्थिक समीक्षा",
+          "questions": 40,
+          "duration": "60m",
+          "date": "2026-08-04",
+          "url": "/quizzes/niEd-quiz-2026-08-04-df3f.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान का शहरीकरण एवं नगरीय विकास",
+          "questions": 35,
+          "duration": "52m",
+          "date": "2026-08-04",
+          "url": "/quizzes/niEd-quiz-2026-08-04-w6yz.html"
+        }
+      ]
+    },
+    {
+      "id": "arthavyavastha",
+      "icon": "💰",
+      "name": "अर्थव्यवस्था (Economy)",
+      "type": "grid",
+      "description": "Rajasthan Economic Survey के अध्याय-वार MCQs एवं Economy PYQs — RAS व SI Exam पैटर्न पर आधारित",
+      "quizzes": [
+        {
+          "icon": "📝",
+          "title": "राजस्थान में उद्योग industry PYQs",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-06",
+          "url": "/quizzes/industry-pyqs-2026-08-06-p0t8.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES 02 स्वास्थ्य एवं कल्याण Health and Well-being MCQs",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-02-health-and-well-being-mcqs-2026-08-04-pp1z.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES 03 शिक्षा एवं ज्ञान  Education and the Knowledge Economy",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-03-education-and-the-knowledge-economy-2026-08-04-l00u.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES 04 सामाजिक सशक्तिकरण",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-04-2026-08-04-p49q.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES 05 औद्योगिक, खनन एवं आर्थिक वृद्धि  Industrial, Mining and Economic Growth MCQs",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-05-industrial-mining-and-economic-growth-mcqs-2026-08-04-76x6.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES 06 पर्यटन एवं संस्कृति MCQs",
+          "questions": 35,
+          "duration": "35m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-06-mcqs-2026-08-04-cyo3.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES 1: कृषि-खाद्य प्रणालियों में रूपान्तरण MCQs",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-1-mcqs-2026-08-04-zgpq.html"
+        },
+        {
+          "icon": "📝",
+          "title": "ES INTRO and  OVERVIEW",
+          "questions": 33,
+          "duration": "33m",
+          "date": "2026-08-04",
+          "url": "/quizzes/es-intro-and-overview-2026-08-04-w1v8.html"
+        },
+        {
+          "icon": "📝",
+          "title": "SI ECONOMY PYQs",
+          "questions": 52,
+          "duration": "78m",
+          "date": "2026-08-04",
+          "url": "/quizzes/si-economy-pyqs-2026-08-04-irv4.html"
+        },
+        {
+          "icon": "📝",
+          "title": "Economic Survey — Chapter 07 Practice",
+          "questions": 30,
+          "duration": "45m",
+          "date": "2026-06-24",
+          "url": "/ES07mcq.html"
+        }
+      ]
+    },
+    {
+      "id": "rajniti-vigyan",
+      "icon": "🏛️",
+      "name": "राजनीति विज्ञान (Polity)",
+      "type": "grid",
+      "description": "Rajasthan Polity व Sub Inspector परीक्षा के Previous Year Questions पर आधारित Test",
+      "quizzes": [
+        {
+          "icon": "🗳️",
+          "title": "CM and ministers",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-04",
+          "url": "/quizzes/cm-and-ministers-2026-08-04-prjn.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "CM and ministers",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-04",
+          "url": "/quizzes/cm-and-ministers-2026-08-04-qgfz.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "CM and ministers",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-04",
+          "url": "/quizzes/cm-and-ministers-2026-08-04-r2b6.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "RAJ POLITY SUB INSPECTOR PYQs",
+          "questions": 75,
+          "duration": "112m",
+          "date": "2026-07-31",
+          "url": "/quizzes/raj-polity-sub-inspector-pyqs-2026-07-31-4bfu.html"
+        }
+      ]
+    },
+    {
+      "id": "mixed-gk",
+      "icon": "🧩",
+      "name": "सामान्य ज्ञान (Mixed GK)",
+      "type": "grid",
+      "description": "Quick GK & GS Check Test",
+      "quizzes": [
+        {
+          "icon": "🧩",
+          "title": "Quick GK Check — 15 सवाल",
+          "questions": 15,
+          "duration": "15m",
+          "date": "2026-08-04",
+          "url": "/quizzes/check-15-sawal-2026-08-04-r3p4.html"
+        }
+      ]
+    }
+  ]
+}
