@@ -1,0 +1,1308 @@
+{
+ "courseName": "RAS Prelims Super 60",
+ "examDate": "2026-12-06",
+ "totalDays": 75,
+ "days": [
+  {
+   "day": 1,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विश्व भूगोल — भौतिक स्वरूप (पर्वत, पठार, मैदान, मरुस्थल)",
+     "readUrls": [
+      "/vishwa-bhugol-ch01-bhautik-swaroop.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — संख्या/अक्षर श्रृंखला",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch03-shrinkhala-coding.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 2,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विश्व भूगोल — विश्व की प्रमुख नदियाँ एवं झीलें",
+     "readUrls": [
+      "/vishwa-bhugol-ch02-nadiyan-jheelen.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — कोडिंग-डिकोडिंग",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch03-shrinkhala-coding.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 3,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विश्व भूगोल — प्राकृतिक वनस्पति",
+     "readUrls": [
+      "/vishwa-bhugol-ch03-prakritik-vanaspati.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — रक्त संबंधों से जुड़ी समस्याएं",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch04-rakt-sambandh-disha.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 4,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विश्व भूगोल — कृषि: प्रकार, वितरण, महत्वपूर्ण फसलें",
+     "readUrls": [
+      "/vishwa-bhugol-ch04-krishi.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — दिशा ज्ञान परीक्षण",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch04-rakt-sambandh-disha.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 5,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विश्व भूगोल — प्रमुख औद्योगिक क्षेत्र एवं उद्योग",
+     "readUrls": [
+      "/vishwa-bhugol-ch05-audyogik-pradesh.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — तार्किक वेन आरेख",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch05-venn-diagram.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 6,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विश्व भूगोल — परिवहन नेटवर्क + पर्यावरणीय मुद्दे",
+     "readUrls": [
+      "/vishwa-bhugol-ch06-parivahan.html",
+      "/vishwa-bhugol-ch07-paryavaraniya-mudde.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — रैंकिंग एवं बैठक व्यवस्था",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch06-baithak-vyavastha.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 7,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारत भूगोल — भारत का भौतिक विभाजन",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — आकृतियाँ एवं उनके उप-खंड",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch07-aakritiyan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 8,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारत भूगोल — भारत की जलवायु",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — कथन एवं पूर्वधारणाएं",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch01-tarkik-tarkshakti.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 9,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारत भूगोल — भारत की प्रमुख नदियाँ एवं झीलें",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — कथन एवं तर्क",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch01-tarkik-tarkshakti.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 10,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारत भूगोल — भारत में सिंचाई एवं कृषि",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — कथन एवं निष्कर्ष",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch02-kathan-nishkarsh.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 11,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारत भूगोल — भारत के खनिज संसाधन",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — विश्लेषणात्मक तर्क",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch02-kathan-nishkarsh.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  },
+  {
+   "day": 12,
+   "block": 1,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारत भूगोल — प्रमुख औद्योगिक क्षेत्र",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    },
+    {
+     "title": "रीजनिंग — आलोचनात्मक तर्क",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    },
+    {
+     "title": "📰 जनवरी Current Affairs",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R1",
+   "block": 1,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 1 — World Geography",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/world-geography-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R2",
+   "block": 1,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 2 — India Geography",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-geography-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R3",
+   "block": 1,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 3 — Reasoning & Mental Ability",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/reasoning-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 13,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — स्थिति, विस्तार एवं भौतिक प्रदेश",
+     "readUrls": [
+      "/rajasthan-bhugol-ch01-sthiti-vistar.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — अनुपात, समानुपात एवं साझेदारी",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch08-anupat-samanupat.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 14,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — नदियाँ और झीलें",
+     "readUrls": [
+      "/rajasthan-bhugol-ch02-apvah-tantra.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — लाभ और हानि",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch09-labh-hani-pratishat.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 15,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — जलवायु विशेषताएं",
+     "readUrls": [
+      "/rajasthan-bhugol-ch03-jalvayu.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — प्रतिशत",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch09-labh-hani-pratishat.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 16,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — प्राकृतिक वनस्पति, जैव विविधता",
+     "readUrls": [
+      "/rajasthan-bhugol-ch04-vanaspati-vanyajeev.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — साधारण एवं चक्रवृद्धि ब्याज",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch10-byaj-si-ci.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 17,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — मृदा",
+     "readUrls": [
+      "/rajasthan-bhugol-ch05-mrida-sansadhan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — समतल आकृतियों का परिमाप एवं क्षेत्रफल",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch11-mensuration.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 18,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — कृषि",
+     "readUrls": [
+      "/rajasthan-bhugol-ch06-krishi.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — आंकड़ों का विश्लेषण (तालिका, बार, रेखा, पाई चार्ट)",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch12-aankada-vishleshan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 19,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — पशुधन एवं सिंचाई",
+     "readUrls": [
+      "/rajasthan-bhugol-ch07-pashudhan.html",
+      "/rajasthan-bhugol-ch08-sinchai.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — माध्य, माध्यिका, बहुलक",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch13-madhya-madhyika.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 20,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — जनसंख्या, शहरीकरण एवं जनजातियाँ",
+     "readUrls": [
+      "/rajasthan-bhugol-ch09-jansankhya.html",
+      "/rajasthan-bhugol-ch10-shahrikaran.html",
+      "/rajasthan-bhugol-ch11-janjatiyan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — क्रमचय एवं संचय",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch14-permutation-probability.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 21,
+   "block": 2,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान भूगोल — खनिज संसाधन एवं पर्यटन",
+     "readUrls": [
+      "/rajasthan-bhugol-ch12-khanij-sansadhan.html",
+      "/rajasthan-bhugol-ch14-paryatan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+     "title": "गणित — प्रायिकता",
+     "readUrls": [
+      "/ras-pre-math-reasoning-ch14-permutation-probability.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    },
+    {
+     "title": "📰 फरवरी Current Affairs",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R4",
+   "block": 2,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 4 — Rajasthan Geography",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-geography-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R5",
+   "block": 2,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 5 — Basic Numeracy (गणित)",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/maths-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 22,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — दैनिक जीवन में भौतिकी के मूलभूत तत्व",
+     "readUrls": [
+      "/bhautik-vigyan-ch01-rozmarra-jeevan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/physics-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 23,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — रसायन विज्ञान (अम्ल, क्षार, लवण, धातु, अधातु)",
+     "readUrls": [
+      "/rasayan-vigyan-ch03-dhatu-adhatu.html",
+      "/rasayan-vigyan-ch05-amal-kshar-lavan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/chemistry-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 24,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — जीव विज्ञान: कोशिका, आनुवंशिकी, विकासवाद",
+     "readUrls": [
+      "/jiv-vigyan-ch01-koshika.html",
+      "/jiv-vigyan-ch04-padapon-mein-janan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/biology-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 25,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — मानव शरीर: पोषण, रोग एवं प्रतिरक्षा प्रणाली + सार्वजनिक स्वास्थ्य कार्यक्रम",
+     "readUrls": [
+      "/jiv-vigyan-ch07-aahar-poshan-pratiraksha.html",
+      "/jiv-vigyan-ch08-rog-swasthya-karyakram.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/biology-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 26,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — पर्यावरण एवं पारिस्थितिकी: जैव विविधता, संरक्षण + प्रदूषण",
+     "readUrls": [
+      "/jiv-vigyan-ch13-paryavaran-parivartan.html",
+      "/jiv-vigyan-ch14-jaiv-vividhata-samrakshan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/biology-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 27,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — कंप्यूटर, ICT + साइबर सुरक्षा",
+     "readUrls": [
+      "/vigyan-praudyogiki-ch01-computer-vigyan.html",
+      "/vigyan-praudyogiki-ch04-ict-recent.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/computer-quiz.html"
+    },
+    {
+     "title": "🆕 राजस्थान कृषि-विज्ञान, उद्यान-विज्ञान, वानिकी, पशुपालन",
+     "readUrls": [
+      "/jiv-vigyan-ch15-rajasthan-krishi-udyan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/biology-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 28,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — रक्षा एवं अंतरिक्ष प्रौद्योगिकी + ISRO",
+     "readUrls": [
+      "/vigyan-praudyogiki-ch07-antariksh-karyakram.html",
+      "/vigyan-praudyogiki-ch08-raksha-praudyogiki.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/computer-quiz.html"
+    },
+    {
+     "title": "🆕 विज्ञान-प्रौद्योगिकी नीतियां (राज.+भारत)",
+     "readUrls": [
+      "/vigyan-praudyogiki-ch09-digital-india.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/computer-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 29,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "विज्ञान — जैव-प्रौद्योगिकी, नैनो-प्रौद्योगिकी + हालिया प्रगति",
+     "readUrls": [
+      "/vigyan-praudyogiki-ch05-robotics-nano-quantum.html",
+      "/vigyan-praudyogiki-ch06-jaiv-praudyogiki.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/computer-quiz.html"
+    },
+    {
+     "title": "🆕 विज्ञान में भारतीयों का योगदान",
+     "readUrls": [
+      "/vigyan-praudyogiki-ch10-vaigyanik-sansthan.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/computer-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 30,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान अर्थव्यवस्था — वृहद परिदृश्य एवं राज्य बजट, कृषि, उद्योग एवं सेवा क्षेत्र",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-economy-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 31,
+   "block": 3,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान अर्थव्यवस्था — आधारभूत संरचना",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-economy-quiz.html"
+    },
+    {
+     "title": "🆕 ग्रामीण विकास, पंचायती राज | शिक्षा-स्वास्थ्य",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    },
+    {
+     "title": "📰 मार्च Current Affairs",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R6",
+   "block": 3,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 6 — Science & Technology",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/physics-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R7",
+   "block": 3,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 7 — Economy of Rajasthan",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-economy-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 32,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "संविधान — निर्माण, उद्देशिका, नागरिकता",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 33,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "संविधान — मौलिक अधिकार + राज्य के नीति निदेशक तत्व (DPSP)",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 34,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "संविधान — मौलिक कर्तव्य एवं संशोधन | संघीय सरकार — कार्यपालिका",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 35,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "संविधान — संसद (राज्यसभा-लोकसभा) | भारतीय न्यायपालिका",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 36,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "संविधान — संघ-राज्य संबंध + आपातकालीन प्रावधान | स्थानीय स्वशासन",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 37,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "संवैधानिक निकाय — चुनाव आयोग, UPSC, NHRC, महिला आयोग, NCPCR, नीति आयोग | लोकपाल, CVC, CIC",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 38,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान राजव्यवस्था — राज्यपाल, मुख्यमंत्री, मंत्रिपरिषद | राजस्थान विधानसभा",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 39,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान राजव्यवस्था — उच्च न्यायालय एवं अधीनस्थ न्यायालय | महाधिवक्ता",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 40,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "प्रशासनिक ढांचा — मुख्य सचिव से तहसीलदार तक | RPSC, राज्य निर्वाचन आयोग, लोकायुक्त",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 41,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान में पंचायती राज एवं नगर पालिकाओं का प्रशासन",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 42,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारतीय अर्थव्यवस्था — आर्थिक संवृद्धि एवं विकास (HDI, GDP) + सतत विकास",
+     "readUrls": [
+      "/arthavyavastha-ch01-arthik-vikas.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/economy-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 43,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारतीय अर्थव्यवस्था — मौद्रिक एवं राजकोषीय नीति | नवीनतम बजट",
+     "readUrls": [
+      "/arthavyavastha-ch06-sarvajanik-vitt.html",
+      "/arthavyavastha-ch07-rbi-banking.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/economy-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 44,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजकोषीय संघवाद (केंद्र-राज्य वित्तीय संबंध) | कृषिगत विकास",
+     "readUrls": [
+      "/arthavyavastha-ch02-krishi.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/economy-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 45,
+   "block": 4,
+   "tag": null,
+   "topics": [
+    {
+     "title": "औद्योगिक वृद्धि, सुधार (LPG) | सेवा क्षेत्र, कौशल विकास",
+     "readUrls": [
+      "/arthavyavastha-ch03-udyog.html",
+      "/arthavyavastha-ch04-seva-kshetra.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/economy-quiz.html"
+    },
+    {
+     "title": "🆕 सामाजिक न्याय",
+     "readUrls": [
+      "/arthavyavastha-ch08-samajik-kshetra.html"
+     ],
+     "videoUrl": null,
+     "quizUrl": "/economy-quiz.html"
+    },
+    {
+     "title": "📰 अप्रैल Current Affairs",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R8",
+   "block": 4,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 8 — Indian Constitution & Polity",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R9",
+   "block": 4,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 9 — Rajasthan Polity & Administration",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-polity-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R10",
+   "block": 4,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 10 — Indian Economy",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/economy-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 46,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान इतिहास — प्रागैतिहासिक स्थल (पुरापाषाण से कांस्य युग) | प्राचीन राजस्थान की सभ्यता-संस्कृति",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-history-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 47,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान इतिहास — स्रोत: पुरातात्विक, अभिलेखीय, साहित्यिक, मुद्राशास्त्रीय",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-history-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 48,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान इतिहास — प्रमुख राजवंशों की उपलब्धियां | केंद्रीय सत्ता से सहयोग-प्रतिरोध",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-history-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 49,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान इतिहास — मध्यकालीन प्रशासनिक-राजस्व व्यवस्था | 18-19वीं सदी राजनीतिक-सामाजिक स्थिति",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-history-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 50,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान इतिहास — किसान एवं जनजातीय आंदोलन | प्रजामंडल आंदोलन, राजस्थान का एकीकरण",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-history-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 51,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान कला-संस्कृति — स्थापत्य परंपरा: मंदिर, किले, महल, स्मारक | मानव निर्मित जलाशय",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 52,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान कला-संस्कृति — चित्रकला की विभिन्न शैलियां एवं हस्तशिल्प",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 53,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान कला-संस्कृति — संगीत (शास्त्रीय एवं लोक) एवं वाद्ययंत्र | प्रदर्शन कला",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 54,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान कला-संस्कृति — भाषा एवं साहित्य | धार्मिक जीवन: संत, संप्रदाय, लोक देवता",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 55,
+   "block": 5,
+   "tag": null,
+   "topics": [
+    {
+     "title": "राजस्थान कला-संस्कृति — सामाजिक जीवन: मेले-त्योहार, रीति-रिवाज | प्रमुख व्यक्तित्व",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-art-culture-quiz.html"
+    },
+    {
+     "title": "📰 मई-जून Current Affairs",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R11",
+   "block": 5,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 11 — History of Rajasthan",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-history-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R12",
+   "block": 5,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 12 — Rajasthan Art & Culture",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/rajasthan-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 56,
+   "block": 6,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारतीय इतिहास — सिंधु घाटी सभ्यता, वैदिक युग | धार्मिक विचार: आजीविक, बौद्ध, जैन",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 57,
+   "block": 6,
+   "tag": null,
+   "topics": [
+    {
+     "title": "भारतीय इतिहास — प्रमुख राजवंशों की उपलब्धियां (मौर्य, कुषाण, सातवाहन, गुप्त, चालुक्य, पल्लव, चोल) | कला-स्थापत्य",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 58,
+   "block": 6,
+   "tag": null,
+   "topics": [
+    {
+     "title": "🆕 भारतीय ज्ञान एवं मूल्य व्यवस्था | सल्तनत काल एवं विजयनगर | मुगल काल — प्रशासन-नीतियां + मराठे",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 59,
+   "block": 6,
+   "tag": null,
+   "topics": [
+    {
+     "title": "मध्यकाल कला-साहित्य-चित्रकला-संगीत | भक्ति-सूफी आंदोलन | 🆕 ब्रिटिश साम्राज्यवाद एवं प्रतिरोध",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": 60,
+   "block": 6,
+   "tag": null,
+   "topics": [
+    {
+     "title": "1857 का विद्रोह + राष्ट्रवाद | स्वतंत्रता संग्राम | 🆕 विभाजन + राष्ट्र निर्माण",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    },
+    {
+     "title": "📰 जुलाई-नवंबर Current Affairs",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R13",
+   "block": 6,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 13 — Indian History",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/india-art-culture-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "R14",
+   "block": 6,
+   "tag": "test",
+   "topics": [
+    {
+     "title": "🏆 TEST 14 — Current Affairs & Issues",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": "/current-affairs-quiz.html"
+    }
+   ]
+  },
+  {
+   "day": "F",
+   "block": 7,
+   "tag": "final",
+   "topics": [
+    {
+     "title": "🏆 Full Length Test 15 — RPSC Pattern (150 प्रश्न, 200 अंक, 3 घंटे)",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    },
+    {
+     "title": "🏆 Full Length Test 16 — RPSC Pattern",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    },
+    {
+     "title": "🏆 Full Length Test 17 — RPSC Pattern",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    },
+    {
+     "title": "🏆 Full Length Test 18 — RPSC Pattern",
+     "readUrls": [],
+     "videoUrl": null,
+     "quizUrl": null
+    }
+   ]
+  }
+ ]
+}
