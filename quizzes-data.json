@@ -81,14 +81,6 @@
         },
         {
           "icon": "🎯",
-          "title": "RAS Prelims Exam — 15 Q Mock",
-          "questions": 15,
-          "duration": "15m",
-          "date": "2026-08-04",
-          "url": "/quizzes/ras-prelims-exam-2026-08-04-qdk2.html"
-        },
-        {
-          "icon": "🎯",
           "title": "RAS Prelims — Full Paper (v3)",
           "questions": 150,
           "duration": "225m",
@@ -255,38 +247,6 @@
           "duration": "50m",
           "date": "2026-08-06",
           "url": "/quizzes/niEd-quiz-2026-08-06-ifo6.html"
-        },
-        {
-          "icon": "🗺️",
-          "title": "राजस्थान जनसंख्या",
-          "questions": 50,
-          "duration": "50m",
-          "date": "2026-08-06",
-          "url": "/quizzes/niEd-quiz-2026-08-06-lckq.html"
-        },
-        {
-          "icon": "🗺️",
-          "title": "राजस्थान आर्थिक विकास संस्थाएँ",
-          "questions": 44,
-          "duration": "44m",
-          "date": "2026-08-06",
-          "url": "/quizzes/niEd-quiz-2026-08-06-w6xy.html"
-        },
-        {
-          "icon": "🗺️",
-          "title": "राजस्थान कृषि संपदा",
-          "questions": 70,
-          "duration": "70m",
-          "date": "2026-08-06",
-          "url": "/quizzes/niEd-quiz-2026-08-06-wanj.html"
-        },
-        {
-          "icon": "🗺️",
-          "title": "राजस्थान सिचाई परियोजनाएँ",
-          "questions": 52,
-          "duration": "52m",
-          "date": "2026-08-06",
-          "url": "/quizzes/niEd-quiz-2026-08-06-y8x5.html"
         },
         {
           "icon": "🗺️",
@@ -515,22 +475,6 @@
           "duration": "40m",
           "date": "2026-08-04",
           "url": "/quizzes/cm-and-ministers-2026-08-04-prjn.html"
-        },
-        {
-          "icon": "🗳️",
-          "title": "CM and ministers",
-          "questions": 40,
-          "duration": "40m",
-          "date": "2026-08-04",
-          "url": "/quizzes/cm-and-ministers-2026-08-04-qgfz.html"
-        },
-        {
-          "icon": "🗳️",
-          "title": "CM and ministers",
-          "questions": 40,
-          "duration": "40m",
-          "date": "2026-08-04",
-          "url": "/quizzes/cm-and-ministers-2026-08-04-r2b6.html"
         },
         {
           "icon": "🗳️",
