@@ -621,6 +621,46 @@
       "icon": "🌍",
       "title": "विश्व भूगोल",
       "url": "/world-geography-quiz.html"
+    },
+    {
+      "icon": "💰",
+      "title": "राजस्थान अर्थव्यवस्था",
+      "url": "/rajasthan-economy-quiz.html"
+    },
+    {
+      "icon": "📜",
+      "title": "राजस्थान इतिहास",
+      "url": "/rajasthan-history-quiz.html"
+    },
+    {
+      "icon": "🎨",
+      "title": "राजस्थान कला संस्कृति",
+      "url": "/rajasthan-art-culture-quiz.html"
+    },
+    {
+      "icon": "⚖️",
+      "title": "राजस्थान राजनीति",
+      "url": "/rajasthan-polity-quiz.html"
+    },
+    {
+      "icon": "🖼️",
+      "title": "भारत कला संस्कृति",
+      "url": "/india-art-culture-quiz.html"
+    },
+    {
+      "icon": "➗",
+      "title": "गणित (Maths)",
+      "url": "/maths-quiz.html"
+    },
+    {
+      "icon": "🧩",
+      "title": "रीजनिंग (Reasoning)",
+      "url": "/reasoning-quiz.html"
+    },
+    {
+      "icon": "📰",
+      "title": "करंट अफेयर्स (Current Affairs)",
+      "url": "/current-affairs-quiz.html"
     }
   ]
 }
