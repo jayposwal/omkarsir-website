@@ -67,6 +67,8 @@ h1,h2,h3{font-family:'Poppins',sans-serif}
 .section-link{display:inline-block;font-size:12px;color:#fff;background:#FF6B00;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:8px;margin:2px 6px 2px 0}
 .section-link:hover{background:#e65f00}
 .section-soon-text{font-size:11.5px;color:#aaa;font-style:italic}
+.video-embed{position:relative;width:100%;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000;margin-bottom:8px}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .chk-row{display:flex;align-items:center;gap:8px;margin-top:8px}
 .chk{width:19px;height:19px;flex-shrink:0;cursor:pointer;accent-color:#FF6B00}
 .chk-label{font-size:11.5px;color:#666;cursor:pointer}
@@ -123,6 +125,18 @@ function resetProgress(){
 }
 function esc(s){ return String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
+function youtubeEmbedUrl(url){
+  if (!url) return null;
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{6,})/
+  ];
+  for (const re of patterns){
+    const m = url.match(re);
+    if (m) return `https://www.youtube.com/embed/${m[1]}`;
+  }
+  return null;
+}
+
 // Always show all 3 kinds of sections per topic (Video / Read / Quiz),
 // even if that particular topic has no link yet — shows "जल्द आएगा" instead.
 const SECTION_DEFS = [
@@ -164,8 +178,18 @@ function renderTopic(day, topic, tIdx, progress, unlocked){
       body = `<div class="section-soon-text">⏳ ${esc(s.label)} जल्द जोड़ा जाएगा</div>`;
     } else {
       const dis = unlocked ? '' : 'disabled';
-      const links = urls.map((u,i) => `<a class="section-link" href="${esc(u)}" target="_blank" rel="noopener">${urls.length>1?('भाग '+(i+1)+' खोलें →'):'खोलें →'}</a>`).join('');
-      body = `<div>${links}</div>
+      let mediaHtml = '';
+      if (s.key === 'video'){
+        mediaHtml = urls.map(u => {
+          const embed = youtubeEmbedUrl(u);
+          return embed
+            ? `<div class="video-embed"><iframe src="${esc(embed)}" title="Video Lecture" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+            : `<a class="section-link" href="${esc(u)}" target="_blank" rel="noopener">Video खोलें →</a>`;
+        }).join('');
+      } else {
+        mediaHtml = urls.map((u,i) => `<a class="section-link" href="${esc(u)}" target="_blank" rel="noopener">${urls.length>1?('भाग '+(i+1)+' खोलें →'):'खोलें →'}</a>`).join('');
+      }
+      body = `<div>${mediaHtml}</div>
         <div class="chk-row">
           <input type="checkbox" class="chk" id="${secId}" ${tp[s.key]?'checked':''} ${dis} data-day="${esc(dayKey)}" data-topic="${tIdx}" data-sec="${s.key}" onchange="onCheck(this)">
           <label class="chk-label" for="${secId}">मैंने यह पूरा कर लिया</label>
