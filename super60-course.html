@@ -52,15 +52,24 @@ h1,h2,h3{font-family:'Poppins',sans-serif}
 .topic{background:#FAFBFC;border:1px solid #EEF0F4;border-radius:12px;padding:12px 14px;margin-top:12px}
 .topic-title{font-weight:700;font-size:13px;margin-bottom:10px;line-height:1.5}
 .sections{display:flex;flex-direction:column;gap:8px}
-.section-row{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E8EAF0;border-radius:9px;padding:8px 10px}
-.section-row.na{opacity:.55}
+.section-box{background:#fff;border:1px solid #E8EAF0;border-radius:9px;overflow:hidden}
+.section-box.done{border-color:#4ADE80}
+.section-head{display:flex;align-items:center;gap:10px;padding:9px 10px;cursor:pointer;user-select:none}
 .section-icon{font-size:16px;width:22px;text-align:center;flex-shrink:0}
-.section-label{flex:1;font-size:12px;font-weight:600;color:#333}
-.section-link{font-size:11.5px;color:#FF6B00;font-weight:700;text-decoration:none;white-space:nowrap}
-.section-link:hover{text-decoration:underline}
-.section-soon{font-size:11px;color:#aaa;white-space:nowrap}
-.chk{width:20px;height:20px;flex-shrink:0;cursor:pointer;accent-color:#FF6B00}
-.chk:disabled{cursor:not-allowed}
+.section-label{flex:1;font-size:12px;font-weight:700;color:#333}
+.section-status{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;background:#F0F1F5;color:#999;flex-shrink:0}
+.section-box.done .section-status{background:#DCFCE7;color:#16A34A}
+.section-box.soon .section-status{background:#F5F6FA;color:#bbb}
+.section-caret{font-size:11px;color:#999;transition:transform .2s;flex-shrink:0}
+.section-box.open .section-caret{transform:rotate(180deg)}
+.section-body{display:none;padding:0 10px 12px;border-top:1px solid #F3F4F7}
+.section-box.open .section-body{display:block;padding-top:10px}
+.section-link{display:inline-block;font-size:12px;color:#fff;background:#FF6B00;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:8px;margin:2px 6px 2px 0}
+.section-link:hover{background:#e65f00}
+.section-soon-text{font-size:11.5px;color:#aaa;font-style:italic}
+.chk-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.chk{width:19px;height:19px;flex-shrink:0;cursor:pointer;accent-color:#FF6B00}
+.chk-label{font-size:11.5px;color:#666;cursor:pointer}
 .day-actions{max-width:900px;margin:6px auto 0;padding:0 6%;text-align:right}
 .reset-btn{background:none;border:1px solid #E8EAF0;color:#999;font-size:11.5px;padding:6px 12px;border-radius:16px;cursor:pointer}
 .reset-btn:hover{border-color:#EF4444;color:#EF4444}
@@ -114,44 +123,64 @@ function resetProgress(){
 }
 function esc(s){ return String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-function topicSections(topic){
-  const secs = [];
-  if (topic.readUrls && topic.readUrls.length) secs.push({key:'read', icon:'📖', label:'Read Notes', urls: topic.readUrls});
-  if (topic.videoUrl) secs.push({key:'video', icon:'🎥', label:'Video Lecture', urls:[topic.videoUrl]});
-  if (topic.quizUrl) secs.push({key:'quiz', icon:'🧠', label:'Quiz', urls:[topic.quizUrl]});
-  return secs;
+// Always show all 3 kinds of sections per topic (Video / Read / Quiz),
+// even if that particular topic has no link yet — shows "जल्द आएगा" instead.
+const SECTION_DEFS = [
+  {key:'video', icon:'🎥', label:'Video Lecture'},
+  {key:'read',  icon:'📖', label:'Read Notes'},
+  {key:'quiz',  icon:'🧠', label:'Quiz'},
+];
+
+function sectionUrls(topic, key){
+  if (key === 'read') return topic.readUrls || [];
+  if (key === 'video') return topic.videoUrl ? [topic.videoUrl] : [];
+  if (key === 'quiz') return topic.quizUrl ? [topic.quizUrl] : [];
+  return [];
 }
 
 function isTopicDone(progress, dayKey, tIdx, topic){
-  const secs = topicSections(topic);
-  if (!secs.length) return true; // nothing to do yet = auto satisfied
+  const applicable = SECTION_DEFS.filter(s => sectionUrls(topic, s.key).length);
+  if (!applicable.length) return true; // nothing to do yet = auto satisfied
   const tp = progress?.[dayKey]?.[tIdx] || {};
-  return secs.every(s => tp[s.key]);
+  return applicable.every(s => tp[s.key]);
 }
 function isDayDone(progress, day){
   return day.topics.every((t, i) => isTopicDone(progress, String(day.day), i, t));
 }
 
 function renderTopic(day, topic, tIdx, progress, unlocked){
-  const secs = topicSections(topic);
   const dayKey = String(day.day);
   const tp = progress?.[dayKey]?.[tIdx] || {};
-  let secHtml = '';
-  if (!secs.length){
-    secHtml = `<div class="section-row na"><span class="section-icon">⏳</span><span class="section-label">Video / Notes / Quiz जल्द जोड़े जाएंगे</span></div>`;
-  } else {
-    secHtml = secs.map(s => {
-      const checked = tp[s.key] ? 'checked' : '';
+  const secHtml = SECTION_DEFS.map(s => {
+    const urls = sectionUrls(topic, s.key);
+    const has = urls.length > 0;
+    const done = has && tp[s.key];
+    const boxCls = ['section-box'];
+    if (done) boxCls.push('done');
+    if (!has) boxCls.push('soon');
+    const secId = `sec-${esc(dayKey)}-${tIdx}-${s.key}`;
+    let body;
+    if (!has){
+      body = `<div class="section-soon-text">⏳ ${esc(s.label)} जल्द जोड़ा जाएगा</div>`;
+    } else {
       const dis = unlocked ? '' : 'disabled';
-      const linkHtml = s.urls.map((u,i) => `<a class="section-link" href="${esc(u)}" target="_blank" rel="noopener">${s.urls.length>1?('भाग '+(i+1)+' →'):'खोलें →'}</a>`).join(' ');
-      return `<div class="section-row">
+      const links = urls.map((u,i) => `<a class="section-link" href="${esc(u)}" target="_blank" rel="noopener">${urls.length>1?('भाग '+(i+1)+' खोलें →'):'खोलें →'}</a>`).join('');
+      body = `<div>${links}</div>
+        <div class="chk-row">
+          <input type="checkbox" class="chk" id="${secId}" ${tp[s.key]?'checked':''} ${dis} data-day="${esc(dayKey)}" data-topic="${tIdx}" data-sec="${s.key}" onchange="onCheck(this)">
+          <label class="chk-label" for="${secId}">मैंने यह पूरा कर लिया</label>
+        </div>`;
+    }
+    return `<div class="${boxCls.join(' ')}">
+      <div class="section-head" onclick="this.closest('.section-box').classList.toggle('open')">
         <span class="section-icon">${s.icon}</span>
         <span class="section-label">${esc(s.label)}</span>
-        ${linkHtml}
-        <input type="checkbox" class="chk" ${checked} ${dis} data-day="${esc(dayKey)}" data-topic="${tIdx}" data-sec="${s.key}" onchange="onCheck(this)">
-      </div>`;
-    }).join('');
-  }
+        <span class="section-status">${done?'✅ पूरा':has?'बाकी':'जल्द आएगा'}</span>
+        <span class="section-caret">⌄</span>
+      </div>
+      <div class="section-body">${body}</div>
+    </div>`;
+  }).join('');
   return `<div class="topic"><div class="topic-title">${esc(topic.title)}</div><div class="sections">${secHtml}</div></div>`;
 }
 
