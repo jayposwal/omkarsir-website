@@ -7,64 +7,32 @@
       "description": "इतिहास, अर्थव्यवस्था, समाजशास्त्र-प्रबंधन-लेखांकन (200 अंक, 3 घंटे)",
       "tests": [
         {
-          "title": "RAS Mains Practice Test — Answer Key Sheet",
-          "type": "Answer Key Sheet",
+          "id": "niEd-mains-2026-08-10-1iin",
+          "title": "RAS Mains Practice Test",
+          "subject": "",
+          "chapter": "लीगेसी टेस्ट (पुराना, विवरण उपलब्ध नहीं)",
           "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-erak-answer-key.html"
+          "files": {
+            "key": "/quizzes/niEd-mains-2026-08-10-1iin-answer-key.html",
+            "modelBi": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-model-answer.html",
+            "modelHi": "/quizzes/niEd-mains-2026-08-10-1iin-model-answer-hi.html",
+            "workbookBi": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-workbook.html",
+            "workbookHi": "/quizzes/niEd-mains-2026-08-10-1iin-workbook-hi.html"
+          }
         },
         {
-          "title": "RAS Mains Practice Test — Bilingual Model Answer",
-          "type": "Bilingual Model Answer",
+          "id": "niEd-mains-2026-08-10-erak",
+          "title": "RAS Mains Practice Test",
+          "subject": "",
+          "chapter": "लीगेसी टेस्ट (पुराना, विवरण उपलब्ध नहीं)",
           "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-erak-bilingual-model-answer.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Model Answer (Hindi)",
-          "type": "Model Answer (Hindi)",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-erak-model-answer-hi.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Bilingual Workbook",
-          "type": "Bilingual Workbook",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-erak-bilingual-workbook.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Workbook (Hindi)",
-          "type": "Workbook (Hindi)",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-erak-workbook-hi.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Answer Key Sheet",
-          "type": "Answer Key Sheet",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-1iin-answer-key.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Bilingual Model Answer",
-          "type": "Bilingual Model Answer",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-model-answer.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Model Answer (Hindi)",
-          "type": "Model Answer (Hindi)",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-1iin-model-answer-hi.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Bilingual Workbook",
-          "type": "Bilingual Workbook",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-workbook.html"
-        },
-        {
-          "title": "RAS Mains Practice Test — Workbook (Hindi)",
-          "type": "Workbook (Hindi)",
-          "date": "2026-08-10",
-          "url": "/quizzes/niEd-mains-2026-08-10-1iin-workbook-hi.html"
+          "files": {
+            "key": "/quizzes/niEd-mains-2026-08-10-erak-answer-key.html",
+            "modelBi": "/quizzes/niEd-mains-2026-08-10-erak-bilingual-model-answer.html",
+            "modelHi": "/quizzes/niEd-mains-2026-08-10-erak-model-answer-hi.html",
+            "workbookBi": "/quizzes/niEd-mains-2026-08-10-erak-bilingual-workbook.html",
+            "workbookHi": "/quizzes/niEd-mains-2026-08-10-erak-workbook-hi.html"
+          }
         }
       ]
     },
