@@ -7,6 +7,24 @@
       "description": "इतिहास, अर्थव्यवस्था, समाजशास्त्र-प्रबंधन-लेखांकन (200 अंक, 3 घंटे)",
       "tests": [
         {
+          "id": "niEd-mains-2026-08-11-u7mg",
+          "title": "RAS Mains Practice Test",
+          "subject": "समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण",
+          "chapter": "खण्ड अ: समाजशास्त्र",
+          "date": "2026-08-11",
+          "totalQuestions": 8,
+          "totalMarks": 40,
+          "files": {
+            "read": "/quizzes/niEd-mains-2026-08-11-u7mg-read.html",
+            "workbookHi": "/quizzes/niEd-mains-2026-08-11-u7mg-workbook-hi.html",
+            "workbookBi": "/quizzes/niEd-mains-2026-08-11-u7mg-bilingual-workbook.html",
+            "modelHi": "/quizzes/niEd-mains-2026-08-11-u7mg-model-answer-hi.html",
+            "modelBi": "/quizzes/niEd-mains-2026-08-11-u7mg-bilingual-model-answer.html",
+            "key": "/quizzes/niEd-mains-2026-08-11-u7mg-answer-key.html",
+            "fullSetBi": "/quizzes/niEd-mains-2026-08-11-u7mg-bilingual-full-set.html"
+          }
+        },
+        {
           "id": "niEd-mains-2026-08-10-1iin",
           "title": "RAS Mains Practice Test",
           "subject": "",
