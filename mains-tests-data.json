@@ -5,7 +5,38 @@
       "icon": "📘",
       "name": "Paper I — सामान्य अध्ययन-I",
       "description": "इतिहास, अर्थव्यवस्था, समाजशास्त्र-प्रबंधन-लेखांकन (200 अंक, 3 घंटे)",
-      "tests": []
+      "tests": [
+        {
+          "title": "RAS Mains Practice Test — Answer Key Sheet",
+          "type": "Answer Key Sheet",
+          "date": "2026-08-10",
+          "url": "/quizzes/niEd-mains-2026-08-10-1iin-answer-key.html"
+        },
+        {
+          "title": "RAS Mains Practice Test — Bilingual Model Answer",
+          "type": "Bilingual Model Answer",
+          "date": "2026-08-10",
+          "url": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-model-answer.html"
+        },
+        {
+          "title": "RAS Mains Practice Test — Model Answer (Hindi)",
+          "type": "Model Answer (Hindi)",
+          "date": "2026-08-10",
+          "url": "/quizzes/niEd-mains-2026-08-10-1iin-model-answer-hi.html"
+        },
+        {
+          "title": "RAS Mains Practice Test — Bilingual Workbook",
+          "type": "Bilingual Workbook",
+          "date": "2026-08-10",
+          "url": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-workbook.html"
+        },
+        {
+          "title": "RAS Mains Practice Test — Workbook (Hindi)",
+          "type": "Workbook (Hindi)",
+          "date": "2026-08-10",
+          "url": "/quizzes/niEd-mains-2026-08-10-1iin-workbook-hi.html"
+        }
+      ]
     },
     {
       "id": "paper-2",
