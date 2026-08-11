@@ -7,6 +7,24 @@
       "description": "इतिहास, अर्थव्यवस्था, समाजशास्त्र-प्रबंधन-लेखांकन (200 अंक, 3 घंटे)",
       "tests": [
         {
+          "id": "niEd-mains-2026-08-11-dim4",
+          "title": "World history— प्रबोधन काल (Enlightenment)",
+          "subject": "आधुनिक विश्व का इतिहास (1991 ईस्वी तक)",
+          "chapter": "पुनर्जागरण व धर्म सुधार",
+          "date": "2026-08-11",
+          "totalQuestions": 15,
+          "totalMarks": 100,
+          "files": {
+            "read": "/quizzes/niEd-mains-2026-08-11-dim4-read.html",
+            "workbookHi": "/quizzes/niEd-mains-2026-08-11-dim4-workbook-hi.html",
+            "workbookBi": "/quizzes/niEd-mains-2026-08-11-dim4-bilingual-workbook.html",
+            "modelHi": "/quizzes/niEd-mains-2026-08-11-dim4-model-answer-hi.html",
+            "modelBi": "/quizzes/niEd-mains-2026-08-11-dim4-bilingual-model-answer.html",
+            "key": "/quizzes/niEd-mains-2026-08-11-dim4-answer-key.html",
+            "fullSetBi": "/quizzes/niEd-mains-2026-08-11-dim4-bilingual-full-set.html"
+          }
+        },
+        {
           "id": "niEd-mains-2026-08-11-c394",
           "title": " प्रबोधन काल (Enlightenment)",
           "subject": "आधुनिक विश्व का इतिहास (1991 ईस्वी तक)",
