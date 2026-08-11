@@ -27,20 +27,39 @@ body{background:#F5F7FB;font-family:'Noto Sans Devanagari','Segoe UI',sans-serif
 .hb-cred{display:inline-block;background:rgba(255,107,0,.1);border:1px solid #FF6B00;color:#c2410c;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:10px;}
 .hb-badges span{display:inline-block;font-size:11px;font-weight:700;color:#1B2A6B;background:#fff;border:1px solid #dbe3f5;padding:4px 10px;border-radius:20px;margin:2px;}
 .hb-note{font-size:12px;color:#6b7280;margin-top:10px;}
-.hb-paper{margin-top:30px;}
-.hb-phead{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #FF6B00;padding-bottom:8px;margin-bottom:6px;}
-.hb-ptitle{font-size:18px;font-weight:800;color:#1B2A6B;display:flex;align-items:center;gap:8px;}
-.hb-pcount{background:#1B2A6B;color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;}
-.hb-pdesc{font-size:12.5px;color:#6b7280;margin-bottom:14px;}
-.hb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
-.hb-card{background:#fff;border:1px solid #e2e8f5;border-radius:10px;padding:14px 16px;text-decoration:none;color:#1a1a2e;display:block;transition:.2s;box-shadow:0 1px 3px rgba(27,42,107,.05);}
-.hb-card:hover{border-color:#FF6B00;box-shadow:0 4px 14px rgba(255,107,0,.15);transform:translateY(-1px);}
-.hb-csubj{font-size:14px;font-weight:800;color:#1B2A6B;margin-bottom:3px;}
-.hb-cchap{font-size:12px;color:#374151;margin-bottom:8px;line-height:1.5;}
-.hb-cmeta{display:flex;gap:6px;flex-wrap:wrap;font-size:10px;}
-.hb-cmeta span{background:#f1f5ff;color:#475569;padding:2px 8px;border-radius:10px;}
-.hb-cta-read{margin-top:10px;font-size:12px;font-weight:700;color:#FF6B00;}
-.hb-empty{grid-column:1/-1;text-align:center;color:#94a3b8;font-size:12.5px;padding:20px;background:#fff;border:1px dashed #dbe3f5;border-radius:10px;}
+.hb-pdesc{font-size:12.5px;color:#6b7280;margin:10px 0 14px;}
+/* v19: 🆙 3-level Collapsible Accordion — Paper → Subject → Chapter,
+   पूरे official RAS_SYLLABUS से (सिर्फ़ published tests से नहीं) — इसलिए
+   पूरा syllabus tree हमेशा दिखता है, चाहे उस chapter का test अभी बना हो
+   या नहीं ("जल्द आएगा" badge के साथ)। */
+.hb-acc-paper{margin-top:16px;background:#fff;border:1px solid #e2e8f5;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(27,42,107,.05);}
+.hb-acc-phead{display:flex;align-items:center;gap:10px;cursor:pointer;padding:14px 16px;background:#f6f8fd;user-select:none;}
+.hb-acc-phead:hover{background:#eef2fc;}
+.hb-acc-ptitle{font-size:16px;font-weight:800;color:#1B2A6B;flex:1;}
+.hb-arrow{font-size:13px;color:#FF6B00;flex-shrink:0;transition:transform .15s;display:inline-block;width:14px;}
+.hb-acc-phead.open .hb-arrow{transform:rotate(90deg);}
+.hb-pcount{background:#1B2A6B;color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;flex-shrink:0;}
+.hb-acc-pbody{padding:4px 16px 14px;}
+.hb-acc-sub{border-top:1px solid #eef1f9;}
+.hb-acc-sub:first-child{border-top:none;}
+.hb-acc-shead{display:flex;align-items:center;gap:8px;cursor:pointer;padding:10px 6px;user-select:none;}
+.hb-acc-shead:hover .hb-acc-slabel{color:#FF6B00;}
+.hb-acc-shead .hb-arrow{color:#1B2A6B;width:12px;font-size:11px;}
+.hb-acc-shead.open .hb-arrow{transform:rotate(90deg);}
+.hb-acc-slabel{font-size:13.5px;font-weight:700;color:#1B2A6B;flex:1;}
+.hb-acc-scount{background:#f1f5ff;color:#475569;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;flex-shrink:0;}
+.hb-acc-sbody{padding:0 0 8px 20px;}
+.hb-chap-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:8px;margin-bottom:6px;font-size:12.5px;text-decoration:none;}
+.hb-chap-txt{color:#1a1a2e;line-height:1.5;}
+.hb-chap-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex-shrink:0;font-size:10px;}
+.hb-chap-meta span{background:#f1f5ff;color:#475569;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.hb-chap-live{background:#fff;border:1px solid #e2e8f5;transition:.2s;}
+.hb-chap-live:hover{border-color:#FF6B00;box-shadow:0 3px 10px rgba(255,107,0,.15);}
+.hb-chap-cta{background:#FF6B00 !important;color:#fff !important;font-weight:700;}
+.hb-chap-soon{background:#fafbfd;border:1px dashed #dbe3f5;}
+.hb-chap-soon .hb-chap-txt{color:#9ca3af;}
+.hb-chap-badge{background:#f3f4f6 !important;color:#9ca3af !important;}
+@media(max-width:600px){.hb-acc-ptitle{font-size:14px}.hb-chap-row{flex-direction:column;align-items:flex-start;}}
 .hb-links{text-align:center;margin-top:36px;font-size:13px;}
 .hb-links a{color:#1B2A6B;font-weight:700;text-decoration:none;margin:0 8px;}
 .hb-cta{background:linear-gradient(135deg,#1B2A6B,#253590);color:#fff;text-align:center;border-radius:14px;padding:30px 20px;margin-top:36px;}
@@ -50,7 +69,7 @@ body{background:#F5F7FB;font-family:'Noto Sans Devanagari','Segoe UI',sans-serif
 .hb-footer{text-align:center;padding:30px 16px;font-size:12px;color:#6b7280;}
 .hb-footer b{color:#1a1a2e;}
 .hb-footer .links a{color:#FF6B00;text-decoration:none;font-weight:700;margin:0 6px;}
-@media(max-width:600px){.hb-hero h1{font-size:19px}.hb-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.hb-hero h1{font-size:19px}}
 </style>
 </head>
 <body>
@@ -90,33 +109,116 @@ body{background:#F5F7FB;font-family:'Noto Sans Devanagari','Segoe UI',sans-serif
 </div>
 
 <script>
+// v19: 🆙 UPGRADE — पहले (v15) सिर्फ़ उन्हीं Subject/Chapter के groups बनते थे
+// जिनका कोई test पहले से publish हो चुका हो (flat data-driven listing) —
+// इसलिए पूरा RAS Mains syllabus कभी नज़र नहीं आता था, सिर्फ़ जितना content
+// बना उतना ही दिखता था। FIX: अब पूरा official RAS_SYLLABUS यहीं page के
+// अंदर embed है (टूल के RAS_SYLLABUS से बिल्कुल वही data) — इसलिए सभी 4
+// Paper → उनके सभी Subject (खण्ड-स्तर पर) → उनके सभी Chapter हमेशा दिखते
+// हैं, चाहे उस Chapter का test अभी बना हो या नहीं। जिस Chapter का test
+// publish हो चुका है उस पर "📖 पढ़ें" clickable card बनता है, बाकी सब पर
+// dimmed "जल्द आएगा" badge। पूरा accordion collapse/expand arrows के साथ
+// (▸ Paper → ▸ Subject → Chapter list) — शुरुआत में सब collapsed रहता है।
+var RAS_SYLLABUS_WEB = [{"paper":"Paper-I","unit":"Unit-I: इतिहास","khand":"खण्ड अ: राजस्थान का इतिहास, कला, संस्कृति, साहित्य, परम्परा और धरोहर","topics":["प्रागैतिहासिक संस्कृति, विभिन्न ऐतिहासिक स्थल एवं उनका महत्व — राजस्थान के विभिन्न शासकों की राजनैतिक एवं सांस्कृतिक उपलब्धियां (18वीं शताब्दी तक)","राजस्व एवं प्रशासनिक व्यवस्था एवं बदलता स्वरूप","19वीं एवं 20वीं शताब्दी — 1857 का विद्रोह, कृषक एवं जनजातीय आंदोलन, राजनैतिक जागरण, जन आंदोलन एवं राजस्थान का एकीकरण","कला एवं संस्कृति — प्रदर्शन एवं ललित कला, हस्तशिल्प, स्थापत्य एवं स्मारक, लोक संगीत, लोक नृत्य, लोक कलाएं एवं लोक आख्यान","मेले एवं त्योहार","जनजातियां एवं उनकी परम्पराएं","विरासत — राजस्थान की प्रमुख ऐतिहासिक धरोहर एवं प्रमुख पर्यटन स्थल","राजस्थानी भाषा एवं प्रमुख साहित्यिक कृतियाँ","धार्मिक मान्यताएं, संत एवं लोक देवी-देवता"]},{"paper":"Paper-I","unit":"Unit-I: इतिहास","khand":"खण्ड ब: भारतीय इतिहास एवं संस्कृति","topics":["भारतीय धरोहर — सिन्धु सभ्यता से ब्रिटिश काल तक की भारत की ललित कलाएं, प्रदर्शन कलाएं, वास्तुकला एवं साहित्य","प्राचीन एवं मध्यकालीन भारत के धार्मिक आन्दोलन और दर्शन","ब्रिटिश नीतियां एवं उनके प्रभाव — देश का राजनैतिक, आर्थिक एवं प्रशासनिक एकीकरण","भारतीय राष्ट्रीय आन्दोलन — इसके विभिन्न चरण व धाराएँ, प्रमुख योगदानकर्ता","19वीं तथा 20वीं शताब्दी में सामाजिक-धार्मिक सुधार आन्दोलन एवं बौद्धिक जागरण","स्वातंत्र्योत्तर भारत — देशी रियासतों का विलय तथा राज्यों का भाषायी आधार पर पुनर्गठन, विज्ञान एवं तकनीक का विकास, महिला सशक्तिकरण एवं महिला सुधार आंदोलन"]},{"paper":"Paper-I","unit":"Unit-I: इतिहास","khand":"खण्ड स: आधुनिक विश्व का इतिहास (1991 ईस्वी तक)","topics":["पुनर्जागरण व धर्म सुधार","अमेरिकी स्वतंत्रता संग्राम, फ्रांसीसी क्रांति, औद्योगिक क्रांति एवं रूसी क्रांति","जर्मनी में नाजीवाद एवं इटली में फासीवाद","विश्व युद्धों का प्रभाव","शीत युद्ध के दौरान विश्व"]},{"paper":"Paper-I","unit":"Unit-II: अर्थव्यवस्था","khand":"खण्ड अ: भारत की अर्थव्यवस्था","topics":["आर्थिक संवृद्धि और विकास — अवधारणा और माप, आय दृष्टिकोण, मानव विकास सूचकांक और अन्य सूचकांक, जलवायु परिवर्तन और पर्यावरणीय क्षरण","कृषि — उत्पादकता और प्रगति, भूमि सुधार, कृषि वित्त तथा विपणन, खाद्य सुरक्षा, खाद्य प्रसंस्करण, मुख्य नीतिगत पहल","औद्योगिक नीति और सुधार — वैश्वीकरण, उदारीकरण और निजीकरण, औद्योगिक वित्त, सूक्ष्म-लघु-मध्यम उपक्रम","सेवा क्षेत्र और आधारभूत संरचना — ऊर्जा, परिवहन और संचार","अन्तर्राष्ट्रीय व्यापार और भुगतान संतुलन, विदेशी सहायता और निवेश","सार्वजनिक वित्त संघीय बजट — आय-व्यय के स्रोत, बजट घाटा, सार्वजनिक ऋण, राजकोषीय नीति, केन्द्र-राज्य वित्तीय सम्बन्ध और वित्त आयोग","भारतीय रिजर्व बैंक और मौद्रिक प्रबंधन, बैंकिंग व वित्तीय क्षेत्र के सुधार","सामाजिक क्षेत्र — शिक्षा और स्वास्थ्य, गरीबी और बेरोजगारी, रोजगार योग्यता व कल्याण योजनाएं"]},{"paper":"Paper-I","unit":"Unit-II: अर्थव्यवस्था","khand":"खण्ड ब: वैश्विक अर्थव्यवस्था","topics":["वैश्विक आर्थिक मुद्दे — विश्व व्यापार संगठन, विश्व बैंक और अन्तर्राष्ट्रीय मुद्रा कोष की भूमिका"]},{"paper":"Paper-I","unit":"Unit-II: अर्थव्यवस्था","khand":"खण्ड स: राजस्थान की अर्थव्यवस्था","topics":["राजस्थान के आर्थिक संवृद्धि संकेतक — राज्य घरेलू उत्पाद, प्रति व्यक्ति आय, समावेशी संवृद्धि, विकसित राजस्थान 2047, हरित संवृद्धि व संधारणीयता","राज्य बजट — राजकोषीय प्रबंधन और बजट घाटा","कृषि विकास — उत्पादन-उत्पादकता, जल संसाधन व सिंचाई, पशुपालन, कृषि विपणन, कृषक कल्याण योजनाएं","ग्रामीण विकास और ग्रामीण आधारभूत संरचना, पंचायतीराज संस्थाएं और राज्य वित्त आयोग","औद्योगिक विकास संस्थागत तन्त्र, निवेश प्रोत्साहन नीति, सूक्ष्म-लघु-मध्यम उपक्रम, पेट्रोलियम व तेल संसाधन","आधारभूत संरचना का विकास — ऊर्जा और परिवहन, PPP परियोजनाएं, बाहरी सहायता प्राप्त राज्य परियोजनाएं","मानव संसाधन विकास — स्वास्थ्य और शिक्षा, बेरोजगारी-गरीबी, रोजगार सृजन योजनाएं","सुशासन और सार्वजनिक सेवाओं हेतु डिजीटल रुपान्तरण","अनुसूचित जाति/जनजाति/पिछड़ा वर्ग/अल्पसंख्यक/दिव्यांगजन/निराश्रित/महिला/बाल/वृद्धजन कल्याण की मुख्य योजनाएं"]},{"paper":"Paper-I","unit":"Unit-III: समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण","khand":"खण्ड अ: समाजशास्त्र","topics":["जाति एवं वर्ग की अवधारणा, भारतीय समाज में जाति-वर्ग के बदलते आयाम","समकालीन भारतीय समाज व संस्कृति में परिवर्तन — धर्मनिरपेक्षीकरण, शहरीकरण, आधुनिकीकरण, वैश्वीकरण","भारतीय सामाजिक व्यवस्था — कर्म का सिद्धान्त, धर्म, पुरुषार्थ और आश्रम व्यवस्था","परिवार एवं विवाह, वृद्धजन-दिव्यांगजन मुद्दे, साइबर अपराध व सोशल मीडिया का प्रभाव","भारतीय समाज की चुनौतियाँ — दहेज, तलाक, भ्रष्टाचार, गरीबी, वेश्यावृत्ति, बेरोजगारी, नशाखोरी","कमजोर वर्गों की समस्याएं (मुख्यतः राजस्थान) — महिलाएँ, सीमांत समूह, दलित, अनुसूचित जाति/जनजाति व कल्याणकारी योजनाएँ"]},{"paper":"Paper-I","unit":"Unit-III: समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण","khand":"खण्ड ब: प्रबंधन","topics":["सामान्य प्रबन्ध — प्रबन्धकीय अवधारणा-कौशल-स्तर, प्रबन्ध के कार्य, MBO, निर्णय प्रक्रिया तकनीक व मॉडल","संगठनात्मक व्यवहार — प्रकृति-क्षेत्र, अनुभूति, अभिप्रेरणा, समूह गत्यात्मकता व दल निर्माण, संगठनात्मक जलवायु-संस्कृति","विपणन प्रबंध — अवधारणा-क्षेत्र, विपणन मिश्रण (उत्पाद, कीमत, संवर्धन, वितरण, सेवा, डिजिटल विपणन)","मानव संसाधन प्रबंध — नियोजन, भर्ती, चयन, पदस्थापन, प्रशिक्षण, निष्पादन मूल्यांकन, आधुनिक प्रवृत्तियां","रणनीति प्रबंधन — संकल्पना-क्षेत्र, SWOT विश्लेषण, रणनीति निरूपण-क्रियान्वयन-नियन्त्रण-मूल्यांकन"]},{"paper":"Paper-I","unit":"Unit-III: समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण","khand":"खण्ड स: लेखांकन एवं अंकेक्षण","topics":["लेखांकन का सैद्धान्तिक आधार — GAAPs एवं आधारभूत लेखांकन अवधारणाएँ","लेखांकन मानकों का आधारभूत ज्ञान","कम्पनी के वित्तीय विवरण, विश्लेषण तकनीकें, रोकड़ प्रवाह विवरण, सामाजिक व उत्तरदायित्व लेखांकन","कम्प्यूटरीकृत लेखांकन — विशेषताएँ एवं सॉफ्टवेयर पैकेज","वस्तु एवं सेवा कर (GST) का आधारभूत ज्ञान","अंकेक्षण का अर्थ-उद्देश्य-कार्यक्रम, सामाजिक/निष्पादन/दक्षता अंकेक्षण, सरकारी अंकेक्षण का प्रारंभिक ज्ञान"]},{"paper":"Paper-II","unit":"Unit-I: प्रशासकीय नीतिशास्त्र","khand":"","topics":["नीतिशास्त्र एवं मानवीय मूल्य — महापुरुषों, समाज सुधारकों व प्रशासकों के जीवन से शिक्षा, परिवार-सामाजिक-शैक्षणिक संस्थाओं का योगदान","नैतिक संप्रत्यय — ऋत एवं ऋण, कर्मवाद से प्रेरणा, कर्तव्य की अवधारणा, शुभ एवं सद्गुण","निजी-सार्वजनिक संबंधों में नीतिशास्त्र की भूमिका, सत्यनिष्ठा-निष्पक्षता-असंलिप्तता, उदार समाज: पारदर्शिता-मीडिया-नौकरशाही","भगवद् गीता का नीतिशास्त्र एवं प्रशासन में भूमिका","गांधी का नीतिशास्त्र","भारतीय एवं विश्व के नैतिक चिंतकों एवं दार्शनिकों का योगदान","प्रशासन में नैतिक चिन्ता-द्वन्द-चुनौतियां, प्रशासनिक निर्णय में कृत्रिम बौद्धिकता बनाम अंतर्विवेक","नैतिक निर्णय-प्रक्रिया — सामाजिक न्याय, मानवीय चिन्ता, जवाबदेही, उपकरण परक बनाम मूल्य परक बौद्धिकता","उपरोक्त विषयों पर आधारित अ-तथ्यपरक केस अध्ययन (Case Studies)"]},{"paper":"Paper-II","unit":"Unit-II: सामान्य विज्ञान एवं प्रौद्योगिकी","khand":"","topics":["दैनिक जीवन में रसायन विज्ञान — परमाणु संरचना, धातु-अधातु-उपधातु, अम्ल-क्षार-लवण, pH व बफर, औषधियां, कार्बन यौगिक, ईंधन, रेडियोधर्मिता, हरित रसायन","दैनिक जीवन में भौतिकी — गति-कार्य-शक्ति-ऊर्जा, गुरुत्वाकर्षण, प्रकाश, ऊष्मा, वैद्युतिकी-चुंबकत्व, ध्वनि, चिकित्सीय अनुप्रयोग, नाभिकीय विखंडन-संलयन, विकिरण सुरक्षा","कोशिका, पादप भाग-पोषण-प्रजनन, मानव शरीर क्रिया विज्ञान (पाचन-श्वसन-परिसंचरण-उत्सर्जन-प्रजनन-तंत्रिका तंत्र), प्रतिरक्षा, रोग, जैवप्रौद्योगिकी, GMOs, टीके, CRISPR, mRNA तकनीक","आधारभूत कंप्यूटर विज्ञान, नेटवर्किंग, दूरसंचार, AI/ML, बिग डेटा, क्लाउड कंप्यूटिंग, IoT, ब्लॉकचैन, वर्चुअल/ऑगमेंटेड रिएलिटी, OTT-सोशल मीडिया","भारतीय वैज्ञानिकों का योगदान, वैज्ञानिक संस्थान, रोबोटिक्स-नैनो-क्वांटम कंप्यूटिंग, डिजीटल इंडिया, साइबर सुरक्षा-डेटा गोपनीयता","अंतरिक्ष एवं रक्षा प्रौद्योगिकी — भारतीय अंतरिक्ष कार्यक्रम, उपग्रह, रिमोट सेंसिंग, मिसाइल कार्यक्रम, ड्रोन तकनीक, रासायनिक-जैविक हथियार"]},{"paper":"Paper-II","unit":"Unit-III: पृथ्वी विज्ञान (भूगोल एवं भू-विज्ञान)","khand":"खण्ड अ: विश्व","topics":["पृथ्वी की आन्तरिक संरचना एवं भूवैज्ञानिक समय सारिणी","प्रमुख भौतिक भू-आकृतियाँ — पर्वत, पठार, मैदान, मरुस्थल: प्रकार तथा वितरण","भूकंप एवं ज्वालामुखी — प्रकार, वितरण एवं प्रभाव","जलवायु — सूर्याभिताप, वायुमंडलीय परिसंचरण, आर्द्रता तथा वर्षण","प्रमुख पर्यावरण संबंधी मुद्दे"]},{"paper":"Paper-II","unit":"Unit-III: पृथ्वी विज्ञान (भूगोल एवं भू-विज्ञान)","khand":"खण्ड ब: भारत","topics":["भारत का भू-आकृतिक विभाजन","अपवाह प्रतिरूप तथा प्रमुख नदियाँ","जलवायु — मानसून, जलवायु विशेषताएं, वर्षा का वितरण एवं जलवायु प्रदेश","प्राकृतिक संसाधन — जल, प्राकृतिक वनस्पति, मृदा, खनिज तथा ऊर्जा संसाधन","जनसंख्या — वृद्धि, वितरण, घनत्व, लिंगानुपात, साक्षरता, नगरीय एवं ग्रामीण जनसंख्या"]},{"paper":"Paper-II","unit":"Unit-III: पृथ्वी विज्ञान (भूगोल एवं भू-विज्ञान)","khand":"खण्ड स: राजस्थान","topics":["भौतिक विभाग","प्रमुख नदियाँ एवं झीलें","जलवायु विशेषताएं एवं वर्गीकरण","प्राकृतिक वनस्पति, वन्यजीव तथा जैव विविधता","मृदा संसाधन","कृषि — प्रमुख फसलें: उत्पादन व वितरण","खनिज संसाधन — प्रकार, वितरण, औद्योगिक उपयोग","जनसांख्यिकी विशेषताएं","जनजातियाँ","यूनेस्को की भू-पार्क एवं भू-धरोहर स्थल संकल्पना — राजस्थान में संभावनाएं","पर्यटन"]},{"paper":"Paper-III","unit":"Unit-I: भारतीय राजव्यवस्था, शासन, भारत एवं अंतर्राष्ट्रीय मामले और समसामयिक मामले","khand":"भारतीय संविधान की उत्पत्ति, संरचना और प्रमुख सिद्धांत","topics":["संविधान सभा, प्रभाव स्रोत, दार्शनिक आधार, मौलिक अधिकार, राज्य नीति निदेशक तत्व, मौलिक कर्तव्य","आधारभूत लक्षण सिद्धांत, संशोधन प्रक्रिया, प्रमुख संवैधानिक परिवर्तन","नवीन संवैधानिक विकास एवं न्यायिक निर्णय, संवैधानिक नैतिकता, रूपांतरकारी संवैधानिकता"]},{"paper":"Paper-III","unit":"Unit-I: भारतीय राजव्यवस्था, शासन, भारत एवं अंतर्राष्ट्रीय मामले और समसामयिक मामले","khand":"संस्थागत रूपरेखा एवं शासन तंत्र","topics":["राष्ट्रपति, उपराष्ट्रपति, प्रधानमंत्री, मंत्रिपरिषद और संसद","भारत में संघवाद की उभरती प्रवृत्तियाँ","उच्चतम/उच्च न्यायालय, न्यायिक पुनर्विलोकन, न्यायिक सक्रियता, आभासी न्यायालय, ई-कोर्ट्स-ई-समिति"]},{"paper":"Paper-III","unit":"Unit-I: भारतीय राजव्यवस्था, शासन, भारत एवं अंतर्राष्ट्रीय मामले और समसामयिक मामले","khand":"भारतीय राजनीति की गत्यात्मकता","topics":["दलीय प्रणाली के विकास से समकालीन बदलाव, उभरता क्षेत्रवाद, गठबंधन पुनर्संयोजन","पहचान-आधारित से मुद्दा केन्द्रित-समावेशी राजनीति, लैंगिक भागीदारी, AI-सक्षम राजनीतिक लामबंदी","मतदान व्यवहार, निर्वाचन सुधार, निर्वाचन प्रक्रिया की कार्यप्रणाली","भारतीय राजनीति में विकसित समकालीन प्रतिमान","आंतरिक सुरक्षा — खतरे, सुरक्षा बलों-एजेंसियों की भूमिका, आंतरिक सुरक्षा प्रबंधन की चुनौतियाँ"]},{"paper":"Paper-III","unit":"Unit-I: भारतीय राजव्यवस्था, शासन, भारत एवं अंतर्राष्ट्रीय मामले और समसामयिक मामले","khand":"राजस्थान में राज्य राजनीति और शासन","topics":["राजनीतिक सहभागिता के प्रतिमान, नेतृत्व एवं मतदान व्यवहार","राज्य में राजनीतिक दलों की भूमिका और गठबंधन की राजनीति","पंचायती राज एवं नगरीय स्थानीय स्वशासन — संरचना, मुद्दे, चुनौतियाँ","राजस्थान की राजनीति में नवीन आयाम और चुनौतियाँ","राजस्थान में सार्वजनिक नीति का रूपांकन — संस्थाएँ, प्रक्रियाएँ, हितधारक, कार्यान्वयन बाधाएँ","प्रमुख ई-शासन उपक्रम — उपलब्धियाँ और चुनौतियाँ"]},{"paper":"Paper-III","unit":"Unit-I: भारतीय राजव्यवस्था, शासन, भारत एवं अंतर्राष्ट्रीय मामले और समसामयिक मामले","khand":"भारत और अंतरराष्ट्रीय मामले","topics":["शीत युद्ध के बाद के परिवर्तन, अमेरिका का प्राधान्य, बहुध्रुवीयता, वैश्विक राजनीतिक अर्थव्यवस्था, अंतरराष्ट्रीय आतंकवाद","भारतीय विदेश नीति के निर्धारक तत्व, प्रमुख वैश्विक शक्तियों-पड़ोसी देशों से संबंध, प्रवासी भारतीय समुदाय, सांस्कृतिक कूटनीति","क्षेत्रीय-वैश्विक मंचों पर भारत की भूमिका — UN, WTO, EU, ASEAN, BRICS, G20, QUAD, I2U2, AUKUS, DAKSHIN","जलवायु एवं हरित कूटनीति में भारत का नेतृत्व (COP शिखर सम्मेलन, ISA, Mission LiFE)","भारत की विदेश नीति में समकालीन रणनीतिक उपक्रम"]},{"paper":"Paper-III","unit":"Unit-I: भारतीय राजव्यवस्था, शासन, भारत एवं अंतर्राष्ट्रीय मामले और समसामयिक मामले","khand":"समसामयिक मामले एवं मुद्दे","topics":["महत्वपूर्ण समसामयिक घटनाएँ, मुद्दे और प्रमुख हस्तियाँ","राजस्थान की प्रमुख जन कल्याणकारी योजनाएँ और सरकारी पहल","पुरस्कार, प्रमुख साहित्यिक योगदान, विज्ञान-प्रौद्योगिकी-ICT में महत्वपूर्ण प्रगति","भारत और राजस्थान की खेल नीतियाँ, प्रमुख संस्थान, खेल आयोजन-उपलब्धियाँ","स्वास्थ्य, आरोग्यता और तनाव प्रबंधन में योग की भूमिका"]},{"paper":"Paper-III","unit":"Unit-II: लोक प्रशासन की अवधारणाएँ, मुद्दे एवं गत्यात्मकता","khand":"","topics":["लोक प्रशासन: विचारधाराएँ एवं सिद्धांत — अर्थ-प्रकृति-क्षेत्र-महत्व, नव लोक प्रशासन, नव लोक प्रबन्ध, सुशासन, नव लोक सेवा","उपागम — वैज्ञानिक प्रबंध, मानव संबंध, व्यवहारवादी, संरचनात्मक-प्रकार्यात्मक, पारिस्थितिकीय","संगठन के सिद्धांत — पदसोपान, आदेश की एकता, नियंत्रण क्षेत्र, प्रत्यायोजन, केन्द्रीकरण-विकेन्द्रीकरण, समन्वय, प्राधिकार-उत्तरदायित्व-जवाबदेही","प्रशासनिक व्यवहार — नेतृत्व, संचार, मनोबल","संघ सरकार एवं प्रशासनिक संस्थाएँ — UPSC, चुनाव आयोग, CAG, वित्त आयोग, लोकपाल, नीति आयोग","कार्मिक प्रशासन — भर्ती, प्रशिक्षण, पदोन्नति, तटस्थता-अनामता, आचरण संहिता","प्रशासन के मुद्दे — संघ-राज्य सम्बन्ध, मंत्री-लोक सेवक सम्बन्ध, प्रशासनिक सुधार, सामाजिक अंकेक्षण, प्रशासन पर नियंत्रण","तुलनात्मक लोक प्रशासन — USA, UK, फ्रांस, चीन के प्रशासनिक तंत्र","राज्य एवं जिला प्रशासन — राज्यपाल, मुख्यमंत्री, मंत्रिपरिषद्, राज्य सचिवालय, जिलाधीश, राजस्व-विकास प्रशासन"]},{"paper":"Paper-III","unit":"Unit-III: व्यवहार एवं विधि","khand":"खण्ड अ: व्यवहार","topics":["बुद्धिः संज्ञानात्मक, सामाजिक-भावनात्मक, सांस्कृतिक, प्रशंसात्मक, आध्यात्मिक बुद्धि — कार्यस्थल पर महत्व","नेतृत्व प्रोफाइल — सिद्धांत, प्रकार, शैलियाँ, चुनौतियाँ, भविष्य के नेता","कार्यस्थल पर संचार — मॉडल, नेटवर्क, बाधाएं, इलेक्ट्रॉनिक/विनाशकारी संचार (साइबरस्लैकिंग, मूनलाइटिंग)","कार्यस्थल पर उत्कर्ष — गुण-शक्तियाँ, RAISEC मॉडल, व्यक्ति-अनुकूल-वातावरण","कार्यस्थल पर बर्नआउट, तनाव और उससे निपटान — स्रोत, शैलियाँ, लैंगिक मुद्दे"]},{"paper":"Paper-III","unit":"Unit-III: व्यवहार एवं विधि","khand":"खण्ड ब: विधि","topics":["सूचना का अधिकार अधिनियम 2005 (धारा 1-20)","सूचना प्रौद्योगिकी अधिनियम 2000 (धारा 1, 2-परिभाषाएँ, 65,66,66(B-F),67,67(A-C),71-78)","बौद्धिक सम्पदा अधिकार — संकल्पना, प्रकार एवं प्रयोजन","घरेलू हिंसा से महिलाओं का संरक्षण अधिनियम 2005 (धारा 1-29,31)","कार्यस्थल पर लैंगिक उत्पीड़न (निवारण) अधिनियम 2013 (धारा 1-9,11-20)","लैंगिक अपराधों से बालकों का संरक्षण अधिनियम 2012 (धारा 1-15)","माता-पिता एवं वरिष्ठ नागरिक भरण-पोषण व कल्याण अधिनियम 2007 (धारा 1-25)","राजस्थान काश्तकारी अधिनियम 1955 एवं राजस्थान भू राजस्व अधिनियम 1956 (चयनित धाराएं)","भारतीय न्याय संहिता 2023 एवं भारतीय नागरिक सुरक्षा संहिता 2023 (चयनित धाराएं)"]},{"paper":"Paper-IV","unit":"Unit-I: सामान्य हिंदी (90 अंक)","khand":"","topics":["भाग अ (30 अंक) — उपसर्ग-प्रत्यय, समश्रुत भिन्नार्थक शब्द, शब्द शुद्धि, वाक्य शुद्धि, मुहावरे, कहावत/लोकोक्ति, पारिभाषिक शब्दावली","भाग ब (30 अंक) — संक्षिप्तीकरण (~150 शब्द का गद्यांश), पल्लवन (~100 शब्द), अनुवाद अंग्रेजी→हिंदी (~50 शब्द)","भाग स (30 अंक) — पत्र-लेखन (कार्यालयी पत्र, कार्यालय आदेश, अर्द्धशासकीय पत्र, अनुस्मारक, प्रतिवेदन), प्रारूप-लेखन (अधिसूचना, निविदा सूचना, परिपत्र, प्रेस विज्ञप्ति, कार्यालय ज्ञापन)"]},{"paper":"Paper-IV","unit":"Unit-II: General English (70 marks)","khand":"","topics":["Part A (20) — Preposition, same word as different part of speech, Phrasal Verbs & Idioms, One Word Substitute, Words Confused/Misused","Part B (30) — Comprehension of Unseen Passage (~300 words) + 5 Qs + Precis Writing (~100 words); Translation of 5 sentences Hindi→English","Part C (20) — Elaboration of a given theme (1 of 3, ~150 words); Official Letter/Demi-Official/Memorandum/Report Writing (~150 words)"]},{"paper":"Paper-IV","unit":"Unit-III: निबंध (40 अंक)","khand":"","topics":["~600 शब्दों का निबंध हिंदी अथवा अंग्रेजी में — 6 विषयगत क्षेत्रों में से किसी 1 पर:","1. भाषा, साहित्य और सांस्कृतिक विरासत","2. समाज, शासन और सार्वजनिक मामले","3. विज्ञान, प्रौद्योगिकी, पर्यावरण और सतत विकास","4. अर्थव्यवस्था, कृषि, उद्योग और वाणिज्य","5. समसामयिक घटनाएँ, आपदाएँ और राष्ट्रीय विकास पहल","6. राजस्थान के संदर्भ में पर्यटन, संस्कृति तथा समसामयिक मुद्दे"]}];
+var HB_PAPER_ORDER = ['Paper-I','Paper-II','Paper-III','Paper-IV'];
+var HB_PAPER_ID = {'Paper-I':'paper-1','Paper-II':'paper-2','Paper-III':'paper-3','Paper-IV':'paper-4'};
+var HB_PAPER_DEFAULT = {
+  'Paper-I':  {icon:'📘', name:'Paper I — सामान्य अध्ययन-I', description:'इतिहास, अर्थव्यवस्था, समाजशास्त्र-प्रबंधन-लेखांकन'},
+  'Paper-II': {icon:'📗', name:'Paper II — सामान्य अध्ययन-II', description:'प्रशासकीय नीतिशास्त्र, विज्ञान-प्रौद्योगिकी, भूगोल'},
+  'Paper-III':{icon:'📙', name:'Paper III — सामान्य अध्ययन-III', description:'राजव्यवस्था-शासन, लोक प्रशासन, व्यवहार एवं विधि'},
+  'Paper-IV': {icon:'📕', name:'Paper IV — सामान्य हिंदी एवं सामान्य अंग्रेजी', description:'भाषा एवं निबंध — Answer Writing पैटर्न लागू नहीं'}
+};
+
+function hbEsc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function hbToggle(headEl){
+  var body = headEl.nextElementSibling;
+  var isOpen = body.style.display === 'block';
+  body.style.display = isOpen ? 'none' : 'block';
+  headEl.classList.toggle('open', !isOpen);
+}
+
+// पूरा syllabus paper→subject cascade — टूल के onPubSubjectPaperChange/
+// onBankPaperChange वाले खण्ड-promotion logic जैसा ही, ताकि Subject नाम
+// हर जगह (Bank, Publish, Website) एक जैसे रहें।
+function hbSubjectRows(paperVal){
+  var seen = {}, rows = [];
+  RAS_SYLLABUS_WEB.forEach(function(x){
+    if (x.paper !== paperVal) return;
+    var key = paperVal+'||'+x.unit+'||'+(x.khand||'');
+    if (seen[key]) return;
+    seen[key] = true;
+    var label = x.khand
+      ? x.khand.replace(/^खण्ड\s*[^:：]*[:：]\s*/,'')
+      : x.unit.replace(/^Unit-[IVXLC]+:\s*/i,'');
+    rows.push({ label:label, topics:x.topics||[] });
+  });
+  return rows;
+}
+
 fetch('/mains-tests-data.json').then(function(r){ return r.json(); }).then(function(data){
   var area = document.getElementById('papersArea');
-  area.innerHTML = '';
-  (data.papers||[]).forEach(function(p){
-    var tests = p.tests||[];
-    var cards = tests.map(function(t){
-      var subj = t.subject || (t.title||'RAS Mains Practice Test');
-      var chap = t.chapter || '';
-      var meta = '';
-      if(t.totalQuestions) meta += '<span>📝 '+t.totalQuestions+' प्रश्न</span>';
-      if(t.totalMarks) meta += '<span>🎯 '+t.totalMarks+' अंक</span>';
-      if(t.date) meta += '<span>📅 '+t.date+'</span>';
-      var href = t.id ? ('/mains-test-detail.html?id='+encodeURIComponent(t.id)) : (t.url||'#');
-      return '<a class="hb-card" href="'+href+'">'
-        + '<div class="hb-csubj">'+subj+'</div>'
-        + (chap ? '<div class="hb-cchap">'+chap+'</div>' : '')
-        + '<div class="hb-cmeta">'+meta+'</div>'
-        + '<div class="hb-cta-read">📖 पढ़ें / PDF Download →</div>'
-        + '</a>';
-    }).join('') || '<div class="hb-empty">जल्द आ रहा है — इस Paper के Test जल्द जुड़ेंगे</div>';
+  var papersMeta = {};
+  (data.papers||[]).forEach(function(p){ papersMeta[p.id] = p; });
 
-    area.innerHTML += '<div class="hb-paper" id="'+p.id+'">'
-      + '<div class="hb-phead"><div class="hb-ptitle">'+p.icon+' '+p.name+'</div><div class="hb-pcount">'+tests.length+' Test</div></div>'
-      + '<div class="hb-pdesc">'+(p.description||'')+'</div>'
-      + '<div class="hb-grid">'+cards+'</div>'
+  // Subject+Chapter → published test lookup (Subject/Chapter नाम publish के
+  // वक़्त pubSubjectValue()/pubChapterValue() से exactly इसी clean रूप में
+  // save होते हैं, इसलिए यहाँ direct string-match काम करता है)
+  var testLookup = {};
+  (data.papers||[]).forEach(function(p){
+    (p.tests||[]).forEach(function(t){
+      testLookup[(t.subject||'')+'||'+(t.chapter||'')] = t;
+    });
+  });
+
+  var html = '';
+  HB_PAPER_ORDER.forEach(function(paperVal){
+    var paperId = HB_PAPER_ID[paperVal];
+    var meta = papersMeta[paperId] || HB_PAPER_DEFAULT[paperVal];
+    var subjRows = hbSubjectRows(paperVal);
+    var totalLive = 0;
+
+    var subjHtml = subjRows.map(function(s){
+      var doneCount = 0;
+      var chapHtml = s.topics.map(function(t){
+        var test = testLookup[s.label+'||'+t];
+        var short = t.length > 90 ? t.substring(0,90)+'…' : t;
+        if (test) {
+          doneCount++; totalLive++;
+          var href = test.id ? ('/mains-test-detail.html?id='+encodeURIComponent(test.id)) : (test.url||'#');
+          var m = '';
+          if(test.totalQuestions) m += '<span>📝 '+hbEsc(test.totalQuestions)+' प्रश्न</span>';
+          if(test.totalMarks) m += '<span>🎯 '+hbEsc(test.totalMarks)+' अंक</span>';
+          return '<a class="hb-chap-row hb-chap-live" href="'+href+'">'
+            + '<span class="hb-chap-txt">'+hbEsc(short)+'</span>'
+            + '<span class="hb-chap-meta">'+m+'<span class="hb-chap-cta">📖 पढ़ें →</span></span>'
+            + '</a>';
+        }
+        return '<div class="hb-chap-row hb-chap-soon">'
+          + '<span class="hb-chap-txt">'+hbEsc(short)+'</span>'
+          + '<span class="hb-chap-meta"><span class="hb-chap-badge">⏳ जल्द आएगा</span></span>'
+          + '</div>';
+      }).join('');
+      return '<div class="hb-acc-sub">'
+        + '<div class="hb-acc-shead" onclick="hbToggle(this)"><span class="hb-arrow">▸</span>'
+        + '<span class="hb-acc-slabel">📂 '+hbEsc(s.label)+'</span>'
+        + '<span class="hb-acc-scount">'+doneCount+'/'+s.topics.length+' उपलब्ध</span></div>'
+        + '<div class="hb-acc-sbody" style="display:none;">'+(chapHtml||'<div class="hb-chap-row hb-chap-soon"><span class="hb-chap-txt">जल्द आएगा</span></div>')+'</div>'
+        + '</div>';
+    }).join('');
+
+    html += '<div class="hb-acc-paper">'
+      + '<div class="hb-acc-phead" onclick="hbToggle(this)"><span class="hb-arrow">▸</span>'
+      + '<span class="hb-acc-ptitle">'+hbEsc(meta.icon||'📘')+' '+hbEsc(meta.name||paperVal)+'</span>'
+      + '<span class="hb-pcount">'+totalLive+' Test Live</span></div>'
+      + '<div class="hb-acc-pbody" style="display:none;">'
+      + '<div class="hb-pdesc">'+hbEsc(meta.description||'')+'</div>'
+      + subjHtml
+      + '</div>'
       + '</div>';
   });
+
+  area.innerHTML = html || '<div style="text-align:center;color:#94a3b8;font-size:12.5px;padding:20px;">Syllabus data नहीं मिला।</div>';
 }).catch(function(){
   document.getElementById('papersArea').innerHTML = '<div style="text-align:center;color:#ef4444;font-size:13px;padding:30px;">⚠️ Test list load नहीं हुई। कृपया page reload करें।</div>';
 });
