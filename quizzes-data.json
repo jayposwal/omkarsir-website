@@ -356,6 +356,14 @@
       "quizzes": [
         {
           "icon": "📝",
+          "title": "राजस्थान सरकारी योजनाएं (फ्लैगशिप सहित)",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-m63a.html"
+        },
+        {
+          "icon": "📝",
           "title": "राजस्थान में उद्योग industry PYQs",
           "questions": 50,
           "duration": "50m",
@@ -444,6 +452,30 @@
       "type": "grid",
       "description": "Rajasthan Polity व Sub Inspector परीक्षा के Previous Year Questions पर आधारित Test",
       "quizzes": [
+        {
+          "icon": "🗳️",
+          "title": "राज्यपाल",
+          "questions": 40,
+          "duration": "40m",
+          "date": "2026-08-11",
+          "url": "/quizzes/niEd-quiz-2026-08-11-a5ue.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "राज्य लोक सेवा आयोग",
+          "questions": 20,
+          "duration": "20m",
+          "date": "2026-08-08",
+          "url": "/quizzes/niEd-quiz-2026-08-08-n11k.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "राज्य मानवाधिकार आयोग",
+          "questions": 20,
+          "duration": "20m",
+          "date": "2026-08-07",
+          "url": "/quizzes/niEd-quiz-2026-08-07-p1o3.html"
+        },
         {
           "icon": "🗳️",
           "title": "CM and ministers",
