@@ -46,5 +46,8 @@ jobs:
             echo "No link changes needed"
             exit 0
           fi
+          git fetch origin main
+          git rebase origin/main
+          git add index.html previous-year-papers.html
           git commit -m "Add RAS Mains Paper-I PYQs links"
-          git push
+          git push origin HEAD:main
