@@ -37,6 +37,10 @@
         {
           "date": "2026-07-29",
           "url": "/quiz/2026-07-29.html"
+        },
+        {
+          "date": "2026-08-28",
+          "url": "/quiz/2026-08-28.html"
         }
       ]
     },
@@ -441,6 +445,14 @@
           "duration": "45m",
           "date": "2026-06-24",
           "url": "/ES07mcq.html"
+        },
+        {
+          "icon": "📝",
+          "title": "Rajasthan Economic Survey — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-26",
+          "url": "/quizzes/raj-eco-survey-top-150-mcqs-2026-08-26-dgir.html"
         }
       ],
       "subjectPageUrl": "/economy-quiz.html"
@@ -491,9 +503,109 @@
           "duration": "112m",
           "date": "2026-07-31",
           "url": "/quizzes/raj-polity-sub-inspector-pyqs-2026-07-31-4bfu.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "भारतीय संविधान व राजव्यवस्था — TOP 150 Questions",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-27",
+          "url": "/quizzes/india-polity-top-150-questions-2026-08-27-hi3f.html"
+        },
+        {
+          "icon": "🗳️",
+          "title": "राज्यपाल — Revision Quiz",
+          "questions": 50,
+          "duration": "50m",
+          "date": "2026-08-13",
+          "url": "/quizzes/niEd-quiz-2026-08-13-yjzp.html"
         }
       ],
       "subjectPageUrl": "/polity-quiz.html"
+    },
+    {
+      "id": "bharatiya-itihas",
+      "type": "grid",
+      "icon": "📜",
+      "name": "भारतीय इतिहास (Indian History)",
+      "description": "प्राचीन, मध्यकालीन व आधुनिक भारत के इतिहास पर आधारित Quiz व Mock Tests।",
+      "subjectPageUrl": "/modern-history-quiz.html",
+      "quizzes": [
+        {
+          "icon": "📜",
+          "title": "भारतीय इतिहास — 150 प्रश्न Mega Quiz",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-17",
+          "url": "/quizzes/150-2026-08-17-1ppa.html"
+        },
+        {
+          "icon": "📜",
+          "title": "आधुनिक भारत इतिहास — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-17",
+          "url": "/quizzes/top-150-mcqs-2026-08-17-3a49.html"
+        },
+        {
+          "icon": "📜",
+          "title": "Modern History — Quick Check",
+          "questions": 8,
+          "duration": "8m",
+          "date": "2026-08-17",
+          "url": "/quizzes/modern-history-check-2026-08-17-qd80.html"
+        },
+        {
+          "icon": "📜",
+          "title": "भारत में यूरोपियों का आगमन — Modern Indian History",
+          "questions": 30,
+          "duration": "30m",
+          "date": "2026-08-26",
+          "url": "/quizzes/modern-indian-history-2026-08-26-bolj.html"
+        }
+      ]
+    },
+    {
+      "id": "vigyan-samsamayiki",
+      "type": "grid",
+      "icon": "🔬",
+      "name": "विज्ञान व समसामयिकी MCQs (Science & Current Affairs)",
+      "description": "सामान्य विज्ञान (Everyday Science) व मासिक समसामयिकी पर आधारित MCQ Practice Sets।",
+      "subjectPageUrl": "/current-affairs-quiz.html",
+      "quizzes": [
+        {
+          "icon": "🔬",
+          "title": "दैनिक विज्ञान — Basics of Everyday Science",
+          "questions": 75,
+          "duration": "75m",
+          "date": "2026-08-08",
+          "url": "/quizzes/basics-of-everyday-science-2026-08-08-r9js.html"
+        },
+        {
+          "icon": "📰",
+          "title": "जून माह समसामयिकी MCQs",
+          "questions": 100,
+          "duration": "100m",
+          "date": "2026-08-25",
+          "url": "/quizzes/mcqs-2026-08-25-hah0.html"
+        },
+        {
+          "icon": "📰",
+          "title": "जुलाई माह समसामयिकी MCQs",
+          "questions": 100,
+          "duration": "100m",
+          "date": "2026-08-26",
+          "url": "/quizzes/mcqs-2026-08-25-so5u.html"
+        },
+        {
+          "icon": "📰",
+          "title": "जून माह समसामयिकी — TOP 100 MCQs",
+          "questions": 100,
+          "duration": "100m",
+          "date": "2026-08-26",
+          "url": "/quizzes/top-100-mcqs-2026-08-25-ue7r.html"
+        }
+      ]
     },
     {
       "id": "mixed-gk",
