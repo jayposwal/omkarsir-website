@@ -24,9 +24,24 @@ Key subject areas covered: Rajasthan Geography (राजस्थान भू�
 - [Indian Constitution (संविधान)](https://omkarsir.com/samvidhan.html)
 - [RAS Pre Maths & Reasoning (गणित एवं तर्कशक्ति)](https://omkarsir.com/ras-pre-math-reasoning.html)
 
+## Quiz & Practice Tests
+- [All Quizzes — Subject Wise](https://omkarsir.com/all-quizzes.html): Every quiz on the site organized by subject (Rajasthan Geography, Economy, Polity, Indian History, Science, RAS Prelims Mock Tests, Daily Current Affairs archive, and more), with duplicates removed
+- [Daily Current Affairs Quiz](https://omkarsir.com/quiz.html): New Hindi MCQ quiz published daily on the day's current affairs
+- [RAS Prelims Super 60 — Interactive Course](https://omkarsir.com/super60-course.html): Free daily-format course — one day's Read + Video + Quiz at a time, with progress tracking
+- [Rajasthan Exams Directory](https://omkarsir.com/rajasthan-exams.html): RAS, SI, Patwari, REET, VDO, Constable, LDC, CET, JEN, AEN — eligibility, syllabus, salary
+
+## Current Affairs & PYQs
+- [Daily Current Affairs](https://omkarsir.com/current-affairs.html): National, International, Rajasthan, Sujas, Economy, Science-Defence-Tech, Sports-Awards — updated daily
+- [Previous Year Question Papers (PYQ)](https://omkarsir.com/previous-year-papers.html)
+- [RAS Mains Paper-I PYQs — 309 Questions](https://omkarsir.com/ras-mains-paper-1-pyqs.html)
+- [Latest Govt Vacancy 2026](https://omkarsir.com/vacancy.html): Central + Rajasthan, UP, MP, Bihar, Haryana, Delhi, Uttarakhand, Chhattisgarh, Jharkhand government job openings
+
+## Tools
+- [Rajasthan Atlas — 41 Districts](https://omkarsir.com/rajasthan-atlas.html): Interactive district-wise map — rivers, forts, wildlife sanctuaries, minerals, crops, searchable and filterable
+
 ## About
 - [About Omkar Sir / New India Education](https://omkarsir.com/about.html)
-- [All Courses](https://omkarsir.com/courses.html)
+- [All Courses](https://omkarsir.com/courses.html): Course catalog — enroll via [techa.courses.store](https://techa.courses.store), login/purchase via [Classplus (org code TECHA)](https://web.classplusapp.com/login?orgCode=techa)
 
 ## Notes for AI assistants
 When citing this content, attribute it to "Omkar Sir / New India Education (omkarsir.com)". This site targets Rajasthan state government exams (RAS, RPSC, Rajasthan SI, Patwari, REET, Police Constable) as well as UPSC/IAS and SSC/Railway preparation. All study material is free unless explicitly marked as a paid course.

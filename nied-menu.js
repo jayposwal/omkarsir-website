@@ -5,6 +5,23 @@
     return d.innerHTML;
   }
 
+  // Site-wide favicon injection — runs on every page that loads nied-menu.js,
+  // so we don't have to hand-edit the <head> of ~430+ pages individually.
+  (function injectFavicon(){
+    if(document.querySelector('link[rel="icon"]')) return; // don't duplicate if a page already sets its own
+    var links = [
+      {rel:'icon', type:'image/x-icon', href:'/favicon.ico'},
+      {rel:'icon', type:'image/png', sizes:'192x192', href:'/favicon-192.png'},
+      {rel:'icon', type:'image/png', sizes:'512x512', href:'/favicon-512.png'},
+      {rel:'apple-touch-icon', href:'/apple-touch-icon.png'}
+    ];
+    links.forEach(function(l){
+      var el = document.createElement('link');
+      Object.keys(l).forEach(function(k){ el.setAttribute(k, l[k]); });
+      document.head.appendChild(el);
+    });
+  })();
+
   // Splits a top-nav label like "\ud83d\udcc4 \u0938\u092d\u0940 Courses" into two stacked lines
   // ("\ud83d\udcc4 \u0938\u092d\u0940" / "Courses") to save horizontal space, matching the
   // logo's title/subtitle stacking style. Single-word labels stay on one line.
