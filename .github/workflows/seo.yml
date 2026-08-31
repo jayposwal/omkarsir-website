@@ -7,6 +7,7 @@ on:
       - 'seo/optimize_seo.py'
       - 'sitemap.xml'
       - 'robots.txt'
+      - '.github/workflows/seo.yml'
   workflow_dispatch:
 permissions:
   contents: write
