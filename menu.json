@@ -400,6 +400,10 @@
       "url": "/all-quizzes.html"
     },
     {
+      "label": "🎯 Test Series",
+      "url": "/test-series.html"
+    },
+    {
       "label": "📝 PYQ Papers",
       "type": "dropdown",
       "children": [

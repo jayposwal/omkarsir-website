@@ -98,6 +98,22 @@
           "duration": "225m",
           "date": "2026-07-12",
           "url": "/quizzes/ras-prelims-exam-2026-07-12-v7u9.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam 2023 — प्रारंभिक परीक्षा",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-28",
+          "url": "/quizzes/ras-prelims-exam-2023-2023-2026-08-28-dkmu.html"
+        },
+        {
+          "icon": "🎯",
+          "title": "RAS Prelims Exam 2024 — प्रारंभिक परीक्षा",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-28",
+          "url": "/quizzes/ras-prelims-exam-2024-2024-2026-08-28-ii29.html"
         }
       ]
     },
@@ -347,9 +363,53 @@
           "duration": "52m",
           "date": "2026-08-04",
           "url": "/quizzes/niEd-quiz-2026-08-04-w6yz.html"
+        },
+        {
+          "icon": "🗺️",
+          "title": "राजस्थान भूगोल — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-29",
+          "url": "/quizzes/top-150-mcqs-rajasthan-geography-2026-08-29-tsbf.html"
         }
       ],
       "subjectPageUrl": "/rajasthan-geography-quiz.html"
+    },
+    {
+      "id": "rajasthan-itihas",
+      "type": "grid",
+      "icon": "🏰",
+      "name": "राजस्थान का इतिहास (Rajasthan History)",
+      "description": "राजस्थान के इतिहास पर आधारित Quiz व Mock Tests।",
+      "subjectPageUrl": "/rajasthan-history-quiz.html",
+      "quizzes": [
+        {
+          "icon": "🏰",
+          "title": "राजस्थान का इतिहास — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-29",
+          "url": "/quizzes/rajasthan-history-150-top-mcqs-2026-08-29-0rbg.html"
+        }
+      ]
+    },
+    {
+      "id": "raj-kala-sanskriti",
+      "type": "grid",
+      "icon": "🎨",
+      "name": "राजस्थान कला व संस्कृति (Rajasthan Art & Culture)",
+      "description": "राजस्थान की कला व संस्कृति पर आधारित Quiz व Mock Tests।",
+      "subjectPageUrl": "/rajasthan-art-culture-quiz.html",
+      "quizzes": [
+        {
+          "icon": "🎨",
+          "title": "राजस्थान कला व संस्कृति — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-29",
+          "url": "/quizzes/top-150-mcqs-raj-art-culture-2026-08-29-thtl.html"
+        }
+      ]
     },
     {
       "id": "arthavyavastha",
@@ -453,9 +513,35 @@
           "duration": "150m",
           "date": "2026-08-26",
           "url": "/quizzes/raj-eco-survey-top-150-mcqs-2026-08-26-dgir.html"
+        },
+        {
+          "icon": "💵",
+          "title": "भारतीय अर्थव्यवस्था — TOP 200 MCQs",
+          "questions": 200,
+          "duration": "200m",
+          "date": "2026-08-31",
+          "url": "/quizzes/top-200-mcqs-india-economy-2026-08-31-l30u.html"
         }
       ],
       "subjectPageUrl": "/economy-quiz.html"
+    },
+    {
+      "id": "india-bhugol",
+      "type": "grid",
+      "icon": "🌏",
+      "name": "भारत भूगोल (India Geography)",
+      "description": "भारत के भूगोल पर आधारित Quiz व Mock Tests।",
+      "subjectPageUrl": "/india-geography-quiz.html",
+      "quizzes": [
+        {
+          "icon": "🌏",
+          "title": "भारत भूगोल — TOP 200 MCQs",
+          "questions": 200,
+          "duration": "200m",
+          "date": "2026-08-31",
+          "url": "/quizzes/top-200-mcqs-india-geography-2026-08-31-7mku.html"
+        }
+      ]
     },
     {
       "id": "rajniti-vigyan",
@@ -519,6 +605,14 @@
           "duration": "50m",
           "date": "2026-08-13",
           "url": "/quizzes/niEd-quiz-2026-08-13-yjzp.html"
+        },
+        {
+          "icon": "🏛️",
+          "title": "राजस्थान राजव्यवस्था — TOP 250 MCQs",
+          "questions": 250,
+          "duration": "250m",
+          "date": "2026-08-30",
+          "url": "/quizzes/top-250-mcqs-rajasthan-polity-2026-08-30-w520.html"
         }
       ],
       "subjectPageUrl": "/polity-quiz.html"
@@ -562,6 +656,22 @@
           "duration": "30m",
           "date": "2026-08-26",
           "url": "/quizzes/modern-indian-history-2026-08-26-bolj.html"
+        },
+        {
+          "icon": "📜",
+          "title": "आधुनिक भारत का इतिहास — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-28",
+          "url": "/quizzes/top-150-mcqs-2026-08-28-gjkc.html"
+        },
+        {
+          "icon": "📜",
+          "title": "प्राचीन व मध्यकालीन भारत का इतिहास — TOP 150 MCQs",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-28",
+          "url": "/quizzes/top-150-mcqs-2026-08-28-pgd1.html"
         }
       ]
     },
@@ -604,6 +714,50 @@
           "duration": "100m",
           "date": "2026-08-26",
           "url": "/quizzes/top-100-mcqs-2026-08-25-ue7r.html"
+        },
+        {
+          "icon": "🔬",
+          "title": "विज्ञान एवं तकनीकी — TOP 200 MCQs",
+          "questions": 200,
+          "duration": "200m",
+          "date": "2026-09-01",
+          "url": "/quizzes/top-200-mcqs-science-and-technology-2026-09-01-tbvm.html"
+        }
+      ]
+    },
+    {
+      "id": "world-bhugol",
+      "type": "grid",
+      "icon": "🌐",
+      "name": "विश्व भूगोल (World Geography)",
+      "description": "विश्व भूगोल पर आधारित Quiz व Mock Tests।",
+      "subjectPageUrl": "/world-geography-quiz.html",
+      "quizzes": [
+        {
+          "icon": "🌐",
+          "title": "विश्व भूगोल — TOP 150 Questions",
+          "questions": 150,
+          "duration": "150m",
+          "date": "2026-08-28",
+          "url": "/quizzes/world-geography-top-150-questions-2026-08-28-nntc.html"
+        }
+      ]
+    },
+    {
+      "id": "si-exam",
+      "type": "grid",
+      "icon": "👮",
+      "name": "Rajasthan SI Exam Mock",
+      "description": "Rajasthan Police Sub-Inspector Exam PYQ आधारित Mock Tests।",
+      "subjectPageUrl": null,
+      "quizzes": [
+        {
+          "icon": "👮",
+          "title": "SI Exam 2026 (5 April) — GS 100 MCQs",
+          "questions": 100,
+          "duration": "100m",
+          "date": "2026-08-29",
+          "url": "/quizzes/sub-inspector-exam-2026-5-april-2026-gs-100-mcqs-2026-08-29-1lkq.html"
         }
       ]
     },
