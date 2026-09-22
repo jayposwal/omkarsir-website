@@ -4,6 +4,12 @@ name: Auto-add Quiz Light/Dark Toggle
 # automation) and makes sure every dark-themed quiz page has the
 # Light/Dark theme toggle button. Safe to re-run — already-patched
 # files are left untouched.
+#
+# NOTE: the same push that adds a new quiz page also triggers seo.yml
+# (SEO: optimize all static pages), which commits and pushes to main
+# around the same time. Without a retry, whichever bot pushes second
+# gets rejected (non-fast-forward) and silently fails. So this job
+# fetches + rebases + retries a few times before giving up.
 
 on:
   push:
@@ -23,6 +29,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,14 +40,35 @@ jobs:
       - name: Inject theme toggle into any new quiz pages
         run: python3 automation/inject_theme_toggle.py
 
-      - name: Commit and push if anything changed
+      - name: Commit and push if anything changed (auto-retry on race with other bots)
         run: |
+          git config user.name "niedu-bot"
+          git config user.email "email2omkara@gmail.com"
+
           if git diff --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-          git config user.name "niedu-bot"
-          git config user.email "email2omkara@gmail.com"
+
           git add quizzes/*.html ES*.html 2>/dev/null || true
           git commit -m "Auto: add Light/Dark toggle to new quiz page(s) [skip ci]"
-          git push
+
+          n=0
+          until [ "$n" -ge 6 ]; do
+            if git push; then
+              echo "Pushed successfully."
+              exit 0
+            fi
+            n=$((n+1))
+            echo "Push rejected (likely racing with another bot, e.g. seo.yml) — retry $n/6"
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase conflict — giving up this run, next quiz push will retry."
+              git rebase --abort
+              exit 1
+            fi
+            sleep $((RANDOM % 8 + 3))
+          done
+
+          echo "Giving up after 6 attempts."
+          exit 1
