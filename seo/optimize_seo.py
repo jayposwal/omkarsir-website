@@ -67,7 +67,7 @@ def canonical_for(path: Path) -> str:
 
 def title_for(rel: str, existing: str | None, h1: str | None) -> str:
     if rel == "index.html":
-        return "RAS & Rajasthan GK Preparation | Omkar Sir"
+        return "RAS Exam 2026 Preparation | RAS Pre & Mains — Omkar Sir"
     current = strip_tags(existing or "")
     if current and current.lower() not in {"home", "index", "omkar sir", "new india education"}:
         if "omkar sir" not in current.lower() and len(current) <= 54:
@@ -79,7 +79,7 @@ def title_for(rel: str, existing: str | None, h1: str | None) -> str:
 
 def description_for(rel: str, existing: str | None, h1: str | None, first_p: str | None) -> str:
     if rel == "index.html":
-        return "RAS और Rajasthan GK की तैयारी के लिए Hindi Notes, Syllabus, PYQ, Test Series और Courses — Omkar Sir / New India Education."
+        return "RAS Exam 2026 की तैयारी — RPSC RAS Pre व Mains के लिए Hindi Notes, Syllabus, PYQ, Test Series और Courses। 6 लाख+ Students का भरोसा — Omkar Sir।"
     current = strip_tags(existing or "")
     boilerplate = ["NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार", "विश्वसनीय एवं बेहतरीन Content"]
     weak = not current or len(current) < 70 or (all(x in current for x in boilerplate) and len(current) > 150)
