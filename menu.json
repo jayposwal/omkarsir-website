@@ -400,12 +400,18 @@
       "url": "/vacancy.html"
     },
     {
-      "label": "🧠 सभी Quiz",
-      "url": "/all-quizzes.html"
-    },
-    {
-      "label": "🎯 Test Series",
-      "url": "/test-series.html"
+      "label": "📚 Download Books",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🕉️ NCERT Books",
+          "url": "/books.html#block-ncert"
+        },
+        {
+          "label": "🏛️ RBSE Books",
+          "url": "/books.html#block-rbse"
+        }
+      ]
     },
     {
       "label": "📝 PYQ Papers",
