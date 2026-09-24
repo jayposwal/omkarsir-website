@@ -36,12 +36,25 @@ def existing_meta(head: str, name: str) -> str | None:
     return attr_value(m.group(0), "content") if m else None
 
 
+def insert_into_head(head: str, tag: str) -> str:
+    """Append a tag at the end of <head> content (head is the inner HTML, without </head>)."""
+    return head.rstrip() + "\n" + tag + "\n"
+
+
+# Printable duplicates of quizzes and password-protected pages: keep them out of search results.
+NOINDEX_RE = re.compile(r"-(question-paper|solution-booklet)\.html$")
+
+
+def should_noindex(rel: str, title: str | None) -> bool:
+    return bool(NOINDEX_RE.search(rel)) or (title or "").startswith("Protected Page")
+
+
 def replace_or_insert_named_meta(head: str, name: str, value: str) -> str:
     tag_re = re.compile(r'<meta\b[^>]*\bname=["\']' + re.escape(name) + r'["\'][^>]*>', re.I)
     replacement = f'<meta name="{html.escape(name, quote=True)}" content="{html.escape(value, quote=True)}">'
     if tag_re.search(head):
         return tag_re.sub(replacement, head, count=1)
-    return head.replace("\n</head>", f"\n{replacement}\n</head>", 1)
+    return insert_into_head(head, replacement)
 
 
 def replace_or_insert_property_meta(head: str, prop: str, value: str) -> str:
@@ -49,7 +62,7 @@ def replace_or_insert_property_meta(head: str, prop: str, value: str) -> str:
     replacement = f'<meta property="{html.escape(prop, quote=True)}" content="{html.escape(value, quote=True)}">'
     if tag_re.search(head):
         return tag_re.sub(replacement, head, count=1)
-    return head.replace("\n</head>", f"\n{replacement}\n</head>", 1)
+    return insert_into_head(head, replacement)
 
 
 def replace_or_insert_canonical(head: str, canonical: str) -> str:
@@ -57,7 +70,7 @@ def replace_or_insert_canonical(head: str, canonical: str) -> str:
     replacement = f'<link rel="canonical" href="{html.escape(canonical, quote=True)}">'
     if tag_re.search(head):
         return tag_re.sub(replacement, head, count=1)
-    return head.replace("\n</head>", f"\n{replacement}\n</head>", 1)
+    return insert_into_head(head, replacement)
 
 
 def canonical_for(path: Path) -> str:
@@ -114,11 +127,13 @@ def process_html(path: Path) -> bool:
     if title_match:
         head = TITLE_RE.sub(f"<title>{html.escape(title)}</title>", head, count=1)
     else:
-        head = head.replace("\n</head>", f"\n<title>{html.escape(title)}</title>\n</head>", 1)
+        head = insert_into_head(head, f"<title>{html.escape(title)}</title>")
 
     head = replace_or_insert_named_meta(head, "description", description)
     existing_robots = existing_meta(head, "robots")
-    if not (existing_robots and "noindex" in existing_robots.lower()):
+    if should_noindex(rel, existing_title):
+        head = replace_or_insert_named_meta(head, "robots", "noindex, follow")
+    elif not (existing_robots and "noindex" in existing_robots.lower()):
         head = replace_or_insert_named_meta(head, "robots", "index, follow, max-image-preview:large")
     head = replace_or_insert_named_meta(head, "author", "Omkar Singh Gurjar")
     head = replace_or_insert_named_meta(head, "referrer", "strict-origin-when-cross-origin")
