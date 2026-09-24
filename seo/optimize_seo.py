@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import json
 import re
 import subprocess
 from datetime import date
@@ -116,7 +117,9 @@ def process_html(path: Path) -> bool:
         head = head.replace("\n</head>", f"\n<title>{html.escape(title)}</title>\n</head>", 1)
 
     head = replace_or_insert_named_meta(head, "description", description)
-    head = replace_or_insert_named_meta(head, "robots", "index, follow, max-image-preview:large")
+    existing_robots = existing_meta(head, "robots")
+    if not (existing_robots and "noindex" in existing_robots.lower()):
+        head = replace_or_insert_named_meta(head, "robots", "index, follow, max-image-preview:large")
     head = replace_or_insert_named_meta(head, "author", "Omkar Singh Gurjar")
     head = replace_or_insert_named_meta(head, "referrer", "strict-origin-when-cross-origin")
     head = replace_or_insert_named_meta(head, "theme-color", "#1B2A6B")
@@ -183,12 +186,43 @@ def write_sitemap() -> None:
     print(f"Sitemap contains {len(rows)} indexable HTML URLs.")
 
 
+
+SEARCH_INDEX_EXCLUDE = {"404.html", "admin-comments.html", "pdf-chapter-splitter.html"}
+
+
+def write_search_index() -> None:
+    entries: list[dict[str, str]] = []
+    for path in sorted(ROOT.rglob("*.html")):
+        if ".git" in path.parts:
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        if rel in SEARCH_INDEX_EXCLUDE:
+            continue
+        raw = path.read_text(encoding="utf-8", errors="ignore")
+        hm = HEAD_RE.search(raw)
+        head = hm.group(1) if hm else raw
+        if re.search(r'<meta\b[^>]*\bname=["\']robots["\'][^>]*\bcontent=["\'][^"\']*noindex', head, re.I):
+            continue
+        title_match = TITLE_RE.search(head)
+        title = strip_tags(title_match.group(0)) if title_match else path.stem.replace("-", " ").title()
+        desc = (existing_meta(head, "description") or "").strip()
+        if len(desc) > 160:
+            desc = desc[:157].rstrip() + "…"
+        url = "/" if rel == "index.html" else "/" + rel
+        entries.append({"title": title, "url": url, "desc": desc})
+    (ROOT / "search-index.json").write_text(
+        json.dumps(entries, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"Search index contains {len(entries)} pages.")
+
+
 def main() -> None:
     changed = 0
     for path in ROOT.rglob("*.html"):
         if ".git" not in path.parts and process_html(path):
             changed += 1
     write_sitemap()
+    write_search_index()
     print(f"SEO optimizer updated {changed} HTML pages.")
 
 
