@@ -147,7 +147,7 @@ Deno.serve(async (request: Request): Promise<Response> => {
 
     const token = await createDownloadToken(row);
     const downloadUrl = downloadBaseUrl + token;
-    const email = makeEmailHtml(product, downloadUrl, row.expires_at, row.max_downloads);
+    const emailContent = makeEmailHtml(product, downloadUrl, row.expires_at, row.max_downloads);
 
     let resendResponse: Response;
     let resendText = "";
@@ -166,8 +166,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
           to: [row.customer_email],
           reply_to: "email2omkara@gmail.com",
           subject: "आपकी PDF तैयार है — " + product.name + " | Omkar Sir",
-          html: email.html,
-          text: email.text,
+          html: emailContent.html,
+          text: emailContent.text,
         }),
       });
       resendText = await resendResponse.text();
