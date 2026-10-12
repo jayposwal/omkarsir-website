@@ -101,6 +101,67 @@ footer{background:#1A1A2E;padding:32px 6%;text-align:center;color:#aaa;font-size
 .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:6px}
 .footer-logo span{color:#FF6B00}
 footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
+
+/* ===== SUBJECT-WISE QUIZ LIBRARY ===== */
+.quiz-library{max-width:1200px;margin:0 auto;padding:46px clamp(16px,5vw,64px) 42px;scroll-margin-top:90px}
+.quiz-library-heading{text-align:center;max-width:780px;margin:0 auto 24px}
+.quiz-eyebrow{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid #f5d7bd;border-radius:999px;background:#fff7ef;color:#a64b0b;font-size:11px;font-weight:800;letter-spacing:.45px}
+.quiz-library-heading h2{margin:12px 0 8px;font-size:clamp(23px,3.3vw,32px);line-height:1.3;color:#1b2a6b}
+.quiz-library-heading p{color:#667085;font-size:14px;line-height:1.75}
+.quiz-tools{max-width:720px;margin:0 auto 14px}
+.quiz-tools label{display:block;font-size:12px;font-weight:800;color:#46516b;margin:0 0 7px 3px}
+.quiz-search-row{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #dfe5f0;border-radius:13px;padding:0 14px;min-height:50px;box-shadow:0 4px 14px rgba(31,48,86,.035)}
+.quiz-search-row:focus-within{border-color:#f97316;box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+.quiz-search-row>span:first-child{font-size:23px;color:#7a849b;line-height:1}
+.quiz-search-row input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:500 14px 'Hind',sans-serif;color:#1b2a6b}
+.quiz-search-row input::placeholder{color:#a1a8b8}
+.quiz-search-tip{font-size:11px;color:#9aa2b3;white-space:nowrap}
+.quiz-filter-bar{display:flex;gap:8px;align-items:center;max-width:100%;margin:0 auto 14px;padding:4px 2px 8px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#d6dce8 transparent}
+.quiz-filter-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;border:1px solid #e0e6f0;border-radius:999px;background:#fff;color:#48536d;padding:8px 12px;font:700 12px 'Hind',sans-serif;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.quiz-filter-btn span{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:999px;background:#f0f3f8;color:#667085;font:800 10px Arial,sans-serif;padding:0 4px}
+.quiz-filter-btn:hover{border-color:#f5b783;color:#ae4a08;background:#fffaf6}
+.quiz-filter-btn.is-active{background:#1b2a6b;border-color:#1b2a6b;color:#fff}
+.quiz-filter-btn.is-active span{background:rgba(255,255,255,.18);color:#fff}
+.quiz-library-status{color:#788197;font-size:12px;margin:0 2px 15px}
+.quiz-no-results{background:#fff8f1;border:1px dashed #efc7a5;border-radius:13px;padding:22px;text-align:center;color:#8a4b12;font-size:14px}
+.quiz-category{margin-top:28px}
+.quiz-category[hidden],.quiz-card[hidden]{display:none!important}
+.quiz-category-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px;padding-bottom:12px;border-bottom:1px solid #e9edf4}
+.quiz-category-heading h3{color:#1b2a6b;font-size:19px;line-height:1.3;margin:0 0 4px}
+.quiz-category-heading p{color:#7b8499;font-size:12.5px;line-height:1.6;margin:0}
+.quiz-section-count{flex-shrink:0;background:#f0f3fa;border:1px solid #e0e6f0;border-radius:999px;padding:6px 10px;color:#485575;font-size:11px;font-weight:800}
+.quiz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.quiz-card{display:flex;flex-direction:column;gap:9px;min-width:0;min-height:155px;background:#fff;border:1px solid #e5eaf2;border-radius:14px;padding:15px 15px 13px;box-shadow:0 3px 12px rgba(31,48,86,.035);transition:transform .18s,border-color .18s,box-shadow .18s}
+.quiz-card:hover{transform:translateY(-2px);border-color:#f4c29a;box-shadow:0 9px 22px rgba(31,48,86,.08)}
+.quiz-card-top{display:flex;align-items:center;justify-content:space-between;gap:7px;flex-wrap:wrap}
+.quiz-type{display:inline-flex;border-radius:999px;padding:4px 8px;background:#eef3ff;color:#304778;font-size:10px;font-weight:800}
+.quiz-card:has(.quiz-type){ }
+.quiz-meta-pill{max-width:70%;color:#6b748a;background:#f7f8fb;border:1px solid #e9edf4;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.quiz-card-title{font-family:'Hind',sans-serif;color:#25345b;font-size:15px;font-weight:800;line-height:1.55;margin:0;overflow-wrap:anywhere}
+.quiz-card-sub{font-size:11px;color:#8790a4;margin:0}
+.quiz-open-link{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:10px;border-top:1px solid #f0f2f6;color:#c5530c;text-decoration:none;font-size:12px;font-weight:800}
+.quiz-open-link span{font-size:17px;transition:transform .18s}
+.quiz-open-link:hover{color:#1b2a6b}
+.quiz-open-link:hover span{transform:translateX(3px)}
+@media(max-width:620px){
+ .quiz-library{padding:34px 5% 30px}
+ .quiz-library-heading{text-align:left}
+ .quiz-library-heading p{font-size:13px}
+ .quiz-search-tip{display:none}
+ .quiz-filter-bar{margin-left:-2px;margin-right:-2px}
+ .quiz-category{margin-top:23px}
+ .quiz-category-heading{align-items:flex-start}
+ .quiz-category-heading h3{font-size:17px}
+ .quiz-grid{grid-template-columns:1fr;gap:10px}
+ .quiz-card{min-height:0;padding:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .quiz-filter-btn,.quiz-card,.quiz-open-link span{transition:none}
+ .quiz-card:hover{transform:none}
+}
+
+
+.ras-mains-promo{display:flex;align-items:center;justify-content:space-between;gap:22px;max-width:1080px;margin:0 auto 38px;padding:24px clamp(18px,4vw,34px);border:1px solid #e6eaf2;border-radius:18px;background:linear-gradient(120deg,#fff 0%,#fff7ef 72%,#f4f7ff 100%);box-shadow:0 8px 24px rgba(31,48,86,.055);color:#1b2a6b}.ras-mains-promo-copy{min-width:0}.ras-mains-eyebrow{display:inline-block;color:#9e4b0d;background:#ffead9;border-radius:999px;padding:5px 10px;font-size:10px;font-weight:800;letter-spacing:.35px}.ras-mains-promo h2{font-family:'Hind',sans-serif;font-size:clamp(20px,2.4vw,26px);margin:8px 0;color:#1b2a6b;line-height:1.35}.ras-mains-promo p{margin:0;color:#667085;font-size:13px;line-height:1.7}.ras-mains-promo-btn{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;background:#f97316;color:#fff;text-decoration:none;font-weight:800;padding:12px 16px;border-radius:10px;font-size:13px}.ras-mains-promo-btn:hover{background:#e96510}@media(max-width:650px){.ras-mains-promo{margin:0 5% 28px;align-items:flex-start;flex-direction:column;gap:14px;padding:20px}.ras-mains-promo-btn{width:100%;justify-content:space-between;box-sizing:border-box}}
 </style>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#1B2A6B">
@@ -319,6 +380,559 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 </div>
 
+
+<section class="quiz-library" id="quiz-library" aria-labelledby="quiz-library-title">
+  <div class="quiz-library-heading">
+    <span class="quiz-eyebrow">FREE MCQ PRACTICE LIBRARY</span>
+    <h2 id="quiz-library-title">🧠 विषयवार Quiz &amp; MCQ Practice</h2>
+    <p>RAS और अन्य प्रतियोगी परीक्षाओं के लिए quizzes अब विषय के अनुसार व्यवस्थित हैं। विषय चुनें या खोजकर सीधे अभ्यास शुरू करें।</p>
+  </div>
+  <div class="quiz-tools">
+    <label for="quizLibrarySearch">Quiz खोजें</label>
+    <div class="quiz-search-row"><span aria-hidden="true">⌕</span><input type="search" id="quizLibrarySearch" placeholder="जैसे: राजस्थान भूगोल, राज्यपाल, RAS Prelims..." autocomplete="off"><span class="quiz-search-tip">नाम या विषय लिखें</span></div>
+  </div>
+  <div class="quiz-filter-bar" role="group" aria-label="Quiz को विषय के अनुसार फ़िल्टर करें">
+    <button type="button" class="quiz-filter-btn is-active" data-quiz-filter="all" aria-pressed="true">सभी Quiz <span>82</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="exam" aria-pressed="false">RAS &amp; SI Practice <span>9</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="geography" aria-pressed="false">Geography &amp; Environment <span>22</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="history" aria-pressed="false">History &amp; Culture <span>8</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="polity" aria-pressed="false">Polity &amp; Administration <span>12</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="economy" aria-pressed="false">Economy &amp; Economic Survey <span>14</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="rajasthan" aria-pressed="false">Rajasthan Special GK <span>10</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="science" aria-pressed="false">Science &amp; Technology <span>2</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="current" aria-pressed="false">Current Affairs <span>4</span></button>
+          <button type="button" class="quiz-filter-btn" data-quiz-filter="mixed" aria-pressed="false">Mixed Practice <span>1</span></button>
+  </div>
+  <div class="quiz-library-status" id="quizLibraryStatus" aria-live="polite">82 quizzes उपलब्ध हैं।</div>
+  <div class="quiz-no-results" id="quizNoResults" hidden>इस खोज से कोई quiz नहीं मिला। दूसरा विषय या keyword लिखकर देखें।</div>
+  <div class="quiz-categories"><section class="quiz-category" data-quiz-section="exam" aria-labelledby="quiz-heading-exam">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-exam">RAS &amp; SI Practice</h3><p>RAS और Police SI के mocks, PYQs और full-paper practice</p></div><span class="quiz-section-count">9 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="exam" data-search="rajasthan si mock test — gk &amp; gs (100 प्रश्न) sub inspector exam (gk &amp; gs paper) 100 प्रश्न ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">100 प्रश्न</span></div>
+  <h4 class="quiz-card-title">Rajasthan SI Mock Test — GK &amp; GS (100 प्रश्न)</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/sub-inspector-exam-gk-gs-paper-2026-09-20-mmkd.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="ras previous year questions (2013–2024) — 200 mcqs ras pyqs पिछले वर्षों के सवाल (2013 -2024) 200 प्रश्न ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">200 प्रश्न</span></div>
+  <h4 class="quiz-card-title">RAS Previous Year Questions (2013–2024) — 200 MCQs</h4>
+  <p class="quiz-card-sub">RAS / SI · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ras-pyqs-2013-2024-2026-09-19-jfwa.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="rajasthan si 2026 — gs practice set (100 mcqs) sub inspector exam 2026 ( 5 april 2026 ) (gs) 100 mcqs 100 प्रश्न ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">100 प्रश्न</span></div>
+  <h4 class="quiz-card-title">Rajasthan SI 2026 — GS Practice Set (100 MCQs)</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/sub-inspector-exam-2026-5-april-2026-gs-100-mcqs-2026-08-29-1lkq.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="ras prelims 2023 — pyq practice (150 प्रश्न) ras prelims exam 2023 प्रारंभिक परीक्षा 2023 150 प्रश्न ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">RAS Prelims 2023 — PYQ Practice (150 प्रश्न)</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2023-2023-2026-08-28-dkmu.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="ras prelims 2024 — pyq practice (150 प्रश्न) ras prelims exam 2024 प्रारंभिक परीक्षा 2024 150 प्रश्न ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">RAS Prelims 2024 — PYQ Practice (150 प्रश्न)</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2024-2024-2026-08-28-ii29.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="ras prelims practice mock — 35 प्रश्न ras prelims exam 5 अगस्त 2026 ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 5 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">RAS Prelims Practice Mock — 35 प्रश्न</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2026-08-05-2ktz.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="ras prelims mini mock — 15 प्रश्न ras prelims exam 4 अगस्त 2026 ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">RAS Prelims Mini Mock — 15 प्रश्न</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2026-08-04-1tsu.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="ras prelims full paper — mock test ras prlelims full paper 4 अगस्त 2026 ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">RAS Prelims Full Paper — Mock Test</h4>
+  <p class="quiz-card-sub">RAS / SI · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ras-prlelims-full-paper-2026-08-04-t37s.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="exam" data-search="si economy pyqs si economy pyqs 4 अगस्त 2026 ras &amp; si practice">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">SI ECONOMY PYQs</h4>
+  <p class="quiz-card-sub">RAS / SI · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/si-economy-pyqs-2026-08-04-irv4.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="geography" aria-labelledby="quiz-heading-geography">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-geography">Geography &amp; Environment</h3><p>राजस्थान, भारत और विश्व भूगोल के full-length व topic-wise MCQs</p></div><span class="quiz-section-count">22 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान भूगोल — mega practice (350 mcqs) राजस्थान भूगोल top 350 mcqs rajasthan geography 350 प्रश्न geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">350 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान भूगोल — Mega Practice (350 MCQs)</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-350-mcqs-rajasthan-geography-2026-09-22-o4z0.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान भूगोल — level 2 (75 mcqs) राजस्थान भूगोल level 02 75 प्रश्न geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">75 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान भूगोल — Level 2 (75 MCQs)</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/level-02-2026-09-14-ey85.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="भारत भूगोल top 200 mcqs india geography भारत भूगोल top 200 mcqs india geography 200 प्रश्न geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">200 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारत भूगोल TOP 200 MCQs INDIA GEOGRAPHY</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-200-mcqs-india-geography-2026-08-31-7mku.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान भूगोल — practice set (150 mcqs) राजस्थान भूगोल top 150 mcqs rajasthan geography 150 प्रश्न geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान भूगोल — Practice Set (150 MCQs)</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-150-mcqs-rajasthan-geography-2026-08-29-tsbf.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="विश्व भूगोल world geography top 150 questions विश्व भूगोल world geography top 150 questions 150 प्रश्न geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">विश्व भूगोल WORLD GEOGRAPHY TOP 150 QUESTIONs</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/world-geography-top-150-questions-2026-08-28-nntc.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान वन्यजीव राजस्थान वन्यजीव 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान वन्यजीव</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-fxs6.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान वन वनस्पति राजस्थान वन वनस्पति 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान वन वनस्पति</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-doxb.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान सिचाई परियोजनाएँ राजस्थान सिचाई परियोजनाएँ 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान सिचाई परियोजनाएँ</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-3ly7.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान बांध pyqs final राजस्थान बांध pyqs final 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान बांध PYQs FINAL</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-final-2026-08-06-a22p.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान झीलें pyqs राजस्थान झीलें pyqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान झीलें PYQs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-n65v.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान अपवाह तंत्र एवं झीलें pyqs mcqs राजस्थान अपवाह तंत्र एवं झीलें pyqs mcqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान अपवाह तंत्र एवं झीलें PYQs MCqs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-mcqs-2026-08-06-8ozj.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान मृदा pyqs mcqs राजस्थान मृदा pyqs mcqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान मृदा PYQs MCQs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-mcqs-2026-08-06-tzgj.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान जलवायु pyqs राजस्थान जलवायु pyqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान जलवायु PYQs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-xk9v.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान पर्वत पठार दर्रा pyqs राजस्थान पर्वत पठार दर्रा pyqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान पर्वत पठार दर्रा PYQs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-02k7.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान भौगोलिक विभाजन pyqs राजस्थान भौगोलिक विभाजन pyqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान भौगोलिक विभाजन PYQs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-eheh.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान कृषि फसल ( राजस्थान भूगोल) राजस्थान कृषि फसल ( राजस्थान भूगोल) 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान कृषि फसल ( राजस्थान भूगोल)</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-ifo6.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान भूगोल स्थिति विस्तार pyqs राजस्थान भूगोल स्थिति विस्तार pyqs 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान भूगोल स्थिति विस्तार PYQs</h4>
+  <p class="quiz-card-sub">भूगोल · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-pom1.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान मृदा राजस्थान मृदा 6 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान मृदा</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-776q.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान प्राकृतिक वनस्पति वन्यजीव राजस्थान प्राकृतिक वनस्पति वन्यजीव 5 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 5 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान प्राकृतिक वनस्पति वन्यजीव</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-vjea.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान जलवायु राजस्थान जलवायु 5 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 5 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान जलवायु</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-7rho.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान का अपवाह तंत्र राजस्थान का अपवाह तंत्र 5 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 5 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान का अपवाह तंत्र</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-6od4.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="geography" data-search="राजस्थान भौगोलिक विभाजन राजस्थान भौगोलिक विभाजन 5 अगस्त 2026 geography &amp; environment">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 5 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान भौगोलिक विभाजन</h4>
+  <p class="quiz-card-sub">भूगोल · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-752t.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="history" aria-labelledby="quiz-heading-history">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-history">History &amp; Culture</h3><p>भारत और राजस्थान का इतिहास, कला-संस्कृति और आधुनिक भारत</p></div><span class="quiz-section-count">8 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="history" data-search="राजस्थान इतिहास top 150 mcqs raj history राजस्थान इतिहास top 150 mcqs raj history 150 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान इतिहास TOP 150 MCQs RAJ HISTORY</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-150-mcqs-raj-history-2026-09-16-6xpw.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="राजस्थान कला एवं संस्कृति — level 2 (75 mcqs) राजस्थान कला संस्कृति level 02 75 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">75 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान कला एवं संस्कृति — Level 2 (75 MCQs)</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/level-02-2026-09-14-plt5.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="राजस्थान कला एवं संस्कृति — practice set (150 mcqs) राजस्थान कला संस्कृति top 150 mcqs raj art culture 150 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान कला एवं संस्कृति — Practice Set (150 MCQs)</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-150-mcqs-raj-art-culture-2026-08-29-thtl.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="राजस्थान का इतिहास rajasthan history 150 top mcqs राजस्थान का इतिहास rajasthan history 150 top mcqs 150 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान का इतिहास RAJASTHAN HISTORY 150 TOP MCQs</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/rajasthan-history-150-top-mcqs-2026-08-29-0rbg.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="आधुनिक भारत का इतिहास — practice set 1 (150 mcqs) आधुनिक भारत का इतिहास top 150 mcqs 150 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">आधुनिक भारत का इतिहास — Practice Set 1 (150 MCQs)</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-150-mcqs-2026-08-28-gjkc.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="प्राचीन मध्यकालीन भारत का इतिहास top 150 mcqs प्राचीन मध्यकालीन भारत का इतिहास top 150 mcqs 150 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">प्राचीन मध्यकालीन भारत का इतिहास TOP 150 MCQs</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-150-mcqs-2026-08-28-pgd1.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="भारत में यूरोपियों का आगमन modern indian history भारत में यूरोपियों का आगमन modern indian history 30 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">30 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारत में यूरोपियों का आगमन MODERN INDIAN HISTORY</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/modern-indian-history-2026-08-26-bolj.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="history" data-search="आधुनिक भारत का इतिहास — practice set 2 (150 mcqs) आधुनिक भारत इतिहास top 150 mcqs 150 प्रश्न history &amp; culture">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">आधुनिक भारत का इतिहास — Practice Set 2 (150 MCQs)</h4>
+  <p class="quiz-card-sub">इतिहास · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-150-mcqs-2026-08-17-3a49.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="polity" aria-labelledby="quiz-heading-polity">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-polity">Polity &amp; Administration</h3><p>संविधान, आयोग, राज्यपाल और शासन-प्रशासन</p></div><span class="quiz-section-count">12 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="polity" data-search="भारतीय राजव्यवस्था top 300 mcqs india polity भारतीय राजव्यवस्था top 300 mcqs india polity 300 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">300 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारतीय राजव्यवस्था TOP 300 MCQs INDIA POLITY</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-300-mcqs-india-polity-2026-09-21-wss5.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="भारतीय राजव्यवस्था ncert based top 260 mcqs india polity भारतीय राजव्यवस्था ncert based top 260 mcqs india polity 260 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">260 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारतीय राजव्यवस्था NCERT BASED top 260 MCQs INDIA POLITY</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/ncert-based-top-260-mcqs-india-polity-2026-09-17-38ib.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="संविधान एवं राजनीति top 300 mcqs polity and constitution 📘🇮🇳 संविधान एवं राजनीति top 300 mcqs polity and constitution 📘🇮🇳 300 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">300 प्रश्न</span></div>
+  <h4 class="quiz-card-title">संविधान एवं राजनीति TOP 300 MCQs POLITY AND CONSTITUTION 📘🇮🇳</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-300-mcqs-polity-and-constitution-2026-09-16-6tm2.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="भारतीय राजव्यवस्था 200 pyqs based mcq india polity भारतीय राजव्यवस्था 200 pyqs based mcq india polity 200 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">200 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारतीय राजव्यवस्था 200 PYQs Based MCQ INDIA POLITY</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/200-pyqs-based-mcq-india-polity-2026-09-16-fibu.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="राजस्थान राजव्यवस्था top 250 mcqs rajasthan polity राजस्थान राजव्यवस्था top 250 mcqs rajasthan polity 250 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">250 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान राजव्यवस्था TOP 250 MCQs RAJASTHAN POLITY</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-250-mcqs-rajasthan-polity-2026-08-30-w520.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="भारतीय संविधान राजव्यवस्था india polity top 150 questions भारतीय संविधान राजव्यवस्था india polity top 150 questions 150 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारतीय संविधान राजव्यवस्था INDIA POLITY TOP 150 QUESTIONS</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/india-polity-top-150-questions-2026-08-27-hi3f.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="राज्यपाल — revision quiz (50 प्रश्न) राज्यपाल 50 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">50 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राज्यपाल — Revision Quiz (50 प्रश्न)</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-13-yjzp.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="राज्यपाल — practice test (40 प्रश्न) राज्यपाल 11 अगस्त 2026 polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 11 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राज्यपाल — Practice Test (40 प्रश्न)</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-11-a5ue.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="राजस्थान लोक सेवा आयोग (rpsc) — 20 प्रश्न राज्य लोक सेवा आयोग 20 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">20 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान लोक सेवा आयोग (RPSC) — 20 प्रश्न</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-08-n11k.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="राज्य मानवाधिकार आयोग राज्य मानवाधिकार आयोग 20 प्रश्न polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">20 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राज्य मानवाधिकार आयोग</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-p1o3.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="राजस्थान विधानसभा राजस्थान विधानसभा 5 अगस्त 2026 polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 5 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान विधानसभा</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-auyu.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="polity" data-search="cm and ministers cm and ministers 4 अगस्त 2026 polity &amp; administration">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">CM and ministers</h4>
+  <p class="quiz-card-sub">राजव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/cm-and-ministers-2026-08-04-prjn.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="economy" aria-labelledby="quiz-heading-economy">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-economy">Economy &amp; Economic Survey</h3><p>भारतीय अर्थव्यवस्था, राजस्थान आर्थिक समीक्षा और सरकारी योजनाएँ</p></div><span class="quiz-section-count">14 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="economy" data-search="राजस्थान सरकार योजनाएं top 75 mcqs राजस्थान सरकार योजनाएं top 75 mcqs 75 प्रश्न economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">75 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान सरकार योजनाएं TOP 75 MCQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-75-mcqs-2026-09-17-uzjh.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="भारतीय अर्थव्यवस्था top 200 mcqs india economy भारतीय अर्थव्यवस्था top 200 mcqs india economy 200 प्रश्न economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">200 प्रश्न</span></div>
+  <h4 class="quiz-card-title">भारतीय अर्थव्यवस्था TOP 200 MCQs INDIA ECONOMY</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-200-mcqs-india-economy-2026-08-31-l30u.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="raj eco survey top 150 mcqs raj eco survey top 150 mcqs 150 प्रश्न economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">150 प्रश्न</span></div>
+  <h4 class="quiz-card-title">RAJ ECO SURVEY TOP 150 MCQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/raj-eco-survey-top-150-mcqs-2026-08-26-dgir.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="राजस्थान सरकारी योजनाएं ( फ्लैगशिप सहित) राजस्थान सरकारी योजनाएं ( फ्लैगशिप सहित) 40 प्रश्न economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">40 प्रश्न</span></div>
+  <h4 class="quiz-card-title">राजस्थान सरकारी योजनाएं ( फ्लैगशिप सहित)</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-m63a.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="राजस्थान आर्थिक विकास संस्थाएँ राजस्थान आर्थिक विकास संस्थाएँ 6 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान आर्थिक विकास संस्थाएँ</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-7v61.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="राजस्थान में उद्योग industry pyqs राजस्थान में उद्योग industry pyqs 6 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">PYQ Practice</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान में उद्योग industry PYQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · PYQ आधारित अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/industry-pyqs-2026-08-06-p0t8.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es 06 पर्यटन एवं संस्कृति mcqs es 06 पर्यटन एवं संस्कृति mcqs 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES 06 पर्यटन एवं संस्कृति MCQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-06-mcqs-2026-08-04-cyo3.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es 05 औद्योगिक, खनन एवं आर्थिक वृद्धि industrial, mining and economic growth mcqs es 05 औद्योगिक, खनन एवं आर्थिक वृद्धि industrial, mining and economic growth mcqs 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES 05 औद्योगिक, खनन एवं आर्थिक वृद्धि Industrial, Mining and Economic Growth MCQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-05-industrial-mining-and-economic-growth-mcqs-2026-08-04-76x6.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es 04 सामाजिक सशक्तिकरण es 04 सामाजिक सशक्तिकरण 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES 04 सामाजिक सशक्तिकरण</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-04-2026-08-04-p49q.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es 03 शिक्षा एवं ज्ञान education and the knowledge economy es 03 शिक्षा एवं ज्ञान education and the knowledge economy 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES 03 शिक्षा एवं ज्ञान Education and the Knowledge Economy</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-03-education-and-the-knowledge-economy-2026-08-04-l00u.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es 02 स्वास्थ्य एवं कल्याण health and well-being mcqs es 02 स्वास्थ्य एवं कल्याण health and well-being mcqs 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES 02 स्वास्थ्य एवं कल्याण Health and Well-being MCQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-02-health-and-well-being-mcqs-2026-08-04-pp1z.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es intro and overview es intro and overview 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES INTRO and OVERVIEW</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-intro-and-overview-2026-08-04-w1v8.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="es 1: कृषि-खाद्य प्रणालियों में रूपान्तरण mcqs es 1: कृषि-खाद्य प्रणालियों में रूपान्तरण mcqs 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">ES 1: कृषि-खाद्य प्रणालियों में रूपान्तरण MCQs</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/es-1-mcqs-2026-08-04-zgpq.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="economy" data-search="राजस्थान की कृषि एवं आर्थिक समीक्षा राजस्थान की कृषि एवं आर्थिक समीक्षा 4 अगस्त 2026 economy &amp; economic survey">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान की कृषि एवं आर्थिक समीक्षा</h4>
+  <p class="quiz-card-sub">अर्थव्यवस्था · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-04-df3f.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="rajasthan" aria-labelledby="quiz-heading-rajasthan">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-rajasthan">Rajasthan Special GK</h3><p>राजस्थान के संसाधन, जनसंख्या, परिवहन, पर्यटन व अन्य विशेष तथ्य</p></div><span class="quiz-section-count">10 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान पर्यटन राजस्थान पर्यटन 7 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 7 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान पर्यटन</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-q1mv.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान परिवहन राजस्थान परिवहन 7 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 7 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान परिवहन</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-y3ng.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान ऊर्जा संसाधन राजस्थान ऊर्जा संसाधन 7 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 7 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान ऊर्जा संसाधन</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-jwhe.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="सूखा - अकाल - बंजर भूमि -निर्धनता - बेरोजगारी सूखा - अकाल - बंजर भूमि -निर्धनता - बेरोजगारी 7 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 7 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">सूखा - अकाल - बंजर भूमि -निर्धनता - बेरोजगारी</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-38vq.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान शैक्षिक साक्षरता राजस्थान शैक्षिक साक्षरता 7 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 7 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान शैक्षिक साक्षरता</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-ocif.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान जनसंख्या राजस्थान जनसंख्या 7 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 7 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान जनसंख्या</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-l9t5.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान ख़ान खनिज राजस्थान ख़ान खनिज 6 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान ख़ान खनिज</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-9pbn.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान पशु संपदा राजस्थान पशु संपदा 6 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान पशु संपदा</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-7fic.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="राजस्थान कृषि संपदा राजस्थान कृषि संपदा 6 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 6 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">राजस्थान कृषि संपदा</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-howg.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="rajasthan" data-search="सामान्य ज्ञान — quick quiz (15 प्रश्न) check 15 sawal 4 अगस्त 2026 rajasthan special gk">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">अपडेट: 4 अगस्त 2026</span></div>
+  <h4 class="quiz-card-title">सामान्य ज्ञान — Quick Quiz (15 प्रश्न)</h4>
+  <p class="quiz-card-sub">राजस्थान GK · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/check-15-sawal-2026-08-04-r3p4.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="science" aria-labelledby="quiz-heading-science">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-science">Science &amp; Technology</h3><p>दैनिक विज्ञान तथा विज्ञान एवं प्रौद्योगिकी</p></div><span class="quiz-section-count">2 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="science" data-search="विज्ञान एवं तकनीति top 200 mcqs science and technology विज्ञान एवं तकनीति top 200 mcqs science and technology 200 प्रश्न science &amp; technology">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">200 प्रश्न</span></div>
+  <h4 class="quiz-card-title">विज्ञान एवं तकनीति TOP 200 MCQs Science and Technology</h4>
+  <p class="quiz-card-sub">विज्ञान · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-200-mcqs-science-and-technology-2026-09-01-tbvm.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="science" data-search="दैनिक विज्ञान (basics of everyday science) दैनिक विज्ञान (basics of everyday science) 75 प्रश्न science &amp; technology">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">75 प्रश्न</span></div>
+  <h4 class="quiz-card-title">दैनिक विज्ञान (Basics of Everyday Science)</h4>
+  <p class="quiz-card-sub">विज्ञान · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/basics-of-everyday-science-2026-08-08-r9js.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="current" aria-labelledby="quiz-heading-current">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-current">Current Affairs</h3><p>मासिक समसामयिकी अभ्यास sets</p></div><span class="quiz-section-count">4 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="current" data-search="current affairs — may–june practice (35 mcqs) current affair may june 35 mcqs 35 प्रश्न current affairs">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">35 प्रश्न</span></div>
+  <h4 class="quiz-card-title">Current Affairs — May–June Practice (35 MCQs)</h4>
+  <p class="quiz-card-sub">Current Affairs · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/current-affair-may-june-35-mcqs-2026-09-16-vx56.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="current" data-search="june current affairs — practice set 1 (100 mcqs) जून माह समसामयिकी top 100 mcqs 100 प्रश्न current affairs">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">100 प्रश्न</span></div>
+  <h4 class="quiz-card-title">June Current Affairs — Practice Set 1 (100 MCQs)</h4>
+  <p class="quiz-card-sub">Current Affairs · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/top-100-mcqs-2026-08-25-ue7r.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="current" data-search="july current affairs — 100 mcqs जुलाई माह समसामयिकी mcqs 100 प्रश्न current affairs">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">100 प्रश्न</span></div>
+  <h4 class="quiz-card-title">July Current Affairs — 100 MCQs</h4>
+  <p class="quiz-card-sub">Current Affairs · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/mcqs-2026-08-25-so5u.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article>
+<article class="quiz-card" data-quiz-card data-category="current" data-search="june current affairs — practice set 2 (100 mcqs) जून माह समसामयिकी mcqs 100 प्रश्न current affairs">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">100 प्रश्न</span></div>
+  <h4 class="quiz-card-title">June Current Affairs — Practice Set 2 (100 MCQs)</h4>
+  <p class="quiz-card-sub">Current Affairs · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/mcqs-2026-08-25-hah0.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section>
+<section class="quiz-category" data-quiz-section="mixed" aria-labelledby="quiz-heading-mixed">
+  <div class="quiz-category-heading"><div><h3 id="quiz-heading-mixed">Mixed Practice</h3><p>मिक्स्ड GK &amp; GS और छोटे क्विक-प्रैक्टिस टेस्ट</p></div><span class="quiz-section-count">1 Quiz</span></div>
+  <div class="quiz-grid"><article class="quiz-card" data-quiz-card data-category="mixed" data-search="mixed gk &amp; gs practice — 20 प्रश्न 20 random sawal 20 प्रश्न mixed practice">
+  <div class="quiz-card-top"><span class="quiz-type">MCQ Quiz</span><span class="quiz-meta-pill">20 प्रश्न</span></div>
+  <h4 class="quiz-card-title">Mixed GK &amp; GS Practice — 20 प्रश्न</h4>
+  <p class="quiz-card-sub">Mixed · विषयवार MCQ अभ्यास</p>
+  <a class="quiz-open-link" href="https://www.omkarsir.com/quizzes/20-random-sawal-2026-10-01-fb7p.html" target="_blank" rel="noopener noreferrer">Quiz शुरू करें <span aria-hidden="true">→</span></a>
+  </article></div>
+ </section></div>
+</section>
+<section id="ras-mains-pyqs-promo" class="ras-mains-promo" aria-labelledby="ras-mains-promo-title">
+  <div class="ras-mains-promo-copy">
+    <span class="ras-mains-eyebrow">RPSC RAS MAINS · PAPER-I</span>
+    <h2 id="ras-mains-promo-title">📚 309 RAS Mains Paper-I PYQs</h2>
+    <p>इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित।</p>
+  </div>
+  <a href="/ras-mains-paper-1-pyqs.html" class="ras-mains-promo-btn">PYQs पढ़ें <span aria-hidden="true">→</span></a>
+</section>
 <footer>
   <div class="footer-logo">Omkar Sir<span>.</span></div>
   <div style="font-size:13px;margin-bottom:10px">New India Education, Jaipur, Rajasthan</div>
@@ -349,101 +963,50 @@ window.addEventListener('scroll', function(){
   btns.forEach(function(b, i){ b.classList.toggle('pf-active', i === activeIdx); });
 }, {passive:true});
 </script>
-<!-- NIED_QUIZ_LIST_START -->
-<h2 style="margin-top:30px">🧠 Chapter-wise Quiz Papers</h2>
-<ul id="nied-quiz-list" style="list-style:none;padding:0">
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/20-random-sawal-2026-10-01-fb7p.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 20 random sawal</a> <span style="font-size:11px;color:#888">(20 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-350-mcqs-rajasthan-geography-2026-09-22-o4z0.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान भूगोल TOP 350 MCQs RAJASTHAN GEOGRAPHY</a> <span style="font-size:11px;color:#888">(350 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-300-mcqs-india-polity-2026-09-21-wss5.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारतीय राजव्यवस्था TOP 300 MCQs INDIA POLITY</a> <span style="font-size:11px;color:#888">(300 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/sub-inspector-exam-gk-gs-paper-2026-09-20-mmkd.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 SUB INSPECTOR EXAM (GK & GS PAPER)</a> <span style="font-size:11px;color:#888">(100 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ras-pyqs-2013-2024-2026-09-19-jfwa.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAS PYQs पिछले वर्षों के सवाल (2013 -2024)</a> <span style="font-size:11px;color:#888">(200 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-75-mcqs-2026-09-17-uzjh.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान सरकार योजनाएं TOP 75 MCQs</a> <span style="font-size:11px;color:#888">(75 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ncert-based-top-260-mcqs-india-polity-2026-09-17-38ib.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारतीय राजव्यवस्था NCERT BASED top 260 MCQs INDIA POLITY</a> <span style="font-size:11px;color:#888">(260 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-300-mcqs-polity-and-constitution-2026-09-16-6tm2.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 संविधान एवं राजनीति TOP 300 MCQs POLITY AND CONSTITUTION 📘🇮🇳</a> <span style="font-size:11px;color:#888">(300 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/200-pyqs-based-mcq-india-polity-2026-09-16-fibu.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारतीय राजव्यवस्था 200 PYQs Based MCQ INDIA POLITY</a> <span style="font-size:11px;color:#888">(200 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-150-mcqs-raj-history-2026-09-16-6xpw.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान इतिहास TOP 150 MCQs RAJ HISTORY</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/current-affair-may-june-35-mcqs-2026-09-16-vx56.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 current affair may june 35 MCQs</a> <span style="font-size:11px;color:#888">(35 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/level-02-2026-09-14-ey85.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान  भूगोल   LEVEL 02</a> <span style="font-size:11px;color:#888">(75 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/level-02-2026-09-14-plt5.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान कला संस्कृति LEVEL 02</a> <span style="font-size:11px;color:#888">(75 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-200-mcqs-science-and-technology-2026-09-01-tbvm.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 विज्ञान एवं तकनीति TOP 200 MCQs Science and Technology</a> <span style="font-size:11px;color:#888">(200 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-200-mcqs-india-economy-2026-08-31-l30u.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारतीय अर्थव्यवस्था TOP 200 MCQs INDIA ECONOMY</a> <span style="font-size:11px;color:#888">(200 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-200-mcqs-india-geography-2026-08-31-7mku.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारत भूगोल TOP 200 MCQs INDIA GEOGRAPHY</a> <span style="font-size:11px;color:#888">(200 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-250-mcqs-rajasthan-polity-2026-08-30-w520.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान राजव्यवस्था TOP 250 MCQs RAJASTHAN POLITY</a> <span style="font-size:11px;color:#888">(250 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-150-mcqs-raj-art-culture-2026-08-29-thtl.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान कला संस्कृति TOP 150 MCQs RAJ ART CULTURE</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/sub-inspector-exam-2026-5-april-2026-gs-100-mcqs-2026-08-29-1lkq.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 SUB INSPECTOR EXAM 2026 ( 5 APRIL 2026 ) (GS) 100 MCQs</a> <span style="font-size:11px;color:#888">(100 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-150-mcqs-rajasthan-geography-2026-08-29-tsbf.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान भूगोल TOP 150 MCQs RAJASTHAN GEOGRAPHY</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/rajasthan-history-150-top-mcqs-2026-08-29-0rbg.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान का इतिहास RAJASTHAN HISTORY 150 TOP MCQs</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2023-2023-2026-08-28-dkmu.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAS Prelims Exam 2023  प्रारंभिक परीक्षा 2023</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2024-2024-2026-08-28-ii29.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAS Prelims Exam 2024 प्रारंभिक परीक्षा 2024</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-150-mcqs-2026-08-28-gjkc.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 आधुनिक भारत का इतिहास TOP 150 MCQs</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-150-mcqs-2026-08-28-pgd1.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 प्राचीन मध्यकालीन भारत का इतिहास TOP 150 MCQs</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/world-geography-top-150-questions-2026-08-28-nntc.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 विश्व भूगोल WORLD GEOGRAPHY TOP 150 QUESTIONs</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/india-polity-top-150-questions-2026-08-27-hi3f.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारतीय संविधान राजव्यवस्था INDIA POLITY TOP 150 QUESTIONS</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/raj-eco-survey-top-150-mcqs-2026-08-26-dgir.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAJ ECO SURVEY TOP 150 MCQs</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/modern-indian-history-2026-08-26-bolj.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 भारत में यूरोपियों का आगमन MODERN INDIAN HISTORY</a> <span style="font-size:11px;color:#888">(30 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-100-mcqs-2026-08-25-ue7r.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 जून माह समसामयिकी TOP 100 MCQs</a> <span style="font-size:11px;color:#888">(100 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/mcqs-2026-08-25-so5u.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 जुलाई माह समसामयिकी MCQs</a> <span style="font-size:11px;color:#888">(100 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/mcqs-2026-08-25-hah0.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 जून माह समसामयिकी MCQs</a> <span style="font-size:11px;color:#888">(100 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/top-150-mcqs-2026-08-17-3a49.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 आधुनिक भारत इतिहास TOP 150 MCQs</a> <span style="font-size:11px;color:#888">(150 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/modern-history-check-2026-08-17-qd80.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 modern history check</a> <span style="font-size:11px;color:#888">(8 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-13-yjzp.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राज्यपाल</a> <span style="font-size:11px;color:#888">(50 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-11-a5ue.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राज्यपाल</a> <span style="font-size:11px;color:#888">(11 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/basics-of-everyday-science-2026-08-08-r9js.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 दैनिक विज्ञान (Basics of Everyday Science)</a> <span style="font-size:11px;color:#888">(75 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-08-n11k.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राज्य लोक सेवा  आयोग</a> <span style="font-size:11px;color:#888">(20 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-08-n11k.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राज्य लोक सेवा आयोग</a> <span style="font-size:11px;color:#888">(20 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-p1o3.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राज्य मानवाधिकार आयोग</a> <span style="font-size:11px;color:#888">(20 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-m63a.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान सरकारी योजनाएं ( फ्लैगशिप सहित)</a> <span style="font-size:11px;color:#888">(40 प्रश्न)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-q1mv.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान  पर्यटन</a> <span style="font-size:11px;color:#888">(7 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-y3ng.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान परिवहन</a> <span style="font-size:11px;color:#888">(7 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-jwhe.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान ऊर्जा संसाधन</a> <span style="font-size:11px;color:#888">(7 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-38vq.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 सूखा - अकाल - बंजर भूमि  -निर्धनता - बेरोजगारी</a> <span style="font-size:11px;color:#888">(7 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-ocif.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान शैक्षिक साक्षरता</a> <span style="font-size:11px;color:#888">(7 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-07-l9t5.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान जनसंख्या</a> <span style="font-size:11px;color:#888">(7 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-7v61.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान आर्थिक विकास संस्थाएँ</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/industry-pyqs-2026-08-06-p0t8.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान में उद्योग industry PYQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-9pbn.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान ख़ान खनिज</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-7fic.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान पशु संपदा</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-howg.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान कृषि संपदा</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-fxs6.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान वन्यजीव</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-doxb.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान वन वनस्पति</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-3ly7.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान सिचाई परियोजनाएँ</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-final-2026-08-06-a22p.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान बांध PYQs FINAL</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-n65v.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान झीलें PYQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-mcqs-2026-08-06-8ozj.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान अपवाह तंत्र एवं झीलें PYQs MCqs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-mcqs-2026-08-06-tzgj.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान  मृदा PYQs MCQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-xk9v.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान  जलवायु PYQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-02k7.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान पर्वत पठार दर्रा PYQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-eheh.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान भौगोलिक विभाजन PYQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-ifo6.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान कृषि फसल ( राजस्थान भूगोल)</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/pyqs-2026-08-06-pom1.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान भूगोल स्थिति विस्तार PYQs</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-06-776q.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान मृदा</a> <span style="font-size:11px;color:#888">(6 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-auyu.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान विधानसभा</a> <span style="font-size:11px;color:#888">(5 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-vjea.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान प्राकृतिक वनस्पति  वन्यजीव</a> <span style="font-size:11px;color:#888">(5 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-7rho.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान जलवायु</a> <span style="font-size:11px;color:#888">(5 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-6od4.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान का अपवाह तंत्र</a> <span style="font-size:11px;color:#888">(5 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-05-752t.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान भौगोलिक विभाजन</a> <span style="font-size:11px;color:#888">(5 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2026-08-05-2ktz.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAS Prelims Exam</a> <span style="font-size:11px;color:#888">(5 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/cm-and-ministers-2026-08-04-prjn.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 CM and ministers</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-06-mcqs-2026-08-04-cyo3.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES 06 पर्यटन एवं संस्कृति MCQs</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-05-industrial-mining-and-economic-growth-mcqs-2026-08-04-76x6.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES 05 औद्योगिक, खनन एवं आर्थिक वृद्धि  Industrial, Mining and Economic Growth MCQs</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-04-2026-08-04-p49q.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES 04 सामाजिक सशक्तिकरण</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-03-education-and-the-knowledge-economy-2026-08-04-l00u.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES 03 शिक्षा एवं ज्ञान  Education and the Knowledge Economy</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-02-health-and-well-being-mcqs-2026-08-04-pp1z.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES 02 स्वास्थ्य एवं कल्याण Health and Well-being MCQs</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-intro-and-overview-2026-08-04-w1v8.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES INTRO and  OVERVIEW</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/es-1-mcqs-2026-08-04-zgpq.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 ES 1: कृषि-खाद्य प्रणालियों में रूपान्तरण MCQs</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/check-15-sawal-2026-08-04-r3p4.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 check 15 sawal</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ras-prelims-exam-2026-08-04-1tsu.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAS Prelims Exam</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/niEd-quiz-2026-08-04-df3f.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 राजस्थान की कृषि एवं आर्थिक समीक्षा</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/ras-prlelims-full-paper-2026-08-04-t37s.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 RAS PRLELIMS FULL PAPER</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-<li style="margin-bottom:8px"><a href="https://www.omkarsir.com/quizzes/si-economy-pyqs-2026-08-04-irv4.html" target="_blank" style="color:#FF6B00;font-weight:700;text-decoration:none">🎯 SI ECONOMY PYQs</a> <span style="font-size:11px;color:#888">(4 अगस्त 2026)</span></li>
-</ul>
-<!-- NIED_QUIZ_LIST_END -->
 
-<section id="ras-mains-pyqs-promo" style="margin:28px auto;padding:22px;max-width:1100px;background:linear-gradient(135deg,#1d2d6f,#273d91);color:#fff;border-radius:14px;box-shadow:0 8px 22px #1d2d6f22">
-  <div style="font-size:14px;font-weight:700;opacity:.9">RPSC RAS MAINS • PAPER-I</div>
-  <h2 style="margin:6px 0 8px;font-size:26px">📚 309 RAS Mains Paper-I PYQs</h2>
-  <p style="margin:0 0 14px;line-height:1.6">इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित।</p>
-  <a href="ras-mains-paper-1-pyqs.html" style="display:inline-block;background:#ff6b00;color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:9px">PYQs पढ़ें →</a>
-</section>
+<script>
+(function(){
+  var library=document.getElementById('quiz-library');
+  if(!library) return;
+  var search=document.getElementById('quizLibrarySearch');
+  var filterBar=library.querySelector('.quiz-filter-bar');
+  var cards=Array.prototype.slice.call(library.querySelectorAll('[data-quiz-card]'));
+  var sections=Array.prototype.slice.call(library.querySelectorAll('[data-quiz-section]'));
+  var buttons=Array.prototype.slice.call(filterBar.querySelectorAll('[data-quiz-filter]'));
+  var status=document.getElementById('quizLibraryStatus');
+  var empty=document.getElementById('quizNoResults');
+  var currentFilter='all';
+  function applyFilters(){
+    var query=(search.value||'').trim().toLocaleLowerCase();
+    var visible=0;
+    cards.forEach(function(card){
+      var category=card.getAttribute('data-category');
+      var haystack=(card.getAttribute('data-search')||'')+' '+card.textContent.toLocaleLowerCase();
+      var matches=(currentFilter==='all'||category===currentFilter)&&(!query||haystack.indexOf(query)!==-1);
+      card.hidden=!matches;
+      if(matches) visible++;
+    });
+    sections.forEach(function(section){
+      var hasVisible=section.querySelectorAll('[data-quiz-card]:not([hidden])').length>0;
+      section.hidden=!hasVisible;
+    });
+    buttons.forEach(function(button){
+      var active=button.getAttribute('data-quiz-filter')===currentFilter;
+      button.classList.toggle('is-active',active);
+      button.setAttribute('aria-pressed',active?'true':'false');
+    });
+    status.textContent=visible+' में से '+visible+' quiz दिख रहे हैं'+(query?' — खोज: “'+query+'”':currentFilter!=='all'?' — '+(buttons.find(function(b){return b.getAttribute('data-quiz-filter')===currentFilter;})||{}).textContent.trim().replace(/\s+/g,' '):'।');
+    empty.hidden=visible!==0;
+  }
+  buttons.forEach(function(button){
+    button.addEventListener('click',function(){
+      currentFilter=button.getAttribute('data-quiz-filter');
+      applyFilters();
+    });
+  });
+  search.addEventListener('input',applyFilters);
+  applyFilters();
+})();
+</script>
 </body>
 </html>
