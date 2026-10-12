@@ -188,6 +188,40 @@ footer{padding:24px 0 35px;background:#18234f;color:#d5dcf7;font-size:12px;text-
 footer a{color:#fff;text-decoration:none;margin:0 8px}
 footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-weight:800;color:#fff;margin-bottom:7px}
 .sticky-buy{display:none}
+
+.offer-strip{background:linear-gradient(95deg,#18285f,#293f8c);color:#fff;border-bottom:3px solid var(--orange)}
+.offer-strip .wrap{padding:10px 0;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;text-align:center;font-size:13px;font-weight:800;line-height:1.55}
+.offer-strip strong{color:#ffe0c4}
+.hero-credibility{margin:0 0 16px;padding:10px 13px;border:1px solid #f2d3b7;background:rgba(255,255,255,.84);border-radius:11px;color:#536080;font-size:13px;font-weight:800;line-height:1.7}
+.sample-pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:stretch}
+.sample-sheet{position:relative;min-width:0;min-height:300px;padding:17px 16px 15px;background:linear-gradient(180deg,#fff 0%,#fff 82%,#f8faff 100%);border:1px solid #dce3f0;border-radius:13px;box-shadow:0 10px 25px rgba(27,42,107,.08);overflow:hidden}
+.sample-sheet:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--orange) 0 24%,var(--navy) 24% 100%)}
+.sample-sheet-top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid #e8ebf3;color:var(--navy);font-size:9px;font-weight:900;letter-spacing:.25px}
+.sample-sheet-top span:last-child{color:#a54b0c;text-align:right}
+.sample-sheet-title{font-size:17px;color:var(--navy);line-height:1.4;margin:14px 0 8px}
+.sample-question-label{font-size:11px;font-weight:900;color:#a24b0c;display:flex;align-items:center;gap:7px;margin-top:13px}
+.sample-question-label span{background:#fff0e4;border-radius:6px;padding:4px 7px}
+.sample-question{font-size:13px;font-weight:800;line-height:1.75;color:#252d48;margin:9px 0 12px}
+.sample-answer{background:#f4f7ff;border:1px solid #e2e8f8;border-left:3px solid var(--green);border-radius:9px;padding:10px 11px}
+.sample-answer b{display:block;font-size:11px;color:var(--green);margin-bottom:4px}
+.sample-answer p{font-size:12px;line-height:1.75;color:#5c6680;margin:0}
+.sample-sheet-foot{display:flex;justify-content:space-between;gap:8px;margin-top:13px;padding-top:8px;border-top:1px dashed #d9dfed;color:#858da3;font-size:9px;font-weight:800}
+.sample-note{max-width:800px;margin:16px auto 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
+.sample-actions{justify-content:center;margin-top:18px}
+.delivery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.delivery-step{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:0 5px 17px rgba(27,42,107,.035)}
+.delivery-number{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:var(--orange);color:#fff;font-family:'Poppins',sans-serif;font-weight:900;margin-bottom:12px}
+.delivery-step h3{font-size:17px;color:var(--navy);margin:0 0 6px}
+.delivery-step p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+.delivery-help{margin:16px 0 0;color:var(--muted);font-size:13px;text-align:center}
+.final-offer{display:flex;align-items:center;justify-content:space-between;gap:24px;text-align:left;padding:clamp(22px,4vw,36px);border:1px solid #f0d5bf;border-radius:20px;background:linear-gradient(120deg,#fff4e9 0%,#fff 58%,#eff3ff 100%);box-shadow:0 12px 32px rgba(27,42,107,.07)}
+.final-offer-copy{flex:1;min-width:0}
+.final-offer .final-price{min-width:190px;text-align:center;padding:14px 18px;background:#fff;border:1px solid #e5e9f3;border-radius:14px}
+.final-offer .final-price strong{display:block;font-family:'Poppins','Hind',sans-serif;font-size:38px;line-height:1.2;color:var(--navy)}
+.final-offer .final-price s{color:#8d96aa;font-size:15px}
+.final-offer .final-price small{display:block;margin-top:3px;color:var(--green);font-size:12px;font-weight:900}
+.final-offer .hero-actions{margin-top:16px}
+@media(max-width:820px){.sample-pages,.delivery-grid{grid-template-columns:1fr}.sample-sheet{min-height:0}.final-offer{align-items:stretch;flex-direction:column;text-align:center}.final-offer .final-price{min-width:0}.final-offer .hero-actions{grid-template-columns:1fr}.final-offer .hero-actions .btn{width:100%}}
 @media(max-width:820px){.hero-grid,.buy-grid{grid-template-columns:1fr;gap:30px}.hero-grid{grid-template-areas:"copy" "cover"}.hero-copy{grid-area:copy}.cover-stage{grid-area:cover;max-width:320px}.grid-3,.unit-list{grid-template-columns:1fr}.feature{padding:16px}.buy-grid{max-width:620px;margin:0 auto}.section{padding:43px 0}.hero{padding:34px 0}.cover-title{font-size:31px}}
 @media(max-width:520px){.wrap{width:min(100% - 24px,1120px)}.navline .wrap{min-height:48px}.brand{font-size:14px}.navback{font-size:11px}.hero{padding:29px 0 31px}h1{font-size:31px}.lead{font-size:15.5px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn{width:100%}.cover-stage{max-width:275px}.book-cover{padding:20px}.cover-title{font-size:27px}.price-seal{width:76px;height:76px;right:-7px}.price-seal strong{font-size:22px}.marks-grid{gap:7px}.mark-card strong{font-size:21px}.mark-card span{font-size:11px}.buy-section{padding:39px 0}.ticket-head,.ticket-body{padding-left:17px;padding-right:17px}.price-row strong{font-size:47px}.sticky-buy{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);padding:9px 12px calc(9px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:9px;box-shadow:0 -7px 22px rgba(27,42,107,.1)}.sticky-price{color:var(--navy);font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;line-height:1.1}.sticky-price small{display:block;font-family:'Hind',sans-serif;font-size:10px;color:var(--muted);font-weight:600}.sticky-buy .btn{min-height:41px;padding:8px 12px;font-size:13px}.bottom-cta{padding-bottom:96px}footer{padding-bottom:88px}}
 </style>
@@ -203,13 +237,16 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
   </div>
 </header>
 
+<div class="offer-strip"><div class="wrap">🏷️ विशेष मूल्य: पूरी Paper-II PDF सिर्फ़ <strong>₹49</strong> <span>(₹199 से 75% छूट · ₹150 की बचत)</span></div></div>
+
 <main>
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="kicker">📘 RAS MAINS · PAPER-II · PYQ PDF</span>
       <h1>RAS Mains Paper-II<br><span>258 PYQ + सरल हिंदी उत्तर</span></h1>
-      <p class="lead">तीनों Units के प्रश्न एक जगह व्यवस्थित। PDF डाउनलोड करके अपने मोबाइल या कंप्यूटर पर पढ़ें, दोहराएँ और जरूरत के अनुसार प्रिंट करें।</p>
+      <p class="lead">2013–2024 के Paper-II PYQ, तीनों Units में व्यवस्थित। सरल हिंदी उत्तरों के साथ सामग्री डाउनलोड करें, मोबाइल या कंप्यूटर पर पढ़ें और जरूरत के अनुसार प्रिंट करें।</p>
+      <p class="hero-credibility">🏆 भारत का सबसे बेहतरीन कंटेंट और 8 साल का अनुभव — 6 लाख+ सफल विद्यार्थी</p>
       <div class="stats">
         <span class="stat">258 प्रश्न</span>
         <span class="stat">3 Units</span>
@@ -243,6 +280,46 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
   </div>
 </section>
 
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2>PDF के अंदर की झलक</h2>
+      <p>तीनों Units के वास्तविक नमूना प्रश्न और उत्तर की शैली देखें। पूरी प्रश्न-सामग्री वेबसाइट पर भी मुफ्त पढ़ सकते हैं।</p>
+    </div>
+    <div class="sample-pages">
+      <article class="sample-sheet">
+        <div class="sample-sheet-top"><span>NEW INDIA EDUCATION</span><span>UNIT-I · SAMPLE</span></div>
+        <h3 class="sample-sheet-title">प्रशासकीय नीतिशास्त्र</h3>
+        <div class="sample-question-label"><span>प्रश्न 1</span><span>2 अंक</span></div>
+        <p class="sample-question">‘नैतिक नियतिवाद’ (Moral Determinism) स्पष्ट कीजिए।</p>
+        <div class="sample-answer"><b>उत्तर की झलक</b><p>नैतिक नियतिवाद के अनुसार मनुष्य के कार्य और फैसले पहले से मौजूद कारणों, परिस्थितियों या प्राकृतिक नियमों से प्रभावित अथवा निर्धारित माने जाते हैं।</p></div>
+        <div class="sample-sheet-foot"><span>RAS MAINS · PAPER-II</span><span>प्रश्न-संग्रह</span></div>
+      </article>
+      <article class="sample-sheet">
+        <div class="sample-sheet-top"><span>NEW INDIA EDUCATION</span><span>UNIT-II · SAMPLE</span></div>
+        <h3 class="sample-sheet-title">सामान्य विज्ञान एवं प्रौद्योगिकी</h3>
+        <div class="sample-question-label"><span>प्रश्न 71 (अंश)</span><span>2 अंक</span></div>
+        <p class="sample-question">ठोस कार्बन डाइऑक्साइड को ‘शुष्क बर्फ’ क्यों कहा जाता है?</p>
+        <div class="sample-answer"><b>उत्तर की झलक</b><p>सामान्य वायुमंडलीय दाब पर ठोस CO₂, द्रव बने बिना सीधे गैस में बदल जाती है। इस प्रक्रिया को ऊर्ध्वपातन (Sublimation) कहते हैं।</p></div>
+        <div class="sample-sheet-foot"><span>RAS MAINS · PAPER-II</span><span>प्रश्न-संग्रह</span></div>
+      </article>
+      <article class="sample-sheet">
+        <div class="sample-sheet-top"><span>NEW INDIA EDUCATION</span><span>UNIT-III · SAMPLE</span></div>
+        <h3 class="sample-sheet-title">पृथ्वी विज्ञान / भूगोल एवं भू-विज्ञान</h3>
+        <div class="sample-question-label"><span>प्रश्न 170</span><span>5 अंक</span></div>
+        <p class="sample-question">कार्बोनिफेरस काल के समय और अंतराल तथा इसकी प्रमुख विशिष्टताओं का वर्णन कीजिए।</p>
+        <div class="sample-answer"><b>उत्तर की झलक</b><p>कार्बोनिफेरस काल पेलियोजोइक महाकल्प का एक कालखंड है। इसका समय लगभग 359 से 299 मिलियन वर्ष पूर्व माना जाता है।</p></div>
+        <div class="sample-sheet-foot"><span>RAS MAINS · PAPER-II</span><span>प्रश्न-संग्रह</span></div>
+      </article>
+    </div>
+    <p class="sample-note">यह सामग्री की नमूना झलक है। 258 प्रश्न और उत्तर वाला पूरा ऑनलाइन संस्करण अलग पेज पर पढ़ सकते हैं।</p>
+    <div class="hero-actions sample-actions">
+      <a class="btn btn-secondary" href="/ras-mains-paper-2-prototype.html">258 प्रश्न मुफ्त पढ़ें</a>
+      <a class="btn btn-main" href="#buy">PDF खरीदें — ₹49</a>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     <div class="section-heading">
@@ -265,6 +342,21 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
         <h3>ऑफलाइन रिवीजन</h3>
         <p>एक ही PDF में सामग्री रखें; मोबाइल, टैबलेट या कंप्यूटर पर पढ़ें और जरूरत पर प्रिंट करें।</p>
       </article>
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🗓️</div>
+        <h3>2013–2024 PYQ संकलन</h3>
+        <p>उपलब्ध Paper-II topic-wise previous-year question compilation के क्रम में व्यवस्थित सामग्री।</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🧮</div>
+        <h3>अंक के अनुसार प्रश्न</h3>
+        <p>2, 5, 10 और 20 अंक वाले प्रश्नों की पहचान, ताकि उत्तर-लेखन अभ्यास को व्यवस्थित कर सकें।</p>
+      </article>
+      <article class="feature">
+        <div class="feature-icon" aria-hidden="true">🖨️</div>
+        <h3>131 पृष्ठों में संकलित</h3>
+        <p>प्रश्न और उत्तर एक डिजिटल PDF में रखें; अपनी सुविधा से पढ़ें या प्रिंट करें।</p>
+      </article>
     </div>
   </div>
 </section>
@@ -272,7 +364,7 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
 <section class="section section-white">
   <div class="wrap">
     <div class="section-heading">
-      <h2>तीनों Units का पूरा कवरेज</h2>
+      <h2>विषय-सूची: तीनों Units का पूरा कवरेज</h2>
       <p>प्रश्नों का वर्गीकरण उपलब्ध Paper-II question compilation के क्रम के अनुसार है।</p>
     </div>
     <div class="unit-list">
@@ -331,6 +423,21 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="section-heading">
+      <h2>PDF आप तक कैसे पहुँचेगी?</h2>
+      <p>खरीदने से लेकर डाउनलोड तक की प्रक्रिया।</p>
+    </div>
+    <div class="delivery-grid">
+      <article class="delivery-step"><div class="delivery-number">1</div><h3>PDF खरीदें</h3><p>₹49 के checkout बटन पर क्लिक करें और Razorpay पर अपना आवश्यक विवरण भरें।</p></article>
+      <article class="delivery-step"><div class="delivery-number">2</div><h3>सुरक्षित भुगतान</h3><p>उपलब्ध विकल्पों में से UPI, Card या NetBanking चुनकर भुगतान पूरा करें।</p></article>
+      <article class="delivery-step"><div class="delivery-number">3</div><h3>PDF डाउनलोड करें</h3><p>सफल भुगतान के बाद download पेज पर जाकर PDF डाउनलोड करें। Razorpay receipt/email को भविष्य में दोबारा पहुँच के लिए संभालकर रखें।</p></article>
+    </div>
+    <p class="delivery-help">डाउनलोड में समस्या आए तो payment receipt के साथ <a href="mailto:email2omkara@gmail.com">email2omkara@gmail.com</a> पर संपर्क करें।</p>
+  </div>
+</section>
+
 <section class="section section-white">
   <div class="wrap">
     <div class="section-heading">
@@ -338,10 +445,15 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
       <p>PDF खरीदने से पहले जानने योग्य बातें।</p>
     </div>
     <div class="qa-list">
-      <details><summary>क्या वेबसाइट पर प्रश्न मुफ्त पढ़ सकते हैं?</summary><p>हाँ। सभी 258 प्रश्न और उत्तर <a href="/ras-mains-paper-2-prototype.html">वेबसाइट पर मुफ्त उपलब्ध</a> हैं। ₹49 वाली PDF उन विद्यार्थियों के लिए है जो सामग्री एक फाइल में डाउनलोड करके रखना चाहते हैं।</p></details>
-      <details><summary>PDF में कितने प्रश्न हैं?</summary><p>इस संस्करण में Unit-I के 70, Unit-II के 99 और Unit-III के 89—कुल 258 प्रश्न हैं।</p></details>
-      <details><summary>क्या PDF में विज्ञापन होंगे?</summary><p>नहीं। PDF में कोई विज्ञापन नहीं रखा जाएगा।</p></details>
-      <details><summary>क्या यह printed book है?</summary><p>नहीं। यह डिजिटल PDF होगी। भुगतान और डाउनलोड की सुविधा सक्रिय होने के बाद फ़ाइल ऑनलाइन उपलब्ध कराई जाएगी।</p></details>
+      <details><summary>क्या वेबसाइट पर प्रश्न मुफ्त पढ़ सकते हैं?</summary><p>हाँ। सभी 258 प्रश्न और उत्तर <a href="/ras-mains-paper-2-prototype.html">वेबसाइट पर मुफ्त उपलब्ध</a> हैं। ₹49 वाली PDF उन्हीं प्रश्नों को एक फाइल में डाउनलोड करके रखने और ऑफलाइन रिवीजन करने की सुविधा देती है।</p></details>
+      <details><summary>PDF में कितने प्रश्न और कितने पृष्ठ हैं?</summary><p>इस PDF में कुल 258 प्रश्न और 131 पृष्ठ हैं—Unit-I में 70, Unit-II में 99 और Unit-III में 89 प्रश्न।</p></details>
+      <details><summary>क्या PDF में विज्ञापन होंगे?</summary><p>नहीं। यह डिजिटल PDF बिना विज्ञापनों के उपलब्ध है।</p></details>
+      <details><summary>क्या यह printed book है?</summary><p>नहीं। यह डिजिटल PDF है; कोई printed book या hard copy डाक से नहीं भेजी जाएगी।</p></details>
+      <details><summary>भुगतान के बाद PDF कैसे मिलेगी?</summary><p>सफल भुगतान के बाद <a href="/download-ras-mains-paper-2-pdf.html">PDF download पेज</a> पर डाउनलोड लिंक उपलब्ध है। Razorpay की receipt/email संभालकर रखें; जरूरत पड़ने पर उसमें दिए गए लिंक से फिर पहुँच सकते हैं।</p></details>
+      <details><summary>₹49 की कीमत और ₹199 वाली कीमत क्या दर्शाती है?</summary><p>इस पेज पर प्रदर्शित वर्तमान विशेष मूल्य ₹49 है और तुलना के लिए ₹199 की सूची कीमत दिखाई गई है। भुगतान से पहले checkout में प्रदर्शित अंतिम राशि जाँच लें।</p></details>
+      <details><summary>भुगतान हो गया, लेकिन PDF डाउनलोड नहीं हो रही—क्या करें?</summary><p>पहले <a href="/download-ras-mains-paper-2-pdf.html">download पेज</a> खोलें और “Google Drive में खोलें” विकल्प आज़माएँ। फिर भी समस्या हो तो Razorpay receipt के साथ <a href="mailto:email2omkara@gmail.com">email2omkara@gmail.com</a> पर संपर्क करें।</p></details>
+      <details><summary>Refund की नीति क्या है?</summary><p>डिजिटल सामग्री पर सामान्यतः भुगतान और access मिलने के बाद refund नहीं होता। Double payment या तकनीकी समस्या जैसे अपवाद <a href="/refund-policy.html">Refund Policy</a> के अनुसार जाँचे जाएँगे।</p></details>
+      <details><summary>क्या मैं PDF दूसरों को भेज सकता हूँ?</summary><p>यह PDF खरीदार के निजी अध्ययन के लिए है। कृपया इसे सार्वजनिक रूप से साझा, पुनः बेच या वितरित न करें।</p></details>
       <details><summary>PDF का स्रोत क्या है?</summary><p>यह RAS Mains Paper-II के 2013–2024 topic-wise previous-year question compilation तथा उसमें दी गई उत्तर-कुंजी पर आधारित सामग्री है। पढ़ाई में आधिकारिक प्रश्नपत्र/निर्देशों को प्राथमिकता दें।</p></details>
     </div>
   </div>
@@ -349,18 +461,23 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
 
 <section class="bottom-cta">
   <div class="wrap">
-    <h2>पहले मुफ्त पढ़ें, फिर PDF चुनें</h2>
-    <p>वेबसाइट पर सारे प्रश्न और उत्तर देखकर सामग्री जाँचें। ऑफलाइन रिवीजन के लिए एक व्यवस्थित PDF उपलब्ध होगी।</p>
-    <div class="hero-actions" style="justify-content:center">
-      <a class="btn btn-secondary" href="/ras-mains-paper-2-prototype.html">258 प्रश्न मुफ्त पढ़ें</a>
-      <a class="btn btn-main" href="#buy">PDF की कीमत — ₹49</a>
+    <div class="final-offer">
+      <div class="final-offer-copy">
+        <h2>RAS Mains Paper-II के 258 PYQ, एक PDF में</h2>
+        <p>तीनों Units · 131 पृष्ठ · सरल हिंदी उत्तर · 2, 5, 10 व 20 अंक वाले प्रश्न। ऑनलाइन प्रश्न मुफ्त देखें या ऑफलाइन रिवीजन के लिए PDF चुनें।</p>
+        <div class="hero-actions">
+          <a class="btn btn-secondary" href="/ras-mains-paper-2-prototype.html">258 प्रश्न मुफ्त पढ़ें</a>
+          <a class="btn btn-main" href="#buy">अभी PDF खरीदें</a>
+        </div>
+      </div>
+      <div class="final-price"><strong>₹49</strong><s>₹199</s><small>75% छूट · एक बार भुगतान</small></div>
     </div>
   </div>
 </section>
 </main>
 
 <div class="sticky-buy">
-  <div class="sticky-price">₹49 <s style="font-size:13px;opacity:.6;font-weight:600">₹199</s><small>RAS Mains Paper-II PDF</small></div>
+  <div class="sticky-price">₹49 <s style="font-size:13px;opacity:.6;font-weight:600">₹199</s><small>75% छूट · RAS Mains Paper-II PDF</small></div>
   <a class="btn btn-main" href="#buy">PDF खरीदें →</a>
 </div>
 
