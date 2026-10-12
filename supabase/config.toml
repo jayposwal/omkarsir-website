@@ -1,0 +1,7 @@
+project_id = "omkarsir-website"
+
+[functions.razorpay-pdf-webhook]
+verify_jwt = false
+
+[functions.pdf-download]
+verify_jwt = false
