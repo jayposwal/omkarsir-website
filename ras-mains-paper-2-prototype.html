@@ -54,31 +54,37 @@ button,input{font:inherit}
 .results-line{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#7b8497;font-size:12px;margin:13px 2px}
 .results-line strong{color:var(--navy)}
 #questionList{display:grid;gap:14px}
-.question-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:clamp(16px,3vw,23px);box-shadow:0 4px 15px rgba(31,48,86,.035);scroll-margin-top:160px;transition:border-color .16s,box-shadow .16s}
+.question-card{background:#fff;border:1px solid #f0d7d7;border-left:4px solid #dc3434;border-radius:17px;padding:clamp(16px,3vw,23px);box-shadow:0 4px 15px rgba(31,48,86,.035);scroll-margin-top:160px;transition:border-color .16s,box-shadow .16s}
 .question-card:hover{border-color:#f4c29b;box-shadow:0 8px 20px rgba(31,48,86,.06)}
 .question-card[hidden]{display:none!important}
 .question-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
-.question-number{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#58647d;font-weight:800}
-.question-number .qdot{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:10px;background:var(--blue-pale);color:var(--navy);font-family:'Poppins',sans-serif;font-weight:800}
+.question-number{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#b91c1c;font-weight:800}
+.question-number .qdot{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:10px;background:#fff0f0;color:#b91c1c;font-family:'Poppins',sans-serif;font-weight:800}
 .marks-pill{flex-shrink:0;color:#a4480b;background:#fff0e4;border:1px solid #f7d7bd;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800}
-.question-title{font-size:clamp(17px,2.2vw,20px);line-height:1.75;margin:0;color:#202e53;font-weight:700;overflow-wrap:anywhere}
+.question-title{font-size:clamp(17px,2.2vw,20px);line-height:1.75;margin:0;color:#b42318;font-weight:700;overflow-wrap:anywhere}
 .question-english{font-family:'Poppins','Hind',sans-serif;font-size:12px;line-height:1.65;color:#8b93a4;margin:7px 0 0;font-weight:500}
 .question-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .topic-tag{font-size:10.5px;font-weight:700;color:#56647f;background:#f6f8fc;border:1px solid #e9edf4;border-radius:7px;padding:4px 8px}
-.answer-details{margin-top:17px;border:1px solid #dfe7f5;background:#fbfcff;border-radius:12px;overflow:hidden}
-.answer-details[open]{border-color:#cbd6ed;background:#fff}
-.answer-details summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 15px;background:#f2f5ff;color:var(--navy);font-size:14px;font-weight:800;cursor:pointer;user-select:none}
+.answer-details{margin-top:17px;border:1px solid #c9dafa;background:#f3f7ff;border-radius:12px;overflow:hidden}
+.answer-details[open]{border-color:#8fb0ed;background:#eef5ff}
+.answer-details summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 15px;background:#e7efff;color:#1746a2;font-size:14px;font-weight:800;cursor:pointer;user-select:none}
 .answer-details summary::-webkit-details-marker{display:none}
-.answer-details summary:hover{background:#eaf0ff}
+.answer-details summary:hover{background:#dce8ff}
 .summary-left{display:inline-flex;align-items:center;gap:9px}
 .answer-hint{font-size:11px;font-weight:600;color:#7b86a0}
-.toggle-chevron{width:25px;height:25px;display:grid;place-items:center;flex-shrink:0;border-radius:8px;background:#fff;color:#1b2a6b;border:1px solid #dce3f3;transition:transform .16s}
+.toggle-chevron{width:25px;height:25px;display:grid;place-items:center;flex-shrink:0;border-radius:8px;background:#fff;color:#1746a2;border:1px solid #bfd2f6;transition:transform .16s}
 .answer-details[open] .toggle-chevron{transform:rotate(180deg)}
-.answer-content{padding:17px clamp(14px,3vw,22px) 21px}
-.answer-label{margin:0 0 11px;color:#15804a;font-size:12px;font-weight:800}
-.answer-copy{white-space:pre-line;color:#374151;font-size:15px;line-height:1.95;overflow-wrap:anywhere}
-.answer-copy::first-line{font-weight:500}
-.answer-copy strong{font-weight:800}
+.answer-content{padding:17px clamp(14px,3vw,22px) 21px;background:linear-gradient(180deg,#f8faff 0%,#edf4ff 100%)}
+.answer-label{margin:0 0 13px;color:#1746a2;font-size:13px;font-weight:800;display:inline-flex;align-items:center;gap:6px;background:#e2ecff;padding:6px 10px;border-radius:8px}
+.answer-copy{color:#1e4388;font-size:15px;line-height:1.9;overflow-wrap:anywhere}
+.answer-subhead{display:block;margin:17px 0 8px;padding:8px 10px;border-left:4px solid #2563eb;border-radius:6px;background:#e2ecff;color:#1746a2;font-size:14px;font-weight:800;line-height:1.55}
+.answer-subhead:first-child{margin-top:0}
+.answer-paragraph{margin:7px 0 10px;color:#24477f;line-height:1.9}
+.answer-point{display:flex;align-items:flex-start;gap:9px;margin:8px 0;padding:10px 11px;background:rgba(255,255,255,.82);border:1px solid #dbe7fb;border-radius:9px;color:#24477f;line-height:1.8}
+.answer-point-icon{flex:0 0 auto;color:#2563eb;font-weight:800}
+.answer-point-body{min-width:0}
+.answer-point-body strong{color:#173f91;font-weight:800}
+.answer-gap{height:4px}
 .no-results{display:none;margin:12px 0;padding:30px 16px;text-align:center;border:1px dashed #d9dfeb;border-radius:15px;background:#fff;color:#778195}
 .no-results.show{display:block}
 .bottom-note{margin-top:26px;padding:18px;border-radius:14px;background:#fff;border:1px solid #e7ebf3;color:#69748a;font-size:12px;line-height:1.8}
@@ -129,7 +135,7 @@ button,input{font:inherit}
       <span class="meta-pill">2 और 5 अंक</span>
     </div>
   </section>
-  <div class="preview-note"><strong>यह prototype है:</strong> इसमें PDF के प्रश्न 1–10 का content रखा गया है। यह जाँचने के लिए है कि वेबसाइट पर उत्तर खोलने वाला format आपको सही लगता है या नहीं।</div>
+  <div class="preview-note"><strong>यह prototype है:</strong> इसमें PDF के प्रश्न 1–10 का content रखा गया है। प्रश्न लाल रंग में और उत्तर नीले panel में रखे गए हैं। उत्तर आसान हिंदी, छोटे headings, pointwise explanation और emojis के साथ समझने के लिए व्यवस्थित हैं।</div>
   <section class="tool-panel" aria-label="प्रश्न खोजें और फ़िल्टर करें">
     <label for="questionSearch" class="search-label">प्रश्न या विषय खोजें</label>
     <div class="search-box">
@@ -151,7 +157,7 @@ button,input{font:inherit}
   <div class="results-line"><span id="resultCount"><strong>10</strong> प्रश्न दिख रहे हैं</span><span>उत्तर देखने के लिए प्रत्येक प्रश्न खोलें</span></div>
   <section id="questionList" aria-live="polite" aria-label="RAS Mains Paper-II के प्रश्न"></section>
   <div class="no-results" id="noResults">इस खोज से कोई प्रश्न नहीं मिला। कोई दूसरा keyword लिखकर देखें।</div>
-  <div class="bottom-note"><strong>Content note:</strong> प्रश्नों और उत्तरों को दिए गए PDF से लिया गया है। PDF extraction में आए शब्दों के बीच line-break spaces को पठनीय बनाया गया है। अगली stage में इसी format पर प्रश्न 11–70 जोड़कर Unit-I पूरा किया जा सकता है।</div>
+  <div class="bottom-note"><strong>Content note:</strong> प्रश्न PDF के मूल प्रश्न हैं। उत्तर उसी सामग्री के मुख्य विचारों को सरल भाषा में दोबारा व्यवस्थित करते हैं; जहाँ छोटे उदाहरण दिए हैं, वे समझाने के लिए हैं। अगली stage में इसी format पर प्रश्न 11–70 जोड़े जा सकते हैं।</div>
   <div class="site-footer">
     <div><strong>New India Education · Omkar Sir</strong></div>
     <div style="margin-top:9px"><a href="/previous-year-papers.html#block-ras">PYQ Papers</a><a href="/all-notes.html">Free Notes</a><a href="/contact.html">Contact</a></div>
@@ -192,6 +198,23 @@ button,input{font:inherit}
     resultCount.innerHTML='<strong>'+visible+'</strong> / '+allQuestions.length+' प्रश्न दिख रहे हैं';
     noResults.classList.toggle('show',visible===0);
   }
+  function renderAnswer(answer){
+    return String(answer || '').split(/\r?\n/).map(function(line){
+      var value=line.trim();
+      if(!value) return '<div class="answer-gap" aria-hidden="true"></div>';
+      if(/^(📘|🔹|🧠)\s*/u.test(value)){
+        return '<h4 class="answer-subhead">'+esc(value)+'</h4>';
+      }
+      if(/^(✅|📌|➡️|•)\s*/u.test(value)){
+        var clean=value.replace(/^(✅|📌|➡️|•)\s*/u,'');
+        var split=clean.match(/^(.{2,70}?)(?:\s+[—–:-]\s+)(.+)$/u);
+        var body=split?'<strong>'+esc(split[1])+'</strong> — '+esc(split[2]):esc(clean);
+        var icon=value.match(/^(✅|📌|➡️|•)/u);
+        return '<div class="answer-point"><span class="answer-point-icon">'+esc(icon?icon[1]:'✅')+'</span><div class="answer-point-body">'+body+'</div></div>';
+      }
+      return '<p class="answer-paragraph">'+esc(value)+'</p>';
+    }).join('');
+  }
   function renderQuestion(q){
     var searchable=[q.q,q.en,q.topic,q.answer,q.n].join(' ').toLocaleLowerCase();
     var card=document.createElement('article');
@@ -204,7 +227,7 @@ button,input{font:inherit}
       '<h2 class="question-title">'+esc(q.q)+'</h2>'+
       (q.en?'<p class="question-english">'+esc(q.en)+'</p>':'')+
       '<div class="question-tags"><span class="topic-tag">'+esc(q.unitHi)+'</span><span class="topic-tag">'+esc(q.topic)+'</span><span class="topic-tag">PDF पृष्ठ '+esc(q.pdfPages)+'</span></div>'+
-      '<details class="answer-details"><summary><span class="summary-left"><span>✅ उत्तर देखें</span><span class="answer-hint">पूरा उत्तर खोलने के लिए क्लिक करें</span></span><span class="toggle-chevron" aria-hidden="true">⌄</span></summary><div class="answer-content"><p class="answer-label">उत्तर</p><div class="answer-copy">'+esc(q.answer)+'</div></div></details>';
+      '<details class="answer-details"><summary><span class="summary-left"><span>✅ उत्तर देखें</span><span class="answer-hint">सरल भाषा में पूरा उत्तर खोलें</span></span><span class="toggle-chevron" aria-hidden="true">⌄</span></summary><div class="answer-content"><p class="answer-label">🟦 उत्तर — आसान भाषा में</p><div class="answer-copy">'+renderAnswer(q.answer)+'</div></div></details>';
     list.appendChild(card);
   }
   fetch('/ras-mains-paper-2-prototype.json',{cache:'no-store'})
