@@ -1,6 +1,6 @@
 {
   "logo": {
-    "text": "🎓 Omkar Sir",
+    "text": "Omkar Sir",
     "subtitle": "New India Education",
     "url": "/"
   },
@@ -126,64 +126,6 @@
               "url": "/general-english.html"
             }
           ]
-        }
-      ]
-    },
-    {
-      "label": "📄 सभी Courses",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🎯 RAS Prelims Super 60 (Free Schedule)",
-          "url": "/ras-prelims-super60.html"
-        },
-        {
-          "label": "🚀 RAS Pre 2026 BEST Test Series — FREE",
-          "url": "/courses.html#course-test-series"
-        },
-        {
-          "label": "📘 RAS Foundation Course 2026",
-          "url": "/courses.html#course-ras-foundation"
-        },
-        {
-          "label": "🎯 RAS Prelims 2026 SUPER 60 Course (App)",
-          "url": "/courses.html#course-super60"
-        },
-        {
-          "label": "🕉️ भारत भूगोल OMASTRA GK सीरीज",
-          "url": "/courses.html#course-bharat-bhugol"
-        },
-        {
-          "label": "📜 India History — भारत का सम्पूर्ण इतिहास",
-          "url": "/courses.html#course-india-history"
-        },
-        {
-          "label": "🌍 World Geography — विश्व भूगोल",
-          "url": "/courses.html#course-world-geography"
-        },
-        {
-          "label": "🔢 Mathematics & Reasoning Complete Course",
-          "url": "/courses.html#course-math-reasoning"
-        },
-        {
-          "label": "🧬 जीव विज्ञान (Biology) — OMASTRA GK Series",
-          "url": "/courses.html#course-biology"
-        },
-        {
-          "label": "📦 ALL IN ONE Subscription",
-          "url": "/courses.html#course-all-in-one"
-        },
-        {
-          "label": "⚖️ Polity OMASTRA Course",
-          "url": "/courses.html#course-polity"
-        },
-        {
-          "label": "📝 10 हजार अति महत्वपूर्ण प्रश्न",
-          "url": "/courses.html#course-10k-questions"
-        },
-        {
-          "label": "📚 सभी Courses देखें (Full Page)",
-          "url": "/courses.html"
         }
       ]
     },
@@ -368,6 +310,104 @@
       ]
     },
     {
+      "label": "📝 Notes & PDFs",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "📄 सभी Free Notes देखें",
+          "url": "/all-notes.html"
+        },
+        {
+          "label": "📚 PDF Notes Store",
+          "url": "/adhunik-bharat-itihas-pdf.html"
+        },
+        {
+          "label": "📝 Previous Year Papers (PYQ)",
+          "url": "/previous-year-papers.html"
+        },
+        {
+          "label": "📖 NCERT + RBSE Books",
+          "url": "/books.html"
+        },
+        {
+          "label": "🗺️ राजस्थान एटलस",
+          "url": "/rajasthan-atlas.html"
+        }
+      ]
+    },
+    {
+      "label": "🎓 Courses",
+      "type": "dropdown",
+      "children": [
+        {
+          "label": "🎯 RAS Prelims Super 60 (Free Schedule)",
+          "url": "/ras-prelims-super60.html"
+        },
+        {
+          "label": "🚀 RAS Pre 2026 BEST Test Series — FREE",
+          "url": "/courses.html#course-test-series"
+        },
+        {
+          "label": "📘 RAS Foundation Course 2026",
+          "url": "/courses.html#course-ras-foundation"
+        },
+        {
+          "label": "🎯 RAS Prelims 2026 SUPER 60 Course (App)",
+          "url": "/courses.html#course-super60"
+        },
+        {
+          "label": "🕉️ भारत भूगोल OMASTRA GK सीरीज",
+          "url": "/courses.html#course-bharat-bhugol"
+        },
+        {
+          "label": "📜 India History — भारत का सम्पूर्ण इतिहास",
+          "url": "/courses.html#course-india-history"
+        },
+        {
+          "label": "🌍 World Geography — विश्व भूगोल",
+          "url": "/courses.html#course-world-geography"
+        },
+        {
+          "label": "🔢 Mathematics & Reasoning Complete Course",
+          "url": "/courses.html#course-math-reasoning"
+        },
+        {
+          "label": "🧬 जीव विज्ञान (Biology) — OMASTRA GK Series",
+          "url": "/courses.html#course-biology"
+        },
+        {
+          "label": "📦 ALL IN ONE Subscription",
+          "url": "/courses.html#course-all-in-one"
+        },
+        {
+          "label": "⚖️ Polity OMASTRA Course",
+          "url": "/courses.html#course-polity"
+        },
+        {
+          "label": "📝 10 हजार अति महत्वपूर्ण प्रश्न",
+          "url": "/courses.html#course-10k-questions"
+        },
+        {
+          "label": "📚 सभी Courses देखें (Full Page)",
+          "url": "/courses.html"
+        },
+        {
+          "label": "ℹ️ App & Info",
+          "type": "submenu",
+          "children": [
+            {
+              "label": "📱 New India Education App Download",
+              "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
+            },
+            {
+              "label": "👨‍🏫 हमारे बारे में — Omkar Sir",
+              "url": "/about.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "label": "📰 Current Affairs",
       "type": "dropdown",
       "children": [
@@ -378,72 +418,20 @@
         {
           "label": "📝 Daily Quiz",
           "url": "/quiz.html"
-        },
-        {
-          "label": "📚 Books",
-          "type": "submenu",
-          "children": [
-            {
-              "label": "🕉️ NCERT Books",
-              "url": "/books.html#block-ncert"
-            },
-            {
-              "label": "🏛️ RBSE Books",
-              "url": "/books.html#block-rbse"
-            }
-          ]
         }
       ]
     },
     {
-      "label": "💼 Latest Vacancy",
+      "label": "💼 Vacancy",
       "url": "/vacancy.html"
-    },
-    {
-      "label": "📚 Download Books",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🕉️ NCERT Books",
-          "url": "/books.html#block-ncert"
-        },
-        {
-          "label": "🏛️ RBSE Books",
-          "url": "/books.html#block-rbse"
-        }
-      ]
-    },
-    {
-      "label": "📝 PYQ Papers",
-      "type": "dropdown",
-      "children": [
-        {
-          "label": "🎯 RAS PYQ (Pre + Mains)",
-          "url": "/previous-year-papers.html#block-ras"
-        },
-        {
-          "label": "👮 Rajasthan SI PYQ",
-          "url": "/previous-year-papers.html#block-si"
-        }
-      ]
-    },
-    {
-      "label": "ℹ️ हमारे बारे में",
-      "type": "link",
-      "url": "/about.html"
-    },
-    {
-      "label": "📱 App Download",
-      "type": "link",
-      "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
     }
   ],
   "ticker": [
-    "🎯 RAS Prelims Super 60 Course अभी Join करें — 60 दिन में पूरा Syllabus",
+    "📚 500+ Notes — विषय-वार पढ़ाई एक ही जगह शुरू करें",
+    "📅 RAS Prelims 2026 की परीक्षा तिथि के लिए आधिकारिक RPSC सूचना देखें",
     "🚀 RAS Pre 2026 BEST Test Series — 18 Tests बिल्कुल FREE",
-    "📅 RAS Prelims Exam Date: 06 दिसंबर 2026",
-    "🆕 11 नए Rajasthan Exams (SI, Patwari, REET, VDO, Constable, LDC, CET...) की पूरी जानकारी अब उपलब्ध",
-    "🏆 NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार — विश्वसनीय एवं बेहतरीन Content",
-    "📚 500+ Notes अब एक ही जगह — विषय-वार पढ़ाई शुरू करें"
+    "🆕 राजस्थान की प्रमुख परीक्षाओं की जानकारी और तैयारी सामग्री उपलब्ध",
+    "🎯 RAS Prelims Super 60 — Daily Tasks के साथ व्यवस्थित तैयारी",
+    "🧠 Daily Quiz और MCQ Practice से अपनी तैयारी जाँचें"
   ]
 }
