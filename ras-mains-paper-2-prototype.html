@@ -108,6 +108,48 @@ button,input{font:inherit}
  html{scroll-behavior:auto}
  *,*::before,*::after{transition:none!important}
 }
+
+/* Clean, systematic study-note layout */
+.hero{position:relative;background:#fff!important;background-image:none!important;border:1px solid #dfe3e8!important;border-radius:7px!important;padding:20px clamp(16px,3vw,24px)!important;box-shadow:none!important}
+.hero:after{display:none!important}
+.eyebrow{display:inline-block!important;background:#f1f3f5!important;border-radius:4px!important;color:#555f6e!important;padding:4px 8px!important}
+.hero h1{font-family:'Hind',Arial,sans-serif!important;font-size:clamp(24px,3.5vw,32px)!important;margin:10px 0 7px!important}
+.hero h1 span{color:#b42318!important}
+.hero p{font-size:14px!important;line-height:1.75!important}
+.meta-pill{border-radius:4px!important;padding:5px 8px!important;background:#fff!important}
+.preview-note{border-radius:5px!important;background:#fff!important;border-color:#e0e4e9!important;border-left:3px solid #9aa4b2!important;padding:10px 12px!important}
+.tool-panel{background:var(--bg)!important;backdrop-filter:none!important}
+.search-box{border-radius:6px!important;box-shadow:none!important;border:1px solid #cfd5dd!important;min-height:44px!important}
+.clear-search{border:1px solid #d9dee5!important;background:#f7f8fa!important;border-radius:4px!important}
+.filter-btn,.expand-btn{border-radius:5px!important;transition:none!important;box-shadow:none!important}
+.filter-btn:hover,.expand-btn:hover{background:#f8f9fb!important}
+.question-card{border:1px solid #dfe3e8!important;border-left:1px solid #dfe3e8!important;border-radius:7px!important;padding:16px clamp(14px,2.5vw,20px)!important;box-shadow:none!important;transition:none!important;background:#fff!important}
+.question-card:hover{border-color:#cfd5dd!important;box-shadow:none!important}
+.question-number{color:#b42318!important;font-weight:700!important}
+.question-number .qdot{display:inline!important;width:auto!important;height:auto!important;border-radius:0!important;background:transparent!important;color:#b42318!important;font-family:'Hind',Arial,sans-serif!important}
+.question-title{color:#b42318!important;font-size:clamp(17px,2vw,19px)!important;line-height:1.7!important}
+.marks-pill{border-radius:4px!important;background:#f5f6f7!important;color:#505967!important;border-color:#dfe3e8!important;font-weight:600!important}
+.topic-tag{background:transparent!important;border:0!important;border-radius:0!important;padding:0 8px 0 0!important;color:#5f6878!important;font-weight:500!important}
+.topic-tag+.topic-tag{border-left:1px solid #dfe3e8!important;padding-left:8px!important}
+.answer-details{margin-top:12px!important;border:1px solid #cfdbee!important;border-radius:5px!important;background:#f4f7fc!important;box-shadow:none!important}
+.answer-details[open]{border-color:#c4d2e8!important;background:#f4f7fc!important}
+.answer-details summary{padding:10px 12px!important;background:#eaf0fa!important;color:#1c4a91!important;font-size:13px!important;font-weight:700!important}
+.answer-details summary:hover{background:#e2eaf7!important}
+.answer-hint{color:#758198!important;font-weight:500!important}
+.toggle-chevron{display:inline-block!important;width:auto!important;height:auto!important;border:0!important;border-radius:0!important;background:transparent!important;color:#1c4a91!important;font-size:16px!important;transition:none!important}
+.answer-content{padding:14px clamp(13px,2.5vw,18px) 17px!important;background:#f4f7fc!important;background-image:none!important;border-top:1px solid #dce5f4!important}
+.answer-label{display:block!important;margin:0 0 9px!important;padding:0!important;background:transparent!important;border-radius:0!important;color:#1c4a91!important;font-size:13px!important;font-weight:700!important}
+.answer-copy{color:#24477f!important;font-size:14.5px!important;line-height:1.8!important}
+.answer-subhead{display:block!important;margin:12px 0 5px!important;padding:0 0 4px!important;border:0!important;border-bottom:1px solid #d2deef!important;border-radius:0!important;background:transparent!important;color:#1c4a91!important;font-size:14px!important;font-weight:700!important}
+.answer-subhead:first-child{margin-top:0!important}
+.answer-paragraph{margin:5px 0 9px!important;color:#24477f!important;line-height:1.8!important}
+.answer-point{display:block!important;margin:5px 0!important;padding:0 0 0 17px!important;position:relative!important;background:transparent!important;border:0!important;border-radius:0!important;color:#24477f!important;line-height:1.8!important}
+.answer-point:before{content:'•'!important;position:absolute!important;left:2px!important;color:#1c4a91!important;font-weight:700!important}
+.answer-point-body strong,.answer-point strong{color:#1c4a91!important;font-weight:700!important}
+.answer-gap{display:none!important}
+.bottom-note{margin-top:20px!important;padding:12px 14px!important;border-radius:5px!important;background:#fff!important;border:1px solid #e0e4e9!important}
+@media(max-width:650px){.hero{border-radius:6px!important}.question-card{border-radius:6px!important}}
+
 </style>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:url" content="https://omkarsir.com/ras-mains-paper-2-prototype.html">
@@ -126,16 +168,16 @@ button,input{font:inherit}
 <main class="prototype-wrap">
   <a class="back-link" href="/previous-year-papers.html#block-ras">← सभी Previous Year Papers</a>
   <section class="hero">
-    <span class="eyebrow">🧪 PROTOTYPE · पहले 10 प्रश्न</span>
+    <span class="eyebrow">PROTOTYPE · पहले 10 प्रश्न</span>
     <h1>RPSC RAS Mains <span>Paper-II</span></h1>
     <p>General Studies-II · Topic-wise Previous Years Questions (2013–2024) — शुरुआती 10 प्रश्नों का नमूना। प्रश्न हमेशा दिखाई देंगे; पूरे उत्तर को देखने के लिए “उत्तर देखें” खोलें।</p>
     <div class="hero-meta">
-      <span class="meta-pill">📘 Unit-I: प्रशासकीय नीतिशास्त्र</span>
-      <span class="meta-pill">📝 10 प्रश्न</span>
+      <span class="meta-pill">Unit-I: प्रशासकीय नीतिशास्त्र</span>
+      <span class="meta-pill">10 प्रश्न</span>
       <span class="meta-pill">2 और 5 अंक</span>
     </div>
   </section>
-  <div class="preview-note"><strong>यह prototype है:</strong> इसमें PDF के प्रश्न 1–10 का content रखा गया है। प्रश्न लाल रंग में और उत्तर नीले panel में रखे गए हैं। उत्तर आसान हिंदी, छोटे headings, pointwise explanation और emojis के साथ समझने के लिए व्यवस्थित हैं।</div>
+  <div class="preview-note"><strong>यह prototype है:</strong> इसमें PDF के प्रश्न 1–10 का content रखा गया है। प्रश्न लाल रंग में तथा उत्तर हल्के नीले भाग में हैं। उत्तर सरल भाषा और क्रमवार बिंदुओं में व्यवस्थित हैं।</div>
   <section class="tool-panel" aria-label="प्रश्न खोजें और फ़िल्टर करें">
     <label for="questionSearch" class="search-label">प्रश्न या विषय खोजें</label>
     <div class="search-box">
@@ -199,18 +241,16 @@ button,input{font:inherit}
     noResults.classList.toggle('show',visible===0);
   }
   function renderAnswer(answer){
+    var headings=['सरल अर्थ','मुख्य बिंदु','मुख्य बिंदु — नीतिशास्त्र के चार आयाम','मुख्य बिंदु — आर्य अष्टांगिक मार्ग','याद रखें','याद रखने की सरल विधि','उदाहरण','निष्कर्ष'];
     return String(answer || '').split(/\r?\n/).map(function(line){
-      var value=line.trim();
-      if(!value) return '<div class="answer-gap" aria-hidden="true"></div>';
-      if(/^(📘|🔹|🧠)\s*/u.test(value)){
+      var value=line.trim().replace(/:$/,'');
+      if(!value) return '';
+      if(headings.indexOf(value)!==-1){
         return '<h4 class="answer-subhead">'+esc(value)+'</h4>';
       }
-      if(/^(✅|📌|➡️|•)\s*/u.test(value)){
-        var clean=value.replace(/^(✅|📌|➡️|•)\s*/u,'');
-        var split=clean.match(/^(.{2,70}?)(?:\s+[—–:-]\s+)(.+)$/u);
-        var body=split?'<strong>'+esc(split[1])+'</strong> — '+esc(split[2]):esc(clean);
-        var icon=value.match(/^(✅|📌|➡️|•)/u);
-        return '<div class="answer-point"><span class="answer-point-icon">'+esc(icon?icon[1]:'✅')+'</span><div class="answer-point-body">'+body+'</div></div>';
+      var point=value.match(/^(\d+)\.\s*(.{2,75}?)(?:\s+[—–:-]\s+)(.+)$/u);
+      if(point){
+        return '<p class="answer-point"><strong>'+esc(point[1]+'. '+point[2])+'</strong> — '+esc(point[3])+'</p>';
       }
       return '<p class="answer-paragraph">'+esc(value)+'</p>';
     }).join('');
@@ -227,7 +267,7 @@ button,input{font:inherit}
       '<h2 class="question-title">'+esc(q.q)+'</h2>'+
       (q.en?'<p class="question-english">'+esc(q.en)+'</p>':'')+
       '<div class="question-tags"><span class="topic-tag">'+esc(q.unitHi)+'</span><span class="topic-tag">'+esc(q.topic)+'</span><span class="topic-tag">PDF पृष्ठ '+esc(q.pdfPages)+'</span></div>'+
-      '<details class="answer-details"><summary><span class="summary-left"><span>✅ उत्तर देखें</span><span class="answer-hint">सरल भाषा में पूरा उत्तर खोलें</span></span><span class="toggle-chevron" aria-hidden="true">⌄</span></summary><div class="answer-content"><p class="answer-label">🟦 उत्तर — आसान भाषा में</p><div class="answer-copy">'+renderAnswer(q.answer)+'</div></div></details>';
+      '<details class="answer-details"><summary><span class="summary-left"><span>उत्तर देखें</span><span class="answer-hint">पूरा उत्तर खोलें</span></span><span class="toggle-chevron" aria-hidden="true">⌄</span></summary><div class="answer-content"><p class="answer-label">उत्तर — सरल भाषा में</p><div class="answer-copy">'+renderAnswer(q.answer)+'</div></div></details>';
     list.appendChild(card);
   }
   fetch('/ras-mains-paper-2-prototype.json',{cache:'no-store'})
