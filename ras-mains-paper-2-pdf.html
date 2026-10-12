@@ -110,24 +110,36 @@ h1 span{color:var(--orange)}
 .btn-secondary{background:#fff;color:var(--navy);border:1px solid #d9e0ef}
 .btn-secondary:hover{border-color:#f3ba8e}
 .microcopy{font-size:12px;color:#7a8499;margin-top:11px}
-.cover-stage{position:relative;max-width:380px;width:100%;margin:0 auto}
-.cover-shadow{position:absolute;inset:8% 7% 1% 13%;background:#bfc8dc;filter:blur(24px);opacity:.62;border-radius:16px;transform:rotate(2deg)}
-.book-cover{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:3/4.05;width:min(100%,340px);margin:0 auto;background:linear-gradient(148deg,#17265f,#273b8d 54%,#101943);border-radius:6px 16px 16px 6px;border:1px solid rgba(255,255,255,.28);box-shadow:15px 22px 34px rgba(25,38,87,.25),inset 4px 0 0 rgba(255,255,255,.12);color:#fff;padding:24px 23px;display:flex;flex-direction:column;justify-content:space-between}
-.book-cover:before{content:"";position:absolute;width:250px;height:250px;border:34px solid rgba(255,255,255,.055);border-radius:50%;right:-105px;top:22px;z-index:-1}
-.book-cover:after{content:"";position:absolute;width:205px;height:205px;border:1px solid rgba(255,255,255,.19);border-radius:50%;right:-45px;bottom:45px;z-index:-1}
-.cover-brand{font-family:'Poppins','Hind',sans-serif;letter-spacing:1.1px;font-size:11px;font-weight:800;color:#ffe2c9}
-.cover-rule{width:54px;height:4px;background:var(--orange);border-radius:6px;margin:16px 0}
-.cover-title{font-family:'Hind',sans-serif;font-size:clamp(25px,3.2vw,36px);font-weight:800;line-height:1.28;margin:0;color:#fff}
-.cover-sub{font-size:12px;color:#e2e7ff;margin-top:12px;line-height:1.6}
-.cover-units{display:grid;gap:7px;margin-top:18px}
-.cover-unit{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:7px 9px;border-radius:8px;font-size:11px;font-weight:700}
-.cover-unit b{display:grid;place-items:center;width:22px;height:22px;background:var(--orange);border-radius:6px;color:#fff;font-size:10px;flex-shrink:0}
-.cover-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;margin-top:22px;border-top:1px solid rgba(255,255,255,.25);padding-top:12px}
-.cover-bottom strong{font-size:12px}
-.cover-bottom span{font-size:10px;color:#dce4ff;text-align:right}
-.price-seal{position:absolute;right:-12px;bottom:11%;display:flex;flex-direction:column;align-items:center;justify-content:center;width:88px;height:88px;border-radius:50%;background:var(--orange);border:4px solid white;color:#fff;box-shadow:0 8px 20px rgba(249,115,22,.25);transform:rotate(8deg);line-height:1.08}
+.cover-stage{position:relative;max-width:405px;width:100%;margin:0 auto;padding:0 8px 20px}
+.cover-shadow{position:absolute;inset:6% 7% 12% 13%;background:#bfc8dc;filter:blur(26px);opacity:.68;border-radius:18px;transform:rotate(2deg)}
+.book-cover{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:3/4.25;width:min(100%,350px);margin:0 auto;background:radial-gradient(circle at 94% 8%,rgba(249,115,22,.27),transparent 27%),linear-gradient(148deg,#17265f 0%,#263c8d 55%,#101943 100%);border-radius:5px 17px 17px 5px;border:1px solid rgba(255,255,255,.38);box-shadow:17px 24px 38px rgba(25,38,87,.29),inset 4px 0 0 rgba(255,255,255,.15),inset 10px 0 0 rgba(255,255,255,.035);color:#fff;padding:22px 21px 19px;display:flex;flex-direction:column;justify-content:space-between}
+.book-cover:before{content:"";position:absolute;width:270px;height:270px;border:32px solid rgba(255,255,255,.055);border-radius:50%;right:-125px;top:28px;z-index:-1}
+.book-cover:after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(255,255,255,.17);border-radius:50%;right:-50px;bottom:24px;z-index:-1}
+.cover-topline{display:flex;align-items:center;gap:9px}
+.cover-mark{width:30px;height:30px;display:grid;place-items:center;flex:0 0 30px;border-radius:9px;background:var(--orange);color:#fff;font-size:17px;box-shadow:0 4px 12px rgba(249,115,22,.22)}
+.cover-brand{font-family:'Poppins','Hind',sans-serif;letter-spacing:.8px;font-size:10px;font-weight:800;color:#ffe2c9;line-height:1.35}
+.cover-kicker{display:inline-block;margin-top:17px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;letter-spacing:.55px;color:#f6d9c4}
+.cover-rule{width:58px;height:4px;background:var(--orange);border-radius:6px;margin:13px 0 11px;box-shadow:0 2px 9px rgba(249,115,22,.28)}
+.cover-title{font-family:'Poppins','Hind',sans-serif;font-size:27px;font-weight:800;line-height:1.08;letter-spacing:.2px;margin:0;color:#fff}
+.cover-title span{display:block;font-size:26px}
+.cover-title b{display:block;font-size:43px;letter-spacing:-1px;line-height:1.08;margin-top:3px}
+.cover-sub{font-size:10px;color:#e2e7ff;margin-top:9px;line-height:1.6;letter-spacing:.25px}
+.cover-sub strong{font-size:12px;color:#fff}
+.cover-units{display:grid;gap:6px;margin-top:15px}
+.cover-unit{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.085);border:1px solid rgba(255,255,255,.16);padding:6px 8px;border-radius:8px;font-size:10px;font-weight:700;min-height:43px}
+.cover-unit>b{display:grid;place-items:center;width:26px;height:26px;background:var(--orange);border-radius:7px;color:#fff;font-size:10px;letter-spacing:.2px;flex:0 0 26px}
+.cover-unit>span{display:grid;gap:1px;min-width:0;line-height:1.3}
+.cover-unit strong{font-size:10px;color:#fff;font-weight:800}
+.cover-unit small{font-size:9px;color:#d3dcff;font-weight:600}
+.cover-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;margin-top:15px;border-top:1px solid rgba(255,255,255,.28);padding-top:11px}
+.cover-total{display:flex;align-items:center;gap:8px}
+.cover-total strong{font-family:'Poppins',sans-serif;font-size:30px;line-height:1;color:#fff}
+.cover-total span{max-width:75px;font-size:10px;font-weight:700;line-height:1.3;color:#ffe2c9}
+.cover-prep{font-size:9px;color:#dce4ff;text-align:right;line-height:1.5;letter-spacing:.3px}
+.price-seal{position:absolute;right:-2px;bottom:13%;display:flex;flex-direction:column;align-items:center;justify-content:center;width:88px;height:88px;border-radius:50%;background:linear-gradient(145deg,#ff8a32,#f97316);border:4px solid white;color:#fff;box-shadow:0 8px 22px rgba(249,115,22,.32);transform:rotate(8deg);line-height:1.08}
 .price-seal strong{font-family:'Poppins',sans-serif;font-size:25px}
-.price-seal small{font-size:11px;font-weight:800}
+.price-seal small{font-size:10px;font-weight:800;letter-spacing:.4px}
+.cover-caption{max-width:350px;margin:15px auto 0;text-align:center;color:#7a8499;font-size:10px;font-weight:800;letter-spacing:1px}
 .section{padding:53px 0}
 .section-white{background:#fff;border-top:1px solid #edf0f6;border-bottom:1px solid #edf0f6}
 .section-heading{text-align:center;max-width:770px;margin:0 auto 28px}
@@ -218,27 +230,35 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
       </div>
       <div class="hero-actions">
         <a class="btn btn-main" href="#buy">PDF खरीदें — ₹49 <span aria-hidden="true">→</span></a>
-        <a class="btn btn-secondary" href="/ras-mains-paper-2-prototype.html">वेबसाइट पर मुफ्त पढ़ें</a>
+        <a class="btn btn-secondary" href="/samples/ras-mains-paper-2-sample.pdf" target="_blank" rel="noopener">📄 सैंपल PDF देखें (10 पेज)</a>
       </div>
-      <p class="microcopy">एक बार खरीदें · डाउनलोड योग्य PDF · PDF में कोई विज्ञापन नहीं</p>
+      <p class="microcopy">डाउनलोड योग्य PDF</p>
     </div>
-    <div class="cover-stage" aria-label="RAS Mains Paper-II PDF का कवर प्रीव्यू">
+    <div class="cover-stage" aria-label="RAS Mains Paper-II PDF का आकर्षक कवर प्रीव्यू">
       <div class="cover-shadow"></div>
       <div class="book-cover">
-        <div>
-          <div class="cover-brand">NEW INDIA EDUCATION · OMKAR SIR</div>
-          <div class="cover-rule"></div>
-          <h2 class="cover-title">RAS MAINS<br>PAPER-II</h2>
-          <p class="cover-sub">PREVIOUS YEAR QUESTIONS<br>सरल हिंदी उत्तर सहित</p>
-          <div class="cover-units">
-            <div class="cover-unit"><b>I</b> प्रशासकीय नीतिशास्त्र · 70 प्रश्न</div>
-            <div class="cover-unit"><b>II</b> सामान्य विज्ञान एवं प्रौद्योगिकी · 99 प्रश्न</div>
-            <div class="cover-unit"><b>III</b> पृथ्वी विज्ञान / भूगोल एवं भू-विज्ञान · 89 प्रश्न</div>
-          </div>
+        <div class="cover-topline">
+          <span class="cover-mark" aria-hidden="true">✦</span>
+          <div class="cover-brand">NEW INDIA EDUCATION<br>OMKAR SIR</div>
         </div>
-        <div class="cover-bottom"><strong>258 प्रश्न · उत्तर सहित</strong><span>RAS MAINS<br>STUDY MATERIAL</span></div>
+        <div class="cover-hero-block">
+          <span class="cover-kicker">RAS MAINS · GENERAL STUDIES - II</span>
+          <div class="cover-rule"></div>
+          <h2 class="cover-title"><span>RAS MAINS</span><b>PAPER-II</b></h2>
+          <p class="cover-sub">PREVIOUS YEAR QUESTIONS<br><strong>सरल हिंदी उत्तर सहित</strong></p>
+        </div>
+        <div class="cover-units" aria-label="तीनों Units">
+          <div class="cover-unit"><b>01</b><span><strong>प्रशासकीय नीतिशास्त्र</strong><small>70 प्रश्न</small></span></div>
+          <div class="cover-unit"><b>02</b><span><strong>सामान्य विज्ञान एवं प्रौद्योगिकी</strong><small>99 प्रश्न</small></span></div>
+          <div class="cover-unit"><b>03</b><span><strong>पृथ्वी विज्ञान / भूगोल एवं भू-विज्ञान</strong><small>89 प्रश्न</small></span></div>
+        </div>
+        <div class="cover-bottom">
+          <div class="cover-total"><strong>258</strong><span>प्रश्न · उत्तर सहित</span></div>
+          <span class="cover-prep">PRE + MAINS<br>REVISION EDITION</span>
+        </div>
       </div>
       <div class="price-seal"><strong>₹49</strong><small>PDF PRICE</small></div>
+      <p class="cover-caption">TOPIC-WISE PYQ COMPILATION · 2013–2024</p>
     </div>
   </div>
 </section>
@@ -310,7 +330,6 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
       <ul class="buy-list">
         <li><span>✓</span><div>Unit-I, Unit-II और Unit-III — सभी 258 प्रश्न</div></li>
         <li><span>✓</span><div>सरल हिंदी में उत्तर और अंक के अनुसार पहचान</div></li>
-        <li><span>✓</span><div>PDF में कोई विज्ञापन नहीं</div></li>
         <li><span>✓</span><div>सिर्फ़ डिजिटल PDF — कोई printed book नहीं भेजी जाएगी</div></li>
       </ul>
     </div>
@@ -340,7 +359,6 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
     <div class="qa-list">
       <details><summary>क्या वेबसाइट पर प्रश्न मुफ्त पढ़ सकते हैं?</summary><p>हाँ। सभी 258 प्रश्न और उत्तर <a href="/ras-mains-paper-2-prototype.html">वेबसाइट पर मुफ्त उपलब्ध</a> हैं। ₹49 वाली PDF उन विद्यार्थियों के लिए है जो सामग्री एक फाइल में डाउनलोड करके रखना चाहते हैं।</p></details>
       <details><summary>PDF में कितने प्रश्न हैं?</summary><p>इस संस्करण में Unit-I के 70, Unit-II के 99 और Unit-III के 89—कुल 258 प्रश्न हैं।</p></details>
-      <details><summary>क्या PDF में विज्ञापन होंगे?</summary><p>नहीं। PDF में कोई विज्ञापन नहीं रखा जाएगा।</p></details>
       <details><summary>क्या यह printed book है?</summary><p>नहीं। यह डिजिटल PDF होगी। भुगतान और डाउनलोड की सुविधा सक्रिय होने के बाद फ़ाइल ऑनलाइन उपलब्ध कराई जाएगी।</p></details>
       <details><summary>PDF का स्रोत क्या है?</summary><p>यह RAS Mains Paper-II के 2013–2024 topic-wise previous-year question compilation तथा उसमें दी गई उत्तर-कुंजी पर आधारित सामग्री है। पढ़ाई में आधिकारिक प्रश्नपत्र/निर्देशों को प्राथमिकता दें।</p></details>
     </div>
