@@ -375,6 +375,68 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
   if(tick()){var iv=setInterval(function(){if(!tick())clearInterval(iv);},1000);}
 })();
 </script>
-<script src="/nied-menu.js" defer></script>
+<!-- Ads funnel tracking: consent-aware deployment is still required for regulated jurisdictions. -->
+<script>
+(function () {
+  'use strict';
+  var params = new URLSearchParams(window.location.search);
+  var allowed = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid','fbclid'];
+  var attribution = {};
+  allowed.forEach(function (key) {
+    var value = params.get(key);
+    if (value && value.length <= 500) attribution[key] = value;
+  });
+  try { sessionStorage.setItem('nied_attribution', JSON.stringify(attribution)); } catch (e) {}
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  window.gtag('event', 'view_item', {
+    currency: 'INR',
+    value: 99,
+    items: [{ item_id: 'adhunik-bharat-itihas-pdf', item_name: 'सम्पूर्ण आधुनिक भारत का इतिहास PDF', price: 99, quantity: 1 }]
+  });
+  window.gtag('event', 'page_view', { page_type: 'pdf_product', item_id: 'adhunik-bharat-itihas-pdf' });
+
+  var purchaseGuardKey = 'nied_purchase_sent_adhunik_bharat_itihas';
+  function readAttribution() {
+    try { return JSON.parse(sessionStorage.getItem('nied_attribution') || '{}'); } catch (e) { return {}; }
+  }
+  function emitBeginCheckout() {
+    window.gtag('event', 'begin_checkout', {
+      currency: 'INR', value: 99,
+      items: [{ item_id: 'adhunik-bharat-itihas-pdf', item_name: 'सम्पूर्ण आधुनिक भारत का इतिहास PDF', price: 99, quantity: 1 }]
+    });
+  }
+  document.addEventListener('click', function (event) {
+    var target = event.target && event.target.closest ? event.target.closest('[data-payment_button_id], iframe, button, input[type="submit"]') : null;
+    if (!target) return;
+    var insideBuy = target.closest && target.closest('.buy');
+    if (insideBuy) emitBeginCheckout();
+  }, true);
+
+  // Razorpay Payment Button redirects are configured in Razorpay dashboard. A URL-only success
+  // page view is NOT verified payment proof. Purchase is emitted only on a server-verified
+  // success callback/webhook; see /docs/paid-pdf-tracking-and-delivery.md for the required wiring.
+  window.niedPaidPdfTracking = {
+    itemId: 'adhunik-bharat-itihas-pdf',
+    expectedCurrency: 'INR',
+    getAttribution: readAttribution,
+    sendVerifiedPurchase: function (payment) {
+      if (!payment || payment.verified !== true || !payment.paymentId || !/^[A-Za-z0-9_-]{1,100}$/.test(payment.paymentId)) return false;
+      var key = purchaseGuardKey + '_' + payment.paymentId;
+      try { if (sessionStorage.getItem(key)) return false; } catch (e) {}
+      window.gtag('event', 'purchase', {
+        transaction_id: payment.paymentId,
+        value: Number(payment.value),
+        currency: 'INR',
+        items: [{ item_id: 'adhunik-bharat-itihas-pdf', item_name: 'सम्पूर्ण आधुनिक भारत का इतिहास PDF', price: Number(payment.value), quantity: 1 }]
+      });
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+      return true;
+    }
+  };
+})();
+</script>\n<script src="/nied-menu.js" defer></script>
 </body>
 </html>
