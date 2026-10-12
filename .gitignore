@@ -1,3 +1,9 @@
 __pycache__/
 *.pyc
 /CA-*.pdf
+
+# Keep Supabase project/function secrets out of Git.
+.env
+.env.*
+!.env.example
+supabase/functions/.env
