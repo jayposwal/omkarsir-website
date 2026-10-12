@@ -92,7 +92,7 @@ def title_for(rel: str, existing: str | None, h1: str | None) -> str:
 
 def description_for(rel: str, existing: str | None, h1: str | None, first_p: str | None) -> str:
     if rel == "index.html":
-        return "RAS Exam 2026 की तैयारी — RPSC RAS Pre व Mains के लिए Hindi Notes, Syllabus, PYQ, Test Series और Courses। 6 लाख+ Students का भरोसा — Omkar Sir।"
+        return "RAS Exam 2026: Notes, Syllabus, PYQ, Test Series और Courses। भारत का सबसे बेहतरीन कंटेंट और 8 साल का अनुभव — 6 लाख+ सफल विद्यार्थी।"
     current = strip_tags(existing or "")
     boilerplate = ["NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार", "विश्वसनीय एवं बेहतरीन Content"]
     weak = not current or len(current) < 70 or (all(x in current for x in boilerplate) and len(current) > 150)
