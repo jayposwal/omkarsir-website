@@ -179,6 +179,16 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 .feat-box .f-icon{font-size:34px;margin-bottom:14px}
 .feat-box .f-name{font-family:'Poppins',sans-serif;font-weight:800;font-size:15.5px;margin-bottom:8px}
 .feat-box .f-sub{font-size:12.5px;color:#888;line-height:1.6}
+
+/* ===== INTERACTIVE EXAM SELECTOR ===== */
+.exam-filter-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin:0 auto 16px;max-width:920px}
+.exam-filter-btn{appearance:none;border:1px solid #dfe5f0;border-radius:999px;background:#fff;color:#34415f;padding:9px 16px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s}
+.exam-filter-btn:hover{border-color:#f7b986;color:#b94e0a;transform:translateY(-1px)}
+.exam-filter-btn.is-active{background:#1b2a6b;border-color:#1b2a6b;color:#fff;box-shadow:0 4px 12px rgba(27,42,107,.12)}
+.exam-filter-status{min-height:22px;text-align:center;color:#768099;font-size:12px;margin:-3px 0 15px}
+.exam-box[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.exam-filter-btn{transition:none}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -387,21 +397,30 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <section class="exam-sec">
   <h2 class="sec-title">कौन सी <span>परीक्षा</span> की तैयारी?</h2>
-  <p class="sec-sub">अपनी परीक्षा चुनो और सीधे शुरू करो</p>
-  <div class="exam-grid">
-    <a href="/ras-exam-2026.html" class="exam-box"><div class="e-icon">🏛️</div><div class="e-name">RAS / RTS</div><div class="e-sub">RPSC — Pre &amp; Mains</div></a>
-    <a href="/rajasthan-si-exam.html" class="exam-box"><div class="e-icon">👮</div><div class="e-name">Police SI</div><div class="e-sub">Sub Inspector — RPSC</div></a>
-    <a href="/rajasthan-police-constable-exam.html" class="exam-box"><div class="e-icon">🚓</div><div class="e-name">Police Constable</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-patwari-exam.html" class="exam-box"><div class="e-icon">📜</div><div class="e-name">Patwari</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/reet-exam.html" class="exam-box"><div class="e-icon">🍎</div><div class="e-name">REET</div><div class="e-sub">Teacher Eligibility Test</div></a>
-    <a href="/rajasthan-vdo-exam.html" class="exam-box"><div class="e-icon">🏡</div><div class="e-name">VDO</div><div class="e-sub">ग्राम विकास अधिकारी</div></a>
-    <a href="/rajasthan-cet-12th-level.html" class="exam-box"><div class="e-icon">📝</div><div class="e-name">CET 12th Level</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-cet-graduate-level.html" class="exam-box"><div class="e-icon">🎓</div><div class="e-name">CET Graduate Level</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-ldc-exam.html" class="exam-box"><div class="e-icon">🖊️</div><div class="e-name">LDC</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-jen-exam.html" class="exam-box"><div class="e-icon">🔧</div><div class="e-name">JEN</div><div class="e-sub">Junior Engineer</div></a>
-    <a href="/rajasthan-aen-exam.html" class="exam-box"><div class="e-icon">🏗️</div><div class="e-name">AEN</div><div class="e-sub">Assistant Engineer</div></a>
-    <a href="/rajasthan-pashu-paricharak-exam.html" class="exam-box"><div class="e-icon">🐄</div><div class="e-name">Pashu Paricharak</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-exams.html" class="exam-box"><div class="e-icon">🎯</div><div class="e-name">सभी Exams — Details</div><div class="e-sub">पूरी जानकारी एक साथ</div></a>
+  <p class="sec-sub">अपनी परीक्षा चुनो और सीधे शुरू करो — सूची को अपनी ज़रूरत के अनुसार फ़िल्टर करें</p>
+  <div class="exam-filter-bar" role="group" aria-label="परीक्षा सूची फ़िल्टर">
+    <button type="button" class="exam-filter-btn is-active" data-exam-filter="all" aria-pressed="true">सभी परीक्षाएँ</button>
+    <button type="button" class="exam-filter-btn" data-exam-filter="rajasthan" aria-pressed="false">राजस्थान Exams</button>
+    <button type="button" class="exam-filter-btn" data-exam-filter="teaching" aria-pressed="false">Teaching</button>
+    <button type="button" class="exam-filter-btn" data-exam-filter="national" aria-pressed="false">SSC / Railway</button>
+  </div>
+  <p class="exam-filter-status" id="examFilterStatus" aria-live="polite"></p>
+  <div class="exam-grid" id="examGrid">
+    <a href="/ras-exam-2026.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🏛️</div><div class="e-name">RAS / RTS</div><div class="e-sub">RPSC — Pre &amp; Mains</div></a>
+    <a href="/rajasthan-si-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">👮</div><div class="e-name">Police SI</div><div class="e-sub">Sub Inspector — RPSC</div></a>
+    <a href="/rajasthan-police-constable-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🚓</div><div class="e-name">Police Constable</div><div class="e-sub">RSMSSB</div></a>
+    <a href="/rajasthan-patwari-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">📜</div><div class="e-name">Patwari</div><div class="e-sub">RSMSSB</div></a>
+    <a href="/reet-exam.html" class="exam-box" data-exam-group="teaching"><div class="e-icon">🍎</div><div class="e-name">REET</div><div class="e-sub">Teacher Eligibility Test</div></a>
+    <a href="/rajasthan-vdo-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🏡</div><div class="e-name">VDO</div><div class="e-sub">ग्राम विकास अधिकारी</div></a>
+    <a href="/rajasthan-cet-12th-level.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">📝</div><div class="e-name">CET 12th Level</div><div class="e-sub">RSMSSB</div></a>
+    <a href="/rajasthan-cet-graduate-level.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🎓</div><div class="e-name">CET Graduate Level</div><div class="e-sub">RSMSSB</div></a>
+    <a href="/rajasthan-ldc-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🖊️</div><div class="e-name">LDC</div><div class="e-sub">RSMSSB</div></a>
+    <a href="/rajasthan-jen-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🔧</div><div class="e-name">JEN</div><div class="e-sub">Junior Engineer</div></a>
+    <a href="/rajasthan-aen-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🏗️</div><div class="e-name">AEN</div><div class="e-sub">Assistant Engineer</div></a>
+    <a href="/rajasthan-pashu-paricharak-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🐄</div><div class="e-name">Pashu Paricharak</div><div class="e-sub">RSMSSB</div></a>
+    <a href="/railway-group-d-exam.html" class="exam-box" data-exam-group="national"><div class="e-icon">🚆</div><div class="e-name">Railway Group-D / NTPC</div><div class="e-sub">Railway Recruitment</div></a>
+    <a href="/ssc-gd-constable-exam.html" class="exam-box" data-exam-group="national"><div class="e-icon">🛡️</div><div class="e-name">SSC-GD Constable</div><div class="e-sub">Staff Selection Commission</div></a>
+    <a href="/rajasthan-exams.html" class="exam-box" data-exam-group="all"><div class="e-icon">🎯</div><div class="e-name">सभी Exams — Details</div><div class="e-sub">पूरी जानकारी एक साथ</div></a>
   </div>
 </section>
 
@@ -572,5 +591,38 @@ document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
   <p style="margin:0 0 14px;line-height:1.6">इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित।</p>
   <a href="ras-mains-paper-1-pyqs.html" style="display:inline-block;background:#ff6b00;color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:9px">PYQs पढ़ें →</a>
 </section>
+
+<script>
+(function(){
+  var bar = document.querySelector('.exam-filter-bar');
+  var grid = document.getElementById('examGrid');
+  var status = document.getElementById('examFilterStatus');
+  if(!bar || !grid) return;
+  var buttons = Array.prototype.slice.call(bar.querySelectorAll('[data-exam-filter]'));
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.exam-box[data-exam-group]'));
+  function applyFilter(filter){
+    var visible = 0;
+    cards.forEach(function(card){
+      var show = filter === 'all' || card.getAttribute('data-exam-group') === filter;
+      card.hidden = !show;
+      if(show) visible++;
+    });
+    buttons.forEach(function(button){
+      var active = button.getAttribute('data-exam-filter') === filter;
+      button.classList.toggle('is-active',active);
+      button.setAttribute('aria-pressed',active ? 'true' : 'false');
+    });
+    if(status){
+      var label = filter === 'rajasthan' ? 'राजस्थान' : filter === 'teaching' ? 'Teaching' : filter === 'national' ? 'SSC / Railway' : 'सभी';
+      status.textContent = label + ' श्रेणी में ' + visible + ' परीक्षा विकल्प दिख रहे हैं।';
+    }
+  }
+  buttons.forEach(function(button){
+    button.addEventListener('click',function(){ applyFilter(button.getAttribute('data-exam-filter')); });
+  });
+  applyFilter('all');
+})();
+</script>
+
 </body>
 </html>
