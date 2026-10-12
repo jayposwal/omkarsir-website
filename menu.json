@@ -392,8 +392,18 @@
           "url": "/courses.html"
         },
         {
-          "label": "📱 App Download",
-          "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
+          "label": "ℹ️ App & Info",
+          "type": "submenu",
+          "children": [
+            {
+              "label": "📱 New India Education App Download",
+              "url": "https://play.google.com/store/apps/details?id=co.april2019.techa"
+            },
+            {
+              "label": "👨‍🏫 हमारे बारे में — Omkar Sir",
+              "url": "/about.html"
+            }
+          ]
         }
       ]
     },
