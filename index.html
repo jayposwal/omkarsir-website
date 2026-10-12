@@ -40,49 +40,53 @@ html{overflow-x:hidden}body{font-family:'Hind',sans-serif;background:#F8F9FA;col
 h1,h2,h3{font-family:'Poppins',sans-serif}
 .tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
 
-/* ===== HERO (LIGHT) ===== */
-.hero{background:linear-gradient(135deg,#FFF8F2,#FFFDF0);padding:60px 6% 46px;border-bottom:1px solid #FFE0C0;text-align:center}
-.hero-inner{max-width:620px;margin:0 auto}
-.hero-badge{display:inline-block;background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:6px 18px;border-radius:50px;font-size:12.5px;font-weight:600;margin-bottom:18px}
-.hero h1{font-size:clamp(26px,4.2vw,42px);font-weight:800;line-height:1.28;margin-bottom:12px;color:#1A1A2E}
-.hero h1 span{color:#FF6B00}
-.hero p{font-size:14.5px;color:#666;max-width:480px;margin:0 auto 8px;line-height:1.65}
-.hero .credibility{font-size:13px;font-weight:700;color:#1B2A6B;max-width:480px;margin:0 auto 24px;line-height:1.6}
+/* ===== HERO: LIGHT, CONVERSION-FOCUSED ===== */
+.hero{background:radial-gradient(ellipse at 85% 0%,rgba(255,214,170,.36),transparent 42%),linear-gradient(135deg,#FFF9F3 0%,#FFFFFF 58%,#F3F7FF 100%);padding:clamp(42px,6vw,76px) 6% clamp(38px,5vw,60px);border-bottom:1px solid #F0E6DA;text-align:center}
+.hero-inner{max-width:850px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:#FFFFFF;border:1px solid #F4D5BA;color:#8A4B12;padding:7px 16px;border-radius:50px;font-size:12.5px;font-weight:700;margin-bottom:20px;box-shadow:0 4px 14px rgba(95,65,40,.05)}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.22;letter-spacing:-.5px;margin-bottom:14px;color:#1B2A6B}
+.hero h1 span{display:block;color:#E96516;margin-top:7px}
+.hero p{font-size:clamp(15px,1.7vw,18px);color:#5F6475;max-width:700px;margin:0 auto 10px;line-height:1.75}
+.hero .credibility{font-size:14px;font-weight:600;color:#536080;max-width:700px;margin:12px auto 26px;line-height:1.7}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-main{background:#FF6B00;color:white;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 18px rgba(255,107,0,.28);transition:transform .2s;display:inline-block}
-.btn-main:hover{transform:scale(1.04);background:#E05500}
-.btn-sec{background:white;color:#1A1A2E;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14.5px;border:2px solid #E8EAF0;transition:all .2s;display:inline-block}
-.btn-sec:hover{border-color:#FF6B00;color:#FF6B00}
+.btn-main{background:#F97316;color:#fff;padding:14px 25px;border-radius:12px;text-decoration:none;font-weight:800;font-size:15px;box-shadow:0 7px 18px rgba(249,115,22,.22);transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn-main:hover{transform:translateY(-2px);background:#EA650B;box-shadow:0 10px 22px rgba(249,115,22,.27)}
+.btn-sec{background:#FFFFFF;color:#1B2A6B;padding:12px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;border:1px solid #D9E0F0;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn-sec:hover{border-color:#F97316;color:#C4510C;background:#FFFDFB}
 
-/* ===== FREE TEST SERIES BANNER ===== */
-.free-banner{max-width:1000px;margin:-20px auto 0;padding:0 6%}
-.free-banner-inner{background:linear-gradient(90deg,#00A651,#00c96b);border-radius:16px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 8px 24px rgba(0,166,81,.25)}
-.free-banner-text{color:white}
-.free-banner-text .tag{background:rgba(255,255,255,.25);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:6px;display:inline-block}
-.free-banner-text h3{font-size:17px;font-weight:800;margin:4px 0 2px}
-.free-banner-text p{font-size:12.5px;color:rgba(255,255,255,.9)}
-.free-banner-btn{background:white;color:#00A651;padding:11px 24px;border-radius:50px;text-decoration:none;font-weight:800;font-size:13.5px;white-space:nowrap}
+/* ===== THREE MAIN PATHS ===== */
+.cta-band-sec{max-width:1200px;margin:0 auto;padding:30px 6% 20px}
+.cta-band-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cta-band{background:#FFFFFF;border:1px solid #E6EAF2;border-radius:18px;padding:24px 22px;color:#202945;display:flex;flex-direction:column;align-items:flex-start;gap:10px;box-shadow:0 7px 24px rgba(31,48,86,.055);transition:transform .2s,box-shadow .2s,border-color .2s}
+.cta-band:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(31,48,86,.09);border-color:#F6C49D}
+.cb-tag{font-size:11px;font-weight:800;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:50px;background:#FFF2E7;color:#B94E0A;width:fit-content}
+.cb-title{font-family:'Hind',sans-serif;font-size:19px;font-weight:800;margin:2px 0 0;line-height:1.4;color:#1B2A6B}
+.cb-desc{font-size:14px;color:#646C80;margin:0;line-height:1.7;flex:1}
+.cb-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px;width:100%}
+.cb-btn{text-decoration:none;font-weight:800;padding:10px 15px;border-radius:10px;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.cb-btn-orange{background:#F97316;color:#FFFFFF}
+.cb-btn-orange:hover{background:#E96510}
+.cb-btn-navy{background:#EEF3FF;color:#1B2A6B;border:1px solid #DCE5FC}
+.cb-btn-navy:hover{background:#E3EBFF}
+.cb-btn-white{background:#FFFFFF;color:#0A8F55}
+.cb-btn-outline{background:#FFFFFF;color:#1B2A6B;border:1px solid #DDE3EF}
+@media(max-width:850px){.cta-band-grid{grid-template-columns:1fr;gap:12px}.cta-band{padding:20px}.cb-title{font-size:18px}}
+@media(max-width:560px){.hero{padding:38px 5% 38px}.hero h1{font-size:clamp(27px,8vw,36px)}.hero-badge{font-size:11.5px}.hero .credibility{font-size:13px}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns a{width:100%}.cta-band-sec{padding:20px 5% 12px}.cta-band{padding:18px;border-radius:15px}.cb-title{font-size:17px}.cb-desc{font-size:13px}.cb-btn{width:100%;padding:11px 14px}}
 
-/* ===== CTA BAND GRID (2-col) ===== */
-.cta-band-sec{max-width:1150px;margin:20px auto 36px;padding:0 6%}
-.cta-band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cta-band{border-radius:14px;padding:16px 16px;color:#fff;display:flex;flex-direction:column;gap:6px}
-.cta-band-wide{grid-column:1 / -1}
-.cb-tag{font-size:10px;font-weight:700;display:inline-block;padding:3px 10px;border-radius:50px;width:fit-content}
-.cb-title{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;margin:2px 0 0;line-height:1.3}
-.cb-desc{font-size:11px;margin:0;line-height:1.45}
-.cb-btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
-.cb-btn{text-decoration:none;font-weight:700;padding:7px 14px;border-radius:50px;font-size:11px;white-space:nowrap}
-.cb-btn-white{background:#fff;color:#00A651}
-.cb-btn-orange{background:#FF6B00;color:#fff}
-.cb-btn-navy{background:#1B2A6B;color:#fff}
-.cb-btn-outline{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
-@media(max-width:900px){.cta-band-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.cta-band-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-.cta-band{padding:12px 12px;border-radius:12px}
-.cb-title{font-size:12.5px}
-.cb-desc{font-size:10px}
-.cb-btn{padding:6px 11px;font-size:10px}}
+/* ===== FEATURED PDF: LIGHT STORE CARD ===== */
+.featured-pdf-sec{max-width:1200px;margin:0 auto;padding:30px 6% 46px}
+.featured-pdf-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(150px,235px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(22px,4vw,42px);border-radius:24px;border:1px solid #E5EAF5;background:linear-gradient(120deg,#FFFFFF 0%,#FFF9F3 65%,#F4F7FF 100%);box-shadow:0 12px 34px rgba(35,53,94,.065)}
+.featured-pdf-cover-wrap{position:relative;max-width:220px;margin:0 auto}
+.featured-pdf-cover{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 14px 28px rgba(27,42,107,.18);border:1px solid #E4E5EB}
+.featured-pdf-copy{min-width:0}
+.featured-pdf-eyebrow{display:inline-block;background:#E8F7EE;color:#167245;padding:6px 11px;border-radius:50px;font-size:12px;font-weight:800;margin-bottom:12px}
+.featured-pdf-copy h2{font-family:'Hind',sans-serif;font-size:clamp(24px,3.4vw,36px);line-height:1.3;color:#1B2A6B;margin:0 0 10px;font-weight:800}
+.featured-pdf-copy p{color:#5F6475;font-size:15px;line-height:1.8;margin:0 0 14px}
+.featured-pdf-facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.featured-pdf-fact{display:inline-flex;align-items:center;gap:6px;background:#FFFFFF;border:1px solid #E2E7F1;color:#454F6A;border-radius:9px;padding:7px 10px;font-size:12px;font-weight:700}
+.featured-pdf-actions{display:flex;gap:10px;flex-wrap:wrap}
+.featured-pdf-actions a{min-height:44px}
+@media(max-width:650px){.featured-pdf-sec{padding:22px 5% 34px}.featured-pdf-panel{grid-template-columns:1fr;gap:22px;padding:22px}.featured-pdf-cover-wrap{max-width:165px}.featured-pdf-copy h2{font-size:25px}.featured-pdf-copy p{font-size:14px}.featured-pdf-actions{flex-direction:column}.featured-pdf-actions a{width:100%}}
 
 /* ===== STATS ===== */
 .stats{background:white;border-bottom:1px solid #E8EAF0;margin-top:36px}
@@ -249,103 +253,74 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">⭐ राजस्थान का #1 हिंदी माध्यम Platform</div>
-    <h1>RAS Exam 2026 की तैयारी<br><span>RAS · IAS · SSC — एक जगह, किफायती कीमत पर</span></h1>
-    <p>6 लाख+ Students का भरोसा। बेहतरीन नोट्स, PYQs, Daily Quiz और Video Lectures — सब हिंदी में।</p>
-    <p class="credibility">🏆 NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार — विश्वसनीय एवं बेहतरीन Content</p>
+    <div class="hero-badge">🎯 RAS · IAS · SSC · Railway · Police</div>
+    <h1>अपनी Competitive Exam तैयारी को दें सही दिशा
+      <span>हिंदी Notes, MCQ और Test Series — एक जगह</span>
+    </h1>
+    <p>परीक्षा की तैयारी के लिए विषयवार अध्ययन सामग्री, Previous Year Questions, Daily Quiz और उपयोगी Video Lectures खोजें। Free Resources से शुरुआत करें और अपनी जरूरत के अनुसार Course चुनें।</p>
+    <p class="credibility">📚 NCERT, RBSE और प्रामाणिक स्रोतों पर आधारित अध्ययन सामग्री · Prelims और Mains के लिए उपयोगी संसाधन</p>
     <div class="hero-btns">
-      <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">📄 नोट्स अभी Download करो</a>
-      <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">🎥 YouTube Channel</a>
+      <a href="/all-notes.html" class="btn-main">📖 Free Notes देखें <span aria-hidden="true">→</span></a>
+      <a href="#featured-pdf" class="btn-sec">📄 Featured PDF देखें</a>
     </div>
   </div>
 </section>
 
-<section class="cta-band-sec">
+<section class="cta-band-sec" aria-label="मुख्य शैक्षिक विकल्प">
   <div class="cta-band-grid">
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">📚 All Courses</div>
-      <h2 class="cb-title" style="color:#1B2A6B">🎓 हमारे सभी Courses देखें</h2>
-      <p class="cb-desc" style="color:#666">RAS, IAS, SSC, Railway, Police के सभी Premium Courses — एक ही जगह, हमारे Official Course Store पर।</p>
+    <article class="cta-band">
+      <div class="cb-tag">📚 FREE RESOURCES</div>
+      <h2 class="cb-title">Free Study Material</h2>
+      <p class="cb-desc">विषयवार Hindi Notes, Previous Year Questions, Daily Quiz और उपयोगी अध्ययन सामग्री से अपनी तैयारी शुरू करें।</p>
       <div class="cb-btns">
-        <a href="https://techa.courses.store" class="cb-btn cb-btn-navy">सभी Courses देखें →</a>
+        <a href="/all-notes.html" class="cb-btn cb-btn-orange">Free Notes देखें →</a>
+        <a href="/all-quizzes.html" class="cb-btn cb-btn-navy">Quiz &amp; Tests</a>
       </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">🔐 Course खरीदने के लिए</div>
-      <h2 class="cb-title" style="color:#1B2A6B">🔑 Login करें व Course खरीदें</h2>
-      <p class="cb-desc" style="color:#666">अपने Classplus Account में Login करें और अपना पसंदीदा Course आज ही खरीदें।</p>
+    </article>
+    <article class="cta-band">
+      <div class="cb-tag">📄 DIGITAL NOTES STORE</div>
+      <h2 class="cb-title">PDF Notes Store</h2>
+      <p class="cb-desc">PDF खरीदने से पहले वास्तविक sample pages, विषय-सूची और उपलब्ध सामग्री देखकर अपनी जरूरत के अनुसार चुनें।</p>
       <div class="cb-btns">
-        <a href="https://web.classplusapp.com/login?orgCode=techa" class="cb-btn cb-btn-navy">Login करें →</a>
+        <a href="/adhunik-bharat-itihas-pdf.html" class="cb-btn cb-btn-orange">PDFs देखें →</a>
+        <a href="/all-notes.html" class="cb-btn cb-btn-navy">सभी Notes</a>
       </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">🎯 बिल्कुल FREE — Daily Course</div>
-      <h2 class="cb-title" style="color:#1B2A6B">🚀 RAS Prelims Super 60 — Interactive Course</h2>
-      <p class="cb-desc" style="color:#666">रोज़ 1 Day पूरा करो — हर Topic का 📖 Read, 🎥 Video व 🧠 Quiz एक साथ। अपना Progress खुद Track करो, Day पूरा होते ही अगला Day खुलेगा।</p>
+    </article>
+    <article class="cta-band">
+      <div class="cb-tag">🎓 STRUCTURED PREPARATION</div>
+      <h2 class="cb-title">Premium Courses</h2>
+      <p class="cb-desc">RAS Foundation, Super 60, OMASTRA और Test Series की सामग्री, कीमत और उपलब्धता देखकर अगला कदम चुनें।</p>
       <div class="cb-btns">
-        <a href="/super60-course.html" class="cb-btn cb-btn-navy">Course शुरू करें →</a>
+        <a href="/courses.html" class="cb-btn cb-btn-orange">सभी Courses देखें →</a>
       </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">📰 रोज़ अपडेट</div>
-      <h2 class="cb-title" style="color:#1B2A6B">Daily Current Affairs</h2>
-      <p class="cb-desc" style="color:#666">National, International, Rajasthan, Sujas, Economy, Science-Defence-Tech, Sports-Awards — रोज़ाना अपडेट, RAS/UPSC Exam के लिए।</p>
-      <div class="cb-btns">
-        <a href="/current-affairs.html" class="cb-btn cb-btn-navy">आज का Current Affairs →</a>
-      </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">🎁 सीमित समय के लिए FREE</div>
-      <h2 class="cb-title" style="color:#1B2A6B">🚀 RAS Pre 2026 BEST Test Series — 18 Tests</h2>
-      <p class="cb-desc" style="color:#666">RPSC New Syllabus के अनुसार। अभी बिल्कुल मुफ़्त जुड़ें!</p>
-      <div class="cb-btns">
-        <a href="https://techa.on-app.in/app/oc/805299/techa" class="cb-btn cb-btn-navy">FREE जुड़ें →</a>
-      </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">💼 रोज़ अपडेट</div>
-      <h2 class="cb-title" style="color:#1B2A6B">Latest Govt Vacancy 2026</h2>
-      <p class="cb-desc" style="color:#666">Central + Rajasthan, UP, MP, Bihar, Haryana, Delhi, Uttarakhand, Chhattisgarh, Jharkhand की सभी नई सरकारी भर्तियां एक ही जगह।</p>
-      <div class="cb-btns">
-        <a href="/vacancy.html" class="cb-btn cb-btn-navy">सभी Vacancy देखें →</a>
-      </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">🧠 Subject-wise व Topic-wise</div>
-      <h2 class="cb-title" style="color:#1B2A6B">सभी Quiz व Test Series</h2>
-      <p class="cb-desc" style="color:#666">Daily Current Affairs Quiz, RAS Prelims Mock Test, राजनीति विज्ञान, अर्थव्यवस्था — सभी Quiz एक ही पेज पर।</p>
-      <div class="cb-btns">
-        <a href="/all-quizzes.html" class="cb-btn cb-btn-navy">सभी Quiz देखें →</a>
-      </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">🗺️ नया — Interactive Tool</div>
-      <h2 class="cb-title" style="color:#1B2A6B">राजस्थान एटलस — 41 जिले</h2>
-      <p class="cb-desc" style="color:#666">हर जिले की नदियां, दुर्ग, वन्यजीव अभयारण्य, खनिज व फसलें — जिलेवार व विषयवार, सर्च व फ़िल्टर के साथ।</p>
-      <div class="cb-btns">
-        <a href="/rajasthan-atlas.html" class="cb-btn cb-btn-navy">एटलस खोलें →</a>
-      </div>
-    </div>
-
-    <div class="cta-band" style="background:linear-gradient(135deg,#FFF8F2,#FFFDF0);border:2px solid #FFD0A0">
-      <div class="cb-tag" style="background:#FF6B00;color:#fff">🎯 सभी Exams</div>
-      <h2 class="cb-title" style="color:#1B2A6B">Rajasthan के सभी Exams</h2>
-      <p class="cb-desc" style="color:#666">RAS, SI, Patwari, REET, VDO, Constable, LDC, CET, JEN, AEN — Eligibility, Syllabus, Salary सब एक जगह।</p>
-      <div class="cb-btns">
-        <a href="/rajasthan-exams.html" class="cb-btn cb-btn-navy">सभी Exams देखें →</a>
-      </div>
-    </div>
+    </article>
   </div>
 </section>
 
 
+
+<section class="featured-pdf-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
+  <div class="featured-pdf-panel">
+    <div class="featured-pdf-cover-wrap">
+      <img class="featured-pdf-cover" src="/assets/store/adhunik-bharat-itihas-poster.webp" alt="सम्पूर्ण आधुनिक भारत का इतिहास PDF का कवर" width="1092" height="1544" loading="lazy">
+    </div>
+    <div class="featured-pdf-copy">
+      <span class="featured-pdf-eyebrow">⭐ FEATURED PDF · RAS PRE + MAINS</span>
+      <h2 id="featured-pdf-title">सम्पूर्ण आधुनिक भारत का इतिहास</h2>
+      <p>ब्रिटिश सत्ता की स्थापना से स्वतंत्रता तक आधुनिक भारत के इतिहास की रंगीन Hindi PDF। नमूना पेज देखकर इसकी सामग्री, तालिकाएँ और मानचित्र समझें, फिर अपनी तैयारी के अनुसार निर्णय लें।</p>
+      <div class="featured-pdf-facts">
+        <span class="featured-pdf-fact">📚 20 अध्याय</span>
+        <span class="featured-pdf-fact">📄 537 पृष्ठ</span>
+        <span class="featured-pdf-fact">🗺️ रंगीन मानचित्र</span>
+        <span class="featured-pdf-fact">📱 मोबाइल पर पढ़ें</span>
+      </div>
+      <div class="featured-pdf-actions">
+        <a href="/adhunik-bharat-itihas-pdf.html" class="btn-main">वर्तमान कीमत और ऑफर देखें →</a>
+        <a href="/assets/adhunik-bharat-itihas/pdf/adhunik-bharat-itihas-ch01.pdf" class="btn-sec" target="_blank" rel="noopener noreferrer">अध्याय 1 मुफ़्त पढ़ें</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="subjects-sec">
   <h2 class="sec-title">विषय-वार <span>Notes</span></h2>
