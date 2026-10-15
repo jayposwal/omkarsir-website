@@ -1,3 +1,16 @@
+var PDF_PRODUCTS_ = {
+  'adhunik-bharat-itihas-pdf': {
+    name: 'सम्पूर्ण आधुनिक भारत का इतिहास PDF',
+    description: '20 अध्याय · 537 पृष्ठ · PDF',
+    amountPaise: [900, 9900]
+  },
+  'rajasthan-history-pdf': {
+    name: 'सम्पूर्ण राजस्थान इतिहास PDF',
+    description: '16 अध्याय · 234 पृष्ठ · PDF',
+    amountPaise: [4900]
+  }
+};
+
 /**
  * Omkar Sir PDF email sender.
  *
@@ -59,12 +72,14 @@ function doPost(e) {
     return output_({ ok: false, error: 'Unauthorized' });
   }
 
+  var product = PDF_PRODUCTS_[String(payload.productCode || '')];
   if (payload.action !== 'send_pdf_delivery' ||
-      payload.productCode !== 'adhunik-bharat-itihas-pdf' ||
+      !product ||
       payload.currency !== 'INR' ||
+      product.amountPaise.indexOf(Number(payload.amountPaise)) === -1 ||
+      String(payload.productName || '') !== product.name ||
       !/^pay_[A-Za-z0-9]+$/.test(String(payload.paymentId || '')) ||
-      !emailIsValid_(String(payload.email || '')) ||
-      ![900, 9900].includes(Number(payload.amountPaise))) {
+      !emailIsValid_(String(payload.email || ''))) {
     return output_({ ok: false, error: 'Invalid purchase payload' });
   }
 
@@ -101,7 +116,7 @@ function doPost(e) {
       String(payload.paymentId),
       String(payload.email).trim().toLowerCase(),
       amountInr,
-      'सम्पूर्ण आधुनिक भारत का इतिहास PDF',
+      product.name,
       'PENDING',
       new Date(),
       String(payload.description || '').slice(0, 250)
@@ -113,9 +128,9 @@ function doPost(e) {
       row = sheet.getLastRow();
     }
 
-    var subject = 'आपकी PDF तैयार है — सम्पूर्ण आधुनिक भारत का इतिहास | Omkar Sir';
+    var subject = 'आपकी PDF तैयार है — ' + product.name + ' | Omkar Sir';
     var plainBody =
-      'नमस्ते!\n\nआपकी खरीद के लिए धन्यवाद। आपकी PDF डाउनलोड करने के लिए नीचे दिया लिंक खोलें:\n' +
+      'नमस्ते!\n\nआपकी खरीद के लिए धन्यवाद। आपकी ' + product.name + ' डाउनलोड करने के लिए नीचे दिया लिंक खोलें:\n' +
       downloadUrl + '\n\nयह download link समय-सीमित है। समस्या हो तो email2omkara@gmail.com पर संपर्क करें।\n\nOmkar Sir | New India Education';
 
     var htmlBody =
@@ -127,8 +142,8 @@ function doPost(e) {
       '<p style="font-size:15px;line-height:1.6;margin:0;color:#e5eaff">भुगतान के लिए धन्यवाद। नीचे दिए बटन से अपनी PDF डाउनलोड करें।</p>' +
       '</div>' +
       '<div style="padding:26px 24px">' +
-      '<h2 style="font-size:20px;line-height:1.5;margin:0 0 8px">सम्पूर्ण आधुनिक भारत का इतिहास</h2>' +
-      '<p style="font-size:14px;line-height:1.8;color:#5b6385;margin:0 0 20px">20 अध्याय · 537 पृष्ठ · रंगीन मानचित्र और तालिकाएँ · RAS Pre + Mains एवं State PSC के लिए</p>' +
+      '<h2 style="font-size:20px;line-height:1.5;margin:0 0 8px">' + escapeHtml_(product.name) + '</h2>' +
+      '<p style="font-size:14px;line-height:1.8;color:#5b6385;margin:0 0 20px">' + escapeHtml_(product.description) + '</p>' +
       '<a href="' + escapeHtml_(downloadUrl) + '" style="display:block;text-align:center;background:#ff6b00;color:#ffffff;text-decoration:none;font-weight:bold;font-size:19px;line-height:1.4;padding:17px 16px;border-radius:12px">⬇️ PDF Download करें</a>' +
       '<p style="font-size:12px;line-height:1.7;color:#6b7280;margin:16px 0 0">सुरक्षा के लिए यह download link सीमित समय तक काम करेगा। इसे अपने निजी अध्ययन के लिए इस्तेमाल करें; आगे साझा न करें।</p>' +
       '<div style="margin-top:22px;padding-top:18px;border-top:1px solid #e8eaf0;font-size:13px;line-height:1.8;color:#5b6385">बटन न खुले? इस लिंक को browser में copy करें:<br><a href="' + escapeHtml_(downloadUrl) + '" style="color:#1b2a6b;word-break:break-all">' + escapeHtml_(downloadUrl) + '</a><br><br>सहायता: <a href="mailto:email2omkara@gmail.com" style="color:#1b2a6b">email2omkara@gmail.com</a></div>' +
