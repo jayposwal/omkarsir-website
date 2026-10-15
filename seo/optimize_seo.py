@@ -30,6 +30,7 @@ EXCLUDE_REL = {
     "pdf-chapter-splitter.html",
     "download-adhunik-bharat-itihas.html",
     "download-ras-mains-paper-2-pdf.html",
+    "download-rajasthan-history.html",
 }
 
 

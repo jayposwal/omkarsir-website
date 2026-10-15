@@ -14,6 +14,10 @@
           "type": "submenu",
           "children": [
             {
+              "label": "📜 राजस्थान इतिहास — Overview",
+              "url": "/rajasthan-itihas.html"
+            },
+            {
               "label": "🗺️ राजस्थान एटलस (41 जिले)",
               "url": "/rajasthan-atlas.html"
             },
@@ -32,6 +36,10 @@
             {
               "label": "📜 राजस्थान का इतिहास (16 अध्याय)",
               "url": "/rajasthan-itihas-series.html"
+            },
+            {
+              "label": "📘 सम्पूर्ण राजस्थान इतिहास PDF — ₹49",
+              "url": "/rajasthan-history-pdf.html"
             }
           ]
         },
