@@ -59,20 +59,43 @@ function emailIsValid(value) {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function allowedDescription(payment, env) {
+function descriptionMatches(payment, configuredDescriptions) {
   const description = String(payment.description || "").trim().toLowerCase();
-  const allowed = String(env.ALLOWED_PAYMENT_DESCRIPTIONS || "")
+  const allowed = String(configuredDescriptions || "")
     .split("|").map(x => x.trim().toLowerCase()).filter(Boolean);
-  // A matching description is required in addition to INR amount; this avoids
-  // emailing the product for unrelated payments of the same value.
   return !!description && allowed.some(s => description.includes(s));
 }
 
-async function createDownloadToken(payment, env) {
+function allowedDescription(payment, env) {
+  return descriptionMatches(payment, env.ALLOWED_PAYMENT_DESCRIPTIONS);
+}
+
+function matchConfiguredProduct(payment, env) {
+  const amount = Number(payment.amount);
+  if ([900, 9900].includes(amount) && allowedDescription(payment, env)) {
+    return {
+      code: "adhunik-bharat-itihas-pdf",
+      name: "सम्पूर्ण आधुनिक भारत का इतिहास PDF",
+      description: "20 अध्याय · 537 पृष्ठ · PDF",
+      objectKey: String(env.PDF_OBJECT_KEY || "")
+    };
+  }
+  if (amount === 4900 && descriptionMatches(payment, env.RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS)) {
+    return {
+      code: "rajasthan-history-pdf",
+      name: "सम्पूर्ण राजस्थान इतिहास PDF",
+      description: "16 अध्याय · 234 पृष्ठ · PDF",
+      objectKey: String(env.RAJASTHAN_HISTORY_PDF_OBJECT_KEY || "")
+    };
+  }
+  return null;
+}
+
+async function createDownloadToken(payment, env, productCode) {
   const ttl = Math.min(Math.max(Number(env.DOWNLOAD_TTL_SECONDS || 604800), 3600), 2592000);
   const payload = {
     v: 1,
-    product: "adhunik-bharat-itihas-pdf",
+    product: productCode,
     paymentId: String(payment.id),
     email: String(payment.email).toLowerCase(),
     exp: Math.floor(Date.now() / 1000) + ttl
@@ -91,7 +114,7 @@ async function verifyDownloadToken(token, env) {
   try {
     const payload = JSON.parse(new TextDecoder().decode(fromBase64Url(parts[0])));
     if (payload.v !== 1 ||
-        payload.product !== "adhunik-bharat-itihas-pdf" ||
+        !["adhunik-bharat-itihas-pdf", "rajasthan-history-pdf"].includes(payload.product) ||
         typeof payload.paymentId !== "string" ||
         !/^pay_[A-Za-z0-9]+$/.test(payload.paymentId) ||
         !emailIsValid(payload.email) ||
@@ -129,19 +152,20 @@ async function handleWebhook(request, env) {
   if (!payment || payment.status !== "captured" || payment.captured !== true) {
     return json({ ok: true, ignored: "payment not captured" });
   }
-  if (payment.currency !== "INR" || ![900, 9900].includes(Number(payment.amount))) {
-    return json({ ok: true, ignored: "not one of the configured PDF prices" });
+  if (payment.currency !== "INR") {
+    return json({ ok: true, ignored: "currency is not INR" });
   }
-  if (!allowedDescription(payment, env)) {
-    console.warn("Captured payment ignored: description did not match configured product. Payment ID:", payment.id);
-    return json({ ok: true, ignored: "payment description does not match PDF product" });
+  const product = matchConfiguredProduct(payment, env);
+  if (!product) {
+    console.warn("Captured payment ignored: amount/description did not match a configured PDF product. Payment ID:", payment.id);
+    return json({ ok: true, ignored: "payment does not match a configured PDF product" });
   }
   if (!/^pay_[A-Za-z0-9]+$/.test(String(payment.id || "")) || !emailIsValid(payment.email)) {
     console.warn("Captured product payment missing a valid payment ID or customer email.");
     return json({ ok: true, ignored: "payment ID/email missing or invalid" });
   }
 
-  const token = await createDownloadToken(payment, env);
+  const token = await createDownloadToken(payment, env, product.code);
   const base = String(env.PUBLIC_DOWNLOAD_BASE);
   if (!base.startsWith("https://") || !base.endsWith("/download?token=")) {
     console.error("PUBLIC_DOWNLOAD_BASE must look like https://your-worker-domain/download?token=");
@@ -155,8 +179,9 @@ async function handleWebhook(request, env) {
     email: String(payment.email).trim().toLowerCase(),
     amountPaise: Number(payment.amount),
     currency: payment.currency,
-    productCode: "adhunik-bharat-itihas-pdf",
-    productName: "सम्पूर्ण आधुनिक भारत का इतिहास PDF",
+    productCode: product.code,
+    productName: product.name,
+    productDescription: product.description,
     downloadUrl: downloadUrl,
     expiresAt: JSON.parse(new TextDecoder().decode(fromBase64Url(token.split(".")[0]))).exp,
     description: String(payment.description || "")
@@ -192,7 +217,7 @@ async function handleWebhook(request, env) {
 
 async function handleDownload(request, env) {
   if (request.method !== "GET") return new Response("Method not allowed", { status: 405 });
-  if (!env.PDF_BUCKET || !env.PDF_OBJECT_KEY || !env.DOWNLOAD_SIGNING_SECRET) {
+  if (!env.PDF_BUCKET || !env.DOWNLOAD_SIGNING_SECRET) {
     return new Response("Download service is not configured yet.", {
       status: 503, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
     });
@@ -206,15 +231,25 @@ async function handleDownload(request, env) {
     });
   }
 
-  const object = await env.PDF_BUCKET.get(env.PDF_OBJECT_KEY);
+  const isRajasthanHistory = payload.product === "rajasthan-history-pdf";
+  const objectKey = isRajasthanHistory
+    ? String(env.RAJASTHAN_HISTORY_PDF_OBJECT_KEY || "")
+    : String(env.PDF_OBJECT_KEY || "");
+  if (!objectKey) {
+    console.error("The configured PDF object key is missing for product:", payload.product);
+    return new Response("इस PDF की download service अभी configure नहीं है। कृपया email2omkara@gmail.com पर संपर्क करें।", {
+      status: 503, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
+    });
+  }
+  const object = await env.PDF_BUCKET.get(objectKey);
   if (!object) {
-    console.error("Configured PDF object not found in R2:", env.PDF_OBJECT_KEY);
+    console.error("Configured PDF object not found in R2:", objectKey);
     return new Response("PDF अभी उपलब्ध नहीं है। कृपया email2omkara@gmail.com पर संपर्क करें।", {
       status: 503, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
     });
   }
 
-  const safeFilename = "Sampoorna-Adhunik-Bharat-Itihas-Omkar-Sir.pdf";
+  const safeFilename = isRajasthanHistory ? "Sampoorna-Rajasthan-History-Omkar-Sir.pdf" : "Sampoorna-Adhunik-Bharat-Itihas-Omkar-Sir.pdf";
   const headers = new Headers();
   object.writeHttpMetadata(headers);
   headers.set("content-type", "application/pdf");
