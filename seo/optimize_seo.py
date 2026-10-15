@@ -121,7 +121,7 @@ def description_for(rel: str, existing: str | None, h1: str | None, first_p: str
 
 
 RAW_TEXT_BLOCK_RE = re.compile(
-    r"<(?P<tag>script|style|pre|textarea|code|svg|iframe)\b[^>]*>.*?</(?P=tag)\s*>",
+    r"<!--[\s\S]*?-->|<(?P<tag>script|style|pre|textarea|code|svg|iframe)\b[^>]*>.*?</(?P=tag)\s*>",
     re.I | re.S,
 )
 
@@ -170,6 +170,141 @@ def minify_large_learning_html(document: str, rel: str, original_size: int) -> s
         return re.sub(r">[ \t\r\n]+<", "> <", segment)
 
     return _transform_outside_raw_text(document, collapse_inter_tag_space)
+
+
+INLINE_STYLE_ATTR_RE = re.compile(r"\sstyle=(['\"])(.*?)\1", re.I | re.S)
+CLASS_ATTR_RE = re.compile(r"\bclass=(['\"])(.*?)\1", re.I | re.S)
+HTML_TAG_RE = re.compile(r"<[A-Za-z][^<>]*>", re.S)
+SAFE_TO_DEDUP_STYLE_RE = re.compile(r"[A-Za-z0-9#().,%\s:;!/-]+\Z")
+
+
+def _css_declarations_with_important(style_value: str) -> str:
+    """Convert inline declarations into a class rule while preserving inline-style priority."""
+    declarations: list[str] = []
+    current: list[str] = []
+    quote: str | None = None
+    parens = 0
+    escaped = False
+
+    def flush() -> None:
+        raw = "".join(current).strip()
+        current.clear()
+        if not raw or ":" not in raw:
+            return
+        prop, value = raw.split(":", 1)
+        prop = prop.strip()
+        value = value.strip()
+        if not prop or not value:
+            return
+        if not re.search(r"\s*!important\s*$", value, re.I):
+            value += " !important"
+        declarations.append(f"{prop}: {value};")
+
+    for char in style_value:
+        if escaped:
+            current.append(char)
+            escaped = False
+            continue
+        if char == "\\" and quote:
+            current.append(char)
+            escaped = True
+            continue
+        if quote:
+            current.append(char)
+            if char == quote:
+                quote = None
+            continue
+        if char in ("'", '"'):
+            quote = char
+            current.append(char)
+        elif char == "(":
+            parens += 1
+            current.append(char)
+        elif char == ")":
+            parens = max(0, parens - 1)
+            current.append(char)
+        elif char == ";" and parens == 0:
+            flush()
+        else:
+            current.append(char)
+    flush()
+    return " ".join(declarations)
+
+
+def deduplicate_repeated_inline_styles(document: str, rel: str, original_size: int) -> str:
+    """Move long, frequently repeated inline styles into CSS classes on large study pages.
+    Print-ready papers, interactive quizzes and protected/show pages are intentionally excluded.
+    """
+    if original_size < 150_000 or rel.startswith(("quiz/", "quizzes/", "show/")):
+        return document
+    if NOINDEX_RE.search(rel) or rel in {"404.html", "admin-comments.html", "pdf-chapter-splitter.html"}:
+        return document
+
+    counts: dict[str, int] = {}
+
+    def count_styles(segment: str) -> str:
+        for tag_match in HTML_TAG_RE.finditer(segment):
+            style_match = INLINE_STYLE_ATTR_RE.search(tag_match.group(0))
+            if not style_match:
+                continue
+            value = html.unescape(style_match.group(2)).strip()
+            if len(value) >= 30 and SAFE_TO_DEDUP_STYLE_RE.fullmatch(value):
+                counts[value] = counts.get(value, 0) + 1
+        return segment
+
+    _transform_outside_raw_text(document, count_styles)
+    eligible = [
+        value for value, count in counts.items()
+        if count >= 8 and len(value) >= 30
+    ]
+    if not eligible:
+        return document
+
+    eligible.sort(key=lambda value: (-counts[value], value))
+    class_by_style = {value: f"nied-is-{i:03d}" for i, value in enumerate(eligible, 1)}
+    rules: list[str] = []
+    for value in eligible:
+        declarations = _css_declarations_with_important(value)
+        if declarations:
+            rules.append(f".{class_by_style[value]} {{{declarations}}}")
+        else:
+            class_by_style.pop(value, None)
+    if not class_by_style:
+        return document
+
+    def replace_style_attrs(segment: str) -> str:
+        def replace_tag(tag_match: re.Match[str]) -> str:
+            tag = tag_match.group(0)
+            style_match = INLINE_STYLE_ATTR_RE.search(tag)
+            if not style_match:
+                return tag
+            value = html.unescape(style_match.group(2)).strip()
+            class_name = class_by_style.get(value)
+            if not class_name:
+                return tag
+            class_match = CLASS_ATTR_RE.search(tag)
+            if class_match:
+                old_classes = class_match.group(2).strip()
+                if class_name in old_classes.split():
+                    return INLINE_STYLE_ATTR_RE.sub("", tag, count=1)
+                new_classes = (old_classes + " " + class_name).strip()
+                tag = CLASS_ATTR_RE.sub(
+                    lambda m: f'class={m.group(1)}{html.escape(new_classes, quote=True)}{m.group(1)}',
+                    tag,
+                    count=1,
+                )
+            else:
+                tag = re.sub(r"\s*/?>$", lambda end: f' class="{class_name}"' + end.group(0), tag, count=1)
+            return INLINE_STYLE_ATTR_RE.sub("", tag, count=1)
+        return HTML_TAG_RE.sub(replace_tag, segment)
+
+    updated = _transform_outside_raw_text(document, replace_style_attrs)
+    css_block = "\n<style id=\"nied-inline-style-dedup\">\n" + "\n".join(rules) + "\n</style>\n"
+    if re.search(r"</head\s*>", updated, re.I):
+        updated = re.sub(r"</head\s*>", lambda m: css_block + m.group(0), updated, count=1, flags=re.I)
+    else:
+        return document
+    return updated
 
 
 def process_html(path: Path) -> bool:
@@ -228,6 +363,7 @@ def process_html(path: Path) -> bool:
         head = replace_or_insert_named_meta(head, name, value)
 
     updated = original[:m.start(1)] + head + original[m.end(1):]
+    updated = deduplicate_repeated_inline_styles(updated, rel, len(original.encode("utf-8")))
     updated = optimize_loading_hints(updated, rel)
     updated = minify_large_learning_html(updated, rel, len(original.encode("utf-8")))
     if updated != original:

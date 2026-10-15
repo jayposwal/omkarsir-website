@@ -146,6 +146,22 @@
           "type": "submenu",
           "children": [
             {
+              "label": "📍 Rajasthan District GK Framework",
+              "url": "/rajasthan-district-gk.html"
+            },
+            {
+              "label": "🎤 RAS Interview Preparation Guide",
+              "url": "/ras-interview-preparation.html"
+            },
+            {
+              "label": "🗂️ RAS Previous Year Questions (PYQ) Hub",
+              "url": "/ras-pyq.html"
+            },
+            {
+              "label": "🧭 RAS Preparation Roadmap (8 Study Clusters)",
+              "url": "/ras-study-hub.html"
+            },
+            {
               "label": "🆕 RAS Exam 2026 (Full Details)",
               "url": "/ras-exam-2026.html"
             },
