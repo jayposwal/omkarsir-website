@@ -10,10 +10,14 @@ bucket_name = "REPLACE_WITH_PRIVATE_R2_BUCKET_NAME"
 
 [vars]
 PDF_OBJECT_KEY = "adhunik-bharat-itihas.pdf"
+RAJASTHAN_HISTORY_PDF_OBJECT_KEY = "rajasthan-history.pdf"
 PRODUCT_NAME = "सम्पूर्ण आधुनिक भारत का इतिहास PDF"
 DOWNLOAD_TTL_SECONDS = "604800"
 # Pipe-separated substrings must match payment.description in a real webhook sample.
 # Keep old descriptions until a test transaction confirms the new Razorpay title is used.
 ALLOWED_PAYMENT_DESCRIPTIONS = "Adhunik Itihas PDF Offer Rs 9|Adhunik Itihas PDF Offer Rs 99|सम्पूर्ण आधुनिक भारत का इतिहास PDF"
+# Keep empty until a ₹49 Rajasthan History test payment reveals the exact signed payment.description.
+# Empty means the new product fails closed and does not trigger email delivery.
+RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS = ""
 # Must exactly match the deployed Worker URL through the trailing equals sign.
 PUBLIC_DOWNLOAD_BASE = "https://REPLACE-WORKER-DOMAIN/download?token="
