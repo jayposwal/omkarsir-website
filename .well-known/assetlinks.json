@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.omkarsir.official",
+      "sha256_cert_fingerprints": [
+        "87:C6:13:7B:4F:09:3E:68:1B:80:B4:6C:8B:D8:76:63:79:F4:82:A6:D5:90:4B:33:84:DB:44:EE:C6:15:44:B6"
+      ]
+    }
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "name": "OMKAR SIR OFFICIAL",
+  "short_name": "OMKAR SIR",
+  "description": "RAS Exam Preparation - Notes, Syllabus, PYQ, Test Series & Daily Current Affairs by Omkar Sir",
+  "start_url": "/?source=pwa",
+  "id": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#1B2A6B",
+  "theme_color": "#1B2A6B",
+  "lang": "hi",
+  "dir": "ltr",
+  "categories": ["education", "books"],
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
