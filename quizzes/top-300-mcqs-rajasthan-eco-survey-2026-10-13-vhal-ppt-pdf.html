@@ -34,4 +34,5 @@ body{background:#777;font-family:'Nirmala UI','Noto Sans Devanagari','Kohinoor D
 <script>
 function fitAll(){document.querySelectorAll('.tb').forEach(function(b){var s=1,g=0,ps=b.querySelectorAll('[data-sz]');while(b.scrollHeight>b.clientHeight+1&&s>0.45&&g++<40){s*=0.95;ps.forEach(function(p){p.style.fontSize=(p.getAttribute('data-sz')*s)+'pt';});}});}
 window.addEventListener('load',function(){setTimeout(function(){fitAll();},400);});
-</script></body></html>
+</script><script src="/nied-menu.js" defer></script>
+</body></html>

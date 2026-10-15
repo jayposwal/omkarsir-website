@@ -41,8 +41,8 @@ def insert_into_head(head: str, tag: str) -> str:
     return head.rstrip() + "\n" + tag + "\n"
 
 
-# Printable duplicates of quizzes and password-protected pages: keep them out of search results.
-NOINDEX_RE = re.compile(r"-(question-paper|solution-booklet)\.html$")
+# Non-public internal utility pages, payment download delivery pages, and private show pages:
+NOINDEX_RE = re.compile(r"^(admin-comments|pdf-chapter-splitter|download-adhunik-bharat-itihas|download-ras-mains-paper-2-pdf)\.html$|^show/")
 
 
 def should_noindex(rel: str, title: str | None) -> bool:
@@ -133,7 +133,7 @@ def process_html(path: Path) -> bool:
     existing_robots = existing_meta(head, "robots")
     if should_noindex(rel, existing_title):
         head = replace_or_insert_named_meta(head, "robots", "noindex, follow")
-    elif not (existing_robots and "noindex" in existing_robots.lower()):
+    else:
         head = replace_or_insert_named_meta(head, "robots", "index, follow, max-image-preview:large")
     head = replace_or_insert_named_meta(head, "author", "Omkar Singh Gurjar")
     head = replace_or_insert_named_meta(head, "referrer", "strict-origin-when-cross-origin")
@@ -169,17 +169,37 @@ def process_html(path: Path) -> bool:
     return False
 
 
-def git_lastmod(path: Path) -> str:
+_GIT_DATES_CACHE: dict[str, str] | None = None
+
+
+def get_git_dates() -> dict[str, str]:
+    global _GIT_DATES_CACHE
+    if _GIT_DATES_CACHE is not None:
+        return _GIT_DATES_CACHE
+    dates: dict[str, str] = {}
     try:
-        result = subprocess.run(
-            ["git", "log", "-1", "--format=%cs", "--", path.relative_to(ROOT).as_posix()],
+        res = subprocess.run(
+            ["git", "log", "--name-only", "--format=COMMIT:%cs"],
             cwd=ROOT, capture_output=True, text=True, check=True
         )
-        value = result.stdout.strip()
-        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
-            return value
+        current_date = None
+        for line in res.stdout.splitlines():
+            line = line.strip()
+            if line.startswith("COMMIT:"):
+                current_date = line.split(":", 1)[1]
+            elif line and current_date and line not in dates:
+                dates[line] = current_date
     except Exception:
         pass
+    _GIT_DATES_CACHE = dates
+    return dates
+
+
+def git_lastmod(path: Path) -> str:
+    rel = path.relative_to(ROOT).as_posix()
+    dates = get_git_dates()
+    if rel in dates:
+        return dates[rel]
     return date.today().isoformat()
 
 
