@@ -46,7 +46,7 @@ NOINDEX_RE = re.compile(r"^(admin-comments|pdf-chapter-splitter|download-adhunik
 
 
 def should_noindex(rel: str, title: str | None) -> bool:
-    return bool(NOINDEX_RE.search(rel)) or (title or "").startswith("Protected Page")
+    return (rel == "404.html" or rel.startswith("admin-comments") or rel == "pdf-chapter-splitter.html" or bool(NOINDEX_RE.search(rel)) or (title or "").startswith("Protected Page"))
 
 
 def replace_or_insert_named_meta(head: str, name: str, value: str) -> str:
@@ -80,7 +80,7 @@ def canonical_for(path: Path) -> str:
 
 def title_for(rel: str, existing: str | None, h1: str | None) -> str:
     if rel == "index.html":
-        return "RAS Exam 2026 Preparation | RAS Pre & Mains — Omkar Sir"
+        return "RAS & Rajasthan GK Notes, PYQs and Free Tests | Omkar Sir"
     current = strip_tags(existing or "")
     if current and current.lower() not in {"home", "index", "omkar sir", "new india education"}:
         if "omkar sir" not in current.lower() and len(current) <= 54:
@@ -91,20 +91,85 @@ def title_for(rel: str, existing: str | None, h1: str | None) -> str:
 
 
 def description_for(rel: str, existing: str | None, h1: str | None, first_p: str | None) -> str:
+    """Prefer page-specific descriptions and remove unsupported, repetitive superlatives."""
     if rel == "index.html":
-        return "RAS Exam 2026: Notes, Syllabus, PYQ, Test Series और Courses। भारत का सबसे बेहतरीन कंटेंट और 8 साल का अनुभव — 6 लाख+ सफल विद्यार्थी।"
-    current = strip_tags(existing or "")
-    boilerplate = ["NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार", "विश्वसनीय एवं बेहतरीन Content"]
-    weak = not current or len(current) < 70 or (all(x in current for x in boilerplate) and len(current) > 150)
-    if not weak:
+        return "RAS और Rajasthan GK की तैयारी के लिए Free Hindi Notes, PYQs, Daily Quiz, Current Affairs, Test Series और Omkar Sir के Courses।"
+
+    def clean(value: str | None) -> str:
+        value = strip_tags(value or "")
+        value = re.sub(r"\s*भारत का सबसे बेहतरीन कंटेंट.*$", "", value, flags=re.I)
+        value = re.sub(
+            r"\s*NCERT,\s*RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार\s*[—–|,-]*\s*विश्वसनीय एवं बेहतरीन Content\.?",
+            "",
+            value,
+            flags=re.I,
+        )
+        return re.sub(r"\s+", " ", value).strip(" .|—–,-")
+
+    current = clean(existing)
+    if current and len(current) >= 70:
         return current[:157].rstrip(" ।,-") + ("…" if len(current) > 157 else "")
-    topic = h1 or Path(rel).stem.replace("-", " ").title()
-    supporting = strip_tags(first_p or "")
-    if supporting:
-        text = f"{topic} — RAS और Rajasthan competitive exams की तैयारी के लिए आसान Hindi notes और study material. {supporting}"
+
+    topic = clean(h1) or Path(rel).stem.replace("-", " ").replace("_", " ").title()
+    supporting = clean(first_p)
+    if supporting and supporting.lower() not in topic.lower():
+        text = f"{topic} — Hindi study notes, explanations and exam-focused practice. {supporting}"
     else:
-        text = f"{topic} — RAS, RPSC और Rajasthan competitive exams की तैयारी के लिए Hindi study material, notes और revision resources."
+        text = f"{topic} — Hindi notes, practice questions and revision resources for competitive exam preparation."
+    text = re.sub(r"\s+", " ", text).strip()
     return text[:157].rstrip(" ।,-") + ("…" if len(text) > 157 else "")
+
+
+RAW_TEXT_BLOCK_RE = re.compile(
+    r"<(?P<tag>script|style|pre|textarea|code|svg|iframe)\b[^>]*>.*?</(?P=tag)\s*>",
+    re.I | re.S,
+)
+
+
+def _transform_outside_raw_text(document: str, transform) -> str:
+    """Transform normal HTML while leaving scripts, styles and preformatted blocks untouched."""
+    output: list[str] = []
+    cursor = 0
+    for match in RAW_TEXT_BLOCK_RE.finditer(document):
+        output.append(transform(document[cursor:match.start()]))
+        output.append(match.group(0))
+        cursor = match.end()
+    output.append(transform(document[cursor:]))
+    return "".join(output)
+
+
+def optimize_loading_hints(document: str, rel: str) -> str:
+    """Use async image decoding and lazy-load below-fold images on learning pages.
+    Preserve print-ready papers and interactive quiz experiences.
+    """
+    if rel.startswith(("quiz/", "quizzes/", "show/")):
+        return document
+    image_index = [0]
+
+    def edit_segment(segment: str) -> str:
+        def edit_img(match) -> str:
+            tag = match.group(0)
+            image_index[0] += 1
+            if not re.search(r"\bdecoding\s*=", tag, re.I):
+                tag = re.sub(r"\s*/?>$", lambda end: ' decoding="async"' + end.group(0), tag)
+            if image_index[0] > 1 and not re.search(r"\bloading\s*=", tag, re.I):
+                tag = re.sub(r"\s*/?>$", lambda end: ' loading="lazy"' + end.group(0), tag)
+            return tag
+        return re.sub(r"<img\b[^>]*>", edit_img, segment, flags=re.I)
+
+    return _transform_outside_raw_text(document, edit_segment)
+
+
+def minify_large_learning_html(document: str, rel: str, original_size: int) -> str:
+    """Reduce redundant source whitespace on large reading pages; do not reformat quiz data."""
+    if original_size < 200_000 or rel.startswith(("quiz/", "quizzes/", "show/")):
+        return document
+
+    def collapse_inter_tag_space(segment: str) -> str:
+        # Keep one collapsible space so adjacent inline words are not accidentally joined.
+        return re.sub(r">[ \t\r\n]+<", "> <", segment)
+
+    return _transform_outside_raw_text(document, collapse_inter_tag_space)
 
 
 def process_html(path: Path) -> bool:
@@ -163,6 +228,8 @@ def process_html(path: Path) -> bool:
         head = replace_or_insert_named_meta(head, name, value)
 
     updated = original[:m.start(1)] + head + original[m.end(1):]
+    updated = optimize_loading_hints(updated, rel)
+    updated = minify_large_learning_html(updated, rel, len(original.encode("utf-8")))
     if updated != original:
         path.write_text(updated, encoding="utf-8")
         return True
