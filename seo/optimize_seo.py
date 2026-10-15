@@ -31,6 +31,7 @@ EXCLUDE_REL = {
     "download-adhunik-bharat-itihas.html",
     "download-ras-mains-paper-2-pdf.html",
     "download-rajasthan-history.html",
+    "rajasthan-itihas.html",
 }
 
 
