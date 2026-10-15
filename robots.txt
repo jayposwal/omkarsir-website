@@ -57,3 +57,7 @@ User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://omkarsir.com/sitemap.xml
+
+# LLM Discovery (https://llmstxt.org)
+# llms.txt: https://omkarsir.com/llms.txt
+# llms-full.txt: https://omkarsir.com/llms-full.txt
