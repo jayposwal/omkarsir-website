@@ -194,6 +194,36 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 .exam-box[hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){.exam-filter-btn{transition:none}}
 
+
+/* === Home slider === */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hs{position:relative;background:radial-gradient(ellipse at 90% 0%,rgba(255,107,0,.12),transparent 45%),linear-gradient(135deg,#FFF9F3 0%,#FFFFFF 55%,#EEF2FF 100%);padding:clamp(14px,3vw,34px) 6% 18px;border-bottom:1px solid #F0E6DA;overflow:hidden}
+.hs-viewport{max-width:1150px;margin:0 auto;overflow:hidden;border-radius:20px}
+.hs-track{display:flex;transition:transform .6s cubic-bezier(.22,.8,.3,1);touch-action:pan-y}
+.hs-slide{flex:0 0 100%;display:grid;grid-template-columns:minmax(0,620px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center}
+.hs-img{display:block;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(27,42,107,.18);background:#fff;line-height:0}
+.hs-img img{width:100%;height:auto;display:block}
+.hs-copy{text-align:left}
+.hs-tag{display:inline-block;background:#FFF0E3;color:#B4500C;border:1px solid #F8D3B3;padding:6px 12px;border-radius:50px;font-size:12px;font-weight:800;margin-bottom:12px}
+.hs-copy h2{font-family:'Poppins',sans-serif;font-size:clamp(24px,3vw,38px);line-height:1.25;color:#1B2A6B;font-weight:800;margin-bottom:10px}
+.hs-copy p{color:#5F6475;font-size:16px;line-height:1.75;margin-bottom:20px}
+.hs-arrow{position:absolute;top:44%;width:44px;height:44px;border-radius:50%;border:1px solid #E3E7F0;background:rgba(255,255,255,.95);color:#1B2A6B;font-size:28px;line-height:1;cursor:pointer;box-shadow:0 6px 16px rgba(27,42,107,.12);z-index:2}
+.hs-prev{left:max(10px,calc(50% - 600px))}.hs-next{right:max(10px,calc(50% - 600px))}
+.hs-arrow:hover{background:#FF6B00;color:#fff;border-color:#FF6B00}
+.hs-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+.hs-dot{width:10px;height:10px;border-radius:10px;border:0;background:#C9CFDD;cursor:pointer;padding:0;transition:width .3s,background .3s}
+.hs-dot[aria-selected="true"]{width:28px;background:#FF6B00}
+.hs-cred{text-align:center;margin:12px auto 0;font-size:14px;font-weight:700;color:#1B2A6B}
+.subj-more{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px auto 0}
+.subjects-sec{padding-top:30px}
+.pyq-strip{max-width:1150px;margin:0 auto 34px;width:88%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;background:linear-gradient(135deg,#1B2A6B,#273D91);color:#fff;border-radius:18px;box-shadow:0 10px 26px rgba(27,42,107,.18)}
+.pyq-eyebrow{font-size:12px;font-weight:800;opacity:.85;letter-spacing:.04em}
+.pyq-strip h2{font-size:clamp(20px,2.6vw,26px);margin:4px 0 6px;color:#fff}
+.pyq-strip p{margin:0;line-height:1.6;font-size:14px;opacity:.92}
+.pyq-strip a{flex:0 0 auto;background:#FF6B00;color:#fff;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:10px}
+@media(max-width:900px){.hs{padding:12px 4% 14px}.hs-slide{grid-template-columns:1fr;gap:12px}.hs-copy{text-align:left;padding:0 4px}.hs-copy p{display:none}.hs-copy h2{font-size:20px;margin-bottom:8px}.hs-tag{font-size:11px;margin-bottom:6px;padding:4px 10px}.hs-copy .btn-main{width:100%;justify-content:center}.hs-arrow{display:none}.hs-cred{font-size:12.5px}}
+@media(max-width:560px){.subject-grid{grid-template-columns:repeat(3,1fr);gap:8px}.subject-box{padding:12px 6px;border-width:1.5px}.subject-box .s-icon{font-size:20px;margin-bottom:5px}.subject-box .s-name{font-size:11px}.subject-box .s-count{font-size:9.5px}.pyq-strip{flex-direction:column;align-items:stretch;width:90%;padding:20px}.pyq-strip a{text-align:center}.subj-more a{flex:1 1 140px;text-align:center}}
+@media(prefers-reduced-motion:reduce){.hs-track{transition:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -266,76 +296,34 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
 
 <div class="tri"></div>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">🎯 RAS · IAS · SSC · Railway · Police</div>
-    <h1>RAS और Rajasthan GK की तैयारी को दें सही दिशा
-<span>Free Hindi Notes, PYQs, MCQ और Test Series — एक जगह</span></h1>
-    <p>परीक्षा की तैयारी के लिए विषयवार अध्ययन सामग्री, Previous Year Questions, Daily Quiz और उपयोगी Video Lectures खोजें। Free Resources से शुरुआत करें और अपनी जरूरत के अनुसार Course चुनें।</p>
-    <p class="credibility">📚 NCERT, RBSE और प्रामाणिक स्रोतों पर आधारित सामग्री · RAS Prelims, Mains और अन्य प्रतियोगी परीक्षाओं के लिए स्पष्ट explanations और अभ्यास</p>
-    <div class="hero-btns">
-      <a href="/all-notes.html" class="btn-main">📖 Free Notes देखें <span aria-hidden="true">→</span></a>
-      <a href="#featured-pdf" class="btn-sec">📄 Featured PDF देखें</a>
-    
-<a href="/ras-study-hub.html" class="btn-sec">🧭 RAS Study Roadmap</a>
-</div>
-  </div>
-</section>
-
-<section class="cta-band-sec" aria-label="मुख्य शैक्षिक विकल्प">
-  <div class="cta-band-grid">
-    <article class="cta-band">
-      <div class="cb-tag">📚 FREE RESOURCES</div>
-      <h2 class="cb-title">Free Study Material</h2>
-      <p class="cb-desc">विषयवार Hindi Notes, Previous Year Questions, Daily Quiz और उपयोगी अध्ययन सामग्री से अपनी तैयारी शुरू करें।</p>
-      <div class="cb-btns">
-        <a href="/all-notes.html" class="cb-btn cb-btn-orange">Free Notes देखें →</a>
-        <a href="/all-quizzes.html" class="cb-btn cb-btn-navy">Quiz &amp; Tests</a>
+<section class="hs" aria-roledescription="carousel" aria-label="मुख्य Courses">
+  <h1 class="sr-only">RAS और Rajasthan GK की तैयारी — Free Hindi Notes, PYQs, MCQ और Test Series | Omkar Sir</h1>
+  <div class="hs-viewport">
+    <div class="hs-track">
+      <div class="hs-slide" role="group" aria-roledescription="slide" aria-label="1 / 2">
+        <a class="hs-img" href="/ras-foundation-v2.html"><img src="/assets/home-slider/ras-foundation-2026.webp" srcset="/assets/home-slider/ras-foundation-2026-800.webp 800w, /assets/home-slider/ras-foundation-2026.webp 1448w" sizes="(max-width:900px) 100vw, 620px" width="1448" height="1086" alt="RAS Foundation Course 2026 — Pre + Mains Complete Course, Mentor Omkar Sir" fetchpriority="high" decoding="async"></a>
+        <div class="hs-copy">
+          <span class="hs-tag">🕉️ PRE + MAINS · 2026</span>
+          <h2>RAS Foundation Course 2026</h2>
+          <p>Video Lectures + PDFs + Short Notes + Tests, साथ में Mains Answer Writing और Model Answers — RAS की सम्पूर्ण तैयारी एक ही Course में।</p>
+          <a class="btn-main" href="/ras-foundation-v2.html">Course देखें →</a>
+        </div>
       </div>
-    </article>
-    <article class="cta-band">
-      <div class="cb-tag">📄 DIGITAL NOTES STORE</div>
-      <h2 class="cb-title">PDF Notes Store</h2>
-      <p class="cb-desc">PDF खरीदने से पहले वास्तविक sample pages, विषय-सूची और उपलब्ध सामग्री देखकर अपनी जरूरत के अनुसार चुनें।</p>
-      <div class="cb-btns">
-        <a href="/adhunik-bharat-itihas-pdf.html" class="cb-btn cb-btn-orange">PDFs देखें →</a>
-        <a href="/all-notes.html" class="cb-btn cb-btn-navy">सभी Notes</a>
-      </div>
-    </article>
-    <article class="cta-band">
-      <div class="cb-tag">🎓 STRUCTURED PREPARATION</div>
-      <h2 class="cb-title">Premium Courses</h2>
-      <p class="cb-desc">RAS Foundation, Super 60, OMASTRA और Test Series की सामग्री, कीमत और उपलब्धता देखकर अगला कदम चुनें।</p>
-      <div class="cb-btns">
-        <a href="/courses.html" class="cb-btn cb-btn-orange">सभी Courses देखें →</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-
-
-<section class="featured-pdf-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
-  <div class="featured-pdf-panel">
-    <div class="featured-pdf-cover-wrap">
-      <img class="featured-pdf-cover" src="/assets/store/adhunik-bharat-itihas-poster.webp" alt="सम्पूर्ण आधुनिक भारत का इतिहास PDF का कवर" width="1092" height="1544" loading="lazy" decoding="async">
-    </div>
-    <div class="featured-pdf-copy">
-      <span class="featured-pdf-eyebrow">⭐ FEATURED PDF · RAS PRE + MAINS</span>
-      <h2 id="featured-pdf-title">सम्पूर्ण आधुनिक भारत का इतिहास</h2>
-      <p>ब्रिटिश सत्ता की स्थापना से स्वतंत्रता तक आधुनिक भारत के इतिहास की रंगीन Hindi PDF। नमूना पेज देखकर इसकी सामग्री, तालिकाएँ और मानचित्र समझें, फिर अपनी तैयारी के अनुसार निर्णय लें।</p>
-      <div class="featured-pdf-facts">
-        <span class="featured-pdf-fact">📚 20 अध्याय</span>
-        <span class="featured-pdf-fact">📄 537 पृष्ठ</span>
-        <span class="featured-pdf-fact">🗺️ रंगीन मानचित्र</span>
-        <span class="featured-pdf-fact">📱 मोबाइल पर पढ़ें</span>
-      </div>
-      <div class="featured-pdf-actions">
-        <a href="/adhunik-bharat-itihas-pdf.html" class="btn-main">वर्तमान कीमत और ऑफर देखें →</a>
-        <a href="/assets/adhunik-bharat-itihas/pdf/adhunik-bharat-itihas-ch01.pdf" class="btn-sec" target="_blank" rel="noopener noreferrer">अध्याय 1 मुफ़्त पढ़ें</a>
+      <div class="hs-slide" role="group" aria-roledescription="slide" aria-label="2 / 2">
+        <a class="hs-img" href="/super60-course.html"><img src="/assets/home-slider/ras-prelims-super60-2026.webp" srcset="/assets/home-slider/ras-prelims-super60-2026-800.webp 800w, /assets/home-slider/ras-prelims-super60-2026.webp 1448w" sizes="(max-width:900px) 100vw, 620px" width="1448" height="1086" alt="RAS Prelims 2026 Super 60 Crash Course — 60 दिन में RAS Prelims, Mentor Omkar Sir" loading="lazy" decoding="async"></a>
+        <div class="hs-copy">
+          <span class="hs-tag">⏱️ RAS PRELIMS 2026</span>
+          <h2>Super 60 Crash Course</h2>
+          <p>60 दिन का Daily Task Based Programme — रोज़ Video Lecture, PDF Notes, Short Notes और Daily MCQ Quiz।</p>
+          <a class="btn-main" href="/super60-course.html">Course देखें →</a>
+        </div>
       </div>
     </div>
   </div>
+  <button class="hs-arrow hs-prev" type="button" aria-label="पिछली slide">‹</button>
+  <button class="hs-arrow hs-next" type="button" aria-label="अगली slide">›</button>
+  <div class="hs-dots" role="tablist" aria-label="Slides"></div>
+  <p class="hs-cred">🏆 पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</p>
 </section>
 
 <section class="subjects-sec">
@@ -368,7 +356,55 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
     <a href="/antarrashtriya-sambandh.html" class="subject-box"><div class="s-icon">🌐</div><div class="s-name">अंतर्राष्ट्रीय संबंध</div><div class="s-count">17 अध्याय</div></a>
     <a href="/general-english.html" class="subject-box"><div class="s-icon">🔤</div><div class="s-name">General English</div><div class="s-count">12 अध्याय</div></a>
   </div>
+  <div class="subj-more"><a href="/all-notes.html" class="btn-sec">📖 सभी Free Notes देखें →</a> <a href="/all-quizzes.html" class="btn-sec">📝 Quiz &amp; Tests</a></div>
 </section>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><span class="stat-num">6 लाख+</span><div class="stat-label">📺 YouTube Subscribers</div></div>
+    <div class="stat"><span class="stat-num">2 लाख+</span><div class="stat-label">📱 App Downloads</div></div>
+    <div class="stat"><span class="stat-num">500+</span><div class="stat-label">📄 Study नोट्स</div></div>
+    <div class="stat"><span class="stat-num">8+</span><div class="stat-label">🎓 Years of Teaching</div></div>
+  </div>
+</div>
+
+<section class="featured-pdf-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
+  <div class="featured-pdf-panel">
+    <div class="featured-pdf-cover-wrap">
+      <img class="featured-pdf-cover" src="/assets/store/adhunik-bharat-itihas-poster.webp" alt="सम्पूर्ण आधुनिक भारत का इतिहास PDF का कवर" width="1092" height="1544" loading="lazy" decoding="async">
+    </div>
+    <div class="featured-pdf-copy">
+      <span class="featured-pdf-eyebrow">⭐ FEATURED PDF · RAS PRE + MAINS</span>
+      <h2 id="featured-pdf-title">सम्पूर्ण आधुनिक भारत का इतिहास</h2>
+      <p>ब्रिटिश सत्ता की स्थापना से स्वतंत्रता तक आधुनिक भारत के इतिहास की रंगीन Hindi PDF। नमूना पेज देखकर इसकी सामग्री, तालिकाएँ और मानचित्र समझें, फिर अपनी तैयारी के अनुसार निर्णय लें।</p>
+      <div class="featured-pdf-facts">
+        <span class="featured-pdf-fact">📚 20 अध्याय</span>
+        <span class="featured-pdf-fact">📄 537 पृष्ठ</span>
+        <span class="featured-pdf-fact">🗺️ रंगीन मानचित्र</span>
+        <span class="featured-pdf-fact">📱 मोबाइल पर पढ़ें</span>
+      </div>
+      <div class="featured-pdf-actions">
+        <a href="/adhunik-bharat-itihas-pdf.html" class="btn-main">वर्तमान कीमत और ऑफर देखें →</a>
+        <a href="/assets/adhunik-bharat-itihas/pdf/adhunik-bharat-itihas-ch01.pdf" class="btn-sec" target="_blank" rel="noopener noreferrer">अध्याय 1 मुफ़्त पढ़ें</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pyq-strip" id="ras-mains-pyqs-promo">
+  <div><div class="pyq-eyebrow">RPSC RAS MAINS • PAPER-I</div>
+  <h2>📚 309 RAS Mains Paper-I PYQs</h2>
+  <p>इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित।</p></div>
+  <a href="/ras-mains-paper-1-pyqs.html">PYQs पढ़ें →</a>
+</section>
+
+
+
+
+
+
+
+
 
 <section class="yt-sec">
   <h2 class="sec-title">Top <span>YouTube</span> Videos</h2>
@@ -432,16 +468,7 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   </div>
 </section>
 
-<section class="feat-sec">
-  <h2 class="sec-title">हमारे <span>फीचर</span></h2>
-  <p class="sec-sub">सब कुछ जो आपको चाहिए — यहाँ एक जगह मिलेगा</p>
-  <div class="feat-grid">
-    <a href="/all-notes.html" class="feat-box"><div class="f-icon">📄</div><div class="f-name">बेहतरीन नोट्स</div><div class="f-sub">500+ हिंदी नोट्स किफायती दाम में — RAS, IAS, SSC सभी के लिए तैयार</div></a>
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="feat-box"><div class="f-icon">🧪</div><div class="f-name">Daily Quiz</div><div class="f-sub">रोज़ नए MCQ Quiz से अपनी तैयारी जाँचो और आगे बढ़ते रहो</div></a>
-    <a href="https://youtube.com/@thenewindiaeducation" class="feat-box"><div class="f-icon">🎥</div><div class="f-name">Video Lectures</div><div class="f-sub">हिंदी में शानदार Free Video Lectures — YouTube पर उपलब्ध</div></a>
-    <a href="/previous-year-papers.html" class="feat-box"><div class="f-icon">📝</div><div class="f-name">PYQ Papers</div><div class="f-sub">पुराने प्रश्न पत्रों का अभ्यास करो और Exam Pattern समझो</div></a>
-  </div>
-</section>
+
 
 <section class="courses-sec">
   <h2 class="sec-title">सभी <span>Courses</span></h2>
@@ -531,41 +558,27 @@ footer a{color:#FF6B00;text-decoration:none;margin:0 8px}
   </div>
 </section>
 
-<div class="stats">
-  <div class="stats-grid">
-    <div class="stat"><span class="stat-num">6 लाख+</span><div class="stat-label">📺 YouTube Subscribers</div></div>
-    <div class="stat"><span class="stat-num">2 लाख+</span><div class="stat-label">📱 App Downloads</div></div>
-    <div class="stat"><span class="stat-num">500+</span><div class="stat-label">📄 Study नोट्स</div></div>
-    <div class="stat"><span class="stat-num">8+</span><div class="stat-label">🎓 Years of Teaching</div></div>
-  </div>
-</div>
 
-<section style="padding:34px 6%;max-width:1200px;margin:0 auto" aria-labelledby="ras-roadmap-title"><div style="background:#fff;border:1px solid #e3e8f2;border-radius:18px;padding:clamp(22px,4vw,36px);text-align:center;box-shadow:0 8px 24px rgba(31,48,86,.05)"><p style="font-size:12px;font-weight:800;letter-spacing:.08em;color:#c65b12;text-transform:uppercase;margin-bottom:8px">RAS Preparation Roadmap</p><h2 id="ras-roadmap-title" style="font-size:clamp(22px,3vw,30px);color:#1b2a6b;margin-bottom:10px">RAS की तैयारी कहाँ से शुरू करें?</h2><p style="color:#596276;max-width:720px;margin:0 auto 18px;line-height:1.8">Exam guide, Prelims और Mains syllabus, Rajasthan GK, current affairs, PYQs, practice tests, answer writing और interview resources को एक व्यवस्थित study path में खोलें।</p><a href="/ras-study-hub.html" class="btn-main">पूरा RAS Study Hub खोलें →</a><p style="font-size:12px;color:#667085;margin-top:14px">YouTube subscribers, app downloads और published notes अलग-अलग platform metrics हैं; इन्हें exam selections के दावे के रूप में न समझें।</p></div></section>
+
+
 <section class="faq-sec" id="faq" style="padding:40px 6%;max-width:900px;margin:0 auto">
   <h2 class="sec-title">❓ <span>FAQ</span></h2>
   <p class="sec-sub">RAS Exam 2026 से जुड़े सबसे ज़्यादा पूछे जाने वाले सवाल</p>
   <div style="margin-top:18px;font-size:14px;line-height:1.8;color:#333">
   <p><strong>RAS Prelims 2026 कब होगी?</strong><br>संशोधित परीक्षा तिथि <strong>6 दिसंबर 2026 (रविवार)</strong> है। RAS Mains <strong>1–2 मई 2027</strong> के लिए प्रस्तावित है। <a href="https://rpsc.rajasthan.gov.in/forthcomingexaminations" target="_blank" rel="noopener">RPSC का आधिकारिक परीक्षा कैलेंडर</a> देखें।</p>
   <p style="margin-top:14px"><strong>RAS Exam 2026 का Syllabus कहाँ मिलेगा?</strong><br>RAS Exam 2026 का Official RPSC Syllabus (Pre + Mains, New Pattern) omkarsir.com पर Hindi और English दोनों में, PDF Download के साथ उपलब्ध है।</p>
-  <p style="margin-top:14px"><strong>RAS Exam 2026 की तैयारी कैसे करें?</strong><br>RAS Exam 2026 की तैयारी के लिए Omkar Sir के Free Notes, PYQ Papers, Test Series और Video Lectures का उपयोग करें — सभी New India Nav Bharat Nirman App और omkarsir.com पर उपलब्ध हैं।</p>
+  <p style="margin-top:14px"><strong>RAS Exam 2026 की तैयारी कैसे करें?</strong><br>शुरुआत के लिए <a href="/ras-study-hub.html">RAS Study Hub (Roadmap)</a> देखें। RAS Exam 2026 की तैयारी के लिए Omkar Sir के Free Notes, PYQ Papers, Test Series और Video Lectures का उपयोग करें — सभी New India Nav Bharat Nirman App और omkarsir.com पर उपलब्ध हैं।</p>
   </div>
 </section>
 
-<section class="cta">
-  <h2>🚀 आज ही <span>शुरू करो!</span></h2>
-  <p>App download करो और RAS Foundation Course join करो</p>
-  <div class="hero-btns">
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="btn-main">📱 App Download करो</a>
-    <a href="https://youtube.com/@thenewindiaeducation" class="btn-sec">🎥 YouTube Channel देखो</a>
-  </div>
-</section>
+
 
 <div id="nied-latest-posts"></div>
 </div>
 </div>
 <footer>
   <div class="footer-logo">Omkar Sir<span>.</span></div>
-  <div style="font-size:13px;margin-bottom:10px">New India Education, Jaipur, Rajasthan</div>
+  <div style="font-size:13px;margin-bottom:10px">NIEOM Academy · जयपुर, राजस्थान</div>
   <div class="footer-links">
     <a href="https://youtube.com/@thenewindiaeducation">YouTube</a>
     <a href="https://t.me/omkarsirofficial">Telegram</a>
@@ -594,12 +607,7 @@ document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
 });
 </script>
 
-<section id="ras-mains-pyqs-promo" style="margin:28px auto;padding:22px;max-width:1100px;background:linear-gradient(135deg,#1d2d6f,#273d91);color:#fff;border-radius:14px;box-shadow:0 8px 22px #1d2d6f22">
-  <div style="font-size:14px;font-weight:700;opacity:.9">RPSC RAS MAINS • PAPER-I</div>
-  <h2 style="margin:6px 0 8px;font-size:26px">📚 309 RAS Mains Paper-I PYQs</h2>
-  <p style="margin:0 0 14px;line-height:1.6">इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित।</p>
-  <a href="ras-mains-paper-1-pyqs.html" style="display:inline-block;background:#ff6b00;color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:9px">PYQs पढ़ें →</a>
-</section>
+
 
 <script>
 (function(){
@@ -633,5 +641,27 @@ document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
 })();
 </script>
 
+<script>
+(function(){
+  var root=document.querySelector('.hs'); if(!root) return;
+  var track=root.querySelector('.hs-track'), slides=root.querySelectorAll('.hs-slide'), dotsBox=root.querySelector('.hs-dots');
+  var n=slides.length, i=0, timer=null, DELAY=8000;
+  var dots=[];
+  for(var k=0;k<n;k++){(function(k){var d=document.createElement('button');d.type='button';d.className='hs-dot';d.setAttribute('role','tab');d.setAttribute('aria-label','Slide '+(k+1));d.addEventListener('click',function(){go(k);restart();});dotsBox.appendChild(d);dots.push(d);})(k);}
+  function go(k){i=(k+n)%n;track.style.transform='translateX('+(-100*i)+'%)';dots.forEach(function(d,j){d.setAttribute('aria-selected',j===i?'true':'false');});slides.forEach(function(s,j){s.setAttribute('aria-hidden',j===i?'false':'true');s.querySelectorAll('a').forEach(function(a){a.tabIndex=j===i?0:-1;});});}
+  function start(){if(n>1&&!timer)timer=setInterval(function(){go(i+1);},DELAY);}
+  function stop(){clearInterval(timer);timer=null;}
+  function restart(){stop();start();}
+  root.querySelector('.hs-prev').addEventListener('click',function(){go(i-1);restart();});
+  root.querySelector('.hs-next').addEventListener('click',function(){go(i+1);restart();});
+  root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);
+  root.addEventListener('focusin',stop);root.addEventListener('focusout',start);
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+  var x0=null,y0=null;
+  track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY;stop();},{passive:true});
+  track.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(dx<0?i+1:i-1);x0=null;start();},{passive:true});
+  go(0);start();
+})();
+</script>
 </body>
 </html>
