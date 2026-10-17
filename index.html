@@ -401,79 +401,7 @@ a{color:inherit}
   box-shadow:0 4px 12px rgba(234,88,12,.22);
 }
 
-/* ===== THREE MAIN PATHS ===== */
-.cta-band-sec{max-width:1200px;margin:0 auto;padding:26px 5% 16px}
-.cta-band-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.cta-band{
-  background:#FFFFFF;
-  border:1.5px solid var(--card-border);
-  border-radius:18px;
-  padding:22px 20px;
-  color:var(--text-dark);
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:10px;
-  box-shadow:var(--shadow-sm);
-  transition:all .25s ease;
-  position:relative;
-}
-.cta-band:hover{
-  transform:translateY(-3px);
-  box-shadow:var(--shadow-md);
-  border-color:#FDBA74;
-}
-.cb-tag{
-  font-size:11px;
-  font-weight:800;
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  padding:4px 10px;
-  border-radius:50px;
-  background:#FFF2E8;
-  color:#B94E0A;
-}
-.cb-title{
-  font-family:'Hind',sans-serif;
-  font-size:19px;
-  font-weight:800;
-  margin:2px 0 0;
-  line-height:1.35;
-  color:var(--navy);
-}
-.cb-desc{
-  font-size:13.5px;
-  color:var(--text-muted);
-  margin:0;
-  line-height:1.65;
-  flex:1;
-}
-.cb-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;width:100%}
-.cb-btn{
-  text-decoration:none;
-  font-weight:800;
-  padding:9px 14px;
-  border-radius:9px;
-  font-size:13px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  transition:all .18s ease;
-}
-.cb-btn-orange{
-  background:linear-gradient(135deg,#FF6B00,#EA580C);
-  color:#FFFFFF;
-  box-shadow:0 3px 10px rgba(234,88,12,.2);
-}
-.cb-btn-orange:hover{background:#E05500;color:#fff}
-.cb-btn-navy{
-  background:#F1F5FD;
-  color:var(--navy);
-  border:1px solid #D5E1F5;
-}
-.cb-btn-navy:hover{background:#E2ECFD;color:var(--navy)}
+
 
 /* ===== FEATURED PDF PANEL ===== */
 .featured-pdf-sec{max-width:1200px;margin:0 auto;padding:26px 5% 36px}
@@ -542,8 +470,13 @@ a{color:inherit}
 }
 .featured-pdf-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-/* ===== SUBJECTS SECTION (SMART COMPACT GRID) ===== */
-.subjects-sec{padding:28px 5% 18px;max-width:1200px;margin:0 auto}
+/* ===== SUBJECTS SECTION (CATEGORIZED HUBS) ===== */
+.subjects-sec{
+  padding:32px 5% 20px;
+  max-width:1200px;
+  margin:0 auto;
+  scroll-margin-top:80px;
+}
 .sec-title{text-align:center;font-size:clamp(22px,2.8vw,28px);font-weight:800;margin-bottom:5px;color:var(--navy)}
 .sec-title span{color:var(--orange)}
 .sec-sub{text-align:center;color:var(--text-muted);font-size:13.5px;margin-bottom:20px}
@@ -553,39 +486,87 @@ a{color:inherit}
   gap:8px;
   justify-content:center;
   flex-wrap:wrap;
-  margin-bottom:18px;
+  margin-bottom:24px;
 }
-.subj-filter-btn{
+.subj-cat-btn{
   background:#FFFFFF;
   border:1.5px solid #E2E8F0;
   color:#475569;
-  padding:6px 15px;
+  padding:8px 16px;
   border-radius:50px;
-  font-size:12.5px;
+  font-size:13px;
   font-weight:700;
   cursor:pointer;
   transition:all .18s ease;
   font-family:inherit;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
 }
-.subj-filter-btn:hover{border-color:var(--orange);color:var(--orange)}
-.subj-filter-btn.active{
+.subj-cat-btn:hover{border-color:var(--orange);color:var(--orange)}
+.subj-cat-btn.active{
   background:var(--navy);
   border-color:var(--navy);
   color:#FFFFFF;
-  box-shadow:0 3px 10px rgba(27,42,107,.14);
+  box-shadow:0 3px 12px rgba(27,42,107,.18);
+}
+
+.subj-category-group{
+  margin-bottom:26px;
+  transition:opacity .2s ease;
+}
+.subj-category-group:last-child{margin-bottom:0}
+.subj-group-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:12px;
+  padding:0 2px 8px;
+  border-bottom:1.5px solid #EBEFF5;
+}
+.sgh-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sgh-badge{
+  font-family:'Poppins','Hind',sans-serif;
+  font-size:15px;
+  font-weight:800;
+  color:var(--navy);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.sgh-subtitle{
+  font-size:12px;
+  color:var(--text-muted);
+  font-weight:500;
+}
+.sgh-count{
+  font-size:11.5px;
+  font-weight:700;
+  background:#EFF3FB;
+  color:var(--navy-light);
+  padding:3px 10px;
+  border-radius:50px;
 }
 
 .subject-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(155px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
   gap:12px;
   margin:0 auto;
+}
+@media (max-width:600px){
+  .subject-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
 }
 .subject-box{
   background:#FFFFFF;
   border:1.5px solid var(--card-border);
-  border-radius:15px;
-  padding:15px 12px;
+  border-radius:14px;
+  padding:14px 10px;
   text-align:center;
   text-decoration:none;
   color:var(--text-dark);
@@ -601,11 +582,11 @@ a{color:inherit}
   transform:translateY(-3px);
 }
 .subject-box .s-icon{
-  font-size:24px;
-  margin-bottom:7px;
-  width:42px;
-  height:42px;
-  border-radius:11px;
+  font-size:22px;
+  margin-bottom:6px;
+  width:38px;
+  height:38px;
+  border-radius:10px;
   background:#FFF7ED;
   display:flex;
   align-items:center;
@@ -614,41 +595,18 @@ a{color:inherit}
 .subject-box .s-name{
   font-family:'Hind',sans-serif;
   font-weight:700;
-  font-size:13px;
+  font-size:12.5px;
   line-height:1.35;
   margin-bottom:4px;
   color:var(--navy);
 }
 .subject-box .s-count{
   font-size:11px;
-  color:#94A3B8;
+  color:#64748B;
   font-weight:600;
   background:#F1F5F9;
   padding:2px 8px;
   border-radius:20px;
-}
-
-.subject-toggle-wrap{text-align:center;margin-top:18px}
-.btn-toggle-subjects{
-  background:#FFFFFF;
-  border:2px solid var(--orange);
-  color:var(--orange);
-  padding:10px 24px;
-  border-radius:50px;
-  font-weight:800;
-  font-size:13.5px;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  transition:all .2s ease;
-  font-family:inherit;
-  box-shadow:var(--shadow-sm);
-}
-.btn-toggle-subjects:hover{
-  background:var(--orange);
-  color:#FFFFFF;
-  box-shadow:var(--shadow-md);
 }
 
 /* ===== PROMO BANNER (RAS MAINS PYQ) ===== */
@@ -1205,9 +1163,9 @@ footer a:hover{color:var(--orange)}
     </p>
 
     <div class="hero-btns">
-      <a href="/all-notes.html" class="btn-main">
+      <a href="#subjects" class="btn-main">
         <span>📖 Free Notes पढ़ें</span>
-        <span aria-hidden="true">→</span>
+        <span aria-hidden="true">↓</span>
       </a>
       <a href="/all-quizzes.html" class="btn-sec">
         <span>🧠 Daily Quiz खेलें</span>
@@ -1242,11 +1200,11 @@ footer a:hover{color:var(--orange)}
         <span class="qn-sub">15 MCQs Free</span>
       </div>
     </a>
-    <a href="/all-notes.html" class="qn-item">
+    <a href="#subjects" class="qn-item">
       <div class="qn-icon-wrap"><span class="qn-icon">📖</span></div>
       <div class="qn-info">
         <span class="qn-label">Free Notes</span>
-        <span class="qn-sub">25+ विषय</span>
+        <span class="qn-sub">26 विषयवार नोट्स</span>
       </div>
     </a>
     <a href="/ras-exam-2026.html" class="qn-item">
@@ -1321,6 +1279,112 @@ footer a:hover{color:var(--orange)}
   </div>
 </section>
 
+<!-- ===== SUBJECTS SECTION (CATEGORIZED BY DOMAIN) ===== -->
+<section class="subjects-sec" id="subjects" aria-labelledby="subjects-title">
+  <h2 class="sec-title" id="subjects-title">विषय-वार <span>Free Notes</span></h2>
+  <p class="sec-sub">RAS Exam 2026 के लिए सभी 26 Subjects के प्रामाणिक व मुफ़्त हिंदी नोट्स</p>
+
+  <div class="subject-filter-bar" role="tablist" aria-label="विषयवार श्रेणियाँ">
+    <button type="button" class="subj-cat-btn active" data-subgroup="all" role="tab" aria-selected="true">सभी विषय (26)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="rajasthan" role="tab" aria-selected="false">🏰 राजस्थान GK (5)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="india" role="tab" aria-selected="false">🇮🇳 इंडिया GK व विज्ञान (11)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="mains" role="tab" aria-selected="false">📜 RAS मेन्स स्पेशल (7)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="maths" role="tab" aria-selected="false">🔢 गणित व रीजनिंग (1)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="language" role="tab" aria-selected="false">🔤 हिंदी व इंग्लिश (2)</button>
+  </div>
+
+  <!-- Category 1: Rajasthan GK -->
+  <div class="subj-category-group" data-subj-group="rajasthan">
+    <div class="subj-group-header">
+      <div class="sgh-left">
+        <span class="sgh-badge">🏰 राजस्थान GK</span>
+        <span class="sgh-subtitle">इतिहास, कला-संस्कृति, भूगोल, एटलस व राज्यव्यवस्था</span>
+      </div>
+      <span class="sgh-count">5 विषय</span>
+    </div>
+    <div class="subject-grid">
+      <a href="/rajasthan-itihas-series.html" class="subject-box"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a>
+      <a href="/rajasthan-kala-sanskriti.html" class="subject-box"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a>
+      <a href="/rajasthan-bhugol.html" class="subject-box"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय</div></a>
+      <a href="/rajasthan-atlas.html" class="subject-box"><div class="s-icon">🗺️</div><div class="s-name">राजस्थान एटलस</div><div class="s-count">41 जिले</div></a>
+      <a href="/rajasthan-rajyavyavastha.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a>
+    </div>
+  </div>
+
+  <!-- Category 2: India GK & Science -->
+  <div class="subj-category-group" data-subj-group="india">
+    <div class="subj-group-header">
+      <div class="sgh-left">
+        <span class="sgh-badge">🇮🇳 इंडिया GK व सामान्य विज्ञान</span>
+        <span class="sgh-subtitle">इतिहास, संविधान, अर्थव्यवस्था, भूगोल व विज्ञान-तकनीक</span>
+      </div>
+      <span class="sgh-count">11 विषय</span>
+    </div>
+    <div class="subject-grid">
+      <a href="/adhunik-bharat-itihas.html" class="subject-box"><div class="s-icon">🏰</div><div class="s-name">आधुनिक भारत इतिहास</div><div class="s-count">20 अध्याय</div></a>
+      <a href="/prachin-bharat-itihas.html" class="subject-box"><div class="s-icon">🏛️</div><div class="s-name">प्राचीन भारत इतिहास</div><div class="s-count">10 अध्याय</div></a>
+      <a href="/samvidhan.html" class="subject-box"><div class="s-icon">📋</div><div class="s-name">भारतीय संविधान</div><div class="s-count">Complete</div></a>
+      <a href="/arthavyavastha.html" class="subject-box"><div class="s-icon">💰</div><div class="s-name">भारतीय अर्थव्यवस्था</div><div class="s-count">10 अध्याय</div></a>
+      <a href="/bharatiya-kala-sanskriti.html" class="subject-box"><div class="s-icon">🖼️</div><div class="s-name">भारतीय कला-संस्कृति</div><div class="s-count">10 अध्याय</div></a>
+      <a href="/vishwa-bhugol.html" class="subject-box"><div class="s-icon">🌍</div><div class="s-name">विश्व भूगोल</div><div class="s-count">7 अध्याय</div></a>
+      <a href="/jiv-vigyan.html" class="subject-box"><div class="s-icon">🧬</div><div class="s-name">जीव विज्ञान</div><div class="s-count">15 अध्याय</div></a>
+      <a href="/bhautik-vigyan.html" class="subject-box"><div class="s-icon">⚛️</div><div class="s-name">भौतिक विज्ञान</div><div class="s-count">10 अध्याय</div></a>
+      <a href="/rasayan-vigyan.html" class="subject-box"><div class="s-icon">🧪</div><div class="s-name">रसायन विज्ञान</div><div class="s-count">11 अध्याय</div></a>
+      <a href="/vigyan-praudyogiki.html" class="subject-box"><div class="s-icon">💻</div><div class="s-name">विज्ञान एवं प्रौद्योगिकी</div><div class="s-count">10 अध्याय</div></a>
+      <a href="/antarrashtriya-sambandh.html" class="subject-box"><div class="s-icon">🌐</div><div class="s-name">अंतर्राष्ट्रीय संबंध</div><div class="s-count">17 अध्याय</div></a>
+    </div>
+  </div>
+
+  <!-- Category 3: RAS Mains Special -->
+  <div class="subj-category-group" data-subj-group="mains">
+    <div class="subj-group-header">
+      <div class="sgh-left">
+        <span class="sgh-badge">📜 RAS मेन्स स्पेशल</span>
+        <span class="sgh-subtitle">विश्व इतिहास, नैतिकता, समाजशास्त्र, प्रबंधन, लोक प्रशासन, व्यवहार व विधि</span>
+      </div>
+      <span class="sgh-count">7 विषय</span>
+    </div>
+    <div class="subject-grid">
+      <a href="/vishwa-itihas.html" class="subject-box"><div class="s-icon">🌐</div><div class="s-name">आधुनिक विश्व इतिहास</div><div class="s-count">11 अध्याय</div></a>
+      <a href="/prashasanik-naitikta.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">प्रशासनिक नैतिकता</div><div class="s-count">9 अध्याय</div></a>
+      <a href="/samajshastra.html" class="subject-box"><div class="s-icon">🏛️</div><div class="s-name">समाजशास्त्र</div><div class="s-count">7 अध्याय</div></a>
+      <a href="/prabandh.html" class="subject-box"><div class="s-icon">📘</div><div class="s-name">प्रबंधन (Management)</div><div class="s-count">5 अध्याय</div></a>
+      <a href="/lok-prashasan.html" class="subject-box"><div class="s-icon">🏛️</div><div class="s-name">लोक प्रशासन</div><div class="s-count">11 अध्याय</div></a>
+      <a href="/vyavhar.html" class="subject-box"><div class="s-icon">🧭</div><div class="s-name">व्यवहार (Behavior)</div><div class="s-count">5 अध्याय</div></a>
+      <a href="/vidhi.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">विधि (Law)</div><div class="s-count">9 अध्याय</div></a>
+    </div>
+  </div>
+
+  <!-- Category 4: Maths & Reasoning -->
+  <div class="subj-category-group" data-subj-group="maths">
+    <div class="subj-group-header">
+      <div class="sgh-left">
+        <span class="sgh-badge">🔢 गणित व तर्कशक्ति</span>
+        <span class="sgh-subtitle">RAS Pre & State Exams मूल संख्यात्मक दक्षता व Reasoning</span>
+      </div>
+      <span class="sgh-count">1 विषय</span>
+    </div>
+    <div class="subject-grid">
+      <a href="/ras-pre-math-reasoning.html" class="subject-box"><div class="s-icon">🔢</div><div class="s-name">गणित व तर्कशक्ति</div><div class="s-count">14 अध्याय</div></a>
+    </div>
+  </div>
+
+  <!-- Category 5: Language (Hindi & English) -->
+  <div class="subj-category-group" data-subj-group="language">
+    <div class="subj-group-header">
+      <div class="sgh-left">
+        <span class="sgh-badge">🔤 भाषा — सामान्य हिंदी व English</span>
+        <span class="sgh-subtitle">RAS Mains Paper-IV & प्रतियोगी परीक्षाओं के लिए व्याकरण व रचना</span>
+      </div>
+      <span class="sgh-count">2 विषय</span>
+    </div>
+    <div class="subject-grid">
+      <a href="/samanya-hindi.html" class="subject-box"><div class="s-icon">📚</div><div class="s-name">सामान्य हिंदी</div><div class="s-count">6 अध्याय</div></a>
+      <a href="/general-english.html" class="subject-box"><div class="s-icon">🔤</div><div class="s-name">General English</div><div class="s-count">12 अध्याय</div></a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FEATURED COURSES SHOWCASE (FOUNDATION & SUPER 60) ===== -->
 <section class="home-showcase-sec" aria-label="मुख्य कोर्सेज">
   <div class="showcase-grid">
@@ -1350,38 +1414,6 @@ footer a:hover{color:var(--orange)}
   </div>
 </section>
 
-<!-- ===== THREE MAIN PATHS ===== -->
-<section class="cta-band-sec" aria-label="मुख्य शैक्षिक विकल्प">
-  <div class="cta-band-grid">
-    <article class="cta-band">
-      <div class="cb-tag">📚 FREE RESOURCES</div>
-      <h2 class="cb-title">Free Study Material</h2>
-      <p class="cb-desc">विषयवार Hindi Notes, Previous Year Questions, Daily Quiz और उपयोगी अध्ययन सामग्री से अपनी तैयारी शुरू करें।</p>
-      <div class="cb-btns">
-        <a href="/all-notes.html" class="cb-btn cb-btn-orange">Free Notes देखें →</a>
-        <a href="/all-quizzes.html" class="cb-btn cb-btn-navy">Quiz &amp; Tests</a>
-      </div>
-    </article>
-    <article class="cta-band">
-      <div class="cb-tag">📄 DIGITAL NOTES STORE</div>
-      <h2 class="cb-title">PDF Notes Store</h2>
-      <p class="cb-desc">PDF खरीदने से पहले वास्तविक sample pages, विषय-सूची और उपलब्ध सामग्री देखकर अपनी जरूरत के अनुसार चुनें।</p>
-      <div class="cb-btns">
-        <a href="/adhunik-bharat-itihas-pdf.html" class="cb-btn cb-btn-orange">PDFs देखें →</a>
-        <a href="/all-notes.html" class="cb-btn cb-btn-navy">सभी Notes</a>
-      </div>
-    </article>
-    <article class="cta-band">
-      <div class="cb-tag">🎓 STRUCTURED PREPARATION</div>
-      <h2 class="cb-title">Premium Courses</h2>
-      <p class="cb-desc">RAS Foundation, Super 60, OMASTRA और Test Series की सामग्री, कीमत और उपलब्धता देखकर अगला कदम चुनें।</p>
-      <div class="cb-btns">
-        <a href="/courses.html" class="cb-btn cb-btn-orange">सभी Courses देखें →</a>
-      </div>
-    </article>
-  </div>
-</section>
-
 <!-- ===== FEATURED PDF: STORE CARD ===== -->
 <section class="featured-pdf-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
   <div class="featured-pdf-panel">
@@ -1403,58 +1435,6 @@ footer a:hover{color:var(--orange)}
         <a href="/assets/adhunik-bharat-itihas/pdf/adhunik-bharat-itihas-ch01.pdf" class="btn-sec" target="_blank" rel="noopener noreferrer">अध्याय 1 मुफ़्त पढ़ें</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== SUBJECTS SECTION (SMART COMPACT GRID) ===== -->
-<section class="subjects-sec" id="subjects">
-  <h2 class="sec-title">विषय-वार <span>Free Notes</span></h2>
-  <p class="sec-sub">RAS Exam 2026 के लिए सभी Subjects के Notes — 100% प्रामाणिक व मुफ़्त</p>
-
-  <div class="subject-filter-bar">
-    <button type="button" class="subj-filter-btn active" data-subfilter="all">सभी विषय (25)</button>
-    <button type="button" class="subj-filter-btn" data-subfilter="rajasthan">राजस्थान स्पेशल</button>
-    <button type="button" class="subj-filter-btn" data-subfilter="history-polity">इतिहास व राजव्यवस्था</button>
-    <button type="button" class="subj-filter-btn" data-subfilter="science">विज्ञान व तकनीक</button>
-    <button type="button" class="subj-filter-btn" data-subfilter="mains">RAS Mains स्पेशल</button>
-  </div>
-
-  <div class="subject-grid" id="subjectGrid">
-    <!-- Top 8 Popular Subjects (Always visible on mobile) -->
-    <a href="/adhunik-bharat-itihas.html" class="subject-box" data-cat="history-polity"><div class="s-icon">🏰</div><div class="s-name">आधुनिक भारत इतिहास</div><div class="s-count">20 अध्याय</div></a>
-    <a href="/rajasthan-atlas.html" class="subject-box" data-cat="rajasthan"><div class="s-icon">🗺️</div><div class="s-name">राजस्थान एटलस</div><div class="s-count">41 जिले</div></a>
-    <a href="/rajasthan-bhugol.html" class="subject-box" data-cat="rajasthan"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय</div></a>
-    <a href="/prachin-bharat-itihas.html" class="subject-box" data-cat="history-polity"><div class="s-icon">🏛️</div><div class="s-name">प्राचीन भारत इतिहास</div><div class="s-count">10 अध्याय</div></a>
-    <a href="/rajasthan-rajyavyavastha.html" class="subject-box" data-cat="rajasthan history-polity"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a>
-    <a href="/rajasthan-kala-sanskriti.html" class="subject-box" data-cat="rajasthan"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a>
-    <a href="/rajasthan-itihas-series.html" class="subject-box" data-cat="rajasthan"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a>
-    <a href="/samvidhan.html" class="subject-box" data-cat="history-polity"><div class="s-icon">📋</div><div class="s-name">भारतीय संविधान</div><div class="s-count">Complete</div></a>
-
-    <!-- Remaining 17 Subjects (Smoothly collapsed on mobile, visible on desktop) -->
-    <a href="/bharatiya-kala-sanskriti.html" class="subject-box subject-collapsed" data-cat="history-polity"><div class="s-icon">🖼️</div><div class="s-name">भारतीय कला-संस्कृति</div><div class="s-count">10 अध्याय</div></a>
-    <a href="/lok-prashasan.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">🏛️</div><div class="s-name">लोक प्रशासन</div><div class="s-count">11 अध्याय</div></a>
-    <a href="/vyavhar.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">🧭</div><div class="s-name">व्यवहार (Behavior)</div><div class="s-count">5 अध्याय</div></a>
-    <a href="/vidhi.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">⚖️</div><div class="s-name">विधि (Law)</div><div class="s-count">9 अध्याय</div></a>
-    <a href="/vigyan-praudyogiki.html" class="subject-box subject-collapsed" data-cat="science"><div class="s-icon">💻</div><div class="s-name">विज्ञान एवं प्रौद्योगिकी</div><div class="s-count">10 अध्याय</div></a>
-    <a href="/rasayan-vigyan.html" class="subject-box subject-collapsed" data-cat="science"><div class="s-icon">🧪</div><div class="s-name">रसायन विज्ञान</div><div class="s-count">11 अध्याय</div></a>
-    <a href="/bhautik-vigyan.html" class="subject-box subject-collapsed" data-cat="science"><div class="s-icon">⚛️</div><div class="s-name">भौतिक विज्ञान</div><div class="s-count">10 अध्याय</div></a>
-    <a href="/jiv-vigyan.html" class="subject-box subject-collapsed" data-cat="science"><div class="s-icon">🧬</div><div class="s-name">जीव विज्ञान</div><div class="s-count">15 अध्याय</div></a>
-    <a href="/ras-pre-math-reasoning.html" class="subject-box subject-collapsed" data-cat="science"><div class="s-icon">🔢</div><div class="s-name">गणित व तर्कशक्ति</div><div class="s-count">14 अध्याय</div></a>
-    <a href="/arthavyavastha.html" class="subject-box subject-collapsed" data-cat="history-polity"><div class="s-icon">💰</div><div class="s-name">भारतीय अर्थव्यवस्था</div><div class="s-count">10 अध्याय</div></a>
-    <a href="/prabandh.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">📘</div><div class="s-name">प्रबंधन (Management)</div><div class="s-count">5 अध्याय</div></a>
-    <a href="/vishwa-bhugol.html" class="subject-box subject-collapsed" data-cat="history-polity"><div class="s-icon">🌍</div><div class="s-name">विश्व भूगोल</div><div class="s-count">7 अध्याय</div></a>
-    <a href="/vishwa-itihas.html" class="subject-box subject-collapsed" data-cat="history-polity"><div class="s-icon">🌐</div><div class="s-name">आधुनिक विश्व इतिहास</div><div class="s-count">11 अध्याय</div></a>
-    <a href="/prashasanik-naitikta.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">⚖️</div><div class="s-name">प्रशासनिक नैतिकता</div><div class="s-count">9 अध्याय</div></a>
-    <a href="/samajshastra.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">🏛️</div><div class="s-name">समाजशास्त्र</div><div class="s-count">7 अध्याय</div></a>
-    <a href="/antarrashtriya-sambandh.html" class="subject-box subject-collapsed" data-cat="history-polity"><div class="s-icon">🌐</div><div class="s-name">अंतर्राष्ट्रीय संबंध</div><div class="s-count">17 अध्याय</div></a>
-    <a href="/general-english.html" class="subject-box subject-collapsed" data-cat="mains"><div class="s-icon">🔤</div><div class="s-name">General English</div><div class="s-count">12 अध्याय</div></a>
-  </div>
-
-  <div class="subject-toggle-wrap">
-    <button type="button" class="btn-toggle-subjects" id="toggleSubjectsBtn" aria-expanded="false">
-      <span id="toggleSubjText">बाकी सभी 17 विषय देखें (25 Total)</span>
-      <span id="toggleSubjIcon">▾</span>
-    </button>
   </div>
 </section>
 
@@ -1571,17 +1551,16 @@ footer a:hover{color:var(--orange)}
       <div class="c-foot"><div class="c-price-wrap"><span class="c-price price-free">FREE</span><span class="c-orig">₹999</span></div><a href="https://techa.on-app.in/app/oc/805299/techa" class="c-arrow">Join Now →</a></div>
     </div>
 
-    <div class="c-card" data-category="ras">
-      <span class="c-badge c-badge-hot">🔥 सबसे लोकप्रिय</span>
-      <div class="c-card-head head-ras"><div class="c-icon">📘</div><h3 class="c-title">RAS Foundation Course 2026 🕉️</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Pre + Mains</span><span class="c-tag">Tests Included</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹4,999</span><span class="c-orig">₹25,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+    <div class="c-card" data-category="ras gk">
+      <div class="c-card-head head-ras"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">All GS Courses</span><span class="c-tag">All Tests</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
     </div>
 
     <div class="c-card" data-category="ras test">
-      <div class="c-card-head head-ras"><div class="c-icon">🎯</div><h3 class="c-title">RAS Prelims 2026 SUPER 60 Course</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Target 60 Days</span><span class="c-tag">Daily Tests</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹3,000</span><span class="c-orig">₹10,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
+      <div class="c-card-head head-test"><div class="c-icon">📝</div><h3 class="c-title">10 हजार अति महत्वपूर्ण प्रश्न (10K MCQs)</h3></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">Topic-Wise MCQs</span><span class="c-tag">Solutions</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹198</span><span class="c-orig">₹1,198</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
     </div>
 
     <div class="c-card" data-category="gk">
@@ -1612,18 +1591,6 @@ footer a:hover{color:var(--orange)}
       <div class="c-card-head head-gk"><div class="c-icon">🧬</div><h3 class="c-title">जीव विज्ञान (Biology) — OMASTRA GK Series</h3></div>
       <div class="c-body"><div class="c-tags"><span class="c-tag">NCERT Based</span><span class="c-tag">Diagrams</span></div></div>
       <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹100</span><span class="c-orig">₹500</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head head-ras"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">All GS Courses</span><span class="c-tag">All Tests</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="test">
-      <div class="c-card-head head-test"><div class="c-icon">📝</div><h3 class="c-title">10 हजार अति महत्वपूर्ण प्रश्न (10K MCQs)</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Topic-Wise MCQs</span><span class="c-tag">Solutions</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹198</span><span class="c-orig">₹1,198</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
     </div>
   </div>
 
@@ -1778,56 +1745,29 @@ document.querySelectorAll('.yt-lite').forEach(function(card){
   });
 });
 
-// Subject Mobile Expand / Collapse & Category Filter
+// Subject Category Tab Filter
 (function(){
-  var toggleBtn = document.getElementById('toggleSubjectsBtn');
-  var toggleText = document.getElementById('toggleSubjText');
-  var toggleIcon = document.getElementById('toggleSubjIcon');
-  var isExpanded = false;
+  var catBtns = document.querySelectorAll('.subj-cat-btn');
+  var catGroups = document.querySelectorAll('.subj-category-group');
+  if(!catBtns.length || !catGroups.length) return;
 
-  if(toggleBtn){
-    toggleBtn.addEventListener('click', function(){
-      isExpanded = !isExpanded;
-      var collapsedItems = document.querySelectorAll('.subject-box.subject-collapsed');
-      collapsedItems.forEach(function(item){
-        if(isExpanded){
-          item.style.display = 'flex';
-        } else {
-          item.style.removeProperty('display');
-        }
-      });
-      if(isExpanded){
-        toggleText.textContent = 'कम विषय दिखाएँ';
-        toggleIcon.textContent = '▴';
-        toggleBtn.setAttribute('aria-expanded', 'true');
-      } else {
-        toggleText.textContent = 'बाकी सभी 17 विषय देखें (25 Total)';
-        toggleIcon.textContent = '▾';
-        toggleBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // Subject Category Filtering
-  var catBtns = document.querySelectorAll('.subj-filter-btn');
-  var subjCards = document.querySelectorAll('.subject-box');
   catBtns.forEach(function(btn){
     btn.addEventListener('click', function(){
-      catBtns.forEach(function(b){ b.classList.remove('active'); });
+      var targetGroup = btn.getAttribute('data-subgroup');
+      
+      catBtns.forEach(function(b){
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
-      var filter = btn.getAttribute('data-subfilter');
+      btn.setAttribute('aria-selected', 'true');
 
-      subjCards.forEach(function(card){
-        var cats = (card.getAttribute('data-cat') || '').split(' ');
-        if(filter === 'all' || cats.indexOf(filter) > -1){
-          // if expanded or not a collapsed item, show
-          if(isExpanded || !card.classList.contains('subject-collapsed') || window.innerWidth > 560){
-            card.style.display = 'flex';
-          } else {
-            card.style.removeProperty('display');
-          }
+      catGroups.forEach(function(group){
+        var groupKey = group.getAttribute('data-subj-group');
+        if(targetGroup === 'all' || targetGroup === groupKey){
+          group.style.display = 'block';
         } else {
-          card.style.display = 'none';
+          group.style.display = 'none';
         }
       });
     });
