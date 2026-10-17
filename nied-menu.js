@@ -44,15 +44,6 @@
     var css =
       "" +
       "#nied-navbar{font-family:\"Noto Sans Devanagari\",\"Hind\",Arial,sans-serif;position:sticky;top:0;z-index:9999}" +
-      ".nied-ticker{background:#fff8f1;color:#44506b;display:flex;align-items:center;gap:10px;min-height:36px;padding:4px clamp(10px,2vw,22px);border-bottom:1px solid #f4dfca;font-size:.79rem}" +
-      ".nied-ticker-live{flex-shrink:0;display:flex;align-items:center;gap:6px;background:#ffead9;color:#a84b0a;font-weight:800;padding:5px 10px;border-radius:999px;letter-spacing:.25px;font-size:.68rem}" +
-      ".nied-ticker-dot{width:7px;height:7px;border-radius:50%;background:#f97316;animation:niedPulse 1.6s infinite}" +
-      "@keyframes niedPulse{0%,100%{opacity:1}50%{opacity:.35}}" +
-      ".nied-ticker-track-wrap{flex:1;min-width:0;overflow:hidden;white-space:nowrap;position:relative;display:flex;align-items:center}" +
-      ".nied-ticker-message{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.45}" +
-      ".nied-ticker-controls{display:flex;align-items:center;gap:3px;flex-shrink:0}" +
-      ".nied-ticker-control{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border:1px solid #f0decd;border-radius:8px;background:#fff;color:#6b4c36;font:700 14px/1 Arial,sans-serif;cursor:pointer}" +
-      ".nied-ticker-control:hover{background:#ffead9;border-color:#f4c39d}" +
       ".nied-logo-icon{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#f97316,#ffbd80);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;box-shadow:0 4px 10px rgba(249,115,22,.18)}" +
       ".nied-logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;order:1}" +
       ".nied-nav-inner{background:rgba(255,255,255,.98);color:#1b2a6b;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px clamp(14px,2.2vw,30px);flex-wrap:nowrap;box-shadow:0 5px 18px rgba(31,48,86,.07);border-bottom:1px solid #edf0f5;position:relative;min-height:72px}" +
@@ -111,10 +102,6 @@
       " .nied-search-btn{width:42px;height:42px;padding:0;border-radius:12px}" +
       "}" +
       "@media(max-width:520px){" +
-      " .nied-ticker{gap:6px;padding:4px 7px;font-size:.7rem}" +
-      " .nied-ticker-live{padding:5px 8px;font-size:.62rem}" +
-      " .nied-ticker-controls{gap:2px}" +
-      " .nied-ticker-control{min-width:25px;width:25px;height:25px;border-radius:7px;font-size:12px}" +
       " .nied-logo-icon{width:31px;height:31px;font-size:15px}" +
       " .nied-logo{font-size:.95rem}" +
       " .nied-logo-sub{font-size:.62rem}" +
@@ -123,23 +110,11 @@
       " .nied-search-panel{right:0;left:auto;width:min(340px,88vw)}" +
       "}" +
       "@media(prefers-reduced-motion:reduce){" +
-      " .nied-ticker-dot{animation:none}" +
       " .nied-top-link,.nied-search-btn{transition:none}" +
       "}" +
-      "#nied-mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1.5px solid #FFD8BA;box-shadow:0 -4px 20px rgba(27,42,107,.12);padding:8px 12px;align-items:center;justify-content:space-between;gap:8px;font-family:\"Hind\",\"Noto Sans Devanagari\",sans-serif}" +
-      "@media(max-width:768px){#nied-mobile-bar{display:flex}body{padding-bottom:72px!important}}" +
-      ".nied-mb-left{display:flex;align-items:center;gap:8px;min-width:0;flex:1}" +
-      ".nied-mb-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#FF6B00,#FF9E54);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;box-shadow:0 3px 8px rgba(255,107,0,.25)}" +
-      ".nied-mb-text{display:flex;flex-direction:column;min-width:0;line-height:1.25}" +
-      ".nied-mb-title{font-size:13px;font-weight:800;color:#1B2A6B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
-      ".nied-mb-sub{font-size:11px;color:#5F6475;display:flex;align-items:center;gap:4px;flex-wrap:nowrap}" +
-      ".nied-mb-code{display:inline-flex;align-items:center;gap:3px;background:#FFF0E5;color:#C6530B;font-weight:800;padding:1px 6px;border-radius:6px;border:1px dashed #F5BD91;font-size:10.5px;cursor:pointer}" +
-      ".nied-mb-btn{background:linear-gradient(135deg,#FF6B00,#EA580C);color:#fff!important;font-size:12px;font-weight:800;padding:8px 13px;border-radius:999px;text-decoration:none!important;white-space:nowrap;flex-shrink:0;box-shadow:0 3px 10px rgba(255,107,0,.3);border:none;cursor:pointer}" +
-      ".nied-mb-close{background:transparent;border:none;color:#9AA0B2;font-size:16px;cursor:pointer;padding:4px;line-height:1;flex-shrink:0}" +
-      "#nied-back-to-top{position:fixed;right:16px;bottom:78px;z-index:9990;width:42px;height:42px;border-radius:50%;background:#FFFFFF;border:2px solid #FF6B00;color:#FF6B00;box-shadow:0 4px 16px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .25s ease;text-decoration:none}" +
+      "#nied-back-to-top{position:fixed;right:16px;bottom:24px;z-index:9990;width:42px;height:42px;border-radius:50%;background:#FFFFFF;border:2px solid #FF6B00;color:#FF6B00;box-shadow:0 4px 16px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .25s ease;text-decoration:none}" +
       "#nied-back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}" +
       "#nied-back-to-top:hover{background:#FF6B00;color:#fff}" +
-      "@media(min-width:769px){#nied-back-to-top{bottom:24px;width:44px;height:44px;font-size:20px}}" +
       "@media(max-width:768px){" +
       " p,li{line-height:1.82}" +
       " .ch-nav{display:flex!important;flex-direction:column!important;gap:10px!important;padding:0 16px!important;margin:24px auto!important}" +
@@ -155,23 +130,9 @@
   function render(mount, menu){
     injectStyles();
     var logo = menu.logo || {text:'New India Education', url:'/'};
-    var ticker = menu.ticker || [];
-    var tickerHtml = '';
-    if(ticker.length){
-      tickerHtml = '<div class="nied-ticker" id="niedTickerBar">'
-        + '<div class="nied-ticker-live"><span class="nied-ticker-dot"></span>UPDATES</div>'
-        + '<div class="nied-ticker-track-wrap"><span class="nied-ticker-message" id="niedTickerMessage" aria-live="polite" aria-atomic="true">' + esc(ticker[0]) + '</span></div>'
-        + '<div class="nied-ticker-controls">'
-        + '<button type="button" class="nied-ticker-control" id="niedTickerPrev" aria-label="पिछला अपडेट">‹</button>'
-        + '<button type="button" class="nied-ticker-control" id="niedTickerPause" aria-label="अपडेट रोकें">Ⅱ</button>'
-        + '<button type="button" class="nied-ticker-control" id="niedTickerNext" aria-label="अगला अपडेट">›</button>'
-        + '<button type="button" class="nied-ticker-control" id="niedTickerClose" aria-label="अपडेट पट्टी बंद करें">×</button>'
-        + '</div></div>';
-    }
     var logoTextInner = esc(logo.text) + (logo.subtitle ? '<span class="nied-logo-sub">' + esc(logo.subtitle) + '</span>' : '');
     var logoInner = '<span class="nied-logo-icon">🎓</span><span class="nied-logo-text">' + logoTextInner + '</span>';
-    var html = tickerHtml
-      + '<div class="nied-nav-inner"><a class="nied-logo nied-logo-wrap" href="' + esc(logo.url) + '">' + logoInner + '</a>'
+    var html = '<div class="nied-nav-inner"><a class="nied-logo nied-logo-wrap" href="' + esc(logo.url) + '">' + logoInner + '</a>'
       + '<button class="nied-burger" id="niedBurger" aria-label="Menu">&#9776;</button>'
       + '<ul class="nied-menu" id="niedMenuList">';
     function renderChildren(children){
@@ -247,48 +208,6 @@
     });
 
     setupSearch(mount);
-    setupTicker(mount, ticker);
-  }
-
-  function setupTicker(mount, items){
-    var bar = mount.querySelector('#niedTickerBar');
-    var message = mount.querySelector('#niedTickerMessage');
-    var prev = mount.querySelector('#niedTickerPrev');
-    var next = mount.querySelector('#niedTickerNext');
-    var pause = mount.querySelector('#niedTickerPause');
-    var close = mount.querySelector('#niedTickerClose');
-    if(!bar || !message || !items || !items.length) return;
-    var index = 0;
-    var timer = null;
-    var userPaused = false;
-    var temporarilyPaused = false;
-    var reducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    function show(nextIndex){
-      index = (nextIndex + items.length) % items.length;
-      message.textContent = items[index];
-    }
-    function syncTimer(){
-      if(timer){ clearInterval(timer); timer = null; }
-      if(items.length > 1 && !userPaused && !temporarilyPaused && !reducedMotion){
-        timer = setInterval(function(){ show(index + 1); }, 5200);
-      }
-      if(pause){
-        pause.textContent = userPaused ? '▶' : 'Ⅱ';
-        pause.setAttribute('aria-label', userPaused ? 'अपडेट फिर शुरू करें' : 'अपडेट रोकें');
-        pause.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
-      }
-    }
-    if(prev) prev.addEventListener('click',function(){ show(index - 1); syncTimer(); });
-    if(next) next.addEventListener('click',function(){ show(index + 1); syncTimer(); });
-    if(pause) pause.addEventListener('click',function(){ userPaused = !userPaused; syncTimer(); });
-    if(close) close.addEventListener('click',function(){ if(timer) clearInterval(timer); bar.remove(); });
-    bar.addEventListener('mouseenter',function(){ temporarilyPaused = true; syncTimer(); });
-    bar.addEventListener('mouseleave',function(){ temporarilyPaused = false; syncTimer(); });
-    bar.addEventListener('focusin',function(){ temporarilyPaused = true; syncTimer(); });
-    bar.addEventListener('focusout',function(e){
-      if(!bar.contains(e.relatedTarget)){ temporarilyPaused = false; syncTimer(); }
-    });
-    syncTimer();
   }
 
   var searchIndexCache = null;
@@ -354,55 +273,6 @@
   }
 
   function initMobileBarAndBackToTop(){
-    if(document.getElementById('nied-mobile-bar')) return;
-    
-    var isDismissed = false;
-    try { isDismissed = sessionStorage.getItem('nied_mb_closed') === '1'; } catch(e){}
-
-    var bar = document.createElement('div');
-    bar.id = 'nied-mobile-bar';
-    if(isDismissed) bar.style.display = 'none';
-
-    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    var appUrl = isIOS 
-      ? 'https://apps.apple.com/in/app/myinstitute/id1472483563' 
-      : 'https://play.google.com/store/apps/details?id=co.april2019.techa';
-
-    bar.innerHTML = '<div class="nied-mb-left">'
-      + '<span class="nied-mb-icon">📱</span>'
-      + '<div class="nied-mb-text">'
-      + '<span class="nied-mb-title">Omkar Sir App</span>'
-      + '<span class="nied-mb-sub">फ्री टेस्ट व नोट्स • <span class="nied-mb-code" id="niedCopyOrgCode" title="Org Code कॉपी करें">Org: <b>TECHA</b> 📋</span></span>'
-      + '</div></div>'
-      + '<a href="' + appUrl + '" target="_blank" rel="noopener noreferrer" class="nied-mb-btn">अभी डाउनलोड करें</a>'
-      + '<button type="button" class="nied-mb-close" id="niedCloseMobileBar" aria-label="बंद करें">✕</button>';
-    document.body.appendChild(bar);
-
-    var copyBtn = document.getElementById('niedCopyOrgCode');
-    if(copyBtn){
-      copyBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        try {
-          if(navigator.clipboard && navigator.clipboard.writeText){
-            navigator.clipboard.writeText('TECHA');
-          }
-          copyBtn.innerHTML = 'Org: <b>TECHA</b> ✅ कॉपी हुआ!';
-          setTimeout(function(){
-            copyBtn.innerHTML = 'Org: <b>TECHA</b> 📋';
-          }, 2500);
-        } catch(err){}
-      });
-    }
-
-    var closeBtn = document.getElementById('niedCloseMobileBar');
-    if(closeBtn){
-      closeBtn.addEventListener('click', function(){
-        bar.style.display = 'none';
-        try { sessionStorage.setItem('nied_mb_closed', '1'); } catch(e){}
-      });
-    }
-
     // Back to top button
     if(!document.getElementById('nied-back-to-top')){
       var btt = document.createElement('a');
