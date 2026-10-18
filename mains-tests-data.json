@@ -7,24 +7,6 @@
       "description": "इतिहास, अर्थव्यवस्था, समाजशास्त्र-प्रबंधन-लेखांकन (200 अंक, 3 घंटे)",
       "tests": [
         {
-          "id": "niEd-mains-2026-08-11-h3je",
-          "title": "World history— प्रबोधन काल (Enlightenment)",
-          "subject": "आधुनिक विश्व का इतिहास (1991 ईस्वी तक)",
-          "chapter": "पुनर्जागरण व धर्म सुधार",
-          "date": "2026-08-11",
-          "totalQuestions": 15,
-          "totalMarks": 100,
-          "files": {
-            "read": "/quizzes/niEd-mains-2026-08-11-h3je-read.html",
-            "workbookHi": "/quizzes/niEd-mains-2026-08-11-h3je-workbook-hi.html",
-            "workbookBi": "/quizzes/niEd-mains-2026-08-11-h3je-bilingual-workbook.html",
-            "modelHi": "/quizzes/niEd-mains-2026-08-11-h3je-model-answer-hi.html",
-            "modelBi": "/quizzes/niEd-mains-2026-08-11-h3je-bilingual-model-answer.html",
-            "key": "/quizzes/niEd-mains-2026-08-11-h3je-answer-key.html",
-            "fullSetBi": "/quizzes/niEd-mains-2026-08-11-h3je-bilingual-full-set.html"
-          }
-        },
-        {
           "id": "niEd-mains-2026-08-11-dim4",
           "title": "World history— प्रबोधन काल (Enlightenment)",
           "subject": "आधुनिक विश्व का इतिहास (1991 ईस्वी तक)",
@@ -73,20 +55,6 @@
             "modelBi": "/quizzes/niEd-mains-2026-08-11-u7mg-bilingual-model-answer.html",
             "key": "/quizzes/niEd-mains-2026-08-11-u7mg-answer-key.html",
             "fullSetBi": "/quizzes/niEd-mains-2026-08-11-u7mg-bilingual-full-set.html"
-          }
-        },
-        {
-          "id": "niEd-mains-2026-08-10-1iin",
-          "title": "RAS Mains Practice Test",
-          "subject": "",
-          "chapter": "लीगेसी टेस्ट (पुराना, विवरण उपलब्ध नहीं)",
-          "date": "2026-08-10",
-          "files": {
-            "key": "/quizzes/niEd-mains-2026-08-10-1iin-answer-key.html",
-            "modelBi": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-model-answer.html",
-            "modelHi": "/quizzes/niEd-mains-2026-08-10-1iin-model-answer-hi.html",
-            "workbookBi": "/quizzes/niEd-mains-2026-08-10-1iin-bilingual-workbook.html",
-            "workbookHi": "/quizzes/niEd-mains-2026-08-10-1iin-workbook-hi.html"
           }
         },
         {
