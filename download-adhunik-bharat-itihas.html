@@ -29,6 +29,7 @@ h1,h2{font-family:'Poppins','Hind',sans-serif;line-height:1.3}
 .btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:17px;padding:14px 18px;border-radius:12px;margin-top:10px}
 .btn.primary{background:var(--saffron);color:#fff}
 .btn.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.btn.whatsapp{background:#128C7E;color:#fff}
 .btn:focus-visible{outline:3px solid #FFB070;outline-offset:2px}
 .pid{margin-top:14px;font-size:13px;color:var(--muted);word-break:break-all}
 .box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:0 auto 18px;max-width:720px}
@@ -110,6 +111,7 @@ footer a{color:var(--saffron);text-decoration:none;margin:0 6px}
     </div>
     <a class="btn primary" href="https://drive.google.com/uc?export=download&amp;id=1B_y2v6CcURBiCa61DQIYRfdHM3POvWD1" target="_blank" rel="noopener noreferrer">⬇️ PDF Download करें</a>
     <a class="btn secondary" href="https://drive.google.com/file/d/1B_y2v6CcURBiCa61DQIYRfdHM3POvWD1/view" target="_blank" rel="noopener noreferrer">📂 Google Drive में खोलें</a>
+    <a class="btn whatsapp" id="whatsapp-help" href="https://wa.me/917023166962?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Omkar%20Sir%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%86%E0%A4%A7%E0%A5%81%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4%20PDF%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B8%E0%A4%B9%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A4%BE%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener noreferrer">💬 WhatsApp पर सहायता लें</a>
     <p class="pid" id="pid" hidden></p>
   </div>
 
@@ -152,6 +154,10 @@ footer a{color:var(--saffron);text-decoration:none;margin:0 6px}
       var el=document.getElementById('pid');
       el.textContent='Payment ID: '+id+' (इसे सँभाल कर रखें)';
       el.hidden=false;
+      var help=document.getElementById('whatsapp-help');
+      if(help){
+        help.href='https://wa.me/917023166962?text='+encodeURIComponent('नमस्ते Omkar Sir, मुझे आधुनिक भारत PDF के लिए सहायता चाहिए। Payment ID: '+id);
+      }
     }
   }catch(e){}
 })();
