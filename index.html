@@ -1399,6 +1399,56 @@ footer a:hover{color:var(--orange)}
   </div>
 </section>
 
+
+<!-- ===== YOUTUBE VIDEOS (LITE HIGH-SPEED PLAYER) ===== -->
+<section class="yt-sec">
+  <h2 class="sec-title">Top <span>YouTube</span> Lectures</h2>
+  <p class="sec-sub">Free Marathon Classes और Special Lectures — सीधे यहीं देखें</p>
+  <div class="yt-grid">
+    <div class="yt-card yt-lite" data-yt-id="LjU3DLcbHJs" data-yt-title="राजस्थान भूगोल का 'रामबाण' 🔥 11 घंटे में पूरा Syllabus">
+      <div class="yt-embed-wrap">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/LjU3DLcbHJs/hqdefault.jpg" alt="राजस्थान भूगोल मैराथन क्लास" loading="lazy" width="480" height="360">
+        <button type="button" class="yt-play-btn" aria-label="Play राजस्थान भूगोल मैराथन">▶</button>
+        <span class="yt-badge">11:00:15</span>
+      </div>
+      <div class="yt-info">
+        <div class="yt-title">राजस्थान भूगोल का 'रामबाण' 🔥 11 घंटे में पूरा Syllabus | Marathon</div>
+        <div class="yt-meta">📺 29K+ Views · सम्पूर्ण क्लास</div>
+      </div>
+    </div>
+
+    <div class="yt-card yt-lite" data-yt-id="tEmWpuVG5Tg" data-yt-title="RAJASTHAN RIVERS — राजस्थान की नदियाँ Complete Class">
+      <div class="yt-embed-wrap">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/tEmWpuVG5Tg/hqdefault.jpg" alt="राजस्थान की नदियाँ क्लास" loading="lazy" width="480" height="360">
+        <button type="button" class="yt-play-btn" aria-label="Play राजस्थान की नदियाँ">▶</button>
+        <span class="yt-badge">1:44:01</span>
+      </div>
+      <div class="yt-info">
+        <div class="yt-title">RAJASTHAN RIVERS — राजस्थान की नदियाँ Complete Class</div>
+        <div class="yt-meta">📺 1.7K+ Views · संपूर्ण नदियाँ</div>
+      </div>
+    </div>
+
+    <div class="yt-card yt-lite" data-yt-id="4g1KO0O3iMw" data-yt-title="RAS MAINS का पूरा SYLLABUS 1 Video में">
+      <div class="yt-embed-wrap">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/4g1KO0O3iMw/hqdefault.jpg" alt="RAS Mains Syllabus Decode" loading="lazy" width="480" height="360">
+        <button type="button" class="yt-play-btn" aria-label="Play RAS Mains Syllabus">▶</button>
+        <span class="yt-badge">49:40</span>
+      </div>
+      <div class="yt-info">
+        <div class="yt-title">RAS MAINS का पूरा SYLLABUS 1 Video में 😱 | Decode + Strategy</div>
+        <div class="yt-meta">📺 3.5K+ Views · परीक्षा रणनीति</div>
+      </div>
+    </div>
+  </div>
+  <div class="yt-more-wrap">
+    <a href="https://youtube.com/@thenewindiaeducation" target="_blank" rel="noopener" class="yt-more-btn">
+      <span>📺 पूरा YouTube Channel देखें</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-logo">Omkar Sir<span>.</span></div>
@@ -1422,6 +1472,7 @@ footer a:hover{color:var(--orange)}
 </footer>
 
 <script src="/nied-menu.js" defer></script>
+<script src="/nied-popup.js" defer></script>
 
 <script>
 (function(){
@@ -1444,6 +1495,16 @@ footer a:hover{color:var(--orange)}
     });
   });
 })();
+</script>
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(card){
+  card.addEventListener('click', function(){
+    var id = this.getAttribute('data-yt-id');
+    var wrap = this.querySelector('.yt-embed-wrap');
+    if(!wrap || wrap.querySelector('iframe')) return;
+    wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>';
+  });
+});
 </script>
 </body>
 </html>
