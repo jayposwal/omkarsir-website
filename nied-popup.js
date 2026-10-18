@@ -3,7 +3,7 @@
  * Timed Conversion Popup (RAS Foundation Course 2026 Offer)
  * 
  * Features:
- * - Triggers 15 seconds after page load
+ * - Triggers 20 seconds after page load
  * - Interactive 2-image carousel (Meta poster & App doodle poster)
  * - Live countdown urgency timer (ticks down from 10:00)
  * - Direct Play Store app download redirection on click
@@ -15,7 +15,7 @@
   'use strict';
 
   var CONFIG = {
-    delayMs: 15000, // 15 seconds
+    delayMs: 20000, // 20 seconds
     playStoreUrl: 'https://play.google.com/store/apps/details?id=co.april2019.techa',
     storageKey: 'nied_popup_closed_time',
     cooldownHours: 2, // cooldown if closed
@@ -407,7 +407,7 @@
       }
     });
 
-    // Trigger after 15 seconds (or immediately if force test)
+    // Trigger after 20 seconds (or immediately if force test)
     var delay = isForceTest ? 250 : CONFIG.delayMs;
     setTimeout(show, delay);
   }
