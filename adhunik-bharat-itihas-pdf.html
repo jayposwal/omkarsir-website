@@ -169,6 +169,16 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
   .ticket-top,.ticket-bottom{padding-left:16px;padding-right:16px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Purchase reassurance: clear delivery options at the decision point. */
+.delivery-assurance{margin:16px 0 2px;padding:14px;border:1px solid #DCE8E1;border-radius:14px;background:linear-gradient(135deg,#F3FCF7,#F8FAFF)}
+.delivery-assurance h2{font-family:var(--sans);font-size:16px;line-height:1.35;color:var(--navy);margin:0 0 10px;font-weight:800}
+.delivery-route{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.delivery-route div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center}
+.delivery-route strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
+.delivery-route span{display:block;color:var(--muted);font-size:12px;line-height:1.3;margin-top:2px}
+.delivery-note{font-size:12.5px;color:var(--muted);margin-top:9px;line-height:1.4}
+@media (max-width:420px){.delivery-route{grid-template-columns:1fr}.delivery-route div{text-align:left;padding:9px 11px}}
 </style>
 <script type="application/ld+json">
 {
@@ -222,7 +232,16 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
         <div class="ticket-cut"></div>
         <div class="ticket-bottom">
           <div class="buy"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Tmzqpr6RIRGU0K" async></script></form></div>
-          <p class="trust">🔒 Razorpay से सुरक्षित भुगतान: UPI, Card, NetBanking। Payment होते ही download पेज खुलेगा, और link आपके email पर भी आएगा।</p>
+          <p class="trust">🔒 Razorpay से सुरक्षित भुगतान: UPI, Card, NetBanking। Payment के बाद website पर download page खुलता है और receipt आपके email पर आती है।</p>
+          <section class="delivery-assurance" aria-labelledby="delivery-assurance-title">
+            <h2 id="delivery-assurance-title">✓ Payment के बाद PDF पाने का आसान रास्ता</h2>
+            <div class="delivery-route">
+              <div><strong>⬇️ Website</strong><span>Success page से एक tap में download</span></div>
+              <div><strong>📧 Email</strong><span>Receipt और download जानकारी संभालकर रखें</span></div>
+              <div><strong>💬 WhatsApp सहायता</strong><span>Receipt के साथ तुरंत मदद पाएं</span></div>
+            </div>
+            <p class="delivery-note">Email और mobile number payment करते समय ध्यान से भरें। Automated WhatsApp PDF delivery को सुरक्षित server verification के साथ जोड़ा जाएगा।</p>
+          </section>
           <a class="sample" href="/assets/adhunik-bharat-itihas/pdf/adhunik-bharat-itihas-ch01.pdf" target="_blank" rel="noopener">पहले अध्याय 1 मुफ़्त पढ़कर देखें</a>
         </div>
       </div>
