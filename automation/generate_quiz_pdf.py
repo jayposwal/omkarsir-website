@@ -14,8 +14,15 @@ Usage: python3 generate_quiz_pdf.py <path-to-quiz-json> <output-pdf-path> \
 import argparse
 import json
 import re
+import os
+import subprocess
+import tempfile
 
-from weasyprint import HTML
+try:
+    from weasyprint import HTML
+    HAVE_WEASYPRINT = True
+except Exception:
+    HAVE_WEASYPRINT = False
 
 APP_LINK = "https://play.google.com/store/apps/details?id=co.april2019.techa"
 
@@ -205,8 +212,54 @@ def main():
         data, args.hindi_date, args.eng_date,
         args.font_regular, args.font_bold, args.site_url, args.quiz_page_url,
     )
-    HTML(string=html_str, base_url=".").write_pdf(args.output_pdf)
-    print("Wrote:", args.output_pdf)
+    if HAVE_WEASYPRINT:
+        try:
+            HTML(string=html_str, base_url=".").write_pdf(args.output_pdf)
+            print("Wrote (via WeasyPrint):", args.output_pdf)
+            return
+        except Exception as e:
+            print(f"WeasyPrint failed ({e}), falling back to Chrome...")
+
+    chrome_candidates = [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Chromium.app/Contents/MacOS/Chromium",
+        "google-chrome",
+        "chromium",
+    ]
+    chrome_bin = None
+    for cand in chrome_candidates:
+        if cand.startswith("/") and os.path.exists(cand):
+            chrome_bin = cand
+            break
+        elif not cand.startswith("/"):
+            import shutil
+            if shutil.which(cand):
+                chrome_bin = cand
+                break
+
+    if not chrome_bin:
+        raise RuntimeError("Neither working WeasyPrint nor Google Chrome found for PDF generation.")
+
+    with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8", delete=False) as tf:
+        tf.write(html_str)
+        tf_path = tf.name
+
+    try:
+        cmd = [
+            chrome_bin,
+            "--headless",
+            "--disable-gpu",
+            "--no-pdf-header-footer",
+            f"--print-to-pdf={args.output_pdf}",
+            tf_path,
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        if res.returncode != 0:
+            raise RuntimeError(f"Chrome PDF generation failed: {res.stderr}")
+        print("Wrote (via Chrome headless):", args.output_pdf)
+    finally:
+        if os.path.exists(tf_path):
+            os.remove(tf_path)
 
 
 if __name__ == "__main__":
