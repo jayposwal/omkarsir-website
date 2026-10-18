@@ -224,6 +224,20 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
 @media(max-width:820px){.sample-pages,.delivery-grid{grid-template-columns:1fr}.sample-sheet{min-height:0}.final-offer{align-items:stretch;flex-direction:column;text-align:center}.final-offer .final-price{min-width:0}.final-offer .hero-actions{grid-template-columns:1fr}.final-offer .hero-actions .btn{width:100%}}
 @media(max-width:820px){.hero-grid,.buy-grid{grid-template-columns:1fr;gap:30px}.hero-grid{grid-template-areas:"copy" "cover"}.hero-copy{grid-area:copy}.cover-stage{grid-area:cover;max-width:320px}.grid-3,.unit-list{grid-template-columns:1fr}.feature{padding:16px}.buy-grid{max-width:620px;margin:0 auto}.section{padding:43px 0}.hero{padding:34px 0}.cover-title{font-size:31px}}
 @media(max-width:520px){.wrap{width:min(100% - 24px,1120px)}.navline .wrap{min-height:48px}.brand{font-size:14px}.navback{font-size:11px}.hero{padding:29px 0 31px}h1{font-size:31px}.lead{font-size:15.5px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn{width:100%}.cover-stage{max-width:275px}.book-cover{padding:20px}.cover-title{font-size:27px}.price-seal{width:76px;height:76px;right:-7px}.price-seal strong{font-size:22px}.marks-grid{gap:7px}.mark-card strong{font-size:21px}.mark-card span{font-size:11px}.buy-section{padding:39px 0}.ticket-head,.ticket-body{padding-left:17px;padding-right:17px}.price-row strong{font-size:47px}.sticky-buy{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);padding:9px 12px calc(9px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:9px;box-shadow:0 -7px 22px rgba(27,42,107,.1)}.sticky-price{color:var(--navy);font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;line-height:1.1}.sticky-price small{display:block;font-family:'Hind',sans-serif;font-size:10px;color:var(--muted);font-weight:600}.sticky-buy .btn{min-height:41px;padding:8px 12px;font-size:13px}.bottom-cta{padding-bottom:96px}footer{padding-bottom:88px}}
+
+/* Shared compact checkout card: only offer, price and payment remain. */
+.compact-payment{max-width:440px;border:1px solid #D5D9D9;border-radius:10px;box-shadow:0 3px 10px rgba(15,23,42,.08)}
+.compact-payment .ticket-head{padding:14px 18px 10px}
+.compact-payment .ticket-kicker{font-size:14px;padding:2px 10px}
+.compact-payment .price-row{gap:11px;margin:7px 0 0;align-items:center}
+.compact-payment .price-row strong{font-size:64px}
+.compact-payment .price-row s{font-size:24px;color:#8A90A8;text-decoration-color:#D9363E;text-decoration-thickness:2px;font-weight:700}
+.compact-payment .price-row em{font-style:normal;background:var(--green);color:#fff;padding:3px 10px;border-radius:8px;font-size:15px;font-weight:800}
+.compact-payment .save{font-size:17px;font-weight:800;color:var(--green);margin:0}
+.compact-payment .ticket-divider:before,.compact-payment .ticket-divider:after{display:none}
+.compact-payment .ticket-body{padding:12px 18px 14px}
+@media(max-width:520px){.compact-payment{max-width:none}.compact-payment .ticket-head{padding:13px 16px 9px}.compact-payment .ticket-body{padding:11px 16px 13px}.compact-payment .price-row strong{font-size:58px}}
+
 </style>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="twitter:url" content="https://omkarsir.com/ras-mains-paper-2-pdf.html">
@@ -406,18 +420,15 @@ footer .foot-brand{font-family:'Poppins','Hind',sans-serif;font-size:16px;font-w
         <li><span>✓</span><div>सिर्फ़ डिजिटल PDF — कोई printed book नहीं भेजी जाएगी</div></li>
       </ul>
     </div>
-    <div class="ticket">
+    <div class="ticket compact-payment" id="buy" aria-label="PDF खरीदने का payment summary">
       <div class="ticket-head">
-        <span class="ticket-kicker">DIGITAL PDF · ONE-TIME PRICE</span>
-        <h3>RAS Mains Paper-II PYQ</h3>
-        <div class="price-row"><strong>₹49</strong><span><s style="opacity:.7">₹199</s> · 75% छूट · एक बार भुगतान</span></div>
-        <p>258 प्रश्न · 131 पृष्ठ · 3 Units · सरल हिंदी उत्तर</p>
+        <span class="ticket-kicker">🏷️ विशेष मूल्य</span>
+        <div class="price-row"><strong>₹49</strong><s>₹199</s><em>75% छूट</em></div>
+        <p class="save">आप ₹150 बचा रहे हैं</p>
       </div>
-      <div class="ticket-divider"></div>
+      <div class="ticket-divider" aria-hidden="true"></div>
       <div class="ticket-body">
         <div class="buy"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TmyJkDLHXDE2N3" async></script></form></div>
-        <p class="payment-note">सुरक्षित भुगतान (Razorpay)। भुगतान के तुरंत बाद PDF download पेज खुलेगा और receipt आपके email पर आएगी।</p>
-        <a class="read-link" href="/ras-mains-paper-2-prototype.html">पहले वेबसाइट पर सभी 258 प्रश्न मुफ्त पढ़ें →</a>
       </div>
     </div>
   </div>
