@@ -29,23 +29,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E}
-.wrap{max-width:600px;margin:80px auto;text-align:center;padding:0 20px}
-h1{font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:14px}
-p{color:#666;font-size:15px;line-height:1.7;margin-bottom:24px}
-a.btn{background:#FF6B00;color:white;padding:12px 26px;border-radius:50px;text-decoration:none;font-weight:700}
+body{font-family:'Hind',sans-serif;background:#F8F9FA;color:#1A1A2E;line-height:1.7}
+.tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
+.wrap{max-width:860px;margin:30px auto 60px;padding:0 20px}
+.hdr{text-align:center;margin-bottom:28px}
+.badge{background:#FFF3E8;border:1px solid #FFD0A0;color:#FF6B00;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:10px}
+h1{font-family:'Poppins',sans-serif;font-size:clamp(22px,3.2vw,30px);font-weight:800;margin-bottom:8px}
+.sub{color:#666;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:22px 0}
+.card{background:#fff;border-radius:14px;border:1.5px solid #E8EAF0;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.04);text-decoration:none;color:inherit;transition:all .2s;display:block}
+.card:hover{transform:translateY(-3px);border-color:#FF6B00;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.card-icon{font-size:28px;margin-bottom:8px}
+.card h3{font-size:16px;font-weight:700;color:#1B2A6B;margin-bottom:6px}
+.card p{color:#666;font-size:13px;line-height:1.5;margin-bottom:8px}
+.card-link{color:#FF6B00;font-size:12.5px;font-weight:700}
+.facts-box{background:#fff;border-radius:14px;border:1.5px solid #E8EAF0;padding:24px;margin-top:20px}
+.facts-box h2{font-size:17px;font-weight:700;color:#1B2A6B;margin-bottom:14px;border-bottom:2px solid #FFE0C0;padding-bottom:6px}
+.facts-list{padding-left:20px;font-size:14px;color:#333;line-height:1.9}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "name": "Rajasthan GK Short Notes | Omkar Sir — जल्द आ रहा है",
-  "description": "Rajasthan GK Short Notes — यह अध्याय जल्द जोड़ा जाएगा। तब तक हमारे बाकी Notes देखें — NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार — विश्वसनीय एवं बेहतरीन Content। RAS Exam 2026 की तैयारी के लिए उपयोगी।",
+  "name": "Rajasthan GK High-Yield Short Notes Hub | Omkar Sir",
+  "description": "राजस्थान सामान्य ज्ञान के त्वरित सार नोट्स, एक-पंक्ति तथ्य एवं विषयवार मास्टर लिंक। RAS Pre+Mains उपयोगी।",
   "url": "https://omkarsir.com/rajes07shortnotes.html",
   "inLanguage": "hi",
   "isAccessibleForFree": true,
   "educationalLevel": "Competitive Exam Preparation",
-  "about": ["Rajasthan Patwari", "Rajasthan SI", "REET", "Rajasthan LDC", "Rajasthan VDO", "Rajasthan Police Constable", "Rajasthan CET", "RAS Exam 2026", "RAS Exam", "RPSC", "Rajasthan GK", "IAS", "UPSC"],
+  "about": ["RAS Exam 2026", "RPSC", "Rajasthan GK", "IAS", "UPSC"],
   "provider": {"@type": "EducationalOrganization", "name": "New India Education", "url": "https://omkarsir.com"},
   "author": {"@type": "Person", "name": "Omkar Singh Gurjar"}
 }
@@ -60,10 +72,55 @@ a.btn{background:#FF6B00;color:white;padding:12px 26px;border-radius:50px;text-d
 </head>
 <body>
 <div id="nied-navbar"></div>
+<div class="tri"></div>
+
 <div class="wrap">
-<h1>📝 Rajasthan GK Short Notes</h1>
-<p>यह अध्याय जल्द जोड़ा जाएगा। तब तक हमारे बाकी Rajasthan GK Notes देखें।</p>
-<a class="btn" href="/all-notes.html">सभी Notes देखें →</a>
+  <div class="hdr">
+    <div class="badge">⚡ Quick Revision Hub</div>
+    <h1>Rajasthan GK High-Yield Short Notes</h1>
+    <div class="sub">राजस्थान सामान्य ज्ञान — परीक्षा से पूर्व अंतिम समय के त्वरित रिवीज़न नोट्स</div>
+  </div>
+
+  <div class="grid">
+    <a href="/rajasthan-bhugol.html" class="card">
+      <div class="card-icon">🗺️</div>
+      <h3>राजस्थान भूगोल (Geography)</h3>
+      <p>स्थिति, भौतिक प्रदेश, नदियां, जलवायु, वनस्पति, खनिज एवं कृषि के 14 मास्टर अध्याय।</p>
+      <span class="card-link">भूगोल नोट्स पढ़ें →</span>
+    </a>
+    <a href="/rajasthan-rajyavyavastha.html" class="card">
+      <div class="card-icon">🏛️</div>
+      <h3>राजस्थान राज्यव्यवस्था (Polity)</h3>
+      <p>राज्यपाल, CM, विधानसभा, उच्च न्यायालय, आयोग, लोकायुक्त एवं ई-गवर्नेंस के 12 अध्याय।</p>
+      <span class="card-link">राज्यव्यवस्था नोट्स पढ़ें →</span>
+    </a>
+    <a href="/rajasthan-itihas-series.html" class="card">
+      <div class="card-icon">⚔️</div>
+      <h3>राजस्थान इतिहास (History)</h3>
+      <p>प्राचीन सभ्यताएं, प्रमुख राजवंश, 1857 क्रांति, किसान आंदोलन, प्रजामंडल एवं एकीकरण।</p>
+      <span class="card-link">इतिहास नोट्स पढ़ें →</span>
+    </a>
+    <a href="/rajasthan-kala-sanskriti.html" class="card">
+      <div class="card-icon">🎨</div>
+      <h3>कला एवं संस्कृति (Art &amp; Culture)</h3>
+      <p>किले, महल, मंदिर, लोक देवता, लोक नृत्य, चित्रकला, हस्तशिल्प, मेले एवं त्योहार।</p>
+      <span class="card-link">संस्कृति नोट्स पढ़ें →</span>
+    </a>
+  </div>
+
+  <div class="facts-box">
+    <h2>🎯 परीक्षा उपयोगी 5 गोल्डन वन-लाइनर्स:</h2>
+    <ul class="facts-list">
+      <li><b>भौगोलिक स्थिति :</b> राजस्थान का कुल क्षेत्रफल 3,42,239 वर्ग किमी (भारत का 10.41% — देश का सबसे बड़ा राज्य)।</li>
+      <li><b>अरावली पर्वतमाला :</b> विश्व की प्राचीनतम वलित पर्वतमाला; कुल लंबाई 692 किमी (राजस्थान में 550 किमी — 80%)। सर्वोच्च शिखर: गुरुशिखर (1722 मी.)।</li>
+      <li><b>पंचायती राज की शुरुआत :</b> 2 अक्टूबर 1959 को पं. नेहरू द्वारा नागौर जिले के बगदरी गांव से त्रि-स्तरीय पंचायती राज का उद्घाटन।</li>
+      <li><b>पूर्ण एकीकरण :</b> 1 नवंबर 1956 को 7 चरणों में राजस्थान का एकीकरण संपन्न (सत्यनारायण राव समिति की सिफारिश पर जयपुर राजधानी बनी)।</li>
+      <li><b>राज्य प्रतीक :</b> राज्य वृक्ष-खेजड़ी, राज्य पुष्प-रोहिड़ा, राज्य पशु (वन्य)-चिंकारा, राज्य पशु (पशुधन)-ऊंट, राज्य पक्षी-गोडावण।</li>
+    </ul>
+    <div style="text-align:center;margin-top:20px">
+      <a href="/all-notes.html" style="background:#FF6B00;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:14px;display:inline-block">सभी विषयों के संपूर्ण नोट्स देखें →</a>
+    </div>
+  </div>
 </div>
 <script src="/nied-menu.js" defer></script>
 </body>
