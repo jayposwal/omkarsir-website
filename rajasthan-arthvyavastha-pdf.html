@@ -168,6 +168,22 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
   .price .now{font-size:62px}
   .ticket-top,.ticket-bottom{padding-left:16px;padding-right:16px}
 }
+
+/* Compact offer summary shared with the PDF checkout landing pages. */
+.compact-payment{max-width:440px;margin-top:20px;border:1px solid #D5D9D9;border-radius:10px;box-shadow:0 3px 10px rgba(15,23,42,.08);overflow:hidden}
+.compact-payment .ticket-top{padding:14px 18px 10px}
+.compact-payment .when{font-size:14px;padding:2px 10px}
+.compact-payment .price{gap:11px;margin-top:7px}
+.compact-payment .price .now{font-size:64px}
+.compact-payment .price .was{font-size:24px;margin-bottom:7px}
+.compact-payment .price .off{font-size:15px;padding:3px 10px;margin-bottom:9px}
+.compact-payment .save{font-size:17px;margin-top:0}
+.compact-payment .ticket-cut{border-top:2px dashed #FFD0A8}
+.compact-payment .ticket-cut::before,.compact-payment .ticket-cut::after{display:none}
+.compact-payment .ticket-bottom{padding:12px 18px 14px}
+.compact-payment .trust,.compact-payment .sample{display:none}
+@media(max-width:420px){.compact-payment{max-width:none}.compact-payment .ticket-top{padding:13px 16px 9px}.compact-payment .ticket-bottom{padding:11px 16px 13px}.compact-payment .price .now{font-size:58px}}
+
 </style>
 <script type="application/ld+json">
 {
@@ -221,9 +237,9 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
       <p class="cred">🏆 <span>भारत का सबसे बेहतरीन कंटेंट और 8 साल का अनुभव — 6 लाख+ सफल विद्यार्थी</span></p>
       <p class="facts">📊 15 अध्याय &nbsp; 📄 253 पृष्ठ &nbsp; 📈 अद्यतन सांख्यिकी &nbsp; 📱 Mobile &amp; Print Friendly</p>
 
-      <div class="ticket" id="buy">
+      <div class="ticket compact-payment" id="buy" aria-label="PDF खरीदने का payment summary">
         <div class="ticket-top">
-          <span class="when">🏷️ विशेष मूल्य — सीमित समय हेतु</span>
+          <span class="when">🏷️ विशेष मूल्य</span>
           <div class="price">
             <span class="now">₹49</span>
             <span class="was">₹199</span>
@@ -231,14 +247,12 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
           </div>
           <p class="save">आप ₹150 बचा रहे हैं</p>
         </div>
-        <div class="ticket-cut"></div>
+        <div class="ticket-cut" aria-hidden="true"></div>
         <div class="ticket-bottom">
           <div class="buy-actions">
-            <a class="buy-btn" href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener">⚡ अभी खरीदें — सिर्फ़ ₹49 में (App पर तुरंत पाएं)</a>
-            <a class="app-btn" href="https://wa.me/919929841808?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%B8%E0%A4%B0%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%B0%E0%A4%BE%E0%A4%9C%E0%A4%88%E0%A4%A5%E0%A4%BE%E0%A4%A8%20%E0%A4%86%E0%A4%B0%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%95%20%E0%A4%B8%E0%A4%AE%E0%A5%80%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BE%202025-26%20%E0%A4%8F%E0%A4%95%E0%A4%AE%E0%A5%8D%E0%A4%AA%E0%A5%8D%E0%A4%B2%E0%A5%80%E0%A4%9F%20PDF%20(%E2%82%B949)%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F" target="_blank" rel="noopener">💬 WhatsApp पर सीधे प्राप्त करें (₹49)</a>
+            <a class="buy-btn" href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener">⚡ App से खरीदें — ₹49</a>
+            <a class="app-btn" href="https://wa.me/919929841808?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%B8%E0%A4%B0%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%B0%E0%A4%BE%E0%A4%9C%E0%A4%88%E0%A4%A5%E0%A4%BE%E0%A4%A8%20%E0%A4%86%E0%A4%B0%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%95%20%E0%A4%B8%E0%A4%AE%E0%A5%80%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BE%202025-26%20%E0%A4%8F%E0%A4%95%E0%A4%AE%E0%A5%8D%E0%A4%AA%E0%A5%8D%E0%A4%B2%E0%A5%80%E0%A4%9F%20PDF%20(%E2%82%B949)%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F" target="_blank" rel="noopener">💬 WhatsApp पर प्राप्त करें</a>
           </div>
-          <p class="trust">🔒 सुरक्षित भुगतान: UPI, Card, NetBanking। खरीद के तुरंत बाद PDF डाउनलोड उपलब्ध और ईमेल/ऐप पर सुरक्षित सुरक्षित।</p>
-          <a class="sample" href="/assets/rajasthan-arthvyavastha/pdf/rajasthan-arthvyavastha-ch00.pdf" target="_blank" rel="noopener">📄 पहले अध्याय 0 (30 पृष्ठ) मुफ़्त पढ़कर देखें →</a>
         </div>
       </div>
     </div>
