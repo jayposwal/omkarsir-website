@@ -20,9 +20,9 @@ from paper3_data import QUESTIONS  # noqa: E402
 RAZORPAY_BUTTON_ID = None  # e.g. "pl_XXXXXXXXXXXXXX"
 OUT = "ras-mains-paper-3-sample.html"
 URL = "https://omkarsir.com/" + OUT
-TITLE = "RAS Mains Paper-III PYQ (2013–2024) Answer Key — Free Sample | Omkar Sir"
+TITLE = "RAS Mains Paper-III PYQ (2013–2024) Answer Key — सभी 306 प्रश्न हल सहित | Omkar Sir"
 H1 = "RAS Mains Paper-III PYQ (2013–2024) Answer Key"
-DESC = "RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise PYQ और सरल हिंदी उत्तर। भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि…"
+DESC = "RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise सभी 306 PYQ और सरल हिंदी उत्तर। भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, खेल-योग, व्यवहार और विधि — पूर्ण व्याख्या।"
 CRED = "पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students"
 TOTAL_Q, TOTAL_PAGES = 306, 140
 
@@ -357,6 +357,17 @@ def build():
     secs = "\n".join(section_card(s) for s in SECTIONS)
     faq = "\n".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in FAQ)
     last = QUESTIONS[-1]["n"]
+    if n >= TOTAL_Q:
+        eyebrow = f"📚 सम्पूर्ण 306 प्रश्न · Free Online हल"
+        lead = f"General Studies-III · भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, खेल-योग, व्यवहार और विधि के topic-wise पूर्व वर्ष प्रश्न — हर प्रश्न के अंक और सरल हिंदी उत्तर के साथ। नीचे सभी {n} प्रश्न मुफ्त ऑनलाइन पढ़ें या ऑफलाइन रिवीजन हेतु PDF डाउनलोड करें।"
+        cta_read = f"सभी {n} प्रश्न ऑनलाइन पढ़ें ↓"
+        more_box_html = f'<div class="more">🎉 <b>सभी {TOTAL_Q} प्रश्न ऑनलाइन उपलब्ध हैं!</b> यदि आप इन्हें ऑफलाइन पढ़ना चाहते हैं या प्रिंट निकालना चाहते हैं, तो <a href="#buy"><b>सिर्फ़ ₹49 में सम्पूर्ण PDF डाउनलोड करें →</b></a></div>'
+    else:
+        eyebrow = f"🆓 FREE SAMPLE · प्रश्न 1–{last}"
+        lead = f"General Studies-III · भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि के topic-wise पूर्व वर्ष प्रश्न — हर प्रश्न के अंक और सरल हिंदी उत्तर के साथ। नीचे पहले {n} प्रश्न मुफ्त पढ़ें।"
+        cta_read = f"पहले {n} प्रश्न मुफ्त पढ़ें ↓"
+        more_box_html = f'<div class="more">🔒 <b>आगे के {TOTAL_Q - n} प्रश्न</b> पूरी PDF में हैं — राजस्थान राजनीति, अंतरराष्ट्रीय संबंध, लोक प्रशासन, व्यवहार और विधि। <a href="#buy"><b>सिर्फ़ ₹49 में PDF डाउनलोड करें →</b></a></div>'
+
     return f'''<!doctype html>
 <html lang="hi">
 <head>
@@ -393,9 +404,9 @@ def build():
 <a class="back" href="/previous-year-papers.html#block-ras">← सभी Previous Year Papers</a>
 
 <section class="hero">
-  <span class="eyebrow">🆓 FREE SAMPLE · प्रश्न 1–{last}</span>
+  <span class="eyebrow">{eyebrow}</span>
   <h1>RAS Mains <span>Paper-III</span> PYQ (2013–2024) Answer Key</h1>
-  <p class="lead">General Studies-III · भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि के topic-wise पूर्व वर्ष प्रश्न — हर प्रश्न के अंक और सरल हिंदी उत्तर के साथ। नीचे पहले {n} प्रश्न मुफ्त पढ़ें।</p>
+  <p class="lead">{lead}</p>
   <p class="cred">🏆 {CRED}</p>
   <div class="stats">
     <div><b>{TOTAL_Q}</b><span>प्रश्न</span></div>
@@ -405,7 +416,7 @@ def build():
   </div>
   <div class="cta">
     <a class="btn p" href="#buy">📥 पूरी PDF ₹49 में</a>
-    <a class="btn g" href="#qs">पहले {n} प्रश्न मुफ्त पढ़ें ↓</a>
+    <a class="btn g" href="#qs">{cta_read}</a>
   </div>
 </section>
 
@@ -436,7 +447,7 @@ def build():
 <div class="empty" id="emp">इस खोज से कोई प्रश्न नहीं मिला। कोई दूसरा keyword लिखकर देखें।</div>
 </div>
 
-<div class="more">🔒 <b>आगे के {TOTAL_Q - n} प्रश्न</b> पूरी PDF में हैं — राजस्थान राजनीति, अंतरराष्ट्रीय संबंध, लोक प्रशासन, खेल एवं योग, व्यवहार और विधि। सब कुछ एक ही PDF में, सिर्फ़ ₹49 में।</div>
+{more_box_html}
 
 {buy_box()}
 
