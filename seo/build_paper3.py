@@ -22,8 +22,7 @@ OUT = "ras-mains-paper-3-sample.html"
 URL = "https://omkarsir.com/" + OUT
 TITLE = "RAS Mains Paper-III PYQ (2013–2024) Answer Key — Free Sample | Omkar Sir"
 H1 = "RAS Mains Paper-III PYQ (2013–2024) Answer Key"
-DESC = (f"RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise PYQ और सरल हिंदी उत्तर। "
-        f"भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि — पहले {len(QUESTIONS)} प्रश्न मुफ्त पढ़ें; पूरी 140 पृष्ठ की PDF ₹49 में।")
+DESC = "RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise PYQ और सरल हिंदी उत्तर। भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि…"
 CRED = "पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students"
 TOTAL_Q, TOTAL_PAGES = 306, 140
 
@@ -115,7 +114,7 @@ def render_answer(blocks):
 def card(q):
     keys = "".join(f"<span>{E(k)}</span>" for k in q["keys"])
     share = (f'https://wa.me/?text={E(("RAS Mains Paper-III PYQ प्रश्न %d — " % q["n"]) + URL + "#q%d" % q["n"], quote=True)}')
-    marks_cls = {2: "m2", 5: "m5", 10: "m10"}.get(q["marks"], "m5")
+    marks_cls = {2: "m2", 5: "m5", 10: "m10", 20: "m20"}.get(q["marks"], "m5")
     search_blob = E(" ".join([q["q"], q["en"], q["topic"]] + q["keys"]).lower(), quote=True)
     return f'''<article class="qcard" id="q{q["n"]}" data-marks="{q["marks"]}" data-s="{search_blob}">
   <header class="qtop"><span class="qn">प्रश्न {q["n"]}</span><span class="mk {marks_cls}">{q["marks"]} अंक</span></header>
@@ -255,6 +254,7 @@ button,input{font:inherit}
 .m2{background:#eefaf1;color:#176a35;border-color:#bfe6cb}
 .m5{background:var(--tint);color:var(--saf-d);border-color:#ffd3ad}
 .m10{background:#fdeef0;color:#a3122a;border-color:#f6c3cb}
+.m20{background:#f3e8ff;color:#6b21a8;border-color:#e9d5ff}
 .qt{margin:0;font-size:clamp(17.5px,2.4vw,20px);line-height:1.65;color:var(--navy);font-weight:700}
 .qe{margin:5px 0 0;font-family:'Poppins',sans-serif;font-size:12.5px;line-height:1.6;color:#7a8398}
 .qmeta{display:flex;flex-wrap:wrap;gap:6px;margin:11px 0 0}
@@ -352,7 +352,7 @@ JS = r"""
 
 def build():
     cards = "\n".join(card(q) for q in QUESTIONS)
-    counts = {m: sum(1 for q in QUESTIONS if q["marks"] == m) for m in (2, 5, 10)}
+    counts = {m: sum(1 for q in QUESTIONS if q["marks"] == m) for m in (2, 5, 10, 20)}
     n = len(QUESTIONS)
     secs = "\n".join(section_card(s) for s in SECTIONS)
     faq = "\n".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in FAQ)
@@ -423,6 +423,7 @@ def build():
     <button type="button" class="fb" data-m="2" aria-pressed="false">2 अंक ({counts[2]})</button>
     <button type="button" class="fb" data-m="5" aria-pressed="false">5 अंक ({counts[5]})</button>
     <button type="button" class="fb" data-m="10" aria-pressed="false">10 अंक ({counts[10]})</button>
+    {f'<button type="button" class="fb" data-m="20" aria-pressed="false">20 अंक ({counts[20]})</button>' if counts.get(20, 0) > 0 else ''}
     <button type="button" class="fb x" id="openAll">सभी उत्तर खोलें</button>
     <button type="button" class="fb x" id="closeAll">बंद करें</button>
   </div>
