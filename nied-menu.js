@@ -66,6 +66,15 @@
     }, true);
   })();
 
+  // Service worker (/sw.js) keeps fonts, images, CSS and JS in the browser
+  // cache across visits — GitHub Pages itself only allows a 10-minute cache.
+  (function registerServiceWorker(){
+    if(!('serviceWorker' in navigator) || !window.isSecureContext) return;
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('/sw.js').catch(function(err){ console.warn('NIEd SW:', err); });
+    });
+  })();
+
   // Site-wide timed conversion popup injection (15s delay)
   (function injectPopupScript(){
     if(document.getElementById('nied-popup-script')) return;

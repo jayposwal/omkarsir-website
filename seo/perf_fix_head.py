@@ -8,6 +8,9 @@ One-time / idempotent performance fix for <head> across all static pages.
    /assets/fonts/nied-fonts.css (same-origin, no extra DNS/TLS to
    fonts.googleapis.com + fonts.gstatic.com) and preloads the Hindi body font.
    Google preconnects are dropped when the page no longer uses Google Fonts.
+3. Pages using nied-menu.js get a #nied-navbar mount at the top of <body> and
+   a reserved min-height for it, so the JS-injected navbar doesn't push the
+   page down (Cumulative Layout Shift).
 
 Usage: python3 seo/perf_fix_head.py
 """
@@ -26,6 +29,9 @@ SELF_HOSTED = (
 CHARSET_RE = re.compile(r'[ \t]*<meta\s+charset=["\']?utf-8["\']?\s*/?>[ \t]*\n?', re.I)
 VIEWPORT_RE = re.compile(r'[ \t]*<meta\s+name=["\']viewport["\'][^>]*>[ \t]*\n?', re.I)
 HEAD_OPEN_RE = re.compile(r'<head\b[^>]*>', re.I)
+NAVBAR_STYLE = ('<style id="nied-navbar-reserve">#nied-navbar{min-height:72px}'
+                '@media(max-width:520px){#nied-navbar{min-height:62px}}</style>')
+BODY_OPEN_RE = re.compile(r'<body\b[^>]*>', re.I)
 PRECONNECT_RE = re.compile(
     r'[ \t]*<link\s+rel=["\']preconnect["\']\s+href=["\']https://fonts\.(googleapis|gstatic)\.com["\'][^>]*>[ \t]*\n?', re.I)
 
@@ -53,6 +59,13 @@ def fix(s):
             s = tag_re.sub(SELF_HOSTED, s, count=1)
     if 'fonts.googleapis.com/css' not in s:
         s = PRECONNECT_RE.sub('', s)
+    # 3. reserve navbar space
+    if 'nied-menu.js' in s and '#nied-navbar{min-height' not in s:
+        s = s.replace('</head>', NAVBAR_STYLE + '\n</head>', 1)
+        if 'id="nied-navbar"' not in s:
+            body = BODY_OPEN_RE.search(s)
+            if body:
+                s = s[:body.end()] + '\n<div id="nied-navbar"></div>' + s[body.end():]
     return s
 
 
