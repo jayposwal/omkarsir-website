@@ -11,18 +11,6 @@
 .sc-title{font-size:18px;font-weight:800;color:var(--navy);margin:0 0 6px;line-height:1.35}
 .sc-desc{font-size:13.5px;color:var(--text-muted);line-height:1.65;margin:0 0 14px;flex:1}
 .sc-btn{background:linear-gradient(135deg,#FF6B00,#EA580C);color:#FFFFFF!important;font-weight:800;padding:10px 18px;border-radius:10px;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 4px 12px rgba(234,88,12,.22);}
-.featured-pdf-sec{max-width:1200px;margin:0 auto;padding:26px 5% 36px}
-.featured-pdf-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(160px,230px) minmax(0,1fr);gap:clamp(20px,4vw,40px);align-items:center;padding:clamp(20px,4vw,36px);border-radius:22px;border:1.5px solid #F1D4BF;background:linear-gradient(125deg,#FFFFFF 0%,#FFF9F3 55%,#F4F7FF 100%);box-shadow:var(--shadow-md);}
-.featured-pdf-cover-wrap{position:relative;max-width:210px;margin:0 auto}
-.featured-pdf-cover{width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 12px 28px rgba(27,42,107,.18);border:1px solid #E2E8F0;transition:transform .3s ease;}
-.featured-pdf-panel:hover .featured-pdf-cover{transform:scale(1.02)}
-.featured-pdf-copy{min-width:0}
-.featured-pdf-eyebrow{display:inline-block;background:#E6F7EC;color:#15803D;padding:4px 11px;border-radius:50px;font-size:11.5px;font-weight:800;margin-bottom:8px;border:1px solid #BBF7D0;}
-.featured-pdf-copy h2{font-family:'Hind',sans-serif;font-size:clamp(22px,3vw,32px);line-height:1.3;color:var(--navy);margin:0 0 8px;font-weight:800;}
-.featured-pdf-copy p{color:var(--text-muted);font-size:14px;line-height:1.75;margin:0 0 14px;}
-.featured-pdf-facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
-.featured-pdf-fact{display:inline-flex;align-items:center;gap:5px;background:#FFFFFF;border:1px solid #E2E8F0;color:#475569;border-radius:9px;padding:6px 11px;font-size:12px;font-weight:700;}
-.featured-pdf-actions{display:flex;gap:10px;flex-wrap:wrap}
 .promo-pyq-sec{max-width:1150px;margin:24px auto;padding:0 5%}
 .promo-pyq-card{background:linear-gradient(135deg,#1B2A6B 0%,#2A3C8B 100%);color:#FFFFFF;border-radius:18px;padding:clamp(20px,3.5vw,30px);box-shadow:0 10px 28px rgba(27,42,107,.16);display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid rgba(255,255,255,.12);}
 .pyq-content{flex:1;min-width:0}
@@ -110,43 +98,19 @@
 .footer-copy{margin-top:8px;font-size:11.5px;color:#64748B}
 .footer-legal{margin-top:6px;font-size:11px;color:#64748B}
 .footer-legal a{color:#94A3B8;margin:0 6px}
-@media(max-width:850px){.showcase-grid{grid-template-columns:1fr;gap:14px}.cta-band-grid{grid-template-columns:1fr;gap:12px}.featured-pdf-panel{grid-template-columns:1fr;gap:18px;text-align:center}.featured-pdf-cover-wrap{max-width:160px}.featured-pdf-facts{justify-content:center}.featured-pdf-actions{justify-content:center}.promo-pyq-card{flex-direction:column;text-align:center}.yt-grid{grid-template-columns:1fr;gap:14px}}
-@media(max-width:560px){.showcase-card{border-radius:16px}.sc-title{font-size:16px}.sc-desc{font-size:12.5px}.cta-band{padding:16px}.cb-title{font-size:17px}.cb-desc{font-size:12.5px}.cb-btns a{width:100%}.featured-pdf-sec{padding:16px 4% 26px}.featured-pdf-panel{padding:16px}.featured-pdf-copy h2{font-size:20px}.featured-pdf-copy p{font-size:13px}.featured-pdf-actions a{width:100%}.exam-grid{grid-template-columns:repeat(2,1fr);gap:8px}.exam-box{padding:11px 6px}.exam-box .e-name{font-size:11.5px}.courses-card-grid{grid-template-columns:1fr;gap:12px}.faq-q{padding:13px 15px;font-size:13.5px}.faq-a{padding:0 15px 13px;font-size:13px}}
-/* Premium Notes Store section (built by seo/build_store.py) — same rhythm as the other homepage sections */
-.ps-sec{max-width:none;padding:36px 5% 30px;background:linear-gradient(180deg,#FFF8F2,#FFFFFF)}
-.ps-grid{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.ps-card{min-width:0;display:flex;flex-direction:column;background:#fff;border:1px solid #F0E2D6;border-radius:16px;padding:12px 12px 14px;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(27,42,107,.06);transition:transform .18s,box-shadow .18s}
-.ps-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(27,42,107,.12);border-color:#FDBA74}
-.ps-cover{position:relative;display:flex;justify-content:center;align-items:center;aspect-ratio:4/3;border-radius:12px;background:radial-gradient(180px 110px at 50% 100%,#FFE1C7,transparent 70%),linear-gradient(160deg,#EEF2FF,#FFF8F2);margin-bottom:10px}
-.ps-cover img{height:84%;width:auto;max-width:90%;object-fit:contain;border-radius:3px 6px 6px 3px;box-shadow:8px 12px 20px rgba(27,42,107,.25)}
-.ps-off{position:absolute;top:8px;right:8px;background:#0A8F55;color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:7px}
-.ps-tag{align-self:flex-start;background:#FFF1E6;color:#C14F00;font-size:11px;font-weight:800;padding:2px 9px;border-radius:30px}
-.ps-card strong{font-size:15.5px;line-height:1.35;color:var(--navy);margin:7px 0 3px;font-weight:800}
-.ps-meta{font-size:12.5px;color:var(--text-muted)}
-.ps-price{margin:8px 0 10px;font-size:13px;color:#8A90A8}
-.ps-price b{font-family:'Poppins',sans-serif;font-size:22px;color:var(--navy)}
-.ps-price s{text-decoration-color:#D9363E}
-.ps-go{margin-top:auto;display:flex;justify-content:center;align-items:center;min-height:40px;border-radius:10px;background:var(--orange);color:#fff;font-weight:800;font-size:13.5px}
-.ps-more{text-align:center;margin-top:20px}
-.ps-all{display:inline-flex;align-items:center;min-height:44px;padding:10px 22px;border-radius:30px;background:var(--navy);color:#fff;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 6px 16px rgba(27,42,107,.18)}
-.ps-all:hover{background:#111B47}
-@media(max-width:980px){.ps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){.ps-sec{padding:26px 4% 22px}.ps-grid{gap:10px}.ps-card{padding:9px 9px 11px}.ps-card strong{font-size:13.5px}.ps-price b{font-size:19px}.ps-go{min-height:38px;font-size:12.5px}.ps-meta{font-size:11.5px}}
-@media(prefers-reduced-motion:reduce){.ps-card{transition:none}}
-
+@media(max-width:850px){.showcase-grid{grid-template-columns:1fr;gap:14px}.cta-band-grid{grid-template-columns:1fr;gap:12px}.promo-pyq-card{flex-direction:column;text-align:center}.yt-grid{grid-template-columns:1fr;gap:14px}}
+@media(max-width:560px){.showcase-card{border-radius:16px}.sc-title{font-size:16px}.sc-desc{font-size:12.5px}.cta-band{padding:16px}.cb-title{font-size:17px}.cb-desc{font-size:12.5px}.cb-btns a{width:100%}.exam-grid{grid-template-columns:repeat(2,1fr);gap:8px}.exam-box{padding:11px 6px}.exam-box .e-name{font-size:11.5px}.courses-card-grid{grid-template-columns:1fr;gap:12px}.faq-q{padding:13px 15px;font-size:13.5px}.faq-a{padding:0 15px 13px;font-size:13px}}
 /* ===== Layout symmetry: same 1100px content width + compact boxes ===== */
-.home-showcase-sec,.ps-sec,.promo-pyq-sec,.yt-sec,.exam-sec,.courses-sec{max-width:none;padding-left:max(4%,calc((100% - 1100px)/2));padding-right:max(4%,calc((100% - 1100px)/2))}
+.home-showcase-sec,.promo-pyq-sec,.yt-sec,.exam-sec,.courses-sec{max-width:none;padding-left:max(4%,calc((100% - 1100px)/2));padding-right:max(4%,calc((100% - 1100px)/2))}
 .home-showcase-sec{margin:26px 0 8px}
 .promo-pyq-sec{margin:22px 0}
-.ps-grid,.yt-grid,.exam-grid,.courses-card-grid{max-width:none}
+.yt-grid,.exam-grid,.courses-card-grid{max-width:none}
 /* Course showcase: image beside the text instead of a tall banner */
 .showcase-card{flex-direction:row}
 .sc-img-wrap{flex:0 0 42%;width:42%;aspect-ratio:auto;min-height:200px}
 .sc-body{padding:14px 16px 16px}
 .sc-desc{font-size:13px;margin-bottom:12px}
 /* Premium store: shorter cover area */
-.ps-cover{aspect-ratio:auto;height:170px}
-.ps-cover img{height:88%}
 /* YouTube: a little shorter */
 .yt-grid{gap:16px}
 @media(max-width:850px){
@@ -154,7 +118,6 @@
   .sc-img-wrap{flex:none;width:100%;aspect-ratio:2/1;min-height:0}
 }
 @media(max-width:560px){
-  .ps-cover{height:132px}
   .yt-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
   .yt-card{scroll-snap-align:start}
   .exam-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
