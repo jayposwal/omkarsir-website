@@ -182,6 +182,21 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
 .compact-payment .trust,.compact-payment .sample{display:none}
 @media(max-width:420px){.compact-payment{max-width:none}.compact-payment .ticket-top{padding:13px 16px 9px}.compact-payment .ticket-bottom{padding:11px 16px 13px}.compact-payment .price .now{font-size:58px}}
 
+
+/* Same cover + preview styles as the Modern History landing page */
+.book{position:relative;perspective:1400px;max-width:360px;margin:0 auto;width:100%}
+.book .cover{width:100%;border-radius:4px 10px 10px 4px;transform:rotateY(-14deg) rotateZ(-1deg);transform-origin:left center;
+  box-shadow:18px 26px 48px rgba(27,42,107,.28),4px 6px 14px rgba(27,42,107,.18)}
+.pages{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}
+.pages figure{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;box-shadow:0 10px 26px rgba(27,42,107,.10)}
+.pages figure:nth-child(1){transform:rotate(-1.6deg)}
+.pages figure:nth-child(3){transform:rotate(1.6deg)}
+.pages figcaption{font-size:15px;color:var(--muted);padding:8px 4px 2px;text-align:center}
+@media (max-width:900px){
+  .book{max-width:240px}
+  .pages{grid-template-columns:repeat(3,minmax(210px,1fr));overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory}
+  .pages figure{scroll-snap-align:center;transform:none!important}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -210,22 +225,8 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
 
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="book-card">
-      <div class="book-mockup">
-        <span class="bm-tag">Rajasthan Economy</span>
-        <div class="bm-title">राजस्थान आर्थिक समीक्षा 2025-26 &amp; बजट</div>
-        <div class="bm-sub">विकसित राजस्थान @2047, GSDP, कृषि, उद्योग, आधारभूत ढांचा एवं बजट 2026-27 योजना-कोश</div>
-        <div class="bm-stats">
-          <div class="bm-stat"><b>15</b><span>कुल अध्याय</span></div>
-          <div class="bm-stat"><b>253</b><span>रंगीन पृष्ठ</span></div>
-          <div class="bm-stat"><b>100%</b><span>नवीनतम आंकड़े</span></div>
-          <div class="bm-stat"><b>बजट '26</b><span>योजना-कोश</span></div>
-        </div>
-        <div class="bm-foot">
-          <span>ओंकार सर · NIEd</span>
-          <span>RAS Pre + Mains Special</span>
-        </div>
-      </div>
+    <div class="book">
+      <img class="cover" src="/assets/store/rajasthan-arthvyavastha-poster.webp" srcset="/assets/store/rajasthan-arthvyavastha-poster-420.webp 420w, /assets/store/rajasthan-arthvyavastha-poster.webp 1092w" sizes="(max-width:900px) 240px, 360px" alt="सम्पूर्ण राजस्थान आर्थिक समीक्षा 2025-26 — PDF का मुखपृष्ठ" width="1092" height="1544" decoding="async">
       <div class="seal" aria-hidden="true"><b>75%</b><span>छूट</span></div>
     </div>
 
@@ -233,7 +234,7 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
       <p class="kicker">आधिकारिक सरकारी आंकड़ों पर आधारित सम्पूर्ण संकलन</p>
       <h1>सम्पूर्ण राजस्थान आर्थिक समीक्षा 2025-26 एवं बजट</h1>
       <p class="lead">GSDP वृद्धि दर, कृषि-खाद्य रूपांतरण, खनिज, ऊर्जा, ERCP/रामगढ़ उल्कापिंड, सतत विकास लक्ष्य (SDG) और बजट 2026-27 की हर नई घोषणा। कहानियों, तालिकाओं और फ्लोचार्ट के साथ पूरी पुस्तक, एक ही रंगीन PDF में।</p>
-      <p class="cred">🏆 <span>भारत का सबसे बेहतरीन कंटेंट और 8 साल का अनुभव — 6 लाख+ सफल विद्यार्थी</span></p>
+      <p class="cred">🏆 <span>पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</span></p>
       <p class="facts">📊 15 अध्याय &nbsp; 📄 253 पृष्ठ &nbsp; 📈 अद्यतन सांख्यिकी &nbsp; 📱 Mobile &amp; Print Friendly</p>
 
       <div class="ticket compact-payment" id="buy" aria-label="PDF खरीदने का payment summary">
@@ -260,24 +261,12 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
 
 <section class="s alt">
   <div class="wrap">
-    <h2>अंदर क्या-क्या शामिल है</h2>
-    <p class="sub">आर्थिक समीक्षा की नीरस सरकारी भाषा को सरल हिंदी, परीक्षा-उन्मुख तालिकाओं और फ्लोचार्ट में ढाला गया है।</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>GSDP एवं प्रति व्यक्ति आय</h3>
-        <p>स्थिर (2011-12) एवं प्रचलित मूल्यों पर सकल राज्य घरेलू उत्पाद, एनएसडीपी तथा कृषि-उद्योग-सेवा क्षेत्रों की सटीक हिस्सेदारी।</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🌾</div>
-        <h3>कृषि-खाद्य रूपांतरण</h3>
-        <p>खाद्यान्न उत्पादन लक्ष्य, पशुधन संपदा, डेयरी, PM किसान सम्मान निधि, ई-नाम मंडियां और राजस्थान मिलेट्स प्रोत्साहन मिशन।</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📜</div>
-        <h3>बजट 2026-27 योजना-कोश</h3>
-        <p>अध्याय 14 में बजट 2026-27 की हर एक नई व पुरानी योजना का संपूर्ण विवरण — क्या है, कब बनी, पात्रता, लाभ और बजट आवंटन।</p>
-      </div>
+    <h2>अंदर के पन्ने ऐसे दिखते हैं</h2>
+    <p class="sub">सरकारी आंकड़े सरल हिंदी में, परीक्षा-उन्मुख तालिकाओं, Vision 2047 और योजना-कार्डों के साथ।</p>
+    <div class="pages">
+      <figure><img src="/assets/store/rajasthan-arthvyavastha-preview-1.webp" alt="PDF का एक पृष्ठ: सकल राज्य घरेलू उत्पाद (GSDP) की तालिकाएँ" width="640" height="905" loading="lazy" decoding="async"><figcaption>GSDP तालिकाओं से समझें</figcaption></figure>
+      <figure><img src="/assets/store/rajasthan-arthvyavastha-preview-2.webp" alt="PDF का एक पृष्ठ: विकसित राजस्थान @2047 — दृष्टि एवं 13 क्षेत्र" width="640" height="905" loading="lazy" decoding="async"><figcaption>विकसित राजस्थान @2047</figcaption></figure>
+      <figure><img src="/assets/store/rajasthan-arthvyavastha-preview-3.webp" alt="PDF का एक पृष्ठ: बजट योजनाओं के कार्ड" width="640" height="905" loading="lazy" decoding="async"><figcaption>योजना-कार्ड से revision करें</figcaption></figure>
     </div>
   </div>
 </section>
