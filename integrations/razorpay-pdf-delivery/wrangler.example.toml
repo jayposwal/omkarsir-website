@@ -9,15 +9,27 @@ binding = "PDF_BUCKET"
 bucket_name = "REPLACE_WITH_PRIVATE_R2_BUCKET_NAME"
 
 [vars]
+# R2 object key of each PDF (upload with exactly these names, bucket stays private).
 PDF_OBJECT_KEY = "adhunik-bharat-itihas.pdf"
 RAJASTHAN_HISTORY_PDF_OBJECT_KEY = "rajasthan-history.pdf"
-PRODUCT_NAME = "सम्पूर्ण आधुनिक भारत का इतिहास PDF"
-DOWNLOAD_TTL_SECONDS = "604800"
-# Pipe-separated substrings must match payment.description in a real webhook sample.
-# Keep old descriptions until a test transaction confirms the new Razorpay title is used.
+RAS_MAINS_P2_PDF_OBJECT_KEY = "ras-mains-paper-2.pdf"
+ECONOMIC_SURVEY_PDF_OBJECT_KEY = "rajasthan-arthvyavastha-2025-26.pdf"
+
+# Pipe-separated substrings that must appear in payment.description (the
+# Razorpay Payment Button title). Copy the exact title from a test payment.
+# An EMPTY value keeps that product switched off (fails closed).
 ALLOWED_PAYMENT_DESCRIPTIONS = "Adhunik Itihas PDF Offer Rs 9|Adhunik Itihas PDF Offer Rs 99|सम्पूर्ण आधुनिक भारत का इतिहास PDF"
-# Keep empty until a ₹49 Rajasthan History test payment reveals the exact signed payment.description.
-# Empty means the new product fails closed and does not trigger email delivery.
 RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS = ""
+RAS_MAINS_P2_PAYMENT_DESCRIPTIONS = ""
+ECONOMIC_SURVEY_PAYMENT_DESCRIPTIONS = ""
+
+# Optional: accepted amounts in paise per product (defaults in worker.js:
+# Modern History 900,4900,9900 · all others 4900).
+# ADHUNIK_AMOUNTS_PAISE = "4900"
+
+DOWNLOAD_TTL_SECONDS = "604800"
+# Website /verify: payments older than this many minutes must also give the checkout email.
+VERIFY_FRESH_MINUTES = "30"
+ALLOWED_ORIGINS = "https://omkarsir.com,https://www.omkarsir.com"
 # Must exactly match the deployed Worker URL through the trailing equals sign.
 PUBLIC_DOWNLOAD_BASE = "https://REPLACE-WORKER-DOMAIN/download?token="

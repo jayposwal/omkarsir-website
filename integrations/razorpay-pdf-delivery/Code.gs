@@ -2,11 +2,21 @@ var PDF_PRODUCTS_ = {
   'adhunik-bharat-itihas-pdf': {
     name: 'सम्पूर्ण आधुनिक भारत का इतिहास PDF',
     description: '20 अध्याय · 537 पृष्ठ · PDF',
-    amountPaise: [900, 9900]
+    amountPaise: [900, 4900, 9900]
   },
   'rajasthan-history-pdf': {
     name: 'सम्पूर्ण राजस्थान इतिहास PDF',
     description: '16 अध्याय · 234 पृष्ठ · PDF',
+    amountPaise: [4900]
+  },
+  'ras-mains-paper-2-pdf': {
+    name: 'RAS Mains Paper-II PYQ PDF',
+    description: '258 प्रश्न · 131 पृष्ठ · PDF',
+    amountPaise: [4900]
+  },
+  'rajasthan-arthvyavastha-pdf': {
+    name: 'सम्पूर्ण राजस्थान आर्थिक समीक्षा 2025-26 एवं बजट PDF',
+    description: '15 अध्याय · 253 पृष्ठ · PDF',
     amountPaise: [4900]
   }
 };

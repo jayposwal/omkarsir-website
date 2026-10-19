@@ -66,27 +66,69 @@ function descriptionMatches(payment, configuredDescriptions) {
   return !!description && allowed.some(s => description.includes(s));
 }
 
-function allowedDescription(payment, env) {
-  return descriptionMatches(payment, env.ALLOWED_PAYMENT_DESCRIPTIONS);
+// Every sellable PDF. A product is live only when its description allow-list
+// and R2 object key are configured; otherwise it fails closed (no email, no download).
+// Amounts can be overridden per product with a comma-separated paise list.
+const PRODUCTS = [
+  {
+    code: "adhunik-bharat-itihas-pdf",
+    name: "सम्पूर्ण आधुनिक भारत का इतिहास PDF",
+    description: "20 अध्याय · 537 पृष्ठ · PDF",
+    filename: "Sampoorna-Adhunik-Bharat-Itihas-Omkar-Sir.pdf",
+    descriptionsEnv: "ALLOWED_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "PDF_OBJECT_KEY",
+    amountsEnv: "ADHUNIK_AMOUNTS_PAISE",
+    defaultAmounts: [900, 4900, 9900]
+  },
+  {
+    code: "rajasthan-arthvyavastha-pdf",
+    name: "सम्पूर्ण राजस्थान आर्थिक समीक्षा 2025-26 एवं बजट PDF",
+    description: "15 अध्याय · 253 पृष्ठ · PDF",
+    filename: "Rajasthan-Arthik-Samiksha-2025-26-Omkar-Sir.pdf",
+    descriptionsEnv: "ECONOMIC_SURVEY_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "ECONOMIC_SURVEY_PDF_OBJECT_KEY",
+    amountsEnv: "ECONOMIC_SURVEY_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "rajasthan-history-pdf",
+    name: "सम्पूर्ण राजस्थान इतिहास PDF",
+    description: "16 अध्याय · 234 पृष्ठ · PDF",
+    filename: "Sampoorna-Rajasthan-History-Omkar-Sir.pdf",
+    descriptionsEnv: "RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "RAJASTHAN_HISTORY_PDF_OBJECT_KEY",
+    amountsEnv: "RAJASTHAN_HISTORY_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "ras-mains-paper-2-pdf",
+    name: "RAS Mains Paper-II PYQ PDF",
+    description: "258 प्रश्न · 131 पृष्ठ · PDF",
+    filename: "RAS-Mains-Paper-II-PYQ-Omkar-Sir.pdf",
+    descriptionsEnv: "RAS_MAINS_P2_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "RAS_MAINS_P2_PDF_OBJECT_KEY",
+    amountsEnv: "RAS_MAINS_P2_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  }
+];
+
+function productByCode(code) {
+  return PRODUCTS.find(p => p.code === code) || null;
+}
+
+function productAmounts(product, env) {
+  const configured = String(env[product.amountsEnv] || "").split(",")
+    .map(x => Number(x.trim())).filter(n => Number.isInteger(n) && n > 0);
+  return configured.length ? configured : product.defaultAmounts;
 }
 
 function matchConfiguredProduct(payment, env) {
   const amount = Number(payment.amount);
-  if ([900, 9900].includes(amount) && allowedDescription(payment, env)) {
-    return {
-      code: "adhunik-bharat-itihas-pdf",
-      name: "सम्पूर्ण आधुनिक भारत का इतिहास PDF",
-      description: "20 अध्याय · 537 पृष्ठ · PDF",
-      objectKey: String(env.PDF_OBJECT_KEY || "")
-    };
-  }
-  if (amount === 4900 && descriptionMatches(payment, env.RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS)) {
-    return {
-      code: "rajasthan-history-pdf",
-      name: "सम्पूर्ण राजस्थान इतिहास PDF",
-      description: "16 अध्याय · 234 पृष्ठ · PDF",
-      objectKey: String(env.RAJASTHAN_HISTORY_PDF_OBJECT_KEY || "")
-    };
+  for (const product of PRODUCTS) {
+    if (productAmounts(product, env).includes(amount) &&
+        descriptionMatches(payment, env[product.descriptionsEnv])) {
+      return { ...product, objectKey: String(env[product.objectKeyEnv] || "") };
+    }
   }
   return null;
 }
@@ -114,7 +156,7 @@ async function verifyDownloadToken(token, env) {
   try {
     const payload = JSON.parse(new TextDecoder().decode(fromBase64Url(parts[0])));
     if (payload.v !== 1 ||
-        !["adhunik-bharat-itihas-pdf", "rajasthan-history-pdf"].includes(payload.product) ||
+        !productByCode(payload.product) ||
         typeof payload.paymentId !== "string" ||
         !/^pay_[A-Za-z0-9]+$/.test(payload.paymentId) ||
         !emailIsValid(payload.email) ||
@@ -215,6 +257,100 @@ async function handleWebhook(request, env) {
   return json({ ok: true, emailed: true, duplicate: !!result.duplicate });
 }
 
+// Website delivery: the thank-you page sends the Razorpay payment ID it was
+// redirected with. The Worker asks Razorpay's API (server-side, with the key
+// secret) whether that payment is really captured for this product, and only
+// then returns a signed, time-limited download link. A payment ID alone is not
+// trusted for old payments: after VERIFY_FRESH_MINUTES the buyer's checkout
+// email must also match.
+function corsHeaders(request, env) {
+  const origin = request.headers.get("origin") || "";
+  const allowed = String(env.ALLOWED_ORIGINS || "https://omkarsir.com,https://www.omkarsir.com")
+    .split(",").map(x => x.trim()).filter(Boolean);
+  const headers = { "vary": "origin" };
+  if (allowed.includes(origin)) {
+    headers["access-control-allow-origin"] = origin;
+    headers["access-control-allow-methods"] = "GET, OPTIONS";
+  }
+  return headers;
+}
+
+function verifyJson(request, env, data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "no-store",
+      "x-robots-tag": "noindex, nofollow",
+      ...corsHeaders(request, env)
+    }
+  });
+}
+
+function maskEmail(email) {
+  const [user, domain] = String(email).split("@");
+  if (!domain) return "";
+  return user.slice(0, 2) + "***@" + domain;
+}
+
+async function handleVerify(request, env) {
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(request, env) });
+  if (request.method !== "GET") return verifyJson(request, env, { ok: false, error: "method" }, 405);
+  if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET || !env.DOWNLOAD_SIGNING_SECRET || !env.PUBLIC_DOWNLOAD_BASE) {
+    return verifyJson(request, env, { ok: false, error: "not_configured" }, 503);
+  }
+
+  const url = new URL(request.url);
+  const paymentId = String(url.searchParams.get("payment_id") || "").trim();
+  const requested = productByCode(String(url.searchParams.get("product") || ""));
+  const email = String(url.searchParams.get("email") || "").trim().toLowerCase();
+  if (!/^pay_[A-Za-z0-9]{6,40}$/.test(paymentId) || !requested) {
+    return verifyJson(request, env, { ok: false, error: "bad_request" }, 400);
+  }
+
+  let res;
+  try {
+    res = await fetch("https://api.razorpay.com/v1/payments/" + encodeURIComponent(paymentId), {
+      headers: { authorization: "Basic " + btoa(env.RAZORPAY_KEY_ID + ":" + env.RAZORPAY_KEY_SECRET) }
+    });
+  } catch (err) {
+    console.error("Razorpay API unreachable:", String(err));
+    return verifyJson(request, env, { ok: false, error: "gateway_unreachable" }, 502);
+  }
+  if (res.status === 400 || res.status === 404) return verifyJson(request, env, { ok: false, error: "not_found" }, 404);
+  if (!res.ok) {
+    console.error("Razorpay API error:", res.status);
+    return verifyJson(request, env, { ok: false, error: "gateway_error" }, 502);
+  }
+  const payment = await res.json();
+
+  if (payment.status !== "captured" || payment.currency !== "INR") {
+    return verifyJson(request, env, { ok: false, error: "not_captured", status: String(payment.status || "") }, 402);
+  }
+  const product = matchConfiguredProduct(payment, env);
+  if (!product || product.code !== requested.code) {
+    return verifyJson(request, env, { ok: false, error: "wrong_product" }, 403);
+  }
+  if (!emailIsValid(payment.email)) {
+    return verifyJson(request, env, { ok: false, error: "no_email_on_payment" }, 422);
+  }
+  const ageMinutes = (Date.now() / 1000 - Number(payment.created_at || 0)) / 60;
+  const freshMinutes = Number(env.VERIFY_FRESH_MINUTES || 30);
+  if (ageMinutes > freshMinutes && email !== String(payment.email).toLowerCase()) {
+    return verifyJson(request, env, { ok: false, error: "email_required", emailHint: maskEmail(payment.email) }, 401);
+  }
+
+  const token = await createDownloadToken(payment, env, product.code);
+  return verifyJson(request, env, {
+    ok: true,
+    product: product.code,
+    productName: product.name,
+    downloadUrl: String(env.PUBLIC_DOWNLOAD_BASE) + encodeURIComponent(token),
+    emailHint: maskEmail(payment.email),
+    amountInr: Number(payment.amount) / 100
+  });
+}
+
 async function handleDownload(request, env) {
   if (request.method !== "GET") return new Response("Method not allowed", { status: 405 });
   if (!env.PDF_BUCKET || !env.DOWNLOAD_SIGNING_SECRET) {
@@ -231,10 +367,8 @@ async function handleDownload(request, env) {
     });
   }
 
-  const isRajasthanHistory = payload.product === "rajasthan-history-pdf";
-  const objectKey = isRajasthanHistory
-    ? String(env.RAJASTHAN_HISTORY_PDF_OBJECT_KEY || "")
-    : String(env.PDF_OBJECT_KEY || "");
+  const product = productByCode(payload.product);
+  const objectKey = String(env[product.objectKeyEnv] || "");
   if (!objectKey) {
     console.error("The configured PDF object key is missing for product:", payload.product);
     return new Response("इस PDF की download service अभी configure नहीं है। कृपया email2omkara@gmail.com पर संपर्क करें।", {
@@ -249,7 +383,7 @@ async function handleDownload(request, env) {
     });
   }
 
-  const safeFilename = isRajasthanHistory ? "Sampoorna-Rajasthan-History-Omkar-Sir.pdf" : "Sampoorna-Adhunik-Bharat-Itihas-Omkar-Sir.pdf";
+  const safeFilename = product.filename;
   const headers = new Headers();
   object.writeHttpMetadata(headers);
   headers.set("content-type", "application/pdf");
@@ -266,6 +400,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/webhook") return handleWebhook(request, env);
     if (url.pathname === "/download") return handleDownload(request, env);
+    if (url.pathname === "/verify") return handleVerify(request, env);
     return new Response("Omkar Sir PDF delivery service", {
       status: 200,
       headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
