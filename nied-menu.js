@@ -696,6 +696,8 @@
   }
 
   function init(){
+    // Homepage is a hub page, not an article — no comment box there.
+    if(location.pathname === '/' || location.pathname === '/index.html') return;
     injectStyle();
     var footer = document.querySelector('footer');
     if(!footer) return;
