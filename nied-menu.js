@@ -22,6 +22,50 @@
     });
   })();
 
+  // Site-wide GA4: pages generated without the gtag snippet (e.g. quizzes/*)
+  // get it injected here, so every page that loads nied-menu.js is tracked.
+  (function ensureGA4(){
+    var GA_ID = 'G-WCK16L4WZX';
+    if(typeof window.gtag === 'function' || document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+  })();
+
+  // Site-wide GA4 conversion events — one delegated listener for every
+  // App / WhatsApp / Telegram / Course / PDF / Social click on any page.
+  // Mark these as Key Events in GA4 Admin → Events.
+  (function trackConversionClicks(){
+    function eventFor(href){
+      if(/play\.google\.com|apps\.apple\.com/.test(href)) return 'app_install_click';
+      if(/wa\.me|whatsapp\.com/.test(href)) return 'whatsapp_click';
+      if(/t\.me\//.test(href)) return 'telegram_click';
+      if(/omkarsir\.in/.test(href)) return 'course_click';
+      if(/\.pdf(\?|#|$)|drive\.google\.com|archive\.org/.test(href)) return 'pdf_download';
+      if(/youtube\.com|youtu\.be|instagram\.com/.test(href)) return 'social_click';
+      return null;
+    }
+    document.addEventListener('click', function(e){
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if(!a || typeof window.gtag !== 'function') return;
+      var name = eventFor(a.href);
+      if(!name) return;
+      var placement = a.className && typeof a.className === 'string' ? a.className.split(' ')[0] : '';
+      if(!placement && a.closest('#nied-popup-overlay')) placement = 'popup';
+      window.gtag('event', name, {
+        link_url: a.href,
+        link_text: (a.textContent || '').trim().slice(0, 80),
+        placement: placement || 'inline',
+        page_path: location.pathname
+      });
+    }, true);
+  })();
+
   // Site-wide timed conversion popup injection (15s delay)
   (function injectPopupScript(){
     if(document.getElementById('nied-popup-script')) return;
@@ -49,7 +93,7 @@
       ".nied-nav-inner{background:rgba(255,255,255,.98);color:#1b2a6b;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px clamp(14px,2.2vw,30px);flex-wrap:nowrap;box-shadow:0 5px 18px rgba(31,48,86,.07);border-bottom:1px solid #edf0f5;position:relative;min-height:72px}" +
       ".nied-logo{color:#1b2a6b;font-weight:800;font-size:1.05rem;text-decoration:none;letter-spacing:-.15px}" +
       ".nied-logo-text{display:flex;flex-direction:column;line-height:1.25}" +
-      ".nied-logo-sub{font-weight:600;font-size:.68rem;color:#747d96;margin-top:3px;letter-spacing:.1px}" +
+      ".nied-logo-sub{font-weight:600;font-size:.68rem;color:#5f6880;margin-top:3px;letter-spacing:.1px}" +
       ".nied-burger{display:none;order:4;background:#fff;border:1px solid #dfe5f0;border-radius:10px;color:#1b2a6b;font-size:1.45rem;cursor:pointer;line-height:1;padding:7px 11px}" +
       ".nied-menu{list-style:none;display:flex;gap:3px;margin:0;padding:0;align-items:center;justify-content:flex-end;flex:1;order:2}" +
       ".nied-menu li{position:relative}" +
@@ -139,7 +183,7 @@
       var out = '';
       (children || []).forEach(function(ch){
         if(ch.type === 'submenu'){
-          out += '<li class="nied-has-submenu"><a class="nied-sub-link">' + esc(ch.label) + ' <span class="nied-subcaret">&#9656;</span></a><ul class="nied-submenu">';
+          out += '<li class="nied-has-submenu"><a class="nied-sub-link" href="#" role="button" aria-expanded="false">' + esc(ch.label) + ' <span class="nied-subcaret">&#9656;</span></a><ul class="nied-submenu">';
           out += renderChildren(ch.children);
           out += '</ul></li>';
         } else {
@@ -150,7 +194,7 @@
     }
     (menu.items || []).forEach(function(item){
       if(item.type === 'dropdown'){
-        html += '<li class="nied-has-dropdown"><a class="nied-top-link">' + formatTopLabel(item.label, ' <span class="nied-caret">&#9662;</span>') + '</a><ul class="nied-dropdown">';
+        html += '<li class="nied-has-dropdown"><a class="nied-top-link" href="#" role="button" aria-expanded="false">' + formatTopLabel(item.label, ' <span class="nied-caret">&#9662;</span>') + '</a><ul class="nied-dropdown">';
         html += renderChildren(item.children);
         html += '</ul></li>';
       } else {
@@ -187,6 +231,7 @@
           li.querySelectorAll('.nied-has-submenu.open').forEach(function(s){ s.classList.remove('open'); });
         });
         if(!wasOpen) parent.classList.add('open');
+        syncExpanded();
       });
     });
     mount.querySelectorAll('.nied-has-submenu > a.nied-sub-link').forEach(function(a){
@@ -198,14 +243,21 @@
         var siblingGroup = parent.parentElement;
         siblingGroup.querySelectorAll(':scope > .nied-has-submenu.open').forEach(function(li){ li.classList.remove('open'); });
         if(!wasOpen) parent.classList.add('open');
+        syncExpanded();
       });
     });
     document.addEventListener('click', function(e){
       if(!mount.contains(e.target)){
         mount.querySelectorAll('.nied-has-dropdown.open').forEach(function(li){ li.classList.remove('open'); });
         mount.querySelectorAll('.nied-has-submenu.open').forEach(function(li){ li.classList.remove('open'); });
+        syncExpanded();
       }
     });
+    function syncExpanded(){
+      mount.querySelectorAll('a[role="button"][aria-expanded]').forEach(function(a){
+        a.setAttribute('aria-expanded', a.parentElement.classList.contains('open') ? 'true' : 'false');
+      });
+    }
 
     setupSearch(mount);
   }
@@ -420,6 +472,7 @@
       var wa = document.createElement('a');
       wa.href = 'https://wa.me/917023166962?text=' + msg;
       wa.className = 'wa-float';
+      wa.setAttribute('aria-label', 'WhatsApp पर संपर्क करें');
       wa.target = '_blank';
       wa.rel = 'noopener';
       wa.innerHTML = '<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span>';
@@ -430,6 +483,7 @@
       var app = document.createElement('a');
       app.href = 'https://play.google.com/store/apps/details?id=co.april2019.techa';
       app.className = 'app-float';
+      app.setAttribute('aria-label', 'NIEd App डाउनलोड करें (Google Play)');
       app.target = '_blank';
       app.rel = 'noopener';
       app.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M3 20.5v-17c0-.59.34-1.1.83-1.34L13.69 12l-9.86 9.84c-.49-.24-.83-.75-.83-1.34m13.81-8.5l2.35-2.35 3.13 1.81c.88.51.88 1.76 0 2.27l-3.13 1.81L16.81 12M14.5 12L4.7 2.2 15.19 8.24 14.5 12z"/></svg><span>App Download</span>';
@@ -641,6 +695,22 @@
     section.innerHTML = '<div class="cmt-loading">Comments लोड हो रहे हैं...</div>';
     footer.parentNode.insertBefore(section, footer);
 
+    // Firebase SDK (~300 KB) is fetched only when the comments are near the
+    // viewport, not on every page load.
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        if(entries.some(function(en){ return en.isIntersecting; })){
+          io.disconnect();
+          loadComments(section);
+        }
+      }, {rootMargin: '600px 0px'});
+      io.observe(section);
+    } else {
+      loadComments(section);
+    }
+  }
+
+  function loadComments(section){
     Promise.all([
       loadScript('https://www.gstatic.com/firebasejs/' + SDK_VERSION + '/firebase-app-compat.js'),
       loadScript('https://www.gstatic.com/firebasejs/' + SDK_VERSION + '/firebase-firestore-compat.js')

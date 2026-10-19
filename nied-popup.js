@@ -317,8 +317,6 @@
   }
 
   function initPopup() {
-    if (isCoolingDown()) return;
-
     injectStyles();
     var overlay = createPopupDOM();
     var closeBtn = document.getElementById('nied-popup-close');
@@ -407,14 +405,25 @@
       }
     });
 
-    // Trigger after 15 seconds (or immediately if force test)
+    // Next frame so the opening transition still plays on the freshly added DOM
+    requestAnimationFrame(function() { requestAnimationFrame(show); });
+  }
+
+  // The popup DOM (and its ~100 KB poster images) is built only when it is
+  // about to open, so it no longer competes with the page's own content on
+  // load. Posters are warmed a few seconds early so they appear instantly.
+  function schedulePopup() {
+    if (isCoolingDown()) return;
     var delay = isForceTest ? 250 : CONFIG.delayMs;
-    setTimeout(show, delay);
+    setTimeout(function() {
+      CONFIG.slides.forEach(function(s) { new Image().src = s.webp; });
+    }, Math.max(0, delay - 4000));
+    setTimeout(initPopup, delay);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPopup);
+    document.addEventListener('DOMContentLoaded', schedulePopup);
   } else {
-    initPopup();
+    schedulePopup();
   }
 })();
