@@ -1,0 +1,329 @@
+#!/usr/bin/env python3
+"""
+Builds the Premium Notes Store from ONE product list:
+  - store.html (full store page)
+  - the "Premium Notes Store" section on index.html (between the STORE markers)
+
+To add a new PDF: append an entry to PRODUCTS (cover images in /assets/store/),
+run `python3 seo/build_store.py`, commit.
+"""
+import html
+import json
+import re
+
+PRODUCTS = [
+    {
+        "code": "rajasthan-history-pdf",
+        "url": "/rajasthan-history-pdf.html",
+        "title": "सम्पूर्ण राजस्थान इतिहास",
+        "tag": "राजस्थान इतिहास",
+        "badge": "✨ Updated Version 2.0",
+        "desc": "स्रोतों और प्राचीन सभ्यताओं से प्रमुख राजवंश, 1857, प्रजामंडल और एकीकरण तक, सरल हिंदी में।",
+        "meta": ["16 अध्याय", "234 पृष्ठ", "समय-रेखा व सार"],
+        "pages": 234,
+        "cover": "rajasthan-itihas-poster",
+        "price": 49, "mrp": 199,
+        "sample": ("📄 Free Sample", "/assets/store/rajasthan-itihas-sample.pdf"),
+    },
+    {
+        "code": "adhunik-bharat-itihas-pdf",
+        "url": "/adhunik-bharat-itihas-pdf.html",
+        "title": "सम्पूर्ण आधुनिक भारत का इतिहास",
+        "tag": "भारत का इतिहास",
+        "badge": "🗺️ रंगीन मानचित्र",
+        "desc": "यूरोपीय कंपनियों के आगमन से स्वतंत्र भारत तक, मानचित्र, समय-रेखा और तालिकाओं के साथ।",
+        "meta": ["20 अध्याय", "537 पृष्ठ", "मानचित्र व तालिकाएँ"],
+        "pages": 537,
+        "cover": "adhunik-bharat-itihas-poster",
+        "price": 49, "mrp": 199,
+        "sample": ("📄 अध्याय 1 Free", "/assets/adhunik-bharat-itihas/pdf/adhunik-bharat-itihas-ch01.pdf"),
+    },
+    {
+        "code": "ras-mains-paper-2-pdf",
+        "url": "/ras-mains-paper-2-pdf.html",
+        "title": "RAS Mains Paper-II PYQ",
+        "tag": "RAS Mains",
+        "badge": "🗓️ 2013–2024 PYQ",
+        "desc": "Paper-II के 258 प्रश्न, तीनों Units में, हर प्रश्न के अंक और सरल हिंदी उत्तर के साथ।",
+        "meta": ["258 प्रश्न", "131 पृष्ठ", "3 Units"],
+        "pages": 131,
+        "cover": "ras-mains-paper-2-poster",
+        "price": 49, "mrp": 199,
+        "sample": ("📖 Online Free पढ़ें", "/ras-mains-paper-2-prototype.html"),
+    },
+    {
+        "code": "rajasthan-arthvyavastha-pdf",
+        "url": "/rajasthan-arthvyavastha-pdf.html",
+        "title": "राजस्थान आर्थिक समीक्षा 2025-26 एवं बजट",
+        "tag": "राजस्थान अर्थव्यवस्था",
+        "badge": "📊 बजट 2026-27 सहित",
+        "desc": "विकसित राजस्थान @2047, GSDP, कृषि, उद्योग, अवसंरचना और बजट 2026-27 का योजना-कोश।",
+        "meta": ["15 अध्याय", "253 पृष्ठ", "नवीनतम आंकड़े"],
+        "pages": 253,
+        "cover": "rajasthan-arthvyavastha-poster",
+        "price": 49, "mrp": 199,
+        "sample": None,
+    },
+]
+
+E = html.escape
+CRED = "पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students"
+TOTAL_PAGES = sum(p["pages"] for p in PRODUCTS)
+
+
+def off(p):
+    return round((p["mrp"] - p["price"]) * 100 / p["mrp"])
+
+
+def store_card(p):
+    sample = ""
+    if p["sample"]:
+        label, href = p["sample"]
+        ext = ' target="_blank" rel="noopener"' if href.endswith(".pdf") else ""
+        sample = f'<a class="ghost" href="{href}"{ext}>{E(label)}</a>'
+    meta = "".join(f"<span>{E(m)}</span>" for m in p["meta"])
+    return f'''      <article class="card">
+        <a class="thumb" href="{p["url"]}" aria-label="{E(p["title"])} PDF">
+          <span class="badge">{E(p["badge"])}</span>
+          <img src="/assets/store/{p["cover"]}-420.webp" alt="{E(p["title"])} — PDF का मुखपृष्ठ" width="420" height="594" loading="lazy" decoding="async">
+          <span class="seal">{off(p)}%<small>छूट</small></span>
+        </a>
+        <div class="body">
+          <span class="tag">{E(p["tag"])}</span>
+          <h3><a href="{p["url"]}">{E(p["title"])}</a></h3>
+          <p>{E(p["desc"])}</p>
+          <div class="meta">{meta}</div>
+          <div class="price"><b>₹{p["price"]}</b><s>₹{p["mrp"]}</s><em>{off(p)}% छूट</em></div>
+          <div class="actions"><a class="btn" href="{p["url"]}">देखें और खरीदें →</a>{sample}</div>
+        </div>
+      </article>'''
+
+
+def home_card(p):
+    return f'''      <a class="ps-card" href="{p["url"]}">
+        <span class="ps-cover"><img src="/assets/store/{p["cover"]}-420.webp" alt="{E(p["title"])} PDF का कवर" width="420" height="594" loading="lazy" decoding="async"><span class="ps-off">{off(p)}% छूट</span></span>
+        <span class="ps-tag">{E(p["tag"])}</span>
+        <strong>{E(p["title"])}</strong>
+        <span class="ps-meta">{E(" · ".join(p["meta"][:2]))}</span>
+        <span class="ps-price"><b>₹{p["price"]}</b> <s>₹{p["mrp"]}</s></span>
+        <span class="ps-go">देखें और खरीदें →</span>
+      </a>'''
+
+
+def build_store():
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Omkar Sir Premium Notes Store",
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": "https://omkarsir.com" + p["url"],
+                               "name": p["title"] + " PDF"} for i, p in enumerate(PRODUCTS)]}
+    cards = "\n".join(store_card(p) for p in PRODUCTS)
+    title = "Premium Notes Store — RAS व Rajasthan Exam PDF | Omkar Sir"
+    desc = ("ओंकार सर का Premium Notes Store: सम्पूर्ण राजस्थान इतिहास, आधुनिक भारत का इतिहास, RAS Mains Paper-II PYQ "
+            "और राजस्थान आर्थिक समीक्षा 2025-26 की Hindi PDF, हर PDF ₹49 में।")
+    return f'''<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WCK16L4WZX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{window.dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-WCK16L4WZX');
+</script>
+<title>{E(title)}</title>
+<meta name="description" content="{E(desc)}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Omkar Singh Gurjar">
+<link rel="canonical" href="https://omkarsir.com/store.html">
+<meta name="theme-color" content="#1B2A6B">
+<meta property="og:title" content="{E(title)}">
+<meta property="og:description" content="{E(desc)}">
+<meta property="og:url" content="https://omkarsir.com/store.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://omkarsir.com/og-image.png">
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+<link rel="stylesheet" href="/assets/fonts/gf-ee0c307c.css">
+<style>
+:root{{--navy:#1B2A6B;--navy-d:#111B47;--saffron:#FF6B00;--saffron-d:#C14F00;--soft:#FFF1E6;--green:#0A8F55;--ink:#1A2140;--muted:#5B6385;--line:#E2E7F2;--bg:#F5F7FC;--serif:'Tiro Devanagari Hindi',serif;--sans:'Mukta',sans-serif}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16.5px;text-align:left}}
+a{{color:inherit}}
+:focus-visible{{outline:3px solid var(--saffron);outline-offset:3px}}
+.wrap{{width:min(1160px,calc(100% - 32px));margin:0 auto}}
+.hero{{position:relative;overflow:hidden;color:#fff;padding:54px 0 64px;background:radial-gradient(700px 380px at 92% 115%,rgba(255,138,43,.55),transparent 65%),linear-gradient(160deg,#141F55,#1B2A6B 60%,#22327A)}}
+.hero::before{{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:36px 36px}}
+.hero .wrap{{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}}
+.kicker{{display:inline-block;background:var(--saffron);font-weight:800;font-size:14px;padding:5px 14px;border-radius:40px;letter-spacing:.3px}}
+.hero h1{{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,58px);line-height:1.18;margin:14px 0 10px}}
+.hero h1 span{{color:#FFB070}}
+.lead{{color:#DCE3FF;font-size:18px;max-width:36em}}
+.cred{{margin-top:14px;font-weight:700;color:#FFD3AE;font-size:15.5px}}
+.trust{{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}}
+.trust span{{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:10px;font-size:14px;font-weight:600}}
+.stack{{display:flex;align-items:flex-end}}
+.stack img{{width:118px;height:auto;border-radius:4px 8px 8px 4px;box-shadow:10px 14px 30px rgba(0,0,0,.4);margin-left:-34px}}
+.stack img:first-child{{margin-left:0;transform:rotate(-7deg)}}
+.stack img:nth-child(2){{transform:rotate(-2deg) translateY(-10px)}}
+.stack img:nth-child(3){{transform:rotate(3deg) translateY(-4px)}}
+.stack img:nth-child(4){{transform:rotate(8deg)}}
+.stats{{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}}
+.stats b{{display:block;font-family:var(--serif);font-weight:400;font-size:36px;line-height:1;color:#fff}}
+.stats span{{font-size:14px;color:#C9D1F2}}
+.shelf{{padding:52px 0 26px}}
+.shelf h2,.sec h2{{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:clamp(28px,3.6vw,40px);line-height:1.25}}
+.sub{{color:var(--muted);margin:6px 0 26px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:24px}}
+.card{{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(27,42,107,.08);transition:transform .18s,box-shadow .18s}}
+.card:hover{{transform:translateY(-4px);box-shadow:0 18px 40px rgba(27,42,107,.15)}}
+.thumb{{position:relative;display:flex;justify-content:center;padding:26px 20px 22px;background:radial-gradient(260px 160px at 50% 100%,#FFE7D3,transparent 70%),linear-gradient(160deg,#EEF2FF,#FFF8F2)}}
+.thumb img{{width:58%;max-width:170px;height:auto;border-radius:3px 8px 8px 3px;box-shadow:12px 16px 28px rgba(27,42,107,.3);transition:transform .2s}}
+.card:hover .thumb img{{transform:rotate(-2deg) scale(1.03)}}
+.badge{{position:absolute;top:12px;left:12px;background:#fff;color:var(--navy);font-size:12.5px;font-weight:800;padding:4px 10px;border-radius:30px;box-shadow:0 4px 12px rgba(27,42,107,.12)}}
+.seal{{position:absolute;right:16px;bottom:16px;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:18px;line-height:1;box-shadow:0 0 0 4px #fff,0 8px 18px rgba(10,143,85,.35);transform:rotate(10deg)}}
+.seal small{{font-size:11px;margin-top:2px}}
+.body{{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}}
+.tag{{align-self:flex-start;background:var(--soft);color:var(--saffron-d);font-size:12.5px;font-weight:800;padding:3px 10px;border-radius:30px}}
+.body h3{{font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.3;color:var(--navy);margin:10px 0 6px}}
+.body h3 a{{text-decoration:none}}
+.body p{{font-size:15px;color:var(--muted)}}
+.meta{{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 14px}}
+.meta span{{font-size:13px;font-weight:700;background:#F1F4FA;color:#47516C;border-radius:8px;padding:3px 9px}}
+.price{{margin-top:auto;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}}
+.price b{{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1;color:var(--navy)}}
+.price s{{font-size:18px;color:#8A90A8;text-decoration-color:#D9363E}}
+.price em{{font-style:normal;background:var(--green);color:#fff;font-weight:800;font-size:13px;padding:2px 9px;border-radius:7px}}
+.actions{{display:flex;flex-direction:column;gap:8px;margin-top:14px}}
+.btn{{flex:1;display:inline-flex;justify-content:center;align-items:center;min-height:46px;padding:10px 16px;border-radius:12px;background:var(--saffron);color:#fff;font-weight:800;text-decoration:none;box-shadow:0 8px 18px rgba(255,107,0,.25)}}
+.btn:hover{{background:#E85F00}}
+.ghost{{display:flex;justify-content:center;align-items:center;min-height:42px;padding:10px 14px;border-radius:12px;border:2px solid #FFD0A8;color:var(--saffron-d);font-weight:800;text-decoration:none;font-size:14.5px}}
+.soon{{border:2px dashed #CFD7EA;background:rgba(255,255,255,.65);box-shadow:none;justify-content:center;align-items:center;text-align:center;padding:30px 22px;color:var(--muted)}}
+.soon:hover{{transform:none;box-shadow:none}}
+.soon strong{{display:block;font-family:var(--serif);font-weight:400;font-size:24px;color:var(--navy);margin-bottom:6px}}
+.soon a{{display:inline-block;margin-top:12px;font-weight:800;color:var(--navy)}}
+.sec{{padding:44px 0}}
+.sec.alt{{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}}
+.why{{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}}
+.why div{{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px}}
+.why b{{display:block;color:var(--navy);font-size:17px;margin:6px 0 2px}}
+.why span{{color:var(--muted);font-size:15px}}
+.why i{{font-style:normal;font-size:26px}}
+.steps{{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;counter-reset:s}}
+.steps li{{list-style:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}}
+.steps li::before{{counter-increment:s;content:counter(s);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:8px}}
+.steps b{{display:block;color:var(--navy);font-size:17px}}
+.steps span{{color:var(--muted);font-size:15px}}
+footer{{background:var(--navy);color:#C9D1F2;text-align:center;padding:32px 20px 40px;font-size:15px}}
+footer b{{color:#fff;font-size:18px}}
+footer a{{color:#FFB070;text-decoration:none;margin:0 6px}}
+@media(max-width:900px){{.hero .wrap{{grid-template-columns:1fr}}.stack{{justify-content:center;margin-top:8px}}.why{{grid-template-columns:1fr 1fr}}.steps{{grid-template-columns:1fr}}}}
+@media(max-width:520px){{.hero{{padding:36px 0 44px}}.stack img{{width:88px;margin-left:-26px}}.why{{grid-template-columns:1fr}}.lead{{font-size:16.5px}}}}
+@media(prefers-reduced-motion:reduce){{.card,.thumb img{{transition:none}}}}
+</style>
+<style id="nied-navbar-reserve">#nied-navbar{{min-height:72px}}@media(max-width:520px){{#nied-navbar{{min-height:62px}}}}</style>
+</head>
+<body>
+<div id="nied-navbar"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">💎 PREMIUM NOTES STORE</span>
+      <h1>ओंकार सर के <span>Premium Notes</span>, एक ही जगह</h1>
+      <p class="lead">RAS और राजस्थान की परीक्षाओं के लिए सरल हिंदी में तैयार सम्पूर्ण PDF पुस्तकें। एक बार खरीदें, phone पर पढ़ें, print करें।</p>
+      <p class="cred">🏆 {CRED}</p>
+      <div class="stats"><div><b>{len(PRODUCTS)}</b><span>Premium PDF</span></div><div><b>{TOTAL_PAGES:,}+</b><span>कुल पृष्ठ</span></div><div><b>₹49</b><span>हर PDF</span></div></div>
+      <div class="trust"><span>🔒 Razorpay से सुरक्षित भुगतान</span><span>⚡ भुगतान के बाद तुरंत download</span><span>📧 Email पर भी link</span><span>🚫 PDF में कोई विज्ञापन नहीं</span></div>
+    </div>
+    <div class="stack" aria-hidden="true">
+{"".join(f'      <img src="/assets/store/{p["cover"]}-420.webp" alt="" width="420" height="594">{chr(10)}' for p in PRODUCTS)}    </div>
+  </div>
+</header>
+
+<section class="shelf" id="pdfs">
+  <div class="wrap">
+    <h2>सभी Premium PDF</h2>
+    <p class="sub">हर PDF के पेज पर नमूना पन्ने, विषय-सूची और पूरी जानकारी देखें, फिर खरीदें।</p>
+    <div class="grid">
+{cards}
+      <article class="card soon">
+        <div>
+          <strong>📚 और PDF जल्द आ रही हैं</strong>
+          नई Premium PDF आते ही सबसे पहले Telegram पर बताई जाएँगी।
+          <br><a href="https://t.me/omkarsirofficial" rel="noopener">Telegram से जुड़ें →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap">
+    <h2>Premium Notes क्यों?</h2>
+    <div class="why">
+      <div><i>📚</i><b>सम्पूर्ण पुस्तक</b><span>पूरा विषय एक PDF में, अध्याय-वार क्रम में।</span></div>
+      <div><i>🗣️</i><b>सरल हिंदी</b><span>कहानी जैसी व्याख्या, कठिन बातें आसान भाषा में।</span></div>
+      <div><i>📊</i><b>तालिका व सार</b><span>तालिकाएँ, समय-रेखा और हर अध्याय का सार, तेज़ revision के लिए।</span></div>
+      <div><i>📱</i><b>कहीं भी पढ़ें</b><span>Phone, tablet या laptop पर offline पढ़ें और print करें।</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>खरीदना कैसे है?</h2>
+    <ol class="steps">
+      <li><b>PDF चुनें</b><span>PDF का पेज खोलकर नमूना पन्ने और विषय-सूची देखें।</span></li>
+      <li><b>सुरक्षित भुगतान करें</b><span>UPI, Card या NetBanking से, Razorpay के ज़रिए।</span></li>
+      <li><b>तुरंत Download</b><span>भुगतान की जाँच होते ही download पेज खुलेगा, link email पर भी आएगा।</span></li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <b>ओंकार सर · New India Education</b>
+  <p>Premium Notes Store</p>
+  <p style="margin-top:8px"><a href="/">Home</a><a href="/all-notes.html">Free Notes</a><a href="/previous-year-papers.html">Previous Year Papers</a><a href="/refund-policy.html">Refund Policy</a><a href="/contact.html">Contact</a></p>
+</footer>
+<script src="/nied-menu.js" defer></script>
+</body>
+</html>
+'''
+
+
+def build_home_section():
+    cards = "\n".join(home_card(p) for p in PRODUCTS)
+    return f'''<!-- STORE:START (generated by seo/build_store.py) -->
+<section class="featured-pdf-sec ps-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
+  <div class="ps-head">
+    <div>
+      <span class="ps-kicker">💎 PREMIUM NOTES STORE</span>
+      <h2 id="featured-pdf-title">ओंकार सर के Premium Notes</h2>
+      <p>सम्पूर्ण PDF पुस्तकें, सरल हिंदी में। हर PDF सिर्फ़ <b>₹49</b>, भुगतान के बाद तुरंत download।</p>
+    </div>
+    <a class="ps-all" href="/store.html">पूरा Store देखें →</a>
+  </div>
+  <div class="ps-grid">
+{cards}
+  </div>
+</section>
+<!-- STORE:END -->'''
+
+
+def main():
+    with open("store.html", "w", encoding="utf-8") as f:
+        f.write(build_store())
+    with open("index.html", encoding="utf-8") as f:
+        s = f.read()
+    section = build_home_section()
+    if "<!-- STORE:START" in s:
+        s = re.sub(r"<!-- STORE:START.*?<!-- STORE:END -->", lambda m: section, s, count=1, flags=re.S)
+    else:
+        s, n = re.subn(r'<section class="featured-pdf-sec" id="featured-pdf".*?</section>', lambda m: section, s, count=1, flags=re.S)
+        assert n == 1, "featured-pdf section not found"
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(s)
+    print("store.html + index.html store section built:", len(PRODUCTS), "products")
+
+
+if __name__ == "__main__":
+    main()
