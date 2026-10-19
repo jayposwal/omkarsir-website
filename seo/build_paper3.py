@@ -22,8 +22,8 @@ OUT = "ras-mains-paper-3-sample.html"
 URL = "https://omkarsir.com/" + OUT
 TITLE = "RAS Mains Paper-III PYQ (2013–2024) Answer Key — Free Sample | Omkar Sir"
 H1 = "RAS Mains Paper-III PYQ (2013–2024) Answer Key"
-DESC = ("RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise PYQ और सरल हिंदी उत्तर। "
-        "भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि — पहले 10 प्रश्न मुफ्त पढ़ें; पूरी 140 पृष्ठ की PDF ₹49 में।")
+DESC = (f"RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise PYQ और सरल हिंदी उत्तर। "
+        f"भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, व्यवहार और विधि — पहले {len(QUESTIONS)} प्रश्न मुफ्त पढ़ें; पूरी 140 पृष्ठ की PDF ₹49 में।")
 CRED = "पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students"
 TOTAL_Q, TOTAL_PAGES = 306, 140
 
@@ -369,17 +369,19 @@ def build():
 <meta name="author" content="Omkar Singh Gurjar">
 <meta name="theme-color" content="#1B2A6B">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="{E(TITLE)}">
 <meta property="og:description" content="{E(DESC, quote=True)}">
 <meta property="og:url" content="{URL}">
 <meta property="og:site_name" content="Omkar Sir | New India Education">
 <meta property="og:locale" content="hi_IN">
 <meta property="og:image" content="https://omkarsir.com/og-image.png">
+<meta property="og:image:alt" content="{E(TITLE)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{E(TITLE)}">
 <meta name="twitter:description" content="{E(DESC, quote=True)}">
 <meta name="twitter:image" content="https://omkarsir.com/og-image.png">
+<meta name="twitter:url" content="{URL}">
 <link rel="stylesheet" href="/assets/fonts/gf-9f62de1d.css">
 <style>{CSS}</style>
 {jsonld()}
