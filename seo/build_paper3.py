@@ -96,8 +96,8 @@ def render_answer(blocks):
                 in_sub = True
             out.append(f"<li><strong>{bold(b[1])}</strong> — {bold(b[2])}</li>")
         else:
+            close_sub()
             if in_ul:
-                close_sub()
                 out.append("</li></ul>")
                 in_ul = False
             if kind == "p":
@@ -106,8 +106,8 @@ def render_answer(blocks):
                 out.append(f'<h3 class="ah">{bold(b[1])}</h3>')
             elif kind == "end":
                 out.append(f'<div class="concl"><span>✍️ निष्कर्ष</span><p>{bold(b[1])}</p></div>')
+    close_sub()
     if in_ul:
-        close_sub()
         out.append("</li></ul>")
     return "".join(out)
 
