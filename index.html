@@ -45,6 +45,7 @@
 
 <link rel="preload" href="/assets/fonts/hind-400-devanagari.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/poppins-800-devanagari.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="/assets/img/omkar-sir-hero-560.webp" imagesrcset="/assets/img/omkar-sir-hero-400.webp 400w, /assets/img/omkar-sir-hero-560.webp 560w, /assets/img/omkar-sir-hero-880.webp 880w" imagesizes="(max-width:760px) 260px, 420px" type="image/webp" fetchpriority="high">
 <!-- Self-hosted fonts inlined on the homepage (no render-blocking font CSS request); other pages use /assets/fonts/nied-fonts.css -->
 <style>
 /* Self-hosted Google Fonts (Hind + Poppins) — NIEd. Generated from fonts.googleapis.com css2. */
@@ -240,94 +241,163 @@
 </style>
 
 <style>
-/* Critical above-the-fold CSS (navbar reserve, hero, quick-nav, stats, subjects). Rest: /assets/css/home.css */
+/* Critical above-the-fold CSS (navbar reserve, hero, quick links, stats, subjects). Rest: /assets/css/home.css */
 #nied-navbar{min-height:73px}
 @media(max-width:520px){#nied-navbar{min-height:63px}}
-.home-showcase-sec,.featured-pdf-sec,.yt-sec,.exam-sec,.courses-sec,.faq-sec,.cta,body>footer{content-visibility:auto;contain-intrinsic-size:auto 700px}
-:root{--navy:#1B2A6B;--navy-dark:#111B47;--navy-light:#2B3E8C;--orange:#FF6B00;--orange-light:#FFF2E8;--orange-hover:#E55A00;--text-dark:#1E2433;--text-muted:#5E687E;--bg-page:#F8F9FC;--bg-white:#FFFFFF;--card-border:#E7ECF3;--shadow-sm:0 4px 12px rgba(27,42,107,.05);--shadow-md:0 8px 24px rgba(27,42,107,.08);--shadow-lg:0 14px 36px rgba(27,42,107,.12);}
+.courses-sec,.ps-sec,.yt-sec,.faq-sec,body>footer{content-visibility:auto;contain-intrinsic-size:auto 800px}
+:root{--navy:#1B2A6B;--navy-dark:#111B47;--navy-light:#2B3E8C;--saffron:#FF6B00;--saffron-ink:#C2410C;--saffron-btn:#CC4E00;--saffron-tint:#FFF4EA;--saffron-line:#FFD9BD;--navy-tint:#EEF1FA;--text-dark:#1E2433;--text-muted:#5E687E;--bg-page:#F7F8FC;--card-border:#E6EAF3;--radius:18px;--radius-sm:12px;--shadow-sm:0 2px 8px rgba(27,42,107,.06);--shadow-md:0 10px 28px rgba(27,42,107,.10);--shadow-lg:0 22px 48px rgba(27,42,107,.16);--wrap:max(16px,calc((100% - 1120px)/2));
+/* legacy names used by other scripts */--orange:#FF6B00;--orange-light:#FFF4EA;--orange-hover:#E55A00;--bg-white:#FFFFFF}
 *{margin:0;padding:0;box-sizing:border-box}
-html{overflow-x:hidden;scroll-behavior:smooth}
+html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Hind',sans-serif;background:var(--bg-page);color:var(--text-dark);overflow-x:hidden;line-height:1.6}
-h1,h2,h3{font-family:'Poppins','Hind',sans-serif}
+h1,h2,h3,h4{font-family:'Poppins','Hind',sans-serif}
 a{color:inherit}
+img{max-width:100%}
+.ic{width:1.15em;height:1.15em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
 .tri{height:4px;background:linear-gradient(90deg,#FF6B00 33%,#fff 33% 66%,#00A651 66%)}
-.hero{background:radial-gradient(ellipse at 85% 10%,rgba(255,214,170,.45),transparent 50%),radial-gradient(ellipse at 15% 90%,rgba(27,42,107,.06),transparent 45%),linear-gradient(135deg,#FFF9F3 0%,#FFFFFF 55%,#F4F7FF 100%);padding:clamp(34px,5vw,64px) 5% clamp(28px,4vw,46px);border-bottom:1px solid #EFE6DD;text-align:center;position:relative;}
-.hero-inner{max-width:860px;margin:0 auto}
-.hero-trust-badge{display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;border:1.5px solid #F5CEB0;color:#944607;padding:7px 18px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:16px;box-shadow:0 4px 16px rgba(148,70,7,.08);}
-.hero-trust-badge .tb-star{color:#F59E0B;font-size:15px}
-.hero h1{font-size:clamp(27px,4.6vw,45px);font-weight:800;line-height:1.24;letter-spacing:-.4px;margin-bottom:12px;color:var(--navy);}
-.hero h1 span{display:block;color:#D35400;margin-top:6px;font-size:clamp(21px,3.6vw,36px);}
-.hero-subtext{font-size:clamp(14.5px,1.5vw,17px);color:var(--text-muted);max-width:720px;margin:0 auto 20px;line-height:1.75;}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
-.btn-main{background:linear-gradient(135deg,#FF6B00 0%,#EA580C 100%);color:#fff;padding:14px 26px;border-radius:14px;text-decoration:none;font-weight:800;font-size:15.5px;box-shadow:0 8px 22px rgba(234,88,12,.28);transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;}
-.btn-main:hover{transform:translateY(-2px);background:linear-gradient(135deg,#FF7814 0%,#D84D04 100%);box-shadow:0 12px 28px rgba(234,88,12,.35);color:#fff;}
-.btn-sec{background:#FFFFFF;color:var(--navy);padding:13px 24px;border-radius:14px;text-decoration:none;font-weight:700;font-size:15px;border:1.5px solid #D6DDEC;transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(27,42,107,.05);}
-.btn-sec:hover{border-color:var(--orange);color:var(--orange);background:#FFFBF8;transform:translateY(-2px);}
-.btn-ghost{background:transparent;color:var(--text-muted);padding:13px 20px;border-radius:14px;text-decoration:none;font-weight:600;font-size:14.5px;border:1.5px dashed #CBD5E1;transition:all .2s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
-.btn-ghost:hover{border-color:var(--navy);color:var(--navy);background:#fff}
-.hero-highlights{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:10px;font-size:13px;font-weight:600;color:var(--text-muted);}
-.hl-item{display:inline-flex;align-items:center;gap:6px}
-.hl-check{width:18px;height:18px;border-radius:50%;background:#E6F7EC;color:#15803D;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;}
-.quick-nav-sec{background:#FFFFFF;border-bottom:1px solid #E8ECF2;padding:14px 5%;}
-.quick-nav-track{max-width:1150px;margin:0 auto;display:flex;gap:12px;align-items:center;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
-.quick-nav-track::-webkit-scrollbar{display:none}
-.qn-item{flex:0 0 auto;display:flex;align-items:center;gap:10px;background:#F8FAFC;border:1px solid #E2E8F0;padding:8px 14px;border-radius:12px;text-decoration:none;transition:all .2s ease;min-width:130px;}
-.qn-item:hover{background:#FFF7ED;border-color:#FDBA74;transform:translateY(-2px);box-shadow:var(--shadow-sm);}
-.qn-icon-wrap{width:36px;height:36px;border-radius:10px;background:#FFF;border:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;position:relative;}
-.qn-item.qn-hot .qn-icon-wrap{background:linear-gradient(135deg,#FFEDD5,#FED7AA);border-color:#FDBA74;}
-.qn-dot{position:absolute;top:-2px;right:-2px;width:8px;height:8px;border-radius:50%;background:#EF4444;border:1.5px solid #fff;animation:niedPulse 1.6s infinite;}
-.qn-info{display:flex;flex-direction:column;line-height:1.2}
-.qn-label{font-size:12.5px;font-weight:700;color:var(--navy);white-space:nowrap}
-.qn-sub{font-size:10px;font-weight:600;color:#475569;margin-top:2px;white-space:nowrap}
-.qn-item.qn-hot .qn-label{color:#C2410C}
-.qn-tg .qn-icon{color:#0284C7}
-.qn-app .qn-icon{color:#16A34A}
-.stats-bar{background:linear-gradient(135deg,#1B2A6B 0%,#111A44 100%);color:#FFFFFF;padding:22px 5%;border-bottom:1px solid rgba(255,255,255,.1);}
-.stats-track{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.stat-card{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;backdrop-filter:blur(4px);}
-.stat-icon-bubble{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(255,107,0,.25),rgba(255,107,0,.1));border:1px solid rgba(255,107,0,.4);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.stat-data{display:flex;flex-direction:column}
-.stat-num{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:#FFA057;line-height:1.15;}
-.stat-label{font-size:11.5px;color:#CBD5E1;font-weight:600;margin-top:3px;}
-.subjects-sec{padding:32px 5% 20px;max-width:1200px;margin:0 auto;scroll-margin-top:80px;}
-.sec-title{text-align:center;font-size:clamp(22px,2.8vw,28px);font-weight:800;margin-bottom:5px;color:var(--navy)}
-.sec-title span{color:var(--orange)}
-.sec-sub{text-align:center;color:var(--text-muted);font-size:13.5px;margin-bottom:20px}
-.subject-filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-.subj-cat-btn{background:#FFFFFF;border:1.5px solid #E2E8F0;color:#475569;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s ease;font-family:inherit;display:inline-flex;align-items:center;gap:6px;}
-.subj-cat-btn:hover{border-color:var(--orange);color:var(--orange)}
-.subj-cat-btn.active{background:var(--navy);border-color:var(--navy);color:#FFFFFF;box-shadow:0 3px 12px rgba(27,42,107,.18);}
-.subj-category-group{margin-bottom:26px;transition:opacity .2s ease;}
+/* ---------- Buttons ---------- */
+.btn-main,.btn-sec,.btn-light,.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:13px 26px;border-radius:14px;text-decoration:none;font-weight:700;font-size:16px;line-height:1.2;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+.btn-main{background:linear-gradient(135deg,#D55200,#BF4500);color:#fff;box-shadow:0 10px 24px rgba(204,78,0,.28)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(204,78,0,.36);color:#fff}
+.btn-sec{background:var(--navy);color:#fff;box-shadow:0 10px 24px rgba(27,42,107,.22)}
+.btn-sec:hover{background:var(--navy-dark);transform:translateY(-2px);color:#fff}
+.btn-light{background:#fff;color:var(--navy);border:1.5px solid #D9DFEC}
+.btn-light:hover{border-color:var(--navy);transform:translateY(-2px)}
+.btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--navy);min-height:48px;font-size:15px}
+.btn-outline:hover{background:var(--navy);color:#fff}
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 480px at 82% 30%,rgba(255,107,0,.13),transparent 60%),radial-gradient(700px 420px at 0% 100%,rgba(27,42,107,.07),transparent 60%),linear-gradient(180deg,#FFFFFF 0%,#FFF8F2 100%);padding:clamp(36px,5.5vw,72px) var(--wrap) clamp(36px,5vw,64px);border-bottom:1px solid #F1E6DC}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,64px);align-items:center}
+.hero-trust-badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--saffron-line);color:var(--navy);padding:8px 16px 8px 9px;border-radius:999px;font-size:14px;font-weight:600;line-height:1.35;margin-bottom:20px;box-shadow:0 6px 18px rgba(204,78,0,.08)}
+.hero-trust-badge strong{color:var(--saffron-ink);font-weight:700}
+.tb-ic{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FF8A2B,#FF6B00);color:#fff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.hero h1{position:relative;z-index:0;font-size:clamp(30px,4.3vw,52px);font-weight:800;line-height:1.22;letter-spacing:-.5px;color:var(--navy);margin-bottom:16px}
+.hero h1 span{color:var(--saffron-ink);position:relative;white-space:nowrap}
+.hero h1 span::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.16em;background:rgba(255,107,0,.22);border-radius:4px;z-index:-1}
+.hero-subtext{font-size:clamp(16px,1.45vw,18.5px);color:var(--text-muted);line-height:1.75;max-width:560px;margin-bottom:26px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;min-height:44px;color:var(--navy);font-weight:700;font-size:15px;text-decoration:none;border-bottom:1.5px solid transparent}
+.hero-link .ic:first-child{color:var(--saffron-btn)}
+.hero-link:hover{border-bottom-color:var(--saffron)}
+.hero-highlights{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;padding-top:20px;border-top:1px dashed #E7DCD2;font-size:14px;font-weight:600;color:var(--text-muted)}
+.hero-highlights li{display:inline-flex;align-items:center;gap:7px}
+.hero-highlights .ic{color:#15803D;width:18px;height:18px;padding:3px;border-radius:50%;background:#E3F5EA;stroke-width:3}
+.hero-photo{position:relative;justify-self:center;width:min(100%,420px);margin:0}
+.hero-photo::before{content:"";position:absolute;inset:22px -18px -18px 22px;border-radius:30px;background:linear-gradient(145deg,var(--navy) 0%,#2B3E8C 100%)}
+.hero-photo::after{content:"";position:absolute;width:110px;height:110px;top:-22px;left:-22px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,.9) 0 2px,transparent 2.5px) 0 0/14px 14px;opacity:.55}
+.hero-photo picture,.hero-photo img{display:block;position:relative;z-index:1}
+.hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:28px;box-shadow:var(--shadow-lg);border:5px solid #fff}
+.hero-name{position:absolute;z-index:2;left:-14px;bottom:28px;background:#fff;border-radius:14px;padding:10px 16px 10px 14px;box-shadow:var(--shadow-md);border-left:4px solid var(--saffron);display:flex;flex-direction:column;line-height:1.3}
+.hero-name strong{font-family:'Poppins','Hind',sans-serif;font-size:17px;color:var(--navy);font-weight:700}
+.hero-name span{font-size:12.5px;color:var(--text-muted);font-weight:600}
+/* ---------- Section headers ---------- */
+.sec-eyebrow{text-align:center;font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--saffron-ink);margin-bottom:6px}
+.sec-title{text-align:center;font-size:clamp(25px,3vw,34px);font-weight:800;line-height:1.25;color:var(--navy);margin-bottom:8px}
+.sec-title span{color:var(--saffron-ink)}
+.sec-sub{text-align:center;color:var(--text-muted);font-size:15.5px;max-width:640px;margin:0 auto 28px}
+/* ---------- Quick links ---------- */
+.quick-nav-sec{background:#fff;padding:28px var(--wrap) 26px;border-bottom:1px solid #ECEFF5}
+.quick-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.qn-item{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:118px;padding:16px;background:#fff;border:1px solid var(--card-border);border-radius:16px;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.qn-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--saffron-line)}
+.qn-icon-wrap{position:relative;width:44px;height:44px;border-radius:12px;background:var(--navy-tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:21px}
+.qn-hot .qn-icon-wrap{background:var(--saffron-tint);color:var(--saffron-btn)}
+.qn-tg .qn-icon-wrap{background:#E7F4FB;color:#0369A1}
+.qn-dot{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#DC2626;border:2px solid #fff;animation:niedPulse 1.6s infinite}
+@keyframes niedPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.45)}50%{box-shadow:0 0 0 6px rgba(220,38,38,0)}}
+.qn-info{display:flex;flex-direction:column;line-height:1.3}
+.qn-label{font-size:15.5px;font-weight:700;color:var(--navy)}
+.qn-sub{font-size:13px;font-weight:500;color:var(--text-muted);margin-top:2px}
+.exam-strip{display:flex;align-items:center;gap:14px;margin-top:20px}
+.exam-strip-title{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--navy);font-family:'Poppins','Hind',sans-serif}
+.exam-strip-title .ic{color:var(--saffron-btn)}
+.exam-pills{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 2px;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.exam-pills::-webkit-scrollbar{display:none}
+.exam-pill{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;min-height:48px;padding:6px 14px;border-radius:12px;background:var(--bg-page);border:1px solid var(--card-border);text-decoration:none;line-height:1.25;transition:border-color .18s,background .18s}
+.exam-pill b{font-size:14px;color:var(--navy);font-weight:700;white-space:nowrap}
+.exam-pill span{font-size:12px;color:var(--text-muted);white-space:nowrap}
+.exam-pill:hover{border-color:var(--saffron);background:var(--saffron-tint)}
+.exam-pill-all{background:var(--navy);border-color:var(--navy)}
+.exam-pill-all b,.exam-pill-all span{color:#fff}
+.exam-pill-all:hover{background:var(--navy-dark)}
+/* ---------- Stats ---------- */
+.stats-bar{background:linear-gradient(135deg,#1B2A6B 0%,#131E52 100%);color:#fff;padding:30px var(--wrap);position:relative}
+.stats-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.stat-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px}
+.stat-icon-bubble{width:48px;height:48px;border-radius:14px;background:rgba(255,107,0,.16);border:1px solid rgba(255,138,61,.45);color:#FF9A52;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.stat-data{display:flex;flex-direction:column;min-width:0}
+.stat-num{font-family:'Poppins','Hind',sans-serif;font-size:26px;font-weight:800;color:#fff;line-height:1.15}
+.stat-label{font-size:14px;color:#CBD5E1;font-weight:500;margin-top:2px}
+/* ---------- Subjects ---------- */
+.subjects-sec{padding:clamp(44px,6vw,72px) var(--wrap) clamp(36px,5vw,56px);scroll-margin-top:80px}
+.subject-filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.subj-cat-btn{min-height:44px;background:#fff;border:1.5px solid var(--card-border);color:#3F4A63;padding:8px 18px;border-radius:999px;font-size:14.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .18s ease}
+.subj-cat-btn:hover{border-color:var(--navy);color:var(--navy)}
+.subj-cat-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 6px 16px rgba(27,42,107,.2)}
+.subj-category-group{margin-bottom:34px}
 .subj-category-group:last-child{margin-bottom:0}
-.subj-group-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px;padding:0 2px 8px;border-bottom:1.5px solid #EBEFF5;}
-.sgh-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.sgh-badge{font-family:'Poppins','Hind',sans-serif;font-size:15px;font-weight:800;color:var(--navy);display:inline-flex;align-items:center;gap:6px;}
-.sgh-subtitle{font-size:12px;color:var(--text-muted);font-weight:500;}
-.sgh-count{font-size:11.5px;font-weight:700;background:#EFF3FB;color:var(--navy-light);padding:3px 10px;border-radius:50px;}
-.subject-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:0 auto;}
-@media (max-width:600px){.subject-grid{grid-template-columns:repeat(2,1fr);gap:10px;}}
-.subject-box{background:#FFFFFF;border:1.5px solid var(--card-border);border-radius:14px;padding:14px 10px;text-align:center;text-decoration:none;color:var(--text-dark);transition:all .2s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.subject-box:hover{border-color:var(--orange);box-shadow:var(--shadow-md);transform:translateY(-3px);}
-.subject-box .s-icon{font-size:22px;margin-bottom:6px;width:38px;height:38px;border-radius:10px;background:#FFF7ED;display:flex;align-items:center;justify-content:center;}
-.subject-box .s-name{font-family:'Hind',sans-serif;font-weight:700;font-size:12.5px;line-height:1.35;margin-bottom:4px;color:var(--navy);}
-.subject-box .s-count{font-size:11px;color:#64748B;font-weight:600;background:#F1F5F9;padding:2px 8px;border-radius:20px;}
-footer{background:#141A29;padding:38px 5% 32px;text-align:center;color:#94A3B8;font-size:13px;border-top:1px solid #1E293B;}
-footer a{color:#CBD5E1;text-decoration:none;transition:color .18s ease;font-weight:600}
-footer a:hover{color:var(--orange)}
-@media(max-width:850px){.stats-track{grid-template-columns:repeat(2,1fr);gap:10px}}
-@media(max-width:560px){.hero{padding:26px 4% 24px}.hero-trust-badge{font-size:11px;padding:6px 12px}.hero h1{font-size:25px}.hero h1 span{font-size:20px;margin-top:3px}.hero-subtext{font-size:13px;line-height:1.6;margin-bottom:16px}.hero-btns{flex-direction:column;gap:9px}.hero-btns a{width:100%}.hero-highlights{font-size:11.5px;gap:8px}.quick-nav-sec{padding:10px 4%}.qn-item{padding:6px 10px;min-width:115px}.qn-icon-wrap{width:30px;height:30px;font-size:15px}.qn-label{font-size:11.5px}.stats-bar{padding:16px 4%}.stat-card{padding:9px 10px;gap:8px}.stat-num{font-size:18px}.stat-label{font-size:10px}.subjects-sec{padding:20px 4% 14px}.subject-grid{grid-template-columns:repeat(2,1fr);gap:8px}.subject-box{padding:12px 8px}.subject-box .s-name{font-size:12px}.subject-box .s-icon{width:36px;height:36px;font-size:20px}.subject-box.subject-collapsed{display:none!important}}
-/* One content width (1100px) for every homepage section, so all edges line up */
-.quick-nav-sec,.stats-bar,.subjects-sec{padding-left:max(4%,calc((100% - 1100px)/2));padding-right:max(4%,calc((100% - 1100px)/2))}
-.subjects-sec{max-width:none}
-.quick-nav-track,.stats-track{max-width:none}
-/* Premium Notes Store section — inline so it never depends on a cached stylesheet */
-.ps-sec{max-width:none;padding:36px max(4%,calc((100% - 1100px)/2)) 30px;background:linear-gradient(180deg,#FFF8F2,#FFFFFF)}.ps-grid{max-width:none;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.ps-card{min-width:0;display:flex;flex-direction:column;background:#fff;border:1px solid #F0E2D6;border-radius:16px;padding:12px 12px 14px;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(27,42,107,.06);transition:transform .18s,box-shadow .18s}.ps-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(27,42,107,.12);border-color:#FDBA74}.ps-cover{position:relative;display:flex;justify-content:center;align-items:center;height:170px;border-radius:12px;background:radial-gradient(180px 110px at 50% 100%,#FFE1C7,transparent 70%),linear-gradient(160deg,#EEF2FF,#FFF8F2);margin-bottom:10px}.ps-cover img{height:88%;width:auto;max-width:90%;object-fit:contain;border-radius:3px 6px 6px 3px;box-shadow:8px 12px 20px rgba(27,42,107,.25)}.ps-off{position:absolute;top:8px;right:8px;background:#0A8F55;color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:7px}.ps-tag{align-self:flex-start;background:#FFF1E6;color:#C14F00;font-size:11px;font-weight:800;padding:2px 9px;border-radius:30px}.ps-card strong{font-size:15.5px;line-height:1.35;color:var(--navy);margin:7px 0 3px;font-weight:800}.ps-meta{font-size:12.5px;color:var(--text-muted)}.ps-price{margin:8px 0 10px;font-size:13px;color:#8A90A8}.ps-price b{font-family:'Poppins',sans-serif;font-size:22px;color:var(--navy)}.ps-price s{text-decoration-color:#D9363E}.ps-go{margin-top:auto;display:flex;justify-content:center;align-items:center;min-height:40px;border-radius:10px;background:var(--orange);color:#fff;font-weight:800;font-size:13.5px}.ps-more{text-align:center;margin-top:20px}.ps-all{display:inline-flex;align-items:center;min-height:44px;padding:10px 22px;border-radius:30px;background:var(--navy);color:#fff;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 6px 16px rgba(27,42,107,.18)}.ps-all:hover{background:#111B47}@media(max-width:980px){.ps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.ps-sec{padding:26px 4% 22px}.ps-cover{height:132px}.ps-grid{gap:10px}.ps-card{padding:9px 9px 11px}.ps-card strong{font-size:13.5px}.ps-price b{font-size:19px}.ps-go{min-height:38px;font-size:12.5px}.ps-meta{font-size:11.5px}}@media(prefers-reduced-motion:reduce){.ps-card{transition:none}}
-@media(max-width:560px){.subject-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.subject-box{padding:10px 4px}.subject-box .s-icon{width:30px;height:30px;font-size:17px}.subject-box .s-name{font-size:11.5px;line-height:1.3}.subject-box .s-count{font-size:9.5px}}
+.subj-group-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #E6EAF3}
+.sgh-left{display:flex;flex-direction:column;gap:2px}
+.sgh-badge{font-family:'Poppins','Hind',sans-serif;font-size:18px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:8px}
+.sgh-badge .ic{color:var(--saffron-btn)}
+.sgh-subtitle{font-size:14px;color:var(--text-muted)}
+.sgh-count{font-size:13px;font-weight:700;background:var(--navy-tint);color:var(--navy);padding:4px 12px;border-radius:999px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.subject-box{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:128px;padding:16px;background:#fff;border:1px solid var(--card-border);border-radius:16px;text-decoration:none;color:var(--text-dark);box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.subject-box:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--saffron-line)}
+.subject-box .s-icon{width:42px;height:42px;border-radius:12px;background:var(--saffron-tint);color:var(--saffron-btn);display:flex;align-items:center;justify-content:center;font-size:20px}
+.subject-box .s-name{font-weight:700;font-size:15.5px;line-height:1.35;color:var(--navy)}
+.subject-box .s-count{margin-top:auto;font-size:12.5px;color:var(--text-muted);font-weight:600;background:#F1F4F9;padding:2px 10px;border-radius:999px}
+.subject-box-hl{background:linear-gradient(160deg,#FFF6EE,#fff);border-color:var(--saffron-line)}
+.subject-box-hl .s-icon{background:var(--saffron-btn);color:#fff}
+footer{background:#111833;padding:44px var(--wrap) 36px;text-align:center;color:#A9B3C7;font-size:14px}
+footer a{color:#D5DBE7;text-decoration:none;font-weight:600}
+footer a:hover{color:#FF9A52}
+/* ---------- Tablet / mobile ---------- */
+@media(max-width:1020px){.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.stats-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .hero{padding:28px 16px 36px}
+  .hero-inner{grid-template-columns:1fr;gap:30px;text-align:center}
+  .hero-trust-badge{font-size:13px;text-align:left;padding:7px 14px 7px 8px}
+  .hero h1{font-size:clamp(28px,8vw,36px)}
+  .hero-subtext{font-size:16px;margin:0 auto 22px}
+  .hero-btns{flex-direction:column}
+  .hero-btns a{width:100%}
+  .hero-highlights{justify-content:center;font-size:13.5px}
+  .hero-photo{width:min(78vw,300px)}
+  .hero-photo::before{inset:16px -12px -12px 16px;border-radius:24px}
+  .hero-photo img{aspect-ratio:1/1;object-position:50% 12%;border-radius:22px}
+  .hero-name{left:50%;transform:translateX(-50%);bottom:-18px;flex-direction:row;align-items:baseline;gap:8px;white-space:nowrap;padding:8px 14px}
+  .hero-name strong{font-size:16px}
+  .quick-nav-sec{padding:22px 16px}
+  .quick-grid{gap:10px}
+  .qn-item{align-items:center;text-align:center;padding:14px 8px;min-height:116px;gap:9px}
+  .qn-label{font-size:14.5px}
+  .qn-sub{font-size:12px}
+  .exam-strip{flex-direction:column;align-items:stretch;gap:10px}
+  .exam-pills{margin:0 -16px;padding:4px 16px}
+  .stats-bar{padding:22px 16px}
+  .stats-track{gap:10px}
+  .stat-card{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
+  .stat-icon-bubble{width:40px;height:40px;font-size:19px;border-radius:12px}
+  .stat-num{font-size:22px}
+  .stat-label{font-size:13px}
+  .subjects-sec{padding:40px 16px 32px}
+  .sec-sub{font-size:15px;margin-bottom:22px}
+  .subject-filter-bar{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;margin:0 -16px 24px;padding:2px 16px}
+  .subject-filter-bar::-webkit-scrollbar{display:none}
+  .subj-cat-btn{flex:0 0 auto}
+  .subject-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .subject-box{min-height:118px;padding:14px 12px}
+  .subject-box .s-name{font-size:15px}
+}
+@media(max-width:360px){.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
-<link rel="preload" href="/assets/css/home.css?v=34a531f1" as="style">
+<link rel="preload" href="/assets/css/home.css?v=bf8e1012" as="style">
 <script>/* Apply below-the-fold CSS only after the first frame is painted, so it never delays the hero (LCP) */
-requestAnimationFrame(function(){setTimeout(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/home.css?v=34a531f1';document.head.appendChild(l);});});</script>
-<noscript><link rel="stylesheet" href="/assets/css/home.css?v=34a531f1"></noscript>
+requestAnimationFrame(function(){setTimeout(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='/assets/css/home.css?v=bf8e1012';document.head.appendChild(l);});});</script>
+<noscript><link rel="stylesheet" href="/assets/css/home.css?v=bf8e1012"></noscript>
 
 <script type="application/ld+json">
 {
@@ -397,284 +467,299 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 <meta property="og:image:alt" content="RAS Exam 2026 Preparation | RAS Pre &amp; Mains Notes, Test Series — Omkar Sir">
 <meta name="twitter:url" content="https://omkarsir.com/">
 </head>
-<body>
+<body class="home-v2">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-quiz" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol><symbol id="i-news" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol><symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></symbol><symbol id="i-scroll" viewBox="0 0 24 24"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/></symbol><symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol><symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9L8.1 3.45a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol><symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.67 0 6.67-10 0-10"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol><symbol id="i-earth" viewBox="0 0 24 24"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3 2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></symbol><symbol id="i-dna" viewBox="0 0 24 24"><path d="M2 15c6.67-6 13.33 0 20-6"/><path d="M9 22c1.8-2 2.52-4 2.81-6"/><path d="M15 2c-1.8 2-2.52 4-2.81 6"/><path d="M2 9c6.67 6 13.33 0 20 6"/></symbol><symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol><symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.8 5.41a2 2 0 0 1-1.27 1.27L7.76 16.24l1.8-5.41a2 2 0 0 1 1.27-1.27z"/></symbol><symbol id="i-gavel" viewBox="0 0 24 24"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol><symbol id="i-lang" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol><symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol><symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol></svg>
 
 <div id="nied-navbar"></div>
 <div class="tri"></div>
 
-<!-- ===== HERO: MODERN, CONVERSION-FOCUSED ===== -->
-<section class="hero">
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
-    <div class="hero-trust-badge">
-      <span class="tb-star">⭐</span>
-      <span>पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — <strong>6 लाख+ Students</strong></span>
+    <div class="hero-copy">
+      <div class="hero-trust-badge">
+        <span class="tb-ic"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+        <span>8 साल का भरोसा, 6 लाख+ विद्यार्थियों का विश्वास — <strong>NIEOM Academy</strong></span>
+      </div>
+      <h1 id="hero-title">अपनी Competitive Exam तैयारी को दें <span>सही दिशा</span></h1>
+      <p class="hero-subtext">ओमकार सर के मुफ़्त हिंदी नोट्स, Daily Quiz, PYQ और Test Series — NCERT, RBSE व प्रामाणिक स्रोतों से तैयार, सब एक ही मंच पर।</p>
+      <div class="hero-btns">
+        <a href="#subjects" class="btn-main"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span>Free Notes पढ़ें</span></a>
+        <a href="/all-quizzes.html" class="btn-sec"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg><span>Daily Quiz खेलें</span></a>
+      </div>
+      <a href="#featured-pdf" class="hero-link"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg><span>Premium Notes Store देखें</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <ul class="hero-highlights">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> 100% प्रामाणिक कंटेंट</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> RPSC 2026 New Pattern</li>
+      </ul>
     </div>
-    <h1>
-      अपनी Competitive Exam तैयारी को दें सही दिशा
-      <span>हिंदी Notes, Daily Quiz और Test Series</span>
-    </h1>
-    <p class="hero-subtext">
-      NCERT, RBSE व प्रामाणिक स्रोतों से तैयार 25+ विषयों के प्रामाणिक मुफ़्त नोट्स, RAS Prelims &amp; Mains PYQ और विषयवार टेस्ट — सब कुछ एक ही मंच पर।
-    </p>
-
-    <div class="hero-btns">
-      <a href="#subjects" class="btn-main">
-        <span>📖 Free Notes पढ़ें</span>
-        <span aria-hidden="true">↓</span>
-      </a>
-      <a href="/all-quizzes.html" class="btn-sec">
-        <span>🧠 Daily Quiz खेलें</span>
-      </a>
-      <a href="#featured-pdf" class="btn-ghost">
-        <span>💎 Premium Notes Store</span>
-      </a>
-    </div>
-
-    <div class="hero-highlights">
-      <div class="hl-item"><span class="hl-check">✓</span> 100% प्रामाणिक कंटेंट</div>
-      <div class="hl-item"><span class="hl-check">✓</span> RPSC 2026 New Pattern</div>
-    </div>
+    <figure class="hero-photo">
+      <picture>
+        <source type="image/webp" srcset="/assets/img/omkar-sir-hero-400.webp 400w, /assets/img/omkar-sir-hero-560.webp 560w, /assets/img/omkar-sir-hero-880.webp 880w" sizes="(max-width:760px) 260px, 420px">
+        <img src="/assets/img/omkar-sir-hero-560.jpg" width="560" height="700" alt="ओमकार सर — NIEOM Academy" fetchpriority="high" decoding="async">
+      </picture>
+      <figcaption class="hero-name"><strong>ओमकार सर</strong><span>NIEOM Academy</span></figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ===== QUICK ACTION HUB (APP-STYLE STORY PILLS) ===== -->
+<!-- ===== QUICK LINKS + EXAM SHORTCUTS ===== -->
 <section class="quick-nav-sec" aria-label="त्वरित शॉर्टकट">
-  <div class="quick-nav-track">
+  <div class="quick-grid">
     <a href="/current-affairs.html" class="qn-item qn-hot">
-      <div class="qn-icon-wrap"><span class="qn-icon">📰</span><span class="qn-dot"></span></div>
-      <div class="qn-info">
-        <span class="qn-label">आज का CA</span>
-        <span class="qn-sub">Daily Current</span>
-      </div>
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-news"/></svg><span class="qn-dot"></span></span>
+      <span class="qn-info"><span class="qn-label">आज का CA</span><span class="qn-sub">Daily Current Affairs</span></span>
     </a>
     <a href="/previous-year-papers.html" class="qn-item">
-      <div class="qn-icon-wrap"><span class="qn-icon">📝</span></div>
-      <div class="qn-info">
-        <span class="qn-label">PYQ Papers</span>
-        <span class="qn-sub">पिछले वर्षों के प्रश्न</span>
-      </div>
-    </a>
-    <a href="/vacancy.html" class="qn-item">
-      <div class="qn-icon-wrap"><span class="qn-icon">💼</span></div>
-      <div class="qn-info">
-        <span class="qn-label">Vacancy</span>
-        <span class="qn-sub">नई भर्तियाँ</span>
-      </div>
-    </a>
-    <a href="/ras-exam-2026.html" class="qn-item">
-      <div class="qn-icon-wrap"><span class="qn-icon">📋</span></div>
-      <div class="qn-info">
-        <span class="qn-label">RAS 2026</span>
-        <span class="qn-sub">Syllabus &amp; Guide</span>
-      </div>
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
+      <span class="qn-info"><span class="qn-label">PYQ Papers</span><span class="qn-sub">पिछले वर्षों के प्रश्न</span></span>
     </a>
     <a href="/test-series.html" class="qn-item">
-      <div class="qn-icon-wrap"><span class="qn-icon">🎯</span></div>
-      <div class="qn-info">
-        <span class="qn-label">Test Series</span>
-        <span class="qn-sub">Pre + Mains</span>
-      </div>
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Test Series</span><span class="qn-sub">Pre + Mains</span></span>
     </a>
-    <a href="/courses.html" class="qn-item">
-      <div class="qn-icon-wrap"><span class="qn-icon">🎓</span></div>
-      <div class="qn-info">
-        <span class="qn-label">All Courses</span>
-        <span class="qn-sub">Foundation</span>
-      </div>
+    <a href="/ras-exam-2026.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+      <span class="qn-info"><span class="qn-label">RAS 2026</span><span class="qn-sub">Syllabus &amp; Guide</span></span>
     </a>
-    <a href="https://t.me/omkarsirofficial" target="_blank" rel="noopener" class="qn-item">
-      <div class="qn-icon-wrap qn-tg"><span class="qn-icon">✈️</span></div>
-      <div class="qn-info">
-        <span class="qn-label">Telegram</span>
-        <span class="qn-sub">Free PDF नोट्स</span>
-      </div>
+    <a href="/vacancy.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Vacancy</span><span class="qn-sub">नई भर्तियाँ</span></span>
     </a>
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener" class="qn-item">
-      <div class="qn-icon-wrap qn-app"><span class="qn-icon">📱</span></div>
-      <div class="qn-info">
-        <span class="qn-label">Mobile App</span>
-        <span class="qn-sub">Live Classes</span>
-      </div>
+    <a href="https://t.me/omkarsirofficial" target="_blank" rel="noopener" class="qn-item qn-tg">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Telegram</span><span class="qn-sub">Free PDF नोट्स</span></span>
     </a>
+  </div>
+
+  <div class="exam-strip" aria-labelledby="exam-strip-title">
+    <h2 class="exam-strip-title" id="exam-strip-title"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg> परीक्षा चुनें</h2>
+    <div class="exam-pills" id="examGrid">
+      <a href="/ras-exam-2026.html" class="exam-pill"><b>RAS / RTS</b><span>Pre &amp; Mains</span></a>
+      <a href="/rajasthan-si-exam.html" class="exam-pill"><b>Police SI</b><span>Sub Inspector</span></a>
+      <a href="/rajasthan-police-constable-exam.html" class="exam-pill"><b>Constable</b><span>RSMSSB</span></a>
+      <a href="/rajasthan-patwari-exam.html" class="exam-pill"><b>Patwari</b><span>RSMSSB</span></a>
+      <a href="/reet-exam.html" class="exam-pill"><b>REET</b><span>Teacher Eligibility</span></a>
+      <a href="/rpsc-2nd-grade-teacher-exam.html" class="exam-pill"><b>2nd Grade</b><span>RPSC Teaching</span></a>
+      <a href="/rpsc-1st-grade-teacher-exam.html" class="exam-pill"><b>1st Grade</b><span>School Lecturer</span></a>
+      <a href="/rajasthan-vdo-exam.html" class="exam-pill"><b>VDO</b><span>ग्राम विकास अधिकारी</span></a>
+      <a href="/rajasthan-cet-12th-level.html" class="exam-pill"><b>CET 12th</b><span>RSMSSB</span></a>
+      <a href="/rajasthan-cet-graduate-level.html" class="exam-pill"><b>CET Graduate</b><span>RSMSSB</span></a>
+      <a href="/rajasthan-ldc-exam.html" class="exam-pill"><b>LDC</b><span>RSMSSB Clerk</span></a>
+      <a href="/rajasthan-jen-exam.html" class="exam-pill"><b>JEN</b><span>Junior Engineer</span></a>
+      <a href="/rajasthan-aen-exam.html" class="exam-pill"><b>AEN</b><span>Assistant Engineer</span></a>
+      <a href="/rajasthan-pashu-paricharak-exam.html" class="exam-pill"><b>पशु परिचारक</b><span>RSMSSB</span></a>
+      <a href="/railway-group-d-exam.html" class="exam-pill"><b>Railway NTPC</b><span>RRB Recruitment</span></a>
+      <a href="/ssc-gd-constable-exam.html" class="exam-pill"><b>SSC-GD</b><span>Staff Selection</span></a>
+      <a href="/rajasthan-exams.html" class="exam-pill exam-pill-all"><b>सभी Exams</b><span>संपूर्ण विवरण</span></a>
+    </div>
   </div>
 </section>
 
-<!-- ===== STATS BANNER: TRUST PROOF ===== -->
+<!-- ===== STATS ===== -->
 <section class="stats-bar" aria-label="संस्थान के आँकड़े">
   <div class="stats-track">
-    <div class="stat-card">
-      <div class="stat-icon-bubble">📺</div>
-      <div class="stat-data">
-        <span class="stat-num">6 लाख+</span>
-        <span class="stat-label">YouTube Subscribers</span>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon-bubble">📱</div>
-      <div class="stat-data">
-        <span class="stat-num">2 लाख+</span>
-        <span class="stat-label">App Users</span>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon-bubble">📄</div>
-      <div class="stat-data">
-        <span class="stat-num">500+</span>
-        <span class="stat-label">हिंदी स्टडी नोट्स</span>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon-bubble">🏆</div>
-      <div class="stat-data">
-        <span class="stat-num">10,000+</span>
-        <span class="stat-label">Students Selected</span>
-      </div>
-    </div>
+    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="stat-data"><span class="stat-num">6 लाख+</span><span class="stat-label">YouTube Subscribers</span></span></div>
+    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="stat-data"><span class="stat-num">2 लाख+</span><span class="stat-label">App Users</span></span></div>
+    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span><span class="stat-data"><span class="stat-num">500+</span><span class="stat-label">हिंदी स्टडी नोट्स</span></span></div>
+    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg></span><span class="stat-data"><span class="stat-num">10,000+</span><span class="stat-label">Students Selected</span></span></div>
   </div>
 </section>
 
-<!-- ===== SUBJECTS SECTION (CATEGORIZED BY DOMAIN) ===== -->
+<!-- ===== SUBJECT-WISE FREE NOTES ===== -->
 <section class="subjects-sec" id="subjects" aria-labelledby="subjects-title">
+  <p class="sec-eyebrow">100% मुफ़्त</p>
   <h2 class="sec-title" id="subjects-title">विषय-वार <span>Free Notes</span></h2>
   <p class="sec-sub">RAS Exam 2026 के लिए सभी 27 Subjects के प्रामाणिक व मुफ़्त हिंदी नोट्स</p>
 
   <div class="subject-filter-bar" role="tablist" aria-label="विषयवार श्रेणियाँ">
     <button type="button" class="subj-cat-btn active" data-subgroup="all" role="tab" aria-selected="true">सभी विषय (27)</button>
-    <button type="button" class="subj-cat-btn" data-subgroup="rajasthan" role="tab" aria-selected="false">🏰 राजस्थान GK (6)</button>
-    <button type="button" class="subj-cat-btn" data-subgroup="india" role="tab" aria-selected="false">🇮🇳 इंडिया GK व विज्ञान (11)</button>
-    <button type="button" class="subj-cat-btn" data-subgroup="mains" role="tab" aria-selected="false">📜 RAS मेन्स स्पेशल (7)</button>
-    <button type="button" class="subj-cat-btn" data-subgroup="maths" role="tab" aria-selected="false">🔢 गणित व रीजनिंग (1)</button>
-    <button type="button" class="subj-cat-btn" data-subgroup="language" role="tab" aria-selected="false">🔤 हिंदी व इंग्लिश (2)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="rajasthan" role="tab" aria-selected="false">राजस्थान GK (6)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="india" role="tab" aria-selected="false">इंडिया GK व विज्ञान (12)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="mains" role="tab" aria-selected="false">RAS मेन्स स्पेशल (7)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="maths" role="tab" aria-selected="false">गणित व रीजनिंग (1)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="language" role="tab" aria-selected="false">हिंदी व इंग्लिश (2)</button>
   </div>
 
-  <!-- Category 1: Rajasthan GK -->
   <div class="subj-category-group" data-subj-group="rajasthan">
     <div class="subj-group-header">
-      <div class="sgh-left">
-        <span class="sgh-badge">🏰 राजस्थान GK</span>
-        <span class="sgh-subtitle">इतिहास, कला-संस्कृति, भूगोल, एटलस, राज्यव्यवस्था व अर्थव्यवस्था</span>
-      </div>
+      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg> राजस्थान GK</span><span class="sgh-subtitle">इतिहास, कला-संस्कृति, भूगोल, एटलस, राज्यव्यवस्था व अर्थव्यवस्था</span></div>
       <span class="sgh-count">6 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/rajasthan-itihas-series.html" class="subject-box"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a>
-      <a href="/rajasthan-kala-sanskriti.html" class="subject-box"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a>
-      <a href="/rajasthan-bhugol.html" class="subject-box"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय</div></a>
-      <a href="/rajasthan-atlas.html" class="subject-box"><div class="s-icon">🗺️</div><div class="s-name">राजस्थान एटलस</div><div class="s-count">41 जिले</div></a>
-      <a href="/rajasthan-rajyavyavastha.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a>
-      <a href="/rajasthan-arthvyavastha.html" class="subject-box"><div class="s-icon">📊</div><div class="s-name">राजस्थान अर्थव्यवस्था</div><div class="s-count">15 अध्याय · समीक्षा व बजट</div></a>
+      <a href="/rajasthan-itihas-series.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-scroll"/></svg></span><span class="s-name">राजस्थान का इतिहास</span><span class="s-count">16 अध्याय</span></a>
+      <a href="/rajasthan-kala-sanskriti.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg></span><span class="s-name">राजस्थान कला-संस्कृति</span><span class="s-count">13 अध्याय</span></a>
+      <a href="/rajasthan-bhugol.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-mountain"/></svg></span><span class="s-name">राजस्थान भूगोल</span><span class="s-count">14 अध्याय</span></a>
+      <a href="/rajasthan-atlas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg></span><span class="s-name">राजस्थान एटलस</span><span class="s-count">41 जिले</span></a>
+      <a href="/rajasthan-rajyavyavastha.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></span><span class="s-name">राजस्थान राज्यव्यवस्था</span><span class="s-count">12 अध्याय</span></a>
+      <a href="/rajasthan-arthvyavastha.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span><span class="s-name">राजस्थान अर्थव्यवस्था</span><span class="s-count">15 अध्याय · समीक्षा व बजट</span></a>
     </div>
   </div>
 
-  <!-- Category 2: India GK & Science -->
   <div class="subj-category-group" data-subj-group="india">
     <div class="subj-group-header">
-      <div class="sgh-left">
-        <span class="sgh-badge">🇮🇳 इंडिया GK व सामान्य विज्ञान</span>
-        <span class="sgh-subtitle">इतिहास, संविधान, अर्थव्यवस्था, भूगोल व विज्ञान-तकनीक</span>
-      </div>
+      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg> इंडिया GK व सामान्य विज्ञान</span><span class="sgh-subtitle">इतिहास, संविधान, अर्थव्यवस्था, भूगोल व विज्ञान-तकनीक</span></div>
       <span class="sgh-count">12 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/adhunik-bharat-itihas.html" class="subject-box"><div class="s-icon">🏰</div><div class="s-name">आधुनिक भारत इतिहास</div><div class="s-count">20 अध्याय</div></a>
-      <a href="/prachin-bharat-itihas.html" class="subject-box"><div class="s-icon">🏛️</div><div class="s-name">प्राचीन भारत इतिहास</div><div class="s-count">10 अध्याय</div></a>
-      <a href="/polity-short-notes.html" class="subject-box" style="border-color:#FED7AA;background:#FFFBF7;"><div class="s-icon" style="background:#FFF3EB;">🇮🇳</div><div class="s-name" style="color:#C2410C;">राजव्यवस्था Short Notes</div><div class="s-count" style="background:#FFEDD5;color:#9A3412;">17 अध्याय (PDF+DOCX)</div></a>
-      <a href="/samvidhan.html" class="subject-box"><div class="s-icon">📋</div><div class="s-name">भारतीय संविधान</div><div class="s-count">Complete</div></a>
-      <a href="/arthavyavastha.html" class="subject-box"><div class="s-icon">💰</div><div class="s-name">भारतीय अर्थव्यवस्था</div><div class="s-count">10 अध्याय</div></a>
-      <a href="/bharatiya-kala-sanskriti.html" class="subject-box"><div class="s-icon">🖼️</div><div class="s-name">भारतीय कला-संस्कृति</div><div class="s-count">10 अध्याय</div></a>
-      <a href="/vishwa-bhugol.html" class="subject-box"><div class="s-icon">🌍</div><div class="s-name">विश्व भूगोल</div><div class="s-count">7 अध्याय</div></a>
-      <a href="/jiv-vigyan.html" class="subject-box"><div class="s-icon">🧬</div><div class="s-name">जीव विज्ञान</div><div class="s-count">15 अध्याय</div></a>
-      <a href="/bhautik-vigyan.html" class="subject-box"><div class="s-icon">⚛️</div><div class="s-name">भौतिक विज्ञान</div><div class="s-count">10 अध्याय</div></a>
-      <a href="/rasayan-vigyan.html" class="subject-box"><div class="s-icon">🧪</div><div class="s-name">रसायन विज्ञान</div><div class="s-count">11 अध्याय</div></a>
-      <a href="/vigyan-praudyogiki.html" class="subject-box"><div class="s-icon">💻</div><div class="s-name">विज्ञान एवं प्रौद्योगिकी</div><div class="s-count">10 अध्याय</div></a>
-      <a href="/antarrashtriya-sambandh.html" class="subject-box"><div class="s-icon">🌐</div><div class="s-name">अंतर्राष्ट्रीय संबंध</div><div class="s-count">17 अध्याय</div></a>
+      <a href="/adhunik-bharat-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span class="s-name">आधुनिक भारत इतिहास</span><span class="s-count">20 अध्याय</span></a>
+      <a href="/prachin-bharat-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg></span><span class="s-name">प्राचीन भारत इतिहास</span><span class="s-count">10 अध्याय</span></a>
+      <a href="/polity-short-notes.html" class="subject-box subject-box-hl"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span><span class="s-name">राजव्यवस्था Short Notes</span><span class="s-count">17 अध्याय (PDF+DOCX)</span></a>
+      <a href="/samvidhan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span class="s-name">भारतीय संविधान</span><span class="s-count">Complete</span></a>
+      <a href="/arthavyavastha.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-rupee"/></svg></span><span class="s-name">भारतीय अर्थव्यवस्था</span><span class="s-count">10 अध्याय</span></a>
+      <a href="/bharatiya-kala-sanskriti.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg></span><span class="s-name">भारतीय कला-संस्कृति</span><span class="s-count">10 अध्याय</span></a>
+      <a href="/vishwa-bhugol.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span><span class="s-name">विश्व भूगोल</span><span class="s-count">7 अध्याय</span></a>
+      <a href="/jiv-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-dna"/></svg></span><span class="s-name">जीव विज्ञान</span><span class="s-count">15 अध्याय</span></a>
+      <a href="/bhautik-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-atom"/></svg></span><span class="s-name">भौतिक विज्ञान</span><span class="s-count">10 अध्याय</span></a>
+      <a href="/rasayan-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="s-name">रसायन विज्ञान</span><span class="s-count">11 अध्याय</span></a>
+      <a href="/vigyan-praudyogiki.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg></span><span class="s-name">विज्ञान एवं प्रौद्योगिकी</span><span class="s-count">10 अध्याय</span></a>
+      <a href="/antarrashtriya-sambandh.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-earth"/></svg></span><span class="s-name">अंतर्राष्ट्रीय संबंध</span><span class="s-count">17 अध्याय</span></a>
     </div>
   </div>
 
-  <!-- Category 3: RAS Mains Special -->
   <div class="subj-category-group" data-subj-group="mains">
     <div class="subj-group-header">
-      <div class="sgh-left">
-        <span class="sgh-badge">📜 RAS मेन्स स्पेशल</span>
-        <span class="sgh-subtitle">विश्व इतिहास, नैतिकता, समाजशास्त्र, प्रबंधन, लोक प्रशासन, व्यवहार व विधि</span>
-      </div>
+      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-scroll"/></svg> RAS मेन्स स्पेशल</span><span class="sgh-subtitle">विश्व इतिहास, नैतिकता, समाजशास्त्र, प्रबंधन, लोक प्रशासन, व्यवहार व विधि</span></div>
       <span class="sgh-count">7 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/vishwa-itihas.html" class="subject-box"><div class="s-icon">🌐</div><div class="s-name">आधुनिक विश्व इतिहास</div><div class="s-count">11 अध्याय</div></a>
-      <a href="/prashasanik-naitikta.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">प्रशासनिक नैतिकता</div><div class="s-count">9 अध्याय</div></a>
-      <a href="/samajshastra.html" class="subject-box"><div class="s-icon">🏛️</div><div class="s-name">समाजशास्त्र</div><div class="s-count">7 अध्याय</div></a>
-      <a href="/prabandh.html" class="subject-box"><div class="s-icon">📘</div><div class="s-name">प्रबंधन (Management)</div><div class="s-count">5 अध्याय</div></a>
-      <a href="/lok-prashasan.html" class="subject-box"><div class="s-icon">🏛️</div><div class="s-name">लोक प्रशासन</div><div class="s-count">12 अध्याय</div></a>
-      <a href="/vyavhar.html" class="subject-box"><div class="s-icon">🧭</div><div class="s-name">व्यवहार (Behavior)</div><div class="s-count">5 अध्याय</div></a>
-      <a href="/vidhi.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">विधि (Law)</div><div class="s-count">9 अध्याय</div></a>
+      <a href="/vishwa-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-hourglass"/></svg></span><span class="s-name">आधुनिक विश्व इतिहास</span><span class="s-count">11 अध्याय</span></a>
+      <a href="/prashasanik-naitikta.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><span class="s-name">प्रशासनिक नैतिकता</span><span class="s-count">9 अध्याय</span></a>
+      <a href="/samajshastra.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span class="s-name">समाजशास्त्र</span><span class="s-count">7 अध्याय</span></a>
+      <a href="/prabandh.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span class="s-name">प्रबंधन (Management)</span><span class="s-count">5 अध्याय</span></a>
+      <a href="/lok-prashasan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span><span class="s-name">लोक प्रशासन</span><span class="s-count">12 अध्याय</span></a>
+      <a href="/vyavhar.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg></span><span class="s-name">व्यवहार (Behavior)</span><span class="s-count">5 अध्याय</span></a>
+      <a href="/vidhi.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-gavel"/></svg></span><span class="s-name">विधि (Law)</span><span class="s-count">9 अध्याय</span></a>
     </div>
   </div>
 
-  <!-- Category 4: Maths & Reasoning -->
   <div class="subj-category-group" data-subj-group="maths">
     <div class="subj-group-header">
-      <div class="sgh-left">
-        <span class="sgh-badge">🔢 गणित व तर्कशक्ति</span>
-        <span class="sgh-subtitle">RAS Pre & State Exams मूल संख्यात्मक दक्षता व Reasoning</span>
-      </div>
+      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg> गणित व तर्कशक्ति</span><span class="sgh-subtitle">RAS Pre &amp; State Exams मूल संख्यात्मक दक्षता व Reasoning</span></div>
       <span class="sgh-count">1 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/ras-pre-math-reasoning.html" class="subject-box"><div class="s-icon">🔢</div><div class="s-name">गणित व तर्कशक्ति</div><div class="s-count">14 अध्याय</div></a>
+      <a href="/ras-pre-math-reasoning.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span><span class="s-name">गणित व तर्कशक्ति</span><span class="s-count">14 अध्याय</span></a>
     </div>
   </div>
 
-  <!-- Category 5: Language (Hindi & English) -->
   <div class="subj-category-group" data-subj-group="language">
     <div class="subj-group-header">
-      <div class="sgh-left">
-        <span class="sgh-badge">🔤 भाषा — सामान्य हिंदी व English</span>
-        <span class="sgh-subtitle">RAS Mains Paper-IV & प्रतियोगी परीक्षाओं के लिए व्याकरण व रचना</span>
-      </div>
+      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-lang"/></svg> भाषा — सामान्य हिंदी व English</span><span class="sgh-subtitle">RAS Mains Paper-IV &amp; प्रतियोगी परीक्षाओं के लिए व्याकरण व रचना</span></div>
       <span class="sgh-count">2 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/samanya-hindi.html" class="subject-box"><div class="s-icon">📚</div><div class="s-name">सामान्य हिंदी</div><div class="s-count">6 अध्याय</div></a>
-      <a href="/general-english.html" class="subject-box"><div class="s-icon">🔤</div><div class="s-name">General English</div><div class="s-count">12 अध्याय</div></a>
+      <a href="/samanya-hindi.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-lang"/></svg></span><span class="s-name">सामान्य हिंदी</span><span class="s-count">6 अध्याय</span></a>
+      <a href="/general-english.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg></span><span class="s-name">General English</span><span class="s-count">12 अध्याय</span></a>
     </div>
   </div>
 </section>
 
-<!-- ===== FEATURED COURSES SHOWCASE (FOUNDATION & SUPER 60) ===== -->
-<section class="home-showcase-sec" aria-label="मुख्य कोर्सेज">
+<!-- ===== COURSES: FOUNDATION + SUPER 60 + APP COURSES ===== -->
+<section class="courses-sec" id="courses" aria-labelledby="courses-title">
+  <p class="sec-eyebrow">Courses &amp; Test Series</p>
+  <h2 class="sec-title" id="courses-title">ओमकार सर के <span>Courses</span></h2>
+  <p class="sec-sub">अपनी जरूरत के अनुसार कोर्स चुनें और आज ही शुरू करें</p>
+
   <div class="showcase-grid">
-    <div class="showcase-card">
+    <article class="showcase-card">
       <div class="sc-img-wrap">
-        <img class="sc-img" src="/assets/home-slider/ras-foundation-2026.webp" srcset="/assets/home-slider/ras-foundation-2026-480.webp 480w, /assets/home-slider/ras-foundation-2026-800.webp 800w, /assets/home-slider/ras-foundation-2026.webp 1448w" sizes="(max-width:850px) 100vw, 530px" width="1448" height="1086" alt="RAS Foundation Course 2026" loading="lazy">
+        <img class="sc-img" src="/assets/home-slider/ras-foundation-2026.webp" srcset="/assets/home-slider/ras-foundation-2026-480.webp 480w, /assets/home-slider/ras-foundation-2026-800.webp 800w, /assets/home-slider/ras-foundation-2026.webp 1448w" sizes="(max-width:850px) 100vw, 540px" width="1448" height="1086" alt="RAS Foundation Course 2026" loading="lazy" decoding="async">
       </div>
       <div class="sc-body">
-        <span class="sc-tag">🕉️ PRE + MAINS 2026</span>
-        <h2 class="sc-title">RAS Foundation Course 2026</h2>
+        <span class="sc-tag"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg> PRE + MAINS 2026</span>
+        <h3 class="sc-title">RAS Foundation Course 2026</h3>
         <p class="sc-desc">Video Lectures + PDFs + Short Notes + Tests, साथ में Mains Answer Writing और Model Answers — सम्पूर्ण तैयारी एक ही Course में।</p>
-        <a href="/ras-foundation-v2.html" class="sc-btn">Course विवरण देखें →</a>
+        <a href="/ras-foundation-v2.html" class="sc-btn">Course विवरण देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-    </div>
-
-    <div class="showcase-card">
+    </article>
+    <article class="showcase-card">
       <div class="sc-img-wrap">
-        <img class="sc-img" src="/assets/home-slider/ras-prelims-super60-2026.webp" srcset="/assets/home-slider/ras-prelims-super60-2026-480.webp 480w, /assets/home-slider/ras-prelims-super60-2026-800.webp 800w, /assets/home-slider/ras-prelims-super60-2026.webp 1448w" sizes="(max-width:850px) 100vw, 530px" width="1448" height="1086" alt="Super 60 Crash Course" loading="lazy">
+        <img class="sc-img" src="/assets/home-slider/ras-prelims-super60-2026.webp" srcset="/assets/home-slider/ras-prelims-super60-2026-480.webp 480w, /assets/home-slider/ras-prelims-super60-2026-800.webp 800w, /assets/home-slider/ras-prelims-super60-2026.webp 1448w" sizes="(max-width:850px) 100vw, 540px" width="1448" height="1086" alt="Super 60 Crash Course" loading="lazy" decoding="async">
       </div>
       <div class="sc-body">
-        <span class="sc-tag">⏱️ RAS PRELIMS 2026</span>
-        <h2 class="sc-title">Super 60 Crash Course</h2>
+        <span class="sc-tag"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg> RAS PRELIMS 2026</span>
+        <h3 class="sc-title">Super 60 Crash Course</h3>
         <p class="sc-desc">60 दिन का Daily Task Based Programme — रोज़ Video Lecture, PDF Notes, Short Notes और Daily MCQ Quiz से शत-प्रतिशत तैयारी।</p>
-        <a href="/super60-course.html" class="sc-btn">Super 60 देखें →</a>
+        <a href="/super60-course.html" class="sc-btn">Super 60 देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
+    </article>
+  </div>
+
+  <div class="sub-head">
+    <h3 class="sub-title">App पर उपलब्ध Courses &amp; Test Series</h3>
+    <div class="courses-filter-bar" role="group" aria-label="Course फ़िल्टर">
+      <button type="button" class="cf-active" data-filter="all">All Courses</button>
+      <button type="button" data-filter="ras">RAS</button>
+      <button type="button" data-filter="gk">GK Series</button>
+      <button type="button" data-filter="test">Test Series</button>
     </div>
+  </div>
+
+  <div class="courses-card-grid">
+    <div class="c-card" data-category="ras test">
+      <span class="c-badge c-badge-free">100% FREE</span>
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-rocket"/></svg></span><h4 class="c-title">RAS Pre 2026 BEST Test Series | 18 Tests</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">RPSC New Syllabus</span><span class="c-tag">18 Full Tests</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price price-free">FREE</span><span class="c-orig">₹999</span></div><a href="https://techa.on-app.in/app/oc/805299/techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="ras gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-package"/></svg></span><h4 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">All GS Courses</span><span class="c-tag">All Tests</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="ras test">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg></span><h4 class="c-title">10 हजार अति महत्वपूर्ण प्रश्न (10K MCQs)</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">Topic-Wise MCQs</span><span class="c-tag">Solutions</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹198</span><span class="c-orig">₹1,198</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg></span><h4 class="c-title">भारत भूगोल OMASTRA GK सीरीज — India Geography</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">Complete Map Series</span><span class="c-tag">PDF Notes</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-scroll"/></svg></span><h4 class="c-title">India History — भारत का सम्पूर्ण इतिहास</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">प्राचीन, मध्य व आधुनिक</span><span class="c-tag">Videos</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span><h4 class="c-title">World Geography — विश्व भूगोल</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">महाद्वीप व महासागर</span><span class="c-tag">Videos</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span><h4 class="c-title">Mathematics &amp; Reasoning Complete Course</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">Zero Level To Advanced</span><span class="c-tag">Files</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹2,099</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-dna"/></svg></span><h4 class="c-title">जीव विज्ञान (Biology) — OMASTRA GK Series</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">NCERT Based</span><span class="c-tag">Diagrams</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹100</span><span class="c-orig">₹500</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </div>
+
+  <div class="courses-more">
+    <a href="/courses.html" class="btn-outline">सभी Courses देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+
+  <div class="promo-pyq-card">
+    <span class="pyq-ic"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
+    <div class="pyq-content">
+      <span class="pyq-badge">RPSC RAS MAINS • PAPER-I</span>
+      <h3 class="pyq-title">309 RAS Mains Paper-I PYQs</h3>
+      <p class="pyq-desc">इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित विस्तृत समाधान।</p>
+    </div>
+    <a href="/ras-mains-paper-1-pyqs.html" class="pyq-btn">PYQs पढ़ें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
-<!-- ===== FEATURED PDF: STORE CARD ===== -->
 <!-- STORE:START (generated by seo/build_store.py) -->
 <section class="featured-pdf-sec ps-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
-  <h2 class="sec-title" id="featured-pdf-title">💎 Premium <span>Notes Store</span></h2>
-  <p class="sec-sub">ओंकार सर की सम्पूर्ण PDF पुस्तकें, सरल हिंदी में — हर PDF सिर्फ़ ₹49, भुगतान के बाद तुरंत download</p>
+  <p class="sec-eyebrow">Premium PDF</p>
+  <h2 class="sec-title" id="featured-pdf-title">Premium <span>Notes Store</span></h2>
+  <p class="sec-sub">ओमकार सर की सम्पूर्ण PDF पुस्तकें, सरल हिंदी में — हर PDF सिर्फ़ ₹49, भुगतान के बाद तुरंत download</p>
   <div class="ps-grid">
       <a class="ps-card" href="/rajasthan-history-pdf.html">
         <span class="ps-cover"><img src="/assets/store/rajasthan-itihas-poster-420.webp" alt="सम्पूर्ण राजस्थान इतिहास PDF का कवर" width="420" height="594" loading="lazy" decoding="async"><span class="ps-off">75% छूट</span></span>
@@ -709,228 +794,91 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
         <span class="ps-go">देखें और खरीदें →</span>
       </a>
   </div>
-  <div class="ps-more"><a class="ps-all" href="/store.html">📚 पूरा Premium Store देखें →</a></div>
+  <div class="ps-more"><a class="ps-all" href="/store.html"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg> पूरा Premium Store देखें →</a></div>
 </section>
 <!-- STORE:END -->
 
-<!-- ===== PROMO: RAS MAINS PAPER-I PYQS ===== -->
-<div class="promo-pyq-sec">
-  <div class="promo-pyq-card">
-    <div class="pyq-content">
-      <span class="pyq-badge">🔥 RPSC RAS MAINS • PAPER-I</span>
-      <h3 class="pyq-title">📚 309 RAS Mains Paper-I PYQs</h3>
-      <p class="pyq-desc">इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित विस्तृत समाधान।</p>
-    </div>
-    <a href="/ras-mains-paper-1-pyqs.html" class="pyq-btn">PYQs पढ़ें →</a>
-  </div>
-</div>
-
-<!-- ===== YOUTUBE VIDEOS (LITE HIGH-SPEED PLAYER) ===== -->
-<section class="yt-sec">
-  <h2 class="sec-title">Top <span>YouTube</span> Lectures</h2>
+<!-- ===== YOUTUBE ===== -->
+<section class="yt-sec" aria-labelledby="yt-title">
+  <p class="sec-eyebrow">Free Video Lectures</p>
+  <h2 class="sec-title" id="yt-title">Top <span>YouTube</span> Lectures</h2>
   <p class="sec-sub">Free Marathon Classes और Special Lectures — सीधे यहीं देखें</p>
   <div class="yt-grid">
     <div class="yt-card yt-lite" data-yt-id="LjU3DLcbHJs" data-yt-title="राजस्थान भूगोल का 'रामबाण' 🔥 11 घंटे में पूरा Syllabus">
       <div class="yt-embed-wrap">
-        <img class="yt-thumb" src="https://img.youtube.com/vi/LjU3DLcbHJs/hqdefault.jpg" alt="राजस्थान भूगोल मैराथन क्लास" loading="lazy" width="480" height="360">
-        <button type="button" class="yt-play-btn" aria-label="Play राजस्थान भूगोल मैराथन">▶</button>
+        <img class="yt-thumb" src="https://img.youtube.com/vi/LjU3DLcbHJs/hqdefault.jpg" alt="राजस्थान भूगोल मैराथन क्लास" loading="lazy" decoding="async" width="480" height="360">
+        <button type="button" class="yt-play-btn" aria-label="Play राजस्थान भूगोल मैराथन"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button>
         <span class="yt-badge">11:00:15</span>
       </div>
       <div class="yt-info">
         <div class="yt-title">राजस्थान भूगोल का 'रामबाण' 🔥 11 घंटे में पूरा Syllabus | Marathon</div>
-        <div class="yt-meta">📺 29K+ Views · सम्पूर्ण क्लास</div>
+        <div class="yt-meta"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> 29K+ Views · सम्पूर्ण क्लास</div>
       </div>
     </div>
-
     <div class="yt-card yt-lite" data-yt-id="tEmWpuVG5Tg" data-yt-title="RAJASTHAN RIVERS — राजस्थान की नदियाँ Complete Class">
       <div class="yt-embed-wrap">
-        <img class="yt-thumb" src="https://img.youtube.com/vi/tEmWpuVG5Tg/hqdefault.jpg" alt="राजस्थान की नदियाँ क्लास" loading="lazy" width="480" height="360">
-        <button type="button" class="yt-play-btn" aria-label="Play राजस्थान की नदियाँ">▶</button>
+        <img class="yt-thumb" src="https://img.youtube.com/vi/tEmWpuVG5Tg/hqdefault.jpg" alt="राजस्थान की नदियाँ क्लास" loading="lazy" decoding="async" width="480" height="360">
+        <button type="button" class="yt-play-btn" aria-label="Play राजस्थान की नदियाँ"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button>
         <span class="yt-badge">1:44:01</span>
       </div>
       <div class="yt-info">
         <div class="yt-title">RAJASTHAN RIVERS — राजस्थान की नदियाँ Complete Class</div>
-        <div class="yt-meta">📺 1.7K+ Views · संपूर्ण नदियाँ</div>
+        <div class="yt-meta"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> 1.7K+ Views · संपूर्ण नदियाँ</div>
       </div>
     </div>
-
     <div class="yt-card yt-lite" data-yt-id="4g1KO0O3iMw" data-yt-title="RAS MAINS का पूरा SYLLABUS 1 Video में">
       <div class="yt-embed-wrap">
-        <img class="yt-thumb" src="https://img.youtube.com/vi/4g1KO0O3iMw/hqdefault.jpg" alt="RAS Mains Syllabus Decode" loading="lazy" width="480" height="360">
-        <button type="button" class="yt-play-btn" aria-label="Play RAS Mains Syllabus">▶</button>
+        <img class="yt-thumb" src="https://img.youtube.com/vi/4g1KO0O3iMw/hqdefault.jpg" alt="RAS Mains Syllabus Decode" loading="lazy" decoding="async" width="480" height="360">
+        <button type="button" class="yt-play-btn" aria-label="Play RAS Mains Syllabus"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button>
         <span class="yt-badge">49:40</span>
       </div>
       <div class="yt-info">
         <div class="yt-title">RAS MAINS का पूरा SYLLABUS 1 Video में 😱 | Decode + Strategy</div>
-        <div class="yt-meta">📺 3.5K+ Views · परीक्षा रणनीति</div>
+        <div class="yt-meta"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg> 3.5K+ Views · परीक्षा रणनीति</div>
       </div>
     </div>
   </div>
   <div class="yt-more-wrap">
-    <a href="https://youtube.com/@thenewindiaeducation" target="_blank" rel="noopener" class="yt-more-btn">
-      <span>📺 पूरा YouTube Channel देखें</span>
-      <span aria-hidden="true">→</span>
-    </a>
+    <a href="https://youtube.com/@thenewindiaeducation" target="_blank" rel="noopener" class="yt-more-btn"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg><span>पूरा YouTube Channel देखें</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
-<!-- ===== EXAMS SECTION ===== -->
-<section class="exam-sec">
-  <h2 class="sec-title">कौन सी <span>परीक्षा</span> की तैयारी?</h2>
-  <p class="sec-sub">अपनी परीक्षा चुनें और तुरंत सिलेबस, नोट्स व PYQ देखें</p>
-  <div class="exam-filter-bar" role="group" aria-label="परीक्षा सूची फ़िल्टर">
-    <button type="button" class="exam-filter-btn is-active" data-exam-filter="all" aria-pressed="true">सभी परीक्षाएँ</button>
-    <button type="button" class="exam-filter-btn" data-exam-filter="rajasthan" aria-pressed="false">राजस्थान Exams</button>
-    <button type="button" class="exam-filter-btn" data-exam-filter="teaching" aria-pressed="false">Teaching</button>
-    <button type="button" class="exam-filter-btn" data-exam-filter="national" aria-pressed="false">SSC / Railway</button>
-  </div>
-  <p class="exam-filter-status" id="examFilterStatus" aria-live="polite"></p>
-  <div class="exam-grid" id="examGrid">
-    <a href="/ras-exam-2026.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🏛️</div><div class="e-name">RAS / RTS</div><div class="e-sub">Pre &amp; Mains</div></a>
-    <a href="/rajasthan-si-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">👮</div><div class="e-name">Police SI</div><div class="e-sub">Sub Inspector</div></a>
-    <a href="/rajasthan-police-constable-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🚓</div><div class="e-name">Constable</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-patwari-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">📜</div><div class="e-name">Patwari</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/reet-exam.html" class="exam-box" data-exam-group="teaching"><div class="e-icon">🍎</div><div class="e-name">REET</div><div class="e-sub">Teacher Eligibility</div></a>
-    <a href="/rpsc-2nd-grade-teacher-exam.html" class="exam-box" data-exam-group="teaching"><div class="e-icon">👩‍🏫</div><div class="e-name">2nd Grade</div><div class="e-sub">RPSC Teaching</div></a>
-    <a href="/rpsc-1st-grade-teacher-exam.html" class="exam-box" data-exam-group="teaching"><div class="e-icon">🎓</div><div class="e-name">1st Grade</div><div class="e-sub">School Lecturer</div></a>
-    <a href="/rajasthan-vdo-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🏡</div><div class="e-name">VDO</div><div class="e-sub">ग्राम विकास अधिकारी</div></a>
-    <a href="/rajasthan-cet-12th-level.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">📝</div><div class="e-name">CET 12th</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-cet-graduate-level.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🎓</div><div class="e-name">CET Graduate</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/rajasthan-ldc-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🖊️</div><div class="e-name">LDC</div><div class="e-sub">RSMSSB Clerk</div></a>
-    <a href="/rajasthan-jen-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🔧</div><div class="e-name">JEN</div><div class="e-sub">Junior Engineer</div></a>
-    <a href="/rajasthan-aen-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🏗️</div><div class="e-name">AEN</div><div class="e-sub">Assistant Engineer</div></a>
-    <a href="/rajasthan-pashu-paricharak-exam.html" class="exam-box" data-exam-group="rajasthan"><div class="e-icon">🐄</div><div class="e-name">पशु परिचारक</div><div class="e-sub">RSMSSB</div></a>
-    <a href="/railway-group-d-exam.html" class="exam-box" data-exam-group="national"><div class="e-icon">🚆</div><div class="e-name">Railway NTPC</div><div class="e-sub">RRB Recruitment</div></a>
-    <a href="/ssc-gd-constable-exam.html" class="exam-box" data-exam-group="national"><div class="e-icon">🛡️</div><div class="e-name">SSC-GD</div><div class="e-sub">Staff Selection</div></a>
-    <a href="/rajasthan-exams.html" class="exam-box" data-exam-group="all"><div class="e-icon">🎯</div><div class="e-name">सभी Exams</div><div class="e-sub">संपूर्ण विवरण</div></a>
-  </div>
-</section>
-
-<!-- ===== COURSES SECTION ===== -->
-<section class="courses-sec">
-  <h2 class="sec-title">सभी <span>Courses &amp; Test Series</span></h2>
-  <p class="sec-sub">अपनी जरूरत के अनुसार कोर्स चुनें और आज ही शुरू करें</p>
-
-  <div class="courses-filter-bar">
-    <button class="cf-active" data-filter="all">All Courses</button>
-    <button data-filter="ras">RAS</button>
-    <button data-filter="gk">GK Series</button>
-    <button data-filter="test">Test Series</button>
-  </div>
-
-  <div class="courses-card-grid">
-    <div class="c-card" data-category="ras test">
-      <span class="c-badge c-badge-free">100% FREE</span>
-      <div class="c-card-head head-test"><div class="c-icon">🚀</div><h3 class="c-title">RAS Pre 2026 BEST Test Series | 18 Tests</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">RPSC New Syllabus</span><span class="c-tag">18 Full Tests</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price price-free">FREE</span><span class="c-orig">₹999</span></div><a href="https://techa.on-app.in/app/oc/805299/techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="ras gk">
-      <div class="c-card-head head-ras"><div class="c-icon">📦</div><h3 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">All GS Courses</span><span class="c-tag">All Tests</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="ras test">
-      <div class="c-card-head head-test"><div class="c-icon">📝</div><h3 class="c-title">10 हजार अति महत्वपूर्ण प्रश्न (10K MCQs)</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Topic-Wise MCQs</span><span class="c-tag">Solutions</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹198</span><span class="c-orig">₹1,198</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head head-gk"><div class="c-icon">🕉️</div><h3 class="c-title">भारत भूगोल OMASTRA GK सीरीज — India Geography</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Complete Map Series</span><span class="c-tag">PDF Notes</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head head-gk"><div class="c-icon">📜</div><h3 class="c-title">India History — भारत का सम्पूर्ण इतिहास</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">प्राचीन, मध्य व आधुनिक</span><span class="c-tag">Videos</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head head-gk"><div class="c-icon">🌍</div><h3 class="c-title">World Geography — विश्व भूगोल</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">महाद्वीप व महासागर</span><span class="c-tag">Videos</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head head-gk"><div class="c-icon">🔢</div><h3 class="c-title">Mathematics &amp; Reasoning Complete Course</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Zero Level To Advanced</span><span class="c-tag">Files</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹2,099</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head head-gk"><div class="c-icon">🧬</div><h3 class="c-title">जीव विज्ञान (Biology) — OMASTRA GK Series</h3></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">NCERT Based</span><span class="c-tag">Diagrams</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹100</span><span class="c-orig">₹500</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now →</a></div>
-    </div>
-  </div>
-
-  <div class="courses-more">
-    <a href="/courses.html" class="btn-main">📄 सभी Courses देखें</a>
-  </div>
-</section>
-
-<!-- ===== FAQ SECTION (ACCORDION) ===== -->
-<section class="faq-sec" id="faq">
-  <h2 class="sec-title">❓ अक्सर पूछे जाने वाले <span>सवाल (FAQ)</span></h2>
-  <p class="sec-sub">RAS Exam 2026 और तैयारी से जुड़े आपके सभी सवालों के जवाब</p>
-
-  <div class="faq-accordion">
-    <details class="faq-item" open>
-      <summary class="faq-q">
-        <span>RAS Prelims 2026 कब होगी?</span>
-        <span class="faq-icon" aria-hidden="true">▾</span>
-      </summary>
-      <div class="faq-a">
-        संशोधित परीक्षा तिथि <strong>6 दिसंबर 2026 (रविवार)</strong> है। RAS Mains <strong>1–2 मई 2027</strong> के लिए प्रस्तावित है। <a href="https://rpsc.rajasthan.gov.in/forthcomingexaminations" target="_blank" rel="noopener">RPSC का आधिकारिक परीक्षा कैलेंडर</a> देखें।
+<!-- ===== FAQ + FINAL CTA ===== -->
+<section class="faq-sec" id="faq" aria-labelledby="faq-title">
+  <div class="faq-wrap">
+    <div class="faq-col">
+      <p class="sec-eyebrow sec-eyebrow-left">FAQ</p>
+      <h2 class="sec-title sec-title-left" id="faq-title">अक्सर पूछे जाने वाले <span>सवाल</span></h2>
+      <p class="sec-sub sec-sub-left">RAS Exam 2026 और तैयारी से जुड़े आपके सभी सवालों के जवाब</p>
+      <div class="faq-accordion">
+        <details class="faq-item" open>
+          <summary class="faq-q"><span>RAS Prelims 2026 कब होगी?</span><span class="faq-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></span></summary>
+          <div class="faq-a">संशोधित परीक्षा तिथि <strong>6 दिसंबर 2026 (रविवार)</strong> है। RAS Mains <strong>1–2 मई 2027</strong> के लिए प्रस्तावित है। <a href="https://rpsc.rajasthan.gov.in/forthcomingexaminations" target="_blank" rel="noopener">RPSC का आधिकारिक परीक्षा कैलेंडर</a> देखें।</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>RAS Exam 2026 का Syllabus कहाँ मिलेगा?</span><span class="faq-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></span></summary>
+          <div class="faq-a">RAS Exam 2026 का Official RPSC Syllabus (Pre + Mains, New Pattern) omkarsir.com पर Hindi और English दोनों में, PDF Download के साथ उपलब्ध है। <a href="/ras-exam-2026.html">यहाँ से सिलेबस डाउनलोड करें →</a></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>RAS Exam 2026 की तैयारी कैसे करें?</span><span class="faq-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></span></summary>
+          <div class="faq-a">शुरुआत के लिए <a href="/ras-study-hub.html">RAS Study Hub (Roadmap)</a> देखें। RAS Exam 2026 की तैयारी के लिए Omkar Sir के Free Notes, PYQ Papers, Test Series और Video Lectures का उपयोग करें — सभी New India Nav Bharat Nirman App और omkarsir.com पर उपलब्ध हैं।</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>क्या omkarsir.com पर उपलब्ध नोट्स मुफ़्त (Free) हैं?</span><span class="faq-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></span></summary>
+          <div class="faq-a">हाँ, वेबसाइट पर सभी 25+ विषयों के विस्तृत नोट्स, दैनिक Current Affairs और Daily Quiz 100% मुफ़्त पढ़ने के लिए उपलब्ध हैं। इसके अतिरिक्त यदि आप प्रिंटेबल हाई-क्वालिटी कलर्ड PDF नोट्स या ऑनलाइन टेस्ट सीरीज़ चाहते हैं, तो वह न्यूनतम सहयोग शुल्क पर उपलब्ध हैं।</div>
+        </details>
       </div>
-    </details>
+    </div>
 
-    <details class="faq-item">
-      <summary class="faq-q">
-        <span>RAS Exam 2026 का Syllabus कहाँ मिलेगा?</span>
-        <span class="faq-icon" aria-hidden="true">▾</span>
-      </summary>
-      <div class="faq-a">
-        RAS Exam 2026 का Official RPSC Syllabus (Pre + Mains, New Pattern) omkarsir.com पर Hindi और English दोनों में, PDF Download के साथ उपलब्ध है। <a href="/ras-exam-2026.html">यहाँ से सिलेबस डाउनलोड करें →</a>
+    <aside class="cta" aria-labelledby="cta-title">
+      <span class="cta-ic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span>
+      <h2 id="cta-title">आज ही अपनी सफलता की <span>शुरुआत करें!</span></h2>
+      <p>New India Nav Bharat Nirman App डाउनलोड करें और राजस्थान की सर्वश्रेष्ठ टीम के साथ तैयारी करें।</p>
+      <div class="cta-btns">
+        <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener" class="btn-main"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span>Mobile App Download करें</span></a>
+        <a href="https://t.me/omkarsirofficial" target="_blank" rel="noopener" class="btn-light"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg><span>Telegram से जुड़ें</span></a>
       </div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-q">
-        <span>RAS Exam 2026 की तैयारी कैसे करें?</span>
-        <span class="faq-icon" aria-hidden="true">▾</span>
-      </summary>
-      <div class="faq-a">
-        शुरुआत के लिए <a href="/ras-study-hub.html">RAS Study Hub (Roadmap)</a> देखें। RAS Exam 2026 की तैयारी के लिए Omkar Sir के Free Notes, PYQ Papers, Test Series और Video Lectures का उपयोग करें — सभी New India Nav Bharat Nirman App और omkarsir.com पर उपलब्ध हैं।
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-q">
-        <span>क्या omkarsir.com पर उपलब्ध नोट्स मुफ़्त (Free) हैं?</span>
-        <span class="faq-icon" aria-hidden="true">▾</span>
-      </summary>
-      <div class="faq-a">
-        हाँ, वेबसाइट पर सभी 25+ विषयों के विस्तृत नोट्स, दैनिक Current Affairs और Daily Quiz 100% मुफ़्त पढ़ने के लिए उपलब्ध हैं। इसके अतिरिक्त यदि आप प्रिंटेबल हाई-क्वालिटी कलर्ड PDF नोट्स या ऑनलाइन टेस्ट सीरीज़ चाहते हैं, तो वह न्यूनतम सहयोग शुल्क पर उपलब्ध हैं।
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- ===== FINAL HIGH-CONVERSION CTA ===== -->
-<section class="cta">
-  <h2>🚀 आज ही अपनी सफलता की <span>शुरुआत करें!</span></h2>
-  <p>New India Nav Bharat Nirman App डाउनलोड करें और राजस्थान की सर्वश्रेष्ठ टीम के साथ तैयारी करें।</p>
-  <div class="hero-btns">
-    <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener" class="btn-main">
-      <span>📱 Mobile App Download करें</span>
-      <span aria-hidden="true">→</span>
-    </a>
+    </aside>
   </div>
 </section>
 
@@ -949,15 +897,22 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
     <a href="https://whatsapp.com/channel/0029Va4yS7h6buMLgA7alj3H" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://youtube.com/@technicalawara3680" target="_blank" rel="noopener">Technical Awara</a>
   </div>
-  <div class="footer-contact">📧 email2omkara@gmail.com &nbsp;|&nbsp; 📱 7023166962</div>
+  <div class="footer-contact"><span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg> email2omkara@gmail.com</span><span><svg class="ic" aria-hidden="true"><use href="#i-call"/></svg> 7023166962</span></div>
   <div class="footer-copy">© 2026 Omkar Sir | All Rights Reserved</div>
   <div class="footer-legal">
-    <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp; 
-    <a href="/terms.html">Terms &amp; Conditions</a> &nbsp;|&nbsp; 
-    <a href="/refund-policy.html">Refund / Cancellation</a> &nbsp;|&nbsp; 
+    <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="/terms.html">Terms &amp; Conditions</a> &nbsp;|&nbsp;
+    <a href="/refund-policy.html">Refund / Cancellation</a> &nbsp;|&nbsp;
     <a href="/contact.html">Contact Us</a>
   </div>
 </footer>
+
+<!-- ===== MOBILE STICKY DOCK (mobile only; replaces the floating WhatsApp/App buttons on the homepage) ===== -->
+<nav class="m-dock" aria-label="त्वरित संपर्क">
+  <a href="https://t.me/omkarsirofficial" target="_blank" rel="noopener" class="md-tg"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg><span>Telegram</span></a>
+  <a href="https://wa.me/917023166962?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Omkar%20Sir%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%95%E0%A4%BF%E0%A4%B8%E0%A5%80%20Course%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener" class="md-wa"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span>WhatsApp</span></a>
+  <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener" class="md-app"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span>App</span></a>
+</nav>
 
 <script src="/nied-menu.js?v=a911958d" defer></script>
 <script src="/nied-latest-posts.js?v=1fe39693" defer></script>
@@ -976,37 +931,6 @@ document.querySelectorAll('.courses-filter-bar button').forEach(function(btn){
   });
 });
 
-// Interactive Exam Selector
-(function(){
-  var bar = document.querySelector('.exam-filter-bar');
-  var grid = document.getElementById('examGrid');
-  var status = document.getElementById('examFilterStatus');
-  if(!bar || !grid) return;
-  var buttons = Array.prototype.slice.call(bar.querySelectorAll('[data-exam-filter]'));
-  var cards = Array.prototype.slice.call(grid.querySelectorAll('.exam-box[data-exam-group]'));
-  function applyFilter(filter){
-    var visible = 0;
-    cards.forEach(function(card){
-      var show = filter === 'all' || card.getAttribute('data-exam-group') === filter;
-      card.hidden = !show;
-      if(show) visible++;
-    });
-    buttons.forEach(function(button){
-      var active = button.getAttribute('data-exam-filter') === filter;
-      button.classList.toggle('is-active',active);
-      button.setAttribute('aria-pressed',active ? 'true' : 'false');
-    });
-    if(status){
-      var label = filter === 'rajasthan' ? 'राजस्थान' : filter === 'teaching' ? 'Teaching' : filter === 'national' ? 'SSC / Railway' : 'सभी';
-      status.textContent = label + ' श्रेणी में ' + visible + ' परीक्षा विकल्प दिख रहे हैं।';
-    }
-  }
-  buttons.forEach(function(button){
-    button.addEventListener('click',function(){ applyFilter(button.getAttribute('data-exam-filter')); });
-  });
-  applyFilter('all');
-})();
-
 // Lite YouTube Player (Loads iframe only on user click)
 document.querySelectorAll('.yt-lite').forEach(function(card){
   card.addEventListener('click', function(e){
@@ -1022,25 +946,15 @@ document.querySelectorAll('.yt-lite').forEach(function(card){
   var catBtns = document.querySelectorAll('.subj-cat-btn');
   var catGroups = document.querySelectorAll('.subj-category-group');
   if(!catBtns.length || !catGroups.length) return;
-
   catBtns.forEach(function(btn){
     btn.addEventListener('click', function(){
       var targetGroup = btn.getAttribute('data-subgroup');
-      
-      catBtns.forEach(function(b){
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
+      catBtns.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
-
       catGroups.forEach(function(group){
         var groupKey = group.getAttribute('data-subj-group');
-        if(targetGroup === 'all' || targetGroup === groupKey){
-          group.style.display = 'block';
-        } else {
-          group.style.display = 'none';
-        }
+        group.style.display = (targetGroup === 'all' || targetGroup === groupKey) ? 'block' : 'none';
       });
     });
   });
