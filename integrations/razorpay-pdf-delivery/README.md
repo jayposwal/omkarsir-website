@@ -14,12 +14,12 @@ Razorpay signs the raw webhook payload in the `x-razorpay-signature` header. App
 
 1. Razorpay sends `payment.captured` to `/webhook`.
 2. Worker verifies `x-razorpay-signature` with the webhook secret against the exact raw body.
-3. Worker allows only captured INR payments whose amount and product-specific `payment.description` match the configured allow-list: Modern Indian History ₹9/₹99, or Rajasthan History ₹49.
+3. Worker allows only captured INR payments whose amount matches and whose Razorpay Payment Button ID (found in `payment.description` as `#<id>`, in `payment.notes`, or — with API keys — in the linked order) belongs to exactly one product. The old title allow-list is only a fallback; ambiguous matches fail closed.
 4. Worker creates a time-limited HMAC-signed download token.
 5. Worker forwards the verified purchase to the Google Apps Script emailer using a separate random shared secret.
 6. Apps Script uses Gmail to send the HTML email with the prominent **⬇️ PDF Download करें** button. A Google Sheet log deduplicates duplicate webhooks by Payment ID.
 7. `/verify` (website): Worker fetches the payment from `api.razorpay.com` with the key ID/secret, checks captured + INR + amount + product description, and returns a signed link.
-8. Download URLs are handled by the Worker. The Worker validates token signature and expiry, then streams the matching PDF object from a private Cloudflare R2 bucket (`adhunik-bharat-itihas.pdf` or `rajasthan-history.pdf`); no public Google Drive source link is exposed.
+8. Download URLs are handled by the Worker. The Worker validates token signature and expiry, then streams the matching PDF from private storage: R2 (`PDF_BUCKET`), Workers KV (`PDF_KV`, no card needed, 25 MiB/value) or a private GitHub repo (`GITHUB_PDF_REPO` + read-only `GITHUB_PDF_TOKEN`, contents API raw, ≤100 MB). No public URL is exposed.
 
 ## Files
 
@@ -92,7 +92,7 @@ npx wrangler deploy --config wrangler.toml
 
 ### E. Match the correct product
 
-The worker intentionally sends no email unless amount and product description match a product allow-list.
+Primary key: Payment Button ID (`*_BUTTON_IDS`, defaults in `worker.js`) + amount. After the first real test purchase, check the Worker log line "No product match" (if any): it prints the description, note keys and order notes without personal data, so the right identifier can be configured. Legacy fallback (description allow-lists):
 - Modern History: ₹9/₹49/₹99 and `ALLOWED_PAYMENT_DESCRIPTIONS`.
 - Rajasthan History: ₹49 and `RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS`.
 - RAS Mains Paper-II: ₹49 and `RAS_MAINS_P2_PAYMENT_DESCRIPTIONS`.
