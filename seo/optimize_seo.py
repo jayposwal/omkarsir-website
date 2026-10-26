@@ -369,9 +369,18 @@ SAME_AS = [
     "https://play.google.com/store/apps/details?id=co.april2019.techa",
 ]
 
-# Duplicate pages -> page to keep (same questions / superseded copy). The
-# duplicates stay online until the owner approves removal; meanwhile their
-# canonical points at the keeper so search engines consolidate signals.
+# Duplicate pages -> page to keep (same questions / superseded copy).
+# Removal approved 2026-10-26: each duplicate (and its booklets) is now a tiny
+# redirect stub carrying REDIRECT_STUB_MARKER. Stubs are never rewritten by this
+# script and never listed in the sitemap or search index. Keep this map so any
+# leftover reference still resolves to the keeper.
+REDIRECT_STUB_MARKER = 'name="omkarsir-redirect-stub"'
+
+
+def is_redirect_stub(text: str) -> bool:
+    return REDIRECT_STUB_MARKER in text
+
+
 DUPLICATE_CANONICAL = {
     "quizzes/150-2026-08-17-ojuw.html": "quizzes/150-2026-08-17-1ppa.html",
     "quizzes/top-150-mcqs-2026-08-17-8kat.html": "quizzes/150-2026-08-17-1ppa.html",
@@ -730,6 +739,8 @@ def fix_empty_alts(content: str, rel: str, h1_text: str | None) -> str:
 
 def process_html(path: Path) -> bool:
     raw_original = path.read_text(encoding="utf-8")
+    if is_redirect_stub(raw_original):
+        return False  # redirect stubs for removed duplicates: leave untouched
     original = ensure_html_lang(raw_original)
 
     m = HEAD_RE.search(original)
@@ -883,6 +894,8 @@ def write_sitemap() -> None:
         if rel.startswith("show/") or keeper_for(rel):
             continue
         raw = path.read_text(encoding="utf-8", errors="ignore")
+        if is_redirect_stub(raw):
+            continue
         hm = HEAD_RE.search(raw)
         head = hm.group(1) if hm else ""
         if re.search(r'<meta\b[^>]*\bname=["\']robots["\'][^>]*\bcontent=["\'][^\"\']*noindex', head, re.I):
@@ -939,6 +952,8 @@ def write_search_index() -> None:
         if rel in SEARCH_INDEX_EXCLUDE or keeper_for(rel):
             continue
         raw = path.read_text(encoding="utf-8", errors="ignore")
+        if is_redirect_stub(raw):
+            continue
         hm = HEAD_RE.search(raw)
         head = hm.group(1) if hm else raw
         if re.search(r'<meta\b[^>]*\bname=["\']robots["\'][^>]*\bcontent=["\']([^"\']*)["\']', head, re.I):
