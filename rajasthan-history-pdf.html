@@ -26,173 +26,276 @@
 <meta name="author" content="Omkar Singh Gurjar">
 <meta name="theme-color" content="#1B2A6B">
 <link rel="canonical" href="https://omkarsir.com/rajasthan-history-pdf.html">
-<link rel="stylesheet" href="/assets/fonts/gf-ee0c307c.css">
+<link rel="preload" href="/assets/fonts/hind-400-devanagari.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-800-devanagari.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="/assets/store/rajasthan-itihas-poster-420.webp" imagesrcset="/assets/store/rajasthan-itihas-poster-420.webp 420w, /assets/store/rajasthan-itihas-poster.webp 1092w" imagesizes="(max-width:899px) 160px, 330px" fetchpriority="high">
+<link rel="stylesheet" href="/assets/fonts/nied-fonts.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#F5F7FC;--paper:#FFFFFF;--navy:#1B2A6B;--saffron:#FF6B00;--saffron-soft:#FFF1E6;
-  --green:#0A8F55;--ink:#1A2140;--muted:#5B6385;--line:#E2E7F2;
-  --serif:'Tiro Devanagari Hindi',serif;--sans:'Mukta',sans-serif;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;text-align:left;font-size:17px}
+:root{--navy:#1B2A6B;--navy2:#0F1A4A;--saf:#C2410C;--btn:#C84E00;--btn-hi:#E06212;--cream:#FFF7EF;--bg:#F6F7FB;--ink:#18203F;--muted:#535B7E;--line:#E3E7F1;--green:#0B7A4B;
+--head:'Poppins','Hind',sans-serif;--body:'Hind',sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:#fff;color:var(--ink);line-height:1.6;font-size:17px}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--navy)}
-:focus-visible{outline:3px solid var(--saffron);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--btn-hi);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+svg{flex:0 0 auto}
 
-.strip{background:var(--saffron);color:#fff;font-weight:700;font-size:15px}
-.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:center;padding-top:8px;padding-bottom:8px;text-align:center}
-.strip .t{font-variant-numeric:tabular-nums;background:rgba(255,255,255,.2);padding:1px 10px;border-radius:6px}
+/* top strip */
+.strip{background:var(--navy2);color:#E8ECFF;font-size:14px;line-height:1.35}
+.strip .wrap{padding-top:8px;padding-bottom:8px;text-align:center}
+.strip b{color:#FFB27A;font-weight:700}
+.strip s{color:#AEB7DD}
+.strip-tag{display:inline-block;background:#C84E00;color:#fff;font-weight:700;font-size:12.5px;padding:1px 8px;border-radius:5px;margin-right:4px;vertical-align:1px}
 
-.hero{padding:44px 0 56px;background:
-  radial-gradient(900px 420px at 85% -10%,#FFE7D3 0%,rgba(255,231,211,0) 60%),
-  radial-gradient(700px 380px at -5% 110%,#E3E9FF 0%,rgba(227,233,255,0) 60%),var(--bg)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:56px;align-items:center}
-.book{position:relative;perspective:1400px;max-width:360px;margin:0 auto;width:100%}
-.book .cover{width:100%;border-radius:4px 10px 10px 4px;transform:rotateY(-14deg) rotateZ(-1deg);transform-origin:left center;
-  box-shadow:18px 26px 48px rgba(27,42,107,.28),4px 6px 14px rgba(27,42,107,.18)}
-.seal{position:absolute;bottom:15%;right:-18px;width:96px;height:96px;border-radius:50%;background:var(--green);color:#fff;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;font-weight:800;
-  box-shadow:0 0 0 5px #fff,0 10px 24px rgba(10,143,85,.35);transform:rotate(10deg)}
-.seal b{font-size:30px}
-.seal span{font-size:15px}
+/* CTA */
+.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:#fff;text-decoration:none;
+  font-family:var(--head);font-weight:700;font-size:17px;line-height:1.2;padding:14px 24px;border-radius:14px;border:0;cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 20px rgba(200,78,0,.32);transition:transform .15s,box-shadow .15s,background .15s}
+.cta:hover{background:#B54600;transform:translateY(-1px)}
+.cta:active{transform:translateY(1px)}
+.cta-big{font-size:19px;padding:17px 26px;min-height:60px;width:100%;border-radius:16px}
+.cta-block{width:100%}
+.cta-sm{font-size:15px;padding:10px 16px;border-radius:11px}
+.cta-row{margin-top:28px;text-align:center}
 
-.kicker{color:#C14F00;font-weight:700;font-size:17px;margin-bottom:6px}
-h1{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:clamp(34px,5.4vw,58px);line-height:1.2}
-.lead{color:var(--muted);font-size:18.5px;margin-top:14px;max-width:34em}
-.cred{margin-top:14px;font-weight:600;color:var(--navy);font-size:16px;display:flex;gap:8px;align-items:flex-start}
-.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;color:var(--ink);font-weight:600}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:22px 0 34px;
+  background:radial-gradient(520px 300px at 100% 0%,#FFE4CC 0%,rgba(255,228,204,0) 70%),
+  radial-gradient(520px 340px at 0% 100%,#E2E8FF 0%,rgba(226,232,255,0) 70%),var(--cream)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(27,42,107,.07) 1px,transparent 1.2px);background-size:18px 18px;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.hero-grid{position:relative}
+.hero-copy{max-width:560px;margin:0 auto}
+.pill{display:inline-block;font-weight:600;font-size:13.5px;color:var(--navy);background:#fff;border:1px solid #DCE2F3;padding:3px 12px;border-radius:50px;box-shadow:0 2px 8px rgba(27,42,107,.06)}
+h1{font-family:var(--head);font-weight:800;color:var(--navy);font-size:31px;line-height:1.28;margin-top:12px;letter-spacing:-.2px}
+.h1-pre{display:block;color:var(--saf);font-size:.62em;font-weight:700;line-height:1.3}
+.hook{color:#3A4268;font-size:16.5px;margin-top:8px;line-height:1.55}
+.hook b{color:var(--navy)}
 
-.ticket{margin-top:26px;background:var(--paper);border-radius:18px;border:2px solid var(--saffron);
-  box-shadow:0 18px 40px rgba(255,107,0,.16);max-width:520px;position:relative}
-.ticket-top{padding:18px 22px 14px}
-.when{display:inline-block;background:var(--saffron-soft);color:#C14F00;font-weight:700;font-size:15px;padding:3px 12px;border-radius:50px}
-.price{display:flex;align-items:flex-end;gap:14px;margin-top:10px;flex-wrap:wrap}
-.price .now{font-family:var(--serif);font-size:78px;line-height:.95;color:var(--navy)}
-.price .was{font-size:28px;color:#8A90A8;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#D9363E;margin-bottom:10px}
-.price .off{background:var(--green);color:#fff;font-weight:800;font-size:17px;padding:4px 12px;border-radius:8px;margin-bottom:12px}
-.save{color:var(--green);font-weight:700;margin-top:2px}
-.ticket-cut{border-top:2px dashed #FFC9A1;position:relative}
-.ticket-cut::before,.ticket-cut::after{content:"";position:absolute;top:-13px;width:24px;height:24px;border-radius:50%;background:var(--bg);border:2px solid var(--saffron)}
-.ticket-cut::before{left:-14px;clip-path:inset(0 0 0 50%)}
-.ticket-cut::after{right:-14px;clip-path:inset(0 50% 0 0)}
-.ticket-bottom{padding:16px 22px 20px}
-.cd-label{font-size:15px;color:var(--muted);font-weight:600}
-.countdown{display:flex;gap:8px;margin:8px 0 14px}
-.cd{background:var(--navy);color:#fff;border-radius:10px;min-width:72px;padding:6px 8px 4px;text-align:center}
-.cd b{display:block;font-size:30px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
-.cd small{font-size:13px;color:#C9D1F2}
-.buy{min-height:48px}
-.trust{font-size:14.5px;color:var(--muted);margin-top:10px}
-.sample{display:inline-block;margin-top:10px;font-weight:700;color:#C14F00;text-decoration:none;border-bottom:2px solid #FFD0A8}
-.ended .when{background:#EEF1F8;color:var(--muted)}
+.offer{display:flex;align-items:center;gap:16px;margin-top:18px}
+.book-wrap{position:relative;flex:0 0 150px;perspective:900px}
+.book{position:relative;transform:rotateY(-16deg) rotateZ(-1.5deg);transform-style:preserve-3d;transform-origin:left center}
+.book-cover{position:relative;z-index:2;width:100%;border-radius:2px 7px 7px 2px;
+  box-shadow:inset 4px 0 6px rgba(0,0,0,.25),14px 18px 30px rgba(27,42,107,.32),3px 4px 10px rgba(27,42,107,.2)}
+.book::before{content:"";position:absolute;z-index:3;left:5px;top:0;bottom:0;width:3px;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(0,0,0,.18));border-radius:2px}
+.book-pages{position:absolute;z-index:1;top:3px;bottom:3px;right:-7px;width:12px;border-radius:0 4px 4px 0;
+  background:repeating-linear-gradient(90deg,#fff 0 1.5px,#E7E3DA 1.5px 2.5px);box-shadow:4px 6px 12px rgba(27,42,107,.18)}
+.book-tag{position:absolute;z-index:4;top:-8px;right:-12px;background:var(--btn);color:#fff;font-family:var(--head);font-weight:800;font-size:13px;padding:3px 9px;border-radius:7px;transform:rotate(8deg);box-shadow:0 4px 10px rgba(200,78,0,.35)}
 
-section.s{padding:64px 0}
-.s h2{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:clamp(28px,3.6vw,40px);line-height:1.25}
-.s .sub{color:var(--muted);margin-top:6px;max-width:40em}
-.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ticket{flex:1;min-width:0;background:#fff;border-radius:18px;padding:14px 14px 12px;border:1px solid #F3D6BF;box-shadow:0 12px 30px rgba(193,79,0,.12);position:relative}
+.off-badge{display:inline-block;background:var(--green);color:#fff;font-weight:700;font-size:14px;padding:2px 10px;border-radius:7px}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:4px;flex-wrap:wrap}
+.price .now{font-family:var(--head);font-weight:800;font-size:46px;line-height:1.05;color:var(--navy);letter-spacing:-1px}
+.price .was{font-size:20px;color:#7A819E;text-decoration:line-through;text-decoration-color:#D9363E;text-decoration-thickness:2px}
+.save{color:var(--green);font-weight:700;font-size:15px;line-height:1.35}
+.ppp{color:var(--muted);font-size:13.5px;line-height:1.35;margin-top:3px}
 
-.pages{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}
-.pages figure{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;box-shadow:0 10px 26px rgba(27,42,107,.10)}
-.pages figure:nth-child(1){transform:rotate(-1.6deg)}
-.pages figure:nth-child(3){transform:rotate(1.6deg)}
-.pages figcaption{font-size:15px;color:var(--muted);padding:8px 4px 2px;text-align:center}
+.cta-hero{position:relative;margin-top:16px}
+.cta-hero .cta-big{animation:pulse 2.6s ease-in-out 1.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 20px rgba(200,78,0,.32)}50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 20px rgba(200,78,0,.32),0 0 0 7px rgba(224,98,18,.16)}}
+/* The real Razorpay payment button sits exactly over the styled CTA, so a tap lands on Razorpay's own button. */
+.cta-hero .buy{position:absolute;inset:0;z-index:2;overflow:hidden;border-radius:16px}
+.cta-hero .buy form,.cta-hero .buy .razorpay-payment-button,.cta-hero .buy a.PaymentButton{display:block!important;width:100%!important;height:100%!important;min-width:0!important;margin:0!important;max-width:none!important}
+.cta-hero .buy a.PaymentButton{opacity:0!important;cursor:pointer}
+.cta-hero:hover .cta-big{background:#B54600}
+.secure{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-size:13.5px;margin-top:8px}
+.micro{list-style:none;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:6px;margin-top:14px;padding:10px 12px;background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:12px}
+.micro li{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--navy);white-space:nowrap;line-height:1.2}
+.micro svg{width:16px;height:16px;color:var(--saf)}
+.nieom{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:14.5px;color:var(--muted);line-height:1.4}
+.nieom b{color:var(--navy)}
+@media (max-width:899px){.nieom{padding-right:66px}}
 
-.gets{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin-top:22px}
-.gets li{list-style:none;padding:14px 0 14px 48px;border-bottom:1px solid var(--line);position:relative}
-.gets .ic{position:absolute;left:0;top:16px;width:34px;height:34px;border-radius:10px;background:var(--saffron-soft);display:flex;align-items:center;justify-content:center;font-size:18px}
-.gets b{display:block;color:var(--navy);font-size:18px}
-.gets span:not(.ic){color:var(--muted);font-size:16px}
+/* sections */
+section.s{padding:52px 0}
+.eyebrow{font-family:var(--head);font-weight:700;font-size:13.5px;color:var(--saf);letter-spacing:.3px;margin-bottom:4px}
+.s h2{font-family:var(--head);font-weight:800;color:var(--navy);font-size:25px;line-height:1.35}
+.s .sub{color:var(--muted);margin-top:6px;max-width:40em;font-size:16px}
 
-.toc{columns:2;column-gap:44px;margin-top:24px}
-.toc li{list-style:none;break-inside:avoid;display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
-.toc .n{flex:0 0 auto;font-family:var(--serif);color:var(--saffron);font-size:20px;line-height:1.3;min-width:28px}
-.toc .t{flex:1;min-width:0;line-height:1.45}
-.toc .p{flex:0 0 auto;color:#8A90A8;font-size:14px;padding-top:2px}
+/* gallery */
+.s-preview{background:var(--bg)}
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px -18px 0;padding:6px 18px 16px;scrollbar-width:none}
+.gallery::-webkit-scrollbar{display:none}
+.gallery figure{scroll-snap-align:center;background:#fff;border-radius:12px;padding:8px;border:1px solid var(--line);box-shadow:0 10px 26px rgba(27,42,107,.12)}
+.zoom{display:block;width:100%;border:0;padding:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden}
+.gallery figcaption{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 4px 2px;font-size:15px}
+.gallery figcaption b{color:var(--navy);font-weight:600}
+.gallery figcaption span{color:var(--saf);font-weight:600;font-size:13.5px;white-space:nowrap}
+.locked-in{position:relative;border-radius:6px;overflow:hidden}
+.locked-in img{filter:blur(5px) saturate(.8);transform:scale(1.08)}
+.lock-msg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;
+  background:linear-gradient(180deg,rgba(15,26,74,.55),rgba(15,26,74,.85));color:#fff}
+.lock-msg b{font-family:var(--head);font-size:21px;line-height:1.3}
+.lock-msg span{font-size:14.5px;color:#D7DDF7;margin-bottom:6px}
+.swipe{text-align:center;color:var(--muted);font-size:13.5px;margin-top:2px}
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px;counter-reset:st}
-.steps li{list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 18px 18px}
-.steps li::before{counter-increment:st;content:counter(st);display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:10px}
-.steps b{color:var(--navy);display:block;font-size:18px}
-.steps span{color:var(--muted);font-size:16px}
+/* features */
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 13px;box-shadow:0 4px 14px rgba(27,42,107,.05)}
+.fi{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;background:#FFF0E3;color:var(--saf);margin-bottom:8px}
+.fi svg{width:22px;height:22px}
+.feat b{display:block;font-family:var(--head);font-weight:600;color:var(--navy);font-size:15.5px;line-height:1.35}
+.feat p{color:var(--muted);font-size:14.5px;line-height:1.5;margin-top:4px}
 
-.faq{margin-top:20px;max-width:820px}
-.faq details{border-bottom:1px solid var(--line);padding:14px 0}
-.faq summary{cursor:pointer;font-weight:700;font-size:18px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+/* value stack */
+.s-value{background:var(--bg)}
+.value{background:linear-gradient(135deg,#1B2A6B,#0F1A4A);border-radius:22px;padding:24px 18px;color:#fff;display:grid;gap:20px;box-shadow:0 20px 40px rgba(15,26,74,.25)}
+.value h2{color:#fff}
+.eyebrow-lt{color:#FFB27A}
+.stack{list-style:none;margin-top:14px;display:grid;gap:8px}
+.stack li{position:relative;padding-left:30px;color:#E3E8FF;font-size:16px;line-height:1.45}
+.stack li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#0B7A4B url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/14px}
+.vbox{background:#fff;color:var(--ink);border-radius:16px;padding:18px}
+.vrow{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px dashed var(--line);font-size:16px}
+.vrow s{color:#7A819E;text-decoration-color:#D9363E}
+.vrow em{font-style:normal;color:var(--green);font-weight:700}
+.vtotal{border-bottom:0}
+.vtotal span{font-weight:700;color:var(--navy)}
+.vtotal b{font-family:var(--head);font-size:36px;color:var(--navy);line-height:1}
+.vnote{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.vnote b{color:var(--saf)}
+.vfine{font-size:13px;color:var(--muted);text-align:center;margin-top:9px}
+
+/* toc */
+.acc{margin-top:20px;display:grid;gap:10px}
+.acc details{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.acc details[open]{box-shadow:0 8px 22px rgba(27,42,107,.08);border-color:#D6DCEE}
+.acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:13px 14px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"";margin-left:auto;width:22px;height:22px;flex:0 0 auto;border-radius:50%;background:#FFF0E3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5' fill='none' stroke='%23C2410C' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/16px;transition:transform .2s}
+.acc details[open] summary::after{transform:rotate(180deg)}
+.pt{flex:0 0 auto;font-family:var(--head);font-weight:700;font-size:12.5px;color:#fff;background:var(--navy);padding:3px 9px;border-radius:7px}
+.ptt{font-family:var(--head);font-weight:600;color:var(--navy);font-size:16px;line-height:1.35}
+.ptt small{display:block;font-family:var(--body);font-weight:500;color:var(--muted);font-size:13.5px}
+.toc{list-style:none;padding:0 14px 8px}
+.toc li{display:flex;gap:12px;padding:10px 0;border-top:1px dashed var(--line);align-items:flex-start}
+.toc .n{flex:0 0 30px;height:30px;border-radius:9px;background:#FFF0E3;color:var(--saf);font-family:var(--head);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.toc .t{flex:1;min-width:0;line-height:1.45;font-size:15.5px;padding-top:3px}
+.toc .p{flex:0 0 auto;color:#6B7293;font-size:13.5px;padding-top:4px;white-space:nowrap}
+
+/* author */
+.s-author{background:var(--cream)}
+.author{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+.author-img{width:100%;border-radius:16px;box-shadow:0 12px 28px rgba(27,42,107,.2);border:3px solid #fff;aspect-ratio:4/5;object-fit:cover}
+.author .s h2,.author h2{font-size:21px}
+.badge-big{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:14.5px;line-height:1.45;color:var(--muted);background:#fff;border:1px solid #F3D6BF;border-radius:12px;padding:9px 11px}
+.badge-big b{color:var(--navy)}
+.author-p{grid-column:1/-1;color:var(--muted);font-size:16px}
+
+/* steps */
+.steps{list-style:none;display:grid;gap:12px;margin-top:20px;counter-reset:st}
+.steps li{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 14px 14px 62px}
+.steps li::before{counter-increment:st;content:counter(st);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--head);font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;font-family:var(--head);font-weight:600;color:var(--navy);font-size:16px}
+.steps span{color:var(--muted);font-size:15px;line-height:1.5}
+.assure{display:flex;gap:12px;align-items:flex-start;margin-top:16px;background:#EFFAF4;border:1px solid #CDEBDA;border-radius:14px;padding:14px;color:var(--green)}
+.assure p{color:#2F4A3C;font-size:15px;line-height:1.55}
+.assure b{color:#0B5E3A}
+.assure a{color:#0B5E3A;font-weight:600}
+
+/* faq */
+.s-faq{background:var(--bg)}
+.faq{margin-top:16px;max-width:820px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:2px 16px}
+.faq details{border-bottom:1px solid var(--line);padding:13px 0}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;font-family:var(--head);font-weight:600;font-size:16px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px;line-height:1.45}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--saffron);font-size:24px;line-height:1}
+.faq summary::after{content:"+";color:var(--saf);font-size:24px;line-height:1;font-weight:400}
 .faq details[open] summary::after{content:"–"}
-.faq p{color:var(--muted);margin-top:8px}
+.faq p{color:var(--muted);margin-top:8px;font-size:15.5px}
 
-.final{background:linear-gradient(120deg,#FFF1E6,#FFFFFF 55%,#EAF0FF);border:1px solid #FFD9BD;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.final h3{font-family:var(--serif);font-weight:400;color:var(--navy);font-size:30px;line-height:1.3}
-.final p{color:var(--muted)}
-.final .fp{font-family:var(--serif);font-size:46px;color:var(--navy);line-height:1}
-.final .fp s{font-family:var(--sans);font-size:20px;color:#8A90A8;text-decoration-color:#D9363E}
-.final .go{display:inline-block;margin-top:12px;background:var(--saffron);color:#fff;text-decoration:none;font-weight:800;padding:12px 26px;border-radius:12px}
+/* final */
+.final{position:relative;overflow:hidden;background:radial-gradient(400px 220px at 100% 0%,#FFE0C4,rgba(255,224,196,0) 70%),linear-gradient(135deg,#FFF7EF,#fff 60%,#EEF2FF);border:1px solid #F3D6BF;border-radius:22px;padding:24px 18px;display:grid;gap:18px;text-align:center}
+.final-book{width:120px;margin:0 auto;border-radius:3px 7px 7px 3px;box-shadow:12px 16px 28px rgba(27,42,107,.28);transform:rotate(-3deg)}
+.final-tag{display:inline-block;font-size:13.5px;font-weight:600;color:var(--saf);background:#fff;border:1px solid #F3D6BF;border-radius:50px;padding:2px 12px}
+.final h2{margin-top:8px}
+.fp{font-family:var(--head);font-weight:800;font-size:40px;color:var(--navy);margin:8px 0 14px;line-height:1}
+.fp s{font-family:var(--body);font-weight:400;font-size:20px;color:#7A819E;text-decoration-color:#D9363E}
+.fp em{font-style:normal;font-family:var(--body);font-size:14px;font-weight:700;color:#fff;background:var(--green);padding:3px 9px;border-radius:7px;vertical-align:6px}
+.final-note{color:var(--muted);font-size:14px;margin-top:10px}
 
-footer{background:var(--navy);color:#C9D1F2;padding:34px 20px 96px;text-align:center;font-size:15px}
-footer b{color:#fff;font-size:18px}
-footer a{color:#FFB070;text-decoration:none;margin:0 6px}
+footer{background:var(--navy2);color:#C9D1F2;padding:30px 20px 104px;text-align:center;font-size:15px}
+footer b{color:#fff;font-size:17px;font-family:var(--head);font-weight:600}
+footer a{color:#FFB27A;text-decoration:none;margin:0 6px;display:inline-block;padding:3px 0}
 
-.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(27,42,107,.12);
-  display:none;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;z-index:50}
-.bar .bp{font-family:var(--serif);font-size:30px;color:var(--navy);line-height:1}
-.bar .bp s{font-family:var(--sans);font-size:15px;color:#8A90A8}
-.bar .bt{font-size:13px;color:#C14F00;font-weight:700;font-variant-numeric:tabular-nums}
-.bar a{background:var(--saffron);color:#fff;text-decoration:none;font-weight:800;padding:11px 18px;border-radius:12px;font-size:17px}
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -10px 26px rgba(27,42,107,.14);display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s ease}
+.bar.on{transform:none}
+.bp{font-family:var(--head);font-weight:800;font-size:26px;color:var(--navy);line-height:1}
+.bp s{font-family:var(--body);font-weight:400;font-size:15px;color:#7A819E}
+.bt{font-size:12.5px;color:var(--green);font-weight:700;margin-top:3px}
+.bar .cta{padding:13px 20px;font-size:16.5px;flex:0 0 auto}
+body.bar-on .wa-float{bottom:86px!important}
+body.bar-on #nied-back-to-top{bottom:150px!important}
 
-@media (max-width:900px){
-  .hero{padding-top:30px}
-  .hero-grid{grid-template-columns:1fr;gap:34px}
-  .book{max-width:240px}
-  .gets{grid-template-columns:1fr}
-  .toc{columns:1}
-  .steps{grid-template-columns:1fr}
-  .pages{grid-template-columns:repeat(3,minmax(210px,1fr));overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory}
-  .pages figure{scroll-snap-align:center;transform:none!important}
-  .final{grid-template-columns:1fr}
-  .bar{display:flex}
-  .app-float{display:none!important}
-  .wa-float{bottom:84px!important;right:12px!important}
-  .seal{width:78px;height:78px;right:-14px}
-  .seal b{font-size:24px}
+/* lightbox */
+.lb{border:0;padding:12px;background:transparent;max-width:min(96vw,680px);max-height:96vh;margin:auto;overflow:visible}
+.lb::backdrop{background:rgba(10,16,45,.86)}
+.lb img{width:100%;max-height:calc(96vh - 110px);object-fit:contain;border-radius:8px;background:#fff}
+.lb .cta{margin-top:10px}
+.lb-x{position:absolute;top:-6px;right:-2px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+
+@media (max-width:360px){
+  h1{font-size:27px}.book-wrap{flex-basis:124px}.price .now{font-size:40px}.micro li{font-size:12px}.micro{padding:9px 8px}
 }
-@media (max-width:420px){
-  body{font-size:16px}
+@media (max-width:899px){.app-float{display:none!important}}
+@media (min-width:600px){
+  .gallery{grid-auto-columns:44%}
+  .feats{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:900px){
+  body{font-size:17.5px}
+  .wrap{padding:0 28px}
+  .hero{padding:48px 0 64px}
+  .hero-copy{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) 380px;grid-template-areas:"pill book" "h1 book" "hook book" "offer book" "cta book" "secure book" "micro book" "nieom book";column-gap:64px;align-items:start}
+  .pill{grid-area:pill;justify-self:start}
+  h1{grid-area:h1;font-size:46px}
+  .hook{grid-area:hook;font-size:19px;max-width:30em}
+  .offer{display:contents}
+  .book-wrap{grid-area:book;align-self:center;width:330px;margin:0 auto}
+  .book-tag{font-size:16px;padding:5px 12px;top:-10px;right:-18px}
+  .book-pages{width:18px;right:-11px}
+  .ticket{grid-area:offer;margin-top:22px;display:grid;grid-template-columns:auto 1fr;column-gap:20px;align-items:center;padding:18px 22px;max-width:520px}
+  .off-badge{grid-column:1/-1;justify-self:start}
   .price .now{font-size:64px}
-  .cd{min-width:62px}
-  .cd b{font-size:26px}
-  .ticket-top,.ticket-bottom{padding-left:16px;padding-right:16px}
+  .price{grid-row:2/4}
+  .cta-hero{grid-area:cta;max-width:520px}
+  .secure{grid-area:secure;max-width:520px}
+  .micro{grid-area:micro;max-width:520px}
+  .nieom{grid-area:nieom}
+  section.s{padding:80px 0}
+  .s h2{font-size:34px}
+  .gallery{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible;margin:28px 0 0;padding:0}
+  .gallery figure:nth-child(1){transform:rotate(-1.4deg)}
+  .gallery figure:nth-child(3){transform:rotate(1.2deg)}
+  .zoom img{transition:transform .25s}.zoom:hover img{transform:scale(1.03)}
+  .swipe{display:none}
+  .feats{grid-template-columns:repeat(4,1fr);gap:16px}
+  .value{grid-template-columns:1.2fr 1fr;padding:40px;gap:40px;align-items:center}
+  .acc{grid-template-columns:1fr 1fr;align-items:start}
+  .author{grid-template-columns:260px 1fr;gap:44px}
+  .author h2{font-size:32px}
+  .author-p{grid-column:2}
+  .author-txt .author-p{margin-top:12px}
+  .steps{grid-template-columns:repeat(3,1fr);gap:18px}
+  .steps li{padding:62px 18px 18px}
+  .final{grid-template-columns:200px 1fr;text-align:left;padding:36px 44px;gap:44px;align-items:center}
+  .final-book{width:180px}
+  .final .cta-big{width:auto}
+  .bar{display:none}
+  footer{padding-bottom:34px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta-hero .cta-big{animation:none}.bar{transition:none}}
 
-/* Purchase reassurance: clear delivery options at the decision point. */
-.delivery-assurance{margin:16px 0 2px;padding:14px;border:1px solid #DCE8E1;border-radius:14px;background:linear-gradient(135deg,#F3FCF7,#F8FAFF)}
-.delivery-assurance h2{font-family:var(--sans);font-size:16px;line-height:1.35;color:var(--navy);margin:0 0 10px;font-weight:800}
-.delivery-route{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.delivery-route div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center}
-.delivery-route strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
-.delivery-route span{display:block;color:var(--muted);font-size:12px;line-height:1.3;margin-top:2px}
-.delivery-note{font-size:12.5px;color:var(--muted);margin-top:9px;line-height:1.4}
-@media (max-width:420px){.delivery-route{grid-template-columns:1fr}.delivery-route div{text-align:left;padding:9px 11px}}
-
-/* Compact Amazon-style checkout summary: keeps only offer, price and buy action. */
-.ticket{max-width:440px;margin-top:20px;border:1px solid #D5D9D9;border-radius:10px;box-shadow:0 3px 10px rgba(15,23,42,.08);overflow:hidden}
-.ticket-top{padding:14px 18px 10px}
-.when{font-size:14px;padding:2px 10px}
-.price{gap:11px;margin-top:7px}
-.price .now{font-size:64px}
-.price .was{font-size:24px;margin-bottom:7px}
-.price .off{font-size:15px;padding:3px 10px;margin-bottom:9px}
-.save{font-size:17px;margin-top:0}
-.ticket-cut{border-top:2px dashed #FFD0A8}
-.ticket-cut::before,.ticket-cut::after{display:none}
-.ticket-bottom{padding:12px 18px 14px}
-.ticket .trust,.ticket .delivery-assurance,.ticket .sample{display:none}
-@media (max-width:420px){.ticket{max-width:none}.ticket-top{padding:13px 16px 9px}.ticket-bottom{padding:11px 16px 13px}.price .now{font-size:58px}}
-
+/* free sample link (preview section) */
+.sample-row{text-align:center;margin-top:14px}
+.sample-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--saf);text-decoration:none;border:1.5px solid #F3C9A8;background:#FFF7F0;padding:8px 14px;border-radius:10px;font-size:15px}
+.sample-link svg{flex:0 0 auto}
+.sample-link:hover{background:#FFEFE2}
 </style>
 <script type="application/ld+json">
 {
@@ -217,106 +320,203 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
 <div id="nied-navbar"></div>
 
 <div class="strip">
-  <div class="wrap">🏷️ विशेष मूल्य: पूरी राजस्थान इतिहास PDF सिर्फ़ ₹49 (₹199 से 75% छूट)</div>
+  <div class="wrap"><span class="strip-tag">विशेष मूल्य</span> <s>₹199</s> → <b>₹49</b> · कीमत कभी भी बदल सकती है</div>
 </div>
 
+<main>
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="book">
-      <img class="cover" src="/assets/store/rajasthan-itihas-poster.webp" srcset="/assets/store/rajasthan-itihas-poster-420.webp 420w, /assets/store/rajasthan-itihas-poster.webp 1092w" sizes="(max-width:900px) 240px, 360px" alt="सम्पूर्ण राजस्थान का इतिहास — PDF का मुखपृष्ठ" width="1092" height="1544" decoding="async">
-      <div class="seal" aria-hidden="true"><b>75%</b><span>छूट</span></div>
-    </div>
+    <div class="hero-copy">
+      <p class="pill">RAS Pre + Mains · RPSC · RSSB · Updated Version 2.0</p>
+      <h1><span class="h1-pre">सम्पूर्ण</span> राजस्थान का इतिहास</h1>
+      <p class="hook">इतिहास के स्रोतों और प्राचीन सभ्यताओं से राजवंशों, 1857, प्रजामंडल और राजस्थान के एकीकरण तक — पूरी कहानी, <b>234 पन्नों</b> में, सरल हिंदी में।</p>
 
-    <div>
-      <p class="kicker">Updated Version 2.0 · ओंकार सर की पूरी पुस्तक, एक PDF में</p>
-      <h1>सम्पूर्ण राजस्थान का इतिहास</h1>
-      <p class="lead">इतिहास के स्रोतों और प्राचीन सभ्यताओं से प्रमुख राजवंशों, 1857, किसान-जनजातीय आंदोलनों, प्रजामंडल और राजस्थान के एकीकरण तक। सरल हिंदी, तालिकाएँ और हर अध्याय का सार व समय-रेखा। RAS Pre, Mains और RPSC की सभी परीक्षाओं के लिए।</p>
-      <p class="cred">🏆 <span>पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students</span></p>
-      <p class="facts">📚 16 अध्याय &nbsp; 📄 234 पृष्ठ &nbsp; 📊 तालिकाएँ व समय-रेखा &nbsp; 📱 Mobile पर आसान</p>
-
-      <div class="ticket" id="buy" aria-label="PDF खरीदने का payment summary">
-        <div class="ticket-top">
-          <span class="when">🏷️ विशेष मूल्य</span>
-          <div class="price">
-            <span class="now" data-now>₹49</span>
-            <span class="was">₹199</span>
-            <span class="off">75% छूट</span>
+      <div class="offer">
+        <div class="book-wrap" aria-hidden="false">
+          <div class="book">
+            <img class="book-cover" src="/assets/store/rajasthan-itihas-poster-420.webp" srcset="/assets/store/rajasthan-itihas-poster-420.webp 420w, /assets/store/rajasthan-itihas-poster.webp 1092w" sizes="(max-width:899px) 160px, 330px" alt="सम्पूर्ण राजस्थान का इतिहास — PDF का मुखपृष्ठ" width="420" height="594" fetchpriority="high" decoding="async">
+            <span class="book-pages" aria-hidden="true"></span>
           </div>
+          <span class="book-tag" aria-hidden="true">PDF</span>
+        </div>
+
+        <div class="ticket" id="buy" aria-label="PDF खरीदने का payment summary">
+          <span class="off-badge">75% छूट</span>
+          <div class="price"><span class="now" data-now>₹49</span><span class="was">₹199</span></div>
           <p class="save">आप ₹150 बचा रहे हैं</p>
         </div>
-        <div class="ticket-cut" aria-hidden="true"></div>
-        <div class="ticket-bottom">
-          <div class="buy"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TpCUODSwC6kIR9" async></script></form></div>
+      </div>
+
+      <div class="cta-hero">
+        <span class="cta cta-big" aria-hidden="true">अभी ₹49 में PDF पाएँ <svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="buy"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TpCUODSwC6kIR9" async></script></form></div>
+      </div>
+      <p class="secure"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 10V8a6 6 0 0 1 12 0v2m-13 0h14v11H5z" fill="none" stroke="currentColor" stroke-width="2"/></svg> Razorpay द्वारा सुरक्षित भुगतान</p>
+
+      <ul class="micro">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M14 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>234 पृष्ठ</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>16 अध्याय</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>तुरंत Download</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v11H3zM3 11h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>UPI / Card</li>
+      </ul>
+
+      <p class="nieom"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2l2.6 2.2 3.4-.4.9 3.3 3 1.7-1.2 3.2 1.2 3.2-3 1.7-.9 3.3-3.4-.4L12 22l-2.6-2.2-3.4.4-.9-3.3-3-1.7L3.3 12 2.1 8.8l3-1.7.9-3.3 3.4.4z" fill="#C84E00"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>8 साल का भरोसा, 6 लाख+ विद्यार्थियों का विश्वास</b> — NIEOM Academy</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="s s-preview" id="preview">
+  <div class="wrap">
+    <p class="eyebrow">ख़रीदने से पहले देखिए</p>
+    <h2>अंदर के पन्ने ऐसे दिखते हैं</h2>
+    <p class="sub">हर अध्याय की शुरुआत विषय-सूची से, फिर बिंदुवार सरल व्याख्या, महत्वपूर्ण उद्धरण और सारांश बॉक्स। पन्ने पर टैप करके बड़ा देखें।</p>
+    <div class="gallery" role="list">
+      <figure role="listitem"><button type="button" class="zoom" data-full="/assets/store/rajasthan-preview-1.webp" aria-label="पृष्ठ बड़ा देखें: अध्याय की विषय-सूची"><img src="/assets/store/rajasthan-preview-1.webp" alt="नमूना पृष्ठ: अध्याय 6 मेवाड़ — गुहिल-सिसोदिया वंश की शुरुआत और विषय-सूची" width="640" height="905" loading="lazy" decoding="async"></button><figcaption><b>हर अध्याय की विषय-सूची</b><span>अध्याय 6</span></figcaption></figure>
+      <figure role="listitem"><button type="button" class="zoom" data-full="/assets/store/rajasthan-preview-2.webp" aria-label="पृष्ठ बड़ा देखें: बिंदुवार व्याख्या"><img src="/assets/store/rajasthan-preview-2.webp" alt="नमूना पृष्ठ: महाराणा कुम्भा — मेवाड़ का स्वर्ण युग" width="640" height="905" loading="lazy" decoding="async"></button><figcaption><b>बिंदुवार सरल व्याख्या</b><span>अध्याय 6</span></figcaption></figure>
+      <figure role="listitem"><button type="button" class="zoom" data-full="/assets/store/rajasthan-preview-3.webp" aria-label="पृष्ठ बड़ा देखें: सारांश बॉक्स"><img src="/assets/store/rajasthan-preview-3.webp" alt="नमूना पृष्ठ: प्रजामंडल आंदोलन — मुख्य बातें" width="640" height="905" loading="lazy" decoding="async"></button><figcaption><b>सारांश बॉक्स से revision</b><span>अध्याय 15</span></figcaption></figure>
+      <figure role="listitem" class="locked">
+        <div class="locked-in">
+          <img src="/assets/store/rajasthan-preview-2.webp" alt="" width="640" height="905" loading="lazy" decoding="async">
+          <div class="lock-msg">
+            <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M6 10V8a6 6 0 0 1 12 0v2m-13 0h14v11H5z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="15.5" r="1.6" fill="currentColor"/></svg>
+            <b>234 पन्ने और अंदर…</b>
+            <span>बाकी पूरी पुस्तक PDF में</span>
+            <a class="cta cta-sm" href="#buy" data-buy>₹49 में खोलें</a>
+          </div>
+        </div>
+        <figcaption><b>पूरी PDF</b><span>234 पृष्ठ</span></figcaption>
+      </figure>
+    </div>
+    <p class="swipe" aria-hidden="true">← स्वाइप करके और पन्ने देखें →</p>
+    <p class="sample-row"><a class="sample-link" href="/assets/store/rajasthan-itihas-sample.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M14 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Free Sample PDF देखें (अध्याय 1, 15 पृष्ठ)</a></p>
+  </div>
+</section>
+
+
+
+<section class="s s-feat">
+  <div class="wrap">
+    <p class="eyebrow">PDF के अंदर क्या है</p>
+    <h2>इस PDF से आपको क्या मिलेगा</h2>
+    <div class="feats">
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 5.5 14.5 4 17.5 4 20 5.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0zM12 5.5V19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span><b>पूरा राजस्थान इतिहास, एक जगह</b><p>स्रोत, प्रागैतिहासिक व ताम्रपाषाण सभ्यताएँ, सभी प्रमुख राजवंश, 1857, आंदोलन और एकीकरण।</p></div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="1.9"/></svg></span><b>हर राजवंश विस्तार से</b><p>गुर्जर-प्रतिहार, परमार, गुहिल-सिसोदिया, चौहान, राठौड़, कछवाहा और अन्य राजवंश।</p></div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 9h18M3 14.5h18M9 4v16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span><b>तालिकाएँ और समय-रेखा</b><p>अभिलेख, युद्ध, संधियाँ और प्रजामंडल, सब तालिकाओं व timeline में।</p></div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 12h9M18 12v3M21 12v3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><b>हर अध्याय का सार</b><p>अध्याय के अंत में सारांश व समय-रेखा, परीक्षा से पहले तेज़ revision के लिए।</p></div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M10 18.5h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span><b>Phone पर पढ़ना आसान</b><p>किसी भी अध्याय पर सीधे पहुँचें। Offline पढ़ें और print भी करें।</p></div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg></span><b>RAS Pre + Mains दोनों के लिए</b><p>RPSC, RSSB और राजस्थान की अन्य परीक्षाओं की ज़रूरत के हिसाब से व्याख्या।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s s-value">
+  <div class="wrap">
+    <div class="value">
+      <div class="value-l">
+        <p class="eyebrow eyebrow-lt">आज का ऑफ़र</p>
+        <h2>₹199 की पूरी PDF, आज सिर्फ़ ₹49</h2>
+        <ul class="stack">
+          <li>234 पृष्ठ, 16 अध्याय (Updated Version 2.0)</li>
+          <li>सभी प्रमुख राजवंश, 1857, आंदोलन और एकीकरण</li>
+          <li>तालिकाएँ और हर अध्याय का सार व समय-रेखा</li>
+          <li>Offline पढ़ें · Print करें · Mobile पर आसान</li>
+          <li>भुगतान के तुरंत बाद Download + Email पर link</li>
+        </ul>
+      </div>
+      <div class="value-r">
+        <div class="vbox">
+          <p class="vrow"><span>MRP</span><s>₹199</s></p>
+          <p class="vrow"><span>छूट (75%)</span><em>− ₹150</em></p>
+          <p class="vrow vtotal"><span>आप देंगे</span><b data-now>₹49</b></p>
+          <a class="cta cta-block" href="#buy" data-buy>अभी ₹49 में PDF पाएँ</a>
+          <p class="vfine">विशेष मूल्य — कीमत कभी भी बदल सकती है।</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="s alt">
+<section class="s s-toc" id="toc">
   <div class="wrap">
-    <h2>अंदर के पन्ने ऐसे दिखते हैं</h2>
-    <p class="sub">हर अध्याय की शुरुआत विषय-सूची से, फिर सरल व्याख्या, महत्वपूर्ण उद्धरण और सारांश बॉक्स। <a class="sample" href="/assets/store/rajasthan-itihas-sample.pdf" target="_blank" rel="noopener">📄 Free Sample PDF देखें (अध्याय 1, 15 पृष्ठ)</a></p>
-    <div class="pages">
-      <figure><img src="/assets/store/rajasthan-preview-1.webp" alt="नमूना पृष्ठ: अध्याय 6 मेवाड़ — गुहिल-सिसोदिया वंश की शुरुआत और विषय-सूची" width="640" height="905" loading="lazy" decoding="async"><figcaption>हर अध्याय की विषय-सूची</figcaption></figure>
-      <figure><img src="/assets/store/rajasthan-preview-2.webp" alt="नमूना पृष्ठ: महाराणा कुम्भा — मेवाड़ का स्वर्ण युग" width="640" height="905" loading="lazy" decoding="async"><figcaption>बिंदुवार सरल व्याख्या</figcaption></figure>
-      <figure><img src="/assets/store/rajasthan-preview-3.webp" alt="नमूना पृष्ठ: प्रजामंडल आंदोलन — मुख्य बातें" width="640" height="905" loading="lazy" decoding="async"><figcaption>सारांश बॉक्स से revision</figcaption></figure>
+    <p class="eyebrow">विषय-सूची</p>
+    <h2>16 अध्याय, 234 पृष्ठ</h2>
+    <p class="sub">उसी क्रम और पृष्ठ संख्या के साथ जैसे PDF में हैं। भाग पर टैप करके अध्याय देखें।</p>
+    <div class="acc">
+      <details open>
+        <summary><span class="pt">भाग 1</span><span class="ptt">स्रोत और प्राचीन राजस्थान<small>अध्याय 1–4 · पृ. 8 से</small></span></summary>
+        <ol class="toc">
+          <li><span class="n">1</span><span class="t">राजस्थान इतिहास के स्रोत</span><span class="p">पृ. 8</span></li>
+          <li><span class="n">2</span><span class="t">प्रागैतिहासिक राजस्थान</span><span class="p">पृ. 23</span></li>
+          <li><span class="n">3</span><span class="t">ताम्रपाषाण एवं कांस्य युग सभ्यताएं</span><span class="p">पृ. 31</span></li>
+          <li><span class="n">4</span><span class="t">प्राचीन राजस्थान</span><span class="p">पृ. 42</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pt">भाग 2</span><span class="ptt">राजपूत राजवंश<small>अध्याय 5–10 · पृ. 52 से</small></span></summary>
+        <ol class="toc" start="5">
+          <li><span class="n">5</span><span class="t">गुर्जर-प्रतिहार एवं परमार वंश</span><span class="p">पृ. 52</span></li>
+          <li><span class="n">6</span><span class="t">मेवाड़: गुहिल-सिसोदिया वंश</span><span class="p">पृ. 68</span></li>
+          <li><span class="n">7</span><span class="t">चौहान वंश</span><span class="p">पृ. 88</span></li>
+          <li><span class="n">8</span><span class="t">राठौड़ वंश (मारवाड़)</span><span class="p">पृ. 102</span></li>
+          <li><span class="n">9</span><span class="t">कछवाहा वंश (आमेर-जयपुर)</span><span class="p">पृ. 116</span></li>
+          <li><span class="n">10</span><span class="t">अन्य राजवंश</span><span class="p">पृ. 130</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pt">भाग 3</span><span class="ptt">प्रशासन, ब्रिटिश संधियाँ और 1857<small>अध्याय 11–13 · पृ. 145 से</small></span></summary>
+        <ol class="toc" start="11">
+          <li><span class="n">11</span><span class="t">मध्यकालीन प्रशासन एवं राजस्व व्यवस्था</span><span class="p">पृ. 145</span></li>
+          <li><span class="n">12</span><span class="t">मराठा हस्तक्षेप एवं ब्रिटिश संधियाँ</span><span class="p">पृ. 161</span></li>
+          <li><span class="n">13</span><span class="t">1857 की क्रांति</span><span class="p">पृ. 178</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pt">भाग 4</span><span class="ptt">आंदोलन और एकीकरण<small>अध्याय 14–16 · पृ. 193 से</small></span></summary>
+        <ol class="toc" start="14">
+          <li><span class="n">14</span><span class="t">किसान एवं जनजातीय आंदोलन</span><span class="p">पृ. 193</span></li>
+          <li><span class="n">15</span><span class="t">प्रजामंडल आंदोलन</span><span class="p">पृ. 206</span></li>
+          <li><span class="n">16</span><span class="t">राजस्थान का एकीकरण</span><span class="p">पृ. 224</span></li>
+        </ol>
+      </details>
+    </div>
+    <div class="cta-row"><a class="cta" href="#buy" data-buy>सभी 16 अध्याय ₹49 में पाएँ</a></div>
+  </div>
+</section>
+
+<section class="s s-author">
+  <div class="wrap author">
+    <picture>
+      <source type="image/webp" srcset="/assets/img/omkar-sir-hero-400.webp 400w, /assets/img/omkar-sir-hero-560.webp 560w" sizes="(max-width:899px) 140px, 260px">
+      <img class="author-img" src="/assets/img/omkar-sir-hero-560.jpg" alt="ओमकार सर" width="560" height="700" loading="lazy" decoding="async">
+    </picture>
+    <div class="author-txt">
+      <p class="eyebrow">लेखक</p>
+      <h2>ओमकार सर की पूरी पुस्तक, एक PDF में</h2>
+      <p class="badge-big"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 2l2.6 2.2 3.4-.4.9 3.3 3 1.7-1.2 3.2 1.2 3.2-3 1.7-.9 3.3-3.4-.4L12 22l-2.6-2.2-3.4.4-.9-3.3-3-1.7L3.3 12 2.1 8.8l3-1.7.9-3.3 3.4.4z" fill="#C84E00"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>8 साल का भरोसा, 6 लाख+ विद्यार्थियों का विश्वास</b><br>NIEOM Academy</span></p>
+      <p class="author-p">राजस्थान का पूरा इतिहास सरल हिंदी में, अब Updated Version 2.0 के 234 पन्नों में — हर राजवंश विस्तार से, तालिकाएँ और हर अध्याय का सार व समय-रेखा साथ में।</p>
     </div>
   </div>
 </section>
 
-<section class="s">
+<section class="s s-steps">
   <div class="wrap">
-    <h2>इस PDF से आपको क्या मिलेगा</h2>
-    <ul class="gets">
-      <li><span class="ic">📚</span><b>पूरा राजस्थान इतिहास, एक जगह</b><span>स्रोत, प्रागैतिहासिक व ताम्रपाषाण सभ्यताएँ, सभी प्रमुख राजवंश, 1857, आंदोलन और एकीकरण।</span></li>
-      <li><span class="ic">👑</span><b>हर राजवंश विस्तार से</b><span>गुर्जर-प्रतिहार, परमार, गुहिल-सिसोदिया, चौहान, राठौड़, कछवाहा और अन्य राजवंश।</span></li>
-      <li><span class="ic">📊</span><b>तालिकाएँ और समय-रेखा</b><span>अभिलेख, युद्ध, संधियाँ और प्रजामंडल, सब तालिकाओं व timeline में।</span></li>
-      <li><span class="ic">🔑</span><b>हर अध्याय का सार</b><span>अध्याय के अंत में सारांश व समय-रेखा, परीक्षा से पहले तेज़ revision के लिए।</span></li>
-      <li><span class="ic">📱</span><b>Phone पर पढ़ना आसान</b><span>किसी भी अध्याय पर सीधे पहुँचें। Offline पढ़ें और print भी करें।</span></li>
-      <li><span class="ic">🎯</span><b>RAS Pre + Mains दोनों के लिए</b><span>RPSC, RSSB और राजस्थान की अन्य परीक्षाओं की ज़रूरत के हिसाब से व्याख्या।</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="s alt">
-  <div class="wrap">
-    <h2>विषय-सूची</h2>
-    <p class="sub">16 अध्याय, उसी क्रम और पृष्ठ संख्या के साथ जैसे PDF में हैं।</p>
-    <ol class="toc">
-      <li><span class="n">1</span><span class="t">राजस्थान इतिहास के स्रोत</span><span class="p">पृ. 8</span></li>
-      <li><span class="n">2</span><span class="t">प्रागैतिहासिक राजस्थान</span><span class="p">पृ. 23</span></li>
-      <li><span class="n">3</span><span class="t">ताम्रपाषाण एवं कांस्य युग सभ्यताएं</span><span class="p">पृ. 31</span></li>
-      <li><span class="n">4</span><span class="t">प्राचीन राजस्थान</span><span class="p">पृ. 42</span></li>
-      <li><span class="n">5</span><span class="t">गुर्जर-प्रतिहार एवं परमार वंश</span><span class="p">पृ. 52</span></li>
-      <li><span class="n">6</span><span class="t">मेवाड़: गुहिल-सिसोदिया वंश</span><span class="p">पृ. 68</span></li>
-      <li><span class="n">7</span><span class="t">चौहान वंश</span><span class="p">पृ. 88</span></li>
-      <li><span class="n">8</span><span class="t">राठौड़ वंश (मारवाड़)</span><span class="p">पृ. 102</span></li>
-      <li><span class="n">9</span><span class="t">कछवाहा वंश (आमेर-जयपुर)</span><span class="p">पृ. 116</span></li>
-      <li><span class="n">10</span><span class="t">अन्य राजवंश</span><span class="p">पृ. 130</span></li>
-      <li><span class="n">11</span><span class="t">मध्यकालीन प्रशासन एवं राजस्व व्यवस्था</span><span class="p">पृ. 145</span></li>
-      <li><span class="n">12</span><span class="t">मराठा हस्तक्षेप एवं ब्रिटिश संधियाँ</span><span class="p">पृ. 161</span></li>
-      <li><span class="n">13</span><span class="t">1857 की क्रांति</span><span class="p">पृ. 178</span></li>
-      <li><span class="n">14</span><span class="t">किसान एवं जनजातीय आंदोलन</span><span class="p">पृ. 193</span></li>
-      <li><span class="n">15</span><span class="t">प्रजामंडल आंदोलन</span><span class="p">पृ. 206</span></li>
-      <li><span class="n">16</span><span class="t">राजस्थान का एकीकरण</span><span class="p">पृ. 224</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="s">
-  <div class="wrap">
+    <p class="eyebrow">Delivery</p>
     <h2>PDF आप तक कैसे पहुँचेगी</h2>
     <ol class="steps">
       <li><b>बटन दबाकर भुगतान करें</b><span>Email, Phone और नाम भरें, फिर UPI, Card या NetBanking से भुगतान करें। Email सही भरें।</span></li>
       <li><b>Download पेज खुलेगा</b><span>भुगतान की जाँच होते ही "PDF Download करें" बटन वाला पेज अपने-आप खुल जाएगा।</span></li>
       <li><b>Email पर भी link</b><span>वही download link आपके email पर भी आएगा। बाद में ज़रूरत हो तो Payment ID और email से नया link ले सकते हैं।</span></li>
     </ol>
+    <div class="assure">
+      <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><b>PDF आप तक पहुँचे, यह हमारी ज़िम्मेदारी है।</b> Payment के बाद भी PDF न मिले तो receipt के साथ <a href="mailto:email2omkara@gmail.com">email2omkara@gmail.com</a> पर लिखें, हम link भेज देंगे। Double payment या तकनीकी गड़बड़ी के मामले <a href="/refund-policy.html">Refund Policy</a> के अनुसार देखे जाते हैं।</p>
+    </div>
   </div>
 </section>
 
-<section class="s alt">
+<section class="s s-faq">
   <div class="wrap">
+    <p class="eyebrow">FAQ</p>
     <h2>अक्सर पूछे जाने वाले सवाल</h2>
     <div class="faq">
       <details><summary>क्या यह printed book है?</summary><p>नहीं, यह पूरी पुस्तक का digital (PDF) रूप है, जिसमें 234 पृष्ठ हैं। कोई hard copy नहीं भेजी जाती।</p></details>
@@ -329,34 +529,41 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
   </div>
 </section>
 
-<section class="s">
+<section class="s s-final">
   <div class="wrap">
     <div class="final">
-      <div>
-        <h3>पूरा राजस्थान इतिहास, आज ही अपने phone में</h3>
-        <p>सरल हिंदी, 234 पृष्ठ, हर अध्याय के सार और समय-रेखा के साथ।</p>
-      </div>
-      <div>
-        <p class="fp"><span data-now>₹49</span> <s>₹199</s></p>
-        <a class="go" href="#buy">अभी खरीदें</a>
+      <img class="final-book" src="/assets/store/rajasthan-itihas-poster-420.webp" alt="" width="420" height="594" loading="lazy" decoding="async">
+      <div class="final-txt">
+        <p class="final-tag">विशेष मूल्य — कीमत कभी भी बदल सकती है</p>
+        <h2>पूरा राजस्थान इतिहास, आज ही अपने phone में</h2>
+        <p class="fp"><span data-now>₹49</span> <s>₹199</s> <em>75% छूट</em></p>
+        <a class="cta cta-big" href="#buy" data-buy>अभी ₹49 में PDF पाएँ</a>
+        <p class="final-note">सरल हिंदी · 234 पृष्ठ · तुरंत Download · UPI / Card</p>
       </div>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
-  <b>ओंकार सर · New India Education</b>
+  <b>ओमकार सर · New India Education</b>
   <p>Jaipur, Rajasthan</p>
   <p style="margin-top:8px"><a href="/courses.html">Courses</a><a href="/all-notes.html">सभी Notes</a><a href="/terms.html">Terms</a><a href="/refund-policy.html">Refund Policy</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></p>
 </footer>
 
-<div class="bar">
-  <div>
+<div class="bar" id="buybar" aria-hidden="true">
+  <div class="bar-p">
     <div class="bp"><span data-now>₹49</span> <s>₹199</s></div>
-    <div class="bt">75% छूट</div>
+    <div class="bt">75% छूट · ₹150 की बचत</div>
   </div>
-  <a href="#buy">अभी खरीदें</a>
+  <a class="cta" href="#buy" data-buy tabindex="-1">अभी PDF पाएँ</a>
 </div>
+
+<dialog class="lb" id="lb" aria-label="पृष्ठ का बड़ा दृश्य">
+  <button type="button" class="lb-x" aria-label="बंद करें">×</button>
+  <img id="lb-img" alt="PDF का पृष्ठ, बड़ा दृश्य" width="640" height="905">
+  <a class="cta cta-block" href="#buy" data-buy>पूरी PDF ₹49 में पाएँ</a>
+</dialog>
 
 <!-- Ads funnel tracking: consent-aware deployment is still required for regulated jurisdictions. -->
 <script>
@@ -419,6 +626,68 @@ footer a{color:#FFB070;text-decoration:none;margin:0 6px}
       return true;
     }
   };
+})();
+</script>
+<!-- This is a paid-ads sales page: skip the site-wide 15s course popup here only (nied-menu.js skips injection when this id exists). -->
+<script id="nied-popup-script" type="application/json">{}</script>
+<script>
+/* Landing-page UI: every secondary CTA hands the tap to the one real Razorpay payment button in #buy. */
+(function () {
+  'use strict';
+  function rzpButton() {
+    return document.querySelector('.cta-hero .buy .razorpay-payment-button a, .cta-hero .buy a[href*="razorpay.com/payment-button"]');
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target && e.target.closest ? e.target.closest('[data-buy]') : null;
+    if (!t) return;
+    var lb = document.getElementById('lb');
+    if (lb && lb.open) lb.close();
+    var btn = rzpButton();
+    if (btn) { e.preventDefault(); btn.click(); }
+  });
+
+  /* Sticky buy bar: shows once the hero price/CTA has scrolled away, hides near the final CTA. */
+  var bar = document.getElementById('buybar');
+  var hero = document.querySelector('.cta-hero');
+  var fin = document.querySelector('.s-final');
+  if (bar && hero && 'IntersectionObserver' in window) {
+    var heroGone = false, finalIn = false;
+    var sync = function () {
+      var on = heroGone && !finalIn;
+      bar.classList.toggle('on', on);
+      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      var a = bar.querySelector('a'); if (a) a.tabIndex = on ? 0 : -1;
+      document.body.classList.toggle('bar-on', on);
+    };
+    new IntersectionObserver(function (en) {
+      heroGone = !en[0].isIntersecting && en[0].boundingClientRect.top < 0; sync();
+    }).observe(hero);
+    if (fin) new IntersectionObserver(function (en) { finalIn = en[0].isIntersecting; sync(); }, { threshold: 0.25 }).observe(fin);
+  }
+
+  /* Desktop: show every chapter group open. */
+  if (window.matchMedia && window.matchMedia('(min-width:900px)').matches) {
+    document.querySelectorAll('.acc details').forEach(function (d) { d.open = true; });
+  }
+
+  /* Tap a sample page to see it large. */
+  var lbx = document.getElementById('lb');
+  if (lbx && typeof lbx.showModal === 'function') {
+    var img = document.getElementById('lb-img');
+    document.querySelectorAll('.zoom').forEach(function (b) {
+      b.addEventListener('click', function () {
+        img.src = b.getAttribute('data-full');
+        var i = b.querySelector('img'); if (i) img.alt = i.alt;
+        lbx.showModal();
+      });
+    });
+    lbx.querySelector('.lb-x').addEventListener('click', function () { lbx.close(); });
+    lbx.addEventListener('click', function (e) { if (e.target === lbx) lbx.close(); });
+  } else {
+    document.querySelectorAll('.zoom').forEach(function (b) {
+      b.addEventListener('click', function () { window.open(b.getAttribute('data-full'), '_blank', 'noopener'); });
+    });
+  }
 })();
 </script>
 <script src="/nied-menu.js" defer></script>
