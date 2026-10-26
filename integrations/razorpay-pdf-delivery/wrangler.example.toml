@@ -3,10 +3,17 @@ main = "worker.js"
 compatibility_date = "2026-10-12"
 workers_dev = true
 
-# Create this private R2 bucket first, then replace the example name below.
-[[r2_buckets]]
-binding = "PDF_BUCKET"
-bucket_name = "REPLACE_WITH_PRIVATE_R2_BUCKET_NAME"
+# Private PDF storage — configure ONE (worker.js picks R2 > KV > GitHub, or set STORAGE_BACKEND):
+# A) Workers KV (no payment method needed; 25 MiB per PDF max):
+[[kv_namespaces]]
+binding = "PDF_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+# B) R2 (Cloudflare requires a payment method on the account to enable R2):
+# [[r2_buckets]]
+# binding = "PDF_BUCKET"
+# bucket_name = "REPLACE_WITH_PRIVATE_R2_BUCKET_NAME"
+# C) Private GitHub repo: set GITHUB_PDF_REPO (+ GITHUB_PDF_REF, GITHUB_PDF_PATH_PREFIX) below
+#    and `wrangler secret put GITHUB_PDF_TOKEN` (fine-grained, Contents: read-only, that repo only).
 
 [vars]
 # R2 object key of each PDF (upload with exactly these names, bucket stays private).
@@ -15,10 +22,17 @@ RAJASTHAN_HISTORY_PDF_OBJECT_KEY = "rajasthan-history.pdf"
 RAS_MAINS_P2_PDF_OBJECT_KEY = "ras-mains-paper-2.pdf"
 ECONOMIC_SURVEY_PDF_OBJECT_KEY = "rajasthan-arthvyavastha-2025-26.pdf"
 
-# Pipe-separated substrings that must appear in payment.description (the
-# Razorpay Payment Button title). Copy the exact title from a test payment.
-# An EMPTY value keeps that product switched off (fails closed).
-ALLOWED_PAYMENT_DESCRIPTIONS = "Adhunik Itihas PDF Offer Rs 9|Adhunik Itihas PDF Offer Rs 99|सम्पूर्ण आधुनिक भारत का इतिहास PDF"
+# Products are identified by Razorpay Payment Button ID (+ amount). Defaults are in
+# worker.js; override here (comma-separated) if a button is replaced.
+ADHUNIK_BUTTON_IDS = "pl_Tmzqpr6RIRGU0K"
+RAJASTHAN_HISTORY_BUTTON_IDS = "pl_TpCUODSwC6kIR9"
+RAS_MAINS_P2_BUTTON_IDS = "pl_TmyJkDLHXDE2N3"
+ECONOMIC_SURVEY_BUTTON_IDS = ""
+
+# FALLBACK ONLY: pipe-separated substrings of payment.description. Payment Button
+# payments normally carry "#<button id>" here, not the title, so leave these empty
+# unless a test payment shows otherwise. Ambiguous matches fail closed.
+ALLOWED_PAYMENT_DESCRIPTIONS = ""
 RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS = ""
 RAS_MAINS_P2_PAYMENT_DESCRIPTIONS = ""
 ECONOMIC_SURVEY_PAYMENT_DESCRIPTIONS = ""
