@@ -136,7 +136,7 @@ def _cut_words(text: str, limit: int) -> str:
     cut = text[:limit + 1]
     sp = cut.rfind(" ")
     cut = cut[:sp] if sp > limit * 0.6 else text[:limit]
-    return cut.rstrip(" ,;:|\u2014\u2013-\u0964(")
+    return cut.rstrip(" ,;:|&+/\u2014\u2013-\u0964(")
 
 
 VARIANT_LABEL_RE = re.compile(
@@ -184,7 +184,7 @@ def title_for(rel: str, existing: str | None, h1: str | None) -> str:
     current = title_core(existing or "")
     dm = re.match(r"current-affairs/\d{4}-\d{2}-\d{2}\.html$", rel) and re.match(r"^(\d{1,2} \S+ \d{4})", current)
     if dm:
-        return fit_title(f"{dm.group(1)} Current Affairs Rajasthan & India")
+        return fit_title(f"{dm.group(1)} Current Affairs, Rajasthan GK")
     if label and re.search(r"\(English\)\s*$", current):
         current = re.sub(r"\s*\(English\)\s*$", "", current)
     if current and current.lower() not in {"home", "index", "omkar sir", "new india education"}:
