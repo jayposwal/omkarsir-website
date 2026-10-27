@@ -2,6 +2,9 @@
  * Razorpay → Cloudflare Worker (signature verification + signed PDF downloads)
  * → Google Apps Script (Gmail email delivery).
  *
+ * Product = Razorpay payment button ID (+ amount); storage = R2, Workers KV or a
+ * private GitHub repo (see storageBackend).
+ *
  * Required bindings/secrets are documented in README.md. Keep all secret values
  * server-side; never place them in HTML or this file.
  */
@@ -66,8 +69,54 @@ function descriptionMatches(payment, configuredDescriptions) {
   return !!description && allowed.some(s => description.includes(s));
 }
 
-// Every sellable PDF. A product is live only when its description allow-list
-// and R2 object key are configured; otherwise it fails closed (no email, no download).
+// ---------------------------------------------------------------------------
+// Product identification
+//
+// Razorpay Payment Buttons do NOT put the button title in payment.description.
+// Payments made through a Payment Page / Payment Button carry an order and a
+// description of the form "#<button id without the pl_ prefix>" (the format in
+// Razorpay's own payment-entity samples, e.g. "#L0nS7JIyuX6Lyb"). That is not a
+// documented contract, so the Worker looks for the button ID in every place it
+// can legitimately appear and fails closed when nothing (or more than one
+// product) matches:
+//   1. payment.description equal to "#<id>" or containing "pl_<id>"
+//   2. any payment.notes value containing the button ID
+//   3. (optional, needs RAZORPAY_KEY_ID/SECRET) the linked order's notes/receipt
+// The old title/description allow-list is kept only as a fallback, and the
+// amount must always match too.
+// ---------------------------------------------------------------------------
+const BUTTON_ID_RE = /^pl_[A-Za-z0-9]{6,30}$/;
+
+function productButtonIds(product, env) {
+  const raw = env[product.buttonIdsEnv];
+  const list = (raw === undefined || raw === null || raw === "")
+    ? product.defaultButtonIds
+    : String(raw).split(/[,|]/);
+  return list.map(x => String(x).trim()).filter(x => BUTTON_ID_RE.test(x));
+}
+
+function referenceStrings(payment, order) {
+  const out = [];
+  const push = v => { if (v !== undefined && v !== null && typeof v !== "object") out.push(String(v).trim()); };
+  push(payment && payment.description);
+  for (const src of [payment && payment.notes, order && order.notes]) {
+    if (src && typeof src === "object") for (const v of Object.values(src)) push(v);
+  }
+  if (order) { push(order.receipt); push(order.description); }
+  return out.filter(Boolean);
+}
+
+function buttonMatches(refs, buttonIds) {
+  return buttonIds.some(id => {
+    const suffix = id.slice(3);
+    return refs.some(r => r === "#" + suffix || r === suffix || r === id || r.includes(id) ||
+      r.split(/[\s,;|]+/).includes("#" + suffix));
+  });
+}
+
+// Every sellable PDF. A product is live only when it can be identified (a
+// payment-button ID or a description allow-list) and its stored object key is
+// configured; otherwise it fails closed (no email, no download).
 // Amounts can be overridden per product with a comma-separated paise list.
 const PRODUCTS = [
   {
@@ -75,6 +124,8 @@ const PRODUCTS = [
     name: "सम्पूर्ण आधुनिक भारत का इतिहास PDF",
     description: "20 अध्याय · 537 पृष्ठ · PDF",
     filename: "Sampoorna-Adhunik-Bharat-Itihas-Omkar-Sir.pdf",
+    buttonIdsEnv: "ADHUNIK_BUTTON_IDS",
+    defaultButtonIds: ["pl_Tmzqpr6RIRGU0K"],
     descriptionsEnv: "ALLOWED_PAYMENT_DESCRIPTIONS",
     objectKeyEnv: "PDF_OBJECT_KEY",
     amountsEnv: "ADHUNIK_AMOUNTS_PAISE",
@@ -85,6 +136,8 @@ const PRODUCTS = [
     name: "सम्पूर्ण राजस्थान आर्थिक समीक्षा 2025-26 एवं बजट PDF",
     description: "15 अध्याय · 253 पृष्ठ · PDF",
     filename: "Rajasthan-Arthik-Samiksha-2025-26-Omkar-Sir.pdf",
+    buttonIdsEnv: "ECONOMIC_SURVEY_BUTTON_IDS",
+    defaultButtonIds: [], // no Razorpay button exists yet (sales page links to the app)
     descriptionsEnv: "ECONOMIC_SURVEY_PAYMENT_DESCRIPTIONS",
     objectKeyEnv: "ECONOMIC_SURVEY_PDF_OBJECT_KEY",
     amountsEnv: "ECONOMIC_SURVEY_AMOUNTS_PAISE",
@@ -95,6 +148,8 @@ const PRODUCTS = [
     name: "सम्पूर्ण राजस्थान इतिहास PDF",
     description: "16 अध्याय · 234 पृष्ठ · PDF",
     filename: "Sampoorna-Rajasthan-History-Omkar-Sir.pdf",
+    buttonIdsEnv: "RAJASTHAN_HISTORY_BUTTON_IDS",
+    defaultButtonIds: ["pl_TpCUODSwC6kIR9"],
     descriptionsEnv: "RAJASTHAN_HISTORY_PAYMENT_DESCRIPTIONS",
     objectKeyEnv: "RAJASTHAN_HISTORY_PDF_OBJECT_KEY",
     amountsEnv: "RAJASTHAN_HISTORY_AMOUNTS_PAISE",
@@ -105,6 +160,8 @@ const PRODUCTS = [
     name: "RAS Mains Paper-II PYQ PDF",
     description: "258 प्रश्न · 131 पृष्ठ · PDF",
     filename: "RAS-Mains-Paper-II-PYQ-Omkar-Sir.pdf",
+    buttonIdsEnv: "RAS_MAINS_P2_BUTTON_IDS",
+    defaultButtonIds: ["pl_TmyJkDLHXDE2N3"],
     descriptionsEnv: "RAS_MAINS_P2_PAYMENT_DESCRIPTIONS",
     objectKeyEnv: "RAS_MAINS_P2_PDF_OBJECT_KEY",
     amountsEnv: "RAS_MAINS_P2_AMOUNTS_PAISE",
@@ -122,15 +179,123 @@ function productAmounts(product, env) {
   return configured.length ? configured : product.defaultAmounts;
 }
 
-function matchConfiguredProduct(payment, env) {
+// Returns the single product this payment belongs to, or null. If two
+// products would match (e.g. an over-broad description substring) it fails
+// closed rather than guessing.
+function matchConfiguredProduct(payment, env, order) {
   const amount = Number(payment.amount);
+  const refs = referenceStrings(payment, order);
+  const byButton = [];
+  const byDescription = [];
   for (const product of PRODUCTS) {
-    if (productAmounts(product, env).includes(amount) &&
-        descriptionMatches(payment, env[product.descriptionsEnv])) {
-      return { ...product, objectKey: String(env[product.objectKeyEnv] || "") };
-    }
+    if (!productAmounts(product, env).includes(amount)) continue;
+    if (buttonMatches(refs, productButtonIds(product, env))) byButton.push(product);
+    else if (descriptionMatches(payment, env[product.descriptionsEnv])) byDescription.push(product);
   }
+  const hits = byButton.length ? byButton : byDescription;
+  if (hits.length !== 1) {
+    if (hits.length > 1) console.error("Ambiguous product match; refusing. Payment:", payment.id, hits.map(p => p.code).join(","));
+    return null;
+  }
+  return { ...hits[0], objectKey: String(env[hits[0].objectKeyEnv] || ""), matchedBy: byButton.length ? "button" : "description" };
+}
+
+// Optional extra lookup: when a payment carries an order_id and API keys are
+// configured, read the order (its notes/receipt may name the payment button).
+async function fetchOrder(payment, env) {
+  const orderId = String(payment.order_id || "");
+  if (!/^order_[A-Za-z0-9]{6,40}$/.test(orderId) || !env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET) return null;
+  try {
+    const res = await fetch("https://api.razorpay.com/v1/orders/" + encodeURIComponent(orderId), {
+      headers: { authorization: "Basic " + btoa(env.RAZORPAY_KEY_ID + ":" + env.RAZORPAY_KEY_SECRET) }
+    });
+    return res.ok ? await res.json() : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+async function identifyProduct(payment, env) {
+  const direct = matchConfiguredProduct(payment, env, null);
+  if (direct) return direct;
+  const order = await fetchOrder(payment, env);
+  if (order) {
+    const viaOrder = matchConfiguredProduct(payment, env, order);
+    if (viaOrder) return viaOrder;
+  }
+  // Diagnostic without personal data, to configure button IDs after a test purchase.
+  const notes = payment.notes && typeof payment.notes === "object" ? Object.keys(payment.notes) : [];
+  console.warn("No product match. payment:", payment.id, "amount:", payment.amount,
+    "description:", JSON.stringify(String(payment.description || "").slice(0, 80)),
+    "notes keys:", notes.join(","), "order:", payment.order_id || "-",
+    "order notes:", order && order.notes && typeof order.notes === "object" ? JSON.stringify(order.notes).slice(0, 200) : "-");
   return null;
+}
+
+// ---------------------------------------------------------------------------
+// Private PDF storage backends (first configured one wins, or force with
+// STORAGE_BACKEND = "r2" | "kv" | "github"):
+//   r2     – R2 bucket binding PDF_BUCKET (needs a payment method on Cloudflare)
+//   kv     – Workers KV binding PDF_KV, value = PDF bytes (25 MiB max per value)
+//   github – private GitHub repo GITHUB_PDF_REPO ("owner/repo"), read-only
+//            fine-grained token secret GITHUB_PDF_TOKEN, optional
+//            GITHUB_PDF_REF (branch, default "main") and GITHUB_PDF_PATH_PREFIX.
+// Each returns { body, size|null } or null when the object is missing.
+// ---------------------------------------------------------------------------
+function storageBackend(env) {
+  const forced = String(env.STORAGE_BACKEND || "").trim().toLowerCase();
+  const available = {
+    r2: !!(env.PDF_BUCKET && typeof env.PDF_BUCKET.get === "function"),
+    kv: !!(env.PDF_KV && typeof env.PDF_KV.get === "function"),
+    github: !!(env.GITHUB_PDF_REPO && env.GITHUB_PDF_TOKEN)
+  };
+  if (forced) return available[forced] ? forced : null;
+  return ["r2", "kv", "github"].find(b => available[b]) || null;
+}
+
+function safeObjectKey(key) {
+  return typeof key === "string" && key.length > 0 && key.length <= 300 &&
+    !key.split("/").some(seg => seg === "" || seg === "." || seg === "..") &&
+    /^[A-Za-z0-9._\/-]+$/.test(key);
+}
+
+async function getPdfObject(env, objectKey) {
+  const backend = storageBackend(env);
+  if (!backend || !safeObjectKey(objectKey)) return null;
+
+  if (backend === "r2") {
+    const object = await env.PDF_BUCKET.get(objectKey);
+    return object ? { body: object.body, size: object.size, backend } : null;
+  }
+
+  if (backend === "kv") {
+    const { value, metadata } = await env.PDF_KV.getWithMetadata(objectKey, { type: "stream" });
+    if (!value) return null;
+    const size = metadata && Number.isInteger(Number(metadata.size)) ? Number(metadata.size) : null;
+    return { body: value, size, backend };
+  }
+
+  // github: contents API with the raw media type serves files up to 100 MB.
+  const repo = String(env.GITHUB_PDF_REPO);
+  if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo)) return null;
+  const prefix = String(env.GITHUB_PDF_PATH_PREFIX || "").replace(/^\/+|\/+$/g, "");
+  const path = (prefix ? prefix + "/" : "") + objectKey;
+  const ref = String(env.GITHUB_PDF_REF || "main");
+  const url = "https://api.github.com/repos/" + repo + "/contents/" +
+    path.split("/").map(encodeURIComponent).join("/") + "?ref=" + encodeURIComponent(ref);
+  const res = await fetch(url, {
+    headers: {
+      authorization: "Bearer " + env.GITHUB_PDF_TOKEN,
+      accept: "application/vnd.github.raw+json",
+      "x-github-api-version": "2022-11-28",
+      "user-agent": "omkarsir-pdf-delivery"
+    },
+    redirect: "follow"
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error("GitHub storage HTTP " + res.status);
+  const len = Number(res.headers.get("content-length"));
+  return { body: res.body, size: Number.isInteger(len) && len > 0 ? len : null, backend };
 }
 
 async function createDownloadToken(payment, env, productCode) {
@@ -170,8 +335,7 @@ async function verifyDownloadToken(token, env) {
 
 async function handleWebhook(request, env) {
   if (request.method !== "POST") return json({ ok: false, error: "POST only" }, 405);
-  if (!env.RAZORPAY_WEBHOOK_SECRET || !env.DOWNLOAD_SIGNING_SECRET ||
-      !env.APPS_SCRIPT_URL || !env.INTERNAL_SHARED_SECRET || !env.PUBLIC_DOWNLOAD_BASE) {
+  if (!env.RAZORPAY_WEBHOOK_SECRET || !env.DOWNLOAD_SIGNING_SECRET || !env.PUBLIC_DOWNLOAD_BASE) {
     console.error("Missing required Worker configuration.");
     return json({ ok: false, error: "Server configuration incomplete" }, 500);
   }
@@ -197,9 +361,9 @@ async function handleWebhook(request, env) {
   if (payment.currency !== "INR") {
     return json({ ok: true, ignored: "currency is not INR" });
   }
-  const product = matchConfiguredProduct(payment, env);
+  const product = await identifyProduct(payment, env);
   if (!product) {
-    console.warn("Captured payment ignored: amount/description did not match a configured PDF product. Payment ID:", payment.id);
+    console.warn("Captured payment ignored: amount/button/description did not match a configured PDF product. Payment ID:", payment.id);
     return json({ ok: true, ignored: "payment does not match a configured PDF product" });
   }
   if (!/^pay_[A-Za-z0-9]+$/.test(String(payment.id || "")) || !emailIsValid(payment.email)) {
@@ -228,6 +392,13 @@ async function handleWebhook(request, env) {
     expiresAt: JSON.parse(new TextDecoder().decode(fromBase64Url(token.split(".")[0]))).exp,
     description: String(payment.description || "")
   };
+
+  if (!env.APPS_SCRIPT_URL || !env.INTERNAL_SHARED_SECRET) {
+    // Email delivery not configured yet: acknowledge so Razorpay does not keep
+    // retrying/disable the webhook. Buyers still get the PDF via /verify on the site.
+    console.log("Verified captured payment; email delivery not configured. Payment ID:", payment.id, "product:", product.code);
+    return json({ ok: true, emailed: false, reason: "email delivery not configured" });
+  }
 
   let response;
   let responseText;
@@ -327,7 +498,7 @@ async function handleVerify(request, env) {
   if (payment.status !== "captured" || payment.currency !== "INR") {
     return verifyJson(request, env, { ok: false, error: "not_captured", status: String(payment.status || "") }, 402);
   }
-  const product = matchConfiguredProduct(payment, env);
+  const product = await identifyProduct(payment, env);
   if (!product || product.code !== requested.code) {
     return verifyJson(request, env, { ok: false, error: "wrong_product" }, 403);
   }
@@ -353,7 +524,7 @@ async function handleVerify(request, env) {
 
 async function handleDownload(request, env) {
   if (request.method !== "GET") return new Response("Method not allowed", { status: 405 });
-  if (!env.PDF_BUCKET || !env.DOWNLOAD_SIGNING_SECRET) {
+  if (!storageBackend(env) || !env.DOWNLOAD_SIGNING_SECRET) {
     return new Response("Download service is not configured yet.", {
       status: 503, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
     });
@@ -375,23 +546,27 @@ async function handleDownload(request, env) {
       status: 503, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
     });
   }
-  const object = await env.PDF_BUCKET.get(objectKey);
+  let object;
+  try {
+    object = await getPdfObject(env, objectKey);
+  } catch (err) {
+    console.error("PDF storage read failed:", String(err));
+    object = null;
+  }
   if (!object) {
-    console.error("Configured PDF object not found in R2:", objectKey);
+    console.error("Configured PDF object not found in storage (" + storageBackend(env) + "):", objectKey);
     return new Response("PDF अभी उपलब्ध नहीं है। कृपया email2omkara@gmail.com पर संपर्क करें।", {
       status: 503, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }
     });
   }
 
-  const safeFilename = product.filename;
   const headers = new Headers();
-  object.writeHttpMetadata(headers);
   headers.set("content-type", "application/pdf");
-  headers.set("content-disposition", 'attachment; filename="' + safeFilename + '"');
+  headers.set("content-disposition", 'attachment; filename="' + product.filename + '"');
   headers.set("cache-control", "private, no-store, max-age=0");
   headers.set("x-robots-tag", "noindex, nofollow");
   headers.set("x-content-type-options", "nosniff");
-  headers.set("content-length", String(object.size));
+  if (object.size) headers.set("content-length", String(object.size));
   return new Response(object.body, { headers });
 }
 

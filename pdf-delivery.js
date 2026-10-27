@@ -14,7 +14,7 @@
 (function () {
   'use strict';
 
-  var WORKER_BASE = '';
+  var WORKER_BASE = 'https://omkarsir-pdf-delivery.omkarsir.workers.dev';
   var HELP_WHATSAPP = '917023166962';
   var HELP_EMAIL = 'email2omkara@gmail.com';
 

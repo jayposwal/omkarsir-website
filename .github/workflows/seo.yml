@@ -6,6 +6,7 @@ on:
       - '**/*.html'
       - 'seo/optimize_seo.py'
       - 'sitemap.xml'
+      - 'sitemap-*.xml'
       - 'search-index.json'
       - 'robots.txt'
       - 'llms.txt'
@@ -27,7 +28,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add '*.html' sitemap.xml search-index.json assets/fonts
+          git add '*.html' sitemap.xml sitemap-*.xml search-index.json assets/fonts
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "SEO: optimize all static pages"
-          git push
+          # other bots (theme toggle, quiz publisher) may push at the same time:
+          # on rejection, start again from the latest main and re-run the (idempotent) optimizer.
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            sleep $((i * 5))
+            git fetch origin main
+            git reset --hard origin/main
+            python3 seo/optimize_seo.py
+            git add '*.html' sitemap.xml sitemap-*.xml search-index.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "SEO: optimize all static pages"
+          done
+          exit 1
