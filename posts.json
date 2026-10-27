@@ -1,6 +1,12 @@
 {
   "posts": [
     {
+      "title": "राजस्थान भूगोल: अध्याय 00 — परिचय, पाठ्यक्रम विश्लेषण एवं अध्ययन क्रम",
+      "url": "/rajasthan-bhugol-ch00-parichay.html",
+      "icon": "🌟",
+      "date": "2026-10-27T08:30:00Z"
+    },
+    {
       "title": "भारतीय राजव्यवस्था (Polity) सम्पूर्ण Short Notes — सभी 17 अध्याय",
       "url": "/polity-short-notes.html",
       "icon": "🇮🇳",
@@ -139,22 +145,10 @@
       "date": "2026-06-14T07:50:58Z"
     },
     {
-      "title": "राजस्थान भूगोल",
+      "title": "राजस्थान भूगोल (Geography of Rajasthan) — सम्पूर्ण 14 अध्याय नोट्स",
       "url": "/rajasthan-bhugol.html",
-      "icon": "🌍",
-      "date": "2026-06-14T07:50:56Z"
-    },
-    {
-      "title": "राजस्थान भूगोल विभाजन",
-      "url": "/rajasthan-bhugol-vibhajan.html",
-      "icon": "🌍",
-      "date": "2026-06-14T07:50:54Z"
-    },
-    {
-      "title": "राजस्थान भूगोल परिचय",
-      "url": "/rajasthan-bhugol-parichay.html",
-      "icon": "🌍",
-      "date": "2026-06-14T07:50:52Z"
+      "icon": "⛰️",
+      "date": "2026-10-27T08:00:00Z"
     },
     {
       "title": "Buddhism & Jainism Notes",
