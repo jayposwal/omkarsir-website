@@ -75,14 +75,9 @@
     });
   })();
 
-  // Site-wide timed conversion popup injection (15s delay)
+  // Site-wide timed conversion popup injection (Disabled per request)
   (function injectPopupScript(){
-    if(document.getElementById('nied-popup-script')) return;
-    var s = document.createElement('script');
-    s.id = 'nied-popup-script';
-    s.src = '/nied-popup.js';
-    s.defer = true;
-    document.head.appendChild(s);
+    return; // Popup disabled
   })();
 
   // Splits a top-nav label like "\ud83d\udcc4 \u0938\u092d\u0940 Courses" into two stacked lines

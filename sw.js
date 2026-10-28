@@ -16,7 +16,7 @@
  *   self.addEventListener('install',()=>self.skipWaiting());
  *   self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.map(c=>caches.delete(c)))).then(()=>self.registration.unregister())));
  */
-var VERSION = 'v2';
+var VERSION = 'v3';
 var FONT_CACHE = 'nied-fonts-' + VERSION;
 var ASSET_CACHE = 'nied-assets-' + VERSION;
 var MAX_ASSETS = 200;

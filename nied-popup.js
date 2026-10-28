@@ -14,6 +14,13 @@
 (function() {
   'use strict';
 
+  // Site-wide timed conversion popup disabled per request
+  var existing = document.getElementById('nied-popup-overlay');
+  if (existing && existing.parentNode) {
+    existing.parentNode.removeChild(existing);
+  }
+  return;
+
   var CONFIG = {
     delayMs: 15000, // 15 seconds
     playStoreUrl: 'https://play.google.com/store/apps/details?id=co.april2019.techa',
