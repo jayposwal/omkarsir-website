@@ -202,7 +202,7 @@ def cap_desc(text: str) -> str:
 
 def description_for(rel: str, existing: str | None, h1: str | None, first_p: str | None) -> str:
     if rel == "index.html":
-        return cap_desc("RAS Exam 2026: Notes, Syllabus, PYQ, Test Series और Courses। NCERT, RBSE प्रामाणिक स्रोतों से तैयार — 6 लाख+ सफल विद्यार्थी, 8 साल का अनुभव।")
+        return cap_desc("RAS Exam 2026: Notes, Syllabus, PYQ, Test Series और Courses।")
     current = strip_tags(existing or "")
     boilerplate = ["NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार", "विश्वसनीय एवं बेहतरीन Content"]
     weak = not current or len(current) < 70 or (all(x in current for x in boilerplate) and len(current) > 150)

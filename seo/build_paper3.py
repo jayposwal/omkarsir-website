@@ -23,7 +23,6 @@ URL = "https://omkarsir.com/" + OUT
 TITLE = "RAS Mains Paper-III PYQ (2013–2024) Answer Key — सभी 306 प्रश्न हल सहित | Omkar Sir"
 H1 = "RAS Mains Paper-III PYQ (2013–2024) Answer Key"
 DESC = "RPSC RAS Mains Paper-III (सामान्य अध्ययन-III) के 2013–2024 topic-wise सभी 306 PYQ और सरल हिंदी उत्तर। भारतीय संविधान, राजस्थान राजनीति, लोक प्रशासन, खेल-योग, व्यवहार और विधि — पूर्ण व्याख्या।"
-CRED = "पिछले 8 सालों से Rajasthan GK पढ़ाने वाले सबसे Trusted Teacher — 6 लाख+ Students"
 TOTAL_Q, TOTAL_PAGES = 306, 140
 
 E = html.escape
@@ -407,7 +406,6 @@ def build():
   <span class="eyebrow">{eyebrow}</span>
   <h1>RAS Mains <span>Paper-III</span> PYQ (2013–2024) Answer Key</h1>
   <p class="lead">{lead}</p>
-  <p class="cred">🏆 {CRED}</p>
   <div class="stats">
     <div><b>{TOTAL_Q}</b><span>प्रश्न</span></div>
     <div><b>{TOTAL_PAGES}</b><span>पृष्ठ</span></div>
