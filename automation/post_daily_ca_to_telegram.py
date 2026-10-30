@@ -77,18 +77,24 @@ def main():
 
     pdf_path = os.path.join(REPO_ROOT, f"CA-{date_str}.pdf")
 
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import generate_ca_pdf  # noqa: E402
+    prebuilt = os.path.join(REPO_ROOT, "ca-pdf", f"{date_str}.pdf")
+    if os.path.exists(prebuilt):
+        # Styled PDF published with the page (ca-pdf/YYYY-MM-DD.pdf) wins.
+        pdf_path = prebuilt
+        print("Using prebuilt PDF:", pdf_path)
+    else:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import generate_ca_pdf  # noqa: E402
 
-    sections = generate_ca_pdf.extract_sections(html_path)
-    font_regular = os.path.join(REPO_ROOT, "automation", "fonts", "NotoMerged-Regular.ttf")
-    font_bold = os.path.join(REPO_ROOT, "automation", "fonts", "NotoMerged-Bold.ttf")
-    html_str = generate_ca_pdf.build_html(
-        sections, hindi_date, eng_date, font_regular, font_bold, SITE_URL
-    )
-    from weasyprint import HTML
-    HTML(string=html_str, base_url=".").write_pdf(pdf_path)
-    print("Generated PDF:", pdf_path)
+        sections = generate_ca_pdf.extract_sections(html_path)
+        font_regular = os.path.join(REPO_ROOT, "automation", "fonts", "NotoMerged-Regular.ttf")
+        font_bold = os.path.join(REPO_ROOT, "automation", "fonts", "NotoMerged-Bold.ttf")
+        html_str = generate_ca_pdf.build_html(
+            sections, hindi_date, eng_date, font_regular, font_bold, SITE_URL
+        )
+        from weasyprint import HTML
+        HTML(string=html_str, base_url=".").write_pdf(pdf_path)
+        print("Generated PDF:", pdf_path)
 
     page_url = f"https://{SITE_URL}/current-affairs/{date_str}.html"
     caption = extract_caption(html_path, date_str, page_url)
