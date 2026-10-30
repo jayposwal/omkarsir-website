@@ -177,7 +177,7 @@
 
   function render(mount, menu){
     injectStyles();
-    var logo = menu.logo || {text:'New India Education', url:'/'};
+    var logo = menu.logo || {text:'Omkar Sir', subtitle:'NIEOM Academy', url:'/'};
     var logoTextInner = esc(logo.text) + (logo.subtitle ? '<span class="nied-logo-sub">' + esc(logo.subtitle) + '</span>' : '');
     var logoInner = '<span class="nied-logo-icon">🎓</span><span class="nied-logo-text">' + logoTextInner + '</span>';
     var html = '<div class="nied-nav-inner"><a class="nied-logo nied-logo-wrap" href="' + esc(logo.url) + '">' + logoInner + '</a>'
