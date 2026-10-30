@@ -1,9 +1,7 @@
 name: Post daily quiz to Telegram
 
 on:
-  schedule:
-    # 03:30 UTC every day = 09:00 AM IST
-    - cron: "30 3 * * *"
+  # Schedule disabled 2026-10-30: Hark's daily 06:45 IST task posts the quiz to Telegram itself.
   workflow_dispatch: {}
 
 jobs:

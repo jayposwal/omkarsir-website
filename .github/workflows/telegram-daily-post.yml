@@ -1,10 +1,7 @@
 name: Post daily Current Affairs PDF to Telegram
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "current-affairs/*.html"
+  # Auto-trigger disabled 2026-10-30: Hark's daily 06:45 IST task posts to Telegram itself.
   workflow_dispatch: {}
 
 jobs:
