@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-8493304986550617">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8493304986550617" crossorigin="anonymous"></script>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
@@ -392,6 +391,23 @@ footer a:hover{color:#FF9A52}
   .subject-box .s-name{font-size:15px}
 }
 @media(max-width:360px){.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Home clean-up 2026-10-30: bigger readable text, search */
+body{font-size:17px;line-height:1.7}
+.sec-sub{font-size:16px}
+.qn-sub{font-size:14px}
+.qn-label{font-size:16.5px}
+.hero-search{position:relative;display:flex;align-items:center;gap:10px;max-width:560px;background:#fff;border:2px solid var(--card-border);border-radius:14px;padding:0 14px;margin:0 0 20px;min-height:56px;box-shadow:0 6px 18px rgba(27,42,107,.07)}
+.hero-search:focus-within{border-color:#f97316}
+.hero-search>.ic{width:22px;height:22px;color:var(--text-muted);flex:0 0 auto}
+.hero-search input{flex:1;border:0;outline:0;font:inherit;font-size:17px;color:var(--navy);background:transparent;min-height:52px;width:100%}
+.hs-results{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--card-border);border-radius:12px;box-shadow:0 16px 36px rgba(31,48,86,.17);max-height:360px;overflow-y:auto;z-index:30;text-align:left}
+.hs-results.open{display:block}
+.hs-results a{display:block;padding:12px 14px;text-decoration:none;color:var(--navy);font-weight:600;font-size:16px;border-bottom:1px solid #F0F2F7}
+.hs-results a:hover,.hs-results a:focus{background:#FFF3E8}
+.hs-empty{padding:14px;color:var(--text-muted);font-size:15px}
+.hero-resume{display:inline-flex;align-items:center;gap:6px;margin:-8px 0 18px;font-size:15px;font-weight:600;color:var(--saffron-ink);text-decoration:none;min-height:40px}
+@media(max-width:760px){.qn-sub{font-size:13.5px}.hero-search{margin-left:auto;margin-right:auto}.hero-resume{justify-content:center;width:100%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 <link rel="preload" href="/assets/css/home.css?v=bf8e1012" as="style">
@@ -472,7 +488,7 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 <script type="application/ld+json" id="seo-graph">{"@context":"https://schema.org","@graph":[{"@type":["EducationalOrganization","Organization"],"@id":"https://omkarsir.com/#organization","name":"New India Education","alternateName":["NIEOM Academy","NIEOM","NIEd","Omkar Sir"],"url":"https://omkarsir.com/","logo":{"@type":"ImageObject","url":"https://omkarsir.com/favicon-512.png","width":512,"height":512},"image":"https://omkarsir.com/og-image.png","email":"email2omkara@gmail.com","telephone":"+91-7023166962","address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressRegion":"Rajasthan","addressCountry":"IN"},"founder":{"@id":"https://omkarsir.com/#omkar-sir"},"sameAs":["https://youtube.com/@thenewindiaeducation","https://t.me/omkarsirofficial","https://instagram.com/omkar_sir_official","https://whatsapp.com/channel/0029Va4yS7h6buMLgA7alj3H","https://play.google.com/store/apps/details?id=co.april2019.techa"]},{"@type":"Person","@id":"https://omkarsir.com/#omkar-sir","name":"Omkar Singh Gurjar","alternateName":["Omkar Sir","ओमकार सर"],"jobTitle":"Founder & Educator, New India Education","url":"https://omkarsir.com/about.html","worksFor":{"@id":"https://omkarsir.com/#organization"},"knowsAbout":["RAS Exam","Rajasthan GK","Indian History","Indian Polity","Rajasthan Economy"],"sameAs":["https://youtube.com/@thenewindiaeducation","https://t.me/omkarsirofficial","https://instagram.com/omkar_sir_official"]},{"@type":"WebSite","@id":"https://omkarsir.com/#website","url":"https://omkarsir.com/","name":"Omkar Sir","alternateName":"omkarsir.com","inLanguage":"hi","publisher":{"@id":"https://omkarsir.com/#organization"}}]}</script>
 </head>
 <body class="home-v2">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-quiz" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol><symbol id="i-news" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol><symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></symbol><symbol id="i-scroll" viewBox="0 0 24 24"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/></symbol><symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol><symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9L8.1 3.45a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol><symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.67 0 6.67-10 0-10"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol><symbol id="i-earth" viewBox="0 0 24 24"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3 2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></symbol><symbol id="i-dna" viewBox="0 0 24 24"><path d="M2 15c6.67-6 13.33 0 20-6"/><path d="M9 22c1.8-2 2.52-4 2.81-6"/><path d="M15 2c-1.8 2-2.52 4-2.81 6"/><path d="M2 9c6.67 6 13.33 0 20 6"/></symbol><symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol><symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.8 5.41a2 2 0 0 1-1.27 1.27L7.76 16.24l1.8-5.41a2 2 0 0 1 1.27-1.27z"/></symbol><symbol id="i-gavel" viewBox="0 0 24 24"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol><symbol id="i-lang" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol><symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol><symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-quiz" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol><symbol id="i-news" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol><symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol><symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2 20 7H4z"/></symbol><symbol id="i-scroll" viewBox="0 0 24 24"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/></symbol><symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol><symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.66-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.66 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9L8.1 3.45a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol><symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.67 0 6.67-10 0-10"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol><symbol id="i-earth" viewBox="0 0 24 24"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3 2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></symbol><symbol id="i-dna" viewBox="0 0 24 24"><path d="M2 15c6.67-6 13.33 0 20-6"/><path d="M9 22c1.8-2 2.52-4 2.81-6"/><path d="M15 2c-1.8 2-2.52 4-2.81 6"/><path d="M2 9c6.67 6 13.33 0 20 6"/></symbol><symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></symbol><symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol><symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.8 5.41a2 2 0 0 1-1.27 1.27L7.76 16.24l1.8-5.41a2 2 0 0 1 1.27-1.27z"/></symbol><symbol id="i-gavel" viewBox="0 0 24 24"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol><symbol id="i-lang" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol><symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol><symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol></svg>
 
 <div id="nied-navbar"></div>
 <div class="tri"></div>
@@ -481,21 +497,18 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
-      <div class="hero-trust-badge">
-        <span class="tb-ic"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg></span>
-        <span>8 साल का भरोसा, 6 लाख+ विद्यार्थियों का विश्वास — <strong>NIEOM Academy</strong></span>
-      </div>
-      <h1 id="hero-title">अपनी Competitive Exam तैयारी को दें <span>सही दिशा</span></h1>
-      <p class="hero-subtext">ओमकार सर के मुफ़्त हिंदी नोट्स, Daily Quiz, PYQ और Test Series — NCERT, RBSE व प्रामाणिक स्रोतों से तैयार, सब एक ही मंच पर।</p>
+      <h1 id="hero-title">RAS व राजस्थान परीक्षाओं की <span>मुफ़्त तैयारी</span></h1>
+      <p class="hero-subtext">हिंदी नोट्स, Daily Quiz और Current Affairs — सब मुफ़्त, सीधे पढ़ें।</p>
+      <form class="hero-search" role="search" action="/all-notes.html" onsubmit="return false">
+        <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+        <input type="search" id="heroSearch" placeholder="क्या पढ़ना है? जैसे: राजस्थान की नदियाँ" aria-label="Notes, Subject या Exam खोजें" autocomplete="off">
+        <div class="hs-results" id="heroSearchResults" role="listbox"></div>
+      </form>
+      <a class="hero-resume" id="heroResume" hidden></a>
       <div class="hero-btns">
         <a href="#subjects" class="btn-main"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span>Free Notes पढ़ें</span></a>
         <a href="/all-quizzes.html" class="btn-sec"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg><span>Daily Quiz खेलें</span></a>
       </div>
-      <a href="#featured-pdf" class="hero-link"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg><span>Premium Notes Store देखें</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      <ul class="hero-highlights">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> 100% प्रामाणिक कंटेंट</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> RPSC 2026 New Pattern</li>
-      </ul>
     </div>
     <figure class="hero-photo">
       <picture>
@@ -512,27 +525,27 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
   <div class="quick-grid">
     <a href="/current-affairs.html" class="qn-item qn-hot">
       <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-news"/></svg><span class="qn-dot"></span></span>
-      <span class="qn-info"><span class="qn-label">आज का CA</span><span class="qn-sub">Daily Current Affairs</span></span>
+      <span class="qn-info"><span class="qn-label">आज का CA</span><span class="qn-sub"><span id="caDate">Daily Current Affairs</span></span></span>
+    </a>
+    <a href="/current-affairs-quiz.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Daily Quiz</span><span class="qn-sub">रोज़ के सवाल</span></span>
+    </a>
+    <a href="#subjects" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Free Notes</span><span class="qn-sub">27 विषय</span></span>
     </a>
     <a href="/previous-year-papers.html" class="qn-item">
       <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
       <span class="qn-info"><span class="qn-label">PYQ Papers</span><span class="qn-sub">पिछले वर्षों के प्रश्न</span></span>
     </a>
+    <a href="/ras-exam-2026.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Syllabus</span><span class="qn-sub">RAS 2026</span></span>
+    </a>
     <a href="/test-series.html" class="qn-item">
       <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>
       <span class="qn-info"><span class="qn-label">Test Series</span><span class="qn-sub">Pre + Mains</span></span>
-    </a>
-    <a href="/ras-exam-2026.html" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
-      <span class="qn-info"><span class="qn-label">RAS 2026</span><span class="qn-sub">Syllabus &amp; Guide</span></span>
-    </a>
-    <a href="/vacancy.html" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Vacancy</span><span class="qn-sub">नई भर्तियाँ</span></span>
-    </a>
-    <a href="https://t.me/omkarsirofficial" target="_blank" rel="noopener" class="qn-item qn-tg">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Telegram</span><span class="qn-sub">Free PDF नोट्स</span></span>
     </a>
   </div>
 
@@ -541,32 +554,12 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
     <div class="exam-pills" id="examGrid">
       <a href="/ras-exam-2026.html" class="exam-pill"><b>RAS / RTS</b><span>Pre &amp; Mains</span></a>
       <a href="/rajasthan-si-exam.html" class="exam-pill"><b>Police SI</b><span>Sub Inspector</span></a>
-      <a href="/rajasthan-police-constable-exam.html" class="exam-pill"><b>Constable</b><span>RSMSSB</span></a>
       <a href="/rajasthan-patwari-exam.html" class="exam-pill"><b>Patwari</b><span>RSMSSB</span></a>
       <a href="/reet-exam.html" class="exam-pill"><b>REET</b><span>Teacher Eligibility</span></a>
       <a href="/rpsc-2nd-grade-teacher-exam.html" class="exam-pill"><b>2nd Grade</b><span>RPSC Teaching</span></a>
-      <a href="/rpsc-1st-grade-teacher-exam.html" class="exam-pill"><b>1st Grade</b><span>School Lecturer</span></a>
-      <a href="/rajasthan-vdo-exam.html" class="exam-pill"><b>VDO</b><span>ग्राम विकास अधिकारी</span></a>
-      <a href="/rajasthan-cet-12th-level.html" class="exam-pill"><b>CET 12th</b><span>RSMSSB</span></a>
       <a href="/rajasthan-cet-graduate-level.html" class="exam-pill"><b>CET Graduate</b><span>RSMSSB</span></a>
-      <a href="/rajasthan-ldc-exam.html" class="exam-pill"><b>LDC</b><span>RSMSSB Clerk</span></a>
-      <a href="/rajasthan-jen-exam.html" class="exam-pill"><b>JEN</b><span>Junior Engineer</span></a>
-      <a href="/rajasthan-aen-exam.html" class="exam-pill"><b>AEN</b><span>Assistant Engineer</span></a>
-      <a href="/rajasthan-pashu-paricharak-exam.html" class="exam-pill"><b>पशु परिचारक</b><span>RSMSSB</span></a>
-      <a href="/railway-group-d-exam.html" class="exam-pill"><b>Railway NTPC</b><span>RRB Recruitment</span></a>
-      <a href="/ssc-gd-constable-exam.html" class="exam-pill"><b>SSC-GD</b><span>Staff Selection</span></a>
       <a href="/rajasthan-exams.html" class="exam-pill exam-pill-all"><b>सभी Exams</b><span>संपूर्ण विवरण</span></a>
     </div>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<section class="stats-bar" aria-label="संस्थान के आँकड़े">
-  <div class="stats-track">
-    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="stat-data"><span class="stat-num">6 लाख+</span><span class="stat-label">YouTube Subscribers</span></span></div>
-    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="stat-data"><span class="stat-num">2 लाख+</span><span class="stat-label">App Users</span></span></div>
-    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span><span class="stat-data"><span class="stat-num">500+</span><span class="stat-label">हिंदी स्टडी नोट्स</span></span></div>
-    <div class="stat-card"><span class="stat-icon-bubble"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg></span><span class="stat-data"><span class="stat-num">10,000+</span><span class="stat-label">Students Selected</span></span></div>
   </div>
 </section>
 
@@ -659,106 +652,6 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
   </div>
 </section>
 
-<!-- ===== COURSES: FOUNDATION + SUPER 60 + APP COURSES ===== -->
-<section class="courses-sec" id="courses" aria-labelledby="courses-title">
-  <p class="sec-eyebrow">Courses &amp; Test Series</p>
-  <h2 class="sec-title" id="courses-title">ओमकार सर के <span>Courses</span></h2>
-  <p class="sec-sub">अपनी जरूरत के अनुसार कोर्स चुनें और आज ही शुरू करें</p>
-
-  <div class="showcase-grid">
-    <article class="showcase-card">
-      <div class="sc-img-wrap">
-        <img class="sc-img" src="/assets/home-slider/ras-foundation-2026.webp" srcset="/assets/home-slider/ras-foundation-2026-480.webp 480w, /assets/home-slider/ras-foundation-2026-800.webp 800w, /assets/home-slider/ras-foundation-2026.webp 1448w" sizes="(max-width:850px) 100vw, 540px" width="1448" height="1086" alt="RAS Foundation Course 2026" loading="lazy" decoding="async">
-      </div>
-      <div class="sc-body">
-        <span class="sc-tag"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg> PRE + MAINS 2026</span>
-        <h3 class="sc-title">RAS Foundation Course 2026</h3>
-        <p class="sc-desc">Video Lectures + PDFs + Short Notes + Tests, साथ में Mains Answer Writing और Model Answers — सम्पूर्ण तैयारी एक ही Course में।</p>
-        <a href="/ras-foundation-v2.html" class="sc-btn">Course विवरण देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-    </article>
-    <article class="showcase-card">
-      <div class="sc-img-wrap">
-        <img class="sc-img" src="/assets/home-slider/ras-prelims-super60-2026.webp" srcset="/assets/home-slider/ras-prelims-super60-2026-480.webp 480w, /assets/home-slider/ras-prelims-super60-2026-800.webp 800w, /assets/home-slider/ras-prelims-super60-2026.webp 1448w" sizes="(max-width:850px) 100vw, 540px" width="1448" height="1086" alt="Super 60 Crash Course" loading="lazy" decoding="async">
-      </div>
-      <div class="sc-body">
-        <span class="sc-tag"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg> RAS PRELIMS 2026</span>
-        <h3 class="sc-title">Super 60 Crash Course</h3>
-        <p class="sc-desc">60 दिन का Daily Task Based Programme — रोज़ Video Lecture, PDF Notes, Short Notes और Daily MCQ Quiz से शत-प्रतिशत तैयारी।</p>
-        <a href="/super60-course.html" class="sc-btn">Super 60 देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-    </article>
-  </div>
-
-  <div class="sub-head">
-    <h3 class="sub-title">App पर उपलब्ध Courses &amp; Test Series</h3>
-    <div class="courses-filter-bar" role="group" aria-label="Course फ़िल्टर">
-      <button type="button" class="cf-active" data-filter="all">All Courses</button>
-      <button type="button" data-filter="ras">RAS</button>
-      <button type="button" data-filter="gk">GK Series</button>
-      <button type="button" data-filter="test">Test Series</button>
-    </div>
-  </div>
-
-  <div class="courses-card-grid">
-    <div class="c-card" data-category="ras test">
-      <span class="c-badge c-badge-free">100% FREE</span>
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-rocket"/></svg></span><h4 class="c-title">RAS Pre 2026 BEST Test Series | 18 Tests</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">RPSC New Syllabus</span><span class="c-tag">18 Full Tests</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price price-free">FREE</span><span class="c-orig">₹999</span></div><a href="https://techa.on-app.in/app/oc/805299/techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="ras gk">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-package"/></svg></span><h4 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">All GS Courses</span><span class="c-tag">All Tests</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="ras test">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg></span><h4 class="c-title">10 हजार अति महत्वपूर्ण प्रश्न (10K MCQs)</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Topic-Wise MCQs</span><span class="c-tag">Solutions</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹198</span><span class="c-orig">₹1,198</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg></span><h4 class="c-title">भारत भूगोल OMASTRA GK सीरीज — India Geography</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Complete Map Series</span><span class="c-tag">PDF Notes</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-scroll"/></svg></span><h4 class="c-title">India History — भारत का सम्पूर्ण इतिहास</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">प्राचीन, मध्य व आधुनिक</span><span class="c-tag">Videos</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span><h4 class="c-title">World Geography — विश्व भूगोल</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">महाद्वीप व महासागर</span><span class="c-tag">Videos</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹1,000</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span><h4 class="c-title">Mathematics &amp; Reasoning Complete Course</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">Zero Level To Advanced</span><span class="c-tag">Files</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹2,099</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-    <div class="c-card" data-category="gk">
-      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-dna"/></svg></span><h4 class="c-title">जीव विज्ञान (Biology) — OMASTRA GK Series</h4></div>
-      <div class="c-body"><div class="c-tags"><span class="c-tag">NCERT Based</span><span class="c-tag">Diagrams</span></div></div>
-      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹100</span><span class="c-orig">₹500</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-    </div>
-  </div>
-
-  <div class="courses-more">
-    <a href="/courses.html" class="btn-outline">सभी Courses देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-
-  <div class="promo-pyq-card">
-    <span class="pyq-ic"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
-    <div class="pyq-content">
-      <span class="pyq-badge">RPSC RAS MAINS • PAPER-I</span>
-      <h3 class="pyq-title">309 RAS Mains Paper-I PYQs</h3>
-      <p class="pyq-desc">इतिहास, अर्थव्यवस्था, समाजशास्त्र, प्रबंधन, लेखांकन एवं अंकेक्षण के 309 प्रश्न — वर्ष और अंक सहित विस्तृत समाधान।</p>
-    </div>
-    <a href="/ras-mains-paper-1-pyqs.html" class="pyq-btn">PYQs पढ़ें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</section>
-
 <!-- STORE:START (generated by seo/build_store.py) -->
 <section class="featured-pdf-sec ps-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
   <p class="sec-eyebrow">Premium PDF</p>
@@ -801,6 +694,41 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
   <div class="ps-more"><a class="ps-all" href="/store.html"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg> पूरा Premium Store देखें →</a></div>
 </section>
 <!-- STORE:END -->
+
+<!-- ===== COURSES (APP) ===== -->
+<section class="courses-sec" id="courses" aria-labelledby="courses-title">
+  <p class="sec-eyebrow">Courses &amp; Test Series</p>
+  <h2 class="sec-title" id="courses-title">ओमकार सर के <span>Courses</span></h2>
+  
+  <div class="sub-head">
+    <h3 class="sub-title">App पर Courses</h3>
+  </div>
+
+  <div class="courses-card-grid">
+    <div class="c-card" data-category="ras test">
+      <span class="c-badge c-badge-free">100% FREE</span>
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-rocket"/></svg></span><h4 class="c-title">RAS Pre 2026 BEST Test Series | 18 Tests</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">RPSC New Syllabus</span><span class="c-tag">18 Full Tests</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price price-free">FREE</span><span class="c-orig">₹999</span></div><a href="https://techa.on-app.in/app/oc/805299/techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="ras gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-package"/></svg></span><h4 class="c-title">ALL IN ONE Subscription — सम्पूर्ण GK एक ही स्थान पर</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">All GS Courses</span><span class="c-tag">All Tests</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹899</span><span class="c-orig">₹4,999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="c-card" data-category="gk">
+      <div class="c-card-head"><span class="c-icon"><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg></span><h4 class="c-title">भारत भूगोल OMASTRA GK सीरीज — India Geography</h4></div>
+      <div class="c-body"><div class="c-tags"><span class="c-tag">Complete Map Series</span><span class="c-tag">PDF Notes</span></div></div>
+      <div class="c-foot"><div class="c-price-wrap"><span class="c-price">₹199</span><span class="c-orig">₹999</span></div><a href="https://play.google.com/store/apps/details?id=co.april2019.techa" class="c-arrow">Join Now <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </div>
+
+  <div class="courses-more">
+    <a href="/courses.html" class="btn-outline">सभी Courses देखें <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+
+</section>
+
 
 <!-- ===== YOUTUBE ===== -->
 <section class="yt-sec" aria-labelledby="yt-title">
@@ -853,9 +781,8 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
     <div class="faq-col">
       <p class="sec-eyebrow sec-eyebrow-left">FAQ</p>
       <h2 class="sec-title sec-title-left" id="faq-title">अक्सर पूछे जाने वाले <span>सवाल</span></h2>
-      <p class="sec-sub sec-sub-left">RAS Exam 2026 और तैयारी से जुड़े आपके सभी सवालों के जवाब</p>
       <div class="faq-accordion">
-        <details class="faq-item" open>
+        <details class="faq-item">
           <summary class="faq-q"><span>RAS Prelims 2026 कब होगी?</span><span class="faq-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg></span></summary>
           <div class="faq-a">संशोधित परीक्षा तिथि <strong>6 दिसंबर 2026 (रविवार)</strong> है। RAS Mains <strong>1–2 मई 2027</strong> के लिए प्रस्तावित है। <a href="https://rpsc.rajasthan.gov.in/forthcomingexaminations" target="_blank" rel="noopener">RPSC का आधिकारिक परीक्षा कैलेंडर</a> देखें।</div>
         </details>
@@ -921,7 +848,28 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
   <a href="https://play.google.com/store/apps/details?id=co.april2019.techa" target="_blank" rel="noopener" class="md-app"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span>App</span></a>
 </nav>
 
-<script src="/nied-menu.js?v=a911958d" defer></script>
+<script>
+(function(){
+  var d=new Date(),m=['जनवरी','फ़रवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
+  var cd=document.getElementById('caDate'); if(cd) cd.textContent=d.getDate()+' '+m[d.getMonth()];
+  try{var last=JSON.parse(localStorage.getItem('niedLastRead')||'null');var r=document.getElementById('heroResume');
+    if(last&&last.url&&r){r.href=last.url;r.textContent='▶ वहीं से पढ़ें: '+last.title;r.hidden=false;}}catch(e){}
+  var inp=document.getElementById('heroSearch'),box=document.getElementById('heroSearchResults'),idx=null,t;
+  if(!inp||!box) return;
+  function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function load(cb){if(idx){cb();return;}fetch('/search-index.json',{cache:'force-cache'}).then(function(r){return r.json();}).then(function(j){idx=j;cb();}).catch(function(){idx=[];cb();});}
+  function run(){var q=inp.value.trim().toLowerCase();if(!q){box.classList.remove('open');return;}
+    load(function(){var w=q.split(/\s+/),res=idx.filter(function(it){var h=(it.title+' '+(it.desc||'')).toLowerCase();return w.every(function(x){return h.indexOf(x)>-1;});});
+      res.sort(function(a,b){return (b.title.toLowerCase().indexOf(q)>-1)-(a.title.toLowerCase().indexOf(q)>-1);});
+      box.innerHTML=res.length?res.slice(0,10).map(function(it){return '<a href="'+esc(it.url)+'">'+esc(it.title.replace(/\s*\|\s*Omkar Sir\s*$/,''))+'</a>';}).join(''):'<div class="hs-empty">कुछ नहीं मिला — दूसरा शब्द लिखें</div>';
+      box.classList.add('open');});}
+  inp.addEventListener('focus',function(){load(function(){});});
+  inp.addEventListener('input',function(){clearTimeout(t);t=setTimeout(run,150);});
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var a=box.querySelector('a');if(a){location.href=a.href;}}});
+  document.addEventListener('click',function(e){if(!e.target.closest('.hero-search'))box.classList.remove('open');});
+})();
+</script>
+<script src="/nied-menu.js?v=7c8d63f9" defer></script>
 <script src="/nied-latest-posts.js?v=1fe39693" defer></script>
 
 <script>

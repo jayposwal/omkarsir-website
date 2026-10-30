@@ -769,3 +769,15 @@
     init();
   }
 })();
+
+/* Remember the last notes chapter read, for the homepage "वहीं से पढ़ें" link (2026-10-30) */
+(function(){
+  try{
+    var p=location.pathname;
+    if(p==='/'||/index\.html$/.test(p)) return;
+    if(!/-ch\d|notes|adhyay|chapter/i.test(p)) return;
+    var t=(document.title||'').replace(/\s*[|\u2014-]\s*Omkar Sir.*$/i,'').trim();
+    if(!t) return;
+    localStorage.setItem('niedLastRead',JSON.stringify({url:p,title:t.slice(0,60)}));
+  }catch(e){}
+})();
