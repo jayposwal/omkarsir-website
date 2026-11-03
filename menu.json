@@ -142,6 +142,10 @@
       "type": "dropdown",
       "children": [
         {
+          "label": "🗂️ Exam Sections — Category-wise",
+          "url": "/exam-sections.html"
+        },
+        {
           "label": "🆕 सभी 49 Exams — Master List",
           "url": "/all-exams.html"
         },
