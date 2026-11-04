@@ -342,7 +342,7 @@ img{max-width:100%}
 .sgh-subtitle{font-size:14px;color:var(--text-muted)}
 .sgh-count{font-size:13px;font-weight:700;background:var(--navy-tint);color:var(--navy);padding:4px 12px;border-radius:999px}
 .subject-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
-.subject-box{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:128px;padding:16px;background:#fff;border:1px solid var(--card-border);border-radius:16px;text-decoration:none;color:var(--text-dark);box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.subject-card{display:flex;flex-direction:column;min-width:0}.subject-card .subject-box{flex:1}.subject-pdf-link{display:block;margin-top:5px;padding:7px 9px;border-radius:9px;background:#fff4e9;color:#a9430a;text-align:center;font-weight:800;font-size:13px;text-decoration:none}.subject-pdf-link:hover,.subject-pdf-link:focus-visible{background:#ffdfbf}.subject-box{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:128px;padding:16px;background:#fff;border:1px solid var(--card-border);border-radius:16px;text-decoration:none;color:var(--text-dark);box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .subject-box:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--saffron-line)}
 .subject-box .s-icon{width:42px;height:42px;border-radius:12px;background:var(--saffron-tint);color:var(--saffron-btn);display:flex;align-items:center;justify-content:center;font-size:20px}
 .subject-box .s-name{font-weight:700;font-size:15.5px;line-height:1.35;color:var(--navy)}
@@ -433,7 +433,7 @@ body{font-size:17px;line-height:1.7}
   .quick-grid .qn-item:nth-child(n+5){display:none}
   .quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .qn-item{min-height:96px}
-  .subj-category-group.subj-collapsed .subject-box:nth-child(n+5){display:none}
+  .subj-category-group.subj-collapsed .subject-card:nth-child(n+5){display:none}
   .subj-more{display:block;width:100%;margin:12px 0 0;padding:11px;border:1.5px dashed var(--saffron-line,#FFD0A0);border-radius:12px;background:#fff;color:var(--saffron-btn,#E05500);font-weight:700;font-size:14.5px;font-family:inherit}
 }
 
@@ -447,8 +447,8 @@ body{font-size:17px;line-height:1.7}
   .subject-box .s-icon{width:34px;height:34px;font-size:17px;border-radius:10px}
   .subject-box .s-name{font-size:12.5px;line-height:1.3}
   .subject-box .s-count{font-size:10.5px;padding:1px 7px;margin-top:2px}
-  .subj-category-group.subj-collapsed .subject-box:nth-child(n+5){display:flex}
-  .subj-category-group.subj-collapsed .subject-box:nth-child(n+7){display:none}
+  .subj-category-group.subj-collapsed .subject-card:nth-child(n+5){display:flex}
+  .subj-category-group.subj-collapsed .subject-card:nth-child(n+7){display:none}
 }
 </style>
 <link rel="preload" href="/assets/css/home.css?v=bf8e1012" as="style">
@@ -574,7 +574,7 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
     </a>
     <a href="#subjects" class="qn-item">
       <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Free Notes</span><span class="qn-sub">27 विषय</span></span>
+      <span class="qn-info"><span class="qn-label">Free Notes</span><span class="qn-sub">28 विषय</span></span>
     </a>
     <a href="/previous-year-papers.html" class="qn-item">
       <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
@@ -608,10 +608,10 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 <section class="subjects-sec" id="subjects" aria-labelledby="subjects-title">
   <p class="sec-eyebrow">100% मुफ़्त</p>
   <h2 class="sec-title" id="subjects-title">विषय-वार <span>Free Notes</span></h2>
-  <p class="sec-sub">सभी प्रतियोगी परीक्षाओं के लिए 27 Subjects के प्रामाणिक व मुफ़्त हिंदी नोट्स</p>
+  <p class="sec-sub">सभी प्रतियोगी परीक्षाओं के लिए 28 Subjects के प्रामाणिक व मुफ़्त हिंदी नोट्स</p>
 
   <div class="subject-filter-bar" role="tablist" aria-label="विषयवार श्रेणियाँ">
-    <button type="button" class="subj-cat-btn active" data-subgroup="all" role="tab" aria-selected="true">सभी विषय (27)</button>
+    <button type="button" class="subj-cat-btn active" data-subgroup="all" role="tab" aria-selected="true">सभी विषय (28)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="rajasthan" role="tab" aria-selected="false">राजस्थान GK (6)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="india" role="tab" aria-selected="false">इंडिया GK व विज्ञान (12)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="mains" role="tab" aria-selected="false">RAS मेन्स स्पेशल (7)</button>
@@ -625,12 +625,12 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <span class="sgh-count">6 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/rajasthan-itihas-series.html" class="subject-box"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a>
-      <a href="/rajasthan-kala-sanskriti.html" class="subject-box"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a>
-      <a href="/rajasthan-bhugol.html" class="subject-box"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय + परिचय</div></a>
+      <div class="subject-card"><a href="/rajasthan-itihas-series.html" class="subject-box"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-history-pdf.html" aria-label="rajasthan-itihas-series.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rajasthan-kala-sanskriti.html" class="subject-box"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-kala-sanskriti-pdf.html" aria-label="rajasthan-kala-sanskriti.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rajasthan-bhugol.html" class="subject-box"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय + परिचय</div></a><a class="subject-pdf-link" href="/rajasthan-bhugol-pdf.html" aria-label="rajasthan-bhugol.html के लिए PDF देखें">📘 PDF देखें →</a></div>
       <a href="/rajasthan-atlas.html" class="subject-box"><div class="s-icon">🗺️</div><div class="s-name">राजस्थान एटलस</div><div class="s-count">41 जिले</div></a>
-      <a href="/rajasthan-rajyavyavastha.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a>
-      <a href="/rajasthan-arthvyavastha.html" class="subject-box"><div class="s-icon">📊</div><div class="s-name">राजस्थान अर्थव्यवस्था</div><div class="s-count">15 अध्याय · समीक्षा व बजट</div></a>
+      <div class="subject-card"><a href="/rajasthan-rajyavyavastha.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-rajyavyavastha-pdf.html" aria-label="rajasthan-rajyavyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rajasthan-arthvyavastha.html" class="subject-box"><div class="s-icon">📊</div><div class="s-name">राजस्थान अर्थव्यवस्था</div><div class="s-count">15 अध्याय · समीक्षा व बजट</div></a><a class="subject-pdf-link" href="/rajasthan-arthvyavastha-pdf.html" aria-label="rajasthan-arthvyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
     </div>
   </div>
 
@@ -640,17 +640,17 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <span class="sgh-count">12 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/adhunik-bharat-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span class="s-name">आधुनिक भारत इतिहास</span><span class="s-count">20 अध्याय</span></a>
-      <a href="/prachin-bharat-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg></span><span class="s-name">प्राचीन भारत इतिहास</span><span class="s-count">10 अध्याय</span></a>
-      <a href="/polity-short-notes.html" class="subject-box subject-box-hl"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span><span class="s-name">राजव्यवस्था Short Notes</span><span class="s-count">17 अध्याय (PDF+DOCX)</span></a>
-      <a href="/samvidhan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span class="s-name">भारतीय संविधान</span><span class="s-count">Complete</span></a>
-      <a href="/arthavyavastha.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-rupee"/></svg></span><span class="s-name">भारतीय अर्थव्यवस्था</span><span class="s-count">10 अध्याय</span></a>
-      <a href="/bharatiya-kala-sanskriti.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg></span><span class="s-name">भारतीय कला-संस्कृति</span><span class="s-count">10 अध्याय</span></a>
-      <a href="/vishwa-bhugol.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span><span class="s-name">विश्व भूगोल</span><span class="s-count">7 अध्याय</span></a>
-      <a href="/jiv-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-dna"/></svg></span><span class="s-name">जीव विज्ञान</span><span class="s-count">15 अध्याय</span></a>
-      <a href="/bhautik-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-atom"/></svg></span><span class="s-name">भौतिक विज्ञान</span><span class="s-count">10 अध्याय</span></a>
-      <a href="/rasayan-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="s-name">रसायन विज्ञान</span><span class="s-count">11 अध्याय</span></a>
-      <a href="/vigyan-praudyogiki.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg></span><span class="s-name">विज्ञान एवं प्रौद्योगिकी</span><span class="s-count">10 अध्याय</span></a>
+      <div class="subject-card"><a href="/adhunik-bharat-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span class="s-name">आधुनिक भारत इतिहास</span><span class="s-count">20 अध्याय</span></a><a class="subject-pdf-link" href="/adhunik-bharat-itihas-pdf.html" aria-label="adhunik-bharat-itihas.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/prachin-bharat-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg></span><span class="s-name">प्राचीन भारत इतिहास</span><span class="s-count">10 अध्याय</span></a><a class="subject-pdf-link" href="/prachin-bharat-itihas-pdf.html" aria-label="prachin-bharat-itihas.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/polity-short-notes.html" class="subject-box subject-box-hl"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span><span class="s-name">राजव्यवस्था Short Notes</span><span class="s-count">17 अध्याय (PDF+DOCX)</span></a><a class="subject-pdf-link" href="/bharatiya-rajvyavastha-pdf.html" aria-label="सम्पूर्ण भारतीय राजव्यवस्था PDF देखें">📘 सम्पूर्ण विषय PDF →</a></div>
+      <div class="subject-card"><a href="/samvidhan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span class="s-name">भारतीय संविधान</span><span class="s-count">Complete</span></a><a class="subject-pdf-link" href="/bharatiya-rajvyavastha-pdf.html" aria-label="samvidhan.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/arthavyavastha.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-rupee"/></svg></span><span class="s-name">भारतीय अर्थव्यवस्था</span><span class="s-count">10 अध्याय</span></a><a class="subject-pdf-link" href="/bharatiya-arthvyavastha-pdf.html" aria-label="arthavyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/bharatiya-kala-sanskriti.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg></span><span class="s-name">भारतीय कला-संस्कृति</span><span class="s-count">10 अध्याय</span></a><a class="subject-pdf-link" href="/bharatiya-kala-sanskriti-pdf.html" aria-label="bharatiya-kala-sanskriti.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/vishwa-bhugol.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span><span class="s-name">विश्व भूगोल</span><span class="s-count">7 अध्याय</span></a><a class="subject-pdf-link" href="/vishwa-bhugol-pdf.html" aria-label="vishwa-bhugol.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/jiv-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-dna"/></svg></span><span class="s-name">जीव विज्ञान</span><span class="s-count">15 अध्याय</span></a><a class="subject-pdf-link" href="/jiv-vigyan-biology-pdf.html" aria-label="jiv-vigyan.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/bhautik-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-atom"/></svg></span><span class="s-name">भौतिक विज्ञान</span><span class="s-count">10 अध्याय</span></a><a class="subject-pdf-link" href="/bhautik-vigyan-physics-pdf.html" aria-label="bhautik-vigyan.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rasayan-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="s-name">रसायन विज्ञान</span><span class="s-count">11 अध्याय</span></a><a class="subject-pdf-link" href="/rasayan-vigyan-chemistry-pdf.html" aria-label="rasayan-vigyan.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/vigyan-praudyogiki.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg></span><span class="s-name">विज्ञान एवं प्रौद्योगिकी</span><span class="s-count">10 अध्याय</span></a><a class="subject-pdf-link" href="/praudyogiki-technology-pdf.html" aria-label="vigyan-praudyogiki.html के लिए PDF देखें">📘 PDF देखें →</a></div>
       <a href="/antarrashtriya-sambandh.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-earth"/></svg></span><span class="s-name">अंतर्राष्ट्रीय संबंध</span><span class="s-count">17 अध्याय</span></a>
     </div>
   </div>
@@ -661,13 +661,13 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <span class="sgh-count">7 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/vishwa-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-hourglass"/></svg></span><span class="s-name">आधुनिक विश्व इतिहास</span><span class="s-count">11 अध्याय</span></a>
-      <a href="/prashasanik-naitikta.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><span class="s-name">प्रशासनिक नैतिकता</span><span class="s-count">9 अध्याय</span></a>
-      <a href="/samajshastra.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span class="s-name">समाजशास्त्र</span><span class="s-count">7 अध्याय</span></a>
-      <a href="/prabandh.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span class="s-name">प्रबंधन (Management)</span><span class="s-count">5 अध्याय</span></a>
-      <a href="/lok-prashasan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span><span class="s-name">लोक प्रशासन</span><span class="s-count">12 अध्याय</span></a>
-      <a href="/vyavhar.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg></span><span class="s-name">व्यवहार (Behavior)</span><span class="s-count">5 अध्याय</span></a>
-      <a href="/vidhi.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-gavel"/></svg></span><span class="s-name">विधि (Law)</span><span class="s-count">9 अध्याय</span></a>
+      <div class="subject-card"><a href="/vishwa-itihas.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-hourglass"/></svg></span><span class="s-name">आधुनिक विश्व इतिहास</span><span class="s-count">11 अध्याय</span></a><a class="subject-pdf-link" href="/vishwa-itihas-pdf.html" aria-label="vishwa-itihas.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/prashasanik-naitikta.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><span class="s-name">प्रशासनिक नैतिकता</span><span class="s-count">9 अध्याय</span></a><a class="subject-pdf-link" href="/prashasanik-naitikta-ethics-pdf.html" aria-label="prashasanik-naitikta.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/samajshastra.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span class="s-name">समाजशास्त्र</span><span class="s-count">7 अध्याय</span></a><a class="subject-pdf-link" href="/samajshastra-pdf.html" aria-label="samajshastra.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/prabandh.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span class="s-name">प्रबंधन (Management)</span><span class="s-count">5 अध्याय</span></a><a class="subject-pdf-link" href="/prabandh-management-pdf.html" aria-label="prabandh.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/lok-prashasan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span><span class="s-name">लोक प्रशासन</span><span class="s-count">12 अध्याय</span></a><a class="subject-pdf-link" href="/lok-prashasan-pdf.html" aria-label="lok-prashasan.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/vyavhar.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg></span><span class="s-name">व्यवहार (Behavior)</span><span class="s-count">5 अध्याय</span></a><a class="subject-pdf-link" href="/vyavhar-behavior-pdf.html" aria-label="vyavhar.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/vidhi.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-gavel"/></svg></span><span class="s-name">विधि (Law)</span><span class="s-count">9 अध्याय</span></a><a class="subject-pdf-link" href="/vidhi-law-pdf.html" aria-label="vidhi.html के लिए PDF देखें">📘 PDF देखें →</a></div>
     </div>
   </div>
 
@@ -677,7 +677,7 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <span class="sgh-count">1 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/ras-pre-math-reasoning.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span><span class="s-name">गणित व तर्कशक्ति</span><span class="s-count">14 अध्याय</span></a>
+      <div class="subject-card"><a href="/ras-pre-math-reasoning.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span><span class="s-name">गणित व तर्कशक्ति</span><span class="s-count">14 अध्याय</span></a><a class="subject-pdf-link" href="/ras-pre-math-reasoning-pdf.html" aria-label="ras-pre-math-reasoning.html के लिए PDF देखें">📘 PDF देखें →</a></div>
     </div>
   </div>
 
@@ -687,8 +687,8 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <span class="sgh-count">2 विषय</span>
     </div>
     <div class="subject-grid">
-      <a href="/samanya-hindi.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-lang"/></svg></span><span class="s-name">सामान्य हिंदी</span><span class="s-count">6 अध्याय</span></a>
-      <a href="/general-english.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg></span><span class="s-name">General English</span><span class="s-count">12 अध्याय</span></a>
+      <div class="subject-card"><a href="/samanya-hindi.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-lang"/></svg></span><span class="s-name">सामान्य हिंदी</span><span class="s-count">6 अध्याय</span></a><a class="subject-pdf-link" href="/samanya-hindi-pdf.html" aria-label="samanya-hindi.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/general-english.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg></span><span class="s-name">General English</span><span class="s-count">12 अध्याय</span></a><a class="subject-pdf-link" href="/general-english-pdf.html" aria-label="general-english.html के लिए PDF देखें">📘 PDF देखें →</a></div>
     </div>
   </div>
 </section>
@@ -697,7 +697,7 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 <section class="featured-pdf-sec ps-sec" id="featured-pdf" aria-labelledby="featured-pdf-title">
   <p class="sec-eyebrow">Premium PDF</p>
   <h2 class="sec-title" id="featured-pdf-title">Premium <span>Notes Store</span></h2>
-  <p class="sec-sub">ओमकार सर की सम्पूर्ण PDF पुस्तकें, सरल हिंदी में — हर PDF सिर्फ़ ₹49, भुगतान के बाद तुरंत download</p>
+  <p class="sec-sub">चुनिंदा PDF ₹49 में उपलब्ध हैं। सभी विषयों की PDF, सैंपल और उपलब्धता Premium Store में देखें।</p>
   <div class="ps-grid">
       <a class="ps-card" href="/rajasthan-history-pdf.html">
         <span class="ps-cover"><img src="/assets/store/rajasthan-itihas-poster-420.webp" alt="सम्पूर्ण राजस्थान इतिहास PDF का कवर" width="420" height="594" loading="lazy" decoding="async"><span class="ps-off">75% छूट</span></span>
