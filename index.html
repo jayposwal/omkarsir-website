@@ -460,6 +460,7 @@ body{font-size:17px;line-height:1.7}
 .m-photo-sec{display:block !important;padding:34px 16px 46px;text-align:center;background:linear-gradient(180deg,#fff,#FFF8F2)}
 .m-photo-sec .hero-photo{margin:0 auto;width:min(70vw,280px)}
 @media(max-width:760px){.hero{padding:16px 14px 12px !important}.hero h1{font-size:22px !important}.subjects-sec{padding-top:16px !important}}
+.hs-chips{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin:8px auto 0;font-size:13px;color:var(--text-muted)}.hs-chips button{border:1px solid var(--saffron-line,#FFD0A0);background:#fff;color:var(--navy);border-radius:999px;padding:5px 11px;font:600 13px inherit;font-family:inherit;cursor:pointer}
 </style>
 <link rel="preload" href="/assets/css/home.css?v=bf8e1012" as="style">
 <script>/* Apply below-the-fold CSS only after the first frame is painted, so it never delays the hero (LCP) */
@@ -548,13 +549,14 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
-      <h1 id="hero-title">सभी विषयों के हिंदी नोट्स — <span>बिल्कुल मुफ़्त</span></h1>
+      <h1 id="hero-title">सभी विषयों के नोट्स — <span>बिल्कुल मुफ़्त</span></h1>
       <p class="hero-subtext">नीचे अपना विषय चुनें और अभी पढ़ना शुरू करें।</p>
       <form class="hero-search" role="search" action="/all-notes.html" onsubmit="return false">
         <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
-        <input type="search" id="heroSearch" placeholder="क्या पढ़ना है? जैसे: राजस्थान की नदियाँ" aria-label="Notes, Subject या Exam खोजें" autocomplete="off">
+        <input type="search" id="heroSearch" placeholder="जैसे: मौलिक अधिकार, अपवाह तंत्र" aria-label="Notes, Subject या Exam खोजें" autocomplete="off">
         <div class="hs-results" id="heroSearchResults" role="listbox"></div>
       </form>
+      <div class="hs-chips" aria-label="लोकप्रिय टॉपिक"><span>लोकप्रिय:</span><button type="button" data-q="मौलिक अधिकार">मौलिक अधिकार</button><button type="button" data-q="अपवाह तंत्र">नदियाँ (अपवाह तंत्र)</button><button type="button" data-q="1857">1857 की क्रांति</button></div>
       <a class="hero-resume" id="heroResume" hidden></a>
       
     </div>
@@ -572,26 +574,11 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 
   <div class="subject-filter-bar" role="tablist" aria-label="विषयवार श्रेणियाँ">
     <button type="button" class="subj-cat-btn active" data-subgroup="all" role="tab" aria-selected="true">सभी विषय (28)</button>
-    <button type="button" class="subj-cat-btn" data-subgroup="rajasthan" role="tab" aria-selected="false">राजस्थान GK (6)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="india" role="tab" aria-selected="false">इंडिया GK व विज्ञान (12)</button>
+    <button type="button" class="subj-cat-btn" data-subgroup="rajasthan" role="tab" aria-selected="false">राजस्थान GK (6)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="mains" role="tab" aria-selected="false">RAS मेन्स स्पेशल (7)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="maths" role="tab" aria-selected="false">गणित व रीजनिंग (1)</button>
     <button type="button" class="subj-cat-btn" data-subgroup="language" role="tab" aria-selected="false">हिंदी व इंग्लिश (2)</button>
-  </div>
-
-  <div class="subj-category-group" data-subj-group="rajasthan">
-    <div class="subj-group-header">
-      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg> राजस्थान GK</span><span class="sgh-subtitle">इतिहास, कला-संस्कृति, भूगोल, एटलस, राज्यव्यवस्था व अर्थव्यवस्था</span></div>
-      <span class="sgh-count">6 विषय</span>
-    </div>
-    <div class="subject-grid">
-      <div class="subject-card"><a href="/rajasthan-itihas-series.html" class="subject-box"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-history-pdf.html" aria-label="rajasthan-itihas-series.html के लिए PDF देखें">📘 PDF देखें →</a></div>
-      <div class="subject-card"><a href="/rajasthan-kala-sanskriti.html" class="subject-box"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-kala-sanskriti-pdf.html" aria-label="rajasthan-kala-sanskriti.html के लिए PDF देखें">📘 PDF देखें →</a></div>
-      <div class="subject-card"><a href="/rajasthan-bhugol.html" class="subject-box"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय + परिचय</div></a><a class="subject-pdf-link" href="/rajasthan-bhugol-pdf.html" aria-label="rajasthan-bhugol.html के लिए PDF देखें">📘 PDF देखें →</a></div>
-      <a href="/rajasthan-atlas.html" class="subject-box"><div class="s-icon">🗺️</div><div class="s-name">राजस्थान एटलस</div><div class="s-count">41 जिले</div></a>
-      <div class="subject-card"><a href="/rajasthan-rajyavyavastha.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-rajyavyavastha-pdf.html" aria-label="rajasthan-rajyavyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
-      <div class="subject-card"><a href="/rajasthan-arthvyavastha.html" class="subject-box"><div class="s-icon">📊</div><div class="s-name">राजस्थान अर्थव्यवस्था</div><div class="s-count">15 अध्याय · समीक्षा व बजट</div></a><a class="subject-pdf-link" href="/rajasthan-arthvyavastha-pdf.html" aria-label="rajasthan-arthvyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
-    </div>
   </div>
 
   <div class="subj-category-group" data-subj-group="india">
@@ -612,6 +599,21 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <div class="subject-card"><a href="/rasayan-vigyan.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="s-name">रसायन विज्ञान</span><span class="s-count">11 अध्याय</span></a><a class="subject-pdf-link" href="/rasayan-vigyan-chemistry-pdf.html" aria-label="rasayan-vigyan.html के लिए PDF देखें">📘 PDF देखें →</a></div>
       <div class="subject-card"><a href="/vigyan-praudyogiki.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg></span><span class="s-name">विज्ञान एवं प्रौद्योगिकी</span><span class="s-count">10 अध्याय</span></a><a class="subject-pdf-link" href="/praudyogiki-technology-pdf.html" aria-label="vigyan-praudyogiki.html के लिए PDF देखें">📘 PDF देखें →</a></div>
       <a href="/antarrashtriya-sambandh.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-earth"/></svg></span><span class="s-name">अंतर्राष्ट्रीय संबंध</span><span class="s-count">17 अध्याय</span></a>
+    </div>
+  </div>
+
+  <div class="subj-category-group" data-subj-group="rajasthan">
+    <div class="subj-group-header">
+      <div class="sgh-left"><span class="sgh-badge"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg> राजस्थान GK</span><span class="sgh-subtitle">इतिहास, कला-संस्कृति, भूगोल, एटलस, राज्यव्यवस्था व अर्थव्यवस्था</span></div>
+      <span class="sgh-count">6 विषय</span>
+    </div>
+    <div class="subject-grid">
+      <div class="subject-card"><a href="/rajasthan-itihas-series.html" class="subject-box"><div class="s-icon">📜</div><div class="s-name">राजस्थान का इतिहास</div><div class="s-count">16 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-history-pdf.html" aria-label="rajasthan-itihas-series.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rajasthan-kala-sanskriti.html" class="subject-box"><div class="s-icon">🎨</div><div class="s-name">राजस्थान कला-संस्कृति</div><div class="s-count">13 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-kala-sanskriti-pdf.html" aria-label="rajasthan-kala-sanskriti.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rajasthan-bhugol.html" class="subject-box"><div class="s-icon">⛰️</div><div class="s-name">राजस्थान भूगोल</div><div class="s-count">14 अध्याय + परिचय</div></a><a class="subject-pdf-link" href="/rajasthan-bhugol-pdf.html" aria-label="rajasthan-bhugol.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <a href="/rajasthan-atlas.html" class="subject-box"><div class="s-icon">🗺️</div><div class="s-name">राजस्थान एटलस</div><div class="s-count">41 जिले</div></a>
+      <div class="subject-card"><a href="/rajasthan-rajyavyavastha.html" class="subject-box"><div class="s-icon">⚖️</div><div class="s-name">राजस्थान राज्यव्यवस्था</div><div class="s-count">12 अध्याय</div></a><a class="subject-pdf-link" href="/rajasthan-rajyavyavastha-pdf.html" aria-label="rajasthan-rajyavyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
+      <div class="subject-card"><a href="/rajasthan-arthvyavastha.html" class="subject-box"><div class="s-icon">📊</div><div class="s-name">राजस्थान अर्थव्यवस्था</div><div class="s-count">15 अध्याय · समीक्षा व बजट</div></a><a class="subject-pdf-link" href="/rajasthan-arthvyavastha-pdf.html" aria-label="rajasthan-arthvyavastha.html के लिए PDF देखें">📘 PDF देखें →</a></div>
     </div>
   </div>
 
@@ -920,7 +922,8 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
   inp.addEventListener('focus',function(){load(function(){});});
   inp.addEventListener('input',function(){clearTimeout(t);t=setTimeout(run,150);});
   inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var a=box.querySelector('a');if(a){location.href=a.href;}}});
-  document.addEventListener('click',function(e){if(!e.target.closest('.hero-search'))box.classList.remove('open');});
+  document.querySelectorAll('.hs-chips button').forEach(function(c){c.addEventListener('click',function(){inp.value=c.getAttribute('data-q');inp.focus();run();});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.hero-search')&&!e.target.closest('.hs-chips'))box.classList.remove('open');});
 })();
 </script>
 <script src="/nied-menu.js?v=7c8d63f9" defer></script>
