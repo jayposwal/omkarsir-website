@@ -181,7 +181,6 @@ a {{ color:inherit; text-decoration:none; }}
   <div class="sub">{site_url} &nbsp;|&nbsp; NIEd</div>
   <div class="bar"></div>
   <h1>{hindi_date}<br>Daily Current Affairs Quiz — {len(questions)} प्रश्न</h1>
-  <div class="cred">NCERT, RBSE की मूल पुस्तकों व प्रामाणिक स्रोतों से तैयार — विश्वसनीय एवं बेहतरीन Content</div>
   <div class="link">Online Quiz खेलें व Score पाएं: {quiz_page_url}</div>
   <div class="idx-box">
     <div class="idx-title">Index — इस PDF में शामिल विषय</div>
