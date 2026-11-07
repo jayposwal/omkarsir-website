@@ -48,6 +48,10 @@
           "type": "submenu",
           "children": [
             {
+              "label": "🗺️ भारत का भूगोल (13 अध्याय)",
+              "url": "/bharat-bhugol.html"
+            },
+            {
               "label": "🏛️ प्राचीन भारत इतिहास (10 अध्याय)",
               "url": "/prachin-bharat-itihas.html"
             },
