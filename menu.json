@@ -150,6 +150,32 @@
           "url": "/all-exams.html"
         },
         {
+          "label": "🏛️ UPSC Mains PYQ (GS 1 to 4)",
+          "type": "submenu",
+          "children": [
+            {
+              "label": "📑 सम्पूर्ण Master Hub (1,118 प्रश्न)",
+              "url": "/upsc-mains-pyq.html"
+            },
+            {
+              "label": "📜 GS Paper-1 PYQ (290 प्रश्न)",
+              "url": "/upsc-mains-gs1-pyq.html"
+            },
+            {
+              "label": "⚖️ GS Paper-2 PYQ (285 प्रश्न)",
+              "url": "/upsc-mains-gs2-pyq.html"
+            },
+            {
+              "label": "💰 GS Paper-3 PYQ (285 प्रश्न)",
+              "url": "/upsc-mains-gs3-pyq.html"
+            },
+            {
+              "label": "🎯 GS Paper-4 PYQ (258 प्रश्न · Ethics)",
+              "url": "/upsc-mains-gs4-pyq.html"
+            }
+          ]
+        },
+        {
           "label": "🎯 सभी Rajasthan Exams",
           "url": "/rajasthan-exams.html"
         },
@@ -341,6 +367,32 @@
       "label": "📝 Notes & PDFs",
       "type": "dropdown",
       "children": [
+        {
+          "label": "🏛️ UPSC Mains PYQ (GS 1 to 4)",
+          "type": "submenu",
+          "children": [
+            {
+              "label": "📑 सम्पूर्ण Master Hub (1,118 प्रश्न)",
+              "url": "/upsc-mains-pyq.html"
+            },
+            {
+              "label": "📜 GS Paper-1 PYQ (290 प्रश्न)",
+              "url": "/upsc-mains-gs1-pyq.html"
+            },
+            {
+              "label": "⚖️ GS Paper-2 PYQ (285 प्रश्न)",
+              "url": "/upsc-mains-gs2-pyq.html"
+            },
+            {
+              "label": "💰 GS Paper-3 PYQ (285 प्रश्न)",
+              "url": "/upsc-mains-gs3-pyq.html"
+            },
+            {
+              "label": "🎯 GS Paper-4 PYQ (258 प्रश्न · Ethics)",
+              "url": "/upsc-mains-gs4-pyq.html"
+            }
+          ]
+        },
         {
           "label": "📄 सभी Free Notes देखें",
           "url": "/all-notes.html"
