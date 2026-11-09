@@ -98,25 +98,31 @@ def query_gemini_for_content(date_str, hindi_date, api_key):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
     
     prompt = f"""
-You are the daily content editor and RAS Exam specialist for omkarsir.com (New India Education).
+You are the daily content editor and RAS Exam specialist for omkarsir.com (New India Education — Omkar Sir).
 Today's date is: {date_str} ({hindi_date}).
 
-Search the web using Google Search for today's most important confirmed, authentic news and DIPR Rajasthan / Sujas announcements across 6 categories:
-1. national (3 news items) - central govt policies, Supreme Court decisions, national initiatives
-2. international (3 news items) - diplomacy, agreements, multilateral summits, geopolitics
-3. economic (3 news items) - RBI, SEBI, banking, trade, markets, fiscal policy
-4. science (3 news items) - ISRO, DRDO, defence technology, AI, space
-5. sports (3 news items) - tournaments, awards, honours, national and international achievements
-6. rajasthan (4 news items) - HIGHEST PRIORITY: Rajasthan state govt, CM Bhajan Lal Sharma decisions, cabinet, DIPR Sujas, schemes, state achievements
+Strict Quality Guidelines:
+- Rajasthan & Sujas is the HIGHEST PRIORITY. Include state govt cabinet decisions, CM Bhajan Lal Sharma announcements, DIPR bulletins, schemes, sports, and infrastructure.
+- Sources to prioritize: DIPR Rajasthan (dipr.rajasthan.gov.in), Sujas, PIB India (pib.gov.in), The Hindu, Indian Express, Supreme Court rulings, RBI/SEBI notices.
+- Use only confirmed, dated, authentic facts. No speculation or rumours.
+- Never use 'RAS Mains Qualified' or 'IAS Aspirant' anywhere.
+- Every news item must be in simple, standard, professional Hindi with bold key concepts (<b>...</b>) and numbers/stats.
+- Each item must end with a targeted '🎯 परीक्षा के लिए:' box highlighting exactly why this is asked in RAS/UPSC (relevant Articles, stats, ministries, Acts).
 
-Also formulate 15 high-standard MCQs based on this exact content:
-- 3 National
-- 2 International
-- 2 Economic
-- 2 Science-Defence
-- 2 Sports
-- 4 Rajasthan & Sujas
-Mix of easy, medium, hard difficulty. Some as 'कथनों पर विचार कीजिए' style.
+6 Categories required:
+1. national (3 detailed news items) - central decisions, schemes, defence, SC rulings, Parliament
+2. international (3 detailed news items) - India diplomacy, summits, global rankings, geopolitics
+3. economic (3 detailed news items) - RBI, GDP, banking, SEBI, fiscal policy, markets
+4. science (3 detailed news items) - ISRO, DRDO, defence tech, AI, innovations, biodiversity
+5. sports (3 detailed news items) - national/international sports results, youth olympics, awards
+6. rajasthan (4 detailed news items) - DIPR Sujas, state schemes, budget announcements, districts, state governance
+
+Also build 15 high-standard RAS/UPSC standard MCQs based on this exact content:
+- 3 National, 2 International, 2 Economic, 2 Science-Defence, 2 Sports, 4 Rajasthan-Sujas
+- Mix of Easy (4-5), Medium (6-7), and Hard (3-4) questions.
+- Some questions MUST be multi-statement style ('निम्नलिखित कथनों पर विचार कीजिए... केवल 1 और 2 सही').
+- 'explanation_full' MUST explain both why the correct answer is right AND why the other 3 options are incorrect.
+- 'explanation_short' must be concise (under 120 chars) for Telegram poll display.
 
 Return ONLY a valid JSON object with this exact structure:
 {{
