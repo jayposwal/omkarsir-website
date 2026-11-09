@@ -14,8 +14,16 @@ Usage: python3 generate_ca_pdf.py <path-to-dated-html> <output-pdf-path> \
 """
 import argparse
 import re
+import os
+import subprocess
+import tempfile
 from bs4 import BeautifulSoup
-from weasyprint import HTML
+
+try:
+    from weasyprint import HTML
+    HAVE_WEASYPRINT = True
+except Exception:
+    HAVE_WEASYPRINT = False
 
 APP_LINK = "https://play.google.com/store/apps/details?id=co.april2019.techa"
 
@@ -39,12 +47,11 @@ def strip_emoji(text):
 
 SECTION_META = [
     ("national", "राष्ट्रीय", "National", "#1B2A6B"),
-    ("international", "अंतर्राष्ट्रीय", "International", "#00A651"),
-    ("rajasthan", "राजस्थान", "Rajasthan", "#FF6B00"),
-    ("sujas", "सुजस", "Sujas", "#1B2A6B"),
-    ("economic", "आर्थिक", "Economic", "#00A651"),
-    ("sdt", "विज्ञान-रक्षा-तकनीक", "Science-Defence-Tech", "#FF6B00"),
-    ("sports", "खेल-पुरस्कार-व्यक्तित्व", "Sports-Awards", "#1B2A6B"),
+    ("international", "अंतरराष्ट्रीय", "International", "#0B7FB3"),
+    ("economic", "आर्थिक", "Economic", "#B8860B"),
+    ("science", "विज्ञान-रक्षा-तकनीक", "Science-Defence", "#6A3FB5"),
+    ("sports", "खेल-पुरस्कार-व्यक्तित्व", "Sports-Awards", "#C2185B"),
+    ("rajasthan", "राजस्थान एवं सुजस सार", "Rajasthan-Sujas", "#FF6B00"),
 ]
 
 
@@ -53,19 +60,52 @@ def extract_sections(html_path):
         soup = BeautifulSoup(f.read(), "html.parser")
     sections = []
     for sec_id, hindi_name, eng_name, color in SECTION_META:
-        block = soup.find("div", id=sec_id)
+        block = soup.find(["section", "div"], id=sec_id)
+        if not block:
+            # Fallback for sdt or sujas
+            if sec_id == "science":
+                block = soup.find(["section", "div"], id="sdt")
+            elif sec_id == "rajasthan":
+                block = soup.find(["section", "div"], class_=re.compile(r"raj-sec"))
         if not block:
             continue
+
         items = []
-        for item in block.select(".ca-item p"):
-            inner = "".join(str(c) for c in item.children)
-            inner = re.sub(r"</?p[^>]*>", "", inner)
-            items.append(strip_emoji(inner))
-        kw = block.select_one(".kw-box")
+        # Check modern cards first
+        cards = block.select("article.card, div.card")
+        if cards:
+            for card in cards:
+                h3 = card.select_one("h3")
+                h3_text = strip_emoji(h3.get_text().strip()) if h3 else ""
+                bullets = [strip_emoji(li.get_text().strip()) for li in card.select("ul li")]
+                exam = card.select_one(".exam")
+                exam_text = strip_emoji(exam.get_text().strip()) if exam else ""
+
+                parts = []
+                if h3_text:
+                    parts.append(f"<b>{h3_text}</b>")
+                if bullets:
+                    parts.append(" • " + "<br> • ".join(bullets))
+                if exam_text:
+                    parts.append(f"<i>{exam_text}</i>")
+                items.append("<br>".join(parts))
+        else:
+            # Legacy ca-item format
+            for item in block.select(".ca-item p"):
+                inner = "".join(str(c) for c in item.children)
+                inner = re.sub(r"</?p[^>]*>", "", inner)
+                items.append(strip_emoji(inner))
+
         kw_text = ""
-        if kw:
-            kw_text = strip_emoji("".join(str(c) for c in kw.children))
-            kw_text = re.sub(r"^\s*[:：]?\s*", "", kw_text)
+        kw_lis = block.select(".kw li")
+        if kw_lis:
+            kw_text = " • " + "<br> • ".join(strip_emoji(li.get_text().strip()) for li in kw_lis)
+        else:
+            kw = block.select_one(".kw-box")
+            if kw:
+                kw_text = strip_emoji("".join(str(c) for c in kw.children))
+                kw_text = re.sub(r"^\s*[:：]?\s*", "", kw_text)
+
         sections.append({
             "id": sec_id, "hindi": hindi_name, "eng": eng_name,
             "color": color, "items": items, "kw": kw_text,
@@ -201,8 +241,54 @@ def main():
           f"{sum(len(s['items']) for s in sections)} total items")
     html_str = build_html(sections, args.hindi_date, args.eng_date,
                            args.font_regular, args.font_bold, args.site_url)
-    HTML(string=html_str, base_url=".").write_pdf(args.output_pdf)
-    print("Wrote:", args.output_pdf)
+    if HAVE_WEASYPRINT:
+        try:
+            HTML(string=html_str, base_url=".").write_pdf(args.output_pdf)
+            print("Wrote (via WeasyPrint):", args.output_pdf)
+            return
+        except Exception as e:
+            print(f"WeasyPrint failed ({e}), falling back to Chrome...")
+
+    chrome_candidates = [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Chromium.app/Contents/MacOS/Chromium",
+        "google-chrome",
+        "chromium",
+    ]
+    chrome_bin = None
+    for cand in chrome_candidates:
+        if cand.startswith("/") and os.path.exists(cand):
+            chrome_bin = cand
+            break
+        elif not cand.startswith("/"):
+            import shutil
+            if shutil.which(cand):
+                chrome_bin = cand
+                break
+
+    if not chrome_bin:
+        raise RuntimeError("Neither working WeasyPrint nor Google Chrome found for PDF generation.")
+
+    with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8", delete=False) as tf:
+        tf.write(html_str)
+        tf_path = tf.name
+
+    try:
+        cmd = [
+            chrome_bin,
+            "--headless",
+            "--disable-gpu",
+            "--no-pdf-header-footer",
+            f"--print-to-pdf={args.output_pdf}",
+            tf_path,
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        if res.returncode != 0:
+            raise RuntimeError(f"Chrome PDF generation failed: {res.stderr}")
+        print("Wrote (via Chrome headless):", args.output_pdf)
+    finally:
+        if os.path.exists(tf_path):
+            os.remove(tf_path)
 
 
 if __name__ == "__main__":
