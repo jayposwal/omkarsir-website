@@ -171,27 +171,33 @@ Ensure the JSON is completely valid, with all 6 categories (national, internatio
         "contents": [{"parts": [{"text": prompt}]}],
         "tools": [{"googleSearch": {}}],
         "generationConfig": {
-            "temperature": 0.2,
-            "responseMimeType": "application/json"
+            "temperature": 0.2
         }
     }
 
     req_data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=req_data, headers=headers)
-    with urllib.request.urlopen(req, timeout=120) as response:
+    with urllib.request.urlopen(req, timeout=180) as response:
         result = json.loads(response.read().decode("utf-8"))
 
     candidates = result.get("candidates", [])
     if not candidates:
         raise RuntimeError(f"No candidates returned from Gemini: {result}")
 
-    text = candidates[0]["content"]["parts"][0]["text"]
-    # Strip any markdown code fence if present
-    text = re.sub(r"^```json\s*", "", text.strip())
-    text = re.sub(r"^```\s*", "", text)
-    text = re.sub(r"\s*```$", "", text)
+    text = candidates[0]["content"]["parts"][0]["text"].strip()
+    
+    # Robust extraction of JSON object
+    m = re.search(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", text)
+    if m:
+        raw_json = m.group(1)
+    else:
+        m2 = re.search(r"(\{[\s\S]*\})", text)
+        if m2:
+            raw_json = m2.group(1)
+        else:
+            raw_json = text
 
-    data = json.loads(text)
+    data = json.loads(raw_json)
     return data
 
 
