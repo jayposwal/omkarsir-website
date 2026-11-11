@@ -177,44 +177,37 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text);
 .hero-btn-model:hover { background: #047857 !important; }
 
 
-/* === MODERN EASY-TO-USE UI STYLES === */
-html { scroll-behavior: smooth; scroll-padding-top: 140px; }
 
-/* Sticky Tool Panel with Glassmorphism */
+/* === CLEAN COMPACT UI (100% FULL SCREEN READING SPACE) === */
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+/* In-flow compact tool panel (NOT sticky, so it never blocks reading space) */
 .tool-panel {
-  position: sticky;
-  top: 75px;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid #CBD5E1;
-  border-radius: 16px;
-  padding: 16px 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-  transition: all .2s ease;
-}
-@media (max-width: 768px) {
-  .tool-panel { top: 62px; padding: 12px 14px; border-radius: 12px; }
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .search-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: #FFFFFF;
-  border: 2px solid #CBD5E1;
-  border-radius: 12px;
-  min-height: 48px;
-  padding: 0 14px;
-  transition: all .18s ease;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  min-height: 40px;
+  padding: 0 12px;
+  transition: all .15s ease;
 }
 .search-box:focus-within {
   border-color: #FF6B00;
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.12);
 }
-.search-icon { font-size: 18px; color: #94A3B8; }
+.search-icon { font-size: 16px; color: #94A3B8; }
 #qSearch {
   flex: 1;
   min-width: 0;
@@ -222,18 +215,18 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
   outline: 0;
   background: transparent;
   color: #0F172A;
-  font-size: 15px;
+  font-size: 14.5px;
   font-family: inherit;
-  padding: 12px 0;
+  padding: 8px 0;
 }
 #qSearch::placeholder { color: #94A3B8; }
 .clear-search {
   border: 0;
   background: #F1F5F9;
-  border-radius: 8px;
-  padding: 6px 12px;
+  border-radius: 6px;
+  padding: 4px 10px;
   color: #475569;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   cursor: pointer;
   display: none;
@@ -244,51 +237,49 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
 .filter-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px solid #F1F5F9;
 }
 .filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .filter-label {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   color: #64748B;
   text-transform: uppercase;
   letter-spacing: .3px;
-  margin-right: 2px;
 }
 .filter-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  border: 1.5px solid #CBD5E1;
+  gap: 5px;
+  border: 1px solid #CBD5E1;
   border-radius: 999px;
   background: #FFFFFF;
   color: #334155;
-  padding: 6px 14px;
-  font-size: 12.5px;
+  padding: 4px 11px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: all .16s ease;
+  transition: all .15s ease;
 }
 .filter-btn:hover { border-color: #FF6B00; color: #C2410C; background: #FFF7ED; }
 .filter-btn.active {
   background: #1B2A6B;
   color: #FFFFFF;
   border-color: #1B2A6B;
-  box-shadow: 0 2px 8px rgba(27, 42, 107, 0.25);
 }
 .filter-btn .count {
   display: inline-grid;
   place-items: center;
-  min-width: 18px;
-  height: 18px;
+  min-width: 17px;
+  height: 17px;
   border-radius: 999px;
   background: #F1F5F9;
   color: #64748B;
-  font-size: 10.5px;
+  font-size: 10px;
   padding: 0 4px;
   font-weight: 800;
 }
@@ -296,30 +287,30 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
 
 .sec-dropdown {
   background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 10px;
-  padding: 7px 12px;
-  font-size: 13px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: 700;
   color: #1E293B;
   outline: none;
   cursor: pointer;
-  max-width: 280px;
+  max-width: 250px;
   transition: border-color .15s ease;
 }
 .sec-dropdown:focus { border-color: #FF6B00; }
 
 .expand-actions { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
 .expand-btn {
-  border: 1.5px solid #CBD5E1;
+  border: 1px solid #CBD5E1;
   border-radius: 999px;
   background: #FFFFFF;
   color: #1B2A6B;
-  padding: 6px 14px;
-  font-size: 12px;
+  padding: 4px 11px;
+  font-size: 11.5px;
   font-weight: 700;
   cursor: pointer;
-  transition: all .16s ease;
+  transition: all .15s ease;
 }
 .expand-btn:hover { background: #F1F5F9; border-color: #1B2A6B; }
 
@@ -327,38 +318,37 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 10px;
-  padding-top: 8px;
-  font-size: 12.5px;
+  margin-top: 8px;
+  padding-top: 6px;
+  font-size: 12px;
   color: #64748B;
 }
 .results-bar strong { color: #1B2A6B; }
 .results-hint {
-  font-size: 11.5px;
+  font-size: 11px;
   color: #059669;
   background: #ECFDF5;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 6px;
   font-weight: 600;
 }
 
-/* Question Cards Polish */
+/* Question Cards & Answers Compact Polish */
 .q-card {
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-  border-radius: 14px;
-  padding: 20px 22px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-  transition: all .2s ease;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  transition: all .15s ease;
   position: relative;
 }
 .q-card:hover {
   border-color: #CBD5E1;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
 }
 .q-header-meta {
   display: flex;
@@ -366,85 +356,85 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
   justify-content: space-between;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 1px dashed #E2E8F0;
 }
 .q-num-pill {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 12.5px;
   color: #1B2A6B;
   background: #EEF2F6;
-  padding: 4px 12px;
-  border-radius: 8px;
+  padding: 3px 10px;
+  border-radius: 6px;
 }
 .q-meta-pill {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #C2410C;
   background: #FFF3E0;
   border: 1px solid #FFE0B2;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 999px;
 }
 
 .q-hi-text {
-  font-size: 17.5px;
+  font-size: 16.5px;
   font-weight: 700;
   color: #0F172A;
-  line-height: 1.65;
-  margin-bottom: 12px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 .q-en-box {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
   border-left: 3px solid #008080;
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 14.5px;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13.5px;
   color: #334155;
-  line-height: 1.55;
-  margin-bottom: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 .en-tag {
   display: inline-block;
   background: #008080;
   color: #FFFFFF;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .5px;
-  padding: 2px 7px;
+  letter-spacing: .4px;
+  padding: 1px 6px;
   border-radius: 4px;
-  margin-right: 8px;
+  margin-right: 6px;
   vertical-align: 1px;
 }
 
-/* Tactile Model Answer Accordion */
+/* Tactile Compact Answer Details */
 .answer-details {
-  margin-top: 14px;
-  border: 1.5px solid #CBD5E1;
+  margin-top: 10px;
+  border: 1px solid #CBD5E1;
   background: #F8FAFC;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  transition: all .2s ease;
+  transition: all .15s ease;
 }
 .answer-details[open] {
   border-color: #2563EB;
   background: #FFFFFF;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
 }
 .answer-details summary {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 13px 18px;
+  gap: 10px;
+  padding: 10px 14px;
   background: #F1F5F9;
   color: #1E293B;
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
   user-select: none;
@@ -455,13 +445,13 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
 .answer-details[open] summary {
   background: #EFF6FF;
   color: #1D4ED8;
-  border-bottom: 1.5px solid #BFDBFE;
+  border-bottom: 1px solid #BFDBFE;
 }
 .toggle-chevron {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   color: #64748B;
-  transition: transform .25s ease;
+  transition: transform .2s ease;
   display: inline-block;
 }
 .answer-details[open] .toggle-chevron {
@@ -469,50 +459,50 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
   color: #1D4ED8;
 }
 
-.answer-content { padding: 22px 24px 26px; background: #FFFFFF; }
+.answer-content { padding: 16px 18px 20px; background: #FFFFFF; }
 .answer-label {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11.5px;
+  gap: 5px;
+  font-size: 11px;
   font-weight: 800;
   color: #1D4ED8;
   background: #EFF6FF;
   border: 1px solid #BFDBFE;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 999px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   text-transform: uppercase;
-  letter-spacing: .4px;
+  letter-spacing: .3px;
 }
-.answer-copy { color: #1E293B; font-size: 16px; line-height: 1.85; }
+.answer-copy { color: #1E293B; font-size: 15px; line-height: 1.8; }
 .answer-subhead {
   font-family: var(--font-head);
-  font-size: 15.5px;
+  font-size: 14.5px;
   font-weight: 800;
   color: #1B2A6B;
-  margin: 20px 0 10px;
-  padding: 8px 14px;
+  margin: 16px 0 8px;
+  padding: 6px 12px;
   background: #F8FAFC;
-  border-left: 4px solid #FF6B00;
-  border-radius: 6px;
-  line-height: 1.5;
+  border-left: 3.5px solid #FF6B00;
+  border-radius: 4px;
+  line-height: 1.45;
 }
 .answer-subhead:first-child { margin-top: 0; }
-.answer-para { margin: 10px 0 12px; color: #334155; line-height: 1.85; }
+.answer-para { margin: 8px 0 10px; color: #334155; line-height: 1.8; }
 .answer-point {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin: 8px 0;
-  padding: 9px 13px;
+  gap: 8px;
+  margin: 6px 0;
+  padding: 7px 10px;
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  line-height: 1.75;
+  border-radius: 6px;
+  line-height: 1.7;
   color: #1E293B;
 }
-.answer-point-icon { flex-shrink: 0; color: #FF6B00; font-size: 14px; font-weight: 900; margin-top: 2px; }
+.answer-point-icon { flex-shrink: 0; color: #FF6B00; font-size: 13px; font-weight: 900; margin-top: 1px; }
 .answer-point-body { min-width: 0; }
 .answer-point-body strong { color: #1B2A6B; }
 
@@ -521,29 +511,59 @@ html { scroll-behavior: smooth; scroll-padding-top: 140px; }
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  margin-top: 14px;
-  padding-top: 12px;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px dashed #E2E8F0;
 }
 .btn-copy, .btn-share-wa {
   background: #FFFFFF;
   border: 1px solid #CBD5E1;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 12.5px;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
   color: #475569;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   text-decoration: none;
   transition: all .15s ease;
 }
 .btn-copy:hover { background: #F1F5F9; color: #1B2A6B; border-color: #94A3B8; }
 .btn-share-wa { color: #059669; border-color: #A7F3D0; background: #ECFDF5; }
 .btn-share-wa:hover { background: #D1FAE5; border-color: #34D399; }
+
+/* Tiny Floating Button to Jump back to Search/Filter */
+.float-filter-btn {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 999;
+  background: #1B2A6B;
+  color: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(27, 42, 107, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+  transition: all .2s ease;
+}
+.float-filter-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  background: #FF6B00;
+  color: #FFFFFF;
+}
+@media (max-width: 600px) {
+  .float-filter-btn { bottom: 75px; left: 14px; padding: 7px 12px; font-size: 11px; }
+}
 
 </style>
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -20658,5 +20678,8 @@ function copyQ(btn) {
 }
 </script>
 <script src="/nied-menu.js" defer></script>
+
+<!-- Sleek Floating Action to jump back to search without blocking screen -->
+<a href="#mainToolPanel" class="float-filter-btn" title="खोज व फ़िल्टर पर जाएं">🔍 खोज / फ़िल्टर ↑</a>
 </body>
 </html>
