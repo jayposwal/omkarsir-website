@@ -59,7 +59,7 @@ def insert_into_head(head: str, tag: str) -> str:
 
 
 def should_noindex(rel: str, title: str | None, head: str = "") -> bool:
-    if rel in EXCLUDE_REL or rel.startswith("show/"):
+    if rel in EXCLUDE_REL or rel.startswith("show/") or rel.startswith("modern-india-qa/"):
         return True
     if (title or "").strip().startswith("Protected Page"):
         return True
@@ -425,6 +425,13 @@ DUPLICATE_CANONICAL = {
     "pubadchpater02.html": "lok-prashasan-ch02-siddhant-upagam.html",
     "rajasthanlakes.html": "rajasthan-lakes.html",
     "rajvegetation.html": "rajasthan-bhugol-ch04-vanaspati-vanyajeev.html",
+    "bharat-bhugol-ch01-bhautik-swaroop.html": "bharat-bhugol-ch02-bhautik-swaroop.html",
+    "bharat-bhugol-ch02-apvah-tantra.html": "bharat-bhugol-ch03-apvah-tantra.html",
+    "bharat-bhugol-ch03-jalvayu-monsoon.html": "bharat-bhugol-ch05-jalvayu-monsoon.html",
+    "bharat-bhugol-ch04-vanaspati-vanyajeev.html": "bharat-bhugol-ch06-prakritik-vanaspati.html",
+    "bharat-bhugol-ch05-krishi.html": "bharat-bhugol-ch09-krishi-faslen.html",
+    "bharat-bhugol-ch06-khanij-udyog-parivahan.html": "bharat-bhugol-ch10-khanij-sansadhan.html",
+    "ethics07.html": "prashasanik-naitikta-ch07-naitik-chintayen.html",
 }
 
 # Thin utility pages that should not be indexed (JS-only detail views etc.)
@@ -926,7 +933,7 @@ def write_sitemap() -> None:
         if ".git" in path.parts or path.name.lower() == "404.html":
             continue
         rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith("show/") or keeper_for(rel):
+        if rel.startswith("show/") or rel.startswith("modern-india-qa/") or keeper_for(rel):
             continue
         raw = path.read_text(encoding="utf-8", errors="ignore")
         if is_redirect_stub(raw):
@@ -984,7 +991,7 @@ def write_search_index() -> None:
         if ".git" in path.parts:
             continue
         rel = path.relative_to(ROOT).as_posix()
-        if rel in SEARCH_INDEX_EXCLUDE or keeper_for(rel):
+        if rel in SEARCH_INDEX_EXCLUDE or rel.startswith("modern-india-qa/") or keeper_for(rel):
             continue
         raw = path.read_text(encoding="utf-8", errors="ignore")
         if is_redirect_stub(raw):

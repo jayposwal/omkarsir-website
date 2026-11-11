@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /show/
+Disallow: /modern-india-qa/
 Disallow: /admin-comments.html
+Disallow: /pdf-chapter-splitter.html
 
 # AI crawlers / answer engines — explicitly allowed so RAS/Rajasthan exam
 # content can be cited in AI answers (ChatGPT, Claude, Perplexity, Gemini, etc.)
