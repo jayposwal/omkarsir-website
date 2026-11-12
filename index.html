@@ -294,7 +294,7 @@ img{max-width:100%}
 .sec-title span{color:var(--saffron-ink)}
 .sec-sub{text-align:center;color:var(--text-muted);font-size:15.5px;max-width:640px;margin:0 auto 28px}
 /* ---------- Quick links ---------- */
-.quick-nav-sec{background:#fff;padding:28px var(--wrap) 26px;border-bottom:1px solid #ECEFF5}
+.quick-nav-sec{background:#fff;padding:28px var(--wrap) 26px;border-top:1px solid #ECEFF5;border-bottom:1px solid #ECEFF5}
 .quick-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
 .qn-item{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:118px;padding:16px;background:#fff;border:1px solid var(--card-border);border-radius:16px;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
 .qn-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--saffron-line)}
@@ -644,50 +644,6 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
 
 
 
-<!-- ===== QUICK LINKS + EXAM SHORTCUTS ===== -->
-<section class="quick-nav-sec" aria-label="त्वरित शॉर्टकट">
-  <div class="exam-strip" aria-labelledby="exam-strip-title">
-    <h2 class="exam-strip-title" id="exam-strip-title"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg> परीक्षा चुनें</h2>
-    <div class="exam-pills" id="examGrid">
-      <a href="/ras-exam-2026.html" class="exam-pill"><b>RAS / RTS</b><span>Pre &amp; Mains</span></a>
-      <a href="/upsc-mains-pyq.html" class="exam-pill" style="border-color:#FF6B00;background:#FFF9F5;"><b>🏛️ UPSC Mains</b><span>GS 1-4 PYQ (1,118)</span></a>
-      <a href="/rajasthan-si-exam.html" class="exam-pill"><b>Police SI</b><span>Sub Inspector</span></a>
-      <a href="/rajasthan-patwari-exam.html" class="exam-pill"><b>Patwari</b><span>RSMSSB</span></a>
-      <a href="/reet-exam.html" class="exam-pill"><b>REET</b><span>Teacher Eligibility</span></a>
-      <a href="/rpsc-2nd-grade-teacher-exam.html" class="exam-pill"><b>2nd Grade</b><span>RPSC Teaching</span></a>
-      <a href="/rajasthan-cet-graduate-level.html" class="exam-pill"><b>CET Graduate</b><span>RSMSSB</span></a>
-      <a href="/rajasthan-exams.html" class="exam-pill exam-pill-all"><b>सभी Exams</b><span>संपूर्ण विवरण</span></a>
-    </div>
-  </div>
-
-  <div class="quick-grid">
-    <a href="/current-affairs.html" class="qn-item qn-hot">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-news"/></svg><span class="qn-dot"></span></span>
-      <span class="qn-info"><span class="qn-label">आज का CA</span><span class="qn-sub"><span id="caDate">Daily Current Affairs</span></span></span>
-    </a>
-    <a href="/current-affairs-quiz.html" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Daily Quiz</span><span class="qn-sub">रोज़ के सवाल</span></span>
-    </a>
-    <a href="#subjects" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Free Notes</span><span class="qn-sub">29 विषय</span></span>
-    </a>
-    <a href="/previous-year-papers.html" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
-      <span class="qn-info"><span class="qn-label">PYQ Papers</span><span class="qn-sub">पिछले वर्षों के प्रश्न</span></span>
-    </a>
-    <a href="/ras-exam-2026.html" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Syllabus</span><span class="qn-sub">RAS 2026</span></span>
-    </a>
-    <a href="/test-series.html" class="qn-item">
-      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>
-      <span class="qn-info"><span class="qn-label">Test Series</span><span class="qn-sub">Pre + Mains</span></span>
-    </a>
-  </div>
-</section>
-
 <!-- ===== SUBJECT-WISE FREE NOTES ===== -->
 <section class="subjects-sec" id="subjects" aria-labelledby="subjects-title">
   <p class="sec-eyebrow">100% मुफ़्त</p>
@@ -777,6 +733,50 @@ requestAnimationFrame(function(){setTimeout(function(){var l=document.createElem
       <div class="subject-card"><a href="/general-english.html" class="subject-box"><span class="s-icon"><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg></span><span class="s-name">General English</span><span class="s-count">12 अध्याय</span></a><a class="subject-pdf-link" href="/general-english-pdf.html" aria-label="general-english.html के लिए PDF देखें">📘 PDF देखें →</a></div>
     </div>
   </div>
+  </div>
+</section>
+
+<!-- ===== QUICK LINKS + EXAM SHORTCUTS ===== -->
+<section class="quick-nav-sec" aria-label="त्वरित शॉर्टकट">
+  <div class="exam-strip" aria-labelledby="exam-strip-title">
+    <h2 class="exam-strip-title" id="exam-strip-title"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg> परीक्षा चुनें</h2>
+    <div class="exam-pills" id="examGrid">
+      <a href="/ras-exam-2026.html" class="exam-pill"><b>RAS / RTS</b><span>Pre &amp; Mains</span></a>
+      <a href="/upsc-mains-pyq.html" class="exam-pill" style="border-color:#FF6B00;background:#FFF9F5;"><b>🏛️ UPSC Mains</b><span>GS 1-4 PYQ (1,118)</span></a>
+      <a href="/rajasthan-si-exam.html" class="exam-pill"><b>Police SI</b><span>Sub Inspector</span></a>
+      <a href="/rajasthan-patwari-exam.html" class="exam-pill"><b>Patwari</b><span>RSMSSB</span></a>
+      <a href="/reet-exam.html" class="exam-pill"><b>REET</b><span>Teacher Eligibility</span></a>
+      <a href="/rpsc-2nd-grade-teacher-exam.html" class="exam-pill"><b>2nd Grade</b><span>RPSC Teaching</span></a>
+      <a href="/rajasthan-cet-graduate-level.html" class="exam-pill"><b>CET Graduate</b><span>RSMSSB</span></a>
+      <a href="/rajasthan-exams.html" class="exam-pill exam-pill-all"><b>सभी Exams</b><span>संपूर्ण विवरण</span></a>
+    </div>
+  </div>
+
+  <div class="quick-grid">
+    <a href="/current-affairs.html" class="qn-item qn-hot">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-news"/></svg><span class="qn-dot"></span></span>
+      <span class="qn-info"><span class="qn-label">आज का CA</span><span class="qn-sub"><span id="caDate">Daily Current Affairs</span></span></span>
+    </a>
+    <a href="/current-affairs-quiz.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-quiz"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Daily Quiz</span><span class="qn-sub">रोज़ के सवाल</span></span>
+    </a>
+    <a href="#subjects" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Free Notes</span><span class="qn-sub">29 विषय</span></span>
+    </a>
+    <a href="/previous-year-papers.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>
+      <span class="qn-info"><span class="qn-label">PYQ Papers</span><span class="qn-sub">पिछले वर्षों के प्रश्न</span></span>
+    </a>
+    <a href="/ras-exam-2026.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Syllabus</span><span class="qn-sub">RAS 2026</span></span>
+    </a>
+    <a href="/test-series.html" class="qn-item">
+      <span class="qn-icon-wrap"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>
+      <span class="qn-info"><span class="qn-label">Test Series</span><span class="qn-sub">Pre + Mains</span></span>
+    </a>
   </div>
 </section>
 
