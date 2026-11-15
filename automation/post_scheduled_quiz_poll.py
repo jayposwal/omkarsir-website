@@ -16,8 +16,8 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUIZ_DATA_DIR = os.path.join(REPO_ROOT, "quiz-data")
 SITE_URL = "https://omkarsir.com"
 
-CAMPAIGN_START = datetime.date(2026, 11, 16)
-CAMPAIGN_END = datetime.date(2026, 12, 15)
+CAMPAIGN_START = datetime.date(2026, 11, 15)
+CAMPAIGN_END = datetime.date(2026, 12, 14)
 SLOTS_PER_DAY = 5
 
 TG_QUESTION_MAX = 300
