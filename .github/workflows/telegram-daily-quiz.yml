@@ -62,7 +62,7 @@ jobs:
           SHOULD_DISABLE=$(python3 - <<'PY'
           import datetime
           today = (datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)).date()
-          print("yes" if today >= datetime.date(2026, 12, 15) else "no")
+          print("yes" if today >= datetime.date(2026, 12, 14) else "no")
           PY
           )
           if [ "$SHOULD_DISABLE" = "yes" ]; then
