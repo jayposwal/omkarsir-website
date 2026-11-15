@@ -1,8 +1,33 @@
-name: Post daily quiz to Telegram
+name: Post five daily Telegram quiz polls
 
 on:
-  # Schedule disabled 2026-10-30: Hark's daily 06:45 IST task posts the quiz to Telegram itself.
-  workflow_dispatch: {}
+  schedule:
+    # 08:00, 11:00, 14:00, 17:00 and 20:00 IST (UTC +05:30).
+    - cron: '30 2 * * *'
+    - cron: '30 5 * * *'
+    - cron: '30 8 * * *'
+    - cron: '30 11 * * *'
+    - cron: '30 14 * * *'
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Quiz slot to test/post (1-5)'
+        required: true
+        default: '1'
+        type: choice
+        options: ['1', '2', '3', '4', '5']
+      target_date:
+        description: 'Optional YYYY-MM-DD date override'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: telegram-quiz-${{ github.event.schedule || format('manual-{0}-{1}', inputs.target_date, inputs.slot) }}
+  cancel-in-progress: false
 
 jobs:
   post-quiz:
@@ -16,20 +41,34 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install system libraries for WeasyPrint (Pango/Cairo/HarfBuzz)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 \
-            libcairo2 libharfbuzz0b fonts-dejavu-core
-
-      - name: Install Python dependencies
-        run: |
-          pip install requests weasyprint fonttools
-
-      - name: Post quiz polls to Telegram
+      - name: Post scheduled quiz poll to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: "@omkarsirofficial"
+          TARGET_DATE: ${{ inputs.target_date }}
+          TG_QUIZ_SLOT: >-
+            ${{ github.event_name == 'workflow_dispatch' && inputs.slot ||
+                github.event.schedule == '30 2 * * *' && '1' ||
+                github.event.schedule == '30 5 * * *' && '2' ||
+                github.event.schedule == '30 8 * * *' && '3' ||
+                github.event.schedule == '30 11 * * *' && '4' || '5' }}
+        run: python3 automation/post_scheduled_quiz_poll.py
+
+      - name: Disable this one-month schedule after the final day
+        if: github.event_name == 'schedule' && github.event.schedule == '30 14 * * *'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python3 automation/post_daily_quiz_to_telegram.py
+          SHOULD_DISABLE=$(python3 - <<'PY'
+          import datetime
+          today = (datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)).date()
+          print("yes" if today >= datetime.date(2026, 12, 15) else "no")
+          PY
+          )
+          if [ "$SHOULD_DISABLE" = "yes" ]; then
+            curl --fail-with-body --request PUT \
+              --header "Authorization: Bearer $GH_TOKEN" \
+              --header "Accept: application/vnd.github+json" \
+              --header "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/workflows/telegram-daily-quiz.yml/disable"
+          fi
