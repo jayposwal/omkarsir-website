@@ -44,25 +44,36 @@ jobs:
           MANUAL_SLOT: ${{ inputs.slot }}
           CRON: ${{ github.event.schedule }}
         run: |
+          fresh_run=true
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             quiz_date="$MANUAL_DATE"
             quiz_slot="$MANUAL_SLOT"
           else
             quiz_date="$(TZ=Asia/Kolkata date +%F)"
+            current_hour="$(TZ=Asia/Kolkata date +%H)"
+            current_minute="$(TZ=Asia/Kolkata date +%M)"
+            current_total=$((10#$current_hour * 60 + 10#$current_minute))
             case "$CRON" in
-              '30 1 * * *') quiz_slot=1 ;;
-              '30 3 * * *') quiz_slot=2 ;;
-              '30 5 * * *') quiz_slot=3 ;;
-              '30 7 * * *') quiz_slot=4 ;;
-              '30 9 * * *') quiz_slot=5 ;;
-              '30 11 * * *') quiz_slot=6 ;;
-              '30 13 * * *') quiz_slot=7 ;;
-              '30 15 * * *') quiz_slot=8 ;;
+              '30 1 * * *') quiz_slot=1; expected_total=420 ;;
+              '30 3 * * *') quiz_slot=2; expected_total=540 ;;
+              '30 5 * * *') quiz_slot=3; expected_total=660 ;;
+              '30 7 * * *') quiz_slot=4; expected_total=780 ;;
+              '30 9 * * *') quiz_slot=5; expected_total=900 ;;
+              '30 11 * * *') quiz_slot=6; expected_total=1020 ;;
+              '30 13 * * *') quiz_slot=7; expected_total=1140 ;;
+              '30 15 * * *') quiz_slot=8; expected_total=1260 ;;
               *) exit 1 ;;
             esac
+            delay_minutes=$((current_total - expected_total))
+            if (( delay_minutes < 0 || delay_minutes > 45 )); then
+              echo "Late scheduled run skipped: slot=$quiz_slot delay=${delay_minutes} minutes."
+              fresh_run=false
+            fi
           fi
           if [[ "$quiz_date" < "2026-11-17" || "$quiz_date" > "2026-12-06" ]]; then
             echo "Outside approved campaign; no post."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          elif [ "$fresh_run" != "true" ]; then
             echo "run=false" >> "$GITHUB_OUTPUT"
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
