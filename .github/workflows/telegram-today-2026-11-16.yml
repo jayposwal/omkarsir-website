@@ -1,1 +1,69 @@
-sed: .github/workflows/telegram-today-2026-11-16.yml: No such file or directory
+name: Telegram quizzes for 16 November 2026
+
+on:
+  schedule:
+    # UTC times: 09:00 through 21:00 IST on 16 November 2026.
+    - cron: '30 3 16 11 *'
+    - cron: '30 5 16 11 *'
+    - cron: '30 7 16 11 *'
+    - cron: '30 9 16 11 *'
+    - cron: '30 11 16 11 *'
+    - cron: '30 13 16 11 *'
+    - cron: '30 15 16 11 *'
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: Subject slot
+        required: true
+        type: choice
+        options:
+          - polity
+          - india_geography
+          - world_geography
+          - math_reasoning
+          - current_updates
+          - economy
+          - science
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: telegram-today-${{ github.event.schedule || inputs.slot }}
+  cancel-in-progress: false
+
+jobs:
+  post-three-polls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check campaign date
+        if: github.event_name == 'schedule'
+        run: test "$(TZ=Asia/Kolkata date +%F)" = "2026-11-16"
+
+      - uses: actions/checkout@v4
+
+      - name: Post three Telegram quiz polls
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: '@omkarsirofficial'
+          TODAY_QUIZ_SLOT: >-
+            ${{ github.event_name == 'workflow_dispatch' && inputs.slot ||
+                github.event.schedule == '30 3 16 11 *' && 'polity' ||
+                github.event.schedule == '30 5 16 11 *' && 'india_geography' ||
+                github.event.schedule == '30 7 16 11 *' && 'world_geography' ||
+                github.event.schedule == '30 9 16 11 *' && 'math_reasoning' ||
+                github.event.schedule == '30 11 16 11 *' && 'current_updates' ||
+                github.event.schedule == '30 13 16 11 *' && 'economy' || 'science' }}
+        run: python3 automation/post_today_quiz_polls.py
+
+      - name: Disable one-day workflow after final slot
+        if: github.event_name == 'schedule' && github.event.schedule == '30 15 16 11 *'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail-with-body --request PUT \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/telegram-today-2026-11-16.yml/disable"
