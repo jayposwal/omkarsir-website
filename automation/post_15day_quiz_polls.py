@@ -11,7 +11,7 @@ from zoneinfo import ZoneInfo
 
 BANK_DIR = pathlib.Path(__file__).with_name("quiz-bank-15days")
 START = dt.date(2026, 11, 17)
-END = dt.date(2026, 12, 1)
+END = dt.date(2026, 12, 6)
 
 
 def main() -> None:
