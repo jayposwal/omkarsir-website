@@ -1,0 +1,91 @@
+name: Telegram quiz campaign 17 Nov to 1 Dec 2026
+
+on:
+  schedule:
+    # UTC times corresponding to 07:00–21:00 IST every two hours.
+    - cron: '30 1 * * *'
+    - cron: '30 3 * * *'
+    - cron: '30 5 * * *'
+    - cron: '30 7 * * *'
+    - cron: '30 9 * * *'
+    - cron: '30 11 * * *'
+    - cron: '30 13 * * *'
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: Approved date (YYYY-MM-DD)
+        required: true
+        default: '2026-11-17'
+      slot:
+        description: Slot number (1-8)
+        required: true
+        default: '1'
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: telegram-15day-${{ github.event.schedule || inputs.date }}-${{ inputs.slot }}
+  cancel-in-progress: false
+
+jobs:
+  post-verified-polls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve date and slot
+        id: quiz
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_DATE: ${{ inputs.date }}
+          MANUAL_SLOT: ${{ inputs.slot }}
+          CRON: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            quiz_date="$MANUAL_DATE"
+            quiz_slot="$MANUAL_SLOT"
+          else
+            quiz_date="$(TZ=Asia/Kolkata date +%F)"
+            case "$CRON" in
+              '30 1 * * *') quiz_slot=1 ;;
+              '30 3 * * *') quiz_slot=2 ;;
+              '30 5 * * *') quiz_slot=3 ;;
+              '30 7 * * *') quiz_slot=4 ;;
+              '30 9 * * *') quiz_slot=5 ;;
+              '30 11 * * *') quiz_slot=6 ;;
+              '30 13 * * *') quiz_slot=7 ;;
+              '30 15 * * *') quiz_slot=8 ;;
+              *) exit 1 ;;
+            esac
+          fi
+          if [[ "$quiz_date" < "2026-11-17" || "$quiz_date" > "2026-12-01" ]]; then
+            echo "Outside approved campaign; no post."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "date=$quiz_date" >> "$GITHUB_OUTPUT"
+            echo "slot=$quiz_slot" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post three verified Telegram polls
+        if: steps.quiz.outputs.run == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: '@omkarsirofficial'
+          QUIZ_DATE: ${{ steps.quiz.outputs.date }}
+          QUIZ_SLOT: ${{ steps.quiz.outputs.slot }}
+        run: python3 automation/post_15day_quiz_polls.py
+
+      - name: Disable campaign after final slot
+        if: steps.quiz.outputs.date == '2026-12-01' && steps.quiz.outputs.slot == '8' && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail-with-body --request PUT \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/telegram-quiz-15days-2026-11-17.yml/disable"
