@@ -551,6 +551,14 @@
       "description": "Rajasthan Polity व Sub Inspector परीक्षा के Previous Year Questions पर आधारित Test",
       "quizzes": [
         {
+          "icon": "📜",
+          "title": "अध्याय 1: संविधान निर्माण (Chapter 01)",
+          "questions": 41,
+          "duration": "45m",
+          "date": "2026-11-16",
+          "url": "/quizzes/bharatiya-rajvyavastha-ch01-samvidhan-nirman-quiz.html"
+        },
+        {
           "icon": "🗳️",
           "title": "राज्यपाल",
           "questions": 40,
