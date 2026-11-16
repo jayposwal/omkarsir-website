@@ -1,4 +1,4 @@
-name: Telegram quiz campaign 17 Nov to 1 Dec 2026
+name: Telegram quiz campaign 17 Nov to 6 Dec 2026
 
 on:
   schedule:
@@ -61,7 +61,7 @@ jobs:
               *) exit 1 ;;
             esac
           fi
-          if [[ "$quiz_date" < "2026-11-17" || "$quiz_date" > "2026-12-01" ]]; then
+          if [[ "$quiz_date" < "2026-11-17" || "$quiz_date" > "2026-12-06" ]]; then
             echo "Outside approved campaign; no post."
             echo "run=false" >> "$GITHUB_OUTPUT"
           else
@@ -80,7 +80,7 @@ jobs:
         run: python3 automation/post_15day_quiz_polls.py
 
       - name: Disable campaign after final slot
-        if: steps.quiz.outputs.date == '2026-12-01' && steps.quiz.outputs.slot == '8' && github.event_name == 'schedule'
+        if: steps.quiz.outputs.date == '2026-12-06' && steps.quiz.outputs.slot == '8' && github.event_name == 'schedule'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
