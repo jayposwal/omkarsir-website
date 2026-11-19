@@ -428,6 +428,7 @@ DUPLICATE_CANONICAL = {
     "bharat-bhugol-ch01-bhautik-swaroop.html": "bharat-bhugol-ch02-bhautik-swaroop.html",
     "bharat-bhugol-ch02-apvah-tantra.html": "bharat-bhugol-ch03-apvah-tantra.html",
     "bharat-bhugol-ch03-jalvayu-monsoon.html": "bharat-bhugol-ch05-jalvayu-monsoon.html",
+    "revise/index.html": "revise.html",
     "bharat-bhugol-ch04-vanaspati-vanyajeev.html": "bharat-bhugol-ch06-prakritik-vanaspati.html",
     "bharat-bhugol-ch05-krishi.html": "bharat-bhugol-ch09-krishi-faslen.html",
     "bharat-bhugol-ch06-khanij-udyog-parivahan.html": "bharat-bhugol-ch10-khanij-sansadhan.html",
