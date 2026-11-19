@@ -469,21 +469,39 @@ footer a:hover{color:#fff;text-decoration:underline}
 <!-- Creator Profile Top Bar -->
 <header class="sp-top-bar">
   <div class="wrap sp-top-wrap">
-    <div class="sp-creator">
+    <a href="/" class="sp-creator" style="text-decoration:none;color:inherit" title="Omkar Sir होमपेज">
       <img src="/assets/store/superprofile-avatar.webp" alt="Omkar Sir" class="sp-creator-avatar" width="36" height="36">
       <div class="sp-creator-info">
         <h4>Omkar Sir | NIEOM Academy</h4>
         <span>New India Education · Official E-Store</span>
       </div>
-    </div>
-    <div class="sp-verified-tag">
+    </a>
+    <div class="sp-right-wrap" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <nav class="sp-nav-links" aria-label="त्वरित लिंक्स" style="display:inline-flex;gap:12px;align-items:center;font-size:13px;font-weight:600">
+        <a href="/" style="color:var(--navy);text-decoration:none">🏠 होम</a>
+        <a href="/all-notes.html" style="color:var(--navy);text-decoration:none">📚 सभी नोट्स</a>
+        <a href="/store.html" style="color:var(--primary);text-decoration:none">🛒 ई-स्टोर</a>
+      </nav>
+      <div class="sp-verified-tag">
       <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
       100% प्रामाणिक आर्थिक एवं सांख्यिकी निदेशालय नोट्स
+    </div>
     </div>
   </div>
 </header>
 
 <main class="sp-layout">
+  <div class="wrap" style="padding-top:14px;padding-bottom:4px">
+    <nav aria-label="Breadcrumb" style="font-size:13px;color:var(--text-light);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+      <a href="/" style="color:var(--navy);text-decoration:none;font-weight:600">🏠 होम</a>
+      <span>›</span>
+      <a href="/all-notes.html" style="color:var(--navy);text-decoration:none;font-weight:600">सभी नोट्स</a>
+      <span>›</span>
+      <a href="/store.html" style="color:var(--navy);text-decoration:none;font-weight:600">ई-स्टोर</a>
+      <span>›</span>
+      <span style="color:var(--text-muted);font-weight:600">सम्पूर्ण राजस्थान आर्थिक समीक्षा एवं बजट</span>
+    </nav>
+  </div>
   <div class="wrap sp-grid">
 
     <!-- LEFT COLUMN: Content Cards (Zero repetition, clean UI) -->
