@@ -18,6 +18,9 @@ def main() -> None:
     today = dt.datetime.now(ZoneInfo("Asia/Kolkata")).date()
     run_date = dt.date.fromisoformat(os.getenv("QUIZ_DATE", str(today)))
     slot = int(os.environ["QUIZ_SLOT"])
+    if slot == 6:
+        print("Slot 6 (Current Affairs) is permanently disabled.")
+        return
     if not START <= run_date <= END:
         raise SystemExit(f"Date {run_date} is outside the approved campaign")
     if slot not in range(1, 9):
