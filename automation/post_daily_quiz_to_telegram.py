@@ -65,10 +65,9 @@ def clip(text, limit):
 
 
 def main():
-    bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not bot_token or not chat_id:
-        raise SystemExit("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID env vars are required")
+    # PERMANENTLY DISABLED PER OMKAR SIR'S DIRECTIVE: Never send CA Quiz polls to Telegram
+    print("Auto-posting Current Affairs Quiz to Telegram has been permanently disabled per Omkar Sir instruction.")
+    return
 
     date_str, path = find_latest_quiz_json()
 

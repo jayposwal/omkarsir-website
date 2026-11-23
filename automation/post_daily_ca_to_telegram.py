@@ -66,10 +66,9 @@ def extract_caption(html_path, date_str, page_url):
 
 
 def main():
-    bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not bot_token or not chat_id:
-        raise SystemExit("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID env vars are required")
+    # PERMANENTLY DISABLED PER OMKAR SIR'S DIRECTIVE: Never send CA PDF automatically to Telegram
+    print("Auto-posting Current Affairs PDF to Telegram has been permanently disabled per Omkar Sir instruction.")
+    return
 
     date_str, html_path = find_latest_dated_file()
     hindi_date, eng_date = date_strings(date_str)
