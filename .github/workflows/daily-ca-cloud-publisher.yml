@@ -58,17 +58,3 @@ jobs:
             git commit -m "Daily CA + Quiz: $TODAY_STR [skip ci]"
             git push origin main
           fi
-
-      - name: Post Daily Current Affairs PDF to Telegram
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: "@omkarsirofficial"
-        run: |
-          python3 automation/post_daily_ca_to_telegram.py
-
-      - name: Post Daily Quiz & Polls to Telegram
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: "@omkarsirofficial"
-        run: |
-          python3 automation/post_daily_quiz_to_telegram.py
