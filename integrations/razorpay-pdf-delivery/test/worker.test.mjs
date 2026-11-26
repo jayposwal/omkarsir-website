@@ -14,6 +14,8 @@ const payments = {
   pay_BTNORDER: {id:'pay_BTNORDER',status:'captured',captured:true,currency:'INR',amount:4900,description:'',order_id:'order_VIABUTTON',notes:[],email:'o@r.com',created_at:now-60},
   pay_BTNBADAM: {id:'pay_BTNBADAM',status:'captured',captured:true,currency:'INR',amount:100,description:'#TpCUODSwC6kIR9',email:'r@h.com',created_at:now-60},
   pay_AMBIGUOU: {id:'pay_AMBIGUOU',status:'captured',captured:true,currency:'INR',amount:4900,description:'PDF',email:'x@y.com',created_at:now-60},
+  pay_INDPOL49: {id:'pay_INDPOL49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#U4llKaG7IWIdac',email:'pol@test.com',created_at:now-60},
+  pay_INDKALA49: {id:'pay_INDKALA49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#U4lkjHPEa92Vtg',email:'kal@test.com',created_at:now-60},
   pay_UNRELATD: {id:'pay_UNRELATD',status:'captured',captured:true,currency:'INR',amount:4900,description:'#ZZZZZZZZZZZZZZ',order_id:'order_UNRELATED',email:'u@v.com',created_at:now-60},
   pay_WRONGAMT: {id:'pay_WRONGAMT',status:'captured',captured:true,currency:'INR',amount:100,description:'Rajasthan History PDF',email:'stu@gmail.com',created_at:now-60},
 };
@@ -115,3 +117,39 @@ const dl=async (e,t)=>{ const r=await worker.fetch(new Request('https://w.exampl
 { const e2={...env}; delete e2.PDF_BUCKET; const t=await tokenFor({...env}); const [s1]=await dl(e2,t); ok(s1===503,'no storage configured -> 503'); }
 
 delete env.RAZORPAY_KEY_SECRET; [st,,b]=await call('/verify?payment_id=pay_FRESH1234&product=rajasthan-history-pdf',O); ok(st===503,'verify not configured -> 503');
+
+// ---- 10 India GK products (Hindi + English + chunked KV streaming) ----
+{
+  const mkStream = (txt) => new ReadableStream({ start(c) { c.enqueue(new TextEncoder().encode(txt)); c.close(); } });
+  const kvChunks = {
+    'bharatiya-rajvyavastha-hi.pdf': { v: () => mkStream('POLITY_HI'), m: { size: 9 } },
+    'bharatiya-rajvyavastha-en.pdf': { v: () => mkStream('POLITY_EN'), m: { size: 9 } },
+    'bharatiya-kala-sanskriti-hi.pdf': { v: () => mkStream('CHUNKED'), m: { size: 10, chunks: 2 } },
+    'bharatiya-kala-sanskriti-hi.pdf.part0': { v: () => mkStream('HELLO'), m: { size: 5 } },
+    'bharatiya-kala-sanskriti-hi.pdf.part1': { v: () => mkStream('WORLD'), m: { size: 5 } },
+  };
+  const eInd = {
+    ...env,
+    RAZORPAY_KEY_SECRET: 'rzp_secret',
+    PDF_KV: {
+      get: async (k) => kvChunks[k] ? kvChunks[k].v() : null,
+      getWithMetadata: async (k) => kvChunks[k] ? { value: kvChunks[k].v(), metadata: kvChunks[k].m } : { value: null, metadata: null },
+    },
+  };
+  delete eInd.PDF_BUCKET;
+  const rPol = await worker.fetch(new Request('https://w.example/verify?payment_id=pay_INDPOL49&product=bharatiya-rajvyavastha-pdf', O), eInd);
+  const jPol = await rPol.json();
+  ok(rPol.status === 200 && jPol.ok && jPol.downloadUrl && jPol.downloadUrlEn, 'India GK polity verify returns both Hindi + English URLs');
+  const tHi = decodeURIComponent(jPol.downloadUrl.split('token=')[1]);
+  const tEn = decodeURIComponent(jPol.downloadUrlEn.split('token=')[1]);
+  const [sHi, hHi, bHi] = await dl(eInd, tHi);
+  const [sEn, hEn, bEn] = await dl(eInd, tEn);
+  ok(sHi === 200 && bHi === 'POLITY_HI' && /Hindi/.test(hHi.get('content-disposition')), 'India GK Hindi download ok');
+  ok(sEn === 200 && bEn === 'POLITY_EN' && /English/.test(hEn.get('content-disposition')), 'India GK English download ok');
+
+  const rKal = await worker.fetch(new Request('https://w.example/verify?payment_id=pay_INDKALA49&product=bharatiya-kala-sanskriti-pdf', O), eInd);
+  const jKal = await rKal.json();
+  const tKal = decodeURIComponent(jKal.downloadUrl.split('token=')[1]);
+  const [sKal, hKal, bKal] = await dl(eInd, tKal);
+  ok(sKal === 200 && bKal === 'HELLOWORLD' && hKal.get('content-length') === '10', 'Chunked KV streams 2 parts cleanly');
+}

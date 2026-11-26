@@ -166,6 +166,166 @@ const PRODUCTS = [
     objectKeyEnv: "RAS_MAINS_P2_PDF_OBJECT_KEY",
     amountsEnv: "RAS_MAINS_P2_AMOUNTS_PAISE",
     defaultAmounts: [4900]
+  },
+  {
+    code: "prachin-bharat-itihas-pdf",
+    name: "सम्पूर्ण प्राचीन भारत का इतिहास PDF",
+    description: "136 पृष्ठ (हिंदी) + 159 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Prachin-Bharat-Itihas-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Prachin-Bharat-Itihas-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "PRACHIN_ITIHAS_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lis570i0JFXC"],
+    descriptionsEnv: "PRACHIN_ITIHAS_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "PRACHIN_ITIHAS_PDF_OBJECT_KEY",
+    defaultObjectKey: "prachin-bharat-itihas-hi.pdf",
+    enObjectKeyEnv: "PRACHIN_ITIHAS_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "prachin-bharat-itihas-en.pdf",
+    amountsEnv: "PRACHIN_ITIHAS_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "madhyakalin-bharat-itihas-pdf",
+    name: "सम्पूर्ण मध्यकालीन भारत का इतिहास PDF",
+    description: "145 पृष्ठ (हिंदी) + 169 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Madhyakalin-Bharat-Itihas-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Madhyakalin-Bharat-Itihas-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "MADHYAKALIN_ITIHAS_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lk97dkPEsX8d"],
+    descriptionsEnv: "MADHYAKALIN_ITIHAS_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "MADHYAKALIN_ITIHAS_PDF_OBJECT_KEY",
+    defaultObjectKey: "madhyakalin-bharat-itihas-hi.pdf",
+    enObjectKeyEnv: "MADHYAKALIN_ITIHAS_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "madhyakalin-bharat-itihas-en.pdf",
+    amountsEnv: "MADHYAKALIN_ITIHAS_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "bharatiya-kala-sanskriti-pdf",
+    name: "सम्पूर्ण भारतीय कला एवं संस्कृति PDF",
+    description: "126 पृष्ठ (हिंदी) + 156 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Bharatiya-Kala-Sanskriti-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Bharatiya-Kala-Sanskriti-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "BHARATIYA_KALA_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lkjHPEa92Vtg"],
+    descriptionsEnv: "BHARATIYA_KALA_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "BHARATIYA_KALA_PDF_OBJECT_KEY",
+    defaultObjectKey: "bharatiya-kala-sanskriti-hi.pdf",
+    enObjectKeyEnv: "BHARATIYA_KALA_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "bharatiya-kala-sanskriti-en.pdf",
+    amountsEnv: "BHARATIYA_KALA_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "bharatiya-rajvyavastha-pdf",
+    name: "भारतीय राजव्यवस्था एवं संविधान PDF",
+    description: "306 पृष्ठ (हिंदी) + 348 पृष्ठ (English) · PDF",
+    filename: "Bharatiya-Rajvyavastha-Constitution-Hindi-Omkar-Sir.pdf",
+    enFilename: "Bharatiya-Rajvyavastha-Constitution-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "BHARATIYA_POLITY_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4llKaG7IWIdac"],
+    descriptionsEnv: "BHARATIYA_POLITY_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "BHARATIYA_POLITY_PDF_OBJECT_KEY",
+    defaultObjectKey: "bharatiya-rajvyavastha-hi.pdf",
+    enObjectKeyEnv: "BHARATIYA_POLITY_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "bharatiya-rajvyavastha-en.pdf",
+    amountsEnv: "BHARATIYA_POLITY_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "bharatiya-arthvyavastha-pdf",
+    name: "सम्पूर्ण भारतीय अर्थव्यवस्था PDF",
+    description: "530 पृष्ठ (हिंदी) + 242 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Bharatiya-Arthvyavastha-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Bharatiya-Arthvyavastha-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "BHARATIYA_ECONOMY_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lm0VayiwhilB"],
+    descriptionsEnv: "BHARATIYA_ECONOMY_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "BHARATIYA_ECONOMY_PDF_OBJECT_KEY",
+    defaultObjectKey: "bharatiya-arthvyavastha-hi.pdf",
+    enObjectKeyEnv: "BHARATIYA_ECONOMY_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "bharatiya-arthvyavastha-en.pdf",
+    amountsEnv: "BHARATIYA_ECONOMY_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "vishwa-bhugol-pdf",
+    name: "सम्पूर्ण विश्व भूगोल PDF",
+    description: "84 पृष्ठ (हिंदी) + 95 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Vishwa-Bhugol-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Vishwa-Bhugol-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "VISHWA_BHUGOL_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lnuO9GS4vyBC"],
+    descriptionsEnv: "VISHWA_BHUGOL_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "VISHWA_BHUGOL_PDF_OBJECT_KEY",
+    defaultObjectKey: "vishwa-bhugol-hi.pdf",
+    enObjectKeyEnv: "VISHWA_BHUGOL_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "vishwa-bhugol-en.pdf",
+    amountsEnv: "VISHWA_BHUGOL_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "jiv-vigyan-biology-pdf",
+    name: "सम्पूर्ण जीव विज्ञान PDF",
+    description: "293 पृष्ठ (हिंदी) + 322 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Jiv-Vigyan-Biology-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Jiv-Vigyan-Biology-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "JIV_VIGYAN_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4loTIA2hF5lrp"],
+    descriptionsEnv: "JIV_VIGYAN_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "JIV_VIGYAN_PDF_OBJECT_KEY",
+    defaultObjectKey: "jiv-vigyan-biology-hi.pdf",
+    enObjectKeyEnv: "JIV_VIGYAN_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "jiv-vigyan-biology-en.pdf",
+    amountsEnv: "JIV_VIGYAN_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "bhautik-vigyan-physics-pdf",
+    name: "सम्पूर्ण भौतिक विज्ञान PDF",
+    description: "130 पृष्ठ (हिंदी) + 144 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Bhautik-Vigyan-Physics-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Bhautik-Vigyan-Physics-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "BHAUTIK_VIGYAN_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lqFwSQMQk5W6"],
+    descriptionsEnv: "BHAUTIK_VIGYAN_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "BHAUTIK_VIGYAN_PDF_OBJECT_KEY",
+    defaultObjectKey: "bhautik-vigyan-physics-hi.pdf",
+    enObjectKeyEnv: "BHAUTIK_VIGYAN_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "bhautik-vigyan-physics-en.pdf",
+    amountsEnv: "BHAUTIK_VIGYAN_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "rasayan-vigyan-chemistry-pdf",
+    name: "सम्पूर्ण रसायन विज्ञान PDF",
+    description: "151 पृष्ठ (हिंदी) + 166 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Rasayan-Vigyan-Chemistry-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Rasayan-Vigyan-Chemistry-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "RASAYAN_VIGYAN_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lr2T8qtco1Ti"],
+    descriptionsEnv: "RASAYAN_VIGYAN_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "RASAYAN_VIGYAN_PDF_OBJECT_KEY",
+    defaultObjectKey: "rasayan-vigyan-chemistry-hi.pdf",
+    enObjectKeyEnv: "RASAYAN_VIGYAN_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "rasayan-vigyan-chemistry-en.pdf",
+    amountsEnv: "RASAYAN_VIGYAN_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
+  },
+  {
+    code: "praudyogiki-technology-pdf",
+    name: "सम्पूर्ण विज्ञान एवं प्रौद्योगिकी PDF",
+    description: "164 पृष्ठ (हिंदी) + 185 पृष्ठ (English) · PDF",
+    filename: "Sampoorna-Science-Technology-Hindi-Omkar-Sir.pdf",
+    enFilename: "Sampoorna-Science-Technology-English-Omkar-Sir.pdf",
+    buttonIdsEnv: "TECHNOLOGY_BUTTON_IDS",
+    defaultButtonIds: ["pl_U4lrhCs6XdwTa1"],
+    descriptionsEnv: "TECHNOLOGY_PAYMENT_DESCRIPTIONS",
+    objectKeyEnv: "TECHNOLOGY_PDF_OBJECT_KEY",
+    defaultObjectKey: "praudyogiki-technology-hi.pdf",
+    enObjectKeyEnv: "TECHNOLOGY_EN_PDF_OBJECT_KEY",
+    defaultEnObjectKey: "praudyogiki-technology-en.pdf",
+    amountsEnv: "TECHNOLOGY_AMOUNTS_PAISE",
+    defaultAmounts: [4900]
   }
 ];
 
@@ -272,6 +432,24 @@ async function getPdfObject(env, objectKey) {
     const { value, metadata } = await env.PDF_KV.getWithMetadata(objectKey, { type: "stream" });
     if (!value) return null;
     const size = metadata && Number.isInteger(Number(metadata.size)) ? Number(metadata.size) : null;
+    const chunks = metadata && Number.isInteger(Number(metadata.chunks)) ? Number(metadata.chunks) : 0;
+    if (chunks > 1) {
+      if (typeof value.cancel === "function") await value.cancel().catch(() => {});
+      const { readable, writable } = new TransformStream();
+      void (async () => {
+        try {
+          for (let i = 0; i < chunks; i++) {
+            const part = await env.PDF_KV.get(objectKey + ".part" + i, { type: "stream" });
+            if (!part) throw new Error("Missing KV chunk " + objectKey + ".part" + i);
+            await part.pipeTo(writable, { preventClose: i < chunks - 1 });
+          }
+        } catch (err) {
+          console.error("KV chunk stream error:", String(err));
+          await writable.abort(err).catch(() => {});
+        }
+      })();
+      return { body: readable, size, backend };
+    }
     return { body: value, size, backend };
   }
 
@@ -298,11 +476,12 @@ async function getPdfObject(env, objectKey) {
   return { body: res.body, size: Number.isInteger(len) && len > 0 ? len : null, backend };
 }
 
-async function createDownloadToken(payment, env, productCode) {
+async function createDownloadToken(payment, env, productCode, lang = "hi") {
   const ttl = Math.min(Math.max(Number(env.DOWNLOAD_TTL_SECONDS || 604800), 3600), 2592000);
   const payload = {
     v: 1,
     product: productCode,
+    lang: lang === "en" ? "en" : "hi",
     paymentId: String(payment.id),
     email: String(payment.email).toLowerCase(),
     exp: Math.floor(Date.now() / 1000) + ttl
@@ -511,12 +690,20 @@ async function handleVerify(request, env) {
     return verifyJson(request, env, { ok: false, error: "email_required", emailHint: maskEmail(payment.email) }, 401);
   }
 
-  const token = await createDownloadToken(payment, env, product.code);
+  const token = await createDownloadToken(payment, env, product.code, "hi");
+  const baseUrl = String(env.PUBLIC_DOWNLOAD_BASE);
+  const enKey = product.enObjectKeyEnv
+    ? String(env[product.enObjectKeyEnv] || product.defaultEnObjectKey || "")
+    : String(product.defaultEnObjectKey || "");
+  const downloadUrlEn = enKey
+    ? baseUrl + encodeURIComponent(await createDownloadToken(payment, env, product.code, "en"))
+    : null;
   return verifyJson(request, env, {
     ok: true,
     product: product.code,
     productName: product.name,
-    downloadUrl: String(env.PUBLIC_DOWNLOAD_BASE) + encodeURIComponent(token),
+    downloadUrl: baseUrl + encodeURIComponent(token),
+    ...(downloadUrlEn ? { downloadUrlEn } : {}),
     emailHint: maskEmail(payment.email),
     amountInr: Number(payment.amount) / 100
   });
@@ -539,7 +726,11 @@ async function handleDownload(request, env) {
   }
 
   const product = productByCode(payload.product);
-  const objectKey = String(env[product.objectKeyEnv] || "");
+  const useEn = payload.lang === "en";
+  const objectKey = useEn
+    ? String((product.enObjectKeyEnv && env[product.enObjectKeyEnv]) || product.defaultEnObjectKey || "")
+    : String((product.objectKeyEnv && env[product.objectKeyEnv]) || product.defaultObjectKey || "");
+  const outFilename = (useEn && product.enFilename) ? product.enFilename : product.filename;
   if (!objectKey) {
     console.error("The configured PDF object key is missing for product:", payload.product);
     return new Response("इस PDF की download service अभी configure नहीं है। कृपया email2omkara@gmail.com पर संपर्क करें।", {
@@ -562,7 +753,7 @@ async function handleDownload(request, env) {
 
   const headers = new Headers();
   headers.set("content-type", "application/pdf");
-  headers.set("content-disposition", 'attachment; filename="' + product.filename + '"');
+  headers.set("content-disposition", 'attachment; filename="' + outFilename + '"');
   headers.set("cache-control", "private, no-store, max-age=0");
   headers.set("x-robots-tag", "noindex, nofollow");
   headers.set("x-content-type-options", "nosniff");

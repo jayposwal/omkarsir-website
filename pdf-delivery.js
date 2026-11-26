@@ -73,6 +73,14 @@
       .then(function (data) {
         if (data && data.ok) {
           $('dl-btn').href = data.downloadUrl;
+          if ($('dl-btn-en')) {
+            if (data.downloadUrlEn) {
+              $('dl-btn-en').href = data.downloadUrlEn;
+              $('dl-btn-en').hidden = false;
+            } else {
+              $('dl-btn-en').hidden = true;
+            }
+          }
           $('ready-email').textContent = data.emailHint || 'आपके email';
           $('ready-pid').textContent = 'Payment ID: ' + paymentId;
           show('state-ready');
