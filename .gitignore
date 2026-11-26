@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 /CA-*.pdf
 .DS_Store
+.wrangler/
