@@ -357,23 +357,87 @@ def product_ld(item):
 
 def render_page(item):
     url = f"https://omkarsir.com/{item['slug']}"
-    dl_slug = f"download-{item['slug']}"
+    dl_slug = item.get("download_slug") or f"download-{item['slug']}"
+    category = item.get("category", "भारत GK")
+    cat_flag = "🏜️" if "राजस्थान" in category else ("🎯" if "RAS" in category else ("✍️" if "भाषा" in category else "🇮🇳"))
     page_title = f"{item['title']} PDF (₹{item['price']}) | Omkar Sir"
     off_pct = round((item["mrp"] - item["price"]) * 100 / item["mrp"])
 
-    hub_hero_link = (
-        f'<a href="{E(item["hub"])}">📖 मुफ़्त ऑनलाइन अध्याय पढ़ें →</a>'
-        if item["hub"]
-        else ""
+    hi_p = item.get("hi_pages")
+    en_p = item.get("en_pages")
+    if hi_p and en_p:
+        ed_desc = f"हिंदी ({hi_p} पृष्ठ) व English ({en_p} पृष्ठ) दोनों PDF"
+        ed_badge = f"{off_pct}% छूट · Hindi + English साथ में"
+        ed_sub = f"हिंदी ({hi_p} पृष्ठ) + English ({en_p} पृष्ठ) दोनों PDF"
+        ed_sticky = "Hindi + English दोनों PDF"
+        ed_feat_title = "Hindi + English दोनों"
+        ed_feat_desc = f"एक बार ₹{item['price']} भुगतान करने पर हिंदी और English दोनों संस्करण डाउनलोड करने का विकल्प मिलता है।"
+        ed_faq_q = f"क्या ₹{item['price']} में हिंदी और English दोनों मिलेंगी?"
+        ed_faq_a = f"हाँ, पेमेंट के बाद खुलने वाले डाउनलोड पेज पर आपको हिंदी ({hi_p} पृष्ठ) और English ({en_p} पृष्ठ) दोनों PDF डाउनलोड करने के बटन मिलेंगे।"
+        spec_lis = f"<li>📘 हिंदी: {hi_p} पृष्ठ</li>\n              <li>📗 English: {en_p} पृष्ठ</li>"
+    elif hi_p:
+        ed_desc = f"सम्पूर्ण हिंदी संस्करण ({hi_p} पृष्ठ) PDF"
+        ed_badge = f"{off_pct}% छूट · सीमित समय"
+        ed_sub = f"सम्पूर्ण हिंदी संस्करण · {hi_p} पृष्ठ PDF"
+        ed_sticky = f"हिंदी PDF · {hi_p} पृष्ठ"
+        ed_feat_title = "सम्पूर्ण पाठ्यक्रम कवर"
+        ed_feat_desc = f"पूरा विषय एक ही {hi_p}-पृष्ठ की सुव्यवस्थित हिंदी PDF में, बिना अलग फ़ाइलें ढूँढे।"
+        ed_faq_q = "क्या यह सम्पूर्ण विषय की पूरी PDF है?"
+        ed_faq_a = f"हाँ, इसमें पूरे पाठ्यक्रम के {hi_p} पृष्ठ शामिल हैं, जिसे आप फोन में पढ़ सकते हैं और प्रिंट करा सकते हैं।"
+        spec_lis = f"<li>📘 हिंदी: {hi_p} पृष्ठ</li>"
+    else:
+        ed_desc = f"Complete English edition ({en_p} pages) PDF"
+        ed_badge = f"{off_pct}% छूट · सीमित समय"
+        ed_sub = f"Complete English Edition · {en_p} pages PDF"
+        ed_sticky = f"English PDF · {en_p} pages"
+        ed_feat_title = "Complete Syllabus Coverage"
+        ed_feat_desc = f"पूरा विषय एक ही {en_p}-पृष्ठ की सुव्यवस्थित PDF में, exam-oriented अभ्यास सहित।"
+        ed_faq_q = "क्या यह सम्पूर्ण विषय की पूरी PDF है?"
+        ed_faq_a = f"हाँ, इसमें पूरे विषय के {en_p} पृष्ठ शामिल हैं, जिसे आप फोन या लैपटॉप में पढ़ सकते हैं।"
+        spec_lis = f"<li>📗 English: {en_p} pages</li>"
+
+    sample = item.get("sample")
+    hub = item.get("hub")
+    sample_hero_link = f'<a href="{E(sample)}" target="_blank" rel="noopener">📄 10-Page Free Sample देखें →</a>' if sample else ""
+    hub_hero_link = f'<a href="{E(hub)}">📖 मुफ़्त ऑनलाइन सामग्री पढ़ें →</a>' if hub else ""
+    sample_buy_btn = f'<a class="btn-outline" href="{E(sample)}" target="_blank" rel="noopener">📄 पहले 10 पेज Sample देखें</a>' if sample else (
+        f'<a class="btn-outline" href="{E(hub)}">📖 ऑनलाइन सामग्री देखें</a>' if hub else ""
     )
-    hub_sample_btn = (
-        f'<a class="btn-outline" href="{E(item["hub"])}">मुफ़्त ऑनलाइन नोट्स देखें</a>'
-        if item["hub"]
-        else ""
-    )
-    hub_footer_link = (
-        f'<a href="{E(item["hub"])}">मुफ़्त नोट्स</a>' if item["hub"] else ""
-    )
+    hub_sample_btn = f'<a class="btn-outline" href="{E(hub)}">मुफ़्त ऑनलाइन नोट्स देखें</a>' if hub else ""
+    hub_footer_link = f'<a href="{E(hub)}">मुफ़्त नोट्स</a>' if hub else ""
+    sample_section = ""
+    if sample:
+        sample_section = f"""
+    <section class="sec white">
+      <div class="wrap">
+        <div class="sample-bar">
+          <div>
+            <h2>खरीदने से पहले 10 पेज पढ़कर परखें</h2>
+            <p>Sample में असली PDF के शुरुआती 10 पन्ने दिए गए हैं ताकि आप भाषा, तालिकाएँ और क्वालिटी देखकर निश्चिंत हो सकें।</p>
+          </div>
+          <div class="sample-actions">
+            <a class="btn-primary" href="{E(sample)}" target="_blank" rel="noopener">📄 Sample PDF खोलें →</a>
+            {hub_sample_btn}
+          </div>
+        </div>
+      </div>
+    </section>"""
+    elif hub:
+        sample_section = f"""
+    <section class="sec white">
+      <div class="wrap">
+        <div class="sample-bar">
+          <div>
+            <h2>खरीदने से पहले विषय-सामग्री देखें</h2>
+            <p>आप वेबसाइट पर अध्याय-वार सामग्री पढ़कर क्वालिटी परख सकते हैं और एक साथ ऑफ़लाइन व प्रिंट के लिए यह सम्पूर्ण PDF ले सकते हैं।</p>
+          </div>
+          <div class="sample-actions">
+            <a class="btn-primary" href="{E(hub)}">📖 ऑनलाइन सामग्री पढ़ें →</a>
+          </div>
+        </div>
+      </div>
+    </section>"""
+
     topics_li = "\n            ".join(f"<li>{E(t)}</li>" for t in item["topics"])
 
     return f"""<!doctype html>
@@ -382,7 +446,7 @@ def render_page(item):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{E(page_title)}</title>
-  <meta name="description" content="{E(item['desc'])} हिंदी ({item['hi_pages']} पृष्ठ) व English ({item['en_pages']} पृष्ठ) दोनों PDF सिर्फ़ ₹{item['price']} में।">
+  <meta name="description" content="{E(item['desc'])} {E(ed_desc)} सिर्फ़ ₹{item['price']} में।">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Omkar Singh Gurjar">
   <meta name="theme-color" content="#1B2A6B">
@@ -416,16 +480,15 @@ def render_page(item):
 
         <div class="hero-grid">
           <div>
-            <span class="pill">🇮🇳 भारत GK · {E(item['badge'])}</span>
+            <span class="pill">{cat_flag} {E(category)} · {E(item['badge'])}</span>
             <h1>{E(item['title'])}<span>{E(item['en_title'])}</span></h1>
             <p class="lead">{E(item['desc'])}</p>
             <ul class="specs">
-              <li>📘 हिंदी: {item['hi_pages']} पृष्ठ</li>
-              <li>📗 English: {item['en_pages']} पृष्ठ</li>
+              {spec_lis}
               <li>⚡ पेमेंट के तुरंत बाद डाउनलोड</li>
             </ul>
             <div class="hero-links">
-              <a href="{E(item['sample'])}" target="_blank" rel="noopener">📄 10-Page Free Sample देखें →</a>
+              {sample_hero_link}
               {hub_hero_link}
             </div>
           </div>
@@ -434,12 +497,12 @@ def render_page(item):
             <div class="buy-top">
               <img class="buy-cover" src="{E(item['cover'])}" alt="{E(item['title'])} PDF कवर" width="240" height="336">
               <div>
-                <span class="off-tag">{off_pct}% छूट · Hindi + English साथ में</span>
+                <span class="off-tag">{E(ed_badge)}</span>
                 <div class="price-row">
                   <span class="price-now">₹{item['price']}</span>
                   <span class="price-old">₹{item['mrp']}</span>
                 </div>
-                <p class="buy-sub">हिंदी ({item['hi_pages']} पृष्ठ) + English ({item['en_pages']} पृष्ठ) दोनों PDF</p>
+                <p class="buy-sub">{E(ed_sub)}</p>
               </div>
             </div>
 
@@ -452,45 +515,28 @@ def render_page(item):
               </div>
             </div>
 
-            <a class="btn-outline" href="{E(item['sample'])}" target="_blank" rel="noopener">
-              📄 पहले 10 पेज Sample देखें
-            </a>
+            {sample_buy_btn}
             <p class="secure-note">🔒 UPI / PhonePe / GPay / Card · पेमेंट होते ही PDF डाउनलोड पेज खुलेगा</p>
             <p class="secure-note" style="margin-top:6px"><a href="/{E(dl_slug)}" style="color:var(--navy);text-decoration:underline;font-weight:700">पहले ही खरीद चुके हैं? यहाँ से PDF डाउनलोड करें →</a></p>
           </aside>
         </div>
       </div>
     </section>
-
-    <section class="sec white">
-      <div class="wrap">
-        <div class="sample-bar">
-          <div>
-            <h2>खरीदने से पहले 10 पेज पढ़कर परखें</h2>
-            <p>Sample में असली PDF के शुरुआती 10 पन्ने दिए गए हैं ताकि आप भाषा, तालिकाएँ और क्वालिटी देखकर निश्चिंत हो सकें।</p>
-          </div>
-          <div class="sample-actions">
-            <a class="btn-primary" href="{E(item['sample'])}" target="_blank" rel="noopener">📄 Sample PDF खोलें →</a>
-            {hub_sample_btn}
-          </div>
-        </div>
-      </div>
-    </section>
-
+{sample_section}
     <section class="sec">
       <div class="wrap">
         <h2 class="sec-h">इस PDF की मुख्य विशेषताएँ</h2>
-        <p class="sec-sub">RAS Pre + Mains, SSC, Railway व सभी प्रतियोगी परीक्षाओं के तेज़ revision के लिए तैयार।</p>
+        <p class="sec-sub">RAS Pre + Mains, RPSC, SSC व सभी प्रतियोगी परीक्षाओं के तेज़ revision के लिए तैयार।</p>
         <div class="grid-3">
           <article class="info-card">
             <span class="ic">📚</span>
-            <b>Hindi + English दोनों</b>
-            <p>एक बार ₹{item['price']} भुगतान करने पर हिंदी और English दोनों संस्करण डाउनलोड करने का विकल्प मिलता है।</p>
+            <b>{E(ed_feat_title)}</b>
+            <p>{E(ed_feat_desc)}</p>
           </article>
           <article class="info-card">
             <span class="ic">🗣️</span>
             <b>सरल भाषा व सार</b>
-            <p>NCERT व मानक पुस्तकों पर आधारित आसान व्याख्या, तालिकाएँ और प्रमुख तथ्य।</p>
+            <p>NCERT, RBSE व मानक पुस्तकों पर आधारित आसान व्याख्या, तालिकाएँ और प्रमुख तथ्य।</p>
           </article>
           <article class="info-card">
             <span class="ic">🖨️</span>
@@ -533,7 +579,7 @@ def render_page(item):
           </li>
           <li class="info-card">
             <b>तुरंत PDF Download करें</b>
-            <p>पेमेंट सफल होते ही डाउनलोड पेज खुल जाएगा जहाँ से हिंदी और English दोनों PDF डाउनलोड हो जाएँगी।</p>
+            <p>पेमेंट सफल होते ही डाउनलोड पेज खुल जाएगा जहाँ से तुरंत PDF डाउनलोड हो जाएगी।</p>
           </li>
         </ol>
       </div>
@@ -548,8 +594,8 @@ def render_page(item):
             <div class="acc-body">यह Digital PDF E-Book है जिसे आप फ़ोन, लैपटॉप में पढ़ सकते हैं और चाहें तो प्रिंट करा सकते हैं। डाक से कोई किताब नहीं भेजी जाती।</div>
           </details>
           <details>
-            <summary>क्या ₹{item['price']} में हिंदी और English दोनों मिलेंगी?</summary>
-            <div class="acc-body">हाँ, पेमेंट के बाद खुलने वाले डाउनलोड पेज पर आपको हिंदी ({item['hi_pages']} पृष्ठ) और English ({item['en_pages']} पृष्ठ) दोनों PDF डाउनलोड करने के बटन मिलेंगे।</div>
+            <summary>{E(ed_faq_q)}</summary>
+            <div class="acc-body">{E(ed_faq_a)}</div>
           </details>
           <details>
             <summary>पेमेंट के बाद PDF दोबारा डाउनलोड करनी हो तो?</summary>
@@ -576,7 +622,7 @@ def render_page(item):
   <div class="sticky-buy">
     <div>
       <div class="sb-price">₹{item['price']}<s>₹{item['mrp']}</s></div>
-      <div class="sb-sub">Hindi + English दोनों PDF</div>
+      <div class="sb-sub">{E(ed_sticky)}</div>
     </div>
     <button type="button" id="stickyBuyBtn" class="btn-primary">अभी खरीदें →</button>
   </div>
@@ -615,8 +661,26 @@ def render_page(item):
 
 
 def render_download_page(item):
-    dl_slug = f"download-{item['slug']}"
+    dl_slug = item.get("download_slug") or f"download-{item['slug']}"
     url = f"https://omkarsir.com/{dl_slug}"
+    hi_p = item.get("hi_pages")
+    en_p = item.get("en_pages")
+    if hi_p and en_p:
+        sub = f"हिंदी ({hi_p} पृष्ठ) + English ({en_p} पृष्ठ) · PDF"
+        top_p = "भुगतान की जाँच के तुरंत बाद हिंदी और English दोनों PDF डाउनलोड के लिए खुल जाएँगी।"
+        btn1 = f'⬇️ हिंदी PDF Download करें ({hi_p} पृष्ठ)'
+        btn2 = f'<a class="btn secondary" id="dl-btn-en" rel="noopener noreferrer" hidden>⬇️ English PDF Download करें ({en_p} पृष्ठ)</a>'
+    elif hi_p:
+        sub = f"हिंदी संस्करण · {hi_p} पृष्ठ PDF"
+        top_p = "भुगतान की जाँच के तुरंत बाद आपकी PDF डाउनलोड के लिए खुल जाएगी।"
+        btn1 = f'⬇️ PDF Download करें ({hi_p} पृष्ठ)'
+        btn2 = ""
+    else:
+        sub = f"English Edition · {en_p} pages PDF"
+        top_p = "भुगतान की जाँच के तुरंत बाद आपकी PDF डाउनलोड के लिए खुल जाएगी।"
+        btn1 = f'⬇️ English PDF Download करें ({en_p} pages)'
+        btn2 = ""
+
     return f"""<!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -688,7 +752,7 @@ button.btn{{width:100%;border:0;cursor:pointer;font-family:inherit}}
 <section class="top">
   <div class="wrap">
     <h1>आपकी PDF: {E(item['title'])}</h1>
-    <p>भुगतान की जाँच के तुरंत बाद हिंदी और English दोनों PDF डाउनलोड के लिए खुल जाएँगी।</p>
+    <p>{E(top_p)}</p>
   </div>
 </section>
 <div class="pad">
@@ -697,7 +761,7 @@ button.btn{{width:100%;border:0;cursor:pointer;font-family:inherit}}
       <img src="{E(item['cover'])}" alt="{E(item['title'])} कवर" width="240" height="336">
       <div>
         <h2>{E(item['title'])}</h2>
-        <p>हिंदी ({item['hi_pages']} पृष्ठ) + English ({item['en_pages']} पृष्ठ) · PDF</p>
+        <p>{E(sub)}</p>
       </div>
     </div>
 
@@ -708,9 +772,9 @@ button.btn{{width:100%;border:0;cursor:pointer;font-family:inherit}}
     </div>
 
     <div class="state" id="state-ready" hidden>
-      <p class="center"><b>✅ भुगतान सफल! आपकी PDF तैयार हैं।</b></p>
-      <a class="btn primary" id="dl-btn" rel="noopener noreferrer">⬇️ हिंदी PDF Download करें ({item['hi_pages']} पृष्ठ)</a>
-      <a class="btn secondary" id="dl-btn-en" rel="noopener noreferrer" hidden>⬇️ English PDF Download करें ({item['en_pages']} पृष्ठ)</a>
+      <p class="center"><b>✅ भुगतान सफल! आपकी PDF तैयार है।</b></p>
+      <a class="btn primary" id="dl-btn" rel="noopener noreferrer">{E(btn1)}</a>
+      {btn2}
       <p class="note">ये लिंक <b id="ready-email">आपके अकाउंट</b> के लिए 7 दिन तक सक्रिय रहेंगे। बाद में दोबारा डाउनलोड करने के लिए इसी पेज पर Payment ID और Email डालें।</p>
       <p class="pid" id="ready-pid"></p>
     </div>
@@ -764,11 +828,27 @@ button.btn{{width:100%;border:0;cursor:pointer;font-family:inherit}}
 
 def render_store_card(item):
     off_pct = round((item["mrp"] - item["price"]) * 100 / item["mrp"])
+    category = item.get("category", "भारत GK")
     short_desc = item["desc"]
     if len(short_desc) > 105:
         short_desc = short_desc[:102].rsplit(" ", 1)[0] + "..."
+    hi_p = item.get("hi_pages")
+    en_p = item.get("en_pages")
+    meta_parts = []
+    if hi_p:
+        meta_parts.append(f"<span>हिंदी: {hi_p} पृष्ठ</span>")
+    if en_p:
+        meta_parts.append(f"<span>English: {en_p} पृष्ठ</span>")
+    meta_parts.append("<span>Razorpay Instant</span>")
+    sample = item.get("sample")
+    hub = item.get("hub")
+    sec_btn = (
+        f'<a class="ghost" href="{E(sample)}" target="_blank" rel="noopener">📄 10-Page Sample</a>'
+        if sample
+        else (f'<a class="ghost" href="{E(hub)}">📖 Online पढ़ें</a>' if hub else "")
+    )
     return (
-        f'      <article class="card" data-title="{E(item["title"] + " " + item["en_title"])}" data-category="भारत GK">\n'
+        f'      <article class="card" data-title="{E(item["title"] + " " + item["en_title"])}" data-category="{E(category)}">\n'
         f'        <a class="thumb refreshed-thumb" href="/{E(item["slug"])}" aria-label="{E(item["title"])} PDF">\n'
         f'          <span class="badge">{E(item["badge"])}</span>\n'
         f'          <img src="{E(item["cover"])}" alt="{E(item["title"])} पुस्तक का कवर" width="800" height="1120" loading="lazy" decoding="async">\n'
@@ -778,9 +858,9 @@ def render_store_card(item):
         f'          <span class="tag">{E(item["tag"])}</span>\n'
         f'          <h3><a href="/{E(item["slug"])}">{E(item["title"])}</a></h3>\n'
         f'          <p>{E(short_desc)}</p>\n'
-        f'          <div class="meta"><span>हिंदी: {item["hi_pages"]} पृष्ठ</span><span>English: {item["en_pages"]} पृष्ठ</span><span>Razorpay Instant</span></div>\n'
+        f'          <div class="meta">{"".join(meta_parts)}</div>\n'
         f'          <div class="price"><b>₹{item["price"]}</b><s>₹{item["mrp"]}</s><em>{off_pct}% छूट</em></div>\n'
-        f'          <div class="actions"><a class="btn" href="/{E(item["slug"])}">देखें और खरीदें →</a><a class="ghost" href="{E(item["sample"])}" target="_blank" rel="noopener">📄 10-Page Sample</a></div>\n'
+        f'          <div class="actions"><a class="btn" href="/{E(item["slug"])}">देखें और खरीदें →</a>{sec_btn}</div>\n'
         f'        </div>\n'
         f'      </article>'
     )

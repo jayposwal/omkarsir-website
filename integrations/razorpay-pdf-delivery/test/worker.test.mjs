@@ -16,6 +16,9 @@ const payments = {
   pay_AMBIGUOU: {id:'pay_AMBIGUOU',status:'captured',captured:true,currency:'INR',amount:4900,description:'PDF',email:'x@y.com',created_at:now-60},
   pay_INDPOL49: {id:'pay_INDPOL49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#U4llKaG7IWIdac',email:'pol@test.com',created_at:now-60},
   pay_INDKALA49: {id:'pay_INDKALA49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#U4lkjHPEa92Vtg',email:'kal@test.com',created_at:now-60},
+  pay_RAJBHU49: {id:'pay_RAJBHU49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#U51HdmNLGiWRNB',email:'raj@test.com',created_at:now-60},
+  pay_SAMHIN49: {id:'pay_SAMHIN49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#U51Ju8xCBFVhRv',email:'hin@test.com',created_at:now-60},
+  pay_ARTH49: {id:'pay_ARTH49',status:'captured',captured:true,currency:'INR',amount:4900,description:'#TpCXKBEcJEFrDb',email:'art@test.com',created_at:now-60},
   pay_UNRELATD: {id:'pay_UNRELATD',status:'captured',captured:true,currency:'INR',amount:4900,description:'#ZZZZZZZZZZZZZZ',order_id:'order_UNRELATED',email:'u@v.com',created_at:now-60},
   pay_WRONGAMT: {id:'pay_WRONGAMT',status:'captured',captured:true,currency:'INR',amount:100,description:'Rajasthan History PDF',email:'stu@gmail.com',created_at:now-60},
 };
@@ -152,4 +155,16 @@ delete env.RAZORPAY_KEY_SECRET; [st,,b]=await call('/verify?payment_id=pay_FRESH
   const tKal = decodeURIComponent(jKal.downloadUrl.split('token=')[1]);
   const [sKal, hKal, bKal] = await dl(eInd, tKal);
   ok(sKal === 200 && bKal === 'HELLOWORLD' && hKal.get('content-length') === '10', 'Chunked KV streams 2 parts cleanly');
+
+  // Verify newly added Rajasthan GK, Hindi, and Arthvyavastha products
+  const rRaj = await worker.fetch(new Request('https://w.example/verify?payment_id=pay_RAJBHU49&product=rajasthan-bhugol-pdf', O), eInd);
+  const jRaj = await rRaj.json();
+  ok(rRaj.status === 200 && jRaj.downloadUrl && jRaj.downloadUrlEn, 'Rajasthan Bhugol returns Hindi + English URLs');
+
+  const rHin = await worker.fetch(new Request('https://w.example/verify?payment_id=pay_SAMHIN49&product=samanya-hindi-pdf', O), eInd);
+  const jHin = await rHin.json();
+  ok(rHin.status === 200 && jHin.downloadUrl && !jHin.downloadUrlEn, 'Samanya Hindi single-language returns Hindi URL only');
+
+  const rArt = await worker.fetch(new Request('https://w.example/verify?payment_id=pay_ARTH49&product=rajasthan-arthvyavastha-pdf', O), eInd);
+  ok(rArt.status === 200, 'Rajasthan Arthvyavastha pl_TpCXKBEcJEFrDb verified');
 }
